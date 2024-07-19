@@ -2,6 +2,9 @@
   "cSpell.words": [
     "astrojs",
     "biomejs",
-    "kanpeki"
-  ]
+    "fontsource",
+    "kanpeki",
+    "tailwindcss"
+  ],
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

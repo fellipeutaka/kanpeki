@@ -1,5 +1,8 @@
 {
   "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "ignore": [".astro", "dist", "node_modules"]
+  },
   "organizeImports": {
     "enabled": true
   },
@@ -14,20 +17,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true,
-      "style": {
-        "all": true,
-        "noImplicitBoolean": "off",
-        "useNamingConvention": "off"
-      },
-      "nursery": {
-        "all": true,
-        "noReactSpecificProps": "off",
-        "noUndeclaredDependencies": "off",
-        "useImportExtensions": "off",
-        "useImportRestrictions": "off",
-        "noLabelWithoutControl": "off"
-      }
+      "recommended": true
     }
   },
   "overrides": [
@@ -37,26 +27,6 @@
         "rules": {
           "style": {
             "noDefaultExport": "off"
-          }
-        }
-      }
-    },
-    {
-      "include": ["apps/app/src/routes/**/*.tsx"],
-      "linter": {
-        "rules": {
-          "style": {
-            "useFilenamingConvention": "off"
-          }
-        }
-      }
-    },
-    {
-      "include": ["apps/app/src/components/ui/icons.tsx"],
-      "linter": {
-        "rules": {
-          "a11y": {
-            "noSvgWithoutTitle": "off"
           }
         }
       }
