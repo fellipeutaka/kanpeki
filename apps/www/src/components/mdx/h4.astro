@@ -1,0 +1,11 @@
+---
+import Heading from "./heading.astro";
+
+type Props = astroHTML.JSX.HTMLAttributes;
+
+const { props } = Astro;
+---
+
+<Heading {...props} as="h4" class="mt-8 font-semibold text-xl tracking-tight">
+  <slot />
+</Heading>

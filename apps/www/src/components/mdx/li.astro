@@ -1,0 +1,9 @@
+---
+type Props = astroHTML.JSX.HTMLAttributes;
+
+const { props } = Astro;
+---
+
+<li {...props} class="ml-2">
+  <slot />
+</li>

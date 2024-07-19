@@ -18,4 +18,8 @@ export default defineConfig({
   ],
   output: "static",
   adapter: vercel(),
+  redirects: {
+    "/github": "https://github.com/fellipeutaka/kanpeki",
+    "/docs": "/docs/introduction",
+  },
 });

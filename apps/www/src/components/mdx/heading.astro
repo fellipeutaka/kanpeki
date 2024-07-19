@@ -1,0 +1,24 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+import { Icons } from "../ui/icons";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>;
+
+const { as, id, ...props } = Astro.props;
+
+const Comp = as || "h2";
+---
+
+<Comp
+  {...props}
+  id={id}
+  class="mt-10 border-b pb-1 font-semibold text-3xl tracking-tight first:mt-0"
+>
+  <a href={`#${id}`} class="group">
+    <slot />
+    <Icons.Link
+      aria-label="Link to section"
+      className="ml-2 inline size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100"
+    />
+  </a>
+</Comp>
