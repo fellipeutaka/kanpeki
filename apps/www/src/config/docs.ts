@@ -1,3 +1,17 @@
+export const mainNav = [
+  {
+    title: "Docs",
+    href: "/docs",
+  },
+  {
+    title: "Components",
+    href: "/docs/components",
+  },
+] as const satisfies {
+  title: string;
+  href: string;
+}[];
+
 export const sidebarNav = [
   {
     title: "Getting Started",
