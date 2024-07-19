@@ -1,0 +1,18 @@
+{
+  "name": "kanpeki-ui",
+  "description": "Add beautiful and accessible components to your apps.",
+  "type": "module",
+  "private": false,
+  "version": "0.0.0",
+  "author": {
+    "name": "Fellipe Utaka",
+    "email": "fellipeutaka@gmail.com",
+    "url": "https://github.com/fellipeutaka"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fellipeutaka/kanpeki.git",
+    "directory": "packages/cli"
+  }
+}

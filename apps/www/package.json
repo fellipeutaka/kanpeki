@@ -1,0 +1,14 @@
+{
+  "name": "@kanpeki/www",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "astro": "^4.12.1",
+    "@astrojs/check": "^0.8.2"
+  }
+}
