@@ -1,6 +1,9 @@
 ---
+import { siteConfig } from "~/config/site";
 import { CommandMenu } from "./command-menu";
 import MainNav from "./main-nav.astro";
+import { Icons } from "./ui/icons";
+import { LinkButton } from "./ui/link-button";
 ---
 
 <header
@@ -16,44 +19,29 @@ import MainNav from "./main-nav.astro";
         <CommandMenu client:load />
       </div>
       <nav class="flex items-center">
-        {
-          /* <Link
+        <LinkButton
+          client:load
           href={siteConfig.links.github}
           target="_blank"
           rel="noreferrer"
+          variant="ghost"
+          size="icon"
         >
-          <div
-            class={cn(
-              buttonVariants({
-                variant: "ghost",
-              }),
-              "h-8 w-8 px-0"
-            )}
-          >
-            <Icons.gitHub class="h-4 w-4" />
-            <span class="sr-only">GitHub</span>
-          </div>
-        </Link> */
-        }
-        {
-          /* <Link
+          <Icons.GitHub className="size-4" />
+          <span class="sr-only">GitHub</span>
+        </LinkButton>
+
+        <LinkButton
+          client:load
           href={siteConfig.links.twitter}
           target="_blank"
           rel="noreferrer"
+          variant="ghost"
+          size="icon"
         >
-          <div
-            class={cn(
-              buttonVariants({
-                variant: "ghost",
-              }),
-              "h-8 w-8 px-0"
-            )}
-          >
-            <Icons.twitter class="h-3 w-3 fill-current" />
-            <span class="sr-only">Twitter</span>
-          </div>
-        </Link> */
-        }
+          <Icons.Twitter className="size-3" />
+          <span class="sr-only">Twitter</span>
+        </LinkButton>
       </nav>
     </div>
   </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import { type DialogAria, useDialog } from "@react-aria/dialog";
 import { type PressProps, PressResponder } from "@react-aria/interactions";
 import {
@@ -299,6 +297,7 @@ export const Dialog = Object.assign(
   {},
   {
     Root: DialogRoot,
+    Trigger: DialogTrigger,
     Portal: DialogPortal,
     Overlay: DialogOverlay,
     Content: DialogContent,

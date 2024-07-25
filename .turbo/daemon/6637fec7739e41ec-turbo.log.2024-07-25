@@ -1,0 +1,411 @@
+2024-07-25T00:59:09.562584Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo\\cookies")}
+2024-07-25T00:59:09.562616Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-07-25T00:59:09.666573Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo\\cookies"), AnchoredSystemPathBuf(".turbo\\cookies\\1.cookie")}
+2024-07-25T00:59:09.666586Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-07-25T00:59:19.967931Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\.astro\\types.d.ts")}
+2024-07-25T00:59:19.967950Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:03:12.870093Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo\\daemon")}
+2024-07-25T01:03:12.870106Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-07-25T01:03:22.865533Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro"), AnchoredSystemPathBuf("apps\\www\\src\\components")}
+2024-07-25T01:03:22.865555Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:03:23.861608Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:03:23.861622Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:05:24.769332Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:05:24.769347Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:06:01.073047Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:06:01.073063Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:06:43.169576Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\pages\\index.astro")}
+2024-07-25T01:06:43.169593Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:07:02.069872Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\pages\\index.astro")}
+2024-07-25T01:07:02.069890Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:07:53.162048Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\pages\\index.astro")}
+2024-07-25T01:07:53.162067Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:07:54.160168Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:07:54.160180Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:09:15.173680Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:09:15.173697Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:09:27.169273Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:09:27.169290Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:09:37.772586Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:09:37.772605Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:12:33.863508Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:12:33.863525Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:12:35.168569Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:12:35.168585Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:13:23.170662Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components"), AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero-ilustration.tsx")}
+2024-07-25T01:13:23.170718Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:13:35.673752Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero-ilustration.tsx")}
+2024-07-25T01:13:35.673772Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:13:54.565923Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero-ilustration.tsx")}
+2024-07-25T01:13:54.565941Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:13:59.361891Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero-ilustration.tsx")}
+2024-07-25T01:13:59.361905Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:14:13.975126Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero-ilustration.tsx"), AnchoredSystemPathBuf("apps\\www\\src\\components"), AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero-illustration.tsx")}
+2024-07-25T01:14:13.975151Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:14:23.760350Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:14:23.760362Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:17:22.567679Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:17:22.567692Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:22:27.974376Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:22:27.974390Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:22:28.067491Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:22:28.067506Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:23:23.265888Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T01:23:23.265907Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:23:37.562275Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T01:23:37.562286Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:25:22.867369Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T01:25:22.867391Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:25:23.863390Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:25:23.863403Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:25:55.474144Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:25:55.474162Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:26:17.570139Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:26:17.570156Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:26:19.561343Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:26:19.561363Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:26:26.262131Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:26:26.262146Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:26:28.673714Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:26:28.673731Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:26:29.561813Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:26:29.561829Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:26:56.375555Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:26:56.375571Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:27:12.869715Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:27:12.869731Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:27:26.069030Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:27:26.069045Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:27:27.062852Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:27:27.062864Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:28:30.162570Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:28:30.162588Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:28:40.570071Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:28:40.570090Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:28:45.875111Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:28:45.875126Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:28:51.562290Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:28:51.562308Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:29:04.471731Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:29:04.471748Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:33:46.276315Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:33:46.276330Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:34:00.461173Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\styles\\globals.css")}
+2024-07-25T01:34:00.461191Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:36:04.461925Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:36:04.461940Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:37:10.069490Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button.tsx")}
+2024-07-25T01:37:10.069511Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:37:23.273738Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button.tsx")}
+2024-07-25T01:37:23.273758Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:39:25.368098Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:39:25.368111Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:40:13.572198Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button.tsx")}
+2024-07-25T01:40:13.572217Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:40:13.669235Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button.tsx")}
+2024-07-25T01:40:13.669259Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:40:13.669332Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T01:40:21.575641Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button.tsx")}
+2024-07-25T01:40:21.575658Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:40:21.575699Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T01:40:54.873034Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:40:54.873052Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:41:02.664360Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:41:02.664379Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:41:19.969858Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:41:19.969876Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:41:30.073693Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button.tsx")}
+2024-07-25T01:41:30.073721Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:41:31.071050Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:41:31.071065Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:41:55.066034Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button.tsx")}
+2024-07-25T01:41:55.066050Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:41:55.107397Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T01:41:56.373620Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button copy.tsx"), AnchoredSystemPathBuf("apps\\www\\src\\components\\ui")}
+2024-07-25T01:41:56.373642Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:41:58.966633Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\link-button.tsx"), AnchoredSystemPathBuf("apps\\www\\src\\components\\ui"), AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\button copy.tsx")}
+2024-07-25T01:41:58.966656Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:44:23.864829Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\link-button.tsx")}
+2024-07-25T01:44:23.864846Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:44:25.061914Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:44:25.061927Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:44:45.375218Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:44:45.375236Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:45:03.067453Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:45:03.067467Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:45:47.361297Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:45:47.361311Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:46:11.867115Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:46:11.867135Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:51:50.960605Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:51:50.960617Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:51:58.967722Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:51:58.967742Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:52:06.566238Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:52:06.566261Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:52:08.674488Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:52:08.674503Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:52:11.661241Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:52:11.661263Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:52:51.465073Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:52:51.465091Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:52:59.868767Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:52:59.868786Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:54:05.262943Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:54:05.262957Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:54:12.170818Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\main-nav.astro")}
+2024-07-25T01:54:12.170841Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:54:29.460968Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\main-nav.astro")}
+2024-07-25T01:54:29.460988Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:54:39.362961Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\main-nav.astro")}
+2024-07-25T01:54:39.362976Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:54:57.169998Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\main-nav.astro")}
+2024-07-25T01:54:57.170017Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:55:14.174783Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\main-nav.astro")}
+2024-07-25T01:55:14.174802Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:56:07.670057Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:56:07.670070Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T01:56:50.271316Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\main-nav.astro")}
+2024-07-25T01:56:50.271331Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:57:35.073644Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:57:35.073668Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:57:42.169121Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:57:42.169140Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:58:00.776038Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:58:00.776052Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:58:06.573219Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T01:58:06.573241Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T01:59:24.060882Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T01:59:24.060893Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:00:22.271593Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:00:22.271611Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:00:43.367827Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:00:43.367842Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:01:07.865165Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:01:07.865183Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:01:14.464237Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:01:14.464251Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:01:25.560465Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:01:25.560478Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:01:26.569223Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:01:26.569237Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:02:24.765005Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\link-button.tsx")}
+2024-07-25T02:02:24.765025Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:03:28.773894Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\link-button.tsx")}
+2024-07-25T02:03:28.773915Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:03:29.771445Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:03:29.771458Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:03:56.475435Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo\\cookies\\1.cookie"), AnchoredSystemPathBuf(".turbo\\cookies")}
+2024-07-25T02:03:56.475470Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-07-25T02:03:59.278917Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\.astro\\types.d.ts")}
+2024-07-25T02:03:59.278940Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:04:00.069132Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo")}
+2024-07-25T02:04:00.069156Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2024-07-25T02:04:19.564880Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\link-button.tsx")}
+2024-07-25T02:04:19.564903Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:04:32.669769Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\link-button.tsx")}
+2024-07-25T02:04:32.669790Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:04:59.866427Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:04:59.866448Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:05:51.267962Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:05:51.267979Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:05:52.266541Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:05:52.266557Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:06:24.271033Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:06:24.271053Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:06:26.376225Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:06:26.376242Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:06:58.373027Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:06:58.373042Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:07:12.276812Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:07:12.276831Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:08:36.872511Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:08:36.872531Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:08:47.776131Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:08:47.776145Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:09:01.070755Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:09:01.070783Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:09:08.667491Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:09:08.667504Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:09:14.577318Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:09:14.577334Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:09:41.365314Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:09:41.365326Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:09:45.768841Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:09:45.768856Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:09:45.867731Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:09:45.867747Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:09:45.867794Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T02:10:18.470372Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:10:18.470420Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:10:18.566074Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-header.astro")}
+2024-07-25T02:10:18.566091Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:10:18.566148Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T02:11:38.476267Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:11:38.476284Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:13:05.869108Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:13:05.869130Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:13:34.664888Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:13:34.664902Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:14:21.363545Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:14:21.363556Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:14:22.465552Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:14:22.465573Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:14:22.871357Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:14:22.871371Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:14:30.968190Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\ui\\icons.tsx")}
+2024-07-25T02:14:30.968205Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:14:39.077015Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:14:39.077030Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:14:51.968466Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:14:51.968479Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:14:57.765565Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:14:57.765578Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:14:57.864069Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:14:57.864092Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:14:57.864152Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T02:18:47.675344Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:18:47.675377Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:18:55.369456Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:18:55.369467Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:19:16.774166Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:19:16.774187Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:20:54.775336Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:20:54.775352Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:20:55.767912Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:20:55.767925Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:21:02.467362Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:21:02.467376Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:21:02.578246Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:21:02.578259Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:21:02.578303Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T02:21:06.665287Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:21:06.665305Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:21:19.070070Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:21:19.070084Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:21:19.169703Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:21:19.169718Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:21:19.169761Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T02:21:51.165521Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:21:51.165541Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:02.071502Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:02.071519Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:04.370809Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:04.370833Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:07.671647Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:07.671661Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:12.263909Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:12.263927Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:44.675171Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:44.675190Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:48.969645Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:48.969667Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:51.865149Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:51.865166Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:54.566976Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:54.566996Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:58.264501Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:22:58.264515Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:22:59.277556Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:22:59.277569Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:23:12.572015Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:23:12.572028Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:23:12.670717Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:23:12.670736Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:23:12.670802Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2024-07-25T02:23:29.668120Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:23:29.668133Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:25:18.264470Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:25:18.264491Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:25:55.977142Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:25:55.977158Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:26:14.263843Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:26:14.263856Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:26:19.065772Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:26:19.065787Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:26:22.470694Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:26:22.470714Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:26:23.871205Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:26:23.871222Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:26:28.264368Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:26:28.264384Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:26:30.264318Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:26:30.264337Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:26:31.674054Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:26:31.674080Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:26:34.166018Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:26:34.166038Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:27:06.665654Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:27:06.665668Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:27:09.874629Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:27:09.874650Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:27:16.465320Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:27:16.465340Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:27:43.079494Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:27:43.079507Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:27:48.374035Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:27:48.374055Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:27:56.666455Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:27:56.666478Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:28:16.775262Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:28:16.775280Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:28:20.571001Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:28:20.571025Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:28:25.267058Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:28:25.267077Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:29:08.674696Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:29:08.674719Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:29:25.174841Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:29:25.174858Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:29:30.371499Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:29:30.371519Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:30:57.371428Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:30:57.371446Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:30:58.367647Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:30:58.367660Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:31:15.869185Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:31:15.869201Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:32:30.174140Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:32:30.174158Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:33:00.266359Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:33:00.266379Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:33:01.371172Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:33:01.371186Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:33:26.469645Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\tailwind.config.ts")}
+2024-07-25T02:33:26.469660Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:36:22.267785Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:36:22.267799Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:39:40.866699Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:39:40.866718Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:42:04.876865Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:42:04.876879Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:44:25.571785Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:44:25.571802Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:47:46.265859Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:47:46.265874Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:47:51.564142Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:47:51.564156Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:48:09.672143Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:48:09.672188Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:50:38.963953Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:50:38.963972Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:50:39.472698Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:50:39.472711Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:50:39.969865Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:50:39.969880Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:58:16.669401Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:58:16.669415Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:58:17.068024Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:58:17.068045Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:58:17.674175Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T02:58:17.674193Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T02:58:24.066252Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:58:24.066268Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:58:29.368260Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:58:29.368281Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T02:58:33.776524Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps\\www\\src\\components\\site-hero.astro")}
+2024-07-25T02:58:33.776541Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@kanpeki/www"), path: AnchoredSystemPathBuf("apps\\www") }}))
+2024-07-25T03:01:15.964807Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T03:01:15.964821Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2024-07-25T03:03:22.178133Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2024-07-25T03:03:22.178148Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))

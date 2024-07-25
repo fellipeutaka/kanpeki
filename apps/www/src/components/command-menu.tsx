@@ -3,6 +3,7 @@ import { mainNav, sidebarNav } from "~/config/docs";
 import { Button } from "./ui/button";
 import { Command } from "./ui/command";
 import { Icons } from "./ui/icons";
+import { ScrollArea } from "./ui/scroll-area";
 
 export function CommandMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,62 +48,69 @@ export function CommandMenu() {
       </Button>
       <Command.Dialog isOpen={isOpen} onOpenChange={setIsOpen}>
         <Command.Input placeholder="Type a command or search..." />
-        <Command.List>
-          <Command.Empty>No results found.</Command.Empty>
-          <Command.Group heading="Links">
-            {mainNav.map((navItem) => (
-              <Command.Item
-                key={navItem.href}
-                value={navItem.title}
-                onSelect={() => {
-                  setIsOpen(false);
-                }}
-                asChild
-              >
-                <a href={navItem.href}>
-                  <Icons.File className="mr-2 size-4" />
-                  {navItem.title}
-                </a>
-              </Command.Item>
-            ))}
-          </Command.Group>
-          {sidebarNav.map((group) => (
-            <Command.Group key={group.title} heading={group.title}>
-              {group.items.map((navItem) => (
-                <Command.Item
-                  key={navItem.href}
-                  value={navItem.title}
-                  onSelect={() => {
-                    setIsOpen(false);
-                  }}
-                  asChild
-                >
-                  <a href={navItem.href}>
-                    <div className="mr-2 flex size-4 items-center justify-center">
-                      <Icons.Circle className="size-3" />
-                    </div>
-                    {navItem.title}
-                  </a>
-                </Command.Item>
+        <ScrollArea.Root>
+          <ScrollArea.Viewport className="h-[18.75rem]">
+            <Command.List className="max-h-full">
+              <Command.Empty>No results found.</Command.Empty>
+              <Command.Group heading="Links">
+                {mainNav.map((navItem) => (
+                  <Command.Item
+                    key={navItem.href}
+                    value={navItem.title}
+                    onSelect={() => {
+                      setIsOpen(false);
+                    }}
+                    asChild
+                  >
+                    <a href={navItem.href}>
+                      <Icons.File className="mr-2 size-4" />
+                      {navItem.title}
+                    </a>
+                  </Command.Item>
+                ))}
+              </Command.Group>
+              {sidebarNav.map((group) => (
+                <Command.Group key={group.title} heading={group.title}>
+                  {group.items.map((navItem) => (
+                    <Command.Item
+                      key={navItem.href}
+                      value={navItem.title}
+                      onSelect={() => {
+                        setIsOpen(false);
+                      }}
+                      asChild
+                    >
+                      <a href={navItem.href}>
+                        <div className="mr-2 flex size-4 items-center justify-center">
+                          <Icons.Circle className="size-3" />
+                        </div>
+                        {navItem.title}
+                      </a>
+                    </Command.Item>
+                  ))}
+                </Command.Group>
               ))}
-            </Command.Group>
-          ))}
-          <Command.Separator />
-          <Command.Group heading="Theme">
-            <Command.Item onSelect={() => setTheme("light")}>
-              <Icons.Sun className="mr-2 size-4" />
-              Light
-            </Command.Item>
-            <Command.Item onSelect={() => setTheme("dark")}>
-              <Icons.Moon className="mr-2 size-4" />
-              Dark
-            </Command.Item>
-            <Command.Item onSelect={() => setTheme("system")}>
-              <Icons.Laptop className="mr-2 size-4" />
-              System
-            </Command.Item>
-          </Command.Group>
-        </Command.List>
+              <Command.Separator />
+              <Command.Group heading="Theme">
+                <Command.Item onSelect={() => setTheme("light")}>
+                  <Icons.Sun className="mr-2 size-4" />
+                  Light
+                </Command.Item>
+                <Command.Item onSelect={() => setTheme("dark")}>
+                  <Icons.Moon className="mr-2 size-4" />
+                  Dark
+                </Command.Item>
+                <Command.Item onSelect={() => setTheme("system")}>
+                  <Icons.Laptop className="mr-2 size-4" />
+                  System
+                </Command.Item>
+              </Command.Group>
+            </Command.List>
+          </ScrollArea.Viewport>
+          <ScrollArea.Scrollbar orientation="vertical">
+            <ScrollArea.Thumb />
+          </ScrollArea.Scrollbar>
+        </ScrollArea.Root>
       </Command.Dialog>
     </>
   );

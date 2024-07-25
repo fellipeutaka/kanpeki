@@ -1,6 +1,7 @@
 ---
 import SiteFooter from "~/components/site-footer.astro";
 import SiteHeader from "~/components/site-header.astro";
+
 import "~/styles/globals.css";
 
 import "@fontsource/geist-sans/400.css";
@@ -31,7 +32,7 @@ import "@fontsource/geist-mono";
     <meta name="generator" content={Astro.generator} />
     <title>Kanpeki</title>
   </head>
-  <body class="relative flex min-h-screen flex-col bg-background">
+  <body class="relative grid grid-rows-[auto,1fr,auto] min-h-dvh bg-background">
     <SiteHeader />
     <slot />
     <SiteFooter />

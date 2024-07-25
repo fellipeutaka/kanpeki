@@ -60,4 +60,7 @@ export default {
     },
   },
   plugins: [tailwindcssAnimate],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 } satisfies Config;

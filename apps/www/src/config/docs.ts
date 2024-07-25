@@ -1,7 +1,7 @@
 export const mainNav = [
   {
     title: "Docs",
-    href: "/docs",
+    href: "/docs/introduction",
   },
   {
     title: "Components",
@@ -18,7 +18,7 @@ export const sidebarNav = [
     items: [
       {
         title: "Introduction",
-        href: "/docs",
+        href: "/docs/introduction",
       },
     ],
   },

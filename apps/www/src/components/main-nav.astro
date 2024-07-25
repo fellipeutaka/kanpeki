@@ -9,12 +9,12 @@ import { Icons } from "./ui/icons";
     <Icons.Logo className="size-6" />
     <span class="hidden font-bold lg:block">{siteConfig.name}</span>
   </a>
-  <nav class="flex items-center gap-4 text-sm lg:gap-6" id="main-nav">
+  <nav id="main-nav" class="flex items-center gap-4 text-sm lg:gap-6">
     {
       mainNav.map((link) => (
         <a
           href={link.href}
-          class="transition hover:text-foreground/80 data-[active=false]:text-foreground/60"
+          class="text-foreground/60 transition hover:text-foreground/80 data-[active=true]:text-foreground"
         >
           {link.title}
         </a>
@@ -24,7 +24,7 @@ import { Icons } from "./ui/icons";
 </div>
 
 <script>
-  const links = document.querySelectorAll<HTMLAnchorElement>("nav#main-nav a")!;
+  const links = document.querySelectorAll<HTMLAnchorElement>("nav#main-nav a");
 
   links.forEach((link) => {
     link.setAttribute(

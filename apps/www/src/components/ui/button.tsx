@@ -107,5 +107,3 @@ export function Button({
     />
   );
 }
-
-Button.displayName = "Button";
