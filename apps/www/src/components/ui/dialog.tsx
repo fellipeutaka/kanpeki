@@ -164,7 +164,7 @@ export function DialogPortal(props: DialogPortalProps) {
   const { overlayTriggerState, modalRef } = useDialogRootContext();
   const isModalExiting = useExitAnimation(modalRef, overlayTriggerState.isOpen);
 
-  if (!overlayTriggerState.isOpen && !isModalExiting) {
+  if (!(overlayTriggerState.isOpen || isModalExiting)) {
     return null;
   }
 
@@ -210,7 +210,7 @@ export function DialogContent({ className, ...props }: DialogContentProps) {
   let children = props.children;
   if (typeof children === "function") {
     children = children({
-      close: overlayTriggerState.close || (() => {}),
+      close: overlayTriggerState.close || (() => null),
     });
   }
 

@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "ignore": [".astro", "dist", "node_modules"]
+    "ignore": [".astro", ".vercel", "dist", "node_modules"]
   },
   "organizeImports": {
     "enabled": true
@@ -17,7 +17,21 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "all": true,
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "error",
+          "options": {
+            "functions": ["clsx", "twMerge", "cn", "tv"]
+          }
+        }
+      },
+      "style": {
+        "useNamingConvention": "off",
+        "noImplicitBoolean": "off",
+        "useFilenamingConvention": "off"
+      }
     }
   },
   "overrides": [
@@ -27,6 +41,18 @@
         "rules": {
           "style": {
             "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUndeclaredVariables": "off",
+            "noUnusedVariables": "off"
           }
         }
       }

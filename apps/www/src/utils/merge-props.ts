@@ -24,6 +24,8 @@ type PropsArg = Record<string, any> | null | undefined;
  * For all other props, the last prop object overrides all previous ones.
  * @param args - Multiple sets of props to merge together.
  */
+
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: This function is complex by nature
 export function mergeProps<T extends PropsArg[]>(...args: T) {
   // Start with a base clone of the first argument. This is a lot faster than starting
   // with an empty object and adding properties as we go.

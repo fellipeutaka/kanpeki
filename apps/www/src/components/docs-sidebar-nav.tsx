@@ -14,7 +14,7 @@ export function DocsSidebarNav({ url }: DocsSidebarNavProps) {
       <ScrollArea.Viewport>
         {sidebarNav.map(({ title, items }) => (
           <div key={title} className="pb-4">
-            <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
+            <h4 className="mb-1 rounded-md px-2 py-1 font-semibold text-sm">
               {title}
             </h4>
             <SidebarItem items={items} pathname={pathname} />
@@ -51,7 +51,7 @@ function SidebarItem({ items, pathname }: SidebarItemProps) {
           {item.label && (
             <span
               className={cn(
-                "ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline",
+                "ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-[#000000] text-xs leading-none no-underline",
                 "group-hover:no-underline",
               )}
             >
