@@ -6,10 +6,6 @@ type Props = astroHTML.JSX.HTMLAttributes;
 const { props } = Astro;
 ---
 
-<Heading
-  {...props}
-  as="h2"
-  class="mt-10 border-b pb-1 font-semibold text-3xl tracking-tight first:mt-0"
->
+<Heading {...props} as="h1" class="mt-2 font-bold text-4xl tracking-tight">
   <slot />
 </Heading>

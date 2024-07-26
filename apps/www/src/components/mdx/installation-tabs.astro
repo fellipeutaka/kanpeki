@@ -1,0 +1,11 @@
+---
+import { TabsContent } from "../ui/tabs";
+import { InstallationTabsWrapper } from "./installation-tabs-wrapper";
+---
+
+<InstallationTabsWrapper client:load>
+  <TabsContent value="cli">
+    <slot name="cli" />
+  </TabsContent>
+  <slot name="manual" />
+</InstallationTabsWrapper>

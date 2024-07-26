@@ -11,7 +11,7 @@ export const CommandStyles = {
   }),
   Dialog: tv({
     base: [
-      "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5",
+      "[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3",
     ],
   }),
   Input: tv({
@@ -35,7 +35,7 @@ export const CommandStyles = {
     ],
   }),
   Separator: tv({
-    base: ["-mx-1 h-px bg-border"],
+    base: ["-mx-1 my-1 h-px bg-border"],
   }),
   Item: tv({
     base: [
@@ -63,7 +63,7 @@ export function CommandDialog({ children, ...props }: CommandDialogProps) {
       <Dialog.Portal>
         <Dialog.Overlay />
         <Dialog.Content className="overflow-hidden p-0">
-          <Cmdk className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+          <Cmdk className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3">
             {children}
           </Cmdk>
         </Dialog.Content>
@@ -78,7 +78,11 @@ export function CommandInput({ className, ...props }: CommandInputProps) {
   return (
     <div className="flex items-center border-b px-3">
       <Icons.Search className="mr-2 size-4 shrink-0 opacity-50" />
-      <Cmdk.Input {...props} className={CommandStyles.Input({ className })} />
+      <Cmdk.Input
+        autoFocus
+        {...props}
+        className={CommandStyles.Input({ className })}
+      />
     </div>
   );
 }

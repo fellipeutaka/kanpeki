@@ -14,12 +14,17 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     react(),
-    mdx(),
+    mdx({
+      shikiConfig: {
+        theme: "github-dark-default",
+      },
+    }),
   ],
   output: "static",
   adapter: vercel(),
   redirects: {
     "/github": "https://github.com/fellipeutaka/kanpeki",
     "/docs": "/docs/introduction",
+    "/docs/components": "/docs/components/button",
   },
 });

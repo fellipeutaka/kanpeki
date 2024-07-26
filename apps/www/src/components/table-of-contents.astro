@@ -1,0 +1,63 @@
+---
+import type { MarkdownHeading } from "astro";
+
+type Props = {
+  toc: MarkdownHeading[];
+};
+
+const { toc } = Astro.props;
+---
+
+<div class="space-y-4 sticky top-16 -mt-10 pt-4">
+  <p class="font-medium">On This Page</p>
+  <div id="toc" class="space-y-2">
+    {
+      toc.map((item) => (
+        <a
+          href={`#${item.slug}`}
+          data-active={false}
+          class:list={[
+            "block text-muted-foreground no-underline transition-colors hover:text-foreground",
+            "hover:text-foreground",
+            "data-[active=true]:text-foreground data-[active=true]:font-medium",
+          ]}
+          style={
+            item.depth > 1
+              ? {
+                  marginLeft: `${item.depth - 2}rem`,
+                }
+              : null
+          }
+        >
+          {item.text}
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<script is:inline define:vars={{ toc }}>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const tocLink = document.querySelector(
+          `div#toc a[href="#${entry.target.id}"]`
+        );
+
+        if (entry.isIntersecting) {
+          tocLink.setAttribute("data-active", "true");
+        } else {
+          tocLink.setAttribute("data-active", "false");
+        }
+      }
+    },
+    { rootMargin: "0% 0% -80% 0%" }
+  );
+
+  const sectionHeadings = toc.map((item) => document.getElementById(item.slug));
+  console.log(sectionHeadings);
+
+  for (const heading of sectionHeadings) {
+    observer.observe(heading);
+  }
+</script>

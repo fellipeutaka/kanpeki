@@ -1,6 +1,9 @@
 ---
-import { DocsSidebarNav } from "~/components/docs-sidebar-nav";
+import { DocsSidebarNavWrapper } from "~/components/docs-sidebar-nav-wrapper";
+import { sidebarNav } from "~/config/docs";
 import RootLayout from "./root.astro";
+
+import "~/styles/mdx.css";
 ---
 
 <RootLayout>
@@ -9,11 +12,50 @@ import RootLayout from "./root.astro";
       class="container md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
     >
       <aside
-        class="fixed top-14 z-30 -ml-2 hidden h-[calc(100dvh-3.5rem)] w-full shrink-0 md:sticky md:block"
+        id="docs-sidebar"
+        class="fixed top-16 z-30 -ml-2 hidden h-[calc(100dvh-3.5rem)] w-full shrink-0 md:sticky md:block"
       >
-        <DocsSidebarNav url={Astro.url} client:load />
+        <DocsSidebarNavWrapper client:load>
+          {
+            sidebarNav.map(({ title, items }) => (
+              <div class="pb-4">
+                <h4 class="mb-1 rounded-md px-2 py-1 font-semibold text-sm">
+                  {title}
+                </h4>
+
+                <div class="grid grid-flow-row auto-rows-max text-sm">
+                  {items.map((item) => (
+                    <a
+                      href={item.href}
+                      class:list={[
+                        "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-foreground",
+                        "hover:underline",
+                        "data-[active=true]:font-medium data-[active=true]:text-foreground",
+                      ]}
+                    >
+                      {item.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </DocsSidebarNavWrapper>
       </aside>
       <slot />
     </div>
   </div>
 </RootLayout>
+
+<script>
+  const sidebarLinks = document.querySelectorAll<HTMLAnchorElement>(
+    "aside#docs-sidebar a"
+  );
+
+  sidebarLinks.forEach((link) => {
+    link.setAttribute(
+      "data-active",
+      String(window.location.pathname.startsWith(link.pathname))
+    );
+  });
+</script>

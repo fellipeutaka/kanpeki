@@ -1,0 +1,11 @@
+---
+import { TabsContent, type TabsContentProps } from "../ui/tabs";
+
+type Props = TabsContentProps;
+
+const { props } = Astro;
+---
+
+<TabsContent {...props} client:visible>
+  <slot />
+</TabsContent>

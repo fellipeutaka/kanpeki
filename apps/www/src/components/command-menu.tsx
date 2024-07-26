@@ -67,7 +67,7 @@ export function CommandMenu() {
                     asChild
                   >
                     <a href={navItem.href}>
-                      <Icons.File className="mr-2 size-4" />
+                      <Icons.File className="mr-2 size-5" />
                       {navItem.title}
                     </a>
                   </Command.Item>
@@ -79,15 +79,10 @@ export function CommandMenu() {
                     <Command.Item
                       key={navItem.href}
                       value={navItem.title}
-                      onSelect={() => {
-                        setIsOpen(false);
-                      }}
                       asChild
                     >
                       <a href={navItem.href}>
-                        <div className="mr-2 flex size-4 items-center justify-center">
-                          <Icons.Circle className="size-3" />
-                        </div>
+                        <Icons.Circle className="mr-2 size-5" />
                         {navItem.title}
                       </a>
                     </Command.Item>
@@ -97,15 +92,15 @@ export function CommandMenu() {
               <Command.Separator />
               <Command.Group heading="Theme">
                 <Command.Item onSelect={handleSetTheme("light")}>
-                  <Icons.Sun className="mr-2 size-4" />
+                  <Icons.Sun className="mr-2 size-5" />
                   Light
                 </Command.Item>
                 <Command.Item onSelect={handleSetTheme("dark")}>
-                  <Icons.Moon className="mr-2 size-4" />
+                  <Icons.Moon className="mr-2 size-5" />
                   Dark
                 </Command.Item>
                 <Command.Item onSelect={handleSetTheme("system")}>
-                  <Icons.Laptop className="mr-2 size-4" />
+                  <Icons.Laptop className="mr-2 size-5" />
                   System
                 </Command.Item>
               </Command.Group>

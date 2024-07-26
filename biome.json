@@ -23,7 +23,7 @@
           "fix": "safe",
           "level": "error",
           "options": {
-            "functions": ["clsx", "twMerge", "cn", "tv"]
+            "functions": ["clsx", "twMerge", "cn", "tv", "class:list"]
           }
         }
       },

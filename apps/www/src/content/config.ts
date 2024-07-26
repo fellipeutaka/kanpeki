@@ -5,6 +5,7 @@ export const docsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
   }),
+  type: "content",
 });
 
 export const collections = {

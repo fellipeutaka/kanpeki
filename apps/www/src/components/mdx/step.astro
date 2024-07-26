@@ -1,0 +1,12 @@
+---
+type Props = astroHTML.JSX.HTMLAttributes;
+
+const { props } = Astro;
+---
+
+<h3
+  {...props}
+  class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+>
+  <slot />
+</h3>

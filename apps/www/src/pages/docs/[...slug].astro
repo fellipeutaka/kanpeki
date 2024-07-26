@@ -1,0 +1,91 @@
+---
+import { getCollection } from "astro:content";
+import code from "~/components/mdx/code.astro";
+import h1 from "~/components/mdx/h1.astro";
+import h2 from "~/components/mdx/h2.astro";
+import h3 from "~/components/mdx/h3.astro";
+import h4 from "~/components/mdx/h4.astro";
+import h5 from "~/components/mdx/h5.astro";
+import h6 from "~/components/mdx/h6.astro";
+import InstallationTab from "~/components/mdx/installation-tab.astro";
+import InstallationTabs from "~/components/mdx/installation-tabs.astro";
+import li from "~/components/mdx/li.astro";
+import ol from "~/components/mdx/ol.astro";
+import p from "~/components/mdx/p.astro";
+import Step from "~/components/mdx/step.astro";
+import Steps from "~/components/mdx/steps.astro";
+import ul from "~/components/mdx/ul.astro";
+import TableOfContents from "~/components/table-of-contents.astro";
+import { Icons } from "~/components/ui/icons";
+import DocsLayout from "~/layouts/docs.astro";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("docs");
+
+  return docs.map((doc) => ({
+    params: {
+      slug: doc.slug,
+    },
+    props: {
+      doc,
+    },
+  }));
+}
+
+const { doc } = Astro.props;
+const { Content, headings } = await doc.render();
+---
+
+<DocsLayout>
+  <main
+    class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]"
+  >
+    <div class="mx-auto w-full min-w-0">
+      <div
+        class="mb-4 flex items-center space-x-1 text-sm leading-none text-muted-foreground"
+      >
+        <div class="truncate">Docs</div>
+        <Icons.ChevronRight className="size-3.5" />
+        <div class="text-foreground">{doc.data.title}</div>
+      </div>
+      <div class="space-y-2">
+        <h1 class="scroll-m-20 text-3xl font-bold tracking-tight">
+          {doc.data.title}
+        </h1>
+        {
+          doc.data.description && (
+            <p class="text-base text-muted-foreground text-balance">
+              {doc.data.description}
+            </p>
+          )
+        }
+      </div>
+      <Content
+        components={{
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          li,
+          ol,
+          p,
+          ul,
+          code,
+          Steps,
+          Step,
+          InstallationTabs,
+          InstallationTab,
+        }}
+      />
+    </div>
+    {
+      headings.length > 0 && (
+        <div class="hidden text-sm xl:block">
+          <TableOfContents toc={headings} />
+        </div>
+      )
+    }
+  </main>
+</DocsLayout>
