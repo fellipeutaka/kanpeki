@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "ignore": [".astro", ".vercel", "dist", "node_modules"]
+    "ignore": [".next", ".velite", "dist", "node_modules"]
   },
   "organizeImports": {
     "enabled": true
@@ -36,23 +36,28 @@
   },
   "overrides": [
     {
-      "include": ["**/*.config.ts", "**/*.config.js"],
+      "include": [
+        "apps/www/src/app/**/page.tsx",
+        "apps/www/src/app/**/layout.tsx",
+        "apps/www/src/app/**/template.tsx",
+        "apps/www/src/app/**/loading.tsx",
+        "apps/www/src/app/**/error.tsx",
+        "apps/www/src/app/**/not-found.tsx",
+        "apps/www/src/app/**/default.tsx",
+        "apps/www/src/app/**/icon.tsx",
+        "apps/www/src/app/**/apple-icon.tsx",
+        "apps/www/src/app/**/manifest.ts",
+        "apps/www/src/app/**/opengraph-image.tsx",
+        "apps/www/src/app/**/twitter-image.tsx",
+        "apps/www/src/app/**/robots.ts",
+        "apps/www/src/app/**/sitemap.ts",
+        "**/*.config.ts",
+        "**/*.config.js"
+      ],
       "linter": {
         "rules": {
           "style": {
             "noDefaultExport": "off"
-          }
-        }
-      }
-    },
-    {
-      "include": ["**/*.astro"],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noUnusedImports": "off",
-            "noUndeclaredVariables": "off",
-            "noUnusedVariables": "off"
           }
         }
       }

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   CheckboxItem,
   Content,
@@ -107,34 +109,48 @@ export const DropdownMenuSub = Sub;
 
 export const DropdownMenuRadioGroup = RadioGroup;
 
-export const DropdownMenuSubTrigger = forwardRef<
-  React.ElementRef<typeof SubTrigger>,
-  React.ComponentPropsWithoutRef<typeof SubTrigger> & {
-    inset?: boolean;
-  }
->(({ className, inset, children, ...props }, ref) => (
-  <SubTrigger
-    ref={ref}
-    className={DropdownMenuStyles.SubTrigger({ className, inset })}
-    {...props}
-  >
-    {children}
-    <Icons.ChevronRight className="ml-auto size-4" />
-  </SubTrigger>
-));
-DropdownMenuSubTrigger.displayName = SubTrigger.displayName;
+export type DropdownMenuSubTriggerProps = React.ComponentProps<
+  typeof SubTrigger
+> & {
+  inset?: boolean;
+};
 
-export const DropdownMenuSubContent = forwardRef<
-  React.ElementRef<typeof SubContent>,
-  React.ComponentPropsWithoutRef<typeof SubContent>
->(({ className, ...props }, ref) => (
-  <SubContent
-    ref={ref}
-    className={DropdownMenuStyles.SubContent({ className })}
-    {...props}
-  />
-));
-DropdownMenuSubContent.displayName = SubContent.displayName;
+export function DropdownMenuSubTrigger({
+  ref,
+  className,
+  inset,
+  children,
+  ...props
+}: DropdownMenuSubTriggerProps) {
+  return (
+    <SubTrigger
+      ref={ref}
+      className={DropdownMenuStyles.SubTrigger({ className, inset })}
+      {...props}
+    >
+      {children}
+      <Icons.ChevronRight className="ml-auto size-4" />
+    </SubTrigger>
+  );
+}
+
+export type DropdownMenuSubContentProps = React.ComponentProps<
+  typeof SubContent
+>;
+
+export function DropdownMenuSubContent({
+  ref,
+  className,
+  ...props
+}: DropdownMenuSubContentProps) {
+  return (
+    <SubContent
+      ref={ref}
+      className={DropdownMenuStyles.SubContent({ className })}
+      {...props}
+    />
+  );
+}
 
 export const DropdownMenuContent = forwardRef<
   React.ElementRef<typeof Content>,

@@ -1,12 +1,15 @@
+"use client";
+
 import { useFocusRing } from "@react-aria/focus";
 import { type AriaLinkOptions, useLink } from "@react-aria/link";
+import Link from "next/link";
 import { useRef } from "react";
 import type { VariantProps } from "tailwind-variants";
 import { mergeProps } from "~/utils/merge-props";
 import { mergeRefs } from "~/utils/merge-refs";
 import { ButtonStyles } from "./button";
 
-export type LinkButtonProps = React.ComponentProps<"a"> &
+export type LinkButtonProps = React.ComponentProps<typeof Link> &
   VariantProps<typeof ButtonStyles> &
   AriaLinkOptions & {
     disabled?: boolean;
@@ -46,7 +49,7 @@ export function LinkButton({
   });
 
   return (
-    <a
+    <Link
       {...mergeProps(linkProps, focusProps, props)}
       ref={mergeRefs([ref, forwardedRef])}
       data-pressed={isPressed}

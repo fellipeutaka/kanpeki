@@ -1,10 +1,14 @@
+"use client";
+
 import { PressResponder } from "@react-aria/interactions";
-import { setTheme } from "~/utils/theme";
+import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
 import { DropdownMenu } from "./ui/dropdown-menu";
 import { Icons } from "./ui/icons";
 
 export function ModeToggle() {
+  const { setTheme } = useTheme();
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>

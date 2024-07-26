@@ -1,6 +1,10 @@
+"use client";
+
+import { useTheme } from "next-themes";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { mainNav, sidebarNav } from "~/config/docs";
-import { type Theme, setTheme } from "~/utils/theme";
 import { Button } from "./ui/button";
 import { Command } from "./ui/command";
 import { Icons } from "./ui/icons";
@@ -8,6 +12,8 @@ import { ScrollArea } from "./ui/scroll-area";
 
 export function CommandMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const { setTheme } = useTheme();
+  const router = useRouter();
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -30,7 +36,14 @@ export function CommandMenu() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  function handleSetTheme(theme: Theme) {
+  function handleNavigate(href: string) {
+    return () => {
+      router.push(href);
+      setIsOpen(false);
+    };
+  }
+
+  function handleSetTheme(theme: string) {
     return () => {
       setIsOpen(false);
       setTheme(theme);
@@ -61,15 +74,13 @@ export function CommandMenu() {
                   <Command.Item
                     key={navItem.href}
                     value={navItem.title}
-                    onSelect={() => {
-                      setIsOpen(false);
-                    }}
+                    onSelect={handleNavigate(navItem.href)}
                     asChild
                   >
-                    <a href={navItem.href}>
-                      <Icons.File className="mr-2 size-4" />
+                    <Link href={navItem.href}>
+                      <Icons.File className="mr-2 size-5" />
                       {navItem.title}
-                    </a>
+                    </Link>
                   </Command.Item>
                 ))}
               </Command.Group>
@@ -79,17 +90,13 @@ export function CommandMenu() {
                     <Command.Item
                       key={navItem.href}
                       value={navItem.title}
-                      onSelect={() => {
-                        setIsOpen(false);
-                      }}
+                      onSelect={handleNavigate(navItem.href)}
                       asChild
                     >
-                      <a href={navItem.href}>
-                        <div className="mr-2 flex size-4 items-center justify-center">
-                          <Icons.Circle className="size-3" />
-                        </div>
+                      <Link href={navItem.href}>
+                        <Icons.Circle className="mr-2 size-5" />
                         {navItem.title}
-                      </a>
+                      </Link>
                     </Command.Item>
                   ))}
                 </Command.Group>
@@ -97,15 +104,15 @@ export function CommandMenu() {
               <Command.Separator />
               <Command.Group heading="Theme">
                 <Command.Item onSelect={handleSetTheme("light")}>
-                  <Icons.Sun className="mr-2 size-4" />
+                  <Icons.Sun className="mr-2 size-5" />
                   Light
                 </Command.Item>
                 <Command.Item onSelect={handleSetTheme("dark")}>
-                  <Icons.Moon className="mr-2 size-4" />
+                  <Icons.Moon className="mr-2 size-5" />
                   Dark
                 </Command.Item>
                 <Command.Item onSelect={handleSetTheme("system")}>
-                  <Icons.Laptop className="mr-2 size-4" />
+                  <Icons.Laptop className="mr-2 size-5" />
                   System
                 </Command.Item>
               </Command.Group>

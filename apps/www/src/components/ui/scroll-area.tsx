@@ -1,3 +1,5 @@
+"use client";
+
 import { Root, Scrollbar, Thumb, Viewport } from "@radix-ui/react-scroll-area";
 import { tv } from "tailwind-variants";
 

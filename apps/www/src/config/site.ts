@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "kanpeki",
+  name: "Kanpeki",
   url: "https://kanpeki.vercel.app",
   ogImage: "https://kanpeki.vercel.app/og.jpg",
   description:

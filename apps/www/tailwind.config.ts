@@ -3,7 +3,7 @@ import tailwindcssAnimate from "tailwindcss-animate";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  content: ["./src/**/*.{astro,html,md,mdx,ts,tsx}"],
+  content: ["./src/**/*.{md,mdx,ts,tsx}"],
   darkMode: "class",
   theme: {
     extend: {
@@ -55,8 +55,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Geist Sans", ...fontFamily.sans],
-        mono: ["Geist Mono", ...fontFamily.mono],
+        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        mono: ["var(--font-geist-mono)", ...fontFamily.mono],
       },
     },
   },

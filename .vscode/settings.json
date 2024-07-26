@@ -1,10 +1,13 @@
 {
   "cSpell.words": [
-    "astrojs",
     "biomejs",
-    "fontsource",
+    "clsx",
+    "cmdk",
     "kanpeki",
-    "tailwindcss"
+    "rehype",
+    "tailwindcss",
+    "velite"
   ],
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
