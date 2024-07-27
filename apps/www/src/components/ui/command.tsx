@@ -83,7 +83,15 @@ export function CommandInput({ className, ...props }: CommandInputProps) {
       <Cmdk.Input
         autoFocus
         {...props}
-        className={CommandStyles.Input({ className })}
+        className={CommandStyles.Input({
+          className: [className, "max-sm:hidden"],
+        })}
+      />
+      <Cmdk.Input
+        {...props}
+        className={CommandStyles.Input({
+          className: [className, "sm:hidden"],
+        })}
       />
     </div>
   );

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXContent } from "~/components/mdx";
 import { Icons } from "~/components/ui/icons";
+import { DocsPager } from "./_components/docs-pager";
 import { TableOfContents } from "./_components/table-of-contents";
 
 async function getDocFromParams(params: PageProps["params"]) {
@@ -78,7 +79,36 @@ export default async function Page({ params }: PageProps) {
             {doc.description}
           </p>
         </div>
-        <MDXContent code={doc.content} />
+        {/* {doc.links ? (
+          <div className="flex items-center space-x-2 pt-4">
+            {doc.links?.doc && (
+              <Link
+                href={doc.links.doc}
+                target="_blank"
+                rel="noreferrer"
+                className={cn(badgeVariants({ variant: "secondary" }), "gap-1")}
+              >
+                Docs
+                <ExternalLinkIcon className="h-3 w-3" />
+              </Link>
+            )}
+            {doc.links?.api && (
+              <Link
+                href={doc.links.api}
+                target="_blank"
+                rel="noreferrer"
+                className={cn(badgeVariants({ variant: "secondary" }), "gap-1")}
+              >
+                API Reference
+                <ExternalLinkIcon className="h-3 w-3" />
+              </Link>
+            )}
+          </div>
+        ) : null} */}
+        <div className="pt-8 pb-12">
+          <MDXContent code={doc.content} />
+        </div>
+        <DocsPager doc={doc} />
       </div>
       {doc.toc.length > 0 && (
         <div className="hidden text-sm xl:block">

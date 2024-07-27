@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { mainNav } from "~/config/docs";
+import { docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
 import { Icons } from "./ui/icons";
 
@@ -16,7 +16,7 @@ export function MainNav() {
         <span className="hidden font-bold lg:block">{siteConfig.name}</span>
       </Link>
       <nav id="main-nav" className="flex items-center gap-4 text-sm lg:gap-6">
-        {mainNav.map((link) => (
+        {docsConfig.mainNav.map((link) => (
           <Link
             key={link.href}
             href={link.href}

@@ -1,0 +1,49 @@
+---
+title: Card
+description: Displays a card with header, content, and footer.
+---
+
+<ComponentPreview name="card-with-form" />
+
+## Installation
+
+<InstallationTabs>
+  <InstallationTab value="cli">
+    ```bash
+    npx kanpeki-ui@latest add card
+    ```
+  </InstallationTab>
+  <InstallationTab value="manual">
+    <Steps>
+      <Step>Copy and paste the following code into your project.</Step>
+      {/* <ComponentSource name="card" /> */}
+      <Step>Update the import paths to match your project setup.</Step>
+      </Steps>
+
+  </InstallationTab>
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { Card } from "@/components/ui/card";
+```
+
+```tsx
+<Card.Root>
+  <Card.Header>
+    <Card.Title>Card Title</Card.Title>
+    <Card.Description>Card Description</Card.Description>
+  </Card.Header>
+  <Card.Content>
+    <p>Card Content</p>
+  </Card.Content>
+  <Card.Footer>
+    <p>Card Footer</p>
+  </Card.Footer>
+</Card.Root>
+```
+
+## Examples
+
+<ComponentPreview name="card-demo" />

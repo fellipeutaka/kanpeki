@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { mainNav, sidebarNav } from "~/config/docs";
+import { docsConfig } from "~/config/docs";
 import { Button } from "./ui/button";
 import { Command } from "./ui/command";
 import { Icons } from "./ui/icons";
@@ -70,7 +70,7 @@ export function CommandMenu() {
             <Command.List className="max-h-full">
               <Command.Empty>No results found.</Command.Empty>
               <Command.Group heading="Links">
-                {mainNav.map((navItem) => (
+                {docsConfig.mainNav.map((navItem) => (
                   <Command.Item
                     key={navItem.href}
                     value={navItem.title}
@@ -84,9 +84,9 @@ export function CommandMenu() {
                   </Command.Item>
                 ))}
               </Command.Group>
-              {sidebarNav.map((group) => (
+              {docsConfig.sidebarNav.map((group) => (
                 <Command.Group key={group.title} heading={group.title}>
-                  {group.items.map((navItem) => (
+                  {group.items?.map((navItem) => (
                     <Command.Item
                       key={navItem.href}
                       value={navItem.title}
