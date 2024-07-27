@@ -17,7 +17,7 @@ export function Step({ className, ...props }: React.ComponentProps<"h3">) {
     <h3
       {...props}
       className={cn(
-        "mt-8 scroll-m-20 font-heading font-semibold text-xl tracking-tight",
+        "step mt-8 scroll-m-20 font-heading font-semibold text-xl tracking-tight",
         className,
       )}
     />

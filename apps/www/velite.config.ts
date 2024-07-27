@@ -1,7 +1,11 @@
-import rehypePrettyCode from "rehype-pretty-code";
+import rehypePrettyCode, {
+  type Options as RehypePrettyCodeOptions,
+} from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 
 import { defineCollection, defineConfig, s } from "velite";
+import { rehypeRawCommand } from "~/lib/rehype-command";
+import { rehypeRawString } from "~/lib/rehype-raw-string";
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
@@ -33,10 +37,28 @@ export default defineConfig({
       rehypeSlug,
       [
         rehypePrettyCode,
-        { theme: "github-dark-default" } satisfies Parameters<
-          typeof rehypePrettyCode
-        >[0],
+        {
+          theme: {
+            light: "github-light-default",
+            dark: "github-dark-default",
+          },
+          onVisitLine(node) {
+            // Prevent lines from collapsing in `display: grid` mode, and allow empty
+            // lines to be copy/pasted
+            if (node.children.length === 0) {
+              node.children = [{ type: "text", value: " " }];
+            }
+          },
+          onVisitHighlightedLine(node) {
+            node?.properties.className?.push("line--highlighted");
+          },
+          onVisitHighlightedChars(node) {
+            node.properties.className = ["word--highlighted"];
+          },
+        } satisfies RehypePrettyCodeOptions,
       ],
+      rehypeRawString,
+      rehypeRawCommand,
     ],
   },
 });

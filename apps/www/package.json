@@ -24,18 +24,21 @@
     "next": "15.0.0-rc.0",
     "next-themes": "^0.3.0",
     "react": "19.0.0-rc-f994737d14-20240522",
-    "react-dom": "19.0.0-rc-f994737d14-20240522"
+    "react-dom": "19.0.0-rc-f994737d14-20240522",
+    "sonner": "^1.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "clsx": "^2.1.1",
+    "hast-util-to-text": "^4.0.2",
     "postcss": "^8.4.40",
     "rehype-pretty-code": "^0.13.2",
     "rehype-slug": "^6.0.0",
     "tailwind-variants": "^0.2.1",
     "tailwindcss": "^3.4.7",
     "tailwindcss-animate": "^1.0.7",
+    "unist-util-visit": "^5.0.0",
     "velite": "^0.1.1"
   }
 }

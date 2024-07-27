@@ -12,7 +12,7 @@ interface InstallationTabsProps {
 
 export function InstallationTabs({ children }: InstallationTabsProps) {
   return (
-    <TabsRoot defaultValue="manual">
+    <TabsRoot defaultValue="manual" className="mt-6">
       <TabsList>
         <TabsTrigger value="manual">Manual</TabsTrigger>
         <TabsTrigger value="cli" disabled>

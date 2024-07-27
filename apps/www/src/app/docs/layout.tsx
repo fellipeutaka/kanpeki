@@ -1,6 +1,5 @@
-import { DocsSidebar } from "~/components/docs-sidebar";
-
 import "~/styles/mdx.css";
+import { DocsSidebar } from "./[[...slug]]/_components/docs-sidebar";
 
 interface LayoutProps {
   children: React.ReactNode;

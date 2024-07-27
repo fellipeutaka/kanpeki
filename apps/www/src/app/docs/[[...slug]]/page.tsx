@@ -2,8 +2,8 @@ import { docs } from "~:content";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXContent } from "~/components/mdx";
-import { TableOfContents } from "~/components/table-of-contents";
 import { Icons } from "~/components/ui/icons";
+import { TableOfContents } from "./_components/table-of-contents";
 
 async function getDocFromParams(params: PageProps["params"]) {
   const slug = params.slug?.join("/");

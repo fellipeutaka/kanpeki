@@ -1,6 +1,7 @@
 // biome-ignore lint/style/noNamespaceImport: This is needed for MDX to work
 import * as runtime from "react/jsx-runtime";
 import { cn } from "~/utils/cn";
+import { ComponentPreview } from "./component-preview";
 import { Heading } from "./heading";
 import { InstallationTab, InstallationTabs } from "./installation-tabs-wrapper";
 import { Pre } from "./pre";
@@ -113,7 +114,7 @@ const components = {
   code: ({ className, ...props }: React.ComponentProps<"code">) => (
     <code
       className={cn(
-        "relative rounded border px-1 py-0.5 font-mono text-sm",
+        "relative rounded px-1 py-0.5 font-mono text-sm",
         className,
       )}
       {...props}
@@ -122,6 +123,7 @@ const components = {
   pre: Pre,
 
   // Custom Components
+  ComponentPreview,
   InstallationTabs,
   InstallationTab,
   Steps,

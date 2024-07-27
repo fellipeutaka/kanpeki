@@ -1,69 +1,39 @@
-[data-theme="light"] {
-  display: block;
+.shiki span {
+  color: var(--shiki-light);
 }
 
-[data-theme="dark"] {
-  display: none;
+.dark:root {
+  .shiki span {
+    color: var(--shiki-dark);
+  }
 }
 
-.dark [data-theme="light"] {
-  display: none;
+
+pre.shiki .line {
+  font-size: 13px;
+  padding: 0 theme(spacing.4);
 }
 
-.dark [data-theme="dark"] {
-  display: block;
-}
-
-[data-rehype-pretty-code-fragment] {
-  @apply relative text-white;
-}
-
-[data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0;
-  counter-reset: line;
-  box-decoration-break: clone;
-}
-
-[data-rehype-pretty-code-fragment] .line {
-  @apply px-4 min-h-[1rem] py-0.5 w-full inline-block;
-}
-
-[data-rehype-pretty-code-fragment] [data-line-numbers] .line {
-  @apply px-2;
-}
-
-[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
-  @apply text-zinc-50/40 text-xs;
-  counter-increment: line;
-  content: counter(line);
+pre.shiki .highlighted {
+  width: 100%;
   display: inline-block;
-  width: 1.8rem;
-  margin-right: 1.4rem;
-  text-align: right;
+  background-color: theme('colors.primary.DEFAULT / 10%');
 }
 
-[data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-zinc-700/50;
-}
+.task-list-item {
+  list-style: none;
+  
 
-[data-rehype-pretty-code-fragment] .line-highlighted span {
-  @apply relative;
-}
+  [role="checkbox"] {
+    margin-left: -1.5rem;
+    vertical-align: middle;
+    display: inline-flex;
+  }
 
-[data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply rounded-md bg-zinc-700/50 border-zinc-700/70 p-1;
-}
-
-.dark [data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply bg-zinc-900;
-}
-
-[data-rehype-pretty-code-title] {
-  @apply mt-2 pt-6 px-4 text-sm font-medium text-foreground;
-}
-
-[data-rehype-pretty-code-title] + pre {
-  @apply mt-2;
+  .contains-task-list {
+    margin-block: 0.5rem;
+    margin-left: 1rem;
+  }
 }
 
 .mdx > .steps:first-child > h3:first-child {
@@ -72,4 +42,23 @@
 
 .steps > h3 {
   @apply mt-8 mb-4 text-base font-semibold;
+}
+
+.step {
+  counter-increment: step;
+}
+
+.step:before {
+  @apply absolute size-9 bg-muted rounded-full font-mono font-light grid place-content-center -indent-px border-4 border-background;
+  @apply ml-[-50px] -mt-1;
+  content: counter(step);
+}
+
+.chunk-container {
+  @apply shadow-none;
+}
+
+.chunk-container::after {
+  content: "";
+  @apply absolute -inset-4 shadow-xl rounded-xl border;
 }

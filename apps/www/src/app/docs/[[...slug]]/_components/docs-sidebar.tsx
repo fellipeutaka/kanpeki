@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { sidebarNav } from "~/config/docs";
 import { cn } from "~/utils/cn";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea } from "../../../../components/ui/scroll-area";
 
 export function DocsSidebar() {
   const pathname = usePathname();
