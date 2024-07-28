@@ -19,6 +19,10 @@ export const docsConfig: DocsConfig = {
           title: "Introduction",
           href: "/docs/introduction",
         },
+        {
+          title: "Installation",
+          href: "/docs/installation",
+        },
       ],
     },
     {
@@ -27,10 +31,12 @@ export const docsConfig: DocsConfig = {
         {
           title: "Alert",
           href: "/docs/components/alert",
+          disabled: true,
         },
         {
           title: "Avatar",
           href: "/docs/components/avatar",
+          disabled: true,
         },
         {
           title: "Badge",
@@ -47,50 +53,62 @@ export const docsConfig: DocsConfig = {
         {
           title: "Checkbox",
           href: "/docs/components/checkbox",
+          disabled: true,
         },
         {
           title: "Command",
           href: "/docs/components/command",
+          disabled: true,
         },
         {
           title: "Dialog",
           href: "/docs/components/dialog",
+          disabled: true,
         },
         {
           title: "Label",
           href: "/docs/components/label",
+          disabled: true,
         },
         {
           title: "Scroll Area",
           href: "/docs/components/scroll-area",
+          disabled: true,
         },
         {
           title: "Separator",
           href: "/docs/components/separator",
+          disabled: true,
         },
         {
           title: "Skeleton",
           href: "/docs/components/skeleton",
+          disabled: true,
         },
         {
           title: "Switch",
           href: "/docs/components/switch",
+          disabled: true,
         },
         {
           title: "Table",
           href: "/docs/components/table",
+          disabled: true,
         },
         {
           title: "Tabs",
           href: "/docs/components/tabs",
+          disabled: true,
         },
         {
           title: "TextArea",
           href: "/docs/components/textarea",
+          disabled: true,
         },
         {
           title: "TextField",
           href: "/docs/components/toast",
+          disabled: true,
         },
       ],
     },

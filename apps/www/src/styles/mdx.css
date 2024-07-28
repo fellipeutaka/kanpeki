@@ -1,38 +1,19 @@
-.shiki span {
-  color: var(--shiki-light);
-}
-
 .dark:root {
   .shiki span {
     color: var(--shiki-dark);
   }
 }
 
-
-pre.shiki .line {
-  font-size: 13px;
-  padding: 0 theme(spacing.4);
-}
-
-pre.shiki .highlighted {
-  width: 100%;
-  display: inline-block;
-  background-color: theme('colors.primary.DEFAULT / 10%');
-}
-
-.task-list-item {
-  list-style: none;
-  
-
-  [role="checkbox"] {
-    margin-left: -1.5rem;
-    vertical-align: middle;
-    display: inline-flex;
+.shiki {
+  span {
+    /* color: light-dark(var(--shiki-light), var(--shiki-dark)); */
+    color: var(--shiki-light);
   }
-
-  .contains-task-list {
-    margin-block: 0.5rem;
-    margin-left: 1rem;
+  .line {
+    @apply px-2;
+  }
+  code {
+    @apply grid;
   }
 }
 
@@ -42,23 +23,11 @@ pre.shiki .highlighted {
 
 .steps > h3 {
   @apply mt-8 mb-4 text-base font-semibold;
-}
-
-.step {
   counter-increment: step;
-}
 
-.step:before {
-  @apply absolute size-9 bg-muted rounded-full font-mono font-light grid place-content-center -indent-px border-4 border-background;
-  @apply ml-[-50px] -mt-1;
-  content: counter(step);
-}
-
-.chunk-container {
-  @apply shadow-none;
-}
-
-.chunk-container::after {
-  content: "";
-  @apply absolute -inset-4 shadow-xl rounded-xl border;
+  &::before {
+    @apply absolute size-9 bg-muted rounded-full font-mono font-light grid place-content-center -indent-px border-4 border-background;
+    @apply ml-[-50px] -mt-1;
+    content: counter(step);
+  }
 }

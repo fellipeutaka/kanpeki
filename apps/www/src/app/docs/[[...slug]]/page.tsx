@@ -1,7 +1,7 @@
 import { docs } from "~:content";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MDXContent } from "~/components/mdx";
+import { MDXContent } from "~/components/mdx/mdx-content";
 import { Icons } from "~/components/ui/icons";
 import { DocsPager } from "./_components/docs-pager";
 import { TableOfContents } from "./_components/table-of-contents";
@@ -105,7 +105,7 @@ export default async function Page({ params }: PageProps) {
             )}
           </div>
         ) : null} */}
-        <div className="pt-8 pb-12">
+        <div className="mdx pt-8 pb-12">
           <MDXContent code={doc.content} />
         </div>
         <DocsPager doc={doc} />

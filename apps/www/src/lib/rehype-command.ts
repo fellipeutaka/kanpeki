@@ -7,7 +7,7 @@ export interface Commands {
   bun: string;
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: Banana
+// biome-ignore lint/suspicious/noExplicitAny: any is used to satisfy the RehypePlugin type
 export const rehypeRawCommand = () => (tree: any) => {
   visit(tree, (node) => {
     if (node.type !== "element" || node?.tagName !== "pre") {

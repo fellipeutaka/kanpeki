@@ -2,41 +2,36 @@ import { cn } from "~/utils/cn";
 import { type IconProps, Icons } from "./ui/icons";
 
 interface LanguageIconProps extends IconProps {
-  lang: string;
+  title: string;
+  language: string;
 }
 
-export function LanguageIcon({ lang, className, ...props }: LanguageIconProps) {
-  switch (lang) {
-    case "js": {
-      return (
-        <Icons.JavaScript className={cn("size-3.5", className)} {...props} />
-      );
-    }
+const languageIconMap = new Map([
+  ["js", Icons.JavaScript],
+  ["ts", Icons.TypeScript],
+  ["jsx", Icons.React],
+  ["tsx", Icons.React],
+  ["mdx", Icons.Mdx],
+  ["bash", Icons.Terminal],
+  ["sh", Icons.Terminal],
+  ["shell", Icons.Terminal],
+  ["zsh", Icons.Terminal],
+  ["json", Icons.Json],
+  ["css", Icons.Css],
+]);
 
-    case "ts": {
-      return (
-        <Icons.TypeScript className={cn("size-3.5", className)} {...props} />
-      );
-    }
-
-    case "jsx":
-    case "tsx": {
-      return <Icons.React className={cn("size-3.5", className)} {...props} />;
-    }
-
-    case "mdx": {
-      return <Icons.Mdx className={cn("size-3.5", className)} {...props} />;
-    }
-
-    case "bash":
-    case "sh":
-    case "shell":
-    case "zsh": {
-      return <Icons.Terminal className={cn("size-3.5", className)} />;
-    }
-
-    default: {
-      return <Icons.File className={cn("size-3.5", className)} {...props} />;
-    }
+export function LanguageIcon({
+  title,
+  language,
+  className,
+  ...props
+}: LanguageIconProps) {
+  if (title.startsWith("tailwind.config")) {
+    return (
+      <Icons.TailwindCSS className={cn("size-3.5", className)} {...props} />
+    );
   }
+
+  const IconComponent = languageIconMap.get(language) || Icons.File;
+  return <IconComponent className={cn("size-3.5", className)} {...props} />;
 }

@@ -1,19 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { docsConfig } from "~/config/docs";
-import { cn } from "~/utils/cn";
-import { ScrollArea } from "../../../../components/ui/scroll-area";
+import { tv } from "tailwind-variants";
+import { ScrollArea } from "~/components/ui/scroll-area";
+import { type NavLink, docsConfig } from "~/config/docs";
 
 export function DocsSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside
-      id="docs-sidebar"
-      className="-ml-2 fixed top-16 z-30 hidden h-[calc(100dvh-3.5rem)] w-full shrink-0 md:sticky md:block"
-    >
-      <ScrollArea.Root className="py-6 pr-6 lg:py-8">
+    <aside className="-ml-2 fixed top-16 z-30 hidden h-[calc(100dvh-3.5rem)] w-full shrink-0 md:sticky md:block">
+      <ScrollArea.Root className="h-full py-6 pr-6 [mask-image:linear-gradient(black_80%,transparent)] lg:py-8">
         <ScrollArea.Viewport>
           {docsConfig.sidebarNav.map(({ title, items }) => (
             <div key={title} className="pb-4">
@@ -22,18 +20,11 @@ export function DocsSidebar() {
               </h4>
               <div className="grid grid-flow-row auto-rows-max text-sm">
                 {items?.map((item) => (
-                  <a
+                  <DocsSidebarLink
                     key={item.href}
-                    href={item.href}
-                    data-active={pathname === item.href}
-                    className={cn(
-                      "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-foreground",
-                      "hover:underline",
-                      "data-[active=true]:font-medium data-[active=true]:text-foreground",
-                    )}
-                  >
-                    {item.title}
-                  </a>
+                    item={item}
+                    pathname={pathname}
+                  />
                 ))}
               </div>
             </div>
@@ -44,5 +35,42 @@ export function DocsSidebar() {
         </ScrollArea.Scrollbar>
       </ScrollArea.Root>
     </aside>
+  );
+}
+
+const SidebarLinkStyles = tv({
+  base: [
+    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-foreground",
+    "hover:underline",
+    "aria-disabled:cursor-not-allowed aria-disabled:select-none aria-disabled:opacity-50",
+  ],
+  variants: {
+    active: {
+      true: ["font-medium text-foreground"],
+    },
+  },
+});
+
+interface DocsSidebarLinkProps {
+  item: NavLink;
+  pathname: string;
+}
+
+function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
+  if (item.disabled) {
+    return (
+      <span aria-disabled className={SidebarLinkStyles()}>
+        {item.title}
+      </span>
+    );
+  }
+
+  return (
+    <Link
+      href={item.href}
+      className={SidebarLinkStyles({ active: pathname.includes(item.href) })}
+    >
+      {item.title}
+    </Link>
   );
 }

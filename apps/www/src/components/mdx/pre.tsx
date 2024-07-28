@@ -12,7 +12,7 @@ import {
 } from "./copy-button";
 
 interface PreProps extends React.ComponentProps<"pre"> {
-  "data-language"?: string;
+  "data-lang"?: string;
   rawString: string;
   npmCommand: string;
   yarnCommand: string;
@@ -23,7 +23,7 @@ interface PreProps extends React.ComponentProps<"pre"> {
 export function Pre({
   className,
   title,
-  "data-language": lang,
+  "data-lang": language,
   children,
   rawString,
   npmCommand,
@@ -44,12 +44,8 @@ export function Pre({
   return (
     <figure className="group relative my-6 max-w-[calc(100vw-4rem)] overflow-hidden rounded-lg border text-sm">
       {title ? (
-        <div className="flex flex-row items-center gap-2 border-b bg-muted px-4 py-1.5">
-          {lang && (
-            <div className="text-muted-foreground">
-              <LanguageIcon lang={lang} />
-            </div>
-          )}
+        <div className="flex flex-row items-center gap-2 border-b px-4 py-1.5">
+          {language && <LanguageIcon title={title} language={language} />}
           <figcaption className="flex-1 truncate text-muted-foreground">
             {title}
           </figcaption>
@@ -57,15 +53,15 @@ export function Pre({
         </div>
       ) : (
         <CopyBtn
-          className="absolute top-3 right-4 z-10"
+          className="absolute top-2.5 right-4 z-10"
           text={rawString}
           commands={commands}
         />
       )}
 
       <ScrollArea.Root>
-        <ScrollArea.Viewport>
-          <pre className={cn("shiki px-2 py-4", className)} {...props}>
+        <ScrollArea.Viewport className="max-h-[40rem]">
+          <pre className={cn("py-4", className)} {...props}>
             {children}
           </pre>
         </ScrollArea.Viewport>

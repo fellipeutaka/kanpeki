@@ -21,9 +21,11 @@ function getPagerForDoc(doc: Doc) {
 }
 
 function flatten(links: SidebarNavItem[]): SidebarNavItem[] {
-  return links.reduce<SidebarNavItem[]>((flat, link) => {
-    return flat.concat(link.items ? flatten(link.items) : link);
-  }, []);
+  return links
+    .reduce<SidebarNavItem[]>((flat, link) => {
+      return flat.concat(link.items ? flatten(link.items) : link);
+    }, [])
+    .filter((link) => !link?.disabled);
 }
 
 interface DocsPagerProps {

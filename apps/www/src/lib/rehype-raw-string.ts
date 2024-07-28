@@ -1,7 +1,7 @@
 import { toText } from "hast-util-to-text";
 import { visit } from "unist-util-visit";
 
-// biome-ignore lint/suspicious/noExplicitAny: Banana
+// biome-ignore lint/suspicious/noExplicitAny: any is used to satisfy the RehypePlugin type
 export const rehypeRawString = () => (tree: any) => {
   visit(tree, (node) => {
     if (node.type === "element" && node.tagName === "pre") {

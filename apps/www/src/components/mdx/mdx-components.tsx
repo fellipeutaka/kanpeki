@@ -1,48 +1,48 @@
-// biome-ignore lint/style/noNamespaceImport: This is needed for MDX to work
-import * as runtime from "react/jsx-runtime";
 import { cn } from "~/utils/cn";
+import { Icons } from "../ui/icons";
+import { LinkButton } from "../ui/link-button";
 import { ComponentPreview } from "./component-preview";
 import { Heading } from "./heading";
-import { InstallationTab, InstallationTabs } from "./installation-tabs-wrapper";
 import { Pre } from "./pre";
 import { Step, Steps } from "./steps";
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "./tabs";
 
-const components = {
+export const mdxComponents = {
   h1: (props: React.ComponentProps<"h1">) => (
-    <h1 className="mt-2 font-bold text-4xl tracking-tight" {...props} />
+    <h1 className="heading mt-2 scroll-m-20 font-bold text-4xl" {...props} />
   ),
   h2: (props: React.ComponentProps<"h2">) => (
     <Heading
       as="h2"
-      className="mt-10 border-b pb-1 font-semibold text-3xl tracking-tight first:mt-0"
+      className="heading mt-12 scroll-m-20 border-b pb-2 font-semibold text-2xl tracking-tight first:mt-0"
       {...props}
     />
   ),
   h3: (props: React.ComponentProps<"h3">) => (
     <Heading
       as="h3"
-      className="mt-8 font-semibold text-2xl tracking-tight"
+      className="heading mt-8 scroll-m-20 font-semibold text-xl tracking-tight"
       {...props}
     />
   ),
   h4: (props: React.ComponentProps<"h4">) => (
     <Heading
       as="h4"
-      className="mt-8 font-semibold text-xl tracking-tight"
+      className="heading mt-8 scroll-m-20 font-semibold text-lg tracking-tight"
       {...props}
     />
   ),
   h5: (props: React.ComponentProps<"h5">) => (
     <Heading
       as="h5"
-      className="mt-8 font-semibold text-lg tracking-tight"
+      className="mt-8 scroll-m-20 font-semibold text-lg tracking-tight"
       {...props}
     />
   ),
   h6: (props: React.ComponentProps<"h6">) => (
     <Heading
       as="h6"
-      className="mt-8 font-semibold text-base tracking-tight"
+      className="mt-8 scroll-m-20 font-semibold tracking-tight"
       {...props}
     />
   ),
@@ -53,10 +53,7 @@ const components = {
     />
   ),
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
-    <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
-      {...props}
-    />
+    <p className={cn("mt-6 leading-7 first:mt-0", className)} {...props} />
   ),
   ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
     <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
@@ -70,7 +67,7 @@ const components = {
   blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
     <blockquote
       className={cn(
-        "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground",
+        "mt-6 border-l-2 pl-6 italic *:text-muted-foreground",
         className,
       )}
       {...props}
@@ -124,23 +121,12 @@ const components = {
 
   // Custom Components
   ComponentPreview,
-  InstallationTabs,
-  InstallationTab,
+  TabsRoot,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
   Steps,
   Step,
+  LinkButton,
+  Icons,
 };
-
-const useMDXComponent = (code: string) => {
-  const fn = new Function(code);
-  return fn({ ...runtime }).default;
-};
-
-interface MdxProps {
-  code: string;
-}
-
-export function MDXContent({ code }: MdxProps) {
-  const Component = useMDXComponent(code);
-
-  return <Component components={components} />;
-}

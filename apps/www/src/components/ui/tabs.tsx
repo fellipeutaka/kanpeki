@@ -1,7 +1,6 @@
 "use client";
 
 import { Content, List, Root, Trigger } from "@radix-ui/react-tabs";
-import { forwardRef } from "react";
 import { tv } from "tailwind-variants";
 
 export const TabsStyles = {
@@ -27,33 +26,27 @@ export const TabsStyles = {
   }),
 };
 
+export type TabsRootProps = React.ComponentProps<typeof Root>;
+
 export const TabsRoot = Root;
 
-export const TabsList = forwardRef<
-  React.ElementRef<typeof List>,
-  React.ComponentPropsWithoutRef<typeof List>
->(({ className, ...props }, ref) => (
-  <List ref={ref} className={TabsStyles.List({ className })} {...props} />
-));
-TabsList.displayName = List.displayName;
+export type TabsListProps = React.ComponentProps<typeof List>;
 
-export const TabsTrigger = forwardRef<
-  React.ElementRef<typeof Trigger>,
-  React.ComponentPropsWithoutRef<typeof Trigger>
->(({ className, ...props }, ref) => (
-  <Trigger ref={ref} className={TabsStyles.Trigger({ className })} {...props} />
-));
-TabsTrigger.displayName = Trigger.displayName;
+export function TabsList({ className, ...props }: TabsListProps) {
+  return <List {...props} className={TabsStyles.List({ className })} />;
+}
 
-export type TabsContentProps = React.ComponentPropsWithoutRef<typeof Content>;
+export type TabsTriggerProps = React.ComponentProps<typeof Trigger>;
 
-export const TabsContent = forwardRef<
-  React.ElementRef<typeof Content>,
-  TabsContentProps
->(({ className, ...props }, ref) => (
-  <Content ref={ref} className={TabsStyles.Content({ className })} {...props} />
-));
-TabsContent.displayName = Content.displayName;
+export function TabsTrigger({ className, ...props }: TabsTriggerProps) {
+  return <Trigger {...props} className={TabsStyles.Trigger({ className })} />;
+}
+
+export type TabsContentProps = React.ComponentProps<typeof Content>;
+
+export function TabsContent({ className, ...props }: TabsContentProps) {
+  return <Content {...props} className={TabsStyles.Content({ className })} />;
+}
 
 export const Tabs = Object.assign(
   {},

@@ -1,6 +1,5 @@
-import rehypePrettyCode, {
-  type Options as RehypePrettyCodeOptions,
-} from "rehype-pretty-code";
+import rehypeShiki, { type RehypeShikiOptions } from "@shikijs/rehype";
+import { transformerMetaHighlight } from "@shikijs/transformers";
 import rehypeSlug from "rehype-slug";
 
 import { defineCollection, defineConfig, s } from "velite";
@@ -27,6 +26,8 @@ const docs = defineCollection({
     .transform(computedFields),
 });
 
+const titleRegex = /title="([^"]*)"/;
+
 export default defineConfig({
   root: "src/content",
   collections: {
@@ -36,26 +37,54 @@ export default defineConfig({
     rehypePlugins: [
       rehypeSlug,
       [
-        rehypePrettyCode,
+        rehypeShiki,
         {
-          theme: {
+          themes: {
             light: "github-light-default",
             dark: "github-dark-default",
           },
-          onVisitLine(node) {
-            // Prevent lines from collapsing in `display: grid` mode, and allow empty
-            // lines to be copy/pasted
-            if (node.children.length === 0) {
-              node.children = [{ type: "text", value: " " }];
-            }
+          defaultColor: false,
+          transformers: [
+            {
+              /**
+               * - Remove trailing newline
+               * - Remove title from meta
+               */
+              preprocess: (code, { meta }) => {
+                if (meta) {
+                  meta.__raw = meta.__raw?.replace(titleRegex, "");
+                }
+
+                return code.replace(/\n$/, "");
+              },
+              root(hast) {
+                const pre = hast.children[0];
+                if (pre?.type !== "element") {
+                  return;
+                }
+
+                hast.children = [
+                  {
+                    ...pre,
+                    properties: {
+                      ...pre.properties,
+                      "data-lang": this.options.lang,
+                    },
+                  },
+                ];
+              },
+            },
+            transformerMetaHighlight({
+              className: "w-full inline-block bg-primary/10",
+            }),
+          ],
+          parseMetaString: (meta) => {
+            const titleMatch = meta.match(titleRegex);
+            const title = titleMatch?.[1] ?? null;
+
+            return { title };
           },
-          onVisitHighlightedLine(node) {
-            node?.properties.className?.push("line--highlighted");
-          },
-          onVisitHighlightedChars(node) {
-            node.properties.className = ["word--highlighted"];
-          },
-        } satisfies RehypePrettyCodeOptions,
+        } satisfies RehypeShikiOptions,
       ],
       rehypeRawString,
       rehypeRawCommand,

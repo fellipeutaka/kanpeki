@@ -3,7 +3,7 @@ import tailwindcssAnimate from "tailwindcss-animate";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  content: ["./src/**/*.{md,mdx,ts,tsx}"],
+  content: ["./src/**/*.{md,mdx,ts,tsx}", "./velite.config.ts"],
   darkMode: "class",
   theme: {
     extend: {
