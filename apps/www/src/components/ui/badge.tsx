@@ -2,8 +2,8 @@ import { type VariantProps, tv } from "tailwind-variants";
 
 export const BadgeStyles = tv({
   base: [
-    "inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold text-xs transition-colors",
-    "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+    "inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold",
+    "text-xs outline-none ring-offset-2 ring-offset-background transition",
   ],
   variants: {
     variant: {
@@ -21,15 +21,30 @@ export const BadgeStyles = tv({
       ],
       outline: ["text-foreground"],
     },
+    nativeFocus: {
+      true: ["focus:ring-2 focus:ring-ring"],
+      false: ["data-[focused=true]:ring-2 data-[focused=true]:ring-ring"],
+    },
   },
   defaultVariants: {
     variant: "default",
+    nativeFocus: true,
   },
 });
 
 export type BadgeProps = React.ComponentProps<"div"> &
   VariantProps<typeof BadgeStyles>;
 
-export function Badge({ className, variant, ...props }: BadgeProps) {
-  return <div {...props} className={BadgeStyles({ className, variant })} />;
+export function Badge({
+  className,
+  variant,
+  nativeFocus,
+  ...props
+}: BadgeProps) {
+  return (
+    <div
+      {...props}
+      className={BadgeStyles({ className, variant, nativeFocus })}
+    />
+  );
 }

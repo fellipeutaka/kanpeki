@@ -18,8 +18,14 @@ const docs = defineCollection({
     .object({
       title: s.string().max(99),
       description: s.string().max(256),
+      links: s
+        .object({
+          docs: s.string().url(),
+          api: s.string().url(),
+        })
+        .partial()
+        .optional(),
       slug: s.path(),
-      // metadata: s.metadata(),
       toc: s.toc(),
       content: s.mdx(),
     })
