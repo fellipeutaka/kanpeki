@@ -21,7 +21,7 @@
   @apply mt-0;
 }
 
-.steps > h3 {
+.steps > :where(h2, h3) {
   @apply mt-8 mb-4 text-base font-semibold;
   counter-increment: step;
 

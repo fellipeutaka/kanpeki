@@ -5,13 +5,13 @@ description: Add dependencies to your project manually.
 
 <Steps>
 
-### Add Tailwind CSS
+## Add Tailwind CSS
 
 Components are styled using Tailwind CSS. You need to install Tailwind CSS in your project.
 
 [Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation)
 
-### Add dependencies
+## Add dependencies
 
 Add the following dependencies to your project:
 
@@ -19,7 +19,7 @@ Add the following dependencies to your project:
 npm install clsx tailwind-variants tailwindcss-animate -D
 ```
 
-### Configure path aliases
+## Configure path aliases
 
 I use the `~` alias. This is how I configure it in tsconfig.json:
 
@@ -38,7 +38,7 @@ The `~` alias is a preference. You can use other aliases if you want, like `@` o
 
 **If you use a different alias such as `@`, you'll need to update import statements when adding components.**
 
-### Configure tailwind.config.ts
+## Configure tailwind.config.ts
 
 Here's what my `tailwind.config.ts` file looks like:
 
@@ -112,7 +112,7 @@ export default {
 } satisfies Config;
 ```
 
-### Configure styles
+## Configure styles
 
 Add the following to your styles/globals.css file. You can learn more about using CSS variables for theming in the [theming section](/docs/theming).
 
@@ -200,7 +200,7 @@ Add the following to your styles/globals.css file. You can learn more about usin
 }
 ```
 
-### Add a cn helper
+## Add a cn helper
 
 I use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `lib/utils.ts`:
 
@@ -213,7 +213,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
-### That's it
+## That's it
 
 You can now start adding components to your project.
 
