@@ -74,6 +74,7 @@ export function CommandMenu() {
                   <Command.Item
                     key={navItem.href}
                     value={navItem.title}
+                    disabled={navItem.disabled}
                     onSelect={handleNavigate(navItem.href)}
                     asChild
                   >
@@ -90,6 +91,7 @@ export function CommandMenu() {
                     <Command.Item
                       key={navItem.href}
                       value={navItem.title}
+                      disabled={navItem.disabled}
                       onSelect={handleNavigate(navItem.href)}
                       asChild
                     >
