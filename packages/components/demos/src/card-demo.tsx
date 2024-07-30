@@ -26,11 +26,13 @@ export default function CardDemo() {
     <Card.Root>
       <Card.Header>
         <Card.Title>Notifications</Card.Title>
-        <Card.Description>You have 3 unread messages.</Card.Description>
+        <Card.Description>
+          You have {notifications.length} unread messages.
+        </Card.Description>
       </Card.Header>
       <Card.Content className="grid gap-4">
         <div className=" flex items-center space-x-4 rounded-md border p-4">
-          {/* <BellIcon /> */}
+          <Icons.Bell className="size-6" />
           <div className="flex-1 space-y-1">
             <p className="font-medium text-sm leading-none">
               Push Notifications
@@ -49,7 +51,7 @@ export default function CardDemo() {
               key={notification.id}
               className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
             >
-              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-violet-500" />
               <div className="space-y-1">
                 <p className="font-medium text-sm leading-none">
                   {notification.title}

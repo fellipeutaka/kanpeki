@@ -40,6 +40,8 @@ npx kanpeki-ui@latest add card
 
 ## Usage
 
+### Single import
+
 ```tsx
 import { Card } from "@/components/ui/card";
 ```
@@ -57,6 +59,34 @@ import { Card } from "@/components/ui/card";
     <p>Card Footer</p>
   </Card.Footer>
 </Card.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  CardRoot,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+```
+
+```tsx
+<CardRoot>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card Description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Card Content</p>
+  </CardContent>
+  <CardFooter>
+    <p>Card Footer</p>
+  </CardFooter>
+</CardRoot>
 ```
 
 ## Examples
