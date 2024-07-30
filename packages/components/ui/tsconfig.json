@@ -1,0 +1,8 @@
+{
+  "extends": "@kanpeki/tsconfig/lib.json",
+  "compilerOptions": {
+    "jsx": "preserve"
+  },
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}

@@ -1,21 +1,23 @@
 "use client";
 
 import { Suspense } from "react";
+import { type RegistryDemo, RegistryDemos } from "~/registry/demos";
 import { cn } from "~/utils/cn";
+import { Icons } from "../ui/icons";
 import { Tabs } from "../ui/tabs";
 import { CopyButton } from "./copy-button";
 
 interface ComponentPreviewProps extends React.ComponentProps<"div"> {
-  name: string;
-  align?: "center" | "start" | "end";
+  name: RegistryDemo;
 }
 
 export function ComponentPreview({
   className,
-  align = "center",
+  children,
+  name,
   ...props
 }: ComponentPreviewProps) {
-  const codeString = "";
+  const Preview = RegistryDemos[name].component;
 
   return (
     <div
@@ -40,44 +42,21 @@ export function ComponentPreview({
           </Tabs.List>
         </div>
         <Tabs.Content value="preview" className="relative rounded-md border">
-          <div className="flex items-center justify-between p-4">
-            <div className="flex items-center gap-2">
-              <CopyButton
-                text={codeString}
-                variant="outline"
-                className="h-7 w-7 text-foreground opacity-100 hover:bg-muted hover:text-foreground [&_svg]:h-3.5 [&_svg]:w-3.5"
-              />
-            </div>
-          </div>
-          <div
-            className={cn(
-              "preview flex min-h-[350px] w-full justify-center p-10",
-              {
-                "items-center": align === "center",
-                "items-start": align === "start",
-                "items-end": align === "end",
-              },
-            )}
-          >
+          <CopyButton className="m-4 ml-auto flex" text={""} />
+          <div className="preview grid min-h-96 w-full place-content-center p-10">
             <Suspense
               fallback={
-                <div className="flex w-full items-center justify-center text-muted-foreground text-sm">
-                  {/* <Icons.Loader className="mr-2 h-4 w-4 animate-spin" /> */}
+                <div className="grid place-items-center text-muted-foreground text-sm">
+                  <Icons.Loader className="mr-2 size-4 animate-spin" />
                   Loading...
                 </div>
               }
             >
-              {/* {Preview} */}
+              <Preview />
             </Suspense>
           </div>
         </Tabs.Content>
-        <Tabs.Content value="code">
-          <div className="flex flex-col space-y-4">
-            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-              {/* {Code} */}
-            </div>
-          </div>
-        </Tabs.Content>
+        <Tabs.Content value="code">{children}</Tabs.Content>
       </Tabs.Root>
     </div>
   );

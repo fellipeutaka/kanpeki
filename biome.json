@@ -31,6 +31,9 @@
         "useNamingConvention": "off",
         "noImplicitBoolean": "off",
         "useFilenamingConvention": "off"
+      },
+      "correctness": {
+        "noNodejsModules": "off"
       }
     }
   },
@@ -51,6 +54,8 @@
         "apps/www/src/app/**/twitter-image.tsx",
         "apps/www/src/app/**/robots.ts",
         "apps/www/src/app/**/sitemap.ts",
+
+        "packages/components/demos/src/*.tsx",
         "**/*.config.ts",
         "**/*.config.js"
       ],

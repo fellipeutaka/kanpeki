@@ -1,22 +1,21 @@
 {
-  "name": "kanpeki-ui",
-  "description": "Add beautiful and accessible components to your apps.",
+  "name": "@kanpeki/ui",
+  "description": "Beautiful and accessible components.",
   "type": "module",
-  "private": false,
-  "version": "0.0.0",
+  "private": true,
   "author": {
     "name": "Fellipe Utaka",
     "email": "fellipeutaka@gmail.com",
     "url": "https://github.com/fellipeutaka"
   },
+  "exports": {
+    "./*": "./src/*.tsx"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/fellipeutaka/kanpeki.git",
-    "directory": "packages/cli"
-  },
-  "dependencies": {
-    "@kanpeki/ui": "workspace:*"
+    "directory": "packages/components/ui"
   },
   "devDependencies": {
     "@kanpeki/tsconfig": "workspace:*"

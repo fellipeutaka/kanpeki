@@ -11,6 +11,10 @@
   }
   .line {
     @apply px-2;
+
+    &:empty {
+      @apply h-5;
+    }
   }
   code {
     @apply grid;

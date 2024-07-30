@@ -8,7 +8,7 @@ export interface Commands {
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: any is used to satisfy the RehypePlugin type
-export const rehypeRawCommand = () => (tree: any) => {
+export const rehypeCommand = () => (tree: any) => {
   visit(tree, (node) => {
     if (node.type !== "element" || node?.tagName !== "pre") {
       return;

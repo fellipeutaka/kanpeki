@@ -1,9 +1,8 @@
 import type { Docs as Doc } from "~:content";
-import { Fragment } from "react";
 import { BadgeStyles } from "~/components/ui/badge";
-import { Breadcrumb } from "~/components/ui/breadcrumb";
 import { Icons } from "~/components/ui/icons";
 import { LinkButton } from "~/components/ui/link-button";
+import { DocsBreadcrumb } from "./docs-breadcrumb";
 
 interface DocsHeaderProps {
   doc: Doc;
@@ -12,33 +11,7 @@ interface DocsHeaderProps {
 export function DocsHeader({ doc }: DocsHeaderProps) {
   return (
     <>
-      <Breadcrumb.Root className="mb-4">
-        <Breadcrumb.List className="gap-1 sm:gap-1">
-          <Breadcrumb.Item>
-            <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>
-          </Breadcrumb.Item>
-          <Breadcrumb.Separator />
-          {doc.slugAsParams
-            .split("/")
-            .slice(0, -1)
-            .map((link) => (
-              <Fragment key={link}>
-                <Breadcrumb.Item>
-                  <Breadcrumb.Link
-                    className="capitalize"
-                    href={`/docs/${link}`}
-                  >
-                    {link}
-                  </Breadcrumb.Link>
-                </Breadcrumb.Item>
-                <Breadcrumb.Separator />
-              </Fragment>
-            ))}
-          <Breadcrumb.Item>
-            <Breadcrumb.Page>{doc.title}</Breadcrumb.Page>
-          </Breadcrumb.Item>
-        </Breadcrumb.List>
-      </Breadcrumb.Root>
+      <DocsBreadcrumb doc={doc} />
       <div className="space-y-2">
         <h1 className="scroll-m-20 font-bold text-3xl tracking-tight">
           {doc.title}

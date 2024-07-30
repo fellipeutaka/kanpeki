@@ -23,6 +23,12 @@ importers:
 
   apps/www:
     dependencies:
+      '@kanpeki/demos':
+        specifier: workspace:*
+        version: link:../../packages/components/demos
+      '@kanpeki/ui':
+        specifier: workspace:*
+        version: link:../../packages/components/ui
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.1
         version: 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
@@ -50,9 +56,15 @@ importers:
       '@react-aria/overlays':
         specifier: ^3.23.1
         version: 3.23.1(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
+      '@react-aria/switch':
+        specifier: ^3.6.6
+        version: 3.6.6(react@19.0.0-rc-f994737d14-20240522)
       '@react-stately/overlays':
         specifier: ^3.6.9
         version: 3.6.9(react@19.0.0-rc-f994737d14-20240522)
+      '@react-stately/toggle':
+        specifier: ^3.7.6
+        version: 3.7.6(react@19.0.0-rc-f994737d14-20240522)
       cmdk:
         specifier: ^1.0.0
         version: 1.0.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
@@ -75,6 +87,9 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
     devDependencies:
+      '@kanpeki/tsconfig':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
       '@shikijs/rehype':
         specifier: ^1.12.0
         version: 1.12.0
@@ -93,6 +108,9 @@ importers:
       hast-util-to-text:
         specifier: ^4.0.2
         version: 4.0.2
+      hastscript:
+        specifier: ^9.0.0
+        version: 9.0.0
       postcss:
         specifier: ^8.4.40
         version: 8.4.40
@@ -102,6 +120,9 @@ importers:
       rehype-slug:
         specifier: ^6.0.0
         version: 6.0.0
+      shiki:
+        specifier: ^1.12.0
+        version: 1.12.0
       tailwind-variants:
         specifier: ^0.2.1
         version: 0.2.1(tailwindcss@3.4.7)
@@ -111,6 +132,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.7)
+      unist-builder:
+        specifier: ^4.0.0
+        version: 4.0.0
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
@@ -118,7 +142,36 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1
 
-  packages/cli: {}
+  config/tsconfig: {}
+
+  packages/cli:
+    dependencies:
+      '@kanpeki/ui':
+        specifier: workspace:*
+        version: link:../components/ui
+    devDependencies:
+      '@kanpeki/tsconfig':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+
+  packages/components/demos:
+    dependencies:
+      '@types/react':
+        specifier: ^18.3.3
+        version: 18.3.3
+    devDependencies:
+      '@kanpeki/tsconfig':
+        specifier: workspace:*
+        version: link:../../../config/tsconfig
+      '@kanpeki/ui':
+        specifier: workspace:*
+        version: link:../ui
+
+  packages/components/ui:
+    devDependencies:
+      '@kanpeki/tsconfig':
+        specifier: workspace:*
+        version: link:../../../config/tsconfig
 
 packages:
 
@@ -1077,6 +1130,16 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
 
+  '@react-aria/switch@3.6.6':
+    resolution: {integrity: sha512-+dZOX1utODlx5dC90DtwnXd9nvln9HxMffBj/gmMT1/cD/RmXfjvymfjTsTMwvHhqCew9yfpvod0ZWwj3BkLGw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
+  '@react-aria/toggle@3.10.6':
+    resolution: {integrity: sha512-AGlbtB1b8grrtjbiW5Au0LKYzxR83RHbHhaUkFwajyYRGyuEzr3Y03OiveoPB+DayA8Gz3H1ZVmW++8JZQOWHw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
   '@react-aria/utils@3.25.1':
     resolution: {integrity: sha512-5Uj864e7T5+yj78ZfLnfHqmypLiqW2mN+nsdslog2z5ssunTqjolVeM15ootXskjISlZ7MojLpq97kIC4nlnAw==}
     peerDependencies:
@@ -1129,6 +1192,11 @@ packages:
 
   '@react-types/shared@3.24.1':
     resolution: {integrity: sha512-AUQeGYEm/zDTN6zLzdXolDxz3Jk5dDL7f506F07U8tBwxNNI3WRdhU84G0/AaFikOZzDXhOZDr3MhQMzyE7Ydw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+
+  '@react-types/switch@3.5.5':
+    resolution: {integrity: sha512-SZx1Bd+COhAOs/RTifbZG+uq/llwba7VAKx7XBeX4LeIz1dtguy5bigOBgFTMQi4qsIVCpybSWEEl+daj4XFPw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
 
@@ -1468,6 +1536,9 @@ packages:
   hast-util-is-element@3.0.0:
     resolution: {integrity: sha512-Val9mnv2IWpLbNPqc/pUem+a7Ipj2aHacCwgNfTiK0vJKl0LF+4Ba4+v1oPHFpf3bLYmreq0/l3Gud9S5OH42g==}
 
+  hast-util-parse-selector@4.0.0:
+    resolution: {integrity: sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==}
+
   hast-util-to-estree@3.1.0:
     resolution: {integrity: sha512-lfX5g6hqVh9kjS/B9E2gSkvHH4SZNiQFiqWS0x9fENzEl+8W12RqdRxX6d/Cwxi30tPQs3bIO+aolQJNp1bIyw==}
 
@@ -1482,6 +1553,9 @@ packages:
 
   hast-util-whitespace@3.0.0:
     resolution: {integrity: sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==}
+
+  hastscript@9.0.0:
+    resolution: {integrity: sha512-jzaLBGavEDKHrc5EfFImKN7nZKKBdSLIdGvCwDZ9TfzbF2ffXiov8CKE445L2Z1Ek2t/m4SKQ2j6Ipv7NyUolw==}
 
   inline-style-parser@0.1.1:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
@@ -2123,6 +2197,9 @@ packages:
 
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
+
+  unist-builder@4.0.0:
+    resolution: {integrity: sha512-wmRFnH+BLpZnTKpc5L7O67Kac89s9HMrtELpnNaE6TAobq5DTZZs5YaTQfAZBA9bFPECx2uVAPO31c+GVug8mg==}
 
   unist-util-find-after@5.0.0:
     resolution: {integrity: sha512-amQa0Ep2m6hE2g72AugUItjbuM8X8cGQnFoHk0pGfrFeT9GZhzN5SW8nRsiGKK7Aif4CrACPENkA6P/Lw6fHGQ==}
@@ -3059,6 +3136,26 @@ snapshots:
       '@swc/helpers': 0.5.12
       react: 19.0.0-rc-f994737d14-20240522
 
+  '@react-aria/switch@3.6.6(react@19.0.0-rc-f994737d14-20240522)':
+    dependencies:
+      '@react-aria/toggle': 3.10.6(react@19.0.0-rc-f994737d14-20240522)
+      '@react-stately/toggle': 3.7.6(react@19.0.0-rc-f994737d14-20240522)
+      '@react-types/shared': 3.24.1(react@19.0.0-rc-f994737d14-20240522)
+      '@react-types/switch': 3.5.5(react@19.0.0-rc-f994737d14-20240522)
+      '@swc/helpers': 0.5.12
+      react: 19.0.0-rc-f994737d14-20240522
+
+  '@react-aria/toggle@3.10.6(react@19.0.0-rc-f994737d14-20240522)':
+    dependencies:
+      '@react-aria/focus': 3.18.1(react@19.0.0-rc-f994737d14-20240522)
+      '@react-aria/interactions': 3.22.1(react@19.0.0-rc-f994737d14-20240522)
+      '@react-aria/utils': 3.25.1(react@19.0.0-rc-f994737d14-20240522)
+      '@react-stately/toggle': 3.7.6(react@19.0.0-rc-f994737d14-20240522)
+      '@react-types/checkbox': 3.8.3(react@19.0.0-rc-f994737d14-20240522)
+      '@react-types/shared': 3.24.1(react@19.0.0-rc-f994737d14-20240522)
+      '@swc/helpers': 0.5.12
+      react: 19.0.0-rc-f994737d14-20240522
+
   '@react-aria/utils@3.25.1(react@19.0.0-rc-f994737d14-20240522)':
     dependencies:
       '@react-aria/ssr': 3.9.5(react@19.0.0-rc-f994737d14-20240522)
@@ -3123,6 +3220,11 @@ snapshots:
 
   '@react-types/shared@3.24.1(react@19.0.0-rc-f994737d14-20240522)':
     dependencies:
+      react: 19.0.0-rc-f994737d14-20240522
+
+  '@react-types/switch@3.5.5(react@19.0.0-rc-f994737d14-20240522)':
+    dependencies:
+      '@react-types/shared': 3.24.1(react@19.0.0-rc-f994737d14-20240522)
       react: 19.0.0-rc-f994737d14-20240522
 
   '@shikijs/core@1.12.0':
@@ -3477,6 +3579,10 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
+  hast-util-parse-selector@4.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+
   hast-util-to-estree@3.1.0:
     dependencies:
       '@types/estree': 1.0.5
@@ -3532,6 +3638,14 @@ snapshots:
   hast-util-whitespace@3.0.0:
     dependencies:
       '@types/hast': 3.0.4
+
+  hastscript@9.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      comma-separated-tokens: 2.0.3
+      hast-util-parse-selector: 4.0.0
+      property-information: 6.5.0
+      space-separated-tokens: 2.0.2
 
   inline-style-parser@0.1.1: {}
 
@@ -4391,6 +4505,10 @@ snapshots:
       is-plain-obj: 4.1.0
       trough: 2.2.0
       vfile: 6.0.2
+
+  unist-builder@4.0.0:
+    dependencies:
+      '@types/unist': 3.0.2
 
   unist-util-find-after@5.0.0:
     dependencies:
