@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
+import { Badge } from "./ui/badge";
 import { Icons } from "./ui/icons";
 
 export function MainNav() {
@@ -14,6 +15,7 @@ export function MainNav() {
       <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
         <Icons.Logo className="size-6" />
         <span className="hidden font-bold lg:block">{siteConfig.name}</span>
+        <Badge variant="secondary">Beta</Badge>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
         {docsConfig.mainNav.map((link) => (

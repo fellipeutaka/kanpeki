@@ -67,7 +67,7 @@ export default async function Page({ params }: PageProps) {
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <div className="mx-auto w-full min-w-0">
         <DocsHeader doc={doc} />
-        <div className="mdx pt-8 pb-12">
+        <div className="mdx flex w-full max-w-full flex-col pt-8 pb-12">
           <MDXContent code={doc.content} />
         </div>
         <DocsPager doc={doc} />

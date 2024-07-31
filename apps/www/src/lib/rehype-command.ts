@@ -1,47 +1,43 @@
 import { visit } from "unist-util-visit";
+import type { UnistNode, UnistTree } from "~/@types/unist";
 
-export interface Commands {
-  npm: string;
-  yarn: string;
-  pnpm: string;
-  bun: string;
-}
-
-// biome-ignore lint/suspicious/noExplicitAny: any is used to satisfy the RehypePlugin type
-export const rehypeCommand = () => (tree: any) => {
-  visit(tree, (node) => {
+export const rehypeCommand = () => (tree: UnistTree) => {
+  visit(tree, (node: UnistNode) => {
     if (node.type !== "element" || node?.tagName !== "pre") {
       return;
     }
 
     // npm install.
-    if (node.properties?.rawString?.startsWith("npm install")) {
-      const npmCommand = node.properties.rawString;
-      node.properties.npmCommand = npmCommand;
-      node.properties.yarnCommand = npmCommand.replace(
+    if (node.properties?.__rawString__?.startsWith("npm install")) {
+      const npmCommand = node.properties.__rawString__;
+      node.properties.__npmCommand__ = npmCommand;
+      node.properties.__yarnCommand__ = npmCommand.replace(
         "npm install",
         "yarn add",
       );
-      node.properties.pnpmCommand = npmCommand.replace(
+      node.properties.__pnpmCommand__ = npmCommand.replace(
         "npm install",
         "pnpm add",
       );
-      node.properties.bunCommand = npmCommand.replace("npm install", "bun add");
+      node.properties.__bunCommand__ = npmCommand.replace(
+        "npm install",
+        "bun add",
+      );
     }
 
     // npx create.
-    if (node.properties?.rawString?.startsWith("npx create-")) {
-      const npmCommand = node.properties.rawString;
-      node.properties.npmCommand = npmCommand;
-      node.properties.yarnCommand = npmCommand.replace(
+    if (node.properties?.__rawString__?.startsWith("npx create-")) {
+      const npmCommand = node.properties.__rawString__;
+      node.properties.__npmCommand__ = npmCommand;
+      node.properties.__yarnCommand__ = npmCommand.replace(
         "npx create-",
         "yarn create ",
       );
-      node.properties.pnpmCommand = npmCommand.replace(
+      node.properties.__pnpmCommand__ = npmCommand.replace(
         "npx create-",
         "pnpm create ",
       );
-      node.properties.bunCommand = npmCommand.replace(
+      node.properties.__bunCommand__ = npmCommand.replace(
         "npx create-",
         "bun create",
       );
@@ -49,14 +45,14 @@ export const rehypeCommand = () => (tree: any) => {
 
     // npx.
     if (
-      node.properties?.rawString?.startsWith("npx") &&
-      !node.properties?.rawString?.startsWith("npx create-")
+      node.properties?.__rawString__?.startsWith("npx") &&
+      !node.properties?.__rawString__?.startsWith("npx create-")
     ) {
-      const npmCommand = node.properties.rawString;
-      node.properties.npmCommand = npmCommand;
-      node.properties.yarnCommand = npmCommand;
-      node.properties.pnpmCommand = npmCommand.replace("npx", "pnpm dlx");
-      node.properties.bunCommand = npmCommand.replace("npx", "bunx");
+      const npmCommand = node.properties.__rawString__;
+      node.properties.__npmCommand__ = npmCommand;
+      node.properties.__yarnCommand__ = npmCommand;
+      node.properties.__pnpmCommand__ = npmCommand.replace("npx", "pnpm dlx");
+      node.properties.__bunCommand__ = npmCommand.replace("npx", "bunx");
     }
   });
 };

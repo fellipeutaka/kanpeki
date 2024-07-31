@@ -1,24 +1,19 @@
-.dark:root {
-  .shiki span {
-    color: var(--shiki-dark);
+
+[data-rehype-pretty-code-figure] code {
+  @apply p-0;
+
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+  @apply px-3;
+
+  & span {
+    color: light-dark(var(--shiki-light), var(--shiki-dark));
   }
 }
 
-.shiki {
-  span {
-    /* color: light-dark(var(--shiki-light), var(--shiki-dark)); */
-    color: var(--shiki-light);
-  }
-  .line {
-    @apply px-2;
-
-    &:empty {
-      @apply h-5;
-    }
-  }
-  code {
-    @apply grid;
-  }
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+  @apply bg-muted;
 }
 
 .mdx > .steps:first-child > h3:first-child {

@@ -2,7 +2,7 @@ import { cn } from "~/utils/cn";
 import { Icons } from "../ui/icons";
 
 type Types = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-type HeadingProps<T extends Types> = Omit<React.ComponentProps<T>, "as"> & {
+type HeadingProps<T extends Types> = React.ComponentProps<T> & {
   as?: T;
 };
 
@@ -12,11 +12,14 @@ export const Heading = <T extends Types = "h1">(props: HeadingProps<T>) => {
 
   return (
     <Component className={cn("scroll-m-20", className)} id={id} {...rest}>
-      <a href={`#${id}`} className="group">
+      <a
+        href={`#${id}`}
+        className="group outline-none ring-ring ring-offset-2 ring-offset-background transition focus-visible:ring-2"
+      >
         {children}
         <Icons.Link
           aria-label="Link to section"
-          className="ml-2 inline size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100"
+          className="ml-2 inline size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
         />
       </a>
     </Component>

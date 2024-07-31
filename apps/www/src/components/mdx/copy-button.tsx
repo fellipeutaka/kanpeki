@@ -1,7 +1,9 @@
+"use client";
+
 import { PressResponder } from "@react-aria/interactions";
 import { useState } from "react";
+import type { NpmCommands } from "~/@types/unist";
 import { useCopyToClipboard } from "~/hooks/use-copy-to-clipboard";
-import type { Commands } from "~/lib/rehype-command";
 import { cn } from "~/utils/cn";
 import { Button, type ButtonProps } from "../ui/button";
 import { DropdownMenu } from "../ui/dropdown-menu";
@@ -17,7 +19,7 @@ export function CopyButton({ text, className, ...props }: CopyButtonProps) {
   return (
     <Button
       className={cn(
-        "size-8 bg-secondary opacity-0 hover:bg-background group-hover:opacity-100",
+        "size-8 bg-secondary hover:bg-background focus-visible:opacity-100 group-hover:opacity-100 [@media(pointer:fine)]:opacity-0",
         className,
       )}
       size="icon"
@@ -39,7 +41,7 @@ export function CopyButton({ text, className, ...props }: CopyButtonProps) {
 }
 
 export interface CopyNpmButtonProps extends ButtonProps {
-  commands: Commands;
+  commands: Required<NpmCommands>;
 }
 
 export function CopyNpmButton({
@@ -56,8 +58,8 @@ export function CopyNpmButton({
         <PressResponder>
           <Button
             className={cn(
-              "size-8 bg-secondary opacity-0 hover:bg-background group-hover:opacity-100",
-              isOpen && "bg-background opacity-100",
+              "size-8 bg-secondary hover:bg-background group-hover:opacity-100 [@media(pointer:fine)]:opacity-0",
+              isOpen && "!opacity-100 bg-background",
               className,
             )}
             size="icon"
@@ -77,19 +79,27 @@ export function CopyNpmButton({
         </PressResponder>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content align="end">
-        <DropdownMenu.Item onSelect={() => copy({ text: commands.npm })}>
+        <DropdownMenu.Item
+          onSelect={() => copy({ text: commands.__npmCommand__ })}
+        >
           <Icons.Npm className="mr-2 size-4" />
           npm
         </DropdownMenu.Item>
-        <DropdownMenu.Item onSelect={() => copy({ text: commands.yarn })}>
+        <DropdownMenu.Item
+          onSelect={() => copy({ text: commands.__yarnCommand__ })}
+        >
           <Icons.Yarn className="mr-2 size-4" />
           yarn
         </DropdownMenu.Item>
-        <DropdownMenu.Item onSelect={() => copy({ text: commands.pnpm })}>
+        <DropdownMenu.Item
+          onSelect={() => copy({ text: commands.__pnpmCommand__ })}
+        >
           <Icons.Pnpm className="mr-2 size-4" />
           pnpm
         </DropdownMenu.Item>
-        <DropdownMenu.Item onSelect={() => copy({ text: commands.bun })}>
+        <DropdownMenu.Item
+          onSelect={() => copy({ text: commands.__bunCommand__ })}
+        >
           <Icons.Bun className="mr-2 size-4" />
           bun
         </DropdownMenu.Item>

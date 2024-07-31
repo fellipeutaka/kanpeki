@@ -2,9 +2,11 @@ import { cn } from "~/utils/cn";
 import { Icons } from "../ui/icons";
 import { LinkButton } from "../ui/link-button";
 import { ComponentPreview } from "./component-preview";
+import { Figcaption } from "./figcaption";
 import { Heading } from "./heading";
 import { Pre } from "./pre";
 import { Step, Steps } from "./steps";
+import { Table } from "./table";
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "./tabs";
 
 export const mdxComponents = {
@@ -79,11 +81,7 @@ export const mdxComponents = {
   hr: ({ className, ...props }: React.ComponentProps<"hr">) => (
     <hr className={cn("my-4 md:my-8", className)} {...props} />
   ),
-  table: ({ className, ...props }: React.ComponentProps<"table">) => (
-    <div className="my-6 w-full overflow-hidden rounded-md">
-      <table className={cn("w-full", className)} {...props} />
-    </div>
-  ),
+  table: Table,
   thead: ({ className, ...props }: React.ComponentProps<"thead">) => (
     <thead className={cn("bg-muted", className)} {...props} />
   ),
@@ -118,6 +116,16 @@ export const mdxComponents = {
     />
   ),
   pre: Pre,
+  figure: ({ className, ...props }: React.ComponentProps<"figure">) => (
+    <figure
+      className={cn(
+        "group relative my-6 overflow-hidden rounded-lg border text-sm",
+        className,
+      )}
+      {...props}
+    />
+  ),
+  figcaption: Figcaption,
 
   // Custom Components
   ComponentPreview,

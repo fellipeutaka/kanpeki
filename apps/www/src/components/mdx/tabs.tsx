@@ -47,3 +47,13 @@ export function TabsContent({ className, ...props }: TabsContentProps) {
     <_TabsContent {...props} className={TabsStyles.Content({ className })} />
   );
 }
+
+export const Tabs = Object.assign(
+  {},
+  {
+    Root: TabsRoot,
+    List: TabsList,
+    Trigger: TabsTrigger,
+    Content: TabsContent,
+  },
+);

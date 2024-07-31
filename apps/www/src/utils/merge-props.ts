@@ -2,20 +2,24 @@ import { clsx } from "clsx";
 import { chain } from "./chain";
 import { mergeIds } from "./merge-ids";
 
+// biome-ignore lint/suspicious/noExplicitAny: any is used to support any function signature
+type SAFE_ANY = any;
+
 // taken from: https://stackoverflow.com/questions/51603250/typescript-3-parameter-list-intersection-type/51604379#51604379
 type TupleTypes<T> = { [P in keyof T]: T[P] } extends { [key: number]: infer V }
   ? NullToObject<V>
   : never;
 type NullToObject<T> = T extends null | undefined ? NonNullable<unknown> : T;
-// biome-ignore lint/suspicious/noExplicitAny: any is used to support any function signature
-type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
-  k: infer I,
-) => void
+
+type UnionToIntersection<U> = (
+  U extends SAFE_ANY
+    ? (k: U) => void
+    : never
+) extends (k: infer I) => void
   ? I
   : never;
 
-// biome-ignore lint/suspicious/noExplicitAny: any is used to support any function signature
-type PropsArg = Record<string, any> | null | undefined;
+type PropsArg = Record<string, SAFE_ANY> | null | undefined;
 
 /**
  * Merges multiple props objects together. Event handlers are chained,

@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "type-check": "turbo run type-check --parallel",
     "lint": "biome check --fix"
   },
   "devDependencies": {

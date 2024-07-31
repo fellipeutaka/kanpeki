@@ -1,11 +1,12 @@
-import rehypeShiki from "@shikijs/rehype";
 import rehypeSlug from "rehype-slug";
 
+import { rehypePrettyCode } from "rehype-pretty-code";
 import { defineCollection, defineConfig, s } from "velite";
 import { rehypeCommand } from "~/lib/rehype-command";
 import { rehypeComponent } from "~/lib/rehype-component";
-import { rehypeRawString } from "~/lib/rehype-raw-string";
-import { rehypeShikiOptions } from "~/lib/rehype-shiki";
+import { rehypeFigureElement } from "~/lib/rehype-figure-element";
+import { rehypePreElement } from "~/lib/rehype-pre-element";
+import { rehypePrettyCodeOptions } from "~/lib/rehype-pretty-code";
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
@@ -41,10 +42,11 @@ export default defineConfig({
   mdx: {
     rehypePlugins: [
       rehypeSlug,
-      [rehypeShiki, rehypeShikiOptions],
-      rehypeRawString,
-      rehypeCommand,
       rehypeComponent,
+      rehypePreElement,
+      [rehypePrettyCode, rehypePrettyCodeOptions],
+      rehypeFigureElement,
+      rehypeCommand,
     ],
   },
 });

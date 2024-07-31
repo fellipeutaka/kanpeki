@@ -7,10 +7,6 @@ export const docsConfig: DocsConfig = {
       href: "/docs/introduction",
     },
     {
-      title: "Installation",
-      href: "/docs/installation",
-    },
-    {
       title: "Components",
       href: "/docs/components",
     },

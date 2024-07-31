@@ -1,16 +1,17 @@
 import fs from "node:fs";
 import path from "node:path";
+import { u } from "unist-builder";
 import { visit } from "unist-util-visit";
+import type { UnistNode, UnistTree } from "~/@types/unist";
 
-function getNodeAttributeByName(node: any, name: string) {
-  return node.attributes?.find((attribute: any) => attribute.name === name);
+function getNodeAttributeByName(node: UnistNode, name: string) {
+  return node.attributes?.find((attribute) => attribute.name === name);
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: any is used to satisfy the RehypePlugin type
-export const rehypeComponent = () => (tree: any) => {
-  visit(tree, (node) => {
+export const rehypeComponent = () => (tree: UnistTree) => {
+  visit(tree, (node: UnistNode) => {
     if (node.name === "ComponentPreview") {
-      const name = getNodeAttributeByName(node, "name")?.value as string;
+      const name = getNodeAttributeByName(node, "name")?.value;
 
       if (!name) {
         return null;
@@ -29,19 +30,28 @@ export const rehypeComponent = () => (tree: any) => {
         source = source.replaceAll("@kanpeki", "~/components");
         source = source.replaceAll("export default", "export");
 
-        node.children?.push({
-          type: "element",
-          tagName: "pre",
-          properties: {
-            className: ["px-3"],
-          },
-          children: [
-            {
-              type: "text",
-              value: source,
+        node.children?.push(
+          u("element", {
+            tagName: "pre",
+            properties: {
+              __src__: filePath,
             },
-          ],
-        });
+            children: [
+              u("element", {
+                tagName: "code",
+                properties: {
+                  className: ["language-tsx"],
+                },
+                children: [
+                  {
+                    type: "text",
+                    value: source,
+                  },
+                ],
+              }),
+            ],
+          }),
+        );
       } catch (error) {
         console.error(error);
       }
