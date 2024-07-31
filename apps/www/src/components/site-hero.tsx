@@ -1,7 +1,7 @@
+import { Icons } from "@kanpeki/ui/icons";
+import { LinkButton } from "@kanpeki/ui/link-button";
 import { siteConfig } from "~/config/site";
 import { SiteHeroIllustration } from "./site-hero-illustration";
-import { Icons } from "./ui/icons";
-import { LinkButton } from "./ui/link-button";
 
 export function SiteHero() {
   return (

@@ -1,7 +1,7 @@
 import type { Docs as Doc } from "~:content";
-import { BadgeStyles } from "~/components/ui/badge";
-import { Icons } from "~/components/ui/icons";
-import { LinkButton } from "~/components/ui/link-button";
+import { BadgeStyles } from "@kanpeki/ui/badge";
+import { Icons } from "@kanpeki/ui/icons";
+import { LinkButton } from "@kanpeki/ui/link-button";
 import { DocsBreadcrumb } from "./docs-breadcrumb";
 
 interface DocsHeaderProps {

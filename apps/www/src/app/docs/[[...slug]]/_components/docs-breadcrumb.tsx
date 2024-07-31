@@ -1,6 +1,6 @@
 import type { Docs as Doc } from "~:content";
+import { Breadcrumb } from "@kanpeki/ui/breadcrumb";
 import { Fragment } from "react";
-import { Breadcrumb } from "~/components/ui/breadcrumb";
 
 interface DocsBreadcrumbProps {
   doc: Doc;

@@ -1,13 +1,12 @@
-// @ts-nocheck
-
 "use client";
 
-import { type AriaButtonProps, useButton } from "@react-aria/button";
+import { mergeProps } from "@kanpeki/utils/merge-props";
+import { mergeRefs } from "@kanpeki/utils/merge-refs";
+import { useButton } from "@react-aria/button";
 import { useFocusRing } from "@react-aria/focus";
+import type { FocusEvents, PressEvents } from "@react-aria/interactions";
 import { useRef } from "react";
 import { type VariantProps, tv } from "tailwind-variants";
-import { mergeProps } from "~/utils/merge-props";
-import { mergeRefs } from "~/utils/merge-refs";
 
 export const ButtonStyles = tv({
   base: [
@@ -64,7 +63,8 @@ export const ButtonStyles = tv({
 
 export type ButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof ButtonStyles> &
-  AriaButtonProps;
+  PressEvents &
+  FocusEvents;
 
 export function Button({
   className,
@@ -76,7 +76,6 @@ export function Button({
   onPressEnd,
   onPressChange,
   onPressUp,
-  isDisabled,
   ref: forwardedRef,
   ...props
 }: ButtonProps) {
@@ -91,7 +90,7 @@ export function Button({
       onPressEnd,
       onPressChange,
       onPressUp,
-      isDisabled: isDisabled ?? props.disabled,
+      isDisabled: props.disabled,
     },
     ref,
   );

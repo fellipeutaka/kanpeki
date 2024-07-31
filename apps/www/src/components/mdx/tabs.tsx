@@ -1,4 +1,3 @@
-import { tv } from "tailwind-variants";
 import {
   type TabsContentProps,
   type TabsListProps,
@@ -8,7 +7,8 @@ import {
   TabsList as _TabsList,
   TabsRoot as _TabsRoot,
   TabsTrigger as _TabsTrigger,
-} from "~/components/ui/tabs";
+} from "@kanpeki/ui/tabs";
+import { tv } from "tailwind-variants";
 
 const TabsStyles = {
   Root: tv({

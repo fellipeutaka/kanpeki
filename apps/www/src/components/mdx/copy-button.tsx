@@ -1,13 +1,13 @@
 "use client";
 
+import { Button, type ButtonProps } from "@kanpeki/ui/button";
+import { DropdownMenu } from "@kanpeki/ui/dropdown-menu";
+import { Icons } from "@kanpeki/ui/icons";
+import { cn } from "@kanpeki/utils/cn";
 import { PressResponder } from "@react-aria/interactions";
 import { useState } from "react";
 import type { NpmCommands } from "~/@types/unist";
 import { useCopyToClipboard } from "~/hooks/use-copy-to-clipboard";
-import { cn } from "~/utils/cn";
-import { Button, type ButtonProps } from "../ui/button";
-import { DropdownMenu } from "../ui/dropdown-menu";
-import { Icons } from "../ui/icons";
 
 export interface CopyButtonProps extends ButtonProps {
   text: string;

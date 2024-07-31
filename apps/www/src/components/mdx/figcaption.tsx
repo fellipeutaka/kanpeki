@@ -1,4 +1,4 @@
-import { cn } from "~/utils/cn";
+import { cn } from "@kanpeki/utils/cn";
 import { LanguageIcon } from "../language-icon";
 import { CopyButton } from "./copy-button";
 

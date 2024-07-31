@@ -1,9 +1,9 @@
 "use client";
 
+import { ScrollArea } from "@kanpeki/ui/scroll-area";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { tv } from "tailwind-variants";
-import { ScrollArea } from "~/components/ui/scroll-area";
 import { type NavLink, docsConfig } from "~/config/docs";
 
 export function DocsSidebar() {

@@ -1,6 +1,6 @@
 import type { Docs as Doc } from "~:content";
-import { Icons } from "~/components/ui/icons";
-import { LinkButton } from "~/components/ui/link-button";
+import { Icons } from "@kanpeki/ui/icons";
+import { LinkButton } from "@kanpeki/ui/link-button";
 import { type SidebarNavItem, docsConfig } from "~/config/docs";
 
 function getPagerForDoc(doc: Doc) {

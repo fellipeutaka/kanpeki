@@ -1,20 +1,23 @@
-"use client";
-
-import { cn } from "~/utils/cn";
-import { ScrollArea } from "../ui/scroll-area";
+import {
+  ScrollAreaRoot,
+  ScrollAreaScrollbar,
+  ScrollAreaThumb,
+  ScrollAreaViewport,
+} from "@kanpeki/ui/scroll-area";
+import { cn } from "@kanpeki/utils/cn";
 
 export function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
-    <ScrollArea.Root className="my-6 rounded-md">
-      <ScrollArea.Viewport>
+    <ScrollAreaRoot className="my-6 rounded-md">
+      <ScrollAreaViewport>
         <table className={cn("w-full", className)} {...props} />
-      </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar orientation="vertical">
-        <ScrollArea.Thumb />
-      </ScrollArea.Scrollbar>
-      <ScrollArea.Scrollbar orientation="horizontal">
-        <ScrollArea.Thumb />
-      </ScrollArea.Scrollbar>
-    </ScrollArea.Root>
+      </ScrollAreaViewport>
+      <ScrollAreaScrollbar orientation="vertical">
+        <ScrollAreaThumb />
+      </ScrollAreaScrollbar>
+      <ScrollAreaScrollbar orientation="horizontal">
+        <ScrollAreaThumb />
+      </ScrollAreaScrollbar>
+    </ScrollAreaRoot>
   );
 }

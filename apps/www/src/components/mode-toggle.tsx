@@ -1,10 +1,10 @@
 "use client";
 
+import { Button } from "@kanpeki/ui/button";
+import { DropdownMenu } from "@kanpeki/ui/dropdown-menu";
+import { Icons } from "@kanpeki/ui/icons";
 import { PressResponder } from "@react-aria/interactions";
 import { useTheme } from "next-themes";
-import { Button } from "./ui/button";
-import { DropdownMenu } from "./ui/dropdown-menu";
-import { Icons } from "./ui/icons";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();

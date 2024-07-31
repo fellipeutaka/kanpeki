@@ -1,10 +1,10 @@
+import { cn } from "@kanpeki/utils/cn";
 import type { Metadata, Viewport } from "next";
 import { Providers } from "~/components/providers";
 import { SiteFooter } from "~/components/site-footer";
 import { SiteHeader } from "~/components/site-header";
 import { fonts } from "~/config/fonts";
 import { siteConfig } from "~/config/site";
-import { cn } from "~/utils/cn";
 
 import "~/styles/globals.css";
 

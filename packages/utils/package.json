@@ -1,6 +1,6 @@
 {
-  "name": "@kanpeki/demos",
-  "description": "Demos for the Kanpeki components.",
+  "name": "@kanpeki/utils",
+  "description": "Utils for Kanpeki",
   "type": "module",
   "private": true,
   "author": {
@@ -9,23 +9,26 @@
     "url": "https://github.com/fellipeutaka"
   },
   "exports": {
-    "./*": "./src/*.tsx"
+    "./*": "./src/*.ts"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/fellipeutaka/kanpeki.git",
-    "directory": "packages/components/demos"
+    "directory": "packages/utils"
   },
   "scripts": {
     "type-check": "tsc --noEmit --incremental false"
   },
   "devDependencies": {
-    "@kanpeki/ui": "workspace:*",
-    "@kanpeki/tsconfig": "workspace:*"
+    "@kanpeki/tsconfig": "workspace:*",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "clsx": "^2.1.1",
+    "tailwind-variants": "^0.2.1"
   },
   "peerDependencies": {
-    "@kanpeki/ui": "*",
-    "@types/react": "^18.3.3"
+    "react": "*",
+    "react-dom": "*"
   }
 }

@@ -1,14 +1,14 @@
 "use client";
 
+import { Button } from "@kanpeki/ui/button";
+import { Command } from "@kanpeki/ui/command";
+import { Icons } from "@kanpeki/ui/icons";
+import { ScrollArea } from "@kanpeki/ui/scroll-area";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { docsConfig } from "~/config/docs";
-import { Button } from "./ui/button";
-import { Command } from "./ui/command";
-import { Icons } from "./ui/icons";
-import { ScrollArea } from "./ui/scroll-area";
 
 export function CommandMenu() {
   const [isOpen, setIsOpen] = useState(false);

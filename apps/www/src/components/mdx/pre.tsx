@@ -1,11 +1,11 @@
-import type { NpmCommands } from "~/@types/unist";
-import { cn } from "~/utils/cn";
 import {
   ScrollAreaRoot,
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   ScrollAreaViewport,
-} from "../ui/scroll-area";
+} from "@kanpeki/ui/scroll-area";
+import { cn } from "@kanpeki/utils/cn";
+import type { NpmCommands } from "~/@types/unist";
 import {
   CopyButton,
   type CopyButtonProps,

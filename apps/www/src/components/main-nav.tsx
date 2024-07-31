@@ -1,11 +1,11 @@
 "use client";
 
+import { Badge } from "@kanpeki/ui/badge";
+import { Icons } from "@kanpeki/ui/icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
-import { Badge } from "./ui/badge";
-import { Icons } from "./ui/icons";
 
 export function MainNav() {
   const pathname = usePathname();

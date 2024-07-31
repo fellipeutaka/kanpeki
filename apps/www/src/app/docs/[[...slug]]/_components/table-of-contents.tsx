@@ -1,8 +1,8 @@
 "use client";
 
 import type { Docs } from "~:content";
+import { cn } from "@kanpeki/utils/cn";
 import { useActiveItem } from "~/hooks/use-active-item";
-import { cn } from "~/utils/cn";
 
 interface TableOfContentsProps {
   toc: Docs["toc"];

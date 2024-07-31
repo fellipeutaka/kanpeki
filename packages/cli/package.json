@@ -15,6 +15,9 @@
     "url": "https://github.com/fellipeutaka/kanpeki.git",
     "directory": "packages/cli"
   },
+  "scripts": {
+    "type-check": "tsc --noEmit --incremental false"
+  },
   "dependencies": {
     "@kanpeki/ui": "workspace:*"
   },

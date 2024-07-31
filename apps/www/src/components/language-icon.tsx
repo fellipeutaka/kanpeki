@@ -1,5 +1,5 @@
-import { cn } from "~/utils/cn";
-import { type IconProps, Icons } from "./ui/icons";
+import { type IconProps, Icons } from "@kanpeki/ui/icons";
+import { cn } from "@kanpeki/utils/cn";
 
 interface LanguageIconProps extends IconProps {
   title: string;

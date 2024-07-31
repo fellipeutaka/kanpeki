@@ -1,10 +1,10 @@
+import { Icons } from "@kanpeki/ui/icons";
+import { LinkButton } from "@kanpeki/ui/link-button";
 import { siteConfig } from "~/config/site";
 import { CommandMenu } from "./command-menu";
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 import { ModeToggle } from "./mode-toggle";
-import { Icons } from "./ui/icons";
-import { LinkButton } from "./ui/link-button";
 
 export function SiteHeader() {
   return (

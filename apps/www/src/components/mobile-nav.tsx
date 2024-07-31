@@ -1,8 +1,8 @@
 "use client";
 
+import { Button } from "@kanpeki/ui/button";
+import { cn } from "@kanpeki/utils/cn";
 import { useState } from "react";
-import { cn } from "~/utils/cn";
-import { Button } from "./ui/button";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);

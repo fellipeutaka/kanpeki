@@ -1,4 +1,4 @@
-import type { Icons } from "~/components/ui/icons";
+import type { Icons } from "@kanpeki/ui/icons";
 
 export const docsConfig: DocsConfig = {
   mainNav: [

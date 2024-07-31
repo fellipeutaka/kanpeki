@@ -1,5 +1,5 @@
+import { toast } from "@kanpeki/ui/toast";
 import { useState } from "react";
-import { toast } from "sonner";
 
 interface CopyOptions {
   text: string;

@@ -1,5 +1,8 @@
 "use client";
 
+import { mergeProps } from "@kanpeki/utils/merge-props";
+import { mergeRefs } from "@kanpeki/utils/merge-refs";
+import { useExitAnimation } from "@kanpeki/utils/use-animation";
 import { type DialogAria, useDialog } from "@react-aria/dialog";
 import { type PressProps, PressResponder } from "@react-aria/interactions";
 import {
@@ -18,9 +21,6 @@ import {
 } from "@react-stately/overlays";
 import { cloneElement, createContext, useContext, useRef } from "react";
 import { tv } from "tailwind-variants";
-import { mergeProps } from "~/utils/merge-props";
-import { mergeRefs } from "~/utils/merge-refs";
-import { useExitAnimation } from "~/utils/use-animation";
 
 export const DialogStyles = {
   Overlay: tv({

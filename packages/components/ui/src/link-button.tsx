@@ -1,12 +1,12 @@
 "use client";
 
+import { mergeProps } from "@kanpeki/utils/merge-props";
+import { mergeRefs } from "@kanpeki/utils/merge-refs";
 import { useFocusRing } from "@react-aria/focus";
 import { type AriaLinkOptions, useLink } from "@react-aria/link";
 import Link from "next/link";
 import { useRef } from "react";
 import type { VariantProps } from "tailwind-variants";
-import { mergeProps } from "~/utils/merge-props";
-import { mergeRefs } from "~/utils/merge-refs";
 import { ButtonStyles } from "./button";
 
 export type LinkButtonProps = React.ComponentProps<typeof Link> &

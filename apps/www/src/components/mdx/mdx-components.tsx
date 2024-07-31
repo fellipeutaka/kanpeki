@@ -1,6 +1,6 @@
-import { cn } from "~/utils/cn";
-import { Icons } from "../ui/icons";
-import { LinkButton } from "../ui/link-button";
+import { Icons } from "@kanpeki/ui/icons";
+import { LinkButton } from "@kanpeki/ui/link-button";
+import { cn } from "@kanpeki/utils/cn";
 import { ComponentPreview } from "./component-preview";
 import { Figcaption } from "./figcaption";
 import { Heading } from "./heading";

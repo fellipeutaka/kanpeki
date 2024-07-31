@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 "use client";
 
 import { type AriaSwitchProps, useSwitch } from "@react-aria/switch";

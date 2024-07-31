@@ -1,8 +1,8 @@
 "use client";
 
+import { Icons } from "@kanpeki/ui/icons";
 import { Children, Suspense, useMemo } from "react";
 import { type RegistryDemo, RegistryDemos } from "~/registry/demos";
-import { Icons } from "../ui/icons";
 import { CopyButton } from "./copy-button";
 import { Tabs } from "./tabs";
 

@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { type VariantProps, tv } from "tailwind-variants";
 
 export const BadgeStyles = tv({

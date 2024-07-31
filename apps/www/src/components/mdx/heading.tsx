@@ -1,5 +1,5 @@
-import { cn } from "~/utils/cn";
-import { Icons } from "../ui/icons";
+import { Icons } from "@kanpeki/ui/icons";
+import { cn } from "@kanpeki/utils/cn";
 
 type Types = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 type HeadingProps<T extends Types> = React.ComponentProps<T> & {

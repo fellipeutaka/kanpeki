@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { tv } from "tailwind-variants";
 
 export const CardStyles = {

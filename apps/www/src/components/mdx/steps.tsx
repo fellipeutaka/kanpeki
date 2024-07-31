@@ -1,4 +1,4 @@
-import { cn } from "~/utils/cn";
+import { cn } from "@kanpeki/utils/cn";
 
 export function Steps({ className, ...props }: React.ComponentProps<"div">) {
   return (

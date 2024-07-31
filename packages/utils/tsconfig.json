@@ -1,10 +1,5 @@
 {
   "extends": "@kanpeki/tsconfig/lib.json",
-  "compilerOptions": {
-    "jsx": "preserve",
-    "declaration": false,
-    "declarationMap": false
-  },
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }
