@@ -1,6 +1,7 @@
 "use client";
 
 import { Toaster } from "@kanpeki/ui/toast";
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "next-themes";
 
 interface ProvidersProps {
@@ -17,6 +18,7 @@ export function Providers({ children }: ProvidersProps) {
     >
       {children}
       <Toaster />
+      <Analytics />
     </ThemeProvider>
   );
 }
