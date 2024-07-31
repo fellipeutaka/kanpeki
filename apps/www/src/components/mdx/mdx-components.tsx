@@ -2,6 +2,7 @@ import { Icons } from "@kanpeki/ui/icons";
 import { LinkButton } from "@kanpeki/ui/link-button";
 import { cn } from "@kanpeki/utils/cn";
 import { ComponentPreview } from "./component-preview";
+import { ComponentSource } from "./component-source";
 import { Figcaption } from "./figcaption";
 import { Heading } from "./heading";
 import { Pre } from "./pre";
@@ -129,6 +130,7 @@ export const mdxComponents = {
 
   // Custom Components
   ComponentPreview,
+  ComponentSource,
   TabsRoot,
   TabsList,
   TabsTrigger,
