@@ -61,6 +61,30 @@ export default {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         mono: ["var(--font-geist-mono)", ...fontFamily.mono],
       },
+      keyframes: {
+        "collapsible-up": {
+          from: {
+            height: "var(--radix-collapsible-content-height)",
+          },
+          to: {
+            height: "var(--collapsible-closed-height, 0)",
+            opacity: "var(--collapsible-opacity-target, 0)",
+          },
+        },
+        "collapsible-down": {
+          from: {
+            height: "var(--collapsible-closed-height, 0)",
+            opacity: "var(--collapsible-opacity-target, 0)",
+          },
+          to: {
+            height: "var(--radix-collapsible-content-height)",
+          },
+        },
+      },
+      animation: {
+        "collapsible-up": "collapsible-up 150ms ease-out",
+        "collapsible-down": "collapsible-down 150ms ease-out",
+      },
     },
   },
   plugins: [tailwindcssAnimate],
