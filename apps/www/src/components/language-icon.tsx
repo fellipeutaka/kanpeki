@@ -3,9 +3,14 @@ import { cn } from "@kanpeki/utils/cn";
 
 const titleMap = new Map([
   ["tailwind.config.{js,cjs,mjs,ts}", Icons.TailwindCSS],
+  ["next.config.{js,cjs,mjs,ts}", Icons.NextJS],
+  ["postcss.config.{js,cjs,mjs}", Icons.PostCSS],
+  ["package.json", Icons.Node],
+  ["tsconfig.json", Icons.TSConfig],
 ]);
 
 const extensionMap = new Map([
+  ["cjs", Icons.JavaScript],
   ["js", Icons.JavaScript],
   ["ts", Icons.TypeScript],
   ["jsx", Icons.React],

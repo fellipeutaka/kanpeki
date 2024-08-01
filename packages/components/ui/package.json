@@ -39,12 +39,14 @@
     "sonner": "^1.5.0"
   },
   "devDependencies": {
+    "@kanpeki/hooks": "workspace:*",
     "@kanpeki/tsconfig": "workspace:*",
     "@types/react": "^18.3.3",
     "next": "15.0.0-rc.0",
     "tailwind-variants": "^0.2.1"
   },
   "peerDependencies": {
+    "@kanpeki/hooks": "*",
     "next": "*",
     "react": "*",
     "react-dom": "*"

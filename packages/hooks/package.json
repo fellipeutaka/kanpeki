@@ -1,6 +1,6 @@
 {
-  "name": "@kanpeki/utils",
-  "description": "Utils for Kanpeki",
+  "name": "@kanpeki/hooks",
+  "description": "Hooks for Kanpeki",
   "type": "module",
   "private": true,
   "author": {
@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fellipeutaka/kanpeki.git",
-    "directory": "packages/utils"
+    "directory": "packages/hooks"
   },
   "scripts": {
     "type-check": "tsc --noEmit --incremental false"
@@ -23,10 +23,10 @@
   "devDependencies": {
     "@kanpeki/tsconfig": "workspace:*",
     "@types/react": "^18.3.3",
-    "clsx": "^2.1.1",
-    "tailwind-variants": "^0.2.1"
+    "@types/react-dom": "^18.3.0"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-dom": "*"
   }
 }

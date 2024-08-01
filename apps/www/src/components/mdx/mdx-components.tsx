@@ -4,6 +4,7 @@ import { cn } from "@kanpeki/utils/cn";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { Figcaption } from "./figcaption";
+import { File, Files, Folder } from "./files";
 import { Heading } from "./heading";
 import { Pre } from "./pre";
 import { Step, Steps } from "./steps";
@@ -51,12 +52,17 @@ export const mdxComponents = {
   ),
   a: ({ className, ...props }: React.ComponentProps<"a">) => (
     <a
-      className={cn("font-medium underline underline-offset-4", className)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn("font-medium underline underline-offset-4 ", className)}
       {...props}
     />
   ),
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
-    <p className={cn("mt-6 leading-7 first:mt-0", className)} {...props} />
+    <p
+      className={cn("mt-6 text-pretty leading-7 first:mt-0", className)}
+      {...props}
+    />
   ),
   ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
     <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
@@ -137,6 +143,9 @@ export const mdxComponents = {
   TabsContent,
   Steps,
   Step,
+  Folder,
+  Files,
+  File,
   LinkButton,
   Icons,
 };

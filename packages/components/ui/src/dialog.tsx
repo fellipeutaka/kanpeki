@@ -1,8 +1,8 @@
 "use client";
 
+import { useExitAnimation } from "@kanpeki/hooks/use-animation";
 import { mergeProps } from "@kanpeki/utils/merge-props";
 import { mergeRefs } from "@kanpeki/utils/merge-refs";
-import { useExitAnimation } from "@kanpeki/utils/use-animation";
 import { type DialogAria, useDialog } from "@react-aria/dialog";
 import { type PressProps, PressResponder } from "@react-aria/interactions";
 import {

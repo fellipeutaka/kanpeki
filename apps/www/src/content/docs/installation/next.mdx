@@ -1,0 +1,194 @@
+---
+title: Next.js
+description: Install and configure Next.js.
+---
+
+<Steps>
+
+### Create project
+
+Start by creating a new Next.js project using `create-next-app`:
+
+```bash
+npx create-next-app@latest --ts --tailwind --app --src-dir
+```
+
+We use the `--ts` flag to create a TypeScript project, `--tailwind` to add Tailwind CSS,
+`--app` to use the [App Router](https://nextjs.org/docs/app), and `--src-dir` to use the `src` folder as the source directory.
+
+You will be asked a few questions to create the project:
+
+```txt
+? What is your project named? » my-app
+? Would you like to use ESLint? » No / Yes
+? Would you like to customize the default import alias (@/*)? » No / Yes
+```
+
+Currently, I prefer to use [Biome.js](https://biomejs.dev) instead of ESLint. You can use ESLint if you prefer.
+Also I prefer to use `~` as the alias. You can use `@` or any other alias if you prefer.
+
+### Run the CLI
+
+Run the `kanpeki-ui` init command to setup your project:
+
+```bash
+npx kanpeki-ui@latest init
+```
+
+### Fonts
+
+I use [Inter](https://rsms.me/inter) as the default font. Inter is not required.
+I also like to use the [Geist](https://vercel.com/font) font by [Vercel](https://vercel.com).
+You can use any font you like.
+
+Here's how I configure Inter for Next.js:
+
+**1. Create a `font.ts` file inside `src/config`:**
+
+```ts title=font.ts
+import { Inter } from "next/font/google";
+
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+export const fonts = {
+  sans,
+};
+```
+
+**2. Import the font in the root layout:**
+
+```tsx title=app/layout.tsx {2,31}
+import type { Metadata, Viewport } from "next";
+import { fonts } from "~/config/fonts";
+import { cn } from "~/utils/cn";
+
+import "~/styles/globals.css";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Next.js app",
+    template: "%s | Next.js app",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-dvh bg-background font-sans text-foreground antialiased",
+          fonts.sans.variable
+        )}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+**3. Configure `theme.extend.fontFamily` in `tailwind.config.ts`**
+
+```ts title=tailwind.config.js {2,9-11}
+import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
+
+export default {
+  content: ["./src/**/*.{ts,tsx}"],
+  darkMode: "class",
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
+    },
+  },
+  plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+} satisfies Config;
+```
+
+### App structure
+
+Here's how I structure my Next.js apps. You can use this as a reference:
+
+<Files className="mt-6">
+  <Folder name="src">
+    <Folder name="app">
+      <File name="layout.tsx" />
+      <File name="page.tsx" />
+    </Folder>
+    <Folder name="components">
+      <File name="button.tsx" />
+      <File name="tabs.tsx" />
+      <File name="dialog.tsx" />
+    </Folder>
+    <Folder name="config">
+      <File name="fonts.ts" />
+      <File name="site.ts" />
+    </Folder>
+    <Folder name="hooks">
+      <File name="use-copy-to-clipboard.ts" />
+      <File name="use-animation.ts" />
+    </Folder>
+    <Folder name="styles">
+      <File name="globals.css" />
+    </Folder>
+    <Folder name="utils">
+      <File name="chain.ts" />
+      <File name="cn.ts" />
+      <File name="merge-ids.ts" />
+      <File name="merge-props.ts" />
+      <File name="merge-refs.ts" />
+    </Folder>
+  </Folder>
+  <File name="next.config.js" />
+  <File name="package.json" />
+  <File name="postcss.config.cjs" />
+  <File name="tailwind.config.ts" />
+  <File name="tsconfig.json" />
+</Files>
+
+- I place the UI components in the `src/components/ui` folder.
+- The `utils` folder contains all the utility functions. I have a `cn.ts` where I define the `cn` helper.
+- The `styles` folder contains the global CSS.
+
+### That's it
+
+You can now start adding components to your project.
+
+```bash
+npx kanpeki-ui@latest add button
+```
+
+The command above will add the `Button` component to your project. You can then import it like this:
+
+```tsx {1,6}
+import { Button } from "~/components/ui/button";
+
+export default function Home() {
+  return (
+    <div>
+      <Button>Click me</Button>
+    </div>
+  );
+}
+```
+
+</Steps>
