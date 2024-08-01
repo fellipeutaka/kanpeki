@@ -1,12 +1,11 @@
 import { type IconProps, Icons } from "@kanpeki/ui/icons";
 import { cn } from "@kanpeki/utils/cn";
 
-interface LanguageIconProps extends IconProps {
-  title: string;
-  language: string;
-}
+const titleMap = new Map([
+  ["tailwind.config.{js,cjs,mjs,ts}", Icons.TailwindCSS],
+]);
 
-const languageIconMap = new Map([
+const extensionMap = new Map([
   ["js", Icons.JavaScript],
   ["ts", Icons.TypeScript],
   ["jsx", Icons.React],
@@ -20,18 +19,37 @@ const languageIconMap = new Map([
   ["css", Icons.Css],
 ]);
 
+function convertPatternToRegex(pattern: string): string {
+  return pattern.replace(
+    /{([^}]+)}/g,
+    (_, group) => `(${group.replace(/,/g, "|")})`,
+  );
+}
+
+function getIconByTitle(title: string) {
+  for (const [pattern, icon] of titleMap) {
+    const regexPattern = convertPatternToRegex(pattern);
+    const regex = new RegExp(`^${regexPattern}$`);
+    if (regex.test(title)) {
+      return icon;
+    }
+  }
+  return null;
+}
+
+interface LanguageIconProps extends IconProps {
+  title: string;
+  language: string;
+}
+
 export function LanguageIcon({
   title,
   language,
   className,
   ...props
 }: LanguageIconProps) {
-  if (title.startsWith("tailwind.config")) {
-    return (
-      <Icons.TailwindCSS className={cn("size-3.5", className)} {...props} />
-    );
-  }
+  const IconComponent =
+    getIconByTitle(title) || extensionMap.get(language) || Icons.File;
 
-  const IconComponent = languageIconMap.get(language) || Icons.File;
   return <IconComponent className={cn("size-3.5", className)} {...props} />;
 }
