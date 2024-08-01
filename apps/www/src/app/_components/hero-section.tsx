@@ -1,9 +1,9 @@
 import { Icons } from "@kanpeki/ui/icons";
 import { LinkButton } from "@kanpeki/ui/link-button";
 import { siteConfig } from "~/config/site";
-import { SiteHeroIllustration } from "./site-hero-illustration";
+import { HeroIllustration } from "./hero-illustration";
 
-export function SiteHero() {
+export function HeroSection() {
   return (
     <section className="w-full items-start justify-between md:flex md:max-w-7xl">
       <div className="space-y-6 pt-4">
@@ -42,7 +42,7 @@ export function SiteHero() {
         </div>
       </div>
       <div className="hidden px-10 lg:block xl:px-20">
-        <SiteHeroIllustration />
+        <HeroIllustration />
       </div>
     </section>
   );
