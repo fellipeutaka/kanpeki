@@ -31,7 +31,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Alert",
           href: "/docs/components/alert",
-          disabled: true,
         },
         {
           title: "Avatar",

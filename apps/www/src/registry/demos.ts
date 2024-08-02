@@ -1,6 +1,15 @@
 import { lazy } from "react";
 
 export const RegistryDemos = {
+  "alert-demo": {
+    component: lazy(() => import("@kanpeki/demos/alert-demo")),
+  },
+  "alert-destructive": {
+    component: lazy(() => import("@kanpeki/demos/alert-destructive")),
+  },
+  "alert-warning": {
+    component: lazy(() => import("@kanpeki/demos/alert-warning")),
+  },
   "badge-demo": {
     component: lazy(() => import("@kanpeki/demos/badge-demo")),
   },

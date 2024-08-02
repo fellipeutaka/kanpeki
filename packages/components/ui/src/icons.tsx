@@ -366,6 +366,25 @@ const TechnologiesIcons = {
 export const Icons = {
   ...PackageManagerIcons,
   ...TechnologiesIcons,
+  Ban: (props) => (
+    <svg
+      role="img"
+      aria-label="Ban"
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx={12} cy={12} r={10} />
+      <path d="M4.9 4.9l14.2 14.2" />
+    </svg>
+  ),
   Bell: (props) => (
     <svg
       role="img"
@@ -757,6 +776,43 @@ export const Icons = {
     >
       <path d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2" />
       <circle cx={12} cy={7} r={4} />
+    </svg>
+  ),
+  Rocket: (props) => (
+    <svg
+      role="img"
+      aria-label="Rocket"
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09zM12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" />
+      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+    </svg>
+  ),
+  TriangleAlert: (props) => (
+    <svg
+      role="img"
+      aria-label="Triangle Alert"
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M21.73 18l-8-14a2 2 0 00-3.48 0l-8 14A2 2 0 004 21h16a2 2 0 001.73-3M12 9v4M12 17h.01" />
     </svg>
   ),
 } as const satisfies Record<string, Icon>;
