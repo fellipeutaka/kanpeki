@@ -7,7 +7,7 @@ import { siteConfig } from "~/config/site";
 
 const footerLinks = [
   {
-    title: "Product",
+    title: "Useful Links",
     links: docsConfig.mainNav,
   },
   {
@@ -15,15 +15,15 @@ const footerLinks = [
     links: [
       {
         title: "Open an issue",
-        href: "https://github.com/mehdibha/dotUI/issues/new",
+        href: "https://github.com/fellipeutaka/kanpeki/issues/new",
       },
       {
         title: "Request a feature",
-        href: "https://github.com/mehdibha/dotUI/discussions/new?category=ideas",
+        href: "https://github.com/fellipeutaka/kanpeki/discussions/new?category=ideas",
       },
       {
         title: "Request an element",
-        href: "https://github.com/mehdibha/dotUI/discussions/new?category=requests",
+        href: "https://github.com/fellipeutaka/kanpeki/discussions/new?category=requests",
       },
     ],
   },

@@ -14,12 +14,12 @@ export const Heading = <T extends Types = "h1">(props: HeadingProps<T>) => {
     <Component className={cn("scroll-m-20", className)} id={id} {...rest}>
       <a
         href={`#${id}`}
-        className="group outline-none ring-ring ring-offset-2 ring-offset-background transition focus-visible:ring-2"
+        className="group flex items-center gap-2 outline-none ring-ring ring-offset-2 ring-offset-background transition focus-visible:ring-2"
       >
         {children}
         <Icons.Link
           aria-label="Link to section"
-          className="ml-2 inline size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
+          className="size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
         />
       </a>
     </Component>

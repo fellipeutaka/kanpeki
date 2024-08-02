@@ -13,7 +13,7 @@ export function TableOfContents({ toc, itemIds }: TableOfContentsProps) {
   const activeHeading = useActiveItem(itemIds);
 
   return (
-    <div className="-mt-10 sticky top-16 h-[calc(100dvh-4rem)] space-y-4 pt-4">
+    <div className="-mt-10 sticky top-16 space-y-4 pt-4">
       <p className="font-medium">On This Page</p>
       <Tree tree={toc} activeItem={activeHeading} />
     </div>

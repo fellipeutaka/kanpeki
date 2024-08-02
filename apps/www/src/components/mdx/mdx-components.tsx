@@ -116,7 +116,7 @@ export const mdxComponents = {
   code: ({ className, ...props }: React.ComponentProps<"code">) => (
     <code
       className={cn(
-        "relative rounded px-1 py-0.5 font-mono text-sm",
+        "relative rounded bg-muted px-1 py-0.5 font-mono text-sm",
         className,
       )}
       {...props}
