@@ -49,6 +49,9 @@ export const RegistryDemos = {
   "card-demo": {
     component: lazy(() => import("@kanpeki/demos/card-demo")),
   },
+  "label-demo": {
+    component: lazy(() => import("@kanpeki/demos/label-demo")),
+  },
   "separator-demo": {
     component: lazy(() => import("@kanpeki/demos/separator-demo")),
   },

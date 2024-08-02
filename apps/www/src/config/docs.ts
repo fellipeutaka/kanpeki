@@ -71,7 +71,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Label",
           href: "/docs/components/label",
-          disabled: true,
         },
         {
           title: "Scroll Area",
