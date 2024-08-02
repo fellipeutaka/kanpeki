@@ -1,7 +1,7 @@
 import { Alert } from "@kanpeki/ui/alert";
 import { Icons } from "@kanpeki/ui/icons";
 
-export default function AlertDemo() {
+export default function AlertWarningDemo() {
   return (
     <Alert.Root variant="warning">
       <Icons.TriangleAlert className="size-4" />

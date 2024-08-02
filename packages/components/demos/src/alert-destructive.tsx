@@ -1,7 +1,7 @@
 import { Alert } from "@kanpeki/ui/alert";
 import { Icons } from "@kanpeki/ui/icons";
 
-export default function AlertDemo() {
+export default function AlertDestructiveDemo() {
   return (
     <Alert.Root variant="destructive">
       <Icons.Ban className="size-4" />

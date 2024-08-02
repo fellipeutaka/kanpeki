@@ -1,7 +1,7 @@
 import { Button } from "@kanpeki/ui/button";
 import { Icons } from "@kanpeki/ui/icons";
 
-export default function ButtonDemo() {
+export default function ButtonWithIconDemo() {
   return (
     <Button>
       Get Started
