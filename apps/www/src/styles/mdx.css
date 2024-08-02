@@ -20,6 +20,10 @@
   @apply mt-0;
 }
 
+.mdx > div:where([dir], [data-orientation]):first-child {
+  @apply mt-0;
+}
+
 .steps > :where(h2, h3) {
   @apply mt-8 mb-4 text-base font-semibold;
   counter-increment: step;
