@@ -41,6 +41,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/badge",
         },
         {
+          title: "Breadcrumb",
+          href: "/docs/components/breadcrumb",
+          disabled: true,
+        },
+        {
           title: "Button",
           href: "/docs/components/button",
         },
@@ -76,7 +81,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Separator",
           href: "/docs/components/separator",
-          disabled: true,
         },
         {
           title: "Skeleton",

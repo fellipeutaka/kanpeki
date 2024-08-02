@@ -49,6 +49,12 @@ export const RegistryDemos = {
   "card-demo": {
     component: lazy(() => import("@kanpeki/demos/card-demo")),
   },
+  "separator-demo": {
+    component: lazy(() => import("@kanpeki/demos/separator-demo")),
+  },
+  "separator-vertical": {
+    component: lazy(() => import("@kanpeki/demos/separator-vertical")),
+  },
 } as const satisfies Record<string, Registry>;
 
 export interface Registry {
