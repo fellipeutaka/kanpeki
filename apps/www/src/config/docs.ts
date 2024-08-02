@@ -75,7 +75,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Scroll Area",
           href: "/docs/components/scroll-area",
-          disabled: true,
         },
         {
           title: "Separator",

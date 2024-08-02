@@ -38,7 +38,7 @@ export function ComponentPreview({ children, name }: ComponentPreviewProps) {
         tabIndex={-1}
       >
         <CopyButton className="m-4 ml-auto flex" text={codeString} />
-        <div className="grid aspect-video size-full place-items-center p-10">
+        <div className="grid min-h-80 w-full place-items-center p-10">
           <Suspense
             fallback={
               <div className="grid place-items-center text-muted-foreground text-sm">

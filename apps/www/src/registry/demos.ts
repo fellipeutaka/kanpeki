@@ -52,6 +52,12 @@ export const RegistryDemos = {
   "label-demo": {
     component: lazy(() => import("@kanpeki/demos/label-demo")),
   },
+  "scroll-area-demo": {
+    component: lazy(() => import("@kanpeki/demos/scroll-area-demo")),
+  },
+  "scroll-area-horizontal": {
+    component: lazy(() => import("@kanpeki/demos/scroll-area-horizontal")),
+  },
   "separator-demo": {
     component: lazy(() => import("@kanpeki/demos/separator-demo")),
   },

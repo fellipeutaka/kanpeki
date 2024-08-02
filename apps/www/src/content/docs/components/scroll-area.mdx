@@ -1,0 +1,99 @@
+---
+title: Scroll Area
+description: Augments native scroll functionality for custom, cross-browser styling.
+links:
+  docs: https://www.radix-ui.com/primitives/docs/components/scroll-area
+---
+
+<ComponentPreview name="scroll-area-demo" />
+
+## Installation
+
+<TabsRoot defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx kanpeki-ui@latest add scroll-area
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-scroll-area
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-area" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</TabsRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { ScrollArea } from "~/components/ui/scroll-area";
+```
+
+```tsx
+<ScrollArea.Root>
+  <ScrollArea.Viewport>...</ScrollArea.Viewport>
+  <ScrollArea.Scrollbar orientation="vertical">
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+  <ScrollArea.Scrollbar orientation="horizontal">
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+</ScrollArea.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  ScrollAreaRoot,
+  ScrollAreaViewport,
+  ScrollAreaScrollbar,
+  ScrollAreaThumb,
+} from "~/components/ui/scroll-area";
+```
+
+```tsx
+<ScrollAreaRoot>
+  <ScrollAreaViewport>...</ScrollAreaViewport>
+  <ScrollAreaScrollbar orientation="vertical">
+    <ScrollAreaThumb />
+  </ScrollAreaScrollbar>
+  <ScrollAreaScrollbar orientation="horizontal">
+    <ScrollAreaThumb />
+  </ScrollAreaScrollbar>
+</ScrollAreaRoot>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="scroll-area-demo" />
+
+### Horizontal Scrolling
+
+<ComponentPreview name="scroll-area-horizontal" />
