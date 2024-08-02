@@ -1,0 +1,79 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+---
+
+<ComponentPreview name="avatar-demo" />
+
+## Installation
+
+<TabsRoot defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx kanpeki-ui@latest add avatar
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="avatar" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</TabsRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Avatar } from "~/components/ui/avatar";
+import { Icons } from "~/components/ui/icons";
+```
+
+```tsx
+<Avatar.Root>
+  <Avatar.Image src="https://github.com/fellipeutaka.png" alt="@fellipeutaka" />
+  <Avatar.Fallback>FU</Avatar.Fallback>
+  <Avatar.Placeholder>
+    <Icons.User className="size-6" />
+  </Avatar.Placeholder>
+</Avatar.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  AvatarRoot,
+  AvatarFallback,
+  AvatarImage,
+  AvatarPlaceholder,
+} from "~/components/ui/avatar";
+import { Icons } from "~/components/ui/icons";
+```
+
+```tsx
+<AvatarRoot>
+  <AvatarImage src="https://github.com/fellipeutaka.png" alt="@fellipeutaka" />
+  <AvatarFallback>FU</AvatarFallback>
+  <AvatarPlaceholder>
+    <Icons.User className="size-6" />
+  </AvatarPlaceholder>
+</AvatarRoot>
+```

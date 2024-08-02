@@ -35,7 +35,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Avatar",
           href: "/docs/components/avatar",
-          disabled: true,
         },
         {
           title: "Badge",
