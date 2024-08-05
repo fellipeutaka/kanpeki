@@ -1,3 +1,4 @@
+import { Alert } from "@kanpeki/ui/alert";
 import { Icons } from "@kanpeki/ui/icons";
 import { LinkButton } from "@kanpeki/ui/link-button";
 import { cn } from "@kanpeki/utils/cn";
@@ -148,4 +149,5 @@ export const mdxComponents = {
   File,
   LinkButton,
   Icons,
+  Alert,
 };

@@ -23,6 +23,10 @@ export const docsConfig: DocsConfig = {
           title: "Installation",
           href: "/docs/installation",
         },
+        {
+          title: "Dark Mode",
+          href: "/docs/dark-mode",
+        },
       ],
     },
     {

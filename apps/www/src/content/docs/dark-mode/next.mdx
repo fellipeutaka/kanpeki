@@ -1,0 +1,73 @@
+---
+title: Next.js
+description: Adding dark mode to your next app.
+---
+
+## Dark mode
+
+<Steps>
+
+### Install next-themes
+
+Start by installing `next-themes`:
+
+```bash
+npm install next-themes
+```
+
+### Create a providers
+
+```tsx title="components/providers.tsx"
+"use client";
+
+import { ThemeProvider } from "next-themes";
+
+interface ProvidersProps {
+  children: React.ReactNode;
+}
+
+export function Providers({ children }: ProvidersProps) {
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      {children}
+    </ThemeProvider>
+  );
+}
+```
+
+### Wrap your root layout
+
+Add the `Providers` to your root layout.
+
+```tsx {1,/suppressHydrationWarning/,11} title="app/layout.tsx"
+import { Providers } from "~/components/providers";
+
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: LayoutProps) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+```
+
+<Alert.Root variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Description>
+    Make sure to add the `suppressHydrationWarning` prop to the `html` tag to
+    avoid a hydration mismatch error.
+  </Alert.Description>
+</Alert.Root>
+
+</Steps>

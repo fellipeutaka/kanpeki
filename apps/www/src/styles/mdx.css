@@ -11,7 +11,7 @@ figure[data-rehype-pretty-code-figure] [data-line] {
   color: light-dark(var(--shiki-light), var(--shiki-dark));
 }
 
-figure[data-rehype-pretty-code-figure] [data-highlighted-line] {
+figure[data-rehype-pretty-code-figure] :where([data-highlighted-chars], [data-highlighted-line]) {
   @apply bg-muted;
 }
 
