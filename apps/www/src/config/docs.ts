@@ -33,6 +33,12 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       items: [
         {
+          title: "Accordion",
+          href: "/docs/components/accordion",
+          disabled: true,
+          label: "Planned",
+        },
+        {
           title: "Alert",
           href: "/docs/components/alert",
         },
@@ -48,34 +54,137 @@ export const docsConfig: DocsConfig = {
           title: "Breadcrumb",
           href: "/docs/components/breadcrumb",
           disabled: true,
+          label: "Soon",
         },
         {
           title: "Button",
           href: "/docs/components/button",
         },
         {
+          title: "Calendar",
+          href: "/docs/components/calendar",
+          disabled: true,
+          label: "Planned",
+        },
+        {
           title: "Card",
           href: "/docs/components/card",
+        },
+        {
+          title: "Carousel",
+          href: "/docs/components/carousel",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Chart",
+          href: "/docs/components/chart",
+          disabled: true,
+          label: "Planned",
         },
         {
           title: "Checkbox",
           href: "/docs/components/checkbox",
         },
         {
+          title: "Collapsible",
+          href: "/docs/components/collapsible",
+          disabled: true,
+          label: "Soon",
+        },
+        {
+          title: "Combobox",
+          href: "/docs/components/combobox",
+          disabled: true,
+          label: "Planned",
+        },
+        {
           title: "Command",
           href: "/docs/components/command",
+        },
+        {
+          title: "Context Menu",
+          href: "/docs/components/context-menu",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Data Table",
+          href: "/docs/components/data-table",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Date Picker",
+          href: "/docs/components/date-picker",
+          disabled: true,
+          label: "Planned",
         },
         {
           title: "Dialog",
           href: "/docs/components/dialog",
         },
         {
+          title: "Dropdown Menu",
+          href: "/docs/components/dropdown-menu",
+          disabled: true,
+          label: "Soon",
+        },
+        {
+          title: "Form",
+          href: "/docs/components/form",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Hover Card",
+          href: "/docs/components/hover-card",
+          disabled: true,
+          label: "Planned",
+        },
+        {
           title: "Label",
           href: "/docs/components/label",
         },
         {
+          title: "Pagination",
+          href: "/docs/components/pagination",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Popover",
+          href: "/docs/components/popover",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Progress",
+          href: "/docs/components/progress",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Radio Group",
+          href: "/docs/components/radio-group",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Resizable",
+          href: "/docs/components/resizable",
+          disabled: true,
+          label: "Planned",
+        },
+        {
           title: "Scroll Area",
           href: "/docs/components/scroll-area",
+        },
+        {
+          title: "Select",
+          href: "/docs/components/select",
+          disabled: true,
+          label: "Planned",
         },
         {
           title: "Separator",
@@ -84,6 +193,12 @@ export const docsConfig: DocsConfig = {
         {
           title: "Skeleton",
           href: "/docs/components/skeleton",
+        },
+        {
+          title: "Slider",
+          href: "/docs/components/slider",
+          disabled: true,
+          label: "Planned",
         },
         {
           title: "Switch",
@@ -104,6 +219,30 @@ export const docsConfig: DocsConfig = {
         {
           title: "TextField",
           href: "/docs/components/text-field",
+        },
+        {
+          title: "Toast",
+          href: "/docs/components/toast",
+          disabled: true,
+          label: "Soon",
+        },
+        {
+          title: "Toggle",
+          href: "/docs/components/toggle",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Toggle Group",
+          href: "/docs/components/toggle-group",
+          disabled: true,
+          label: "Planned",
+        },
+        {
+          title: "Tooltip",
+          href: "/docs/components/tooltip",
+          disabled: true,
+          label: "Planned",
         },
       ],
     },
