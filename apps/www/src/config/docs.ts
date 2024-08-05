@@ -60,7 +60,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Checkbox",
           href: "/docs/components/checkbox",
-          disabled: true,
         },
         {
           title: "Command",

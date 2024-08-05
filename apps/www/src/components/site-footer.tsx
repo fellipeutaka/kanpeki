@@ -79,7 +79,7 @@ export function SiteFooter() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="text-muted-foreground transition-colors duration-200"
+                    className="text-muted-foreground text-sm transition-colors duration-200"
                   >
                     {item.title}
                   </a>

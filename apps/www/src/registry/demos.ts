@@ -52,6 +52,12 @@ export const RegistryDemos = {
   "card-demo": {
     component: lazy(() => import("@kanpeki/demos/card-demo")),
   },
+  "checkbox-demo": {
+    component: lazy(() => import("@kanpeki/demos/checkbox-demo")),
+  },
+  "checkbox-disabled": {
+    component: lazy(() => import("@kanpeki/demos/checkbox-disabled")),
+  },
   "command-demo": {
     component: lazy(() => import("@kanpeki/demos/command-demo")),
   },

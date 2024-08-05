@@ -36,7 +36,6 @@ export function CheckboxRoot({ className, ...props }: CheckboxRootProps) {
     isPressed,
     isReadOnly,
     isSelected,
-    labelProps,
   } = useCheckbox(
     {
       ...props,
@@ -48,7 +47,7 @@ export function CheckboxRoot({ className, ...props }: CheckboxRootProps) {
   );
 
   return (
-    <label {...labelProps}>
+    <>
       <input {...inputProps} className="sr-only" />
 
       <button
@@ -64,7 +63,7 @@ export function CheckboxRoot({ className, ...props }: CheckboxRootProps) {
       >
         {props.children}
       </button>
-    </label>
+    </>
   );
 }
 
