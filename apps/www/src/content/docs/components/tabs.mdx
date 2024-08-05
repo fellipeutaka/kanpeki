@@ -1,0 +1,89 @@
+---
+title: Tabs
+description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+links:
+  docs: https://www.radix-ui.com/primitives/docs/components/tabs
+---
+
+<ComponentPreview name="tabs-demo" />
+
+## Installation
+
+<TabsRoot defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx kanpeki-ui@latest add tabs
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @radix-ui/react-tabs
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-area" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</TabsRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Tabs } from "~/components/ui/tabs";
+```
+
+```tsx
+<Tabs.Root defaultValue="account">
+  <Tabs.List>
+    <Tabs.Trigger value="account">Account</Tabs.Trigger>
+    <Tabs.Trigger value="password">Password</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="account">
+    Make changes to your account here.
+  </Tabs.Content>
+  <Tabs.Content value="password">Change your password here.</Tabs.Content>
+</Tabs.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  TabsRoot,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "~/components/ui/tabs";
+```
+
+```tsx
+<TabsRoot defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">Make changes to your account here.</TabsContent>
+  <TabsContent value="password">Change your password here.</TabsContent>
+</TabsRoot>
+```

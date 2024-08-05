@@ -88,6 +88,9 @@ export const RegistryDemos = {
   "table-demo": {
     component: lazy(() => import("@kanpeki/demos/table-demo")),
   },
+  "tabs-demo": {
+    component: lazy(() => import("@kanpeki/demos/tabs-demo")),
+  },
   "text-area-auto-resize": {
     component: lazy(() => import("@kanpeki/demos/text-area-auto-resize")),
   },

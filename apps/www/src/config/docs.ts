@@ -97,7 +97,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Tabs",
           href: "/docs/components/tabs",
-          disabled: true,
         },
         {
           title: "TextArea",
