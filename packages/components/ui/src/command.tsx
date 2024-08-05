@@ -8,7 +8,7 @@ import { Icons } from "./icons";
 export const CommandStyles = {
   Root: tv({
     base: [
-      "flex size-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+      "flex w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
     ],
   }),
   Dialog: tv({

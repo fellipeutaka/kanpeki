@@ -68,5 +68,9 @@ function DocsLinkIcon({ link }: DocsLinkIconProps) {
     return <Icons.Adobe className="size-3" />;
   }
 
-  return <Icons.RadixUI className="size-3" />;
+  if (link.startsWith("https://www.radix-ui.com")) {
+    return <Icons.RadixUI className="size-3" />;
+  }
+
+  return null;
 }

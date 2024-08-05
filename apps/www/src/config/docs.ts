@@ -65,7 +65,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Command",
           href: "/docs/components/command",
-          disabled: true,
         },
         {
           title: "Dialog",
@@ -149,4 +148,5 @@ export type NavLink = {
   title: string;
   href: string;
   disabled?: boolean;
+  label?: string;
 };

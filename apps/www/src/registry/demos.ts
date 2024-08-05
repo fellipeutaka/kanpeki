@@ -52,6 +52,9 @@ export const RegistryDemos = {
   "card-demo": {
     component: lazy(() => import("@kanpeki/demos/card-demo")),
   },
+  "command-demo": {
+    component: lazy(() => import("@kanpeki/demos/command-demo")),
+  },
   "dialog-demo": {
     component: lazy(() => import("@kanpeki/demos/dialog-demo")),
   },

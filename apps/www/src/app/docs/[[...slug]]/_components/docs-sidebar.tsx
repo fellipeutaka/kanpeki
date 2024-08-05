@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@kanpeki/ui/badge";
 import { ScrollArea } from "@kanpeki/ui/scroll-area";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -61,6 +62,15 @@ function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
     return (
       <span aria-disabled className={SidebarLinkStyles()}>
         {item.title}
+
+        {item.label && (
+          <Badge
+            variant="secondary"
+            className="ml-2 border-none px-1.5 py-0.5 text-muted-foreground leading-none"
+          >
+            {item.label}
+          </Badge>
+        )}
       </span>
     );
   }
@@ -71,6 +81,12 @@ function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
       className={SidebarLinkStyles({ active: pathname.includes(item.href) })}
     >
       {item.title}
+
+      {item.label && (
+        <Badge className="ml-2 border-none px-1.5 py-0.5 leading-none">
+          {item.label}
+        </Badge>
+      )}
     </Link>
   );
 }
