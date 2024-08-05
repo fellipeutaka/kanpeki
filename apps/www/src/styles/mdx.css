@@ -1,18 +1,17 @@
 
-[data-rehype-pretty-code-figure] code {
+figure[data-rehype-pretty-code-figure] code {
   @apply p-0 bg-transparent;
-
 }
 
-[data-rehype-pretty-code-figure] [data-line] {
+figure[data-rehype-pretty-code-figure] [data-line] {
   @apply px-3;
-
-  & span {
-    color: light-dark(var(--shiki-light), var(--shiki-dark));
-  }
 }
 
-[data-rehype-pretty-code-figure] [data-highlighted-line] {
+[data-rehype-pretty-code-figure] span {
+  color: light-dark(var(--shiki-light), var(--shiki-dark));
+}
+
+figure[data-rehype-pretty-code-figure] [data-highlighted-line] {
   @apply bg-muted;
 }
 

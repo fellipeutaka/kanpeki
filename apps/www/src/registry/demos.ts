@@ -1,6 +1,9 @@
 import { lazy } from "react";
 
 export const RegistryDemos = {
+  "alert-dialog-demo": {
+    component: lazy(() => import("@kanpeki/demos/alert-dialog-demo")),
+  },
   "alert-demo": {
     component: lazy(() => import("@kanpeki/demos/alert-demo")),
   },
@@ -48,6 +51,9 @@ export const RegistryDemos = {
   },
   "card-demo": {
     component: lazy(() => import("@kanpeki/demos/card-demo")),
+  },
+  "dialog-demo": {
+    component: lazy(() => import("@kanpeki/demos/dialog-demo")),
   },
   "label-demo": {
     component: lazy(() => import("@kanpeki/demos/label-demo")),

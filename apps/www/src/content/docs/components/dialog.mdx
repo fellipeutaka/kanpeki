@@ -1,0 +1,117 @@
+---
+title: Dialog
+description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/useDialog.html
+---
+
+<ComponentPreview name="dialog-demo" />
+
+## Installation
+
+<TabsRoot defaultValue="manual">
+
+<TabsList>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx kanpeki-ui@latest add card
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @react-aria/dialog @react-aria/interactions @react-aria/overlays @react-stately/overlays
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="dialog" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</TabsRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Dialog } from "~/components/ui/dialog";
+```
+
+```tsx
+<Dialog.Root>
+  <Dialog.Trigger>Open</Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Overlay />
+    <Dialog.Content>
+      <Dialog.Header>
+        <Dialog.Title>Are you absolutely sure?</Dialog.Title>
+        <Dialog.Description>
+          This action cannot be undone. This will permanently delete your
+          account and remove your data from our servers.
+        </Dialog.Description>
+      </Dialog.Header>
+    </Dialog.Content>
+  </Dialog.Portal>
+</Dialog.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogRoot,
+  DialogTitle,
+  DialogTrigger,
+} from "~/components/ui/dialog";
+```
+
+```tsx
+<DialogRoot>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogPortal>
+    <DialogOverlay />
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>Are you absolutely sure?</DialogTitle>
+        <DialogDescription>
+          This action cannot be undone. This will permanently delete your
+          account and remove your data from our servers.
+        </DialogDescription>
+      </DialogHeader>
+    </DialogContent>
+  </DialogPortal>
+</DialogRoot>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="dialog-demo" />
+
+### Alert Dialog
+
+Use the `role="alertdialog"{:tsx}` prop on the `<Dialog.Content>{:tsx}` element to make an alert dialog. If the `isDismissable` prop is not explicitly set, the dialog will be not dismissable.
+
+<ComponentPreview name="alert-dialog-demo" />

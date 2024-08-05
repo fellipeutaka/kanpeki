@@ -66,7 +66,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Dialog",
           href: "/docs/components/dialog",
-          disabled: true,
         },
         {
           title: "Label",
