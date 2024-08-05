@@ -88,6 +88,15 @@ export const RegistryDemos = {
   "table-demo": {
     component: lazy(() => import("@kanpeki/demos/table-demo")),
   },
+  "text-field-demo": {
+    component: lazy(() => import("@kanpeki/demos/text-field-demo")),
+  },
+  "text-field-with-icon": {
+    component: lazy(() => import("@kanpeki/demos/text-field-with-icon")),
+  },
+  "text-field-password": {
+    component: lazy(() => import("@kanpeki/demos/text-field-password")),
+  },
 } as const satisfies Record<string, Registry>;
 
 export interface Registry {

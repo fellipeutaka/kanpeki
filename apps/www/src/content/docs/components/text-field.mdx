@@ -1,0 +1,78 @@
+---
+title: TextField
+description: Displays a form input field or a component that looks like an input field.
+---
+
+<ComponentPreview name="text-field-demo" />
+
+## Installation
+
+<TabsRoot defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx kanpeki-ui@latest add text-field
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-field" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</TabsRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { TextField } from "~/components/ui/text-field";
+```
+
+```tsx
+<TextField.Root>
+  <TextField.Input placeholder="Email" />
+</TextField.Root>
+```
+
+### Multiple imports
+
+```tsx
+import { TextFieldRoot, TextFieldInput } from "~/components/ui/text-field";
+```
+
+```tsx
+<TextFieldRoot>
+  <TextFieldInput placeholder="Email" />
+</TextFieldRoot>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="text-field-demo" />
+
+### With Icon
+
+<ComponentPreview name="text-field-with-icon" />
+
+### Password
+
+<ComponentPreview name="text-field-password" />

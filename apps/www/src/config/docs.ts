@@ -101,13 +101,12 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "TextArea",
-          href: "/docs/components/textarea",
+          href: "/docs/components/text-area",
           disabled: true,
         },
         {
           title: "TextField",
-          href: "/docs/components/toast",
-          disabled: true,
+          href: "/docs/components/text-field",
         },
       ],
     },
