@@ -88,6 +88,18 @@ export const RegistryDemos = {
   "table-demo": {
     component: lazy(() => import("@kanpeki/demos/table-demo")),
   },
+  "text-area-auto-resize": {
+    component: lazy(() => import("@kanpeki/demos/text-area-auto-resize")),
+  },
+  "text-area-demo": {
+    component: lazy(() => import("@kanpeki/demos/text-area-demo")),
+  },
+  "text-area-disabled": {
+    component: lazy(() => import("@kanpeki/demos/text-area-disabled")),
+  },
+  "text-area-with-label": {
+    component: lazy(() => import("@kanpeki/demos/text-area-with-label")),
+  },
   "text-field-demo": {
     component: lazy(() => import("@kanpeki/demos/text-field-demo")),
   },

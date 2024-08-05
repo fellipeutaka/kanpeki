@@ -102,7 +102,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "TextArea",
           href: "/docs/components/text-area",
-          disabled: true,
         },
         {
           title: "TextField",

@@ -1,0 +1,75 @@
+---
+title: TextArea
+description: Displays a form textarea or a component that looks like a textarea.
+---
+
+<ComponentPreview name="text-area-demo" />
+
+## Installation
+
+<TabsRoot defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx kanpeki-ui@latest add text-area
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="text-area" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</TabsRoot>
+
+## Usage
+
+```tsx
+import { TextArea } from "~/components/ui/text-area";
+```
+
+```tsx
+<TextArea />
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="text-area-demo" />
+
+### Disabled
+
+<ComponentPreview name="text-area-disabled" />
+
+### With Label
+
+<ComponentPreview name="text-area-with-label" />
+
+### Auto Resize
+
+<ComponentPreview name="text-area-auto-resize" />
+
+<Alert.Root className="mt-6" variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Description>
+    The `field-sizing` CSS property is not supported in all browsers. See the
+    [browser compatibility](https://caniuse.com/mdn-css_properties_field-sizing)
+    table for more information.
+  </Alert.Description>
+</Alert.Root>
