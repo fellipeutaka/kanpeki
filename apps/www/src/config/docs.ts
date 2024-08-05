@@ -83,7 +83,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Skeleton",
           href: "/docs/components/skeleton",
-          disabled: true,
         },
         {
           title: "Switch",
