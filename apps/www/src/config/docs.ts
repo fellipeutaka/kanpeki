@@ -91,7 +91,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Table",
           href: "/docs/components/table",
-          disabled: true,
         },
         {
           title: "Tabs",

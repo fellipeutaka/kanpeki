@@ -76,6 +76,9 @@ export const RegistryDemos = {
   "skeleton-demo": {
     component: lazy(() => import("@kanpeki/demos/skeleton-demo")),
   },
+  "table-demo": {
+    component: lazy(() => import("@kanpeki/demos/table-demo")),
+  },
 } as const satisfies Record<string, Registry>;
 
 export interface Registry {
