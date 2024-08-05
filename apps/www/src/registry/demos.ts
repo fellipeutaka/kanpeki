@@ -85,6 +85,9 @@ export const RegistryDemos = {
   "skeleton-demo": {
     component: lazy(() => import("@kanpeki/demos/skeleton-demo")),
   },
+  "switch-demo": {
+    component: lazy(() => import("@kanpeki/demos/switch-demo")),
+  },
   "table-demo": {
     component: lazy(() => import("@kanpeki/demos/table-demo")),
   },
