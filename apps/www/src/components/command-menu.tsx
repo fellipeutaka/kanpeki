@@ -16,24 +16,29 @@ export function CommandMenu() {
   const router = useRouter();
 
   useEffect(() => {
-    function onKeyDown(e: KeyboardEvent) {
-      if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
-        if (
-          (e.target instanceof HTMLElement && e.target.isContentEditable) ||
-          e.target instanceof HTMLInputElement ||
-          e.target instanceof HTMLTextAreaElement ||
-          e.target instanceof HTMLSelectElement
-        ) {
-          return;
+    const controller = new AbortController();
+
+    document.addEventListener(
+      "keydown",
+      (e) => {
+        if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
+          if (
+            (e.target instanceof HTMLElement && e.target.isContentEditable) ||
+            e.target instanceof HTMLInputElement ||
+            e.target instanceof HTMLTextAreaElement ||
+            e.target instanceof HTMLSelectElement
+          ) {
+            return;
+          }
+
+          e.preventDefault();
+          setIsOpen((open) => !open);
         }
+      },
+      { signal: controller.signal },
+    );
 
-        e.preventDefault();
-        setIsOpen((open) => !open);
-      }
-    }
-
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    return () => controller.abort();
   }, []);
 
   function handleNavigate(href: string) {
