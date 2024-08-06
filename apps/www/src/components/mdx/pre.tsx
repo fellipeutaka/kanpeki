@@ -43,25 +43,23 @@ export function Pre({
   ) as Required<NpmCommands> | null;
 
   return (
-    <>
-      <ScrollAreaRoot>
-        <ScrollAreaViewport className="max-h-[40rem]">
-          <pre className={cn("py-4", className)} {...props} />
-        </ScrollAreaViewport>
-        <ScrollAreaScrollbar orientation="vertical">
-          <ScrollAreaThumb />
-        </ScrollAreaScrollbar>
-        <ScrollAreaScrollbar orientation="horizontal">
-          <ScrollAreaThumb />
-        </ScrollAreaScrollbar>
-      </ScrollAreaRoot>
-
+    <ScrollAreaRoot>
       <CopyBtn
         text={__rawString__}
         commands={commands}
         className="absolute top-2.5 right-4 z-10"
       />
-    </>
+
+      <ScrollAreaViewport className="max-h-[40rem]">
+        <pre className={cn("py-4", className)} {...props} tabIndex={-1} />
+      </ScrollAreaViewport>
+      <ScrollAreaScrollbar orientation="vertical">
+        <ScrollAreaThumb />
+      </ScrollAreaScrollbar>
+      <ScrollAreaScrollbar orientation="horizontal">
+        <ScrollAreaThumb />
+      </ScrollAreaScrollbar>
+    </ScrollAreaRoot>
   );
 }
 

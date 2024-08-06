@@ -44,7 +44,11 @@ export function TabsTrigger({ className, ...props }: TabsTriggerProps) {
 
 export function TabsContent({ className, ...props }: TabsContentProps) {
   return (
-    <_TabsContent {...props} className={TabsStyles.Content({ className })} />
+    <_TabsContent
+      {...props}
+      tabIndex={-1}
+      className={TabsStyles.Content({ className })}
+    />
   );
 }
 

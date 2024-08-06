@@ -58,7 +58,7 @@ export function CopyNpmButton({
         <PressResponder>
           <Button
             className={cn(
-              "size-8 bg-secondary hover:bg-background group-hover:opacity-100 [@media(pointer:fine)]:opacity-0",
+              "size-8 bg-secondary hover:bg-background focus-visible:opacity-100 group-hover:opacity-100 [@media(pointer:fine)]:opacity-0",
               isOpen && "!opacity-100 bg-background",
               className,
             )}
