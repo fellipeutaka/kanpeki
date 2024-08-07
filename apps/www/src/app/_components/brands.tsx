@@ -2,7 +2,7 @@ import { Icons } from "@kanpeki/ui/icons";
 
 export function Brands() {
   return (
-    <section className="flex items-center justify-center gap-12">
+    <section className="grid grid-cols-3 justify-items-center gap-12 sm:grid-cols-6">
       <Icons.React className="size-10" />
       <Icons.NextJS className="size-10" />
       <Icons.TypeScript className="size-10" />
