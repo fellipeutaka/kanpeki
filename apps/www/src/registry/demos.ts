@@ -64,6 +64,18 @@ export const RegistryDemos = {
   "dialog-demo": {
     component: lazy(() => import("@kanpeki/demos/dialog-demo")),
   },
+  "dialog-sheet-bottom": {
+    component: lazy(() => import("@kanpeki/demos/dialog-sheet-bottom")),
+  },
+  "dialog-sheet-left": {
+    component: lazy(() => import("@kanpeki/demos/dialog-sheet-left")),
+  },
+  "dialog-sheet-right": {
+    component: lazy(() => import("@kanpeki/demos/dialog-sheet-right")),
+  },
+  "dialog-sheet-top": {
+    component: lazy(() => import("@kanpeki/demos/dialog-sheet-top")),
+  },
   "label-demo": {
     component: lazy(() => import("@kanpeki/demos/label-demo")),
   },

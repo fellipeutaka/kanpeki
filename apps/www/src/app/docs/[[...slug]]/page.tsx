@@ -2,25 +2,17 @@ import { docs } from "~:content";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXContent } from "~/components/mdx/mdx-content";
+import { getDocBySlug } from "~/utils/get-doc-by-slug";
+import { getItemIds } from "~/utils/get-item-ids";
 import { DocsHeader } from "./_components/docs-header";
 import { DocsPager } from "./_components/docs-pager";
 import { TableOfContents } from "./_components/table-of-contents";
 
-async function getDocFromParams(params: PageProps["params"]) {
-  const slug = params.slug?.join("/");
-  const doc = docs.find((doc) => doc.slugAsParams === slug);
-
-  if (!doc) {
-    return null;
-  }
-
-  return doc;
-}
-
+// biome-ignore lint/suspicious/useAwait: This needs to be an async function
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const doc = await getDocFromParams(params);
+  const doc = getDocBySlug(params.slug);
 
   if (!doc) {
     return {};
@@ -50,18 +42,14 @@ interface PageProps {
   };
 }
 
-export default async function Page({ params }: PageProps) {
-  const doc = await getDocFromParams(params);
+export default function Page({ params }: PageProps) {
+  const doc = getDocBySlug(params.slug);
 
   if (!doc) {
     notFound();
   }
 
-  const itemIds = doc.toc
-    .flatMap((item) => [item.url, item.items?.map((item) => item.url)])
-    .flat()
-    .filter(Boolean)
-    .map((id) => id?.split("#")[1]);
+  const itemIds = getItemIds(doc.toc);
 
   return (
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">

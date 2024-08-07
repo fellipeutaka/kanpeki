@@ -10,6 +10,8 @@ interface TableOfContentsProps {
 }
 
 export function TableOfContents({ toc, itemIds }: TableOfContentsProps) {
+  console.log(JSON.stringify(itemIds));
+
   const activeHeading = useActiveItem(itemIds);
 
   return (

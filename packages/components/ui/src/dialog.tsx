@@ -20,7 +20,7 @@ import {
   useOverlayTriggerState,
 } from "@react-stately/overlays";
 import { cloneElement, createContext, useContext, useRef } from "react";
-import { tv } from "tailwind-variants";
+import { type VariantProps, tv } from "tailwind-variants";
 
 export const DialogStyles = {
   Overlay: tv({
@@ -29,14 +29,60 @@ export const DialogStyles = {
       "data-[state=open]:fade-in-0 data-[state=open]:animate-in",
       "data-[state=closed]:fade-out-0 data-[state=closed]:animate-out",
     ],
+    variants: {
+      sheet: {
+        true: [
+          "data-[state=open]:duration-500",
+          "data-[state=closed]:duration-300",
+        ],
+      },
+    },
   }),
   Content: tv({
     base: [
-      "-translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-50 grid w-full max-w-lg gap-4 border border-border bg-background p-6 shadow-lg outline-none duration-200",
-      "data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] data-[state=open]:animate-in",
-      "data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=closed]:animate-out",
+      "fixed z-50 w-full border bg-background p-6 shadow-lg outline-none",
+      "data-[state=open]:fade-in-0 data-[state=open]:animate-in",
+      "data-[state=closed]:fade-out-0 data-[state=closed]:animate-out",
       "sm:rounded-lg",
     ],
+    variants: {
+      side: {
+        top: [
+          "inset-x-0 top-0 left-0 border-b data-[state=open]:duration-500",
+          "data-[state=open]:slide-in-from-top",
+          "data-[state=closed]:slide-out-to-top data-[state=closed]:duration-300",
+        ],
+        bottom: [
+          "inset-x-0 bottom-0 border-t ease-in-out",
+          "data-[state=open]:slide-in-from-bottom",
+          "data-[state=closed]:slide-out-to-bottom",
+        ],
+        left: [
+          "inset-y-0 left-0 h-full w-3/4 border-r ease-in-out sm:max-w-sm",
+          "data-[state=open]:slide-in-from-left",
+          "data-[state=closed]:slide-out-to-left",
+        ],
+        right: [
+          "inset-y-0 right-0 h-full w-3/4 border-l ease-in-out sm:max-w-sm",
+          "data-[state=open]:slide-in-from-right",
+          "data-[state=closed]:slide-out-to-right",
+        ],
+        center: [
+          "-translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 grid max-w-lg gap-4",
+          "data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] data-[state=open]:zoom-in-95",
+          "data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=closed]:zoom-out-95",
+        ],
+      },
+      sheet: {
+        true: [
+          "data-[state=open]:duration-500",
+          "data-[state=closed]:duration-300",
+        ],
+      },
+    },
+    defaultVariants: {
+      side: "center",
+    },
   }),
   Close: tv({
     base: [
@@ -67,6 +113,7 @@ export interface DialogRootContext {
   modalProps: ModalOverlayAria["modalProps"];
   underlayProps: ModalOverlayAria["underlayProps"];
   modalRef: React.RefObject<HTMLDivElement>;
+  sheet: boolean;
 }
 
 export const DialogRootContext = createContext<DialogRootContext | null>(null);
@@ -105,11 +152,13 @@ export interface DialogRootProps
    */
   isDismissable?: boolean;
   children: React.ReactNode;
+  sheet?: boolean;
 }
 
 export function DialogRoot({
   children,
   isDismissable = true,
+  sheet = false,
   ...props
 }: DialogRootProps) {
   const overlayTriggerState = useOverlayTriggerState(props);
@@ -138,6 +187,7 @@ export function DialogRoot({
         modalProps,
         modalRef,
         underlayProps,
+        sheet,
       }}
     >
       {children}
@@ -176,12 +226,12 @@ export function DialogPortal(props: DialogPortalProps) {
 export interface DialogOverlayProps extends React.ComponentProps<"div"> {}
 
 export function DialogOverlay({ className, ...props }: DialogOverlayProps) {
-  const { underlayProps, overlayTriggerState } = useDialogRootContext();
+  const { underlayProps, overlayTriggerState, sheet } = useDialogRootContext();
 
   return (
     <div
       {...mergeProps(underlayProps, props)}
-      className={DialogStyles.Overlay({ className })}
+      className={DialogStyles.Overlay({ className, sheet })}
       data-state={overlayTriggerState.isOpen ? "open" : "closed"}
     />
   );
@@ -191,20 +241,24 @@ interface DialogRenderProps {
   close: () => void;
 }
 
-export type DialogContentProps = Omit<
-  React.ComponentProps<"div">,
-  "children"
-> & {
-  /**
-   * The role of the dialog. This can be a dialog or an alert dialog.
-   * @default "dialog"
-   * */
-  role?: "dialog" | "alertdialog";
-  children: React.ReactNode | ((opts: DialogRenderProps) => React.ReactNode);
-};
+export type DialogContentProps = VariantProps<
+  (typeof DialogStyles)["Content"]
+> &
+  Omit<React.ComponentProps<"div">, "children"> & {
+    /**
+     * The role of the dialog. This can be a dialog or an alert dialog.
+     * @default "dialog"
+     * */
+    role?: "dialog" | "alertdialog";
+    children: React.ReactNode | ((opts: DialogRenderProps) => React.ReactNode);
+  };
 
-export function DialogContent({ className, ...props }: DialogContentProps) {
-  const { overlayProps, modalProps, modalRef, overlayTriggerState } =
+export function DialogContent({
+  className,
+  side,
+  ...props
+}: DialogContentProps) {
+  const { overlayProps, modalProps, modalRef, overlayTriggerState, sheet } =
     useDialogRootContext();
 
   const { dialogProps, titleProps } = useDialog(props, modalRef);
@@ -220,7 +274,7 @@ export function DialogContent({ className, ...props }: DialogContentProps) {
     <div
       {...mergeProps(overlayProps, modalProps, dialogProps, props)}
       ref={modalRef}
-      className={DialogStyles.Content({ className })}
+      className={DialogStyles.Content({ className, sheet, side })}
       data-state={overlayTriggerState.isOpen ? "open" : "closed"}
     >
       <DialogContext.Provider
