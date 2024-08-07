@@ -2,6 +2,10 @@ import type { Docs as Doc } from "~:content";
 import { Breadcrumb } from "@kanpeki/ui/breadcrumb";
 import { Fragment } from "react";
 
+function formatTitle(title: string) {
+  return title.replace(/-/g, " ");
+}
+
 interface DocsBreadcrumbProps {
   doc: Doc;
 }
@@ -24,8 +28,8 @@ export function DocsBreadcrumb({ doc }: DocsBreadcrumbProps) {
           .map((link) => (
             <Fragment key={link}>
               <Breadcrumb.Item>
-                <Breadcrumb.Link className="capitalize" href={`/docs/${link}`}>
-                  {link}
+                <Breadcrumb.Link href={`/docs/${link}`} className="capitalize">
+                  {formatTitle(link)}
                 </Breadcrumb.Link>
               </Breadcrumb.Item>
               <Breadcrumb.Separator />
