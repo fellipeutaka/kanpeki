@@ -1,0 +1,179 @@
+---
+title: Astro
+description: Adding dark mode to your astro app.
+---
+
+<Steps>
+
+### Create an inline theme script
+
+```astro title="src/scripts/theme-head.astro"
+<script is:inline>
+  const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function getTheme() {
+    // Theme could be "dark", "light", or "system"
+    const theme =
+      localStorage.getItem("theme") ??
+      (darkModeMediaQuery.matches ? "dark" : "light");
+
+    return theme;
+  }
+
+  const theme = getTheme();
+
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else if (theme === "system") {
+    const isDarkMode = darkModeMediaQuery.matches;
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }
+
+  darkModeMediaQuery.addEventListener("change", (e) => {
+    const theme = getTheme();
+
+    if (theme === "system") {
+      const darkModeOn = e.matches;
+      document.documentElement.classList.toggle("dark", darkModeOn);
+    }
+  });
+</script>
+```
+
+### Import the theme script in your layout
+
+```astro title="src/layouts/root.astro" {2,28}
+---
+import ThemeHead from "~/scripts/theme-head.astro";
+
+import "~/styles/globals.css";
+
+import "@fontsource/geist-sans";
+import "@fontsource/geist-mono";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="white"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Kanpeki</title>
+    <ThemeHead />
+  </head>
+  <body class="relative min-h-dvh bg-background">
+    <slot />
+  </body>
+</html>
+```
+
+### Create a theme utility
+
+```ts title="src/utils/theme.ts"
+export type Theme = "light" | "dark" | "system";
+
+export function setTheme(theme: Theme) {
+  switch (theme) {
+    case "light":
+      setLightTheme();
+      break;
+    case "dark":
+      setDarkTheme();
+      break;
+    case "system":
+      setSystemTheme();
+      break;
+  }
+}
+
+export function setLightTheme() {
+  document.documentElement.classList.remove("dark");
+  localStorage.setItem("theme", "light");
+}
+
+export function setDarkTheme() {
+  document.documentElement.classList.add("dark");
+  localStorage.setItem("theme", "dark");
+}
+
+export function setSystemTheme() {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    setDarkTheme();
+  } else {
+    setLightTheme();
+  }
+
+  localStorage.setItem("theme", "system");
+}
+```
+
+### Add a mode toggle
+
+```tsx title="src/components/mode-toggle.tsx"
+import { PressResponder } from "@react-aria/interactions";
+import { setTheme } from "~/utils/theme";
+import { Button } from "./ui/button";
+import { DropdownMenu } from "./ui/dropdown-menu";
+import { Icons } from "./ui/icons";
+
+export function ModeToggle() {
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger asChild>
+        <PressResponder>
+          <Button variant="ghost" size="icon" aria-label="Toggle theme">
+            <Icons.Sun className="dark:-rotate-90 size-5 rotate-0 scale-100 transition dark:scale-0" />
+            <Icons.Moon className="absolute size-5 rotate-90 scale-0 transition dark:rotate-0 dark:scale-100" />
+          </Button>
+        </PressResponder>
+      </DropdownMenu.Trigger>
+
+      <DropdownMenu.Content align="end">
+        <DropdownMenu.Item onSelect={() => setTheme("light")}>
+          <Icons.Sun className="mr-2 size-4" />
+          Light
+        </DropdownMenu.Item>
+        <DropdownMenu.Item onSelect={() => setTheme("dark")}>
+          <Icons.Moon className="mr-2 size-4" />
+          Dark
+        </DropdownMenu.Item>
+        <DropdownMenu.Item onSelect={() => setTheme("system")}>
+          <Icons.Laptop className="mr-2 size-4" />
+          System
+        </DropdownMenu.Item>
+      </DropdownMenu.Content>
+    </DropdownMenu.Root>
+  );
+}
+```
+
+### Display the mode toggle
+
+Place a mode toggle on your site to toggle between light and dark mode.
+
+```astro title="src/pages/index.astro"
+---
+import { ModeToggle } from "~/component/mode-toggle";
+import RootLayout from "~/layouts/root.astro";
+---
+
+<RootLayout>
+  <ModeToggle client:load />
+</RootLayout>
+
+```
+
+</Steps>

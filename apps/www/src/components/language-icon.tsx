@@ -22,6 +22,7 @@ const extensionMap = new Map([
   ["zsh", Icons.Terminal],
   ["json", Icons.Json],
   ["css", Icons.Css],
+  ["astro", Icons.Astro],
 ]);
 
 function convertPatternToRegex(pattern: string): string {
