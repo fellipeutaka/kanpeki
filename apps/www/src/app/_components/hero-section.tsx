@@ -10,6 +10,7 @@ export function HeroSection() {
         <LinkButton
           href={siteConfig.links.github}
           target="_blank"
+          rel="noopener noreferrer"
           size="sm"
           variant="secondary"
           className="group"
@@ -39,6 +40,39 @@ export function HeroSection() {
             <Icons.GitHub className="mr-2 size-5" />
             GitHub
           </LinkButton>
+        </div>
+        <div className="flex flex-wrap gap-8 pt-6">
+          <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
+            <Icons.React className="size-10" />
+          </a>
+          <a
+            href="https://www.typescriptlang.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icons.TypeScript className="size-10" />
+          </a>
+          <a
+            href="https://tailwindcss.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icons.TailwindCSS className="size-10" />
+          </a>
+          <a
+            href="https://www.radix-ui.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icons.RadixUI className="size-10" />
+          </a>
+          <a
+            href="https://react-spectrum.adobe.com/react-aria/hooks.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icons.Adobe className="size-10 text-red-600" />
+          </a>
         </div>
       </div>
       <div className="hidden px-10 lg:block xl:px-20">

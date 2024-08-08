@@ -19,7 +19,7 @@ export function OpenSourceSection() {
         target="_blank"
         rel="noopener noreferrer"
         href={siteConfig.links.github}
-        className="flex select-none justify-center transition-opacity hover:opacity-80"
+        className="mx-auto flex w-max select-none transition-opacity hover:opacity-80"
       >
         <div className="flex items-center gap-2 rounded-md border border-muted bg-muted px-4">
           <Icons.GitHub className="size-6" />

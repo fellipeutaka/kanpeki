@@ -20,7 +20,7 @@ export function SiteHeader() {
             <LinkButton
               href={siteConfig.links.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               variant="ghost"
               size="icon"
               aria-label="GitHub"
@@ -31,7 +31,7 @@ export function SiteHeader() {
             <LinkButton
               href={siteConfig.links.twitter}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               variant="ghost"
               size="icon"
               aria-label="Twitter"

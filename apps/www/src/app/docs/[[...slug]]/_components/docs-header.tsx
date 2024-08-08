@@ -26,7 +26,7 @@ export function DocsHeader({ doc }: DocsHeaderProps) {
             <LinkButton
               href={doc.links.docs}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={BadgeStyles({
                 variant: "secondary",
                 nativeFocus: false,
@@ -42,7 +42,7 @@ export function DocsHeader({ doc }: DocsHeaderProps) {
             <LinkButton
               href={doc.links.api}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={BadgeStyles({
                 variant: "secondary",
                 nativeFocus: false,

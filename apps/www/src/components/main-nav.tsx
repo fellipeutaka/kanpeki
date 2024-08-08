@@ -4,7 +4,7 @@ import { Badge } from "@kanpeki/ui/badge";
 import { Icons } from "@kanpeki/ui/icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { docsConfig } from "~/config/docs";
+import { type NavItem, docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
 
 export function MainNav() {
@@ -18,17 +18,38 @@ export function MainNav() {
         <Badge variant="secondary">Beta</Badge>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
-        {docsConfig.mainNav.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            data-active={pathname.startsWith(link.href)}
-            className="text-foreground/60 transition hover:text-foreground/80 data-[active=true]:text-foreground"
-          >
-            {link.title}
-          </Link>
+        {docsConfig.mainNav.map((item) => (
+          <MainNavLink key={item.href} item={item} pathname={pathname} />
         ))}
       </nav>
     </div>
+  );
+}
+
+interface MainNavLinkProps {
+  item: NavItem;
+  pathname: string;
+}
+
+function MainNavLink({ item, pathname }: MainNavLinkProps) {
+  if (item.disabled) {
+    return (
+      <span
+        aria-disabled
+        className="cursor-not-allowed text-foreground/60 opacity-50"
+      >
+        {item.title}
+      </span>
+    );
+  }
+
+  return (
+    <Link
+      href={item.href}
+      data-active={pathname.startsWith(item.href)}
+      className="text-foreground/60 transition hover:text-foreground/80 data-[active=true]:text-foreground"
+    >
+      {item.title}
+    </Link>
   );
 }

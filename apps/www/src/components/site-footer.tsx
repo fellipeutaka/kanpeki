@@ -54,7 +54,7 @@ export function SiteFooter() {
             <LinkButton
               href={siteConfig.links.twitter}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               variant="ghost"
               size="icon"
               aria-label="Twitter"
@@ -64,7 +64,7 @@ export function SiteFooter() {
             <LinkButton
               href={siteConfig.links.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               variant="ghost"
               size="icon"
               aria-label="GitHub"
@@ -100,7 +100,7 @@ export function SiteFooter() {
         <a
           href={siteConfig.links.twitter}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="font-medium underline underline-offset-4"
         >
           Fellipe Utaka
@@ -109,7 +109,7 @@ export function SiteFooter() {
         <a
           href={siteConfig.links.github}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="font-medium underline underline-offset-4"
         >
           GitHub

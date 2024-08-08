@@ -10,6 +10,11 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       href: "/docs/components",
     },
+    {
+      title: "Examples",
+      href: "/docs/examples",
+      disabled: true,
+    },
   ],
   sidebarNav: [
     {
