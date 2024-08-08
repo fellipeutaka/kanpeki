@@ -1,8 +1,8 @@
 "use client";
+
 import { Avatar } from "@kanpeki/ui/avatar";
 import { Button } from "@kanpeki/ui/button";
 import { Card } from "@kanpeki/ui/card";
-import { Checkbox } from "@kanpeki/ui/checkbox";
 import { Icons } from "@kanpeki/ui/icons";
 import { Switch } from "@kanpeki/ui/switch";
 
@@ -69,12 +69,7 @@ export function HeroIllustration() {
           </Avatar.Placeholder>
         </Avatar.Root>
       </div>
-      <div className="flex items-center space-x-4">
-        <Checkbox.Root defaultSelected className="size-6">
-          <Checkbox.Indicator className="size-5" />
-        </Checkbox.Root>
-        <Button variant="secondary">Button</Button>
-      </div>
+
       <Card.Root>
         <Card.Header>
           <Card.Title>Notifications</Card.Title>

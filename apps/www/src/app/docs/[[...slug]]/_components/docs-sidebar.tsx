@@ -41,8 +41,8 @@ export function DocsSidebar() {
 
 const SidebarLinkStyles = tv({
   base: [
-    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-foreground",
-    "hover:underline",
+    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-foreground underline decoration-transparent transition",
+    "hover:decoration-current",
     "aria-disabled:cursor-not-allowed aria-disabled:select-none aria-disabled:opacity-50",
   ],
   variants: {

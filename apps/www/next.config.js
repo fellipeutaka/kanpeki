@@ -32,7 +32,7 @@ const config = {
       },
       {
         source: "/docs/components",
-        destination: "/docs/components/badge",
+        destination: "/docs/components/alert",
         permanent: false,
       },
     ];

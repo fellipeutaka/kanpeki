@@ -2,7 +2,7 @@ import { Badge } from "@kanpeki/ui/badge";
 import { Icons } from "@kanpeki/ui/icons";
 import { LinkButton } from "@kanpeki/ui/link-button";
 import { Separator } from "@kanpeki/ui/separator";
-import { docsConfig } from "~/config/docs";
+import { type NavItem, docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
 
 const footerLinks = [
@@ -27,7 +27,10 @@ const footerLinks = [
       },
     ],
   },
-];
+] as const satisfies {
+  title: string;
+  links: NavItem[];
+}[];
 
 export function SiteFooter() {
   return (
@@ -79,7 +82,7 @@ export function SiteFooter() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="text-muted-foreground text-sm transition-colors duration-200"
+                    className="text-muted-foreground text-sm underline decoration-transparent transition duration-200 hover:decoration-current"
                   >
                     {item.title}
                   </a>

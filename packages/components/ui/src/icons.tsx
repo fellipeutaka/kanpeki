@@ -1,7 +1,7 @@
 export type IconProps = React.ComponentProps<"svg">;
 export type Icon = (props: IconProps) => React.JSX.Element;
 
-const PackageManagerIcons = {
+export const Icons = {
   Npm: (props) => (
     <svg
       role="img"
@@ -97,9 +97,6 @@ const PackageManagerIcons = {
       />
     </svg>
   ),
-} as const satisfies Record<string, Icon>;
-
-const TechnologiesIcons = {
   Adobe: (props) => (
     <svg
       role="img"
@@ -395,11 +392,25 @@ const TechnologiesIcons = {
       />
     </svg>
   ),
-} as const satisfies Record<string, Icon>;
-
-export const Icons = {
-  ...PackageManagerIcons,
-  ...TechnologiesIcons,
+  Accessibility: (props) => (
+    <svg
+      role="img"
+      aria-label="Accessibility"
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx={16} cy={4} r={1} />
+      <path d="M18 19l1-7-6 1M5 8l3-3 5.5 3-2.36 3.5M4.24 14.5a5 5 0 006.88 6M13.76 17.5a5 5 0 00-6.88-6" />
+    </svg>
+  ),
   Ban: (props) => (
     <svg
       role="img"
@@ -812,6 +823,26 @@ export const Icons = {
       <circle cx={12} cy={7} r={4} />
     </svg>
   ),
+  Users: (props) => (
+    <svg
+      role="img"
+      aria-label="Users"
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" />
+      <circle cx={9} cy={7} r={4} />
+      <path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+    </svg>
+  ),
   Rocket: (props) => (
     <svg
       role="img"
@@ -829,6 +860,28 @@ export const Icons = {
     >
       <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09zM12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" />
       <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+    </svg>
+  ),
+  Palette: (props) => (
+    <svg
+      role="img"
+      aria-label="Palette"
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx={13.5} cy={6.5} r={0.5} fill="currentColor" />
+      <circle cx={17.5} cy={10.5} r={0.5} fill="currentColor" />
+      <circle cx={8.5} cy={7.5} r={0.5} fill="currentColor" />
+      <circle cx={6.5} cy={12.5} r={0.5} fill="currentColor" />
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
     </svg>
   ),
   TriangleAlert: (props) => (
@@ -904,6 +957,42 @@ export const Icons = {
       <path d="M9.88 9.88a3 3 0 104.24 4.24M10.73 5.08A10.43 10.43 0 0112 5c7 0 10 7 10 7a13.16 13.16 0 01-1.67 2.68" />
       <path d="M6.61 6.61A13.526 13.526 0 002 12s3 7 10 7a9.74 9.74 0 005.39-1.61" />
       <path d="M2 2L22 22" />
+    </svg>
+  ),
+  Zap: (props) => (
+    <svg
+      role="img"
+      aria-label="Zap"
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M4 14a1 1 0 01-.78-1.63l9.9-10.2a.5.5 0 01.86.46l-1.92 6.02A1 1 0 0013 10h7a1 1 0 01.78 1.63l-9.9 10.2a.5.5 0 01-.86-.46l1.92-6.02A1 1 0 0011 14z" />
+    </svg>
+  ),
+  Puzzle: (props) => (
+    <svg
+      role="img"
+      aria-label="Puzzle"
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 01-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 10-3.214 3.214c.446.166.855.497.925.968a.979.979 0 01-.276.837l-1.61 1.61a2.404 2.404 0 01-1.705.707 2.402 2.402 0 01-1.704-.706l-1.568-1.568a1.026 1.026 0 00-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 11-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 00-.289-.877l-1.568-1.568A2.402 2.402 0 011.998 12c0-.617.236-1.234.706-1.704L4.23 8.77c.24-.24.581-.353.917-.303.515.077.877.528 1.073 1.01a2.5 2.5 0 103.259-3.259c-.482-.196-.933-.558-1.01-1.073-.05-.336.062-.676.303-.917l1.525-1.525A2.402 2.402 0 0112 1.998c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 113.237 3.237c-.464.18-.894.527-.967 1.02z" />
     </svg>
   ),
 } as const satisfies Record<string, Icon>;
