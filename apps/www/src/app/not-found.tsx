@@ -3,7 +3,7 @@ import { Separator } from "@kanpeki/ui/separator";
 
 export default function Page() {
   return (
-    <main className="grid place-content-center gap-6 border-b">
+    <main className="grid h-[calc(100dvh-9rem)] place-content-center gap-6 border-b">
       <div className="flex items-center gap-6">
         <h1 className="font-medium text-2xl">404</h1>
         <Separator orientation="vertical" />

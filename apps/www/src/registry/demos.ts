@@ -16,6 +16,9 @@ export const RegistryDemos = {
   "avatar-demo": {
     component: lazy(() => import("@kanpeki/demos/avatar-demo")),
   },
+  "avatar-group": {
+    component: lazy(() => import("@kanpeki/demos/avatar-group")),
+  },
   "badge-demo": {
     component: lazy(() => import("@kanpeki/demos/badge-demo")),
   },
