@@ -4,10 +4,13 @@
     "clsx",
     "cmdk",
     "kanpeki",
+    "picocolors",
     "rehype",
     "shiki",
     "sonner",
     "tailwindcss",
+    "tsup",
+    "valibot",
     "velite"
   ],
   "typescript.enablePromptUseWorkspaceTsdk": true,

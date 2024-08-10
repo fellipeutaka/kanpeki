@@ -1,7 +1,7 @@
 "use client";
 
 import { Icons } from "@kanpeki/ui/icons";
-import { Children, Suspense, useMemo } from "react";
+import { Suspense } from "react";
 import { type RegistryDemo, RegistryDemos } from "~/registry/demos";
 import { CopyButton } from "./copy-button";
 import { Tabs } from "./tabs";
@@ -11,20 +11,19 @@ interface ComponentPreviewProps {
   children: React.ReactElement;
 }
 
+function getCodeString(children: React.ReactElement) {
+  if (typeof children.props["data-rehype-pretty-code-figure"] === "string") {
+    return (
+      (children.props?.children?.props?.children[0]?.props?.text as string) ||
+      ""
+    );
+  }
+
+  return "";
+}
+
 export function ComponentPreview({ children, name }: ComponentPreviewProps) {
   const Preview = RegistryDemos[name].component;
-
-  const codeString = useMemo(() => {
-    if (
-      typeof children.props["data-rehype-pretty-code-figure"] !== "undefined"
-    ) {
-      const [, Button] = Children.toArray(
-        children.props.children,
-      ) as React.ReactElement[];
-
-      return Button?.props?.text || Button?.props?.__rawString__ || null;
-    }
-  }, [children]);
 
   return (
     <Tabs.Root defaultValue="preview">
@@ -37,7 +36,10 @@ export function ComponentPreview({ children, name }: ComponentPreviewProps) {
         className="group rounded-md border"
         tabIndex={-1}
       >
-        <CopyButton className="m-4 ml-auto flex" text={codeString} />
+        <CopyButton
+          className="m-4 ml-auto flex"
+          text={getCodeString(children)}
+        />
         <div className="grid min-h-80 w-full place-items-center p-10">
           <Suspense
             fallback={

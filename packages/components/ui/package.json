@@ -50,7 +50,7 @@
   "peerDependencies": {
     "@kanpeki/hooks": "*",
     "next": "*",
-    "react": "*",
-    "react-dom": "*"
+    "react": "19.0.0-rc-f994737d14-20240522",
+    "react-dom": "19.0.0-rc-f994737d14-20240522"
   }
 }

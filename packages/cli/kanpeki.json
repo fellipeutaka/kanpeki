@@ -1,0 +1,12 @@
+{
+  "$schema": "http://localhost:3000/schema.json",
+  "rsc": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "src/styles/globals.css"
+  },
+  "aliases": {
+    "components": "@kanpeki/ui",
+    "utils": "@kanpeki/utils"
+  }
+}

@@ -2,6 +2,8 @@ import { Alert } from "@kanpeki/ui/alert";
 import { Icons } from "@kanpeki/ui/icons";
 import { LinkButton } from "@kanpeki/ui/link-button";
 import { cn } from "@kanpeki/utils/cn";
+import Link from "next/link";
+import { LinkStyles } from "~/styles/link";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { Figcaption } from "./figcaption";
@@ -55,7 +57,7 @@ export const mdxComponents = {
     <a
       target="_blank"
       rel="noopener noreferrer"
-      className={cn("font-medium underline underline-offset-4 ", className)}
+      className={LinkStyles({ className })}
       {...props}
     />
   ),
@@ -127,7 +129,7 @@ export const mdxComponents = {
   figure: ({ className, ...props }: React.ComponentProps<"figure">) => (
     <figure
       className={cn(
-        "group relative my-6 overflow-hidden rounded-lg border text-sm",
+        "group relative mt-6 overflow-hidden rounded-lg border text-sm",
         className,
       )}
       {...props}
@@ -148,6 +150,9 @@ export const mdxComponents = {
   Files,
   File,
   LinkButton,
+  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
+    <Link {...props} className={LinkStyles({ className })} />
+  ),
   Icons,
   Alert,
 };

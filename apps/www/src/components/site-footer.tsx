@@ -4,6 +4,7 @@ import { LinkButton } from "@kanpeki/ui/link-button";
 import { Separator } from "@kanpeki/ui/separator";
 import { type NavItem, docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
+import { LinkStyles } from "~/styles/link";
 
 const footerLinks = [
   {
@@ -101,7 +102,7 @@ export function SiteFooter() {
           href={siteConfig.links.twitter}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium underline underline-offset-4"
+          className={LinkStyles()}
         >
           Fellipe Utaka
         </a>
@@ -110,7 +111,7 @@ export function SiteFooter() {
           href={siteConfig.links.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium underline underline-offset-4"
+          className={LinkStyles()}
         >
           GitHub
         </a>

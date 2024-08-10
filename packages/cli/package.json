@@ -15,13 +15,29 @@
     "url": "https://github.com/fellipeutaka/kanpeki.git",
     "directory": "packages/cli"
   },
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "bin": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "start": "node .",
     "type-check": "tsc --noEmit --incremental false"
   },
   "dependencies": {
-    "@kanpeki/ui": "workspace:*"
+    "@clack/prompts": "^0.7.0",
+    "@kanpeki/ui": "workspace:*",
+    "commander": "^12.1.0",
+    "fast-glob": "^3.3.2",
+    "picocolors": "^1.0.1",
+    "tsconfig-paths": "^4.2.0",
+    "valibot": "^0.37.0"
   },
   "devDependencies": {
-    "@kanpeki/tsconfig": "workspace:*"
+    "@kanpeki/tsconfig": "workspace:*",
+    "tsup": "^8.2.4"
   }
 }

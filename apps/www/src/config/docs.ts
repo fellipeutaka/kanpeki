@@ -29,6 +29,10 @@ export const docsConfig: DocsConfig = {
           href: "/docs/installation",
         },
         {
+          title: "kanpeki.json",
+          href: "/docs/kanpeki-json",
+        },
+        {
           title: "Dark Mode",
           href: "/docs/dark-mode",
         },
