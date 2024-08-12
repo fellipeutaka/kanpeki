@@ -47,7 +47,7 @@ export function Pre({
       <CopyBtn
         text={__rawString__}
         commands={commands}
-        className="absolute top-2.5 right-4 z-10"
+        className="absolute top-2.5 right-4 z-10 max-sm:group-has-[[data-state=visible]]:opacity-0"
       />
 
       <ScrollAreaViewport className="max-h-[40rem]">
