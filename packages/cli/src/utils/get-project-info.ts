@@ -1,6 +1,6 @@
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
-import { join, resolve } from "node:path";
+import path from "node:path";
 import fg from "fast-glob";
 import { loadConfig } from "tsconfig-paths";
 import {
@@ -43,10 +43,12 @@ export async function getProjectInfo() {
 
     return {
       tsconfig,
-      srcDir: existsSync(resolve("./src")),
-      appDir: existsSync(resolve("./app")) || existsSync(resolve("./src/app")),
-      srcComponentsUiDir: existsSync(resolve("./src/components/ui")),
-      componentsUiDir: existsSync(resolve("./components/ui")),
+      srcDir: existsSync(path.resolve("./src")),
+      appDir:
+        existsSync(path.resolve("./app")) ||
+        existsSync(path.resolve("./src/app")),
+      srcComponentsUiDir: existsSync(path.resolve("./src/components/ui")),
+      componentsUiDir: existsSync(path.resolve("./components/ui")),
     };
   } catch {
     return info;
@@ -55,7 +57,7 @@ export async function getProjectInfo() {
 
 export async function getTsConfig() {
   try {
-    const tsconfigPath = join("tsconfig.json");
+    const tsconfigPath = path.join("tsconfig.json");
     const tsconfig = JSON.parse(await readFile(tsconfigPath, "utf8"));
 
     if (!tsconfig) {
@@ -83,21 +85,20 @@ export async function getProjectConfig(cwd: string) {
     return null;
   }
 
-  const config: Config = {
+  const config = {
     $schema: DEFAULT_JSON_SCHEMA,
     rsc: new Set<ProjectType>(["next-app", "next-app-src"]).has(projectType),
     tailwind: {
       config: "tailwind.config.ts",
       css: tailwindCssFile,
-      prefix: "",
     },
     aliases: {
       components: `${tsConfigAliasPrefix}/components`,
       utils: `${tsConfigAliasPrefix}/utils`,
     },
-  };
+  } satisfies Config;
 
-  return await resolveConfigPaths(cwd, config);
+  return resolveConfigPaths(cwd, config);
 }
 
 export async function getProjectType(cwd: string): Promise<ProjectType | null> {
@@ -112,9 +113,9 @@ export async function getProjectType(cwd: string): Promise<ProjectType | null> {
     return null;
   }
 
-  const isUsingSrcDir = existsSync(resolve(cwd, "src"));
+  const isUsingSrcDir = existsSync(path.resolve(cwd, "src"));
   const isUsingAppDir = existsSync(
-    resolve(cwd, `${isUsingSrcDir ? "src/" : ""}app`),
+    path.resolve(cwd, `${isUsingSrcDir ? "src/" : ""}app`),
   );
 
   if (isUsingAppDir) {
@@ -136,7 +137,7 @@ export async function getTailwindCssFile(cwd: string) {
   }
 
   for (const file of files) {
-    const contents = await readFile(resolve(cwd, file), "utf8");
+    const contents = await readFile(path.resolve(cwd, file), "utf8");
     // Assume that if the file contains `@tailwind base` it's the main css file.
     if (contents.includes("@tailwind base")) {
       return file;

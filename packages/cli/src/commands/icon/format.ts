@@ -1,7 +1,10 @@
 import { createReadStream, createWriteStream, existsSync } from "node:fs";
 import { rename, rm } from "node:fs/promises";
+import path from "node:path";
 import { createInterface } from "node:readline/promises";
 import { Command } from "commander";
+import picocolors from "picocolors";
+import { getConfig } from "~/utils/get-config";
 import { handleError } from "~/utils/handle-error";
 import { logger } from "~/utils/logger";
 
@@ -32,18 +35,32 @@ export const format = new Command()
         );
       }
 
-      // const config = await getConfig(options.cwd);
-      // console.log(config);
+      const config = await getConfig(options.cwd);
+      if (!config) {
+        logger.warn(
+          `Configuration is missing. Please run ${picocolors.green(
+            "init",
+          )} to create a kanpeki.json file.`,
+        );
+        process.exit(1);
+      }
 
-      const iconsFilePath = new URL(
-        "../../components/ui/src/icons.tsx",
-        import.meta.url,
+      const iconsFilePath = path.join(
+        config.resolvedPaths.components ?? "",
+        "ui",
+        "icons.tsx",
       );
+      if (!existsSync(iconsFilePath)) {
+        throw new Error(
+          `The file ${iconsFilePath} does not exist. Please create it first.`,
+        );
+      }
       const readStream = createReadStream(iconsFilePath, "utf8");
 
-      const outputFilePath = new URL(
-        "../../components/ui/src/icons.sorted.tsx",
-        import.meta.url,
+      const outputFilePath = path.join(
+        config.resolvedPaths.components ?? "",
+        "ui",
+        "icons.sorted.tsx",
       );
       const writeStream = createWriteStream(outputFilePath, "utf8");
 

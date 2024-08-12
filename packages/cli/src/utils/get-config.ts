@@ -1,5 +1,5 @@
-import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import fs from "node:fs/promises";
+import path from "node:path";
 import { loadConfig } from "tsconfig-paths";
 import {
   type InferOutput,
@@ -26,7 +26,7 @@ export const configSchema = strictObject({
   tailwind: strictObject({
     config: string(),
     css: string(),
-    prefix: optional(string(), ""),
+    prefix: optional(string()),
   }),
   aliases: strictObject({
     components: string(),
@@ -44,13 +44,13 @@ export async function getConfig(cwd: string) {
     return null;
   }
 
-  return await resolveConfigPaths(cwd, config);
+  return resolveConfigPaths(cwd, config);
 }
 
 export async function getRawConfig(cwd: string) {
   try {
-    const configPath = resolve(cwd, "kanpeki.json");
-    const config = await readFile(configPath, "utf8");
+    const configPath = path.resolve(cwd, "kanpeki.json");
+    const config = await fs.readFile(configPath, "utf8");
 
     return await parseAsync(configSchema, JSON.parse(config));
   } catch (err) {
@@ -65,7 +65,7 @@ export async function getRawConfig(cwd: string) {
   }
 }
 
-export async function resolveConfigPaths(cwd: string, config: Config) {
+export function resolveConfigPaths(cwd: string, config: Config) {
   // Read tsconfig.json.
   const tsConfig = loadConfig(cwd);
 
@@ -78,17 +78,15 @@ export async function resolveConfigPaths(cwd: string, config: Config) {
   return {
     ...config,
     resolvedPaths: {
-      tailwindConfig: resolve(cwd, config.tailwind.config),
-      tailwindCss: resolve(cwd, config.tailwind.css),
-      utils: await resolveImport(config.aliases.utils, tsConfig),
-      components: await resolveImport(config.aliases.components, tsConfig),
+      tailwindConfig: path.resolve(cwd, config.tailwind.config),
+      tailwindCss: path.resolve(cwd, config.tailwind.css),
+      utils: resolveImport(config.aliases.utils, tsConfig),
+      components: resolveImport(config.aliases.components, tsConfig),
       ui: config.aliases.ui
-        ? await resolveImport(config.aliases.ui, tsConfig)
-        : await resolveImport(config.aliases.components, tsConfig),
+        ? resolveImport(config.aliases.ui, tsConfig)
+        : resolveImport(config.aliases.components, tsConfig),
     },
   };
 }
 
-export type ConfigWithResolvedPaths = Awaited<
-  ReturnType<typeof resolveConfigPaths>
->;
+export type ConfigWithResolvedPaths = ReturnType<typeof resolveConfigPaths>;
