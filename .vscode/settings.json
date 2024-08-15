@@ -3,6 +3,7 @@
     "biomejs",
     "clsx",
     "cmdk",
+    "commitlint",
     "kanpeki",
     "picocolors",
     "rehype",

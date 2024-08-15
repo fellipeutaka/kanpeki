@@ -25,7 +25,6 @@
     "husky": "^9.1.4",
     "lint-staged": "^15.2.9",
     "rimraf": "^6.0.1",
-    "tsc-files": "^1.1.4",
     "turbo": "^2.0.11",
     "typescript": "^5.5.3"
   },
@@ -35,7 +34,7 @@
       "biome check --fix --no-errors-on-unmatched"
     ],
     "*.{ts,tsx}": [
-      "tsc-files --noEmit"
+      "bash -c 'pnpm run type-check'"
     ]
   },
   "config": {

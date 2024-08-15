@@ -38,9 +38,6 @@ importers:
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
-      tsc-files:
-        specifier: ^1.1.4
-        version: 1.1.4(typescript@5.5.3)
       turbo:
         specifier: ^2.0.11
         version: 2.0.11
@@ -3734,12 +3731,6 @@ packages:
 
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
-
-  tsc-files@1.1.4:
-    resolution: {integrity: sha512-RePsRsOLru3BPpnf237y1Xe1oCGta8rmSYzM76kYo5tLGsv5R2r3s64yapYorGTPuuLyfS9NVbh9ydzmvNie2w==}
-    hasBin: true
-    peerDependencies:
-      typescript: '>=3'
 
   tsconfig-paths@4.2.0:
     resolution: {integrity: sha512-NoZ4roiN7LnbKn9QqE1amc9DJfzvZXxF4xDavcOWt1BPkdx+m+0gJuPM+S0vCe7zTJMYUP0R8pO2XMr+Y8oLIg==}
@@ -7673,10 +7664,6 @@ snapshots:
   trough@2.2.0: {}
 
   ts-interface-checker@0.1.13: {}
-
-  tsc-files@1.1.4(typescript@5.5.3):
-    dependencies:
-      typescript: 5.5.3
 
   tsconfig-paths@4.2.0:
     dependencies:
