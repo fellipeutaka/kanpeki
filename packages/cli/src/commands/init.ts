@@ -228,10 +228,13 @@ async function runInit(cwd: string, config: ConfigWithResolvedPaths) {
 
   s.stop("Project initialized.");
 
-  const dependenciesSpinner = spinner();
-  dependenciesSpinner.start("Installing dependencies...");
-
   const packageManager = getPkgManager();
+
+  const dependenciesSpinner = spinner();
+  dependenciesSpinner.start(
+    `Installing dependencies with ${packageManager}...`,
+  );
+
   await installDeps(packageManager, cwd, PROJECT_DEPENDENCIES, ["-D"]);
 
   dependenciesSpinner.stop("Dependencies installed.");

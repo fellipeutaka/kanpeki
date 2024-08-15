@@ -1,6 +1,7 @@
 {
   "name": "kanpeki",
   "private": true,
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/fellipeutaka/kanpeki.git"
@@ -10,15 +11,36 @@
     "build": "turbo run build",
     "type-check": "turbo run type-check --parallel",
     "lint": "biome check --fix",
-    "clean": "rimraf **/{.next,.turbo,node_modules,dist,out} -g"
+    "clean": "rimraf **/{.next,.turbo,node_modules,dist,out} -g",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@changesets/cli": "^2.27.7",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cz-commitlint": "^19.4.0",
     "@types/node": "^20.14.11",
+    "commitizen": "^4.3.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.9",
     "rimraf": "^6.0.1",
+    "tsc-files": "^1.1.4",
     "turbo": "^2.0.11",
     "typescript": "^5.5.3"
   },
-  "packageManager": "pnpm@9.5.0"
+  "packageManager": "pnpm@9.5.0",
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "biome check --fix --no-errors-on-unmatched"
+    ],
+    "*.{ts,tsx}": [
+      "tsc-files --noEmit"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  }
 }

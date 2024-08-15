@@ -11,8 +11,13 @@ export const docsConfig: DocsConfig = {
       href: "/docs/components",
     },
     {
+      title: "Icons",
+      href: "/icons",
+      disabled: true,
+    },
+    {
       title: "Examples",
-      href: "/docs/examples",
+      href: "/examples",
       disabled: true,
     },
   ],
