@@ -1,5 +1,9 @@
 {
   "name": "@kanpeki/tsconfig",
-  "private": true,
-  "files": ["lib.json", "next.json"]
+  "private": false,
+  "version": "0.0.0",
+  "files": [
+    "lib.json",
+    "next.json"
+  ]
 }
