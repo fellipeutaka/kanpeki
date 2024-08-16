@@ -1,23 +1,22 @@
-"use client";
-
-import { Collapsible } from "@kanpeki/ui/collapsible";
-import { Icons } from "@kanpeki/ui/icons";
 import { cn } from "@kanpeki/utils/cn";
-import { useState } from "react";
+import { tv } from "tailwind-variants";
 import { LanguageIcon } from "../language-icon";
 
 type FilesProps = React.ComponentProps<"div">;
 
-const itemStyles =
-  "flex flex-row items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground";
-
 export function Files({ children, className, ...props }: FilesProps) {
   return (
-    <div className={cn("rounded-md border bg-card p-2", className)} {...props}>
+    <div {...props} className={cn("rounded-md border bg-card p-2", className)}>
       {children}
     </div>
   );
 }
+
+export const FileStyles = tv({
+  base: [
+    "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground",
+  ],
+});
 
 interface FileProps extends React.ComponentProps<"div"> {
   name: string;
@@ -26,7 +25,7 @@ interface FileProps extends React.ComponentProps<"div"> {
 
 export function File({ name, className, ...props }: FileProps) {
   return (
-    <div className={cn(itemStyles, className)} {...props}>
+    <div {...props} className={FileStyles({ className })}>
       <LanguageIcon
         title={name}
         language={name.split(".").pop() || ""}
@@ -34,35 +33,5 @@ export function File({ name, className, ...props }: FileProps) {
       />
       {name}
     </div>
-  );
-}
-
-interface FolderProps extends React.ComponentProps<"div"> {
-  name: string;
-  defaultOpen?: boolean;
-}
-
-export function Folder({
-  children,
-  name,
-  defaultOpen = false,
-  ...rest
-}: FolderProps) {
-  const [open, setOpen] = useState(defaultOpen);
-
-  return (
-    <Collapsible.Root open={open} onOpenChange={setOpen} {...rest}>
-      <Collapsible.Trigger className={cn(itemStyles, "w-full")}>
-        {open ? (
-          <Icons.FolderOpen className="size-4" />
-        ) : (
-          <Icons.Folder className="size-4" />
-        )}
-        {name}
-      </Collapsible.Trigger>
-      <Collapsible.Content>
-        <div className="ml-2 flex flex-col border-l pl-2">{children}</div>
-      </Collapsible.Content>
-    </Collapsible.Root>
   );
 }
