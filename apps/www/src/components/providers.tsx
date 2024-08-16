@@ -2,6 +2,7 @@
 
 import { Toaster } from "@kanpeki/ui/toast";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "next-themes";
 
 interface ProvidersProps {
@@ -19,6 +20,7 @@ export function Providers({ children }: ProvidersProps) {
       {children}
       <Toaster />
       <Analytics />
+      <SpeedInsights />
     </ThemeProvider>
   );
 }
