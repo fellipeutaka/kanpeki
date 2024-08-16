@@ -13,7 +13,7 @@ jobs:
   release:
     name: Release
     # IMPORTANT: prevent this action from running on forks
-    if: github.repository == 'fellipeutaka/kenji'
+    if: github.repository == 'fellipeutaka/kanpeki'
     permissions:
       contents: write # to create release (changesets/action)
       pull-requests: write # to create pull request (changesets/action)
