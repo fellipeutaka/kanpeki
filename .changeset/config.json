@@ -10,5 +10,9 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["www"]
+  "ignore": ["www"],
+  "privatePackages": {
+    "tag": false,
+    "version": false
+  }
 }
