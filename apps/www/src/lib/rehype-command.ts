@@ -51,7 +51,7 @@ export const rehypeCommand = () => (tree: UnistTree) => {
       const npmCommand = node.properties.__rawString__;
       node.properties.__npmCommand__ = npmCommand;
       node.properties.__yarnCommand__ = npmCommand;
-      node.properties.__pnpmCommand__ = npmCommand.replace("npx", "pnpm dlx");
+      node.properties.__pnpmCommand__ = npmCommand.replace("npx", "pnpx");
       node.properties.__bunCommand__ = npmCommand.replace("npx", "bunx");
     }
   });
