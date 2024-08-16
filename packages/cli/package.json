@@ -3,7 +3,7 @@
   "description": "Add beautiful and accessible components to your apps.",
   "type": "module",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Fellipe Utaka",
     "email": "fellipeutaka@gmail.com",
