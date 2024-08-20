@@ -12,7 +12,7 @@ export function useActiveItem(itemIds: string[]) {
           }
         }
       },
-      { rootMargin: "5% 0% -70% 0%" },
+      { rootMargin: "5% 0% -70% 0%" }
     );
 
     for (const id of itemIds) {

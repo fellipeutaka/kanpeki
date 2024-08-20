@@ -28,7 +28,7 @@ const extensionMap = new Map([
 function convertPatternToRegex(pattern: string): string {
   return pattern.replace(
     /{([^}]+)}/g,
-    (_, group) => `(${group.replace(/,/g, "|")})`,
+    (_, group) => `(${group.replace(/,/g, "|")})`
   );
 }
 

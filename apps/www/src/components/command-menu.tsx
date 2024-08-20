@@ -8,9 +8,14 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { docsConfig } from "~/config/docs";
+import type { NavItem, SidebarNavItem } from "~/config/docs";
 
-export function CommandMenu() {
+interface CommandMenuProps {
+  mainNav: NavItem[];
+  sidebarNav: SidebarNavItem[];
+}
+
+export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { setTheme } = useTheme();
   const router = useRouter();
@@ -35,7 +40,7 @@ export function CommandMenu() {
           setIsOpen((open) => !open);
         }
       },
-      { signal: controller.signal },
+      { signal: controller.signal }
     );
 
     return () => controller.abort();
@@ -75,7 +80,7 @@ export function CommandMenu() {
             <Command.List className="max-h-full">
               <Command.Empty>No results found.</Command.Empty>
               <Command.Group heading="Links">
-                {docsConfig.mainNav.map((navItem) => (
+                {mainNav.map((navItem) => (
                   <Command.Item
                     key={navItem.href}
                     value={navItem.title}
@@ -90,7 +95,7 @@ export function CommandMenu() {
                   </Command.Item>
                 ))}
               </Command.Group>
-              {docsConfig.sidebarNav.map((group) => (
+              {sidebarNav.map((group) => (
                 <Command.Group key={group.title} heading={group.title}>
                   {group.items?.map((navItem) => (
                     <Command.Item

@@ -53,13 +53,13 @@ export const init = new Command()
   .option(
     "-c, --cwd <cwd>",
     "the working directory. defaults to the current directory.",
-    process.cwd(),
+    process.cwd()
   )
   .action(async (options: InitOptions) => {
     try {
       if (!existsSync(options.cwd)) {
         throw new Error(
-          `The path ${options.cwd} does not exist. Please try again.`,
+          `The path ${options.cwd} does not exist. Please try again.`
         );
       }
 
@@ -75,7 +75,7 @@ export const init = new Command()
         const config = await promptForConfig(
           options.cwd,
           existingConfig,
-          options.yes,
+          options.yes
         );
         await runInit(options.cwd, config);
       }
@@ -83,8 +83,8 @@ export const init = new Command()
       logger.info("");
       logger.info(
         `${picocolors.green(
-          "Success!",
-        )} Project initialization completed. You may now add components.`,
+          "Success!"
+        )} Project initialization completed. You may now add components.`
       );
       logger.info("");
     } catch (err) {
@@ -95,7 +95,7 @@ export const init = new Command()
 async function promptForConfig(
   cwd: string,
   defaultConfig: Config | null = null,
-  skip = false,
+  skip = false
 ) {
   const highlight = (text: string) => picocolors.cyan(text);
 
@@ -118,7 +118,7 @@ async function promptForConfig(
     tailwindPrefix: () =>
       text({
         message: `Are you using a custom ${highlight(
-          "tailwind prefix eg. tw-",
+          "tailwind prefix eg. tw-"
         )}? (Leave blank if not)`,
         initialValue: "",
       }),
@@ -179,9 +179,9 @@ async function writeConfig(cwd: string, config: Config) {
         aliases: config.aliases,
       } satisfies Config,
       null,
-      2,
+      2
     ),
-    "utf8",
+    "utf8"
   );
   s.stop("Configuration written.");
 }
@@ -213,14 +213,14 @@ async function runInit(cwd: string, config: ConfigWithResolvedPaths) {
     getTwTemplate({
       prefix: config.tailwind.prefix,
     }),
-    "utf8",
+    "utf8"
   );
 
   // Write globals.css file
   await fs.writeFile(
     config.resolvedPaths.tailwindCss,
     cssGlobalsTemplate,
-    "utf8",
+    "utf8"
   );
 
   // Write cn file.
@@ -232,7 +232,7 @@ async function runInit(cwd: string, config: ConfigWithResolvedPaths) {
 
   const dependenciesSpinner = spinner();
   dependenciesSpinner.start(
-    `Installing dependencies with ${packageManager}...`,
+    `Installing dependencies with ${packageManager}...`
   );
 
   await installDeps(packageManager, cwd, PROJECT_DEPENDENCIES, ["-D"]);

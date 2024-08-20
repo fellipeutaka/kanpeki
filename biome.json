@@ -33,7 +33,8 @@
         "useFilenamingConvention": "off"
       },
       "correctness": {
-        "noNodejsModules": "off"
+        "noNodejsModules": "off",
+        "noUnusedVariables": "error"
       }
     }
   },
@@ -69,6 +70,9 @@
     }
   ],
   "javascript": {
-    "globals": ["React"]
+    "globals": ["React"],
+    "formatter": {
+      "trailingCommas": "es5"
+    }
   }
 }

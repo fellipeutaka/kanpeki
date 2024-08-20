@@ -1,7 +1,7 @@
 export async function getIconifyCollections(options?: RequestInit) {
   const response = await fetch(
     "https://api.iconify.design/collections",
-    options,
+    options
   );
 
   if (!response.ok) {
@@ -12,7 +12,7 @@ export async function getIconifyCollections(options?: RequestInit) {
 }
 
 export function getCollectionsGroupedByCategory(
-  collections: IconifyCollections,
+  collections: IconifyCollections
 ) {
   const groupedCollections: {
     category: string;
@@ -27,7 +27,7 @@ export function getCollectionsGroupedByCategory(
     }
 
     const group = groupedCollections.find(
-      (group) => group.category === category,
+      (group) => group.category === category
     );
 
     if (group) {

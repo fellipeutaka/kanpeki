@@ -81,7 +81,7 @@ export const mdxComponents = {
     <blockquote
       className={cn(
         "mt-6 border-l-2 pl-6 italic *:text-muted-foreground",
-        className,
+        className
       )}
       {...props}
     />
@@ -103,7 +103,7 @@ export const mdxComponents = {
     <th
       className={cn(
         "border px-2 py-2 text-left font-bold sm:px-4 [&[align=center]]:text-center [&[align=right]]:text-right",
-        className,
+        className
       )}
       {...props}
     />
@@ -112,7 +112,7 @@ export const mdxComponents = {
     <td
       className={cn(
         "border px-2 py-2 text-left sm:px-4 [&[align=center]]:text-center [&[align=right]]:text-right",
-        className,
+        className
       )}
       {...props}
     />
@@ -121,7 +121,7 @@ export const mdxComponents = {
     <code
       className={cn(
         "relative rounded bg-muted px-1 py-0.5 font-mono text-sm",
-        className,
+        className
       )}
       {...props}
     />
@@ -131,7 +131,7 @@ export const mdxComponents = {
     <figure
       className={cn(
         "group relative mt-6 overflow-hidden rounded-lg border text-sm",
-        className,
+        className
       )}
       {...props}
     />

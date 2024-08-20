@@ -56,7 +56,7 @@ export async function getRawConfig(cwd: string) {
   } catch (err) {
     if (isValiError(err)) {
       logger.error(
-        "There are issues with your configuration file. Please fix them before continuing.",
+        "There are issues with your configuration file. Please fix them before continuing."
       );
       console.error(flatten(err.issues).nested);
 
@@ -71,7 +71,7 @@ export function resolveConfigPaths(cwd: string, config: Config) {
 
   if (tsConfig.resultType === "failed") {
     throw new Error(
-      `Failed to load "tsconfig".json. ${tsConfig.message ?? ""}`.trim(),
+      `Failed to load "tsconfig".json. ${tsConfig.message ?? ""}`.trim()
     );
   }
 

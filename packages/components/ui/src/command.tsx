@@ -159,5 +159,5 @@ export const Command = Object.assign(
     Item: CommandItem,
     Separator: CommandSeparator,
     Shortcut: CommandShortcut,
-  },
+  }
 );

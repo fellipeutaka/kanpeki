@@ -41,7 +41,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
               "inline-block no-underline transition-colors hover:text-foreground",
               item.url === `#${activeItem}`
                 ? "font-medium text-foreground"
-                : "text-muted-foreground",
+                : "text-muted-foreground"
             )}
           >
             {item.title}

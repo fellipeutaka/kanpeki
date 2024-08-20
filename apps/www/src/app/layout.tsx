@@ -73,7 +73,7 @@ export default function Layout({ children }: LayoutProps) {
         className={cn(
           "relative grid min-h-dvh grid-rows-[auto,1fr,auto] bg-background font-sans text-foreground antialiased",
           fonts.sans.variable,
-          fonts.mono.variable,
+          fonts.mono.variable
         )}
       >
         <Providers>

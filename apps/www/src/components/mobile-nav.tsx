@@ -8,10 +8,15 @@ import { cn } from "@kanpeki/utils/cn";
 import Link, { type LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { Fragment, useState } from "react";
-import { docsConfig } from "~/config/docs";
+import type { NavItem, SidebarNavItem } from "~/config/docs";
 import { siteConfig } from "~/config/site";
 
-export function MobileNav() {
+interface MobileNavProps {
+  mainNav: NavItem[];
+  sidebarNav: SidebarNavItem[];
+}
+
+export function MobileNav({ mainNav, sidebarNav }: MobileNavProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -26,14 +31,14 @@ export function MobileNav() {
         <div
           className={cn(
             "-translate-y-1 absolute h-0.5 w-3.5 transform-gpu bg-muted-foreground transition-transform",
-            open && "translate-y-0 rotate-45",
+            open && "translate-y-0 rotate-45"
           )}
           aria-hidden
         />
         <div
           className={cn(
             "absolute h-0.5 w-3.5 translate-y-1 transform-gpu bg-muted-foreground transition-transform",
-            open && "-rotate-45 translate-y-0",
+            open && "-rotate-45 translate-y-0"
           )}
           aria-hidden
         />
@@ -52,10 +57,10 @@ export function MobileNav() {
             <Icons.Logo className="mr-2 size-4" />
             <span className="font-bold">{siteConfig.name}</span>
           </MobileLink>
-          <ScrollArea.Root className="my-4 h-[calc(100dvh-8rem)] pb-10 pl-6 [mask-image:linear-gradient(black_80%,transparent)]">
+          <ScrollArea.Root className="my-4 h-[calc(100dvh-8rem)] pl-6 [mask-image:linear-gradient(black_80%,transparent)]">
             <ScrollArea.Viewport>
               <div className="flex flex-col space-y-3">
-                {docsConfig.mainNav?.map((item) => (
+                {mainNav.map((item) => (
                   <MobileLink
                     key={item.href}
                     href={item.href}
@@ -66,7 +71,7 @@ export function MobileNav() {
                 ))}
               </div>
               <div className="space-y-2">
-                {docsConfig.sidebarNav.map((item) => (
+                {sidebarNav.map((item) => (
                   <div key={item.title} className="flex flex-col gap-3 pt-6">
                     <h4 className="font-medium">{item.title}</h4>
                     {item?.items?.length &&

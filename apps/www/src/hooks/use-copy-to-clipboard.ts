@@ -26,7 +26,7 @@ export const useCopyToClipboard = (): [
 
     if (!navigator?.clipboard) {
       toast.error(
-        "Unable to access clipboard. Please grant permission to enable clipboard access.",
+        "Unable to access clipboard. Please grant permission to enable clipboard access."
       );
       return;
     }
@@ -41,7 +41,7 @@ export const useCopyToClipboard = (): [
       }, timeout ?? 2000);
     } catch {
       toast.error(
-        errorMessage ?? "Unable to copy to clipboard. Please try again.",
+        errorMessage ?? "Unable to copy to clipboard. Please try again."
       );
     }
   };

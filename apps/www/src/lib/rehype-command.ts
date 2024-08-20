@@ -13,15 +13,15 @@ export const rehypeCommand = () => (tree: UnistTree) => {
       node.properties.__npmCommand__ = npmCommand;
       node.properties.__yarnCommand__ = npmCommand.replace(
         "npm install",
-        "yarn add",
+        "yarn add"
       );
       node.properties.__pnpmCommand__ = npmCommand.replace(
         "npm install",
-        "pnpm add",
+        "pnpm add"
       );
       node.properties.__bunCommand__ = npmCommand.replace(
         "npm install",
-        "bun add",
+        "bun add"
       );
     }
 
@@ -31,15 +31,15 @@ export const rehypeCommand = () => (tree: UnistTree) => {
       node.properties.__npmCommand__ = npmCommand;
       node.properties.__yarnCommand__ = npmCommand.replace(
         "npx create-",
-        "yarn create ",
+        "yarn create "
       );
       node.properties.__pnpmCommand__ = npmCommand.replace(
         "npx create-",
-        "pnpm create ",
+        "pnpm create "
       );
       node.properties.__bunCommand__ = npmCommand.replace(
         "npx create-",
-        "bun create",
+        "bun create"
       );
     }
 

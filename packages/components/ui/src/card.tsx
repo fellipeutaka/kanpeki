@@ -66,5 +66,5 @@ export const Card = Object.assign(
     Description: CardDescription,
     Content: CardContent,
     Footer: CardFooter,
-  },
+  }
 );

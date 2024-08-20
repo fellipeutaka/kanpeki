@@ -23,7 +23,7 @@ export const format = new Command()
   .option(
     "-c, --cwd <cwd>",
     "the working directory. defaults to the current directory.",
-    process.cwd(),
+    process.cwd()
   )
   .action(async (options: FormatOptions) => {
     try {
@@ -31,7 +31,7 @@ export const format = new Command()
 
       if (!existsSync(options.cwd)) {
         throw new Error(
-          `The path ${options.cwd} does not exist. Please try again.`,
+          `The path ${options.cwd} does not exist. Please try again.`
         );
       }
 
@@ -39,8 +39,8 @@ export const format = new Command()
       if (!config) {
         logger.warn(
           `Configuration is missing. Please run ${picocolors.green(
-            "init",
-          )} to create a kanpeki.json file.`,
+            "init"
+          )} to create a kanpeki.json file.`
         );
         process.exit(1);
       }
@@ -48,11 +48,11 @@ export const format = new Command()
       const iconsFilePath = path.join(
         config.resolvedPaths.components ?? "",
         "ui",
-        "icons.tsx",
+        "icons.tsx"
       );
       if (!existsSync(iconsFilePath)) {
         throw new Error(
-          `The file ${iconsFilePath} does not exist. Please create it first.`,
+          `The file ${iconsFilePath} does not exist. Please create it first.`
         );
       }
       const readStream = createReadStream(iconsFilePath, "utf8");
@@ -60,7 +60,7 @@ export const format = new Command()
       const outputFilePath = path.join(
         config.resolvedPaths.components ?? "",
         "ui",
-        "icons.sorted.tsx",
+        "icons.sorted.tsx"
       );
       const writeStream = createWriteStream(outputFilePath, "utf8");
 
@@ -86,7 +86,7 @@ export const format = new Command()
               line,
               writeStream,
               entries,
-              currentEntry,
+              currentEntry
             );
             isInIconsBlock = false;
             return;
@@ -122,7 +122,7 @@ function handleIconsEnd(
   line: string,
   writeStream: NodeJS.WritableStream,
   entries: string[],
-  currentEntry: string,
+  currentEntry: string
 ) {
   if (currentEntry.trim()) {
     entries.push(currentEntry);
@@ -136,7 +136,7 @@ function handleIconsEnd(
 function handleIconEntry(
   line: string,
   entries: string[],
-  currentEntry: string,
+  currentEntry: string
 ) {
   if (line.trim().endsWith("),")) {
     entries.push(`${currentEntry}${line}\n`);
@@ -148,7 +148,7 @@ function handleIconEntry(
 
 function writeSortedEntries(
   entries: string[],
-  writeStream: NodeJS.WritableStream,
+  writeStream: NodeJS.WritableStream
 ) {
   entries.sort((a, b) => {
     const nameA = a.split(":")[0].trim();

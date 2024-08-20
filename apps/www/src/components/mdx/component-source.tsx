@@ -26,7 +26,7 @@ export function ComponentSource({ children }: ComponentSourceProps) {
         <div
           className={cn(
             "absolute flex items-center justify-center bg-gradient-to-b from-transparent to-zinc-950/90 p-2",
-            isOpen ? "inset-x-0 bottom-8 h-12" : "inset-0 mt-12",
+            isOpen ? "inset-x-0 bottom-8 h-12" : "inset-0 mt-12"
           )}
         >
           <Button

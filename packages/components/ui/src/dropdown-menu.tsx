@@ -274,5 +274,5 @@ export const DropdownMenu = Object.assign(
     SubContent: DropdownMenuSubContent,
     SubTrigger: DropdownMenuSubTrigger,
     RadioGroup: DropdownMenuRadioGroup,
-  },
+  }
 );

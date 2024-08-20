@@ -4,10 +4,14 @@ import { Badge } from "@kanpeki/ui/badge";
 import { Icons } from "@kanpeki/ui/icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { type NavItem, docsConfig } from "~/config/docs";
+import type { NavItem } from "~/config/docs";
 import { siteConfig } from "~/config/site";
 
-export function MainNav() {
+interface MainNavProps {
+  mainNav: NavItem[];
+}
+
+export function MainNav({ mainNav }: MainNavProps) {
   const pathname = usePathname();
 
   return (
@@ -18,7 +22,7 @@ export function MainNav() {
         <Badge variant="secondary">Beta</Badge>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
-        {docsConfig.mainNav.map((item) => (
+        {mainNav.map((item) => (
           <MainNavLink key={item.href} item={item} pathname={pathname} />
         ))}
       </nav>

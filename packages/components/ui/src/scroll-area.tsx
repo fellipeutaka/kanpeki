@@ -73,5 +73,5 @@ export const ScrollArea = Object.assign(
     Viewport: ScrollAreaViewport,
     Scrollbar: ScrollAreaScrollbar,
     Thumb: ScrollAreaThumb,
-  },
+  }
 );

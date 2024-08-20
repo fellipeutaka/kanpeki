@@ -44,13 +44,13 @@ async function getGitHubStars() {
     const response = await fetch(
       `https://api.github.com/repos/${siteConfig.links.github.replace(
         "https://github.com/",
-        "",
+        ""
       )}`,
       {
         next: {
           revalidate: 60,
         },
-      },
+      }
     );
 
     if (!response?.ok) {

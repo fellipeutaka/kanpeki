@@ -4,7 +4,7 @@ import { flushSync } from "react-dom";
 export function useAnimation(
   ref: React.RefObject<HTMLElement | null>,
   isActive: boolean,
-  onEnd: () => void,
+  onEnd: () => void
 ) {
   const prevAnimation = useRef<string | null>(null);
   if (isActive && ref.current) {
@@ -45,7 +45,7 @@ export function useAnimation(
 
 export function useExitAnimation(
   ref: React.RefObject<HTMLElement | null>,
-  isOpen: boolean,
+  isOpen: boolean
 ) {
   // State to trigger a re-render after animation is complete, which causes the element to be removed from the DOM.
   // Ref to track the state we're in, so we don't immediately reset isExiting to true after the animation.
@@ -69,7 +69,7 @@ export function useExitAnimation(
     useCallback(() => {
       setExitState("exited");
       setExiting(false);
-    }, []),
+    }, [])
   );
 
   return isExiting;

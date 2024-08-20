@@ -92,7 +92,7 @@ export function Button({
       onPressUp,
       isDisabled: props.disabled,
     },
-    ref,
+    ref
   );
 
   const { focusProps, isFocusVisible } = useFocusRing({

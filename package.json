@@ -31,12 +31,8 @@
   },
   "packageManager": "pnpm@9.5.0",
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "biome check --fix --no-errors-on-unmatched"
-    ],
-    "*.{ts,tsx}": [
-      "bash -c 'pnpm run type-check'"
-    ]
+    "*.{js,ts,tsx}": ["biome check --fix --no-errors-on-unmatched"],
+    "*.{ts,tsx}": ["bash -c 'pnpm run type-check'"]
   },
   "config": {
     "commitizen": {

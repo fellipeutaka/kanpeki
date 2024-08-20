@@ -68,5 +68,5 @@ export const Alert = Object.assign(
     Root: AlertRoot,
     Title: AlertTitle,
     Description: AlertDescription,
-  },
+  }
 );

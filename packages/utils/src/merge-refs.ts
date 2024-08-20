@@ -1,5 +1,5 @@
 export function mergeRefs<T>(
-  refs: (React.MutableRefObject<T> | React.LegacyRef<T> | undefined)[],
+  refs: (React.MutableRefObject<T> | React.LegacyRef<T> | undefined)[]
 ): React.RefCallback<T> {
   return (value) => {
     for (const ref of refs) {

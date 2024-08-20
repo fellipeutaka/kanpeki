@@ -136,5 +136,5 @@ export const Avatar = Object.assign(
     Image: AvatarImage,
     Fallback: AvatarFallback,
     Placeholder: AvatarPlaceholder,
-  },
+  }
 );

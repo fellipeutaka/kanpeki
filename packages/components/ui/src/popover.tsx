@@ -47,5 +47,5 @@ export const Popover = Object.assign(
     Root,
     Trigger,
     Content: PopoverContent,
-  },
+  }
 );

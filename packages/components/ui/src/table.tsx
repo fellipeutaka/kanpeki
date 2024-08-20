@@ -94,5 +94,5 @@ export const Table = Object.assign(
     Head: TableHead,
     Cell: TableCell,
     Caption: TableCaption,
-  },
+  }
 );

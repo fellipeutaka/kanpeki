@@ -1,0 +1,37 @@
+---
+title: CLI
+description: Use the CLI to add components to your project.
+---
+
+## init
+
+Use the `init` command to initialize configuration and dependencies for a new project.
+
+The `init` command installs dependencies, adds the `cn` util, configures `tailwind.config.ts`, and CSS variables for the project.
+
+```bash
+npx kanpeki-ui@latest init
+```
+
+You will be asked a few questions to configure `kanpeki.json`:
+
+```txt
+Where is your global CSS file? › › src/styles/globals.css
+Where is your tailwind.config.ts located? › tailwind.config.ts
+Configure the import alias for components: › ~/components
+Configure the import alias for utils: › ~/utils
+Are you using React Server Components? › no / yes
+```
+
+### Options
+
+```txt
+Usage: kanpeki-ui init [options]
+
+initialize your project and install dependencies
+
+Options:
+  -y, --yes        skip confirmation prompt. (default: false)
+  -c, --cwd <cwd>  the working directory. defaults to the current directory.
+  -h, --help       display help for command
+```

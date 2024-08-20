@@ -43,7 +43,7 @@ export function CheckboxRoot({ className, ...props }: CheckboxRootProps) {
       isReadOnly: props.readOnly || props.isReadOnly,
     },
     state,
-    ref,
+    ref
   );
 
   return (
@@ -87,5 +87,5 @@ export const Checkbox = Object.assign(
   {
     Root: CheckboxRoot,
     Indicator: CheckboxIndicator,
-  },
+  }
 );

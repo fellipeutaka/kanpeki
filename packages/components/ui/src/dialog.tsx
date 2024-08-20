@@ -122,7 +122,7 @@ export function useDialogRootContext() {
   const context = useContext(DialogRootContext);
   if (context === null) {
     throw new Error(
-      "useDialogRootContext must be used within a DialogProvider",
+      "useDialogRootContext must be used within a DialogProvider"
     );
   }
   return context;
@@ -164,7 +164,7 @@ export function DialogRoot({
   const overlayTriggerState = useOverlayTriggerState(props);
   const { triggerProps, overlayProps } = useOverlayTrigger(
     { type: "dialog" },
-    overlayTriggerState,
+    overlayTriggerState
   );
 
   const modalRef = useRef<HTMLDivElement>(null);
@@ -175,7 +175,7 @@ export function DialogRoot({
       isDismissable,
     },
     overlayTriggerState,
-    modalRef,
+    modalRef
   );
 
   return (
@@ -362,5 +362,5 @@ export const Dialog = Object.assign(
     Title: DialogTitle,
     Description: DialogDescription,
     Close: DialogClose,
-  },
+  }
 );

@@ -46,7 +46,7 @@ export function SwitchRoot({ className, ...props }: SwitchRootProps) {
       isReadOnly: props.readOnly || props.isReadOnly,
     },
     state,
-    ref,
+    ref
   );
 
   return (
@@ -80,5 +80,5 @@ export const Switch = Object.assign(
   {
     Root: SwitchRoot,
     Thumb: SwitchThumb,
-  },
+  }
 );

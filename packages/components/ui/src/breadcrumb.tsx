@@ -106,5 +106,5 @@ export const Breadcrumb = Object.assign(
     Page: BreadcrumbPage,
     Separator: BreadcrumbSeparator,
     Ellipsis: BreadcrumbEllipsis,
-  },
+  }
 );

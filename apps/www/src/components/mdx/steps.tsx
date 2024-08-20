@@ -6,7 +6,7 @@ export function Steps({ className, ...props }: React.ComponentProps<"div">) {
       {...props}
       className={cn(
         "steps mb-12 ml-4 border-l pl-8 [counter-reset:step]",
-        className,
+        className
       )}
     />
   );
@@ -18,7 +18,7 @@ export function Step({ className, ...props }: React.ComponentProps<"h3">) {
       {...props}
       className={cn(
         "heading mt-8 scroll-m-20 font-semibold text-xl tracking-tight",
-        className,
+        className
       )}
     />
   );

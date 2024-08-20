@@ -40,7 +40,7 @@ export function LinkButton({
       onPressUp,
       isDisabled: isDisabled ?? props.disabled,
     },
-    ref,
+    ref
   );
 
   const { focusProps, isFocusVisible } = useFocusRing({

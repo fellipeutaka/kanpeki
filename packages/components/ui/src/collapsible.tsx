@@ -43,5 +43,5 @@ export const Collapsible = Object.assign(
     Root: CollapsibleRoot,
     Trigger: CollapsibleTrigger,
     Content: CollapsibleContent,
-  },
+  }
 );

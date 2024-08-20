@@ -7,7 +7,7 @@ export async function installDeps(
   packageManager: PackageManager,
   cwd: string,
   deps: string[] = [],
-  flags: string[] = [],
+  flags: string[] = []
 ) {
   const useYarn = packageManager === "yarn";
   const isOnline = !useYarn || (await getIsOnline());
@@ -15,8 +15,8 @@ export async function installDeps(
   if (!isOnline) {
     console.info(
       picocolors.yellow(
-        "You appear to be offline.\nFalling back to the local cache.",
-      ),
+        "You appear to be offline.\nFalling back to the local cache."
+      )
     );
     args.push("--offline");
   }

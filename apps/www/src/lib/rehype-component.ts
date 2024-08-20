@@ -25,7 +25,7 @@ function processComponentSource(node: UnistNode) {
     try {
       // Read the source file.
       const filePath = path.resolve(
-        `../../packages/components/ui/src/${name}.tsx`,
+        `../../packages/components/ui/src/${name}.tsx`
       );
       const source = replaceImports(fs.readFileSync(filePath, "utf8"));
 
@@ -50,7 +50,7 @@ function processComponentSource(node: UnistNode) {
               ],
             }),
           ],
-        }),
+        })
       );
     } catch (error) {
       console.error(error);
@@ -69,7 +69,7 @@ function processComponentPreview(node: UnistNode) {
     try {
       // Read the source file.
       const filePath = path.resolve(
-        `../../packages/components/demos/src/${name}.tsx`,
+        `../../packages/components/demos/src/${name}.tsx`
       );
       const source = replaceImports(fs.readFileSync(filePath, "utf8"));
 
@@ -93,7 +93,7 @@ function processComponentPreview(node: UnistNode) {
               ],
             }),
           ],
-        }),
+        })
       );
     } catch (error) {
       console.error(error);

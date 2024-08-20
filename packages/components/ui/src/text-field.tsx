@@ -84,5 +84,5 @@ export const TextField = Object.assign(
     Root: TextFieldRoot,
     Input: TextFieldInput,
     Slot: TextFieldSlot,
-  },
+  }
 );

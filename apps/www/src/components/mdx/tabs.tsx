@@ -59,5 +59,5 @@ export const Tabs = Object.assign(
     List: TabsList,
     Trigger: TabsTrigger,
     Content: TabsContent,
-  },
+  }
 );

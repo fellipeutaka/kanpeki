@@ -20,7 +20,7 @@ export function CopyButton({ text, className, ...props }: CopyButtonProps) {
     <Button
       className={cn(
         "size-8 bg-secondary hover:bg-background focus-visible:opacity-100 group-hover:opacity-100 [@media(pointer:fine)]:opacity-0",
-        className,
+        className
       )}
       size="icon"
       variant="outline"
@@ -60,7 +60,7 @@ export function CopyNpmButton({
             className={cn(
               "size-8 bg-secondary hover:bg-background focus-visible:opacity-100 group-hover:opacity-100 [@media(pointer:fine)]:opacity-0",
               isOpen && "!opacity-100 bg-background",
-              className,
+              className
             )}
             size="icon"
             variant="outline"
