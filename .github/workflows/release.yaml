@@ -20,16 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.12.2] # Same as the version in .nvmrc
+        node-version: [20.17.0] # Same as the version in .nvmrc
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 9.5.0 # Same as the version in package.json
+      - uses: pnpm/action-setup@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4

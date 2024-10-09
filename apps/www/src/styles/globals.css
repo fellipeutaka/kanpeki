@@ -72,24 +72,21 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   ::-webkit-scrollbar {
     @apply size-1;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     @apply bg-foreground/40 rounded-lg transition-colors;
   }
-  
+
   ::-webkit-scdrollbar-thumb:hover,
   ::-webkit-scrollbar-thumb:active {
     @apply bg-foreground/60;
   }
 }
-

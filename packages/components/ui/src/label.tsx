@@ -30,6 +30,8 @@ export function Label({ className, ...props }: LabelProps) {
   return (
     <label
       {...props}
+      htmlFor={props.htmlFor}
+      aria-label={props["aria-label"]}
       onMouseDown={chain(onMouseDown, props.onMouseDown)}
       className={LabelStyles({ className })}
     />

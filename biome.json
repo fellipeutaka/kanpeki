@@ -34,7 +34,13 @@
       },
       "correctness": {
         "noNodejsModules": "off",
-        "noUnusedVariables": "error"
+        "noUnusedVariables": "error",
+        "noUndeclaredDependencies": "off",
+        "useImportExtensions": "off"
+      },
+      "suspicious": {
+        "noReactSpecificProps": "off",
+        "noConsole": "off"
       }
     }
   },

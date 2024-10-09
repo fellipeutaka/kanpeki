@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@kanpeki/tsconfig": "workspace:*",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.11",
     "clsx": "^2.1.1",
     "tailwind-variants": "^0.2.1"
   },

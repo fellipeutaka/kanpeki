@@ -186,6 +186,8 @@ async function writeConfig(cwd: string, config: Config) {
   s.stop("Configuration written.");
 }
 
+const UTILS_DIR_REGEX = /\/utils$/;
+
 async function runInit(cwd: string, config: ConfigWithResolvedPaths) {
   const s = spinner();
   s.start("Initializing project...");
@@ -195,11 +197,11 @@ async function runInit(cwd: string, config: ConfigWithResolvedPaths) {
     // Determine if the path is a file or directory.
     let dirname = path.extname(resolvedPath ?? "")
       ? path.dirname(resolvedPath ?? "")
-      : resolvedPath ?? "";
+      : (resolvedPath ?? "");
 
     if (key === "utils" && resolvedPath?.endsWith("/utils")) {
       // Remove /utils at the end.
-      dirname = dirname?.replace(/\/utils$/, "");
+      dirname = dirname?.replace(UTILS_DIR_REGEX, "");
     }
 
     if (!existsSync(dirname)) {

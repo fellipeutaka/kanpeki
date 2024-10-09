@@ -23,7 +23,7 @@
   "devDependencies": {
     "@kanpeki/ui": "workspace:*",
     "@kanpeki/tsconfig": "workspace:*",
-    "@types/react": "^18.3.3"
+    "@types/react": "^18.3.11"
   },
   "peerDependencies": {
     "@kanpeki/ui": "*",

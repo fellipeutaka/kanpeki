@@ -53,6 +53,7 @@ export function BreadcrumbPage({ className, ...props }: BreadcrumbPageProps) {
   return (
     <span
       role="link"
+      tabIndex={-1}
       aria-disabled
       aria-current="page"
       {...props}

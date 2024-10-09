@@ -132,7 +132,7 @@ export async function getTailwindCssFile(cwd: string) {
     ignore: PROJECT_SHARED_IGNORE,
   });
 
-  if (!files.length) {
+  if (files.length === 0) {
     return null;
   }
 
@@ -171,7 +171,7 @@ export async function preFlight(cwd: string) {
     ignore: PROJECT_SHARED_IGNORE,
   });
 
-  if (!tailwindConfig.length) {
+  if (tailwindConfig.length === 0) {
     throw new Error(
       "Tailwind CSS is not installed. Visit https://tailwindcss.com/docs/installation to get started."
     );

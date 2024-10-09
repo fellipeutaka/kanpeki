@@ -3,6 +3,8 @@ import { visit } from "unist-util-visit";
 // biome-ignore lint/suspicious/noExplicitAny: any is required for unist-util-visit
 type SAFE_ANY = any;
 
+const EVENT_REGEX = /event="([^"]*)"/;
+
 const visitCallback = (node: SAFE_ANY) => {
   if (node?.type === "element" && node?.tagName === "pre") {
     const [codeEl] = node.children;
@@ -11,12 +13,10 @@ const visitCallback = (node: SAFE_ANY) => {
     }
 
     if (codeEl.data?.meta) {
-      // Extract event from meta and pass it down the tree.
-      const regex = /event="([^"]*)"/;
-      const match = codeEl.data?.meta.match(regex);
+      const match = codeEl.data?.meta.match(EVENT_REGEX);
       if (match) {
         node.__event__ = match ? match[1] : null;
-        codeEl.data.meta = codeEl.data.meta.replace(regex, "");
+        codeEl.data.meta = codeEl.data.meta.replace(EVENT_REGEX, "");
       }
     }
 

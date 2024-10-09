@@ -146,6 +146,8 @@ function handleIconEntry(
   return `${currentEntry}${line}\n`;
 }
 
+const INDENTATION_REGEX = /^\s*/;
+
 function writeSortedEntries(
   entries: string[],
   writeStream: NodeJS.WritableStream
@@ -158,7 +160,7 @@ function writeSortedEntries(
 
   for (const entry of entries) {
     const firstLine = entry.split("\n")[0];
-    const indentation = firstLine.match(/^\s*/)?.[0] || "";
+    const indentation = firstLine.match(INDENTATION_REGEX)?.[0] || "";
     writeStream.write(`${indentation + entry.trim()}\n`);
   }
 }

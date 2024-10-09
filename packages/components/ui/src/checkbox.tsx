@@ -36,6 +36,7 @@ export function CheckboxRoot({ className, ...props }: CheckboxRootProps) {
     isPressed,
     isReadOnly,
     isSelected,
+    labelProps,
   } = useCheckbox(
     {
       ...props,
@@ -47,12 +48,13 @@ export function CheckboxRoot({ className, ...props }: CheckboxRootProps) {
   );
 
   return (
-    <>
+    <label {...labelProps}>
       <input {...inputProps} className="sr-only" />
 
       <button
-        type="button"
+        // biome-ignore lint/a11y/useSemanticElements: This is a button that is used to style the checkbox
         role="checkbox"
+        type="button"
         disabled={isDisabled}
         aria-checked={state.isSelected}
         aria-invalid={isInvalid}
@@ -63,7 +65,7 @@ export function CheckboxRoot({ className, ...props }: CheckboxRootProps) {
       >
         {props.children}
       </button>
-    </>
+    </label>
   );
 }
 
