@@ -41,8 +41,7 @@ export function DocsSidebar() {
 
 const SidebarLinkStyles = cva({
   base: [
-    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-fg underline decoration-transparent transition",
-    "hover:decoration-current",
+    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-fg",
     "aria-disabled:cursor-not-allowed aria-disabled:select-none aria-disabled:opacity-50",
   ],
   variants: {
@@ -84,7 +83,9 @@ function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
       href={item.href}
       className={SidebarLinkStyles({ active: pathname.includes(item.href) })}
     >
-      {item.title}
+      <span className="underline decoration-transparent transition group-hover:decoration-current">
+        {item.title}
+      </span>
 
       {item.label && (
         <Badge className="ml-2 border-none px-1.5 py-0.5 leading-none">
