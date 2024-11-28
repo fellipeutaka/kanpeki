@@ -12,7 +12,7 @@ import { cva } from "~/lib/cva";
 export const PopoverStyles = {
   Content: cva({
     base: [
-      "z-50 min-w-72 rounded-md border bg-popover bg-clip-padding p-4 text-popover-fg shadow-sm",
+      "z-50 min-w-[--trigger-width] rounded-md border bg-popover bg-clip-padding p-4 text-popover-fg shadow-sm",
       "[scrollbar-width:thin] dark:backdrop-blur-2xl dark:backdrop-saturate-200 [&::-webkit-scrollbar]:size-0.5",
 
       "entering:fade-in entering:animate-in entering:ease-out",
