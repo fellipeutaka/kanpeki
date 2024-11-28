@@ -36,7 +36,11 @@
         "noNodejsModules": "off",
         "noUnusedVariables": "error",
         "noUndeclaredDependencies": "off",
-        "useImportExtensions": "off"
+        "useImportExtensions": "off",
+        "noUnusedLabels": "error",
+        "noUnusedImports": "error",
+        "noUnusedFunctionParameters": "error",
+        "noUnusedPrivateClassMembers": "error"
       },
       "suspicious": {
         "noReactSpecificProps": "off",
