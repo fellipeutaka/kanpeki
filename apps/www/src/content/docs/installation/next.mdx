@@ -59,7 +59,7 @@ export const fonts = {
 
 **2. Import the font in the root layout:**
 
-```tsx title=app/layout.tsx {2,31}
+```tsx title=app/layout.tsx {4,31}
 import "~/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
@@ -102,8 +102,10 @@ export default function Layout({ children }: LayoutProps) {
 
 **3. Configure `theme.extend.fontFamily` in `tailwind.config.ts`**
 
-```ts title=tailwind.config.js {2,9-11}
+```ts title=tailwind.config.js {4,11-13}
 import type { Config } from "tailwindcss";
+import ta from "tailwindcss-animate";
+import trac from "tailwindcss-react-aria-components";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
@@ -116,7 +118,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [ta, trac],
   future: {
     hoverOnlyWhenSupported: true,
   },
@@ -144,11 +146,15 @@ Here's how I structure my Next.js apps. You can use this as a reference:
       <File name="fonts.ts" />
       <File name="site.ts" />
     </Folder>
+    <Folder name="lib">
+      <File name="cva.ts" />
+    </Folder>
     <Folder name="styles">
       <File name="globals.css" />
     </Folder>
   </Folder>
-  <File name="next.config.js" />
+  <File name="kanpeki.json" />
+  <File name="next.config.ts" />
   <File name="package.json" />
   <File name="postcss.config.js" />
   <File name="tailwind.config.ts" />
