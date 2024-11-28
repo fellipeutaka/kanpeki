@@ -1,49 +1,43 @@
 ---
 title: Tabs
-description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+description: Tabs organize content into multiple sections and allow users to navigate between them.
 links:
-  docs: https://www.radix-ui.com/primitives/docs/components/tabs
+  docs: https://react-spectrum.adobe.com/react-aria/Tabs.html
 ---
 
 <ComponentPreview name="tabs-demo" />
 
 ## Installation
 
-<TabsRoot defaultValue="manual">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add tabs
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
 
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install @radix-ui/react-tabs
-```
-
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="scroll-area" />
+<ComponentSource name="tabs" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -87,3 +81,13 @@ import {
   <TabsContent value="password">Change your password here.</TabsContent>
 </TabsRoot>
 ```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="tabs-demo" />
+
+### Vertical
+
+<ComponentPreview name="tabs-vertical" />

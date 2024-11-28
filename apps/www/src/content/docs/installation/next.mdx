@@ -37,8 +37,7 @@ npx kanpeki-ui@latest init
 
 ### Fonts
 
-I use [Inter](https://rsms.me/inter) as the default font. Inter is not required.
-I also like to use the [Geist](https://vercel.com/font) font by [Vercel](https://vercel.com).
+I use [Geist](https://vercel.com/font) as the default font.
 You can use any font you like.
 
 Here's how I configure Inter for Next.js:
@@ -46,9 +45,9 @@ Here's how I configure Inter for Next.js:
 **1. Create a `font.ts` file inside `src/config`:**
 
 ```ts title=font.ts
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 
-const sans = Inter({
+const sans = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -61,11 +60,11 @@ export const fonts = {
 **2. Import the font in the root layout:**
 
 ```tsx title=app/layout.tsx {2,31}
+import "~/styles/globals.css";
+
 import type { Metadata, Viewport } from "next";
 import { fonts } from "~/config/fonts";
-import { cn } from "~/utils/cn";
-
-import "~/styles/globals.css";
+import { cx } from "~/lib/cva";
 
 export const metadata: Metadata = {
   title: {
@@ -89,8 +88,8 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-dvh bg-background font-sans text-foreground antialiased",
+        className={cx(
+          "min-h-dvh bg-bg font-sans text-fg antialiased",
           fonts.sans.variable
         )}
       >
@@ -145,24 +144,13 @@ Here's how I structure my Next.js apps. You can use this as a reference:
       <File name="fonts.ts" />
       <File name="site.ts" />
     </Folder>
-    <Folder name="hooks">
-      <File name="use-copy-to-clipboard.ts" />
-      <File name="use-animation.ts" />
-    </Folder>
     <Folder name="styles">
       <File name="globals.css" />
-    </Folder>
-    <Folder name="utils">
-      <File name="chain.ts" />
-      <File name="cn.ts" />
-      <File name="merge-ids.ts" />
-      <File name="merge-props.ts" />
-      <File name="merge-refs.ts" />
     </Folder>
   </Folder>
   <File name="next.config.js" />
   <File name="package.json" />
-  <File name="postcss.config.cjs" />
+  <File name="postcss.config.js" />
   <File name="tailwind.config.ts" />
   <File name="tsconfig.json" />
 </Files>

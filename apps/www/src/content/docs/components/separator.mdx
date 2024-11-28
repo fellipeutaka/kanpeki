@@ -7,21 +7,21 @@ description: Visually or semantically separates content.
 
 ## Installation
 
-<TabsRoot defaultValue="cli">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add separator
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
 
@@ -33,9 +33,9 @@ npx kanpeki-ui@latest add separator
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -58,3 +58,28 @@ import { Separator } from "~/components/ui/separator";
 ### Vertical
 
 <ComponentPreview name="separator-vertical" />
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      typeSimple: "enum",
+      default: '"horizontal"',
+    },
+    {
+      name: "decorative",
+      typeSimple: "boolean",
+      default: "true",
+      description: (
+        <span>
+          When <Code>true</Code>, signifies that it is purely visual, carries no
+          semantic meaning, and ensures it is not present in the accessibility
+          tree.
+        </span>
+      ),
+    },
+  ]}
+/>

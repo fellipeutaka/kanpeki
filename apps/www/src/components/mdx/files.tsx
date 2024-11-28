@@ -1,8 +1,7 @@
-import { cn } from "@kanpeki/utils/cn";
-import { tv } from "tailwind-variants";
-import { LanguageIcon } from "../language-icon";
+import { cn, cva } from "~/lib/cva";
+import { LanguageIcon } from "./language-icon";
 
-type FilesProps = React.ComponentProps<"div">;
+interface FilesProps extends React.ComponentProps<"div"> {}
 
 export function Files({ children, className, ...props }: FilesProps) {
   return (
@@ -12,9 +11,9 @@ export function Files({ children, className, ...props }: FilesProps) {
   );
 }
 
-export const FileStyles = tv({
+export const FileStyles = cva({
   base: [
-    "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground",
+    "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-fg",
   ],
 });
 

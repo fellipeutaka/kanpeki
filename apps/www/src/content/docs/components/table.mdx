@@ -1,27 +1,29 @@
 ---
 title: Table
-description: A responsive table component.
+description: A table displays data in rows and columns and enables a user to navigate its contents via directional navigation keys, and optionally supports row selection and sorting.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Table.html
 ---
 
 <ComponentPreview name="table-demo" />
 
 ## Installation
 
-<TabsRoot defaultValue="cli">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add table
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
 
@@ -33,9 +35,9 @@ npx kanpeki-ui@latest add table
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -115,3 +117,68 @@ import {
   </TableFooter>
 </TableRoot>
 ```
+
+## Examples
+
+### Sorting
+
+<ComponentPreview name="table-sorting" />
+
+### Resizable
+
+<ComponentPreview name="table-resizable" />
+
+## API Reference
+
+### Root
+
+<PropsTable
+  data={[
+    {
+      name: "allowResize",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: (
+        <>
+          Makes the table resizable by wrapping the Table within a{" "}
+          <Code>{"<ResizableTableContainer />"}</Code>.
+        </>
+      ),
+    },
+    {
+      name: "selectionBehavior",
+      required: false,
+      typeSimple: "enum",
+      type: '"toggle" | "replace"',
+      default: '"toggle"',
+      description: "How multiple selection should behave in the collection.",
+    },
+    {
+      name: "disabledBehavior",
+      required: false,
+      typeSimple: "enum",
+      type: '"selection" | "all"',
+      default: '"selection"',
+      description: (
+        <>
+          Whether <Code>disabledKeys</Code> applies to all interactions, or only
+          selection.
+        </>
+      ),
+    },
+    {
+      name: "selectionMode",
+      required: false,
+      typeSimple: "enum",
+      type: '"none" | "single" | "multiple',
+      description: "The type of selection that is allowed in the collection.",
+    },
+    {
+      name: "disallowEmptySelection",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the collection allows empty selection.",
+    },
+  ]}
+/>

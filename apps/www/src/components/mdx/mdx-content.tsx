@@ -1,4 +1,3 @@
-// biome-ignore lint/style/noNamespaceImport: This is needed for MDX to work
 import * as runtime from "react/jsx-runtime";
 import { mdxComponents } from "./mdx-components";
 

@@ -1,13 +1,53 @@
 import type { Config } from "tailwindcss";
-import tailwindcssAnimate from "tailwindcss-animate";
+import ta from "tailwindcss-animate";
+import trac from "tailwindcss-react-aria-components";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import type { PluginCreator } from "tailwindcss/types/config";
 
-export default {
-  content: [
-    "./src/**/*.{md,mdx,ts,tsx}",
-    "../../packages/components/{demos,ui}/src/*.tsx",
-  ],
+const headingPlugin: PluginCreator = ({ addComponents, theme }) =>
+  addComponents({
+    ".heading-1": {
+      scrollMargin: theme("margin.20"),
+      fontWeight: theme("fontWeight.extrabold"),
+      fontSize: theme("fontSize.4xl"),
+      letterSpacing: theme("letterSpacing.tight"),
+      "@screen lg": {
+        fontSize: theme("fontSize.5xl"),
+        lineHeight: "1",
+      },
+    },
+
+    ".heading-2": {
+      scrollMargin: theme("margin.20"),
+      fontWeight: theme("fontWeight.semibold"),
+      fontSize: theme("fontSize.3xl"),
+      lineHeight: "2.25rem",
+      letterSpacing: theme("letterSpacing.tight"),
+      "&:first-child": {
+        marginTop: "0",
+      },
+    },
+
+    ".heading-3": {
+      scrollMargin: theme("margin.20"),
+      fontWeight: theme("fontWeight.semibold"),
+      fontSize: theme("fontSize.2xl"),
+      lineHeight: "2rem",
+      letterSpacing: theme("letterSpacing.tight"),
+    },
+
+    ".heading-4": {
+      scrollMargin: theme("margin.20"),
+      fontWeight: theme("fontWeight.semibold"),
+      fontSize: theme("fontSize.xl"),
+      lineHeight: "1.75rem",
+      letterSpacing: theme("letterSpacing.tight"),
+    },
+  });
+
+const config = {
   darkMode: "class",
+  content: ["./src/**/*.{md,mdx,ts,tsx}"],
   theme: {
     extend: {
       container: {
@@ -18,38 +58,46 @@ export default {
         },
       },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "oklch(var(--border) / <alpha-value>)",
+        input: "oklch(var(--input) / <alpha-value>)",
+        ring: "oklch(var(--ring) / <alpha-value>)",
+        bg: "oklch(var(--bg) / <alpha-value>)",
+        fg: "oklch(var(--fg) / <alpha-value>)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "oklch(var(--primary) / <alpha-value>)",
+          fg: "oklch(var(--primary-fg) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "oklch(var(--secondary) / <alpha-value>)",
+          fg: "oklch(var(--secondary-fg) / <alpha-value>)",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+        success: {
+          DEFAULT: "oklch(var(--success) / <alpha-value>)",
+          fg: "oklch(var(--success-fg) / <alpha-value>)",
+        },
+        warning: {
+          DEFAULT: "oklch(var(--warning) / <alpha-value>)",
+          fg: "oklch(var(--warning-fg) / <alpha-value>)",
+        },
+        danger: {
+          DEFAULT: "oklch(var(--danger) / <alpha-value>)",
+          fg: "oklch(var(--danger-fg) / <alpha-value>)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "oklch(var(--muted) / <alpha-value>)",
+          fg: "oklch(var(--muted-fg) / <alpha-value>)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "oklch(var(--accent) / <alpha-value>)",
+          fg: "oklch(var(--accent-fg) / <alpha-value>)",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "oklch(var(--popover) / <alpha-value>)",
+          fg: "oklch(var(--popover-fg) / <alpha-value>)",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "oklch(var(--card) / <alpha-value>)",
+          fg: "oklch(var(--card-fg) / <alpha-value>)",
         },
       },
       borderRadius: {
@@ -58,8 +106,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        mono: ["var(--font-geist-mono)", ...fontFamily.mono],
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+        mono: ["var(--font-mono)", ...fontFamily.mono],
       },
       keyframes: {
         "collapsible-up": {
@@ -87,8 +135,10 @@ export default {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [ta, trac, headingPlugin],
   future: {
     hoverOnlyWhenSupported: true,
   },
 } satisfies Config;
+
+export default config;

@@ -5,13 +5,7 @@ import { visit } from "unist-util-visit";
 import type { UnistNode, UnistTree } from "~/@types/unist";
 
 function replaceImports(source: string) {
-  // TODO: Use @swc/core and a visitor to replace this.
-  // For now a simple regex should do.
-
-  return source
-    .replaceAll("@kanpeki/ui", "~/components/ui")
-    .replaceAll("@kanpeki", "~")
-    .replaceAll("export default", "export");
+  return source.replaceAll("export default", "export");
 }
 
 function processComponentSource(node: UnistNode) {
@@ -24,9 +18,7 @@ function processComponentSource(node: UnistNode) {
 
     try {
       // Read the source file.
-      const filePath = path.resolve(
-        `../../packages/components/ui/src/${name}.tsx`
-      );
+      const filePath = path.resolve(`src/components/ui/${name}.tsx`);
       const source = replaceImports(fs.readFileSync(filePath, "utf8"));
 
       // Add code as children so that rehype can take over at build time.
@@ -68,9 +60,7 @@ function processComponentPreview(node: UnistNode) {
 
     try {
       // Read the source file.
-      const filePath = path.resolve(
-        `../../packages/components/demos/src/${name}.tsx`
-      );
+      const filePath = path.resolve(`src/demos/${name}.tsx`);
       const source = replaceImports(fs.readFileSync(filePath, "utf8"));
 
       node.children?.push(

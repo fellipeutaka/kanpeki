@@ -1,0 +1,33 @@
+"use client";
+
+import { Button } from "~/components/ui/button";
+import { Dialog } from "~/components/ui/dialog";
+
+const SHEET_SIDES = ["top", "right", "bottom", "left"] as const;
+
+export default function DialogSheetDemo() {
+  return (
+    <div className="grid grid-cols-2 gap-2">
+      {SHEET_SIDES.map((side) => (
+        <Dialog.Root key={side}>
+          <Button variant="outline">{side}</Button>
+          <Dialog.Content side={side}>
+            <Dialog.Header>
+              <Dialog.Title>Are you absolutely sure?</Dialog.Title>
+              <Dialog.Description>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+              </Dialog.Description>
+            </Dialog.Header>
+            <Dialog.Footer>
+              <Button variant="outline" slot="close">
+                Cancel
+              </Button>
+              <Button slot="close">Continue</Button>
+            </Dialog.Footer>
+          </Dialog.Content>
+        </Dialog.Root>
+      ))}
+    </div>
+  );
+}

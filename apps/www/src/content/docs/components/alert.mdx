@@ -7,21 +7,21 @@ description: Displays a callout for user attention.
 
 ## Installation
 
-<TabsRoot defaultValue="cli">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add alert
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
 
@@ -33,9 +33,9 @@ npx kanpeki-ui@latest add alert
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -83,12 +83,21 @@ import { Icons } from "~/components/ui/icons";
 
 <ComponentPreview name="alert-warning" />
 
-### Destructive
+### Danger
 
-<ComponentPreview name="alert-destructive" />
+<ComponentPreview name="alert-danger" />
 
 ## API Reference
 
-| Prop      | Type                                           | Default          | Description                    |
-| --------- | ---------------------------------------------- | ---------------- | ------------------------------ |
-| `variant` | `"default" \| "destructive" \| "warning"{:ts}` | `"default"{:ts}` | The visual style of the alert. |
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "danger" | "warning"',
+      default: '"default"',
+      description: "The visual style of the alert.",
+    },
+  ]}
+/>

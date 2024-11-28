@@ -1,7 +1,7 @@
-import type { Docs as Doc } from "~:content";
-import { BadgeStyles } from "@kanpeki/ui/badge";
-import { Icons } from "@kanpeki/ui/icons";
-import { LinkButton } from "@kanpeki/ui/link-button";
+import { BadgeStyles } from "~/components/ui/badge";
+import { LinkButton } from "~/components/ui/button";
+import { Icons } from "~/components/ui/icons";
+import type { Doc } from "~/utils/mdx";
 import { DocsBreadcrumb } from "./docs-breadcrumb";
 
 interface DocsHeaderProps {
@@ -16,7 +16,7 @@ export function DocsHeader({ doc }: DocsHeaderProps) {
         <h1 className="scroll-m-20 font-bold text-3xl tracking-tight">
           {doc.title}
         </h1>
-        <p className="text-balance text-base text-muted-foreground">
+        <p className="text-balance text-base text-muted-fg">
           {doc.description}
         </p>
       </div>
@@ -29,7 +29,6 @@ export function DocsHeader({ doc }: DocsHeaderProps) {
               rel="noopener noreferrer"
               className={BadgeStyles({
                 variant: "secondary",
-                nativeFocus: false,
                 className: "h-auto gap-1.5",
               })}
             >
@@ -45,7 +44,6 @@ export function DocsHeader({ doc }: DocsHeaderProps) {
               rel="noopener noreferrer"
               className={BadgeStyles({
                 variant: "secondary",
-                nativeFocus: false,
                 className: "h-auto gap-1.5",
               })}
             >

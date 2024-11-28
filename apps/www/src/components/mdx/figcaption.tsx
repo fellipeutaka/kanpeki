@@ -1,6 +1,6 @@
-import { cn } from "@kanpeki/utils/cn";
-import { LanguageIcon } from "../language-icon";
+import { cn } from "~/lib/cva";
 import { CopyButton } from "./copy-button";
+import { LanguageIcon } from "./language-icon";
 
 interface FigcaptionProps extends React.ComponentProps<"figcaption"> {
   "data-language": string;
@@ -21,7 +21,7 @@ export function Figcaption({
       {...props}
     >
       <LanguageIcon title={children} language={language} />
-      <span className="flex-1 truncate text-muted-foreground">{children}</span>
+      <span className="flex-1 truncate text-muted-fg">{children}</span>
       <CopyButton text={__rawString__} />
     </figcaption>
   );

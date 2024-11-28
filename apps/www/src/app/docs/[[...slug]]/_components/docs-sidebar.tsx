@@ -1,11 +1,11 @@
 "use client";
 
-import { Badge } from "@kanpeki/ui/badge";
-import { ScrollArea } from "@kanpeki/ui/scroll-area";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { tv } from "tailwind-variants";
+import { Badge } from "~/components/ui/badge";
+import { Link } from "~/components/ui/link";
+import { ScrollArea } from "~/components/ui/scroll-area";
 import { type NavLink, docsConfig } from "~/config/docs";
+import { cva } from "~/lib/cva";
 
 export function DocsSidebar() {
   const pathname = usePathname();
@@ -39,15 +39,15 @@ export function DocsSidebar() {
   );
 }
 
-const SidebarLinkStyles = tv({
+const SidebarLinkStyles = cva({
   base: [
-    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-foreground underline decoration-transparent transition",
+    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-fg underline decoration-transparent transition",
     "hover:decoration-current",
     "aria-disabled:cursor-not-allowed aria-disabled:select-none aria-disabled:opacity-50",
   ],
   variants: {
     active: {
-      true: ["font-medium text-foreground"],
+      true: ["font-medium text-fg"],
     },
   },
 });
@@ -70,7 +70,7 @@ function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
         {item.label && (
           <Badge
             variant="secondary"
-            className="ml-2 border-none px-1.5 py-0.5 text-muted-foreground leading-none"
+            className="ml-2 border-none px-1.5 py-0.5 text-muted-fg leading-none"
           >
             {item.label}
           </Badge>

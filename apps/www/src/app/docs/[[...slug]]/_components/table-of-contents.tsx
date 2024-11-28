@@ -1,27 +1,34 @@
 "use client";
 
-import type { Docs } from "~:content";
-import { useActiveItem } from "@kanpeki/hooks/use-active-item";
-import { cn } from "@kanpeki/utils/cn";
+import { useActiveItem } from "~/hooks/use-active-item";
+import { cx } from "~/lib/cva";
+import type { TocEntry } from "~/utils/mdx";
 
 interface TableOfContentsProps {
-  toc: Docs["toc"];
+  toc: TocEntry[];
   itemIds: string[];
+  children?: React.ReactNode;
 }
 
-export function TableOfContents({ toc, itemIds }: TableOfContentsProps) {
+export function TableOfContents({
+  toc,
+  itemIds,
+  children,
+}: TableOfContentsProps) {
   const activeHeading = useActiveItem(itemIds);
 
   return (
     <div className="-mt-10 sticky top-16 space-y-4 pt-4">
-      <p className="font-medium">On This Page</p>
+      <p className="font-medium text-sm">On This Page</p>
       <Tree tree={toc} activeItem={activeHeading} />
+
+      {children}
     </div>
   );
 }
 
 interface TreeProps {
-  tree: Docs["toc"];
+  tree: TocEntry[];
   level?: number;
   activeItem: string | null;
 }
@@ -32,16 +39,16 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
   }
 
   return (
-    <ul className={cn("space-y-2", { "pl-4": level !== 1 })}>
+    <ul className={cx("space-y-2", { "pl-4": level !== 1 })}>
       {tree.map((item) => (
         <li key={item.url} className="space-y-2">
           <a
             href={item.url}
-            className={cn(
-              "inline-block no-underline transition-colors hover:text-foreground",
+            className={cx(
+              "inline-block text-sm leading-[1.2] no-underline transition-colors hover:text-fg",
               item.url === `#${activeItem}`
-                ? "font-medium text-foreground"
-                : "text-muted-foreground"
+                ? "font-medium text-fg"
+                : "text-muted-fg"
             )}
           >
             {item.title}

@@ -1,4 +1,4 @@
-import type { Icons } from "@kanpeki/ui/icons";
+import type { Icons } from "~/components/ui/icons";
 
 export const docsConfig: DocsConfig = {
   mainNav: [
@@ -232,11 +232,11 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "TextArea",
-          href: "/docs/components/text-area",
+          href: "/docs/components/textarea",
         },
         {
           title: "TextField",
-          href: "/docs/components/text-field",
+          href: "/docs/components/textfield",
         },
         {
           title: "Toast",

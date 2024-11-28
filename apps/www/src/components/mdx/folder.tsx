@@ -1,7 +1,7 @@
 "use client";
 
-import { Collapsible } from "@kanpeki/ui/collapsible";
 import { useState } from "react";
+import { Collapsible } from "../ui/collapsible";
 import { FileStyles } from "./files";
 import { FolderIcon } from "./folder-icon";
 

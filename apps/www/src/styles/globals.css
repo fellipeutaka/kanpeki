@@ -4,65 +4,83 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --bg: 1 0 0;
+    --fg: 0.16 0.01 262.25;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 1 0 0;
+    --card-fg: 0.16 0.01 262.25;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 1 0 0;
+    --popover-fg: 0.16 0.01 262.25;
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 0.85 0.2 93;
+    --primary-fg: 0 0 0;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 0.96 0.01 262.25;
+    --secondary-fg: 0.25 0.01 262.25;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 0.96 0.01 262.25;
+    --muted-fg: 0.5 0.01 262.25;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 0.96 0.01 262.25;
+    --accent-fg: 0.25 0.01 262.25;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --success: 0.62 0.18 0.53;
+    --success-fg: 0.83 0.13 0.97;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --info: 0.76 0.19 0.67;
+    --info-fg: 1 0 0.75;
+
+    --warning: 0.5 1 100;
+    --warning-fg: 0.4 0.18 0.3;
+
+    --danger: 0.57 0.22 27.16;
+    --danger-fg: 0.98 0 0;
+
+    --border: 0.89 0.01 262.25;
+    --input: 0.89 0.01 262.25;
+    --ring: var(--primary);
 
     --radius: 0.5rem;
   }
 
   .dark:root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --bg: 0.16 0.01 262.25;
+    --fg: 0.98 0 0;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0.16 0.01 262.25;
+    --card-fg: 0.98 0 0;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0.16 0.01 262.25;
+    --popover-fg: 0.98 0 0;
 
-    --primary: 50 100% 50%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 0.85 0.2 93;
+    --primary-fg: 0 0 0;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0.23 0.01 262.25;
+    --secondary-fg: 0.98 0 0;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 0.23 0.01 262.25;
+    --muted-fg: 0.67 0.01 262.25;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0.23 0.01 262.25;
+    --accent-fg: 0.98 0 0;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --success: 0.62 0.18 0.53;
+    --success-fg: 0.83 0.13 0.97;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --info: 0.76 0.19 0.67;
+    --info-fg: 1 0 0.75;
+
+    --warning: 76 0.4 70;
+    --warning-fg: 0.4 0.18 0.3;
+
+    --danger: 0.33 0.15 27.16;
+    --danger-fg: 0.98 0 0;
+
+    --border: 0.23 0.01 262.25;
+    --input: 0.23 0.01 262.25;
+    --ring: var(--primary);
   }
 
   * {
@@ -74,6 +92,7 @@
   }
 
   body {
+    @apply bg-bg text-fg;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -82,11 +101,11 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-foreground/40 rounded-lg transition-colors;
+    @apply bg-fg/40 rounded-lg transition-colors;
   }
 
   ::-webkit-scdrollbar-thumb:hover,
   ::-webkit-scrollbar-thumb:active {
-    @apply bg-foreground/60;
+    @apply bg-fg/60;
   }
 }

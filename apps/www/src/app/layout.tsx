@@ -1,10 +1,10 @@
-import { cn } from "@kanpeki/utils/cn";
 import type { Metadata, Viewport } from "next";
 import { Providers } from "~/components/providers";
 import { SiteFooter } from "~/components/site-footer";
 import { SiteHeader } from "~/components/site-header";
 import { fonts } from "~/config/fonts";
 import { siteConfig } from "~/config/site";
+import { cx } from "~/lib/cva";
 
 import "~/styles/globals.css";
 
@@ -70,8 +70,8 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "relative grid min-h-dvh grid-rows-[auto,1fr,auto] bg-background font-sans text-foreground antialiased",
+        className={cx(
+          "relative grid min-h-dvh grid-rows-[auto,1fr,auto] bg-bg font-sans text-fg antialiased",
           fonts.sans.variable,
           fonts.mono.variable
         )}

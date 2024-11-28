@@ -1,9 +1,18 @@
-import { Alert } from "@kanpeki/ui/alert";
-import { Icons } from "@kanpeki/ui/icons";
-import { LinkButton } from "@kanpeki/ui/link-button";
-import { cn } from "@kanpeki/utils/cn";
-import Link from "next/link";
-import { LinkStyles } from "~/styles/link";
+import { cn } from "~/lib/cva";
+import { Alert } from "../ui/alert";
+import { LinkButton } from "../ui/button";
+import { Icons } from "../ui/icons";
+import { Link } from "../ui/link";
+import {
+  TabsContent,
+  TabsList,
+  type TabsListProps,
+  TabsRoot,
+  type TabsRootProps,
+  TabsTrigger,
+  type TabsTriggerProps,
+} from "../ui/tabs";
+import { Code } from "./code";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { Figcaption } from "./figcaption";
@@ -11,9 +20,8 @@ import { File, Files } from "./files";
 import { Folder } from "./folder";
 import { Heading } from "./heading";
 import { Pre } from "./pre";
+import { PropsTable } from "./props-table";
 import { Step, Steps } from "./steps";
-import { Table } from "./table";
-import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "./tabs";
 
 export const mdxComponents = {
   h1: (props: React.ComponentProps<"h1">) => (
@@ -56,15 +64,13 @@ export const mdxComponents = {
   ),
   a: ({ className, ...props }: React.ComponentProps<"a">) => (
     <a
-      target="_blank"
-      rel="noopener noreferrer"
-      className={LinkStyles({ className })}
+      className={cn("font-medium underline underline-offset-4", className)}
       {...props}
     />
   ),
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
     <p
-      className={cn("mt-6 text-pretty leading-7 first:mt-0", className)}
+      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
       {...props}
     />
   ),
@@ -80,7 +86,7 @@ export const mdxComponents = {
   blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
     <blockquote
       className={cn(
-        "mt-6 border-l-2 pl-6 italic *:text-muted-foreground",
+        "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-fg",
         className
       )}
       {...props}
@@ -89,43 +95,10 @@ export const mdxComponents = {
   img: ({ className, alt, ...props }: React.ComponentProps<"img">) => (
     <img {...props} className={cn("rounded-md border", className)} alt={alt} />
   ),
-  hr: ({ className, ...props }: React.ComponentProps<"hr">) => (
-    <hr className={cn("my-4 md:my-8", className)} {...props} />
-  ),
-  table: Table,
-  thead: ({ className, ...props }: React.ComponentProps<"thead">) => (
-    <thead className={cn("bg-muted", className)} {...props} />
-  ),
-  tr: ({ className, ...props }: React.ComponentProps<"tr">) => (
-    <tr className={cn("m-0 border-t p-0 text-sm", className)} {...props} />
-  ),
-  th: ({ className, ...props }: React.ComponentProps<"th">) => (
-    <th
-      className={cn(
-        "border px-2 py-2 text-left font-bold sm:px-4 [&[align=center]]:text-center [&[align=right]]:text-right",
-        className
-      )}
-      {...props}
-    />
-  ),
-  td: ({ className, ...props }: React.ComponentProps<"td">) => (
-    <td
-      className={cn(
-        "border px-2 py-2 text-left sm:px-4 [&[align=center]]:text-center [&[align=right]]:text-right",
-        className
-      )}
-      {...props}
-    />
-  ),
-  code: ({ className, ...props }: React.ComponentProps<"code">) => (
-    <code
-      className={cn(
-        "relative rounded bg-muted px-1 py-0.5 font-mono text-sm",
-        className
-      )}
-      {...props}
-    />
-  ),
+  hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
+
+  code: Code,
+  Code,
   pre: Pre,
   figure: ({ className, ...props }: React.ComponentProps<"figure">) => (
     <figure
@@ -137,23 +110,36 @@ export const mdxComponents = {
     />
   ),
   figcaption: Figcaption,
-
-  // Custom Components
-  ComponentPreview,
-  ComponentSource,
-  TabsRoot,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
+  Link,
+  Icons,
+  LinkButton,
+  Alert,
   Steps,
   Step,
-  Folder,
   Files,
   File,
-  LinkButton,
-  Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link {...props} className={LinkStyles({ className })} />
+  Folder,
+  ComponentPreview,
+  ComponentSource,
+  TabRoot: ({ className, ...props }: TabsRootProps) => (
+    <TabsRoot
+      variant="underline"
+      {...props}
+      className={cn("mt-6", className)}
+    />
   ),
-  Icons,
-  Alert,
-};
+  TabList: ({ className, ...props }: TabsListProps<object>) => (
+    <TabsList
+      {...props}
+      className={cn("orientation-horizontal:gap-x-0", className)}
+    />
+  ),
+  TabTrigger: ({ className, ...props }: TabsTriggerProps) => (
+    <TabsTrigger {...props} className={cn("px-4", className)} />
+  ),
+  TabContent: TabsContent,
+  PropsTable,
+} satisfies Record<string, SAFE_ANY>;
+
+// biome-ignore lint/suspicious/noExplicitAny: This is a type alias for any
+type SAFE_ANY = any;

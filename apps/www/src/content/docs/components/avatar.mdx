@@ -7,21 +7,21 @@ description: An image element with a fallback for representing the user.
 
 ## Installation
 
-<TabsRoot defaultValue="cli">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add avatar
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
 
@@ -33,9 +33,9 @@ npx kanpeki-ui@latest add avatar
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -80,6 +80,24 @@ import { Icons } from "~/components/ui/icons";
 
 ## Examples
 
-### Group
+### Default
 
 <ComponentPreview name="avatar-group" />
+
+## API Reference
+
+### Root
+
+Contains all the parts of an avatar.
+
+### Image
+
+The image to render. By default it will only render when it has loaded.
+
+### Fallback
+
+An element that renders when the image hasn't loaded. This means whilst it's loading, or if there was an error.
+
+### Placeholder
+
+An element that renders when the image is loading.

@@ -1,5 +1,5 @@
-import { Icons } from "@kanpeki/ui/icons";
-import { LinkButton } from "@kanpeki/ui/link-button";
+import { LinkButton } from "~/components/ui/button";
+import { Icons } from "~/components/ui/icons";
 import { siteConfig } from "~/config/site";
 import { HeroIllustration } from "./hero-illustration";
 
@@ -25,7 +25,7 @@ export function HeroSection() {
             Perfection
           </span>
         </h1>
-        <p className="text-md text-muted-foreground md:text-lg lg:text-xl">
+        <p className="text-md text-muted-fg md:text-lg lg:text-xl">
           Accessible, flexible, mobile friendly, modern UI components.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
@@ -60,18 +60,18 @@ export function HeroSection() {
             <Icons.TailwindCSS className="size-10" />
           </a>
           <a
-            href="https://www.radix-ui.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icons.RadixUI className="size-10" />
-          </a>
-          <a
             href="https://react-spectrum.adobe.com/react-aria/hooks.html"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Icons.Adobe className="size-10 text-red-600" />
+          </a>
+          <a
+            href="https://www.radix-ui.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icons.RadixUI className="size-10" />
           </a>
         </div>
       </div>

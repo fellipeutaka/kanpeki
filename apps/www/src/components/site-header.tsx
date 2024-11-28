@@ -1,23 +1,22 @@
-import { Icons } from "@kanpeki/ui/icons";
-import { LinkButton } from "@kanpeki/ui/link-button";
+import { Icons } from "~/components/ui/icons";
 import { docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
 import { CommandMenu } from "./command-menu";
 import { MainNav } from "./main-nav";
-import { MobileNav } from "./mobile-nav";
-import { ModeToggle } from "./mode-toggle";
+import { ModeSwitcher } from "./mode-switcher";
+import { LinkButton } from "./ui/button";
 
-const filteredMainNav = docsConfig.mainNav.filter((item) => !item.disabled);
-const filteredSidebarNav = docsConfig.sidebarNav.filter(
-  (item) => !item.disabled
-);
+// const filteredMainNav = docsConfig.mainNav.filter((item) => !item.disabled);
+// const filteredSidebarNav = docsConfig.sidebarNav.filter(
+//   (item) => !item.disabled
+// );
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-border/40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-border/40 border-b bg-bg/95 backdrop-blur supports-[backdrop-filter]:bg-bg/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <MainNav mainNav={docsConfig.mainNav} />
-        <MobileNav mainNav={filteredMainNav} sidebarNav={filteredSidebarNav} />
+        {/* <MobileNav mainNav={filteredMainNav} sidebarNav={filteredSidebarNav} /> */}
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <CommandMenu
@@ -48,7 +47,7 @@ export function SiteHeader() {
               <Icons.Twitter className="size-3" />
             </LinkButton>
 
-            <ModeToggle />
+            <ModeSwitcher />
           </nav>
         </div>
       </div>
