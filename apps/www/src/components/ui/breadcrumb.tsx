@@ -55,9 +55,6 @@ export const BreadcrumbStyles = {
   Item: cva({
     base: ["inline-flex items-center gap-1.5"],
   }),
-  Link: cva({
-    base: ["transition-colors hover:text-fg"],
-  }),
   Page: cva({
     base: ["font-normal text-fg"],
   }),
@@ -101,8 +98,8 @@ export function BreadcrumbItem({ className, ...props }: BreadcrumbItemProps) {
 export interface BreadcrumbLinkProps
   extends React.ComponentProps<typeof Link> {}
 
-export function BreadcrumbLink({ className, ...props }: BreadcrumbLinkProps) {
-  return <Link {...props} className={BreadcrumbStyles.Link({ className })} />;
+export function BreadcrumbLink(props: BreadcrumbLinkProps) {
+  return <Link variant="default" {...props} />;
 }
 
 export interface BreadcrumbPageProps extends React.ComponentProps<"span"> {}

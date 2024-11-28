@@ -26,11 +26,17 @@ export function ComponentSource({ children }: ComponentSourceProps) {
         )}
       >
         {children}
-        <div className="absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-b from-transparent to-zinc-950/90 p-3">
+        <div
+          className={cx(
+            "pointer-events-none absolute inset-x-0 bottom-0 flex justify-center",
+            !isOpen && "bg-gradient-to-b from-transparent to-bg/90"
+          )}
+        >
           <Button
             onPress={() => setIsOpen((state) => !state)}
             variant="secondary"
             size="sm"
+            className="pointer-events-auto mb-4"
           >
             {isOpen ? "Collapse" : "Expand"}
           </Button>

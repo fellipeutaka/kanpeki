@@ -23,7 +23,12 @@ export function Providers({ children }: ProvidersProps) {
   const router = useRouter();
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
       <RouterProvider navigate={router.push}>
         {children}
         <Toaster />

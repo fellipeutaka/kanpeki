@@ -1,0 +1,170 @@
+---
+title: Breadcrumb
+description: Breadcrumbs display a hierarchy of links to the current page or resource in an application.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Breadcrumbs.html
+---
+
+<ComponentPreview name="breadcrumb-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add breadcrumb
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="breadcrumb" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Breadcrumb } from "~/components/ui/breadcrumb";
+```
+
+```tsx
+<Breadcrumb.Root>
+  <Breadcrumb.Item>
+    <Breadcrumb.Link />
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+    <Breadcrumb.Ellipsis />
+  </Breadcrumb.Item>
+  <Breadcrumb.Separator />
+  <Breadcrumb.Item>
+    <Breadcrumb.Page />
+  </Breadcrumb.Item>
+</Breadcrumb.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  BreadcrumbRoot,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+  BreadcrumbPage,
+} from "~/components/ui/breadcrumb";
+```
+
+```tsx
+<BreadcrumbRoot>
+  <BreadcrumbItem>
+    <BreadcrumbLink />
+  </BreadcrumbItem>
+  <BreadcrumbSeparator />
+  <BreadcrumbItem>
+    <BreadcrumbEllipsis />
+  </BreadcrumbItem>
+  <BreadcrumbSeparator />
+  <BreadcrumbItem>
+    <BreadcrumbPage />
+  </BreadcrumbItem>
+</BreadcrumbRoot>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="breadcrumb-demo" />
+
+### Custom Separator
+
+Use a custom component as `children` for `<BreadcrumbSeparator />{:tsx}` to create a custom separator.
+
+<ComponentPreview name="breadcrumb-custom-separator" />
+
+```tsx {2,6-8}
+import { Breadcrumb } from "~/components/ui/breadcrumb";
+import { Icons } from "~/components/ui/icons";
+
+<Breadcrumb.Root>
+  {/* ... */}
+  <Breadcrumb.Separator>
+    <Icons.Slash className="size-4" />
+  </Breadcrumb.Separator>
+  {/* ... */}
+</Breadcrumb.Root>;
+```
+
+### Dropdown
+
+You can compose `<BreadcrumbItem />{:tsx}` with a `<DropdownMenu />{:tsx}` to create a dropdown in the breadcrumb.
+
+<ComponentPreview name="breadcrumb-dropdown" />
+
+```tsx {1-5,10-22}
+import { Button } from "react-aria-components";
+import { Breadcrumb } from "~/components/ui/breadcrumb";
+import { DropdownMenu } from "~/components/ui/dropdown-menu";
+import { LinkStyles } from "~/components/ui/link";
+import { Popover } from "~/components/ui/popover";
+
+<Breadcrumb.Root>
+  {/* ... */}
+  <Breadcrumb.Item>
+    <DropdownMenu.Root>
+      <Button className={LinkStyles({ variant: "default" })}>Components</Button>
+
+      <Popover.Content>
+        <Popover.Arrow />
+
+        <DropdownMenu.Content>
+          <DropdownMenu.Item>Documentation</DropdownMenu.Item>
+          <DropdownMenu.Item>Themes</DropdownMenu.Item>
+          <DropdownMenu.Item>GitHub</DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </Popover.Content>
+    </DropdownMenu.Root>
+  </Breadcrumb.Item>
+  {/* ... */}
+</Breadcrumb.Root>;
+```
+
+### Collapsed
+
+There's a `<BreadcrumbEllipsis />{:tsx}` component to show a collapsed state when the breadcrumb is too long.
+
+<ComponentPreview name="breadcrumb-collapsed" />
+
+```tsx {1,6}
+import { Breadcrumb } from "~/components/ui/breadcrumb";
+
+<Breadcrumb.Root>
+  {/* ... */}
+  <Breadcrumb.Item>
+    <Breadcrumb.Ellipsis className="size-4" />
+  </Breadcrumb.Item>
+  {/* ... */}
+</Breadcrumb.Root>;
+```

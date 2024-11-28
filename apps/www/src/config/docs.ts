@@ -71,8 +71,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Breadcrumb",
           href: "/docs/components/breadcrumb",
-          disabled: true,
-          label: "Soon",
+          label: "New",
         },
         {
           title: "Button",
