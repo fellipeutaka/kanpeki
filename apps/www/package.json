@@ -39,7 +39,6 @@
     "tailwindcss": "^3.4.15",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-react-aria-components": "^1.2.0",
-    "typescript": "^5.6.3",
     "unist-builder": "^4.0.0",
     "unist-util-visit": "^5.0.0",
     "velite": "^0.1.1"

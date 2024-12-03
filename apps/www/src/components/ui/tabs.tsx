@@ -3,13 +3,12 @@
 import { LayoutGroup, motion } from "motion/react";
 import { createContext, use, useId } from "react";
 import {
-  Provider,
   TabList as TabListPrimitive,
   TabPanel,
   Tab as TabPrimitive,
   Tabs as TabsPrimitive,
 } from "react-aria-components";
-import { type VariantProps, cva } from "~/lib/cva";
+import { cva } from "~/lib/cva";
 
 export const TabsStyles = {
   Root: cva({
@@ -161,10 +160,10 @@ export function TabsTrigger({
         })
       }
     >
-      {({ isSelected }) => (
+      {(values) => (
         <>
-          {children}
-          {isSelected && (
+          {typeof children === "function" ? children(values) : children}
+          {values.isSelected && (
             <motion.span
               className={TabsStyles.Indicator({
                 variant,

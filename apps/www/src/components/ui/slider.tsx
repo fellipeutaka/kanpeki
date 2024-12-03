@@ -118,15 +118,17 @@ export interface SliderThumbProps
   extends React.ComponentProps<typeof SliderThumbPrimitive> {}
 
 export function SliderThumb({ className, ...props }: SliderThumbProps) {
-  <SliderThumbPrimitive
-    {...props}
-    className={(values) =>
-      SliderStyles.Thumb({
-        className:
-          typeof className === "function" ? className(values) : className,
-      })
-    }
-  />;
+  return (
+    <SliderThumbPrimitive
+      {...props}
+      className={(values) =>
+        SliderStyles.Thumb({
+          className:
+            typeof className === "function" ? className(values) : className,
+        })
+      }
+    />
+  );
 }
 
 export interface SliderFillerProps extends React.ComponentProps<"div"> {}
