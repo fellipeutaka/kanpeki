@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Spinner } from "../ui/spinner";
+import { Spinner } from "../ui/spinner/spinner";
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "../ui/tabs";
 import { CopyButton } from "./copy-button";
 

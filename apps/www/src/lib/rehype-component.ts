@@ -18,7 +18,7 @@ function processComponentSource(node: UnistNode) {
 
     try {
       // Read the source file.
-      const filePath = path.resolve(`src/components/ui/${name}.tsx`);
+      const filePath = path.resolve(`src/components/ui/${name}/${name}.tsx`);
       const source = replaceImports(fs.readFileSync(filePath, "utf8"));
 
       // Add code as children so that rehype can take over at build time.

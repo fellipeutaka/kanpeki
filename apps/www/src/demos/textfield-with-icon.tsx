@@ -1,5 +1,3 @@
-"use client";
-
 import { TextField } from "~/components/ui/textfield";
 
 const Icons = {

@@ -1,9 +1,7 @@
-"use client";
-
-import { Button } from "react-aria-components";
 import { Breadcrumb } from "~/components/ui/breadcrumb";
+import { ButtonPrimitive } from "~/components/ui/button";
 import { DropdownMenu } from "~/components/ui/dropdown-menu";
-import { LinkStyles } from "~/components/ui/link";
+import { LinkStyles } from "~/components/ui/link/styles";
 import { Popover } from "~/components/ui/popover";
 
 export default function BreadcrumbDropdownDemo() {
@@ -15,9 +13,9 @@ export default function BreadcrumbDropdownDemo() {
       <Breadcrumb.Separator />
       <Breadcrumb.Item>
         <DropdownMenu.Root>
-          <Button className={LinkStyles({ variant: "default" })}>
+          <ButtonPrimitive className={LinkStyles({ variant: "default" })}>
             Components
-          </Button>
+          </ButtonPrimitive>
 
           <Popover.Content>
             <Popover.Arrow />

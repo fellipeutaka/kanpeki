@@ -1,5 +1,3 @@
-"use client";
-
 import { Command } from "~/components/ui/command";
 
 export default function CommandDemo() {

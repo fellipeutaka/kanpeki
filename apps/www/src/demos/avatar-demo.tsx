@@ -1,5 +1,3 @@
-"use client";
-
 import { Avatar } from "~/components/ui/avatar";
 
 export default function AvatarDemo() {

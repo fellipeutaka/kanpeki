@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import ta from "tailwindcss-animate";
+import trc from "tailwindcss-radix-colors";
 import trac from "tailwindcss-react-aria-components";
 import { fontFamily } from "tailwindcss/defaultTheme";
 import type { PluginCreator } from "tailwindcss/types/config";
@@ -135,7 +136,7 @@ const config = {
       },
     },
   },
-  plugins: [ta, trac, headingPlugin],
+  plugins: [ta, trc, trac, headingPlugin],
   future: {
     hoverOnlyWhenSupported: true,
   },

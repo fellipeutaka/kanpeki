@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { Badge } from "~/components/ui/badge";
-import { Link } from "~/components/ui/link";
+import { Link } from "~/components/ui/link/link";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { type NavLink, docsConfig } from "~/config/docs";
 import { cva } from "~/lib/cva";

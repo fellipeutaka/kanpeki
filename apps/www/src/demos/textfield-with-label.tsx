@@ -1,5 +1,3 @@
-"use client";
-
 import { Label } from "~/components/ui/label";
 import { TextField } from "~/components/ui/textfield";
 

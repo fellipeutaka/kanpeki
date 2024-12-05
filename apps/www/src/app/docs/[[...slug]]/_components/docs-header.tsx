@@ -1,4 +1,4 @@
-import { BadgeStyles } from "~/components/ui/badge";
+import { BadgeStyles } from "~/components/ui/badge/styles";
 import { LinkButton } from "~/components/ui/button";
 import { Icons } from "~/components/ui/icons";
 import type { Doc } from "~/utils/mdx";

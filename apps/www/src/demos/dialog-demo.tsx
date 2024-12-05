@@ -1,10 +1,7 @@
-"use client";
-
 import { Button } from "~/components/ui/button";
 import { Dialog } from "~/components/ui/dialog";
-import { Form } from "~/components/ui/form";
 import { Label } from "~/components/ui/label";
-import { TextField, TextFieldProvider } from "~/components/ui/textfield";
+import { TextField } from "~/components/ui/textfield";
 
 export default function DialogDemo() {
   return (
@@ -19,7 +16,7 @@ export default function DialogDemo() {
         </Dialog.Header>
 
         <div className="grid gap-4 py-4">
-          <TextFieldProvider
+          <TextField.Provider
             defaultValue="Fellipe Utaka"
             className="grid grid-cols-4 items-center gap-4"
           >
@@ -27,9 +24,9 @@ export default function DialogDemo() {
             <TextField.Root className="col-span-3">
               <TextField.Input />
             </TextField.Root>
-          </TextFieldProvider>
+          </TextField.Provider>
 
-          <TextFieldProvider
+          <TextField.Provider
             defaultValue="@fellipeutaka"
             className="grid grid-cols-4 items-center gap-4"
           >
@@ -37,7 +34,7 @@ export default function DialogDemo() {
             <TextField.Root className="col-span-3">
               <TextField.Input />
             </TextField.Root>
-          </TextFieldProvider>
+          </TextField.Provider>
         </div>
         <Dialog.Footer>
           <Button variant="outline" slot="close">

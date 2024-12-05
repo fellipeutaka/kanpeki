@@ -2,7 +2,7 @@ import { cn } from "~/lib/cva";
 import { Alert } from "../ui/alert";
 import { LinkButton } from "../ui/button";
 import { Icons } from "../ui/icons";
-import { Link } from "../ui/link";
+import { Link } from "../ui/link/link";
 import {
   TabsContent,
   TabsList,

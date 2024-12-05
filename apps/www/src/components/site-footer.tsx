@@ -3,7 +3,7 @@ import { siteConfig } from "~/config/site";
 import { Badge } from "./ui/badge";
 import { LinkButton } from "./ui/button";
 import { Icons } from "./ui/icons";
-import { Link } from "./ui/link";
+import { Link } from "./ui/link/link";
 import { Separator } from "./ui/separator";
 
 const footerLinks = [

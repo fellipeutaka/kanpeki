@@ -129,6 +129,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.15)
+      tailwindcss-radix-colors:
+        specifier: ^1.4.1
+        version: 1.4.1(tailwindcss@3.4.15)
       tailwindcss-react-aria-components:
         specifier: ^1.2.0
         version: 1.2.0(tailwindcss@3.4.15)
@@ -773,6 +776,9 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@radix-ui/colors@3.0.0':
+    resolution: {integrity: sha512-FUOsGBkHrYJwCSEtWRCIfQbZG7q1e6DgxCIOe1SUQzDe/7rXXeA47s8yCn6fuTNQAj1Zq4oTFi9Yjp3wzElcxg==}
 
   '@radix-ui/number@1.1.0':
     resolution: {integrity: sha512-V3gRzhVNU1ldS5XhAPTom1fOIo4ccrjjJgmE+LI2h/WaFpHmx0MQApT+KZHnx8abG6Avtfcz4WoEciMnpFT3HQ==}
@@ -3702,6 +3708,11 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
+  tailwindcss-radix-colors@1.4.1:
+    resolution: {integrity: sha512-jlSYXsjq8uavjQPXbMJJwDhojG0wlTasJTnM9hmXXPaDOvNUTeeU0YEILWakUpuxWJ8xyzyInz9JVZGHs3/dCw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0'
+
   tailwindcss-react-aria-components@1.2.0:
     resolution: {integrity: sha512-ynlQIfAdoWAz0Og0dCe/d4QVE+L8Yuo6rtK9apdhehZZMoLC1GdwtnvLZyUyx+wHwnTjRuNtFPdN0DpPsPXJJg==}
     peerDependencies:
@@ -4671,6 +4682,8 @@ snapshots:
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
+
+  '@radix-ui/colors@3.0.0': {}
 
   '@radix-ui/number@1.1.0': {}
 
@@ -8315,6 +8328,11 @@ snapshots:
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.15):
     dependencies:
+      tailwindcss: 3.4.15
+
+  tailwindcss-radix-colors@1.4.1(tailwindcss@3.4.15):
+    dependencies:
+      '@radix-ui/colors': 3.0.0
       tailwindcss: 3.4.15
 
   tailwindcss-react-aria-components@1.2.0(tailwindcss@3.4.15):

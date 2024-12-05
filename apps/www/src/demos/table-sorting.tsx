@@ -1,7 +1,7 @@
 "use client";
 
 import { useAsyncList } from "@react-stately/data";
-import { ButtonStyles } from "~/components/ui/button";
+import { ButtonStyles } from "~/components/ui/button/styles";
 import { Card } from "~/components/ui/card";
 import { Table } from "~/components/ui/table";
 

@@ -1,5 +1,5 @@
 import { Icons } from "~/components/ui/icons";
-import { Link } from "~/components/ui/link";
+import { Link } from "~/components/ui/link/link";
 import { getGitHubIssueUrl, getGithubFileUrl } from "~/utils/github";
 import type { Doc } from "~/utils/mdx";
 

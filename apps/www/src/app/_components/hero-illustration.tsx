@@ -1,5 +1,3 @@
-"use client";
-
 import AvatarGroupDemo from "~/demos/avatar-group";
 import CardDemo from "~/demos/card-demo";
 
