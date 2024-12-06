@@ -100,7 +100,13 @@ export const mdxComponents = {
   code: Code,
   Code,
   pre: Pre,
-  figure: ({ className, ...props }: React.ComponentProps<"figure">) => (
+  figure: ({
+    className,
+    __src__,
+    ...props
+  }: React.ComponentProps<"figure"> & {
+    __src__?: string;
+  }) => (
     <figure
       className={cn(
         "group relative mt-6 overflow-hidden rounded-lg border text-sm",
