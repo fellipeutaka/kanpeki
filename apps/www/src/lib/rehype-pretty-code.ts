@@ -1,9 +1,10 @@
 import type { Options } from "rehype-pretty-code";
 import { vercelDarkTheme } from "~/styles/vercel-dark";
+import { vercelLightTheme } from "~/styles/vercel-light";
 
 export const rehypePrettyCodeOptions = {
   theme: {
-    light: "github-light-default",
+    light: vercelLightTheme,
     dark: vercelDarkTheme,
   },
   keepBackground: false,
