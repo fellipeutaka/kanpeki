@@ -45,8 +45,8 @@ export function CommandDialog({
 }: CommandDialogProps) {
   return (
     <Dialog.Overlay>
-      <Dialog.Modal>
-        <Dialog.Content className="overflow-hidden p-0" {...props}>
+      <Dialog.Modal className="overflow-hidden p-0">
+        <Dialog.Content {...props}>
           <Cmdk className={CommandStyles.Dialog({ className })}>
             {children}
           </Cmdk>
