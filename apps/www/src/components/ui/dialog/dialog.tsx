@@ -3,7 +3,6 @@
 import {
   Button,
   Dialog as DialogPrimitive,
-  type DialogProps,
   DialogTrigger,
   Heading,
   Modal,
@@ -16,57 +15,61 @@ export interface DialogRootProps
   extends React.ComponentProps<typeof DialogTrigger> {}
 export const DialogRoot = DialogTrigger;
 
-export interface DialogContentProps
-  extends Omit<React.ComponentProps<typeof Modal>, "children">,
-    Omit<React.ComponentProps<typeof ModalOverlay>, "className">,
-    Omit<DialogProps, "children" | "className" | "style">,
-    Omit<VariantProps<(typeof DialogStyles)["Overlay"]>, "isSheet">,
-    Omit<VariantProps<(typeof DialogStyles)["Content"]>, "isSheet"> {}
+export interface DialogOverlayProps
+  extends React.ComponentProps<typeof ModalOverlay>,
+    VariantProps<(typeof DialogStyles)["Overlay"]> {}
 
-export function DialogContent({
+export function DialogOverlay({
   className,
-  children,
-  role = "dialog",
-  isDismissable,
   isBlurred,
-  side = "center",
+  isDismissable = true,
   ...props
-}: DialogContentProps) {
-  const _isDismissable = isDismissable ?? role !== "alertdialog";
-  const isSheet = side !== "center";
-
+}: DialogOverlayProps) {
   return (
     <ModalOverlay
       {...props}
+      isDismissable={isDismissable}
+      className={DialogStyles.Overlay({ className, isBlurred })}
+    />
+  );
+}
+
+export interface DialogModalProps
+  extends React.ComponentProps<typeof Modal>,
+    Omit<VariantProps<(typeof DialogStyles)["Modal"]>, "isSheet"> {}
+
+export function DialogModal({
+  className,
+  side = "center",
+  ...props
+}: DialogModalProps) {
+  const isSheet = side !== "center";
+
+  return (
+    <Modal
+      {...props}
       className={(values) =>
-        DialogStyles.Overlay({
-          isBlurred,
+        DialogStyles.Modal({
+          side,
           isSheet,
           className:
             typeof className === "function" ? className(values) : className,
         })
       }
-      isDismissable={_isDismissable}
-    >
-      <Modal
-        className={(values) =>
-          DialogStyles.Content({
-            side,
-            isSheet,
-            className:
-              typeof className === "function" ? className(values) : className,
-          })
-        }
-        data-side={side}
-        isDismissable={_isDismissable}
-      >
-        {(values) => (
-          <DialogPrimitive className="outline-none" role={role}>
-            {typeof children === "function" ? children(values) : children}
-          </DialogPrimitive>
-        )}
-      </Modal>
-    </ModalOverlay>
+      data-side={side}
+    />
+  );
+}
+
+export interface DialogContentProps
+  extends React.ComponentProps<typeof DialogPrimitive> {}
+
+export function DialogContent({ className, ...props }: DialogContentProps) {
+  return (
+    <DialogPrimitive
+      {...props}
+      className={DialogStyles.Content({ className })}
+    />
   );
 }
 

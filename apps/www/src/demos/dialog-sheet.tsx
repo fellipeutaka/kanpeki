@@ -9,21 +9,26 @@ export default function DialogSheetDemo() {
       {SHEET_SIDES.map((side) => (
         <Dialog.Root key={side}>
           <Button variant="outline">{side}</Button>
-          <Dialog.Content side={side}>
-            <Dialog.Header>
-              <Dialog.Title>Are you absolutely sure?</Dialog.Title>
-              <Dialog.Description>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </Dialog.Description>
-            </Dialog.Header>
-            <Dialog.Footer>
-              <Button variant="outline" slot="close">
-                Cancel
-              </Button>
-              <Button slot="close">Continue</Button>
-            </Dialog.Footer>
-          </Dialog.Content>
+
+          <Dialog.Overlay>
+            <Dialog.Modal side={side}>
+              <Dialog.Content>
+                <Dialog.Header>
+                  <Dialog.Title>Are you absolutely sure?</Dialog.Title>
+                  <Dialog.Description>
+                    This action cannot be undone. This will permanently delete
+                    your account and remove your data from our servers.
+                  </Dialog.Description>
+                </Dialog.Header>
+                <Dialog.Footer>
+                  <Button variant="outline" slot="close">
+                    Cancel
+                  </Button>
+                  <Button slot="close">Continue</Button>
+                </Dialog.Footer>
+              </Dialog.Content>
+            </Dialog.Modal>
+          </Dialog.Overlay>
         </Dialog.Root>
       ))}
     </div>

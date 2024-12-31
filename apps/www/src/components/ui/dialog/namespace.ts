@@ -1,5 +1,7 @@
 export {
   DialogRoot as Root,
+  DialogOverlay as Overlay,
+  DialogModal as Modal,
   DialogContent as Content,
   DialogHeader as Header,
   DialogFooter as Footer,

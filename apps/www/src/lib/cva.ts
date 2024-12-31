@@ -11,6 +11,6 @@ export const {
   },
 });
 
-export { cx } from "cva";
+export { cx, cva as cv } from "cva";
 
 export type { VariantProps } from "cva";

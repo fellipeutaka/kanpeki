@@ -4,23 +4,21 @@ export const DialogStyles = {
   Overlay: cva({
     base: [
       "fixed inset-0 z-50",
-      "entering:fade-in-0 entering:animate-in",
-      "exiting:fade-out-0 exiting:animate-out",
+      "entering:fade-in-0 entering:animate-in entering:duration-500",
+      "exiting:fade-out-0 exiting:animate-out exiting:duration-300",
+      "[&:has([data-side='center'])]:duration-150",
     ],
     variants: {
       isBlurred: {
         true: ["backdrop-blur"],
         false: ["bg-black/15 dark:bg-black/60"],
       },
-      isSheet: {
-        true: ["entering:duration-500", "exiting:duration-300"],
-      },
     },
     defaultVariants: {
       isBlurred: false,
     },
   }),
-  Content: cva({
+  Modal: cva({
     base: [
       "fixed z-50 w-full bg-bg p-6 shadow-lg outline-none",
       "entering:fade-in-0 entering:animate-in",
@@ -62,6 +60,9 @@ export const DialogStyles = {
     defaultVariants: {
       side: "center",
     },
+  }),
+  Content: cva({
+    base: ["outline-none"],
   }),
   Close: cva({
     base: [

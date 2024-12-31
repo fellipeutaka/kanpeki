@@ -44,52 +44,62 @@ npx kanpeki-ui@latest add dialog
 ### Single import
 
 ```tsx
-import { Dialog } from "~/components/ui/dialog";
 import { Button } from "~/components/ui/button";
+import { Dialog } from "~/components/ui/dialog";
 ```
 
 ```tsx
 <Dialog.Root>
   <Button>Open</Button>
 
-  <Dialog.Content>
-    <Dialog.Header>
-      <Dialog.Title>Are you absolutely sure?</Dialog.Title>
-      <Dialog.Description>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </Dialog.Description>
-    </Dialog.Header>
-  </Dialog.Content>
+  <Dialog.Overlay>
+    <Dialog.Modal>
+      <Dialog.Content>
+        <Dialog.Header>
+          <Dialog.Title>Are you absolutely sure?</Dialog.Title>
+          <Dialog.Description>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </Dialog.Description>
+        </Dialog.Header>
+      </Dialog.Content>
+    </Dialog.Modal>
+  </Dialog.Overlay>
 </Dialog.Root>
 ```
 
 ### Multiple imports
 
 ```tsx
+import { Button } from "~/components/ui/button";
 import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogModal,
+  DialogOverlay,
   DialogRoot,
   DialogTitle,
 } from "~/components/ui/dialog";
-import { Button } from "~/components/ui/button";
 ```
 
 ```tsx
 <DialogRoot>
   <Button>Open</Button>
 
-  <DialogContent>
-    <DialogHeader>
-      <DialogTitle>Are you absolutely sure?</DialogTitle>
-      <DialogDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
-      </DialogDescription>
-    </DialogHeader>
-  </DialogContent>
+  <DialogOverlay>
+    <DialogModal>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Are you absolutely sure?</DialogTitle>
+          <DialogDescription>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </DialogModal>
+  </DialogOverlay>
 </DialogRoot>
 ```
 
@@ -102,13 +112,14 @@ import { Button } from "~/components/ui/button";
 ### Alert Dialog
 
 Use the `role="alertdialog"{:tsx}` prop on the `<Dialog.Content>{:tsx}` element to make an alert dialog.
-By default, the alert dialog is not dismissable. To make it dismissable, set the `isDismissable` prop to `true{:ts}`.
+Also, make sure to set the `isDismissable` prop to `false{:ts}` on the `<Dialog.Overlay>{:tsx}` or `<Dialog.Modal>{:tsx}`
+to prevent the dialog from being dismissed by clicking outside of it.
 
 <ComponentPreview name="alert-dialog-demo" />
 
 ### Sheet
 
-Use the `side{:tsx}` prop on the `<Dialog.Content>{:tsx}` element to make a sheet dialog.
+Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet dialog.
 
 <ComponentPreview name="dialog-sheet" />
 
