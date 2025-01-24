@@ -45,6 +45,10 @@ export const docsConfig: DocsConfig = {
           title: "CLI",
           href: "/docs/cli",
         },
+        {
+          title: "Typography",
+          href: "/docs/typography",
+        },
       ],
     },
     {
