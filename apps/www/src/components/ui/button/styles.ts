@@ -2,52 +2,52 @@ import { cva } from "~/lib/cva";
 
 export const ButtonStyles = cva({
   base: [
-    "inline-flex select-none items-center justify-center whitespace-nowrap rounded-md font-medium text-sm outline-none ring-offset-2 ring-offset-bg transition",
-    "focus-visible:ring-1",
+    "inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-md font-medium text-sm outline-hidden ring-offset-2 ring-offset-bg transition",
+    "data-focus-visible:ring-1",
     "disabled:cursor-not-allowed disabled:opacity-50",
-    "pressed:scale-95",
+    "data-pressed:scale-95",
   ],
 
   variants: {
     variant: {
       default: [
-        "bg-primary text-primary-fg shadow",
-        "hover:bg-primary/90",
-        "focus-visible:ring-primary",
+        "bg-primary text-primary-fg shadow-sm",
+        "data-hovered:bg-primary/90",
+        "data-focus-visible:ring-primary",
       ],
       success: [
-        "bg-success text-success-fg shadow-sm",
-        "hover:bg-success/90",
-        "focus-visible:ring-success",
+        "bg-success text-success-fg shadow-xs",
+        "data-hovered:bg-success/90",
+        "data-focus-visible:ring-success",
       ],
       warning: [
-        "bg-warning text-warning-fg shadow-sm",
-        "hover:bg-warning/90",
-        "focus-visible:ring-warning",
+        "bg-warning text-warning-fg shadow-xs",
+        "data-hovered:bg-warning/90",
+        "data-focus-visible:ring-warning",
       ],
       danger: [
-        "bg-danger text-danger-fg shadow-sm",
-        "hover:bg-danger/90",
-        "focus-visible:ring-danger",
+        "bg-danger text-danger-fg shadow-xs",
+        "data-hovered:bg-danger/90",
+        "data-focus-visible:ring-danger",
       ],
       outline: [
-        "border border-input bg-bg shadow-sm",
-        "hover:bg-accent hover:text-accent-fg",
-        "focus-visible:ring-accent",
+        "border border-input bg-bg shadow-xs",
+        "data-hovered:bg-accent data-hovered:text-accent-fg",
+        "data-focus-visible:ring-accent",
       ],
       secondary: [
-        "bg-secondary text-secondary-fg shadow-sm",
-        "hover:bg-secondary/80",
-        "focus-visible:ring-secondary",
+        "bg-secondary text-secondary-fg shadow-xs",
+        "data-hovered:bg-secondary/80",
+        "data-focus-visible:ring-secondary",
       ],
       ghost: [
-        "hover:bg-accent hover:text-accent-fg",
-        "focus-visible:ring-accent",
+        "data-hovered:bg-accent data-hovered:text-accent-fg",
+        "data-focus-visible:ring-accent",
       ],
       link: [
         "text-primary underline-offset-4",
-        "hover:underline",
-        "focus-visible:ring-ring",
+        "data-hovered:underline",
+        "data-focus-visible:ring-ring",
       ],
       unset: null,
     },

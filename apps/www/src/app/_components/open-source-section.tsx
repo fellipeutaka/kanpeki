@@ -7,7 +7,7 @@ export function OpenSourceSection() {
     <section className="space-y-4 text-center">
       <h2 className="mx-auto max-w-2xl font-bold text-3xl tracking-tighter lg:text-5xl">
         Proudly{" "}
-        <span className="bg-gradient-to-br from-primary to-[hsl(24,93%,58%)] bg-clip-text text-transparent">
+        <span className="bg-linear-to-br from-primary to-[hsl(24,93%,58%)] bg-clip-text text-transparent">
           open-source
         </span>
       </h2>

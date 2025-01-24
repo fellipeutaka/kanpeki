@@ -2,7 +2,7 @@ import { cva } from "~/lib/cva";
 
 export const ToggleButtonStyles = cva({
   base: [
-    "inline-flex items-center justify-center gap-2 rounded-md font-medium text-sm outline-none ring-offset-bg transition-colors",
+    "inline-flex items-center justify-center gap-2 rounded-md font-medium text-sm outline-hidden ring-offset-bg transition-colors",
     "hover:bg-muted hover:text-muted-fg",
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
     "disabled:pointer-events-none disabled:opacity-50",

@@ -13,7 +13,7 @@ export const CommandStyles = {
   }),
   Input: cva({
     base: [
-      "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none",
+      "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden",
       "placeholder:text-muted-fg",
       "disabled:cursor-not-allowed disabled:opacity-50",
     ],
@@ -36,7 +36,7 @@ export const CommandStyles = {
   }),
   Item: cva({
     base: [
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none",
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden",
       "aria-selected:bg-accent aria-selected:text-accent-fg",
       "aria-disabled:pointer-events-none aria-disabled:opacity-50",
     ],

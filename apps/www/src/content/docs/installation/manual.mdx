@@ -16,7 +16,7 @@ Components are styled using Tailwind CSS. You need to install Tailwind CSS in yo
 Add the following dependencies to your project:
 
 ```bash
-npm install cva@beta tailwind-merge tailwindcss-animate -D
+npm install cva@beta tailwind-merge tailwindcss-motion -D
 ```
 
 ## Configure path aliases
@@ -38,176 +38,103 @@ The `~` alias is a preference. You can use other aliases if you want, like `@` o
 
 **If you use a different alias such as `@`, you'll need to update import statements when adding components.**
 
-## Configure tailwind.config.ts
-
-Here's what my `tailwind.config.ts` file looks like:
-
-```ts title="tailwind.config.ts"
-import type { Config } from "tailwindcss";
-import tailwindcssAnimate from "tailwindcss-animate";
-import { fontFamily } from "tailwindcss/defaultTheme";
-
-export default {
-  content: ["./src/**/*.{ts,tsx}"],
-  darkMode: "class",
-  theme: {
-    extend: {
-      container: {
-        center: true,
-        padding: "2rem",
-        screens: {
-          "2xl": "1400px",
-        },
-      },
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--bg))",
-        foreground: "hsl(var(--fg))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-fg))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-fg))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--danger))",
-          foreground: "hsl(var(--danger-fg))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-fg))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-fg))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-fg))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-fg))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-        mono: ["var(--font-geist-mono)", ...fontFamily.mono],
-      },
-    },
-  },
-  plugins: [tailwindcssAnimate],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-} satisfies Config;
-```
-
 ## Configure styles
 
 Add the following to your styles/globals.css file. You can learn more about using CSS variables for theming in the [theming section](/docs/theming).
 
 ```css title="globals.css"
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "tailwindcss-motion";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
+  --color-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
+
+  --color-card: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
+  --color-card-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
+
+  --color-popover: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
+  --color-popover-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
+
+  --color-primary: light-dark(oklch(0.85 0.2 93), oklch(0.85 0.2 93));
+  --color-primary-fg: light-dark(oklch(0 0 0), oklch(0 0 0));
+
+  --color-secondary: light-dark(
+    oklch(0.96 0.01 262.25),
+    oklch(0.23 0.01 262.25)
+  );
+  --color-secondary-fg: light-dark(oklch(0.25 0.01 262.25), oklch(0.98 0 0));
+
+  --color-muted: light-dark(oklch(0.96 0.01 262.25), oklch(0.23 0.01 262.25));
+  --color-muted-fg: light-dark(oklch(0.5 0.01 262.25), oklch(0.67 0.01 262.25));
+
+  --color-accent: light-dark(oklch(0.96 0.01 262.25), oklch(0.23 0.01 262.25));
+  --color-accent-fg: light-dark(oklch(0.25 0.01 262.25), oklch(0.98 0 0));
+
+  --color-success: light-dark(oklch(0.62 0.18 0.53), oklch(0.62 0.18 0.53));
+  --color-success-fg: light-dark(oklch(0.83 0.13 0.97), oklch(0.83 0.13 0.97));
+
+  --color-info: light-dark(oklch(0.76 0.19 0.67), oklch(0.76 0.19 0.67));
+  --color-info-fg: light-dark(oklch(1 0 0.75), oklch(0.76 0.19 0.67));
+
+  --color-warning: light-dark(oklch(0.5 1 100), oklch(76 0.4 70));
+  --color-warning-fg: light-dark(oklch(0.4 0.18 0.3), oklch(0.4 0.18 0.3));
+
+  --color-danger: light-dark(oklch(0.57 0.22 27.16), oklch(0.33 0.15 27.16));
+  --color-danger-fg: light-dark(oklch(0.98 0 0), oklch(0.98 0 0));
+
+  --color-border: light-dark(oklch(0.89 0.01 262.25), oklch(0.23 0.01 262.25));
+  --color-input: light-dark(oklch(0.89 0.01 262.25), oklch(0.23 0.01 262.25));
+  --color-ring: var(--color-primary);
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@utility heading-1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+@utility heading-2 {
+  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+}
+
+@utility heading-3 {
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+
+@utility heading-4 {
+  @apply scroll-m-20 text-xl font-semibold tracking-tight;
+}
+
+@utility p {
+  @apply leading-7 not-first:mt-6;
+}
+
+@utility blockquote {
+  @apply mt-6 border-l-2 pl-6 italic;
+}
 
 @layer base {
-  :root {
-    --bg: 0 0% 100%;
-    --fg: 240 10% 3.9%;
-
-    --card: 0 0% 100%;
-    --card-fg: 240 10% 3.9%;
-
-    --popover: 0 0% 100%;
-    --popover-fg: 240 10% 3.9%;
-
-    --primary: 240 5.9% 10%;
-    --primary-fg: 0 0% 98%;
-
-    --secondary: 240 4.8% 95.9%;
-    --secondary-fg: 240 5.9% 10%;
-
-    --muted: 240 4.8% 95.9%;
-    --muted-fg: 240 3.8% 46.1%;
-
-    --accent: 240 4.8% 95.9%;
-    --accent-fg: 240 5.9% 10%;
-
-    --danger: 0 84.2% 60.2%;
-    --danger-fg: 0 0% 98%;
-
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark:root {
-    --bg: 240 10% 3.9%;
-    --fg: 0 0% 98%;
-
-    --card: 240 10% 3.9%;
-    --card-fg: 0 0% 98%;
-
-    --popover: 240 10% 3.9%;
-    --popover-fg: 0 0% 98%;
-
-    --primary: 50 100% 50%;
-    --primary-fg: 240 5.9% 10%;
-
-    --secondary: 240 3.7% 15.9%;
-    --secondary-fg: 0 0% 98%;
-
-    --muted: 240 3.7% 15.9%;
-    --muted-fg: 240 5% 64.9%;
-
-    --accent: 240 3.7% 15.9%;
-    --accent-fg: 0 0% 98%;
-
-    --danger: 0 62.8% 30.6%;
-    --danger-fg: 0 0% 98%;
-
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
-
-  * {
-    @apply border-border;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border, currentColor);
   }
 
   html {
-    scrollbar-gutter: stable;
     scroll-behavior: smooth;
   }
 
   body {
     font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  ::-webkit-scrollbar {
-    @apply size-1;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-fg/40 rounded-lg transition-colors;
-  }
-
-  ::-webkit-scdrollbar-thumb:hover,
-  ::-webkit-scrollbar-thumb:active {
-    @apply bg-fg/60;
   }
 }
 ```

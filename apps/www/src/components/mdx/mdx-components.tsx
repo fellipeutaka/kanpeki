@@ -69,10 +69,7 @@ export const mdxComponents = {
     />
   ),
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
-    <p
-      className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
-      {...props}
-    />
+    <p className={cn("not-first:mt-6 leading-7", className)} {...props} />
   ),
   ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
     <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
@@ -85,10 +82,7 @@ export const mdxComponents = {
   ),
   blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
     <blockquote
-      className={cn(
-        "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-fg",
-        className
-      )}
+      className={cn("mt-6 border-l-2 pl-6 italic *:text-muted-fg", className)}
       {...props}
     />
   ),
@@ -137,7 +131,7 @@ export const mdxComponents = {
   TabList: ({ className, ...props }: TabsListProps<object>) => (
     <TabsList
       {...props}
-      className={cn("orientation-horizontal:gap-x-0", className)}
+      className={cn("data-[orientation=horizontal]:gap-x-0", className)}
     />
   ),
   TabTrigger: ({ className, ...props }: TabsTriggerProps) => (

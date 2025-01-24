@@ -43,15 +43,12 @@ export function DialogModal({
   side = "center",
   ...props
 }: DialogModalProps) {
-  const isSheet = side !== "center";
-
   return (
     <Modal
       {...props}
       className={(values) =>
         DialogStyles.Modal({
           side,
-          isSheet,
           className:
             typeof className === "function" ? className(values) : className,
         })

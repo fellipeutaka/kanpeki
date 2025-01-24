@@ -2,7 +2,7 @@ import { cva } from "~/lib/cva";
 
 export const CardStyles = {
   Root: cva({
-    base: ["rounded-xl border bg-card text-card-fg shadow"],
+    base: ["rounded-xl border bg-card text-card-fg shadow-sm"],
   }),
   Header: cva({
     base: ["flex flex-col space-y-1.5 p-6"],

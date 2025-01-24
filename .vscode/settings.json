@@ -5,6 +5,7 @@
     "cmdk",
     "commitlint",
     "kanpeki",
+    "oklch",
     "picocolors",
     "rehype",
     "shiki",

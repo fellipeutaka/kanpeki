@@ -89,7 +89,7 @@ export function CheckboxIndicator({
       <Icons.Check
         {...props}
         className={CheckboxStyles.Indicator({
-          className: [className, "group-selected:block"],
+          className: [className, "group-data-selected:block"],
         })}
       />
     </>

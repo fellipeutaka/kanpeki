@@ -15,7 +15,7 @@ export const TextFieldStyles = {
   }),
   Input: cva({
     base: [
-      "size-full min-w-0 select-none bg-transparent text-fg placeholder-muted-fg outline-none",
+      "size-full min-w-0 select-none bg-transparent text-fg placeholder-muted-fg outline-hidden",
       "[&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden",
     ],
   }),

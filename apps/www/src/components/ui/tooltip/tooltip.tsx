@@ -3,10 +3,8 @@
 import {
   OverlayArrow,
   Tooltip as TooltipPrimitive,
-  type TooltipProps as TooltipPrimitiveProps,
   TooltipTrigger,
 } from "react-aria-components";
-import type { VariantProps } from "~/lib/cva";
 import { TooltipStyles } from "./styles";
 
 export interface TooltipRootProps
@@ -14,12 +12,10 @@ export interface TooltipRootProps
 export const TooltipRoot = TooltipTrigger;
 
 export interface TooltipContentProps
-  extends TooltipPrimitiveProps,
-    VariantProps<typeof TooltipStyles> {}
+  extends React.ComponentProps<typeof TooltipPrimitive> {}
 
 export function TooltipContent({
   className,
-  intent = "default",
   offset = 10,
   ...props
 }: TooltipContentProps) {
@@ -28,8 +24,7 @@ export function TooltipContent({
       {...props}
       offset={offset}
       className={(values) =>
-        TooltipStyles({
-          intent,
+        TooltipStyles.Content({
           className:
             typeof className === "function" ? className(values) : className,
         })
@@ -49,7 +44,7 @@ export function TooltipArrow({ className, ...props }: TooltipArrowProps) {
         width={12}
         height={12}
         viewBox="0 0 12 12"
-        className="arx group-placement-left:-rotate-90 group-placement-bottom:rotate-180 group-placement-right:rotate-90 forced-colors:fill-[Canvas] forced-colors:stroke-[ButtonBorder]"
+        className={TooltipStyles.Arrow({ className })}
       >
         <path d="M0 0 L6 6 L12 0" />
       </svg>

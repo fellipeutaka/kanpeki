@@ -19,7 +19,7 @@ export function CopyButton({ text, className, ...props }: CopyButtonProps) {
   return (
     <Button
       className={cx(
-        "size-8 bg-secondary opacity-0 hover:bg-bg focus-visible:opacity-100 group-hover:opacity-100",
+        "size-8 bg-secondary opacity-0 focus-visible:opacity-100 group-hover:opacity-100 data-hovered:bg-bg",
         className
       )}
       size="icon"
@@ -56,8 +56,8 @@ export function CopyNpmButton({
     <DropdownMenu.Root isOpen={isOpen} onOpenChange={setIsOpen}>
       <Button
         className={cx(
-          "size-8 bg-secondary hover:bg-bg focus-visible:opacity-100 group-hover:opacity-100 [@media(pointer:fine)]:opacity-0",
-          isOpen && "!opacity-100 bg-bg",
+          "size-8 bg-secondary focus-visible:opacity-100 group-hover:opacity-100 data-hover:bg-bg [@media(pointer:fine)]:opacity-0",
+          isOpen && "bg-bg opacity-100!",
           className
         )}
         size="icon"

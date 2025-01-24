@@ -6,7 +6,7 @@ export const AccordionStyles = {
   }),
   Trigger: cva({
     base: [
-      "flex w-full flex-1 items-center justify-between py-4 text-left font-medium text-sm outline-none transition-all hover:underline",
+      "flex w-full flex-1 items-center justify-between py-4 text-left font-medium text-sm outline-hidden transition-all hover:underline",
     ],
   }),
   TriggerIcon: cva({
@@ -16,7 +16,7 @@ export const AccordionStyles = {
   }),
   Content: cva({
     base: [
-      "grid grid-rows-[0] overflow-hidden text-sm transition-all duration-500 group-data-[expanded=true]:grid-rows-1",
+      "grid grid-rows-0 overflow-hidden text-sm transition-all duration-500 group-data-[expanded=true]:grid-rows-1",
     ],
   }),
 };

@@ -11,7 +11,7 @@ export const DropdownMenuStyles = {
   }),
   Item: cva({
     base: [
-      "group relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors [&>svg]:size-4 [&>svg]:shrink-0",
+      "group relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors [&>svg]:size-4 [&>svg]:shrink-0",
     ],
     variants: {
       isDisabled: {

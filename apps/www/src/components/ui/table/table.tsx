@@ -196,7 +196,7 @@ export function TableRow<T extends object>({
       {allowsDragging && (
         <Cell className="group cursor-grab dragging:cursor-grabbing pr-0 ring-primary">
           <ButtonPrimitive
-            className="relative bg-transparent py-1.5 pl-3.5 pressed:text-fg text-muted-fg"
+            className="relative bg-transparent py-1.5 pl-3.5 text-muted-fg data-pressed:text-fg"
             slot="drag"
           >
             <Icons.ChevronDown />

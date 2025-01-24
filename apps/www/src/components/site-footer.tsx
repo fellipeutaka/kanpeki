@@ -40,7 +40,7 @@ export function SiteFooter() {
         <div className="flex max-w-sm flex-col items-start">
           <a
             href="/"
-            className="flex items-center gap-2 rounded outline-none ring-0 ring-border-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            className="flex items-center gap-2 rounded outline-hidden ring-0 ring-border-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             <Icons.Logo className="size-6" />
             <span className="font-bold leading-normal tracking-tighter">

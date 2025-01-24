@@ -29,7 +29,7 @@ export function ComponentSource({ children }: ComponentSourceProps) {
         <div
           className={cx(
             "pointer-events-none absolute inset-x-0 bottom-0 flex justify-center",
-            !isOpen && "bg-gradient-to-b from-transparent to-bg/90"
+            !isOpen && "bg-linear-to-b from-transparent to-bg/90"
           )}
         >
           <Button

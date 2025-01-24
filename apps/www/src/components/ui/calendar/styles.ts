@@ -1,5 +1,4 @@
-import { compose, cva } from "~/lib/cva";
-import { FocusRingStyles } from "~/styles/focus-ring";
+import { cva } from "~/lib/cva";
 
 export const CalendarStyles = {
   Root: cva({
@@ -20,20 +19,17 @@ export const CalendarStyles = {
   Grid: cva({
     base: ["w-full [&_td]:border-collapse [&_td]:px-0"],
   }),
-  Cell: compose(
-    FocusRingStyles,
-    cva({
-      base: [
-        "grid size-8 place-content-center whitespace-nowrap rounded-md p-0 text-accent-fg text-sm transition-colors",
-        "hover:bg-accent hover:text-accent-fg",
-        "disabled:cursor-not-allowed disabled:opacity-50",
-        "selected:bg-primary selected:text-primary-fg",
-      ],
-      variants: {
-        isToday: {
-          true: "bg-accent text-accent-fg",
-        },
+  Cell: cva({
+    base: [
+      "grid size-8 place-content-center whitespace-nowrap rounded-md p-0 text-accent-fg text-sm transition-colors",
+      "data-hover:bg-accent data-hover:text-accent-fg",
+      "data-disabled:cursor-not-allowed data-disabled:opacity-50",
+      "data-selected:bg-primary data-selected:text-primary-fg",
+    ],
+    variants: {
+      isToday: {
+        true: "bg-accent text-accent-fg",
       },
-    })
-  ),
+    },
+  }),
 };

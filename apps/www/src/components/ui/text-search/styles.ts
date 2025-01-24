@@ -9,7 +9,7 @@ export const TextSearchStyles = {
   }),
   ClearButton: cva({
     base: [
-      "mr-1 size-8 pressed:bg-transparent pressed:text-fg text-muted-fg hover:bg-transparent hover:text-fg group-empty:invisible",
+      "mr-1 size-8 text-muted-fg hover:bg-transparent hover:text-fg group-empty:invisible data-pressed:bg-transparent data-pressed:text-fg",
     ],
   }),
 };

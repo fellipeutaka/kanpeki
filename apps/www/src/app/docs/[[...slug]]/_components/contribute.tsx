@@ -48,7 +48,7 @@ export function Contribute({ doc }: ContributeProps) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-muted-fg text-sm hover:text-fg"
+              className="inline-flex items-center text-muted-fg text-sm data-hovered:text-fg"
             >
               <link.icon className="mr-2 size-4" />
               {link.text}
