@@ -1,10 +1,10 @@
-import { Badge } from "@kanpeki/ui/badge";
-import { Icons } from "@kanpeki/ui/icons";
-import { LinkButton } from "@kanpeki/ui/link-button";
-import { Separator } from "@kanpeki/ui/separator";
 import { type NavItem, docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
-import { LinkStyles } from "~/styles/link";
+import { Badge } from "./ui/badge";
+import { LinkButton } from "./ui/button";
+import { Icons } from "./ui/icons";
+import { Link } from "./ui/link/link";
+import { Separator } from "./ui/separator";
 
 const footerLinks = [
   {
@@ -40,15 +40,15 @@ export function SiteFooter() {
         <div className="flex max-w-sm flex-col items-start">
           <a
             href="/"
-            className="flex items-center gap-2 rounded outline-none ring-0 ring-border-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            className="flex items-center gap-2 rounded outline-hidden ring-0 ring-border-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             <Icons.Logo className="size-6" />
             <span className="font-bold leading-normal tracking-tighter">
               {siteConfig.name}
             </span>
-            <Badge variant="secondary">Beta</Badge>
+            <Badge variant="secondary">Alpha</Badge>
           </a>
-          <p className="mt-2 text-md text-muted-foreground">
+          <p className="mt-2 text-md text-muted-fg">
             Accessible, mobile friendly, modern UI components.
           </p>
           <div className="mt-4 flex items-center gap-2">
@@ -83,7 +83,7 @@ export function SiteFooter() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="text-muted-foreground text-sm underline decoration-transparent transition duration-200 hover:decoration-current"
+                    className="text-muted-fg text-sm underline decoration-transparent transition duration-200 hover:decoration-current"
                   >
                     {item.title}
                   </a>
@@ -96,25 +96,25 @@ export function SiteFooter() {
 
       <Separator className="mt-12 mb-4" />
 
-      <p className="text-balance text-center text-muted-foreground text-sm leading-loose md:text-left">
+      <p className="text-balance text-center text-muted-fg text-sm leading-loose md:text-left">
         Built by{" "}
-        <a
+        <Link
+          variant="underline"
           href={siteConfig.links.twitter}
           target="_blank"
           rel="noopener noreferrer"
-          className={LinkStyles()}
         >
           Fellipe Utaka
-        </a>
+        </Link>
         . The source code is available on{" "}
-        <a
+        <Link
+          variant="underline"
           href={siteConfig.links.github}
           target="_blank"
           rel="noopener noreferrer"
-          className={LinkStyles()}
         >
           GitHub
-        </a>
+        </Link>
         .
       </p>
     </footer>

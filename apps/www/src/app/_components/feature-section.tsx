@@ -1,5 +1,5 @@
-import { Card } from "@kanpeki/ui/card";
-import { Icons } from "@kanpeki/ui/icons";
+import { Card } from "~/components/ui/card";
+import { Icons } from "~/components/ui/icons";
 import { siteConfig } from "~/config/site";
 
 const features = [
@@ -94,7 +94,7 @@ export function FeatureSection() {
         <h2 className="font-bold text-3xl tracking-tighter sm:text-5xl">
           Why Choose {siteConfig.name}?
         </h2>
-        <p className="max-w-3xl text-balance text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <p className="max-w-3xl text-balance text-muted-fg md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
           {siteConfig.name} offers a wide range of high-quality, customizable
           React components that will help you build stunning web applications
           with ease.

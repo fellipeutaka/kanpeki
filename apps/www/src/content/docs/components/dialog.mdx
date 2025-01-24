@@ -2,36 +2,30 @@
 title: Dialog
 description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 links:
-  docs: https://react-spectrum.adobe.com/react-aria/useDialog.html
+  docs: https://react-spectrum.adobe.com/react-aria/Modal.html
 ---
 
 <ComponentPreview name="dialog-demo" />
 
 ## Installation
 
-<TabsRoot defaultValue="manual">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add dialog
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install @react-aria/dialog @react-aria/interactions @react-aria/overlays @react-stately/overlays
-```
 
 <Step>Copy and paste the following code into your project.</Step>
 
@@ -41,97 +35,167 @@ npm install @react-aria/dialog @react-aria/interactions @react-aria/overlays @re
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
 ### Single import
 
 ```tsx
+import { Button } from "~/components/ui/button";
 import { Dialog } from "~/components/ui/dialog";
 ```
 
 ```tsx
 <Dialog.Root>
-  <Dialog.Trigger>Open</Dialog.Trigger>
-  <Dialog.Portal>
-    <Dialog.Overlay />
-    <Dialog.Content>
-      <Dialog.Header>
-        <Dialog.Title>Are you absolutely sure?</Dialog.Title>
-        <Dialog.Description>
-          This action cannot be undone. This will permanently delete your
-          account and remove your data from our servers.
-        </Dialog.Description>
-      </Dialog.Header>
-    </Dialog.Content>
-  </Dialog.Portal>
+  <Button>Open</Button>
+
+  <Dialog.Overlay>
+    <Dialog.Modal>
+      <Dialog.Content>
+        <Dialog.Header>
+          <Dialog.Title>Are you absolutely sure?</Dialog.Title>
+          <Dialog.Description>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </Dialog.Description>
+        </Dialog.Header>
+      </Dialog.Content>
+    </Dialog.Modal>
+  </Dialog.Overlay>
 </Dialog.Root>
 ```
 
 ### Multiple imports
 
 ```tsx
+import { Button } from "~/components/ui/button";
 import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogModal,
   DialogOverlay,
-  DialogPortal,
   DialogRoot,
   DialogTitle,
-  DialogTrigger,
 } from "~/components/ui/dialog";
 ```
 
 ```tsx
 <DialogRoot>
-  <DialogTrigger>Open</DialogTrigger>
-  <DialogPortal>
-    <DialogOverlay />
-    <DialogContent>
-      <DialogHeader>
-        <DialogTitle>Are you absolutely sure?</DialogTitle>
-        <DialogDescription>
-          This action cannot be undone. This will permanently delete your
-          account and remove your data from our servers.
-        </DialogDescription>
-      </DialogHeader>
-    </DialogContent>
-  </DialogPortal>
+  <Button>Open</Button>
+
+  <DialogOverlay>
+    <DialogModal>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Are you absolutely sure?</DialogTitle>
+          <DialogDescription>
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </DialogModal>
+  </DialogOverlay>
 </DialogRoot>
 ```
 
 ## Examples
 
-### Default
+### Dialog
 
 <ComponentPreview name="dialog-demo" />
 
 ### Alert Dialog
 
-Use the `role="alertdialog"{:tsx}` prop on the `<Dialog.Content>{:tsx}` element to make an alert dialog. If the `isDismissable` prop is not explicitly set, the dialog will be not dismissable.
+Use the `role="alertdialog"{:tsx}` prop on the `<Dialog.Content>{:tsx}` element to make an alert dialog.
+Also, make sure to set the `isDismissable` prop to `false{:ts}` on the `<Dialog.Overlay>{:tsx}` or `<Dialog.Modal>{:tsx}`
+to prevent the dialog from being dismissed by clicking outside of it.
 
 <ComponentPreview name="alert-dialog-demo" />
 
 ### Sheet
 
-Use the `sheet` prop on the `<Dialog.Root>{:tsx}` and the `side` prop on the `<Dialog.Content>{:tsx}` element to make a sheet dialog. The `side` prop can be set to `top`, `right`, `bottom`, or `left`.
+Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet dialog.
 
-#### Top
+<ComponentPreview name="dialog-sheet" />
 
-<ComponentPreview name="dialog-sheet-top" />
+## API Reference
 
-#### Left
+### Root
 
-<ComponentPreview name="dialog-sheet-left" />
+<PropsTable
+  data={[
+    {
+      name: "defaultOpen",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether the overlay is open by default (uncontrolled).",
+    },
+    {
+      name: "isOpen",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether the overlay is open by default (controlled).",
+    },
+    {
+      name: "onOpenChange",
+      required: false,
+      typeSimple: "function",
+      type: "((isOpen: boolean) => void)",
+      description:
+        "Handler that is called when the overlay's open state changes.",
+    },
+  ]}
+/>
 
-#### Right
+### Content
 
-<ComponentPreview name="dialog-sheet-right" />
-
-#### Bottom
-
-<ComponentPreview name="dialog-sheet-bottom" />
+<PropsTable
+  data={[
+    {
+      name: "side",
+      required: false,
+      typeSimple: "enum",
+      type: '"center" | "top" | "bottom" | "left" | "right"',
+      default: '"center"',
+      description: "The side of the screen the dialog should appear from.",
+    },
+    {
+      name: "role",
+      required: false,
+      typeSimple: "enum",
+      type: '"dialog" | "alertdialog"',
+      default: '"dialog"',
+      description: "The role of the dialog.",
+    },
+    {
+      name: "isBlurred",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether the content behind the dialog should be blurred.",
+    },
+    {
+      name: "isDismissable",
+      required: false,
+      typeSimple: "boolean",
+      default: "true",
+      description:
+        "Whether the dialog can be dismissed by clicking outside of it.",
+    },
+    {
+      name: "isKeyboardDismissDisabled",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description:
+        "Whether pressing the escape key to close the modal should be disabled.",
+    },
+  ]}
+/>

@@ -4,25 +4,24 @@ description: Displays a card with header, content, and footer.
 ---
 
 <ComponentPreview name="card-demo" />
-{/* <ComponentPreview name="card-with-form" /> */}
 
 ## Installation
 
-<TabsRoot defaultValue="manual">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add card
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
 
@@ -34,9 +33,9 @@ npx kanpeki-ui@latest add card
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 

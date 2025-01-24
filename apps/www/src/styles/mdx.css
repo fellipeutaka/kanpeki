@@ -1,3 +1,5 @@
+@import "./globals.css";
+
 figure[data-rehype-pretty-code-figure] code {
   @apply p-0 bg-transparent;
 }
@@ -28,7 +30,7 @@ figure[data-rehype-pretty-code-figure]
   counter-increment: step;
 
   &::before {
-    @apply absolute size-9 bg-muted rounded-full font-mono font-light grid place-content-center -indent-px border-4 border-background;
+    @apply absolute size-9 bg-muted rounded-full font-mono font-light grid place-content-center -indent-px border-4 border-bg;
     @apply ml-[-50px] -mt-1;
     content: counter(step);
   }

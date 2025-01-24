@@ -1,14 +1,15 @@
 "use client";
 
-import { Button } from "@kanpeki/ui/button";
-import { Command } from "@kanpeki/ui/command";
-import { Icons } from "@kanpeki/ui/icons";
-import { ScrollArea } from "@kanpeki/ui/scroll-area";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { NavItem, SidebarNavItem } from "~/config/docs";
+import { Button } from "./ui/button";
+import { Command } from "./ui/command";
+import { Dialog } from "./ui/dialog";
+import { Icons } from "./ui/icons";
+import { ScrollArea } from "./ui/scroll-area";
 
 interface CommandMenuProps {
   mainNav: NavItem[];
@@ -61,10 +62,10 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
   }
 
   return (
-    <>
+    <Dialog.Root isOpen={isOpen} onOpenChange={setIsOpen}>
       <Button
         variant="outline"
-        className="relative h-8 w-full justify-start rounded-[0.5rem] bg-muted/50 font-normal text-muted-foreground text-sm shadow-none sm:pr-12 md:w-40 lg:w-64"
+        className="relative h-8 w-full justify-start rounded-[0.5rem] bg-muted/50 font-normal text-muted-fg text-sm shadow-none sm:pr-12 md:w-40 lg:w-64"
         onPress={() => setIsOpen(true)}
       >
         <span className="hidden lg:inline-flex">Search documentation...</span>
@@ -73,7 +74,7 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
-      <Command.Dialog isOpen={isOpen} onOpenChange={setIsOpen}>
+      <Command.Dialog>
         <Command.Input placeholder="Type a command or search..." />
         <ScrollArea.Root>
           <ScrollArea.Viewport className="max-h-[18.75rem]">
@@ -135,6 +136,6 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
           </ScrollArea.Scrollbar>
         </ScrollArea.Root>
       </Command.Dialog>
-    </>
+    </Dialog.Root>
   );
 }

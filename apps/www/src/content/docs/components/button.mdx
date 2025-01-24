@@ -2,36 +2,30 @@
 title: Button
 description: Displays a button or a component that looks like a button.
 links:
-  docs: https://react-spectrum.adobe.com/react-aria/useButton.html
+  docs: https://react-spectrum.adobe.com/react-aria/Button.html
 ---
 
 <ComponentPreview name="button-demo" />
 
 ## Installation
 
-<TabsRoot defaultValue="manual">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
-</TabsList>
-<TabsContent value="cli" tabIndex={-1}>
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add button
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install @react-aria/button @react-aria/focus
-```
 
 <Step>Copy and paste the following code into your project.</Step>
 
@@ -41,9 +35,9 @@ npm install @react-aria/button @react-aria/focus
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -55,58 +49,90 @@ import { Button } from "~/components/ui/button";
 <Button variant="outline">Button</Button>
 ```
 
+### Link
+
+You can use the `LinkButton` component to create a link that looks like a button.
+
+```tsx
+import { LinkButton } from "~/components/ui/button";
+```
+
+```tsx
+<LinkButton href="https://github.com/fellipeutaka">GitHub</LinkButton>
+```
+
 ## Examples
 
 ### Default
 
 <ComponentPreview name="button-demo" />
 
+---
+
 ### Secondary
 
 <ComponentPreview name="button-secondary" />
 
-### Destructive
-
-<ComponentPreview name="button-destructive" />
+---
 
 ### Outline
 
 <ComponentPreview name="button-outline" />
 
+---
+
+### Danger
+
+<ComponentPreview name="button-danger" />
+
 ### Ghost
 
 <ComponentPreview name="button-ghost" />
 
-### Icon
+### Link
 
-<ComponentPreview name="button-icon" />
-
-### With Icon
-
-<ComponentPreview name="button-with-icon" />
+<ComponentPreview name="button-link" />
 
 ## API Reference
 
-| Prop       | Type                                                                               | Default          | Description                     |
-| ---------- | ---------------------------------------------------------------------------------- | ---------------- | ------------------------------- |
-| `variant`  | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"{:ts}` | `"default"{:ts}` | The visual style of the button. |
-| `size`     | `"default" \| "sm" \| "lg" \| "icon"{:ts}`                                         | `"default"{:ts}` | The size of the button.         |
-| `disabled` | `boolean`                                                                          | -                | Whether the button is disabled. |
-
-| Event           | Type                                   | Description                                                                                                             |
-| --------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `onPress`       | `(e: PressEvent) => void{:ts}`         | Handler that is called when the press is released over the target.                                                      |
-| `onPressStart`  | `(e: PressEvent) => void{:ts}`         | Handler that is called when a press interaction starts.                                                                 |
-| `onPressEnd`    | `(e: PressEvent) => void{:ts}`         | Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.     |
-| `onPressChange` | `(isPressed: boolean) => void{:ts}`    | Handler that is called when the press state changes.                                                                    |
-| `onPressUp`     | `(e: PressEvent) => void{:ts}`         | Handler that is called when a press is released over the target, regardless of whether it started on the target or not. |
-| `onFocus`       | `(e: FocusEvent<Target>) => void{:ts}` | Handler that is called when the element receives focus.                                                                 |
-| `onBlur`        | `(e: FocusEvent<Target>) => void{:ts}` | Handler that is called when the element loses focus.                                                                    |
-| `onFocusChange` | `(isFocused: boolean) => void{:ts}`    | Handler that is called when the element's focus status changes.                                                         |
-| `onKeyDown`     | `(e: KeyboardEvent) => void{:ts}`      | Handler that is called when a key is pressed.                                                                           |
-| `onKeyUp`       | `(e: KeyboardEvent) => void{:ts}`      | Handler that is called when a key is released.                                                                          |
-
-| Data attribute         | Description                                                    |
-| ---------------------- | -------------------------------------------------------------- |
-| `[data-pressed]{:css}` | Whether the button is currently in a pressed state.            |
-| `[data-focused]{:css}` | Whether the button is focused, either via a mouse or keyboard. |
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "secondary" | "outline" | "danger" | "ghost" | "link" | "unset"',
+      default: '"default"',
+      description: "The visual style of the button.",
+    },
+    {
+      name: "size",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "sm" | "lg" | "icon"',
+      default: '"default"',
+      description: "The size of the button.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the button is disabled.",
+    },
+    {
+      name: "isPending",
+      required: false,
+      typeSimple: "boolean",
+      description:
+        "Whether the button is in a pending state. This disables press and hover events while retaining focusability, and announces the pending state to screen readers.",
+    },
+    {
+      name: "type",
+      required: false,
+      typeSimple: "enum",
+      type: '"button" | "reset" | "submit"',
+      default: '"button"',
+      description: "The behavior of the button when used in an HTML form.",
+    },
+  ]}
+/>

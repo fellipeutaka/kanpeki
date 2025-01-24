@@ -1,5 +1,6 @@
-import { toast } from "@kanpeki/ui/toast";
 import { useState } from "react";
+import type { ExternalToast } from "sonner";
+import { toast } from "~/components/ui/toast";
 
 interface CopyOptions {
   text: string;
@@ -8,25 +9,21 @@ interface CopyOptions {
   errorMessage?: React.ReactNode;
 }
 
-export const useCopyToClipboard = (): [
-  (options: CopyOptions) => Promise<void>,
-  boolean,
-] => {
+export function useCopyToClipboard() {
   const [isCopied, setIsCopied] = useState(false);
 
-  const copy = async ({
-    text,
-    timeout,
-    successMessage,
-    errorMessage,
-  }: CopyOptions) => {
+  const copy = async (
+    { text, timeout, successMessage, errorMessage }: CopyOptions,
+    toastOptions?: ExternalToast
+  ) => {
     if (isCopied) {
       return;
     }
 
     if (!navigator?.clipboard) {
       toast.error(
-        "Unable to access clipboard. Please grant permission to enable clipboard access."
+        "Unable to access clipboard. Please grant permission to enable clipboard access.",
+        toastOptions
       );
       return;
     }
@@ -34,17 +31,18 @@ export const useCopyToClipboard = (): [
     try {
       await navigator.clipboard.writeText(text);
       setIsCopied(true);
-      toast.success(successMessage ?? "Copied to clipboard!");
+      toast.success(successMessage ?? "Copied to clipboard!", toastOptions);
 
       setTimeout(() => {
         setIsCopied(false);
       }, timeout ?? 2000);
     } catch {
       toast.error(
-        errorMessage ?? "Unable to copy to clipboard. Please try again."
+        errorMessage ?? "Unable to copy to clipboard. Please try again.",
+        toastOptions
       );
     }
   };
 
-  return [copy, isCopied];
-};
+  return [copy, isCopied] as const;
+}

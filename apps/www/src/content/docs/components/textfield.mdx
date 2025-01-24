@@ -1,0 +1,97 @@
+---
+title: TextField
+description: A text field allows a user to enter a plain text value with a keyboard.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/TextField.html
+---
+
+<ComponentPreview name="textfield-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add textfield
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="textfield" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { TextField } from "~/components/ui/text-field";
+```
+
+```tsx
+<TextField.Provider>
+  <TextField.Root>
+    <TextField.Slot />
+    <TextField.Input />
+    <TextField.Slot />
+  </TextField.Root>
+</TextField.Provider>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  TextFieldProvider,
+  TextFieldRoot,
+  TextFieldSlot,
+  TextFieldInput,
+} from "~/components/ui/text-field";
+```
+
+```tsx
+<TextFieldProvider>
+  <TextFieldRoot>
+    <TextFieldSlot />
+    <TextFieldInput />
+    <TextFieldSlot />
+  </TextFieldRoot>
+</TextFieldProvider>
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="textfield-demo" />
+
+### With Icon
+
+<ComponentPreview name="textfield-with-icon" />
+
+### With Label
+
+<ComponentPreview name="textfield-with-label" />
+
+### Password
+
+<ComponentPreview name="textfield-password" />

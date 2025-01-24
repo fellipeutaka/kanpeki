@@ -9,29 +9,23 @@ links:
 
 ## Installation
 
-<TabsRoot defaultValue="manual">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add scroll-area
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install @radix-ui/react-scroll-area
-```
 
 <Step>Copy and paste the following code into your project.</Step>
 
@@ -41,9 +35,9 @@ npm install @radix-ui/react-scroll-area
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -94,6 +88,166 @@ import {
 
 <ComponentPreview name="scroll-area-demo" />
 
-### Horizontal Scrolling
+### Horizontal
 
 <ComponentPreview name="scroll-area-horizontal" />
+
+## API Reference
+
+### Root
+
+<PropsTable
+  data={[
+    {
+      name: "asChild",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: (
+        <>
+          Change the default rendered element for the one passed as a child,
+          merging their props and behavior.
+          <br />
+          <br />
+          Read Radix UI <a href="https://www.radix-ui.com/primitives/docs/guides/composition">
+            Composition
+          </a> guide for more details.
+        </>
+      ),
+    },
+    {
+      name: "type",
+      type: '"auto" | "always" | "scroll" | "hover"',
+      typeSimple: "enum",
+      default: '"hover"',
+      description: (
+        <span>
+          Describes the nature of scrollbar visibility, similar to how the
+          scrollbar preferences in MacOS control visibility of native
+          scrollbars.
+          <br />
+          <br />
+          <Code>"auto"</Code> means that scrollbars are visible when content is overflowing
+          on the corresponding orientation.
+          <br />
+          <Code>"always"</Code> means that scrollbars are always visible regardless
+          of whether the content is overflowing.
+          <br />
+          <Code>"scroll"</Code> means that scrollbars are visible when the user is
+          scrolling along its corresponding orientation.
+          <br />
+          <Code>"hover"</Code> when the user is scrolling along its corresponding
+          orientation and when the user is hovering over the scroll area.
+        </span>
+      ),
+    },
+    {
+      name: "scrollHideDelay",
+      typeSimple: "number",
+      default: "600",
+      description: (
+        <span>
+          If <Code>type</Code> is set to either <Code>"scroll"</Code> or{" "}
+          <Code>"hover"</Code>, this prop determines the length of time, in
+          milliseconds, before the scrollbars are hidden after the user stops
+          interacting with scrollbars.
+        </span>
+      ),
+    },
+    {
+      name: "dir",
+      required: false,
+      type: '"ltr" | "rtl"',
+      typeSimple: "enum",
+      description: (
+        <span>
+          The reading direction of the scroll area. If omitted, inherits
+          globally from <Code>DirectionProvider</Code> or assumes LTR
+          (left-to-right) reading mode.
+        </span>
+      ),
+    },
+    {
+      name: "nonce",
+      required: false,
+      typeSimple: "string",
+      description: (
+        <span>
+          An optional nonce attribute that is passed to the inline styles for
+          use in CSP-enabled environments that use strict rules to enhance
+          security.
+        </span>
+      ),
+    },
+  ]}
+/>
+
+### Viewport
+
+The viewport area of the scroll area.
+
+<PropsTable
+  data={[
+    {
+      name: "asChild",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: (
+        <>
+          Change the default rendered element for the one passed as a child,
+          merging their props and behavior.
+          <br />
+          <br />
+          Read Radix UI <a href="https://www.radix-ui.com/primitives/docs/guides/composition">
+            Composition
+          </a> guide for more details.
+        </>
+      ),
+    },
+  ]}
+/>
+
+### Scrollbar
+
+The vertical scrollbar. Add a second `Scrollbar` with an `orientation` prop to enable horizontal scrolling.
+
+<PropsTable
+  data={[
+    {
+      name: "asChild",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: (
+        <>
+          Change the default rendered element for the one passed as a child,
+          merging their props and behavior.
+          <br />
+          <br />
+          Read Radix UI <a href="https://www.radix-ui.com/primitives/docs/guides/composition">
+            Composition
+          </a> guide for more details.
+        </>
+      ),
+    },
+    {
+      name: "forceMount",
+      typeSimple: "boolean",
+      description: (
+        <span>
+          Used to force mounting when more control is needed. Useful when
+          controlling animation with React animation libraries.
+        </span>
+      ),
+    },
+    {
+      name: "orientation",
+      required: false,
+      type: '"horizontal" | "vertical"',
+      typeSimple: "enum",
+      default: "vertical",
+      description: "The orientation of the scrollbar",
+    },
+  ]}
+/>

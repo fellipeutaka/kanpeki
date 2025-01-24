@@ -4,7 +4,7 @@ import { OpenSourceSection } from "./_components/open-source-section";
 
 export default function Page() {
   return (
-    <main className="container pt-20 md:pt-40 [&>*:not(:first-child)]:my-24 lg:[&>*:not(:first-child)]:mt-44">
+    <main className="container pt-20 *:not-first:my-24 md:pt-40 lg:*:not-first:mt-44">
       <HeroSection />
       <FeatureSection />
       <OpenSourceSection />

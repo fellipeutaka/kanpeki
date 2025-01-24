@@ -1,27 +1,29 @@
 ---
 title: Label
 description: Renders an accessible label associated with controls.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/useLabel.html
 ---
 
-<ComponentPreview name="label-demo" />
+<ComponentPreview name="checkbox-demo" />
 
 ## Installation
 
-<TabsRoot defaultValue="cli">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add label
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
 
@@ -33,9 +35,9 @@ npx kanpeki-ui@latest add label
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 

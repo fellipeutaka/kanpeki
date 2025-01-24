@@ -1,5 +1,5 @@
-import { Icons } from "@kanpeki/ui/icons";
 import { Suspense } from "react";
+import { Icons } from "~/components/ui/icons";
 import { siteConfig } from "~/config/site";
 
 export function OpenSourceSection() {
@@ -7,11 +7,11 @@ export function OpenSourceSection() {
     <section className="space-y-4 text-center">
       <h2 className="mx-auto max-w-2xl font-bold text-3xl tracking-tighter lg:text-5xl">
         Proudly{" "}
-        <span className="bg-gradient-to-br from-primary to-[hsl(24,93%,58%)] bg-clip-text text-transparent">
+        <span className="bg-linear-to-br from-primary to-[hsl(24,93%,58%)] bg-clip-text text-transparent">
           open-source
         </span>
       </h2>
-      <p className="mx-auto max-w-2xl text-balance text-lg text-muted-foreground">
+      <p className="mx-auto max-w-2xl text-balance text-lg text-muted-fg">
         Our source code is available on GitHub - feel free to read, review, or
         contribute to it however you want!
       </p>

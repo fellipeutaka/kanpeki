@@ -2,36 +2,30 @@
 title: Switch
 description: A control that allows the user to toggle between on and off.
 links:
-  docs: https://react-spectrum.adobe.com/react-aria/useSwitch.html
+  docs: https://react-spectrum.adobe.com/react-aria/Switch.html
 ---
 
 <ComponentPreview name="switch-demo" />
 
 ## Installation
 
-<TabsRoot defaultValue="manual">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add switch
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
-
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install @react-aria/switch @react-stately/toggle
-```
 
 <Step>Copy and paste the following code into your project.</Step>
 
@@ -41,9 +35,9 @@ npm install @react-aria/switch @react-stately/toggle
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -55,18 +49,53 @@ import { Switch } from "~/components/ui/switch";
 
 ```tsx
 <Switch.Root>
-  <Switch.Thumb />
+  <Switch.Track>
+    <Switch.Thumb />
+  </Switch.Track>
 </Switch.Root>
 ```
 
 ### Multiple imports
 
 ```tsx
-import { SwitchRoot, SwitchThumb } from "~/components/ui/switch";
+import { SwitchRoot, SwitchTrack, SwitchThumb } from "~/components/ui/switch";
 ```
 
 ```tsx
 <SwitchRoot>
-  <SwitchThumb />
+  <SwitchTrack>
+    <SwitchThumb />
+  </SwitchTrack>
 </SwitchRoot>
 ```
+
+## API Reference
+
+### Root
+
+<PropsTable
+  data={[
+    {
+      name: "defaultSelected",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether the Switch should be selected (uncontrolled).",
+    },
+    {
+      name: "isSelected",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether the Switch should be selected (controlled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "((isSelected: boolean) => void)",
+      description:
+        "Handler that is called when the Switch's selection state changes.",
+    },
+  ]}
+/>

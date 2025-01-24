@@ -1,11 +1,11 @@
+import type { NpmCommands } from "~/@types/unist";
+import { cn } from "~/lib/cva";
 import {
   ScrollAreaRoot,
   ScrollAreaScrollbar,
   ScrollAreaThumb,
   ScrollAreaViewport,
-} from "@kanpeki/ui/scroll-area";
-import { cn } from "@kanpeki/utils/cn";
-import type { NpmCommands } from "~/@types/unist";
+} from "../ui/scroll-area";
 import {
   CopyButton,
   type CopyButtonProps,
@@ -50,23 +50,30 @@ export function Pre({
         className="absolute top-2.5 right-4 z-10 max-sm:group-has-[[data-state=visible]]:opacity-0"
       />
 
-      <ScrollAreaViewport className="max-h-[40rem]">
+      <ScrollAreaViewport className="group-data-[state=closed]/collapsible:!overflow-hidden max-h-[40rem]">
         <pre className={cn("py-4", className)} {...props} tabIndex={-1} />
       </ScrollAreaViewport>
-      <ScrollAreaScrollbar orientation="vertical">
+      <ScrollAreaScrollbar
+        className="group-data-[state=closed]/collapsible:hidden"
+        orientation="vertical"
+      >
         <ScrollAreaThumb />
       </ScrollAreaScrollbar>
-      <ScrollAreaScrollbar orientation="horizontal">
+      <ScrollAreaScrollbar
+        className="group-data-[state=closed]/collapsible:hidden"
+        orientation="horizontal"
+      >
         <ScrollAreaThumb />
       </ScrollAreaScrollbar>
     </ScrollAreaRoot>
   );
 }
 
-type CopyBtnProps = CopyButtonProps &
-  Omit<CopyNpmButtonProps, "commands"> & {
-    commands: Required<NpmCommands> | null;
-  };
+interface CopyBtnProps
+  extends CopyButtonProps,
+    Omit<CopyNpmButtonProps, "commands"> {
+  commands: Required<NpmCommands> | null;
+}
 
 function CopyBtn({ commands, text, ...props }: CopyBtnProps) {
   if (!(text || commands)) {

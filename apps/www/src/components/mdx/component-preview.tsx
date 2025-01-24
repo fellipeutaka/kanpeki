@@ -1,59 +1,57 @@
-"use client";
-
-import { Icons } from "@kanpeki/ui/icons";
-import { Suspense } from "react";
-import { type RegistryDemo, RegistryDemos } from "~/registry/demos";
+import { Suspense, lazy } from "react";
+import { Spinner } from "../ui/spinner/spinner";
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "../ui/tabs";
 import { CopyButton } from "./copy-button";
-import { Tabs } from "./tabs";
 
-interface ComponentPreviewProps {
-  name: RegistryDemo;
-  children: React.ReactElement;
+interface ComponentPreviewChildren {
+  "data-rehype-pretty-code-figure"?: string;
+  children?: React.ReactElement<{
+    children?: React.ReactElement<{ text: string }>[];
+  }>;
 }
 
-function getCodeString(children: React.ReactElement) {
+interface ComponentPreviewProps {
+  name: string;
+  children: React.ReactElement<ComponentPreviewChildren>;
+}
+
+function getCodeString(children: React.ReactElement<ComponentPreviewChildren>) {
   if (typeof children.props["data-rehype-pretty-code-figure"] === "string") {
-    return (
-      (children.props?.children?.props?.children[0]?.props?.text as string) ||
-      ""
-    );
+    return children.props?.children?.props.children?.[0]?.props.text ?? "";
   }
 
   return "";
 }
 
 export function ComponentPreview({ children, name }: ComponentPreviewProps) {
-  const Preview = RegistryDemos[name].component;
+  const Preview = lazy(() => import(`~/demos/${name}`));
 
   return (
-    <Tabs.Root defaultValue="preview">
-      <Tabs.List className="mb-3">
-        <Tabs.Trigger value="preview">Preview</Tabs.Trigger>
-        <Tabs.Trigger value="code">Code</Tabs.Trigger>
-      </Tabs.List>
-      <Tabs.Content
-        value="preview"
-        className="group rounded-md border"
-        tabIndex={-1}
-      >
-        <CopyButton
-          className="m-4 ml-auto flex"
-          text={getCodeString(children)}
-        />
-        <div className="grid min-h-80 w-full place-items-center p-10">
-          <Suspense
-            fallback={
-              <div className="grid place-items-center text-muted-foreground text-sm">
-                <Icons.Loader className="mr-2 size-4 animate-spin" />
-                Loading...
-              </div>
-            }
-          >
-            <Preview />
-          </Suspense>
+    <TabsRoot className="mt-6" variant="underline" defaultSelectedKey="preview">
+      <TabsList className="mb-3 data-[orientation=horizontal]:gap-x-0">
+        <TabsTrigger id="preview" className="px-4">
+          Preview
+        </TabsTrigger>
+        <TabsTrigger id="code" className="px-4">
+          Code
+        </TabsTrigger>
+      </TabsList>
+      <TabsContent id="preview">
+        <div className="group rounded-md border">
+          <CopyButton
+            className="m-4 ml-auto flex"
+            text={getCodeString(children)}
+          />
+          <div className="grid min-h-80 w-full max-w-full place-items-center p-10">
+            <Suspense fallback={<Spinner className="size-5" />}>
+              <Preview />
+            </Suspense>
+          </div>
         </div>
-      </Tabs.Content>
-      <Tabs.Content value="code">{children}</Tabs.Content>
-    </Tabs.Root>
+      </TabsContent>
+      <TabsContent id="code" className="**:data-rehype-pretty-code-figure:mt-0">
+        {children}
+      </TabsContent>
+    </TabsRoot>
   );
 }

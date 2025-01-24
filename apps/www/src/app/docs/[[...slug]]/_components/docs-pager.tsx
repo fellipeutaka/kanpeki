@@ -1,7 +1,7 @@
-import type { Docs as Doc } from "~:content";
-import { Icons } from "@kanpeki/ui/icons";
-import { LinkButton } from "@kanpeki/ui/link-button";
+import { LinkButton } from "~/components/ui/button";
+import { Icons } from "~/components/ui/icons";
 import { type SidebarNavItem, docsConfig } from "~/config/docs";
+import type { Doc } from "~/utils/mdx";
 
 function getPagerForDoc(doc: Doc) {
   const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null];

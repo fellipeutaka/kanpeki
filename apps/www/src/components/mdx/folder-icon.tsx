@@ -1,5 +1,5 @@
-import { type IconProps, Icons } from "@kanpeki/ui/icons";
-import { cn } from "@kanpeki/utils/cn";
+import { cn } from "~/lib/cva";
+import { type IconProps, Icons } from "../ui/icons";
 
 const folderNameMap = new Map([
   ["src", [Icons.SrcFolder, Icons.SrcFolderOpen]],

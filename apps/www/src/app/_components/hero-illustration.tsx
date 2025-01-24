@@ -1,7 +1,5 @@
-"use client";
-
-import AvatarGroupDemo from "@kanpeki/demos/avatar-group";
-import CardDemo from "@kanpeki/demos/card-demo";
+import AvatarGroupDemo from "~/demos/avatar-group";
+import CardDemo from "~/demos/card-demo";
 
 export function HeroIllustration() {
   return (

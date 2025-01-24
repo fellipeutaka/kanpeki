@@ -3,25 +3,33 @@ title: Badge
 description: Displays a badge or a component that looks like a badge.
 ---
 
+<Alert.Root variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Title>Under Construction</Alert.Title>
+  <Alert.Description>
+    This component is currently being built. Check back soon for updates!
+  </Alert.Description>
+</Alert.Root>
+
 <ComponentPreview name="badge-demo" />
 
 ## Installation
 
-<TabsRoot defaultValue="manual">
+<TabRoot>
 
-<TabsList>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
-  <TabsTrigger value="cli" disabled>CLI</TabsTrigger>
-</TabsList>
-<TabsContent value="cli">
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
 
 ```bash
 npx kanpeki-ui@latest add badge
 ```
 
-</TabsContent>
+</TabContent>
 
-<TabsContent value="manual">
+<TabContent id="manual">
 
 <Steps>
 
@@ -33,9 +41,9 @@ npx kanpeki-ui@latest add badge
 
 </Steps>
 
-</TabsContent>
+</TabContent>
 
-</TabsRoot>
+</TabRoot>
 
 ## Usage
 
@@ -79,13 +87,21 @@ import { BadgeStyles } from "~/components/ui/badge";
 
 ---
 
-### Destructive
+### Danger
 
-<ComponentPreview name="badge-destructive" />
+<ComponentPreview name="badge-danger" />
 
 ## API Reference
 
-| Prop          | Type                                                          | Default          | Description                                                                                            |
-| ------------- | ------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------ |
-| `variant`     | `"default" \| "secondary" \| "outline" \| "destructive"{:ts}` | `"default"{:ts}` | The visual style of the badge.                                                                         |
-| `nativeFocus` | `true \| false{:ts}`                                          | `true{:ts}`      | Use CSS native `:focus{:css}` or `[data-focused="true"]{:css}` to show the ring when badge is focused. |
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "secondary" | "outline" | "danger"',
+      default: '"default"',
+      description: "The visual style of the badge.",
+    },
+  ]}
+/>

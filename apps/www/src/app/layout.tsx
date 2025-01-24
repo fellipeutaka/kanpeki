@@ -1,12 +1,11 @@
-import { cn } from "@kanpeki/utils/cn";
+import "~/styles/globals.css";
+
 import type { Metadata, Viewport } from "next";
 import { Providers } from "~/components/providers";
 import { SiteFooter } from "~/components/site-footer";
 import { SiteHeader } from "~/components/site-header";
 import { fonts } from "~/config/fonts";
 import { siteConfig } from "~/config/site";
-
-import "~/styles/globals.css";
 
 export const metadata: Metadata = {
   title: {
@@ -68,14 +67,12 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "relative grid min-h-dvh grid-rows-[auto,1fr,auto] bg-background font-sans text-foreground antialiased",
-          fonts.sans.variable,
-          fonts.mono.variable
-        )}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${fonts.sans.variable} ${fonts.mono.variable}`}
+    >
+      <body className="relative grid min-h-dvh grid-rows-[auto_1fr_auto] bg-bg font-sans text-fg antialiased">
         <Providers>
           <SiteHeader />
           {children}

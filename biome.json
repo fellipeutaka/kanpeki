@@ -17,13 +17,13 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true,
+      "recommended": true,
       "nursery": {
         "useSortedClasses": {
           "fix": "safe",
           "level": "error",
           "options": {
-            "functions": ["clsx", "twMerge", "cn", "tv"]
+            "functions": ["cva", "cn", "cx"]
           }
         }
       },
@@ -36,7 +36,11 @@
         "noNodejsModules": "off",
         "noUnusedVariables": "error",
         "noUndeclaredDependencies": "off",
-        "useImportExtensions": "off"
+        "useImportExtensions": "off",
+        "noUnusedLabels": "error",
+        "noUnusedImports": "error",
+        "noUnusedFunctionParameters": "error",
+        "noUnusedPrivateClassMembers": "error"
       },
       "suspicious": {
         "noReactSpecificProps": "off",
@@ -62,7 +66,7 @@
         "apps/www/src/app/**/robots.ts",
         "apps/www/src/app/**/sitemap.ts",
 
-        "packages/components/demos/src/*.tsx",
+        "apps/www/src/demos/*.tsx",
         "**/*.config.ts",
         "**/*.config.js"
       ],
