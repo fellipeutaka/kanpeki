@@ -6,7 +6,10 @@ import { Icons } from "./ui/icons";
 import { Link } from "./ui/link/link";
 import { Separator } from "./ui/separator";
 
-const footerLinks = [
+const footerLinks: {
+  title: string;
+  links: NavItem[];
+}[] = [
   {
     title: "Useful Links",
     links: docsConfig.mainNav,
@@ -28,10 +31,7 @@ const footerLinks = [
       },
     ],
   },
-] as const satisfies {
-  title: string;
-  links: NavItem[];
-}[];
+];
 
 export function SiteFooter() {
   return (
@@ -80,13 +80,16 @@ export function SiteFooter() {
               <p className="font-bold">{group.title}</p>
               <div className="flex flex-col gap-2">
                 {group.links.map((item) => (
-                  <a
+                  <Link
                     key={item.href}
                     href={item.href}
-                    className="text-muted-fg text-sm underline decoration-transparent transition duration-200 hover:decoration-current"
+                    isDisabled={item.disabled}
+                    className={
+                      "text-muted-fg text-sm underline decoration-transparent transition duration-200 data-disabled:cursor-not-allowed not-[data-[disabled=true]]:data-hovered:decoration-current data-disabled:opacity-50"
+                    }
                   >
                     {item.title}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
