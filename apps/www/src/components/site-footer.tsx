@@ -84,9 +84,8 @@ export function SiteFooter() {
                     key={item.href}
                     href={item.href}
                     isDisabled={item.disabled}
-                    variant="default"
                     className={
-                      item.disabled ? "text-sm" : "text-sm hover:underline"
+                      "text-muted-fg text-sm underline decoration-transparent transition duration-200 data-disabled:cursor-not-allowed not-[data-[disabled=true]]:data-hovered:decoration-current data-disabled:opacity-50"
                     }
                   >
                     {item.title}
