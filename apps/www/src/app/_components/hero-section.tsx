@@ -17,7 +17,7 @@ export function HeroSection() {
         >
           <Icons.Sparkles className="mr-2 size-4 text-primary" />
           Star us on GitHub
-          <Icons.ChevronRight className="ml-2 size-4 transition group-data-hovered:translate-x-0.5" />
+          <Icons.ChevronRight className="ml-2 size-4 transition group-hover:translate-x-0.5" />
         </LinkButton>
         <h1 className="max-w-xl text-balance font-bold font-display text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl">
           Elevate Your Design to{" "}

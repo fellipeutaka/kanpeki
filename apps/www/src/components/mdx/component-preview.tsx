@@ -28,7 +28,7 @@ export function ComponentPreview({ children, name }: ComponentPreviewProps) {
 
   return (
     <TabsRoot className="mt-6" variant="underline" defaultSelectedKey="preview">
-      <TabsList className="mb-3 data-[orientation=horizontal]:gap-x-0">
+      <TabsList className="mb-3 orientation-horizontal:gap-x-0">
         <TabsTrigger id="preview" className="px-4">
           Preview
         </TabsTrigger>

@@ -131,7 +131,7 @@ export const mdxComponents = {
   TabList: ({ className, ...props }: TabsListProps<object>) => (
     <TabsList
       {...props}
-      className={cn("data-[orientation=horizontal]:gap-x-0", className)}
+      className={cn("orientation-horizontal:gap-x-0", className)}
     />
   ),
   TabTrigger: ({ className, ...props }: TabsTriggerProps) => (

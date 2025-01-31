@@ -132,6 +132,9 @@ importers:
       tailwindcss-motion:
         specifier: ^1.0.1
         version: 1.0.1(tailwindcss@4.0.0)
+      tailwindcss-react-aria-components:
+        specifier: nightly
+        version: 3.0.0-nightly-016590a4a-250131(tailwindcss@4.0.0)
       unist-builder:
         specifier: ^4.0.0
         version: 4.0.0
@@ -3958,6 +3961,11 @@ packages:
     resolution: {integrity: sha512-ZqarvI3XSclT46Dq1wOo9qG9Yx0TIyEtkMfTo8l0JuVKvO1WiSbvAECuTqdYHpC9Ml7abuJIk7u907SBHYprwQ==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
+
+  tailwindcss-react-aria-components@3.0.0-nightly-016590a4a-250131:
+    resolution: {integrity: sha512-dhfg0SXwLs6N2DNskNFtWzgSyuTwEUCFcVyzR5VSWUmJZ+lbkppZGSOs1OjBRyriyuOVAkKU5ZHeEmk8Fsv8Og==}
+    peerDependencies:
+      tailwindcss: ^4.0.0
 
   tailwindcss@4.0.0:
     resolution: {integrity: sha512-ULRPI3A+e39T7pSaf1xoi58AqqJxVCLg8F/uM5A3FadUbnyDTgltVnXJvdkTjwCOGA6NazqHVcwPJC5h2vRYVQ==}
@@ -8749,6 +8757,10 @@ snapshots:
   tailwind-merge@2.6.0: {}
 
   tailwindcss-motion@1.0.1(tailwindcss@4.0.0):
+    dependencies:
+      tailwindcss: 4.0.0
+
+  tailwindcss-react-aria-components@3.0.0-nightly-016590a4a-250131(tailwindcss@4.0.0):
     dependencies:
       tailwindcss: 4.0.0
 

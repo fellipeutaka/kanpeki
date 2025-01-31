@@ -3,51 +3,51 @@ import { cva } from "~/lib/cva";
 export const ButtonStyles = cva({
   base: [
     "inline-flex cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-md font-medium text-sm outline-hidden ring-offset-2 ring-offset-bg transition",
-    "data-focus-visible:ring-1",
+    "focus-visible:ring-1",
     "disabled:cursor-not-allowed disabled:opacity-50",
-    "data-pressed:scale-95",
+    "pressed:scale-95",
   ],
 
   variants: {
     variant: {
       default: [
         "bg-primary text-primary-fg shadow-sm",
-        "data-hovered:bg-primary/90",
-        "data-focus-visible:ring-primary",
+        "hover:bg-primary/90",
+        "focus-visible:ring-primary",
       ],
       success: [
         "bg-success text-success-fg shadow-xs",
-        "data-hovered:bg-success/90",
-        "data-focus-visible:ring-success",
+        "hover:bg-success/90",
+        "focus-visible:ring-success",
       ],
       warning: [
         "bg-warning text-warning-fg shadow-xs",
-        "data-hovered:bg-warning/90",
-        "data-focus-visible:ring-warning",
+        "hover:bg-warning/90",
+        "focus-visible:ring-warning",
       ],
       danger: [
         "bg-danger text-danger-fg shadow-xs",
-        "data-hovered:bg-danger/90",
-        "data-focus-visible:ring-danger",
+        "hover:bg-danger/90",
+        "focus-visible:ring-danger",
       ],
       outline: [
         "border border-input bg-bg shadow-xs",
-        "data-hovered:bg-accent data-hovered:text-accent-fg",
-        "data-focus-visible:ring-accent",
+        "hover:bg-accent hover:text-accent-fg",
+        "focus-visible:ring-accent",
       ],
       secondary: [
         "bg-secondary text-secondary-fg shadow-xs",
-        "data-hovered:bg-secondary/80",
-        "data-focus-visible:ring-secondary",
+        "hover:bg-secondary/80",
+        "focus-visible:ring-secondary",
       ],
       ghost: [
-        "data-hovered:bg-accent data-hovered:text-accent-fg",
-        "data-focus-visible:ring-accent",
+        "hover:bg-accent hover:text-accent-fg",
+        "focus-visible:ring-accent",
       ],
       link: [
         "text-primary underline-offset-4",
-        "data-hovered:underline",
-        "data-focus-visible:ring-ring",
+        "hover:underline",
+        "focus-visible:ring-ring",
       ],
       unset: null,
     },

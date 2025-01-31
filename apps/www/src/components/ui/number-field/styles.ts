@@ -12,7 +12,7 @@ export const NumberFieldStyles = {
   StepperButton: cva({
     base: [
       "cursor-default px-2 text-muted-fg",
-      "data-pressed:bg-primary data-pressed:text-primary-fg",
+      "pressed:bg-primary pressed:text-primary-fg",
       "group-disabled:bg-secondary",
     ],
   }),
