@@ -73,6 +73,14 @@ export function HeroSection() {
           >
             <Icons.RadixUI className="size-10" />
           </a>
+          <a
+            href="https://motion.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Motion"
+          >
+            <Icons.Motion className="size-10" />
+          </a>
         </div>
       </div>
       <div className="hidden px-10 lg:block xl:px-20">
