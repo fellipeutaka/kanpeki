@@ -11,12 +11,12 @@ export const AccordionStyles = {
   }),
   TriggerIcon: cva({
     base: [
-      "size-4 shrink-0 text-muted-fg transition-transform duration-200 group-data-[expanded=true]:rotate-180",
+      "size-4 shrink-0 text-muted-fg transition-transform duration-200 group-expanded:rotate-180",
     ],
   }),
   Content: cva({
     base: [
-      "grid grid-rows-0 overflow-hidden text-sm transition-all duration-500 group-data-[expanded=true]:grid-rows-1",
+      "grid grid-rows-0 overflow-hidden text-sm transition-all duration-500 group-expanded:grid-rows-1",
     ],
   }),
 };

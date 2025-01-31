@@ -1,0 +1,119 @@
+---
+title: Toast
+description: A succinct message that is displayed temporarily.
+links:
+  docs: https://sonner.emilkowal.ski
+---
+
+<ComponentPreview name="toast-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add toast
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="toast" />
+
+<Step>Add the Toaster component</Step>
+
+```tsx title="src/app/providers.tsx" {6,32}
+"use client";
+
+import { ThemeProvider } from "next-themes";
+import { useRouter } from "next/navigation";
+import { RouterProvider } from "react-aria-components";
+import { Toaster } from "./ui/toast";
+
+declare module "react-aria-components" {
+  interface RouterConfig {
+    routerOptions: NonNullable<
+      Parameters<ReturnType<typeof useRouter>["push"]>[1]
+    >;
+  }
+}
+
+interface ProvidersProps {
+  children: React.ReactNode;
+}
+
+export function Providers({ children }: ProvidersProps) {
+  const router = useRouter();
+
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <RouterProvider navigate={router.push}>
+        {children}
+        <Toaster />
+      </RouterProvider>
+    </ThemeProvider>
+  );
+}
+```
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+```tsx
+import { toast } from "~/components/ui/toast";
+```
+
+```tsx
+toast("Hello, World!", {
+  description: "This is a toast message.",
+});
+```
+
+## Examples
+
+### Default
+
+<ComponentPreview name="toast-demo" />
+
+---
+
+### With Description
+
+<ComponentPreview name="toast-with-description" />
+
+---
+
+### Close Button
+
+<ComponentPreview name="toast-closeable" />
+
+---
+
+### Status
+
+<ComponentPreview name="toast-status" />
+
+### Promise
+
+<ComponentPreview name="toast-promise" />

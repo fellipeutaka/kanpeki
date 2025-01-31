@@ -22,9 +22,9 @@ export const CalendarStyles = {
   Cell: cva({
     base: [
       "grid size-8 place-content-center whitespace-nowrap rounded-md p-0 text-accent-fg text-sm transition-colors",
-      "data-hover:bg-accent data-hover:text-accent-fg",
-      "data-disabled:cursor-not-allowed data-disabled:opacity-50",
-      "data-selected:bg-primary data-selected:text-primary-fg",
+      "hover:bg-accent hover:text-accent-fg",
+      "disabled:cursor-not-allowed disabled:opacity-50",
+      "selected:bg-primary selected:text-primary-fg",
     ],
     variants: {
       isToday: {

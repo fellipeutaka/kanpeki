@@ -16,7 +16,7 @@ Components are styled using Tailwind CSS. You need to install Tailwind CSS in yo
 Add the following dependencies to your project:
 
 ```bash
-npm install cva@beta tailwind-merge tailwindcss-motion -D
+npm install cva@beta tailwind-merge tailwindcss-motion tailwindcss-react-aria-components@nightly -D
 ```
 
 ## Configure path aliases
@@ -45,11 +45,17 @@ Add the following to your styles/globals.css file. You can learn more about usin
 ```css title="globals.css"
 @import "tailwindcss";
 
+@plugin "tailwindcss-react-aria-components";
 @plugin "tailwindcss-motion";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-sans: var(--font-family-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-family-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
   --color-bg: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
   --color-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
 
@@ -94,30 +100,6 @@ Add the following to your styles/globals.css file. You can learn more about usin
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
-}
-
-@utility heading-1 {
-  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
-}
-
-@utility heading-2 {
-  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
-}
-
-@utility heading-3 {
-  @apply scroll-m-20 text-2xl font-semibold tracking-tight;
-}
-
-@utility heading-4 {
-  @apply scroll-m-20 text-xl font-semibold tracking-tight;
-}
-
-@utility p {
-  @apply leading-7 not-first:mt-6;
-}
-
-@utility blockquote {
-  @apply mt-6 border-l-2 pl-6 italic;
 }
 
 @layer base {

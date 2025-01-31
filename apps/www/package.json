@@ -39,6 +39,7 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.0.0",
     "tailwindcss-motion": "^1.0.1",
+    "tailwindcss-react-aria-components": "nightly",
     "unist-builder": "^4.0.0",
     "unist-util-visit": "^5.0.0",
     "velite": "^0.2.2"

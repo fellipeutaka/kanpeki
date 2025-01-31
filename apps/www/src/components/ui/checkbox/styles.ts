@@ -11,14 +11,14 @@ export const CheckboxStyles = {
     base: [
       "grid size-4 shrink-0 cursor-pointer place-content-center rounded border border-toggle bg-secondary text-bg transition",
 
-      "group-data-selected:border-primary/70 group-data-selected:bg-primary group-data-selected:text-primary-fg",
-      "group-data-selected:group-data-invalid:border-danger/70 group-data-selected:group-data-invalid:bg-danger group-data-selected:group-data-invalid:text-danger-fg",
+      "group-selected:border-primary/70 group-selected:bg-primary group-selected:text-primary-fg",
+      "group-selected:group-invalid:border-danger/70 group-selected:group-invalid:bg-danger group-selected:group-invalid:text-danger-fg",
 
-      "group-data-focus-visible:border-primary/70 group-data-focus-visible:ring-4 group-data-focus-visible:ring-primary/20",
-      "group-data-focus-visible:group-data-invalid:border-danger/70 group-data-focus-visible:group-data-invalid:text-danger-fg group-data-focus-visible:group-data-invalid:ring-danger/20",
+      "group-focus-visible:border-primary/70 group-focus-visible:ring-4 group-focus-visible:ring-primary/20",
+      "group-focus-visible:group-invalid:border-danger/70 group-focus-visible:group-invalid:text-danger-fg group-focus-visible:group-invalid:ring-danger/20",
 
-      "group-data-invalid:border-danger/70 group-data-invalid:bg-danger/20 group-data-invalid:text-danger-fg group-data-invalid:ring-danger/20",
-      "group-data-disabled:cursor-not-allowed",
+      "group-invalid:border-danger/70 group-invalid:bg-danger/20 group-invalid:text-danger-fg group-invalid:ring-danger/20",
+      "group-disabled:cursor-not-allowed",
     ],
   }),
   Indicator: cva({

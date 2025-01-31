@@ -4,23 +4,23 @@ export const TabsStyles = {
   Root: cva({
     base: [
       "group flex w-full gap-4",
-      "data-[orientation=horizontal]:flex-col",
-      "data-[orientation=vertical]:flex-row",
+      "orientation-horizontal:flex-col",
+      "orientation-vertical:flex-row",
     ],
   }),
   List: cva({
     base: [
       "flex",
-      "data-[orientation=horizontal]:flex-row",
-      "data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:gap-y-4 data-[orientation=vertical]:border-l",
+      "orientation-horizontal:flex-row",
+      "orientation-vertical:flex-col orientation-vertical:items-start orientation-vertical:gap-y-4 orientation-vertical:border-l",
     ],
     variants: {
       variant: {
         default: [
-          "items-center justify-center rounded-lg bg-muted p-1 text-muted-fg data-[orientation=horizontal]:h-9",
+          "orientation-horizontal:h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-fg",
         ],
         underline: [
-          "data-[orientation=horizontal]:gap-x-5 data-[orientation=horizontal]:border-border data-[orientation=horizontal]:border-b",
+          "orientation-horizontal:gap-x-5 orientation-horizontal:border-border orientation-horizontal:border-b",
         ],
       },
     },
@@ -41,8 +41,8 @@ export const TabsStyles = {
         ],
         underline: [
           "rounded-full hover:text-fg",
-          "group-data-[orientation=vertical]:w-full group-data-[orientation=vertical]:py-0 group-data-[orientation=vertical]:pr-2 group-data-[orientation=vertical]:pl-4",
-          "group-data-[orientation=horizontal]:pb-3",
+          "group-orientation-vertical:w-full group-orientation-vertical:py-0 group-orientation-vertical:pr-2 group-orientation-vertical:pl-4",
+          "group-orientation-horizontal:pb-3",
 
           "selected:text-fg text-muted-fg",
           "ring-0 focus:text-fg",
@@ -61,8 +61,8 @@ export const TabsStyles = {
         default: ["inset-0 z-10 rounded-md bg-bg text-fg mix-blend-difference"],
         underline: [
           "rounded bg-primary",
-          "group-data-[orientation=horizontal]:-bottom-px group-data-[orientation=horizontal]:inset-x-0 group-data-[orientation=horizontal]:h-0.5 group-data-[orientation=horizontal]:w-full",
-          "group-data-[orientation=vertical]:top-0 group-data-[orientation=vertical]:left-0 group-data-[orientation=vertical]:h-full group-data-[orientation=vertical]:w-0.5 group-data-[orientation=vertical]:transform",
+          "group-orientation-horizontal:-bottom-px group-orientation-horizontal:inset-x-0 group-orientation-horizontal:h-0.5 group-orientation-horizontal:w-full",
+          "group-orientation-vertical:top-0 group-orientation-vertical:left-0 group-orientation-vertical:h-full group-orientation-vertical:w-0.5 group-orientation-vertical:transform",
         ],
       },
     },

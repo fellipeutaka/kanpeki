@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./typography.css";
 
+@plugin "tailwindcss-react-aria-components";
 @plugin "tailwindcss-motion";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -50,6 +51,9 @@
   --color-border: light-dark(oklch(0.89 0.01 262.25), oklch(0.23 0.01 262.25));
   --color-input: light-dark(oklch(0.89 0.01 262.25), oklch(0.23 0.01 262.25));
   --color-ring: var(--color-primary);
+
+  --animate-collapsible-up: collapsible-up 150ms ease-out;
+  --animate-collapsible-down: collapsible-down 150ms ease-out;
 }
 
 @utility container {
@@ -84,5 +88,25 @@
 
   body {
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@keyframes collapsible-up {
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+  to {
+    height: var(--collapsible-closed-height, 0);
+    opacity: var(--collapsible-opacity-target, 0);
+  }
+}
+
+@keyframes collapsible-down {
+  from {
+    height: var(--collapsible-closed-height, 0);
+    opacity: var(--collapsible-opacity-target, 0);
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
   }
 }

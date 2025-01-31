@@ -1,0 +1,151 @@
+---
+title: Tooltip
+description: A tooltip displays a description of an element on hover or focus.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Tooltip.html
+---
+
+<ComponentPreview name="tooltip-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add tooltip
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="tooltip" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { Tooltip } from "~/components/ui/tooltip";
+```
+
+```tsx
+<Tooltip.Root>
+  <Button></Button>
+
+  <Tooltip.Content>
+    <p></p>
+
+    <Tooltip.Arrow />
+  </Tooltip.Content>
+</Tooltip.Root>
+```
+
+### Multiple imports
+
+```tsx
+import { Button } from "~/components/ui/button";
+import {
+  TooltipArrow,
+  TooltipContent,
+  TooltipRoot,
+} from "~/components/ui/tooltip";
+```
+
+```tsx
+<TooltipRoot>
+  <Button></Button>
+  <TooltipContent>
+    <p></p>
+
+    <TooltipArrow />
+  </TooltipContent>
+</TooltipRoot>
+```
+
+## Examples
+
+### With Arrow
+
+<ComponentPreview name="tooltip-with-arrow" />
+
+## API Reference
+
+### Root
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: true,
+      typeSimple: "ReactNode",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description:
+        "Whether the tooltip should be disabled, independent from the trigger.",
+    },
+    {
+      name: "delay",
+      required: false,
+      typeSimple: "number",
+      default: "1500",
+      description: "The delay time for the tooltip to show up.",
+    },
+    {
+      name: "closeDelay",
+      required: false,
+      typeSimple: "number",
+      default: "500",
+      description: "The delay time for the tooltip to close.",
+    },
+    {
+      name: "trigger",
+      required: false,
+      typeSimple: "'focus'",
+      description:
+        "By default, opens for both focus and hover. Can be made to open only for focus.",
+    },
+    {
+      name: "isOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the overlay is open by default (controlled).",
+    },
+    {
+      name: "defaultOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the overlay is open by default (uncontrolled).",
+    },
+    {
+      name: "onOpenChange",
+      required: false,
+      typeSimple: "function",
+      type: "((isOpen: boolean) => void)",
+      description:
+        "Handler that is called when the overlay's open state changes.",
+    },
+  ]}
+/>
