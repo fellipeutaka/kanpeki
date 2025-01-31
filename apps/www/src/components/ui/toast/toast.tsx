@@ -1,5 +1,3 @@
-"use client";
-
 import { Toaster as ToasterPrimitive } from "sonner";
 
 export interface ToasterProps
@@ -14,11 +12,10 @@ export function Toaster(props: ToasterProps) {
           toast:
             "flex items-center w-(--width) h-(--front-toast-height) gap-1.5 bg-bg text-fg border shadow-lg p-4 rounded-xl text-sm font-sans",
           description: "text-muted-fg",
+          closeButton: "bg-bg! text-fg! !border-border",
         },
       }}
       {...props}
     />
   );
 }
-
-export { toast } from "sonner";

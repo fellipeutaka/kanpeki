@@ -244,8 +244,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Toast",
           href: "/docs/components/toast",
-          disabled: true,
-          label: "Soon",
         },
         {
           title: "Toggle",
