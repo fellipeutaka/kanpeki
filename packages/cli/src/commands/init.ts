@@ -27,16 +27,19 @@ import {
   getConfig,
   resolveConfigPaths,
 } from "~/utils/get-config";
-import { getPkgManager } from "~/utils/get-pkg-manager";
+import { getPackageManager } from "~/utils/get-package-manager";
 import { getProjectConfig, preFlight } from "~/utils/get-project-info";
 import { handleError } from "~/utils/handle-error";
 import { installDeps } from "~/utils/install-deps";
 import { logger } from "~/utils/logger";
 
-const PROJECT_DEPENDENCIES = [
-  "clsx",
-  "tailwind-variants",
-  "tailwindcss-animate",
+const PROJECT_DEPENDENCIES: string[] = [];
+
+const PROJECT_DEV_DEPENDENCIES: string[] = [
+  "cva@beta",
+  "tailwind-merge",
+  "tailwindcss-motion",
+  "tailwindcss-react-aria-components@nightly",
 ];
 
 interface InitOptions {
@@ -230,14 +233,19 @@ async function runInit(cwd: string, config: ConfigWithResolvedPaths) {
 
   s.stop("Project initialized.");
 
-  const packageManager = getPkgManager();
+  const packageManager = await getPackageManager(cwd);
 
   const dependenciesSpinner = spinner();
   dependenciesSpinner.start(
     `Installing dependencies with ${packageManager}...`
   );
 
-  await installDeps(packageManager, cwd, PROJECT_DEPENDENCIES, ["-D"]);
+  await installDeps({
+    cwd,
+    packageManager,
+    dependencies: PROJECT_DEPENDENCIES,
+    devDependencies: PROJECT_DEV_DEPENDENCIES,
+  });
 
   dependenciesSpinner.stop("Dependencies installed.");
 }

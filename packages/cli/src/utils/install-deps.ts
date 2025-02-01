@@ -1,45 +1,56 @@
-import { spawn } from "cross-spawn";
-import picocolors from "picocolors";
-import { getIsOnline } from "./get-is-online";
-import type { PackageManager } from "./get-pkg-manager";
+import spawn from "nano-spawn";
+import type { PackageManager } from "./get-package-manager";
 
-export async function installDeps(
-  packageManager: PackageManager,
-  cwd: string,
-  deps: string[] = [],
-  flags: string[] = []
-) {
-  const useYarn = packageManager === "yarn";
-  const isOnline = !useYarn || (await getIsOnline());
-  const args = ["install", ...deps, ...flags];
-  if (!isOnline) {
-    console.info(
-      picocolors.yellow(
-        "You appear to be offline.\nFalling back to the local cache."
-      )
+type Dependencies = Array<string | null>;
+
+type InstallDepsProps = {
+  packageManager: PackageManager;
+  cwd: string;
+} & (
+  | {
+      dependencies: Dependencies;
+      devDependencies?: Dependencies;
+    }
+  | {
+      dependencies?: Dependencies;
+      devDependencies: Dependencies;
+    }
+  | {
+      dependencies: Dependencies;
+      devDependencies: Dependencies;
+    }
+);
+
+export async function installDeps({
+  packageManager,
+  cwd,
+  dependencies,
+  devDependencies,
+}: InstallDepsProps) {
+  if (dependencies && dependencies.length > 0) {
+    await spawn(
+      packageManager,
+      [
+        packageManager === "npm" ? "install" : "add",
+        ...dependencies.filter((dep) => typeof dep === "string"),
+      ],
+      {
+        cwd,
+      }
     );
-    args.push("--offline");
   }
 
-  return new Promise<void>((resolve, reject) => {
-    const child = spawn(packageManager, args, {
-      stdio: "ignore",
-      cwd,
-      env: {
-        ...process.env,
-        ADBLOCK: "1",
-        // we set NODE_ENV to development as pnpm skips dev
-        // dependencies when production
-        NODE_ENV: "development",
-        DISABLE_OPENCOLLECTIVE: "1",
-      },
-    });
-    child.on("close", (code) => {
-      if (code !== 0) {
-        reject({ command: `${packageManager} ${args.join(" ")}` });
-        return;
+  if (devDependencies && devDependencies.length > 0) {
+    await spawn(
+      packageManager,
+      [
+        packageManager === "npm" ? "install" : "add",
+        ...devDependencies.filter((dep) => typeof dep === "string"),
+        "-D",
+      ],
+      {
+        cwd,
       }
-      resolve();
-    });
-  });
+    );
+  }
 }
