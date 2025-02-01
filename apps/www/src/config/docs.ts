@@ -75,7 +75,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Breadcrumb",
           href: "/docs/components/breadcrumb",
-          label: "New",
         },
         {
           title: "Button",
@@ -212,6 +211,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Skeleton",
           href: "/docs/components/skeleton",
+        },
+        {
+          title: "Spinner",
+          href: "/docs/components/spinner",
+          label: "New",
         },
         {
           title: "Slider",
