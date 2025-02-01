@@ -75,7 +75,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Breadcrumb",
           href: "/docs/components/breadcrumb",
-          label: "New",
         },
         {
           title: "Button",
@@ -159,9 +158,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Hover Card",
-          href: "/docs/components/hover-card",
-          disabled: true,
-          label: "Planned",
+          href: "/docs/components/tooltip#hover-card",
         },
         {
           title: "Label",
@@ -214,6 +211,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Skeleton",
           href: "/docs/components/skeleton",
+        },
+        {
+          title: "Spinner",
+          href: "/docs/components/spinner",
+          label: "New",
         },
         {
           title: "Slider",
