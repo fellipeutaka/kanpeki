@@ -159,9 +159,7 @@ export const docsConfig: DocsConfig = {
         },
         {
           title: "Hover Card",
-          href: "/docs/components/hover-card",
-          disabled: true,
-          label: "Planned",
+          href: "/docs/components/tooltip#hover-card",
         },
         {
           title: "Label",
