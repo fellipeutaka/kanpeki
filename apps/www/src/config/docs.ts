@@ -173,8 +173,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Popover",
           href: "/docs/components/popover",
-          disabled: true,
-          label: "Planned",
+          label: "New",
         },
         {
           title: "Progress",
@@ -215,7 +214,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Spinner",
           href: "/docs/components/spinner",
-          label: "New",
         },
         {
           title: "Slider",

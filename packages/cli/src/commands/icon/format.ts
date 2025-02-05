@@ -1,5 +1,4 @@
-import { createReadStream, createWriteStream, existsSync } from "node:fs";
-import { rename, rm } from "node:fs/promises";
+import fs from "node:fs";
 import path from "node:path";
 import { createInterface } from "node:readline/promises";
 import { Command } from "commander";
@@ -29,7 +28,7 @@ export const format = new Command()
     try {
       const start = performance.now();
 
-      if (!existsSync(options.cwd)) {
+      if (!fs.existsSync(options.cwd)) {
         throw new Error(
           `The path ${options.cwd} does not exist. Please try again.`
         );
@@ -50,19 +49,19 @@ export const format = new Command()
         "ui",
         "icons.tsx"
       );
-      if (!existsSync(iconsFilePath)) {
+      if (!fs.existsSync(iconsFilePath)) {
         throw new Error(
           `The file ${iconsFilePath} does not exist. Please create it first.`
         );
       }
-      const readStream = createReadStream(iconsFilePath, "utf8");
+      const readStream = fs.createReadStream(iconsFilePath, "utf8");
 
       const outputFilePath = path.join(
         config.resolvedPaths.components ?? "",
         "ui",
         "icons.sorted.tsx"
       );
-      const writeStream = createWriteStream(outputFilePath, "utf8");
+      const writeStream = fs.createWriteStream(outputFilePath, "utf8");
 
       const rl = createInterface({
         input: readStream,
@@ -105,8 +104,8 @@ export const format = new Command()
 
       rl.on("close", async () => {
         if (!options.new) {
-          await rm(iconsFilePath);
-          await rename(outputFilePath, iconsFilePath);
+          await fs.promises.rm(iconsFilePath);
+          await fs.promises.rename(outputFilePath, iconsFilePath);
         }
 
         const end = performance.now();

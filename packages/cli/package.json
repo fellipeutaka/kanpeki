@@ -18,7 +18,9 @@
   "main": "./dist/index.js",
   "exports": "./dist/index.js",
   "bin": "./dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
@@ -26,17 +28,17 @@
     "type-check": "tsc --noEmit --incremental false"
   },
   "dependencies": {
-    "@clack/prompts": "^0.7.0",
-    "commander": "^12.1.0",
-    "cross-spawn": "^7.0.3",
-    "fast-glob": "^3.3.2",
-    "picocolors": "^1.1.0",
+    "@antfu/ni": "^23.3.1",
+    "@clack/prompts": "^0.9.1",
+    "commander": "^13.1.0",
+    "fast-glob": "^3.3.3",
+    "nano-spawn": "^0.2.0",
+    "picocolors": "^1.1.1",
     "tsconfig-paths": "^4.2.0",
-    "valibot": "^0.42.1"
+    "valibot": "1.0.0-beta.14"
   },
   "devDependencies": {
     "@kanpeki/tsconfig": "workspace:*",
-    "@types/cross-spawn": "^6.0.6",
-    "tsup": "^8.3.0"
+    "tsup": "^8.3.6"
   }
 }

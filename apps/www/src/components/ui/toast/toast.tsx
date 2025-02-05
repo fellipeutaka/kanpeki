@@ -11,7 +11,7 @@ export function Toaster(props: ToasterProps) {
         classNames: {
           toast:
             "flex items-center w-(--width) h-(--front-toast-height) gap-1.5 bg-bg text-fg border shadow-lg p-4 rounded-xl text-sm font-sans",
-          description: "text-muted-fg",
+          description: "text-muted-fg!",
           closeButton: "bg-bg! text-fg! !border-border",
         },
       }}
