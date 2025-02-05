@@ -60,5 +60,3 @@ export function PopoverArrow({ className, ...props }: PopoverArrowProps) {
     </OverlayArrow>
   );
 }
-
-export const Popover = Object.assign({});

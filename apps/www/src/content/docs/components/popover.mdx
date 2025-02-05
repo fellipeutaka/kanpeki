@@ -1,0 +1,87 @@
+---
+title: Popover
+description: Displays rich content in a portal, triggered by a button.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Popover.html
+---
+
+<ComponentPreview name="popover-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add popover
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="popover" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { Popover } from "~/components/ui/popover";
+```
+
+```tsx
+<Popover.Root>
+  <Button>...</Button>
+
+  <Popover.Content>
+    <Popover.Arrow />
+    ...
+  </Popover.Content>
+</Popover.Root>
+```
+
+### Multiple imports
+
+```tsx
+import { Button } from "~/components/ui/button";
+import {
+  PopoverArrow,
+  PopoverContent,
+  PopoverRoot,
+} from "~/components/ui/popover";
+```
+
+```tsx
+<PopoverRoot>
+  <Button>...</Button>
+  <PopoverContent>
+    <PopoverArrow />
+    ...
+  </PopoverContent>
+</PopoverRoot>
+```
+
+## Examples
+
+### With Arrow
+
+<ComponentPreview name="popover-with-arrow" />
