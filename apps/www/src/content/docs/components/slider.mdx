@@ -1,0 +1,99 @@
+---
+title: Slider
+description: An input where the user selects a value from within a given range.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Slider.html
+---
+
+<ComponentPreview name="slider-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add slider
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="slider" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { Popover } from "~/components/ui/popover";
+```
+
+```tsx
+<Popover.Root>
+  <Button>...</Button>
+
+  <Popover.Content>
+    <Popover.Arrow />
+    ...
+  </Popover.Content>
+</Popover.Root>
+```
+
+### Multiple imports
+
+```tsx
+import { Button } from "~/components/ui/button";
+import {
+  PopoverArrow,
+  PopoverContent,
+  PopoverRoot,
+} from "~/components/ui/popover";
+```
+
+```tsx
+<PopoverRoot>
+  <Button>...</Button>
+  <PopoverContent>
+    <PopoverArrow />
+    ...
+  </PopoverContent>
+</PopoverRoot>
+```
+
+## Examples
+
+### With Label
+
+<ComponentPreview name="slider-with-label" />
+
+### With Tooltip
+
+<ComponentPreview name="slider-with-tooltip" />
+
+<Alert.Root className="mt-6" variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Title>Under Construction</Alert.Title>
+  <Alert.Description>
+    This component is currently being built. Check back soon for updates!
+  </Alert.Description>
+</Alert.Root>
