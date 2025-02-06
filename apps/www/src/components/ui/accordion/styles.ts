@@ -16,7 +16,7 @@ export const AccordionStyles = {
   }),
   Content: cva({
     base: [
-      "grid grid-rows-0 overflow-hidden text-sm transition-all duration-500 group-expanded:grid-rows-1",
+      "overflow-hidden text-sm transition-all transition-discrete [interpolate-size:allow-keywords] group-expanded:h-auto aria-hidden:h-0",
     ],
   }),
 };

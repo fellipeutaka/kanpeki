@@ -23,9 +23,8 @@ export const SliderStyles = {
   }),
   Thumb: cva({
     base: [
-      "z-50 dragging:cursor-grabbing border border-zinc-200 outline-hidden focus:border-primary focus:outline-hidden focus:ring-4 focus:ring-primary/20",
+      "top-1/2 z-50 dragging:cursor-grabbing border border-zinc-200 outline-hidden focus:border-primary focus:outline-hidden focus:ring-4 focus:ring-primary/20",
       "rounded-full bg-white transition-[width,height]",
-      "-translate-x-1/2! -translate-y-1/2! absolute top-1/2 left-1/2 block",
       "disabled:border disabled:border-bg disabled:bg-bg-disabled",
       "orientation-horizontal:h-2 orientation-vertical:w-2",
       "dragging:size-[1.30rem] size-[1.15rem] dragging:border-primary",

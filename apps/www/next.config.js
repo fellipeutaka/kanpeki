@@ -32,7 +32,7 @@ const config = {
       },
       {
         source: "/docs/components",
-        destination: "/docs/components/alert",
+        destination: "/docs/components/accordion",
         permanent: false,
       },
     ];
