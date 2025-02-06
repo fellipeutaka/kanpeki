@@ -44,40 +44,36 @@ npx kanpeki-ui@latest add slider
 ### Single import
 
 ```tsx
-import { Button } from "~/components/ui/button";
-import { Popover } from "~/components/ui/popover";
+import { Slider } from "~/components/ui/slider";
 ```
 
 ```tsx
-<Popover.Root>
-  <Button>...</Button>
-
-  <Popover.Content>
-    <Popover.Arrow />
-    ...
-  </Popover.Content>
-</Popover.Root>
+<Slider.Root>
+  <Slider.Track>
+    <Slider.Filler />
+    <Slider.Thumb />
+  </Slider.Track>
+</Slider.Root>
 ```
 
 ### Multiple imports
 
 ```tsx
-import { Button } from "~/components/ui/button";
 import {
-  PopoverArrow,
-  PopoverContent,
-  PopoverRoot,
-} from "~/components/ui/popover";
+  SliderFiller,
+  SliderRoot,
+  SliderThumb,
+  SliderTrack,
+} from "~/components/ui/slider";
 ```
 
 ```tsx
-<PopoverRoot>
-  <Button>...</Button>
-  <PopoverContent>
-    <PopoverArrow />
-    ...
-  </PopoverContent>
-</PopoverRoot>
+<SliderRoot>
+  <SliderTrack>
+    <SliderFiller />
+    <SliderThumb />
+  </SliderTrack>
+</SliderRoot>
 ```
 
 ## Examples
