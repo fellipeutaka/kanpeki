@@ -3,4 +3,4 @@ export {
   AccordionItem as Item,
   AccordionTrigger as Trigger,
   AccordionContent as Content,
-} from "./accordion-alpha";
+} from "./accordion";

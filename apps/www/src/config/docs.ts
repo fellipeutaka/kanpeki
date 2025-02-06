@@ -57,8 +57,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Accordion",
           href: "/docs/components/accordion",
-          disabled: true,
-          label: "Planned",
+          label: "New",
         },
         {
           title: "Alert",
