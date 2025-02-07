@@ -1,55 +1,39 @@
 "use client";
 
-import { Content, Root, Trigger } from "@radix-ui/react-collapsible";
+import {
+  Button,
+  type ButtonProps,
+  Disclosure,
+  DisclosurePanel,
+} from "react-aria-components";
 import { CollapsibleStyles } from "./styles";
 
-// Add this to your tailwind.config.ts file
-// keyframes: {
-//   "collapsible-up": {
-//     from: {
-//       height: "var(--radix-collapsible-content-height)",
-//     },
-//     to: {
-//       height: "var(--collapsible-closed-height, 0)",
-//       opacity: "var(--collapsible-opacity-target, 0)",
-//     },
-//   },
-//   "collapsible-down": {
-//     from: {
-//       height: "var(--collapsible-closed-height, 0)",
-//       opacity: "var(--collapsible-opacity-target, 0)",
-//     },
-//     to: {
-//       height: "var(--radix-collapsible-content-height)",
-//     },
-//   },
-// },
-// animation: {
-//   "collapsible-up": "collapsible-up 150ms ease-out",
-//   "collapsible-down": "collapsible-down 150ms ease-out",
-// },
-
 export interface CollapsibleRootProps
-  extends React.ComponentProps<typeof Root> {}
-export const CollapsibleRoot = Root;
+  extends React.ComponentProps<typeof Disclosure> {}
+export const CollapsibleRoot = Disclosure;
 
-export interface CollapsibleTriggerProps
-  extends React.ComponentProps<typeof Trigger> {}
-export const CollapsibleTrigger = Trigger;
+export interface CollapsibleTriggerProps extends Omit<ButtonProps, "slot"> {}
+
+export function CollapsibleTrigger(props: CollapsibleTriggerProps) {
+  return <Button {...props} slot="trigger" />;
+}
 
 export interface CollapsibleContentProps
-  extends React.ComponentProps<typeof Content> {}
+  extends React.ComponentProps<typeof DisclosurePanel> {}
 
 export function CollapsibleContent({
   className,
-  forceMount,
   ...props
 }: CollapsibleContentProps) {
   return (
-    <Content
-      forceMount={forceMount}
-      className={CollapsibleStyles.Content({ className, forceMount })}
+    <DisclosurePanel
       {...props}
+      className={(values) =>
+        CollapsibleStyles.Content({
+          className:
+            typeof className === "function" ? className(values) : className,
+        })
+      }
     />
   );
 }

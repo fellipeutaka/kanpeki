@@ -1,0 +1,89 @@
+---
+title: Collapsible
+description: An interactive component which expands/collapses a panel.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Disclosure.html
+---
+
+<ComponentPreview name="collapsible-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add collapsible
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="collapsible" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Collapsible } from "~/components/ui/collapsible";
+```
+
+```tsx
+<Collapsible.Root>
+  <Collapsible.Trigger>Is it accessible?</Collapsible.Trigger>
+  <Collapsible.Content>
+    Yes. It adheres to the WAI-ARIA design pattern.
+  </Collapsible.Content>
+</Collapsible.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  CollapsibleContent,
+  CollapsibleRoot,
+  CollapsibleTrigger,
+} from "~/components/ui/collapsible";
+```
+
+```tsx
+<CollapsibleRoot>
+  <CollapsibleTrigger>Is it accessible?</CollapsibleTrigger>
+  <CollapsibleContent>
+    Yes. It adheres to the WAI-ARIA design pattern.
+  </CollapsibleContent>
+</CollapsibleRoot>
+```
+
+## Animation
+
+<Alert.Root variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Description>
+    The collapsible component uses the `interpolate-size: allow-keywords` CSS
+    property to animate the height of the content. This property is not
+    supported in all browsers. See the [browser
+    compatibility](https://caniuse.com/mdn-css_properties_interpolate-size_allow-keywords)
+    table for more information.
+  </Alert.Description>
+</Alert.Root>

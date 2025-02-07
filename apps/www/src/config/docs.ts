@@ -57,7 +57,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Accordion",
           href: "/docs/components/accordion",
-          label: "New",
         },
         {
           title: "Alert",
@@ -108,8 +107,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Collapsible",
           href: "/docs/components/collapsible",
-          disabled: true,
-          label: "Soon",
+          label: "New",
         },
         {
           title: "Combobox",
@@ -216,7 +214,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Slider",
           href: "/docs/components/slider",
-          label: "New",
         },
         {
           title: "Switch",
