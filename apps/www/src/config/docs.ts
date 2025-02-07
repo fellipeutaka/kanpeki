@@ -81,8 +81,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Calendar",
           href: "/docs/components/calendar",
-          disabled: true,
-          label: "Planned",
+          label: "New",
         },
         {
           title: "Card",

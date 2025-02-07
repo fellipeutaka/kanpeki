@@ -1,0 +1,108 @@
+---
+title: Calendar
+description: A calendar displays one or more date grids and allows users to select a single date.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Calendar.html
+---
+
+<ComponentPreview name="calendar-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add calendar
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="calendar" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { Calendar } from "~/components/ui/calendar";
+```
+
+```tsx
+<Calendar.Root>
+  <Calendar.Header>
+    <Calendar.Nav>
+      <Button slot="previous"></Button>
+      <Calendar.Month />
+      <Button slot="next"></Button>
+    </Calendar.Nav>
+  </Calendar.Header>
+
+  <Calendar.Grid>
+    <Calendar.GridHeader>
+      {(weekDay) => <Calendar.HeaderCell>{weekDay}</Calendar.HeaderCell>}
+    </Calendar.GridHeader>
+    <Calendar.GridBody>
+      {(date) => <Calendar.Cell date={date} />}
+    </Calendar.GridBody>
+  </Calendar.Grid>
+</Calendar.Root>
+```
+
+### Multiple imports
+
+```tsx
+import { Button } from "~/components/ui/button";
+import {
+  CalendarCell,
+  CalendarGrid,
+  CalendarGridBody,
+  CalendarGridHeader,
+  CalendarHeader,
+  CalendarHeaderCell,
+  CalendarMonth,
+  CalendarNav,
+  CalendarRoot,
+} from "~/components/ui/calendar";
+```
+
+```tsx
+<CalendarRoot>
+  <CalendarHeader>
+    <CalendarNav>
+      <Button slot="previous"></Button>
+      <CalendarMonth />
+      <Button slot="next"></Button>
+    </CalendarNav>
+  </CalendarHeader>
+
+  <CalendarGrid>
+    <CalendarGridHeader>
+      {(weekDay) => <CalendarHeaderCell>{weekDay}</CalendarHeaderCell>}
+    </CalendarGridHeader>
+    <CalendarGridBody>
+      {(date) => <CalendarCell date={date} />}
+    </CalendarGridBody>
+  </CalendarGrid>
+</CalendarRoot>
+```

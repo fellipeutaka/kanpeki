@@ -21,23 +21,7 @@ import { RangeCalendarStyles } from "./styles";
 
 export interface RangeCalendarRootProps<T extends DateValue>
   extends React.ComponentProps<typeof RangeCalendarPrimitive<T>> {}
-
-export function RangeCalendarRoot<T extends DateValue>({
-  className,
-  ...props
-}: RangeCalendarRootProps<T>) {
-  return (
-    <RangeCalendarPrimitive
-      {...props}
-      className={(values) =>
-        RangeCalendarStyles.Root({
-          className:
-            typeof className === "function" ? className(values) : className,
-        })
-      }
-    />
-  );
-}
+export const RangeCalendarRoot = RangeCalendarPrimitive;
 
 export interface RangeCalendarHeaderProps extends CalendarHeaderProps {}
 export const RangeCalendarHeader = Calendar.Header;
