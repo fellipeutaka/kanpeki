@@ -2,7 +2,7 @@
   "name": "kanpeki",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@10.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/fellipeutaka/kanpeki.git"
@@ -19,10 +19,10 @@
     "@biomejs/biome": "^1.9.4",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.12",
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@commitlint/cz-commitlint": "^19.6.1",
-    "@types/node": "^20.17.16",
+    "@types/node": "^20.17.17",
     "commitizen": "^4.3.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
