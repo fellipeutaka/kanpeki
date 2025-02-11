@@ -81,7 +81,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Calendar",
           href: "/docs/components/calendar",
-          label: "New",
         },
         {
           title: "Card",
@@ -106,7 +105,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Collapsible",
           href: "/docs/components/collapsible",
-          label: "New",
         },
         {
           title: "Combobox",
@@ -241,8 +239,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Toggle",
           href: "/docs/components/toggle",
-          disabled: true,
-          label: "Planned",
+          label: "New",
         },
         {
           title: "Toggle Group",

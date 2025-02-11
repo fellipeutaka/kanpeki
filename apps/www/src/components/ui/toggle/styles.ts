@@ -1,8 +1,8 @@
 import { cva } from "~/lib/cva";
 
-export const ToggleButtonStyles = cva({
+export const ToggleStyles = cva({
   base: [
-    "inline-flex items-center justify-center gap-2 rounded-md font-medium text-sm outline-hidden ring-offset-bg transition-colors",
+    "inline-flex cursor-pointer items-center justify-center gap-2 rounded-md font-medium text-sm outline-hidden ring-offset-bg transition-colors",
     "hover:bg-muted hover:text-muted-fg",
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
     "disabled:pointer-events-none disabled:opacity-50",
@@ -17,9 +17,9 @@ export const ToggleButtonStyles = cva({
       ],
     },
     size: {
-      default: ["h-10 min-w-10 px-3"],
-      sm: ["h-9 min-w-9 px-2.5"],
-      lg: ["h-11 min-w-11 px-5"],
+      default: ["h-9 min-w-9 px-2"],
+      sm: ["h-8 min-w-8 px-1.5"],
+      lg: ["h-10 min-w-10 px-2.5"],
     },
   },
   defaultVariants: {
