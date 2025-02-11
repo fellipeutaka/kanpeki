@@ -15,23 +15,7 @@ import { CalendarStyles } from "./styles";
 
 export interface CalendarRootProps<T extends DateValue>
   extends React.ComponentProps<typeof CalendarPrimitive<T>> {}
-
-export function CalendarRoot<T extends DateValue>({
-  className,
-  ...props
-}: CalendarRootProps<T>) {
-  return (
-    <CalendarPrimitive
-      {...props}
-      className={(values) =>
-        CalendarStyles.Root({
-          className:
-            typeof className === "function" ? className(values) : className,
-        })
-      }
-    />
-  );
-}
+export const CalendarRoot = CalendarPrimitive;
 
 export interface CalendarHeaderProps extends React.ComponentProps<"header"> {}
 
@@ -56,15 +40,7 @@ export function CalendarNav({ className, ...props }: CalendarNavProps) {
 
 export interface CalendarGridProps
   extends React.ComponentProps<typeof CalendarGridPrimitive> {}
-
-export function CalendarGrid({ className, ...props }: CalendarGridProps) {
-  return (
-    <CalendarGridPrimitive
-      {...props}
-      className={CalendarStyles.Grid({ className })}
-    />
-  );
-}
+export const CalendarGrid = CalendarGridPrimitive;
 
 export interface CalendarGridHeaderProps
   extends React.ComponentProps<typeof CalendarGridHeaderPrimitive> {}

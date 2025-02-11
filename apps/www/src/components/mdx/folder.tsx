@@ -20,7 +20,11 @@ export function Folder({
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <Collapsible.Root open={isOpen} onOpenChange={setIsOpen} {...rest}>
+    <Collapsible.Root
+      isExpanded={isOpen}
+      onExpandedChange={setIsOpen}
+      {...rest}
+    >
       <Collapsible.Trigger
         className={FileStyles({ className: ["cursor-pointer", className] })}
       >

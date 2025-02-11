@@ -90,23 +90,3 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
-
-@keyframes collapsible-up {
-  from {
-    height: var(--radix-collapsible-content-height);
-  }
-  to {
-    height: var(--collapsible-closed-height, 0);
-    opacity: var(--collapsible-opacity-target, 0);
-  }
-}
-
-@keyframes collapsible-down {
-  from {
-    height: var(--collapsible-closed-height, 0);
-    opacity: var(--collapsible-opacity-target, 0);
-  }
-  to {
-    height: var(--radix-collapsible-content-height);
-  }
-}

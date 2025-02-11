@@ -14,17 +14,11 @@ export function ComponentSource({ children }: ComponentSourceProps) {
 
   return (
     <Collapsible.Root
-      open={isOpen}
-      onOpenChange={setIsOpen}
+      isExpanded={isOpen}
+      onExpandedChange={setIsOpen}
       className="group/collapsible relative overflow-hidden"
     >
-      <Collapsible.Content
-        forceMount
-        className={cx(
-          "grid transition-all",
-          isOpen ? "grid-rows-[1fr]" : "grid-rows-[10rem]"
-        )}
-      >
+      <Collapsible.Content className="[content-visibility:visible] aria-hidden:h-40">
         {children}
         <div
           className={cx(
