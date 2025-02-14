@@ -10,11 +10,8 @@ description: Install and configure Next.js.
 Start by creating a new Next.js project using `create-next-app`:
 
 ```bash
-npx create-next-app@latest --ts --tailwind --app --src-dir
+npx create-next-app@latest --tailwind --ts --empty --app --src-dir --turbopack
 ```
-
-We use the `--ts` flag to create a TypeScript project, `--tailwind` to add Tailwind CSS,
-`--app` to use the [App Router](https://nextjs.org/docs/app), and `--src-dir` to use the `src` folder as the source directory.
 
 You will be asked a few questions to create the project:
 
@@ -48,8 +45,8 @@ Here's how I configure Inter for Next.js:
 import { Geist } from "next/font/google";
 
 const sans = Geist({
+  variable: "--font-family-sans",
   subsets: ["latin"],
-  variable: "--font-sans",
 });
 
 export const fonts = {
@@ -100,29 +97,24 @@ export default function Layout({ children }: LayoutProps) {
 }
 ```
 
-**3. Configure `theme.extend.fontFamily` in `tailwind.config.ts`**
+**3. Configure `--font-sans` in `globals.css`**
 
-```ts title=tailwind.config.js {4,11-13}
-import type { Config } from "tailwindcss";
-import ta from "tailwindcss-animate";
-import trac from "tailwindcss-react-aria-components";
-import { fontFamily } from "tailwindcss/defaultTheme";
+```ts title="globals.css" {9-10}
+@import "tailwindcss";
 
-export default {
-  content: ["./src/**/*.{ts,tsx}"],
-  darkMode: "class",
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-      },
-    },
-  },
-  plugins: [ta, trac],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
-} satisfies Config;
+@plugin "tailwindcss-react-aria-components";
+@plugin "tailwindcss-motion";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-family-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  ...
+}
+
+...
 ```
 
 ### App structure
@@ -134,17 +126,31 @@ Here's how I structure my Next.js apps. You can use this as a reference:
     <Folder name="app">
       <File name="layout.tsx" />
       <File name="page.tsx" />
+      <File name="providers.tsx" />
     </Folder>
     <Folder name="components">
       <Folder name="ui">
-        <File name="button.tsx" />
-        <File name="tabs.tsx" />
-        <File name="dialog.tsx" />
+        <Folder name="button">
+          <File name="button.tsx" />
+          <File name="index.ts" />
+          <File name="styles.ts" />
+        </Folder>
+        <Folder name="dialog">
+          <File name="dialog.tsx" />
+          <File name="index.ts" />
+          <File name="namespace.ts" />
+          <File name="styles.ts" />
+        </Folder>
+        <Folder name="tabs">
+          <File name="index.ts" />
+          <File name="namespace.ts" />
+          <File name="styles.ts" />
+          <File name="tabs.tsx" />
+        </Folder>
       </Folder>
     </Folder>
     <Folder name="config">
       <File name="fonts.ts" />
-      <File name="site.ts" />
     </Folder>
     <Folder name="lib">
       <File name="cva.ts" />
@@ -157,12 +163,11 @@ Here's how I structure my Next.js apps. You can use this as a reference:
   <File name="next.config.ts" />
   <File name="package.json" />
   <File name="postcss.config.js" />
-  <File name="tailwind.config.ts" />
   <File name="tsconfig.json" />
 </Files>
 
 - I place the UI components in the `src/components/ui` folder.
-- The `utils` folder contains all the utility functions. I have a `cn.ts` where I define the `cn` helper.
+- The `lib` folder contains configuration for external libraries.
 - The `styles` folder contains the global CSS.
 
 ### That's it ✨

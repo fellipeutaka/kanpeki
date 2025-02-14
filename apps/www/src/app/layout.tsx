@@ -1,11 +1,11 @@
 import "~/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
-import { Providers } from "~/components/providers";
 import { SiteFooter } from "~/components/site-footer";
 import { SiteHeader } from "~/components/site-header";
 import { fonts } from "~/config/fonts";
 import { siteConfig } from "~/config/site";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
