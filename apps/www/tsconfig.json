@@ -11,8 +11,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "./.velite",
-    "src/components/ui/accordion/accordion.tsx"
+    "./.velite"
   ],
   "exclude": ["node_modules"]
 }

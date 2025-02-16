@@ -17,20 +17,28 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "all": true,
       "nursery": {
         "useSortedClasses": {
           "fix": "safe",
           "level": "error",
           "options": {
-            "functions": ["cva", "cn", "cx"]
+            "functions": ["cva", "cv", "cn", "cx"]
           }
         }
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "off"
       },
       "style": {
         "useNamingConvention": "off",
         "noImplicitBoolean": "off",
-        "useFilenamingConvention": "off"
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "filenameCases": ["kebab-case"]
+          }
+        }
       },
       "correctness": {
         "noNodejsModules": "off",
@@ -68,12 +76,40 @@
 
         "apps/www/src/demos/*.tsx",
         "**/*.config.ts",
-        "**/*.config.js"
+        "**/*.config.js",
+
+        "apps/storybook/.storybook/main.ts",
+        "apps/storybook/.storybook/preview.ts",
+        "apps/storybook/src/stories/*.stories.tsx"
       ],
       "linter": {
         "rules": {
           "style": {
             "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["apps/**/src/components/ui/*/index.ts"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noReExportAll": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": [
+        "apps/**/src/components/ui/*/index.ts",
+        "apps/**/src/components/ui/*/namespace.ts",
+        "apps/**/src/lib/cva.ts"
+      ],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noBarrelFile": "off"
           }
         }
       }

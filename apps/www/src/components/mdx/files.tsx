@@ -13,7 +13,9 @@ export function Files({ children, className, ...props }: FilesProps) {
 
 export const FileStyles = cva({
   base: [
-    "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent hover:text-accent-fg",
+    "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-hidden",
+    "hover:bg-accent hover:text-accent-fg",
+    "focus-visible:ring-1",
   ],
 });
 

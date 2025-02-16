@@ -2,7 +2,7 @@
   "name": "kanpeki",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.2.1",
+  "packageManager": "pnpm@10.4.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/fellipeutaka/kanpeki.git"
@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "start": "turbo run start",
+    "preview": "turbo run preview",
     "type-check": "turbo run type-check --parallel",
     "lint": "biome check",
     "clean": "rimraf **/{.next,.turbo,node_modules,dist,out} -g",
@@ -22,21 +24,17 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@commitlint/cz-commitlint": "^19.6.1",
-    "@types/node": "^20.17.17",
+    "@types/node": "^20.17.19",
     "commitizen": "^4.3.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
     "rimraf": "^6.0.1",
-    "turbo": "^2.4.0",
+    "turbo": "^2.4.2",
     "typescript": "^5.7.3"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "biome check --write --no-errors-on-unmatched"
-    ],
-    "*.{ts,tsx}": [
-      "bash -c 'pnpm run type-check'"
-    ]
+    "*.{js,ts,tsx}": ["biome check --write --no-errors-on-unmatched"],
+    "*.{ts,tsx}": ["bash -c 'pnpm run type-check'"]
   },
   "config": {
     "commitizen": {
