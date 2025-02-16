@@ -35,6 +35,11 @@ const config = {
         destination: "/docs/components/accordion",
         permanent: false,
       },
+      {
+        source: "/storybook",
+        destination: "https://kanpeki-storybook.vercel.app",
+        permanent: false,
+      },
     ];
   },
 };

@@ -11,6 +11,10 @@ export const docsConfig: DocsConfig = {
       href: "/docs/components",
     },
     {
+      title: "Storybook",
+      href: "/storybook",
+    },
+    {
       title: "Icons",
       href: "/icons",
       disabled: true,
