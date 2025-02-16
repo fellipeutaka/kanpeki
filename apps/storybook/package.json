@@ -1,0 +1,40 @@
+{
+  "name": "storybook",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build -o ./dist",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-aria-components": "^1.6.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "3.2.4",
+    "@kanpeki/tsconfig": "workspace:*",
+    "@storybook/addon-essentials": "8.5.6",
+    "@storybook/addon-interactions": "8.5.6",
+    "@storybook/addon-onboarding": "8.5.6",
+    "@storybook/addon-themes": "8.5.6",
+    "@storybook/blocks": "8.5.6",
+    "@storybook/react": "8.5.6",
+    "@storybook/react-vite": "8.5.6",
+    "@storybook/test": "8.5.6",
+    "@tailwindcss/vite": "^4.0.6",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "cva": "1.0.0-beta.3",
+    "storybook": "8.5.6",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss": "0.0.0-insiders.7d51e38",
+    "tailwindcss-motion": "^1.1.0",
+    "tailwindcss-react-aria-components": "3.0.0-nightly-988096cf3-250215",
+    "vite": "^6.1.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
