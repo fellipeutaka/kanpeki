@@ -149,7 +149,7 @@ export function ChartTooltipContent<
   const { config } = useChart();
 
   const tooltipLabel = useMemo(() => {
-    if (hideLabel || !payload?.length) {
+    if (hideLabel || !payload || payload.length === 0) {
       return null;
     }
 

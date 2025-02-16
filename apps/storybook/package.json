@@ -1,17 +1,27 @@
 {
   "name": "storybook",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build -o ./dist",
-    "preview": "vite preview"
+    "start": "vite preview",
+    "preview": "storybook build -o ./dist && vite preview",
+    "type-check": "tsc --noEmit --incremental false"
   },
   "dependencies": {
+    "@internationalized/date": "^3.7.0",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@react-stately/data": "^3.12.1",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "cmdk": "^1.0.4",
+    "motion": "^12.4.3",
     "react": "^19.0.0",
     "react-aria-components": "^1.6.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.1",
+    "sonner": "^1.7.4"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "3.2.4",

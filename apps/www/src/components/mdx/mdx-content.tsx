@@ -1,3 +1,4 @@
+// biome-ignore lint/style/noNamespaceImport: This is a runtime dependency
 import * as runtime from "react/jsx-runtime";
 import { mdxComponents } from "./mdx-components";
 
