@@ -42,7 +42,7 @@ export default function AvatarGroupDemo() {
   return (
     <div className="-space-x-2 flex">
       {avatars.map((avatar) => (
-        <Avatar.Root key={avatar.alt}>
+        <Avatar.Root className="outline outline-border" key={avatar.alt}>
           <Avatar.Image src={avatar.src} alt={avatar.alt} />
           <Avatar.Fallback>{avatar.fallback}</Avatar.Fallback>
           <Avatar.Placeholder>
