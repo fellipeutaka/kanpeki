@@ -6,126 +6,51 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --bg: oklch(1 0 0);
-  --fg: oklch(0.16 0.01 262.25);
-
-  --card: oklch(1 0 0);
-  --card-fg: oklch(0.16 0.01 262.25);
-
-  --popover: oklch(1 0 0);
-  --popover-fg: oklch(0.16 0.01 262.25);
-
-  --primary: oklch(0.85 0.2 93);
-  --primary-fg: oklch(0 0 0);
-
-  --secondary: oklch(0.96 0.01 262.25);
-  --secondary-fg: oklch(0.25 0.01 262.25);
-
-  --muted: oklch(0.96 0.01 262.25);
-  --muted-fg: oklch(0.5 0.01 262.25);
-
-  --accent: oklch(0.96 0.01 262.25);
-  --accent-fg: oklch(0.25 0.01 262.25);
-
-  --success: oklch(0.62 0.18 0.53);
-  --success-fg: oklch(0.83 0.13 0.97);
-
-  --info: oklch(0.76 0.19 0.67);
-  --info-fg: oklch(1 0 0.75);
-
-  --warning: oklch(0.5 1 100);
-  --warning-fg: oklch(0.4 0.18 0.3);
-
-  --danger: oklch(0.57 0.22 27.16);
-  --danger-fg: oklch(0.98 0 0);
-
-  --border: oklch(0.89 0.01 262.25);
-  --input: oklch(0.89 0.01 262.25);
-  --ring: var(--primary);
-}
-
-.dark {
-  --bg: oklch(0.16 0.01 262.25);
-  --fg: oklch(0.98 0 0);
-
-  --card: oklch(0.16 0.01 262.25);
-  --card-fg: oklch(0.98 0 0);
-
-  --popover: oklch(0.16 0.01 262.25);
-  --popover-fg: oklch(0.98 0 0);
-
-  --primary: oklch(0.85 0.2 93);
-  --primary-fg: oklch(0 0 0);
-
-  --secondary: oklch(0.23 0.01 262.25);
-  --secondary-fg: oklch(0.98 0 0);
-
-  --muted: oklch(0.23 0.01 262.25);
-  --muted-fg: oklch(0.67 0.01 262.25);
-
-  --accent: oklch(0.23 0.01 262.25);
-  --accent-fg: oklch(0.98 0 0);
-
-  --success: oklch(0.62 0.18 0.53);
-  --success-fg: oklch(0.83 0.13 0.97);
-
-  --info: oklch(0.76 0.19 0.67);
-  --info-fg: oklch(0 0 0.75);
-
-  --warning: oklch(76 0.4 70);
-  --warning-fg: oklch(0.4 0.18 0.3);
-
-  --danger: oklch(0.33 0.15 27.16);
-  --danger-fg: oklch(0.98 0 0);
-
-  --border: oklch(0.23 0.01 262.25);
-  --input: oklch(0.23 0.01 262.25);
-  --ring: var(--primary);
-}
-
 @theme {
   --font-sans: var(--font-family-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: var(--font-family-mono), ui-monospace, SFMono-Regular, Menlo,
     Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  --color-bg: var(--bg);
-  --color-fg: var(--fg);
+  --color-bg: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
+  --color-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
 
-  --color-card: var(--card);
-  --color-card-fg: var(--card-fg);
+  --color-card: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
+  --color-card-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
 
-  --color-popover: var(--popover);
-  --color-popover-fg: var(--popover-fg);
+  --color-popover: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
+  --color-popover-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
 
-  --color-primary: var(--primary);
-  --color-primary-fg: var(--primary-fg);
+  --color-primary: light-dark(oklch(0.85 0.2 93), oklch(0.85 0.2 93));
+  --color-primary-fg: light-dark(oklch(0 0 0), oklch(0 0 0));
 
-  --color-secondary: var(--secondary);
-  --color-secondary-fg: var(--secondary-fg);
+  --color-secondary: light-dark(
+    oklch(0.96 0.01 262.25),
+    oklch(0.23 0.01 262.25)
+  );
+  --color-secondary-fg: light-dark(oklch(0.25 0.01 262.25), oklch(0.98 0 0));
 
-  --color-muted: var(--muted);
-  --color-muted-fg: var(--muted-fg);
+  --color-muted: light-dark(oklch(0.96 0.01 262.25), oklch(0.23 0.01 262.25));
+  --color-muted-fg: light-dark(oklch(0.5 0.01 262.25), oklch(0.67 0.01 262.25));
 
-  --color-accent: var(--accent);
-  --color-accent-fg: var(--accent-fg);
+  --color-accent: light-dark(oklch(0.96 0.01 262.25), oklch(0.23 0.01 262.25));
+  --color-accent-fg: light-dark(oklch(0.25 0.01 262.25), oklch(0.98 0 0));
 
-  --color-success: var(--success);
-  --color-success-fg: var(--success-fg);
+  --color-success: light-dark(oklch(0.62 0.18 0.53), oklch(0.62 0.18 0.53));
+  --color-success-fg: light-dark(oklch(0.83 0.13 0.97), oklch(0.83 0.13 0.97));
 
-  --color-info: var(--info);
-  --color-info-fg: var(--info-fg);
+  --color-info: light-dark(oklch(0.76 0.19 0.67), oklch(0.76 0.19 0.67));
+  --color-info-fg: light-dark(oklch(1 0 0.75), oklch(0.76 0.19 0.67));
 
-  --color-warning: var(--warning);
-  --color-warning-fg: var(--warning-fg);
+  --color-warning: light-dark(oklch(0.5 1 100), oklch(76 0.4 70));
+  --color-warning-fg: light-dark(oklch(0.4 0.18 0.3), oklch(0.4 0.18 0.3));
 
-  --color-danger: var(--danger);
-  --color-danger-fg: var(--danger-fg);
+  --color-danger: light-dark(oklch(0.57 0.22 27.16), oklch(0.33 0.15 27.16));
+  --color-danger-fg: light-dark(oklch(0.98 0 0), oklch(0.98 0 0));
 
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  --color-border: light-dark(oklch(0.89 0.01 262.25), oklch(0.23 0.01 262.25));
+  --color-input: light-dark(oklch(0.89 0.01 262.25), oklch(0.23 0.01 262.25));
+  --color-ring: var(--color-primary);
 
   --animate-collapsible-up: collapsible-up 150ms ease-out;
   --animate-collapsible-down: collapsible-down 150ms ease-out;
@@ -159,6 +84,10 @@
 
   html {
     scroll-behavior: smooth;
+
+    &.dark {
+      color-scheme: dark;
+    }
   }
 
   body {
