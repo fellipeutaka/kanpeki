@@ -72,7 +72,7 @@ export default function Layout({ children }: LayoutProps) {
       suppressHydrationWarning
       className={`${fonts.sans.variable} ${fonts.mono.variable}`}
     >
-      <body className="relative grid min-h-dvh grid-rows-[auto_1fr_auto] bg-bg font-sans text-fg antialiased">
+      <body className="relative grid min-h-dvh grid-rows-[auto_1fr_auto] font-sans">
         <Providers>
           <SiteHeader />
           {children}
