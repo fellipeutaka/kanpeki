@@ -1,0 +1,74 @@
+---
+title: List Box
+description: A list of options and allows a user to select one or more of them.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/ListBox.html
+---
+
+<ComponentPreview name="list-box-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add list-box
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="list-box" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+```tsx
+import { DropdownMenu } from "~/components/ui/list-box";
+```
+
+```tsx
+<DropdownMenu.Root>
+  <Button variant="outline">Open</Button>
+
+  <Popover.Content>
+    <DropdownMenu.Content>
+      <DropdownMenu.Item>Inbox</DropdownMenu.Item>
+      <DropdownMenu.Item>Sent</DropdownMenu.Item>
+      <DropdownMenu.Item>New Message</DropdownMenu.Item>
+    </DropdownMenu.Content>
+  </Popover.Content>
+</DropdownMenu.Root>
+```
+
+## Examples
+
+### Multiple
+
+<ComponentPreview name="list-box-multiple" />
+
+### Details
+
+<ComponentPreview name="list-box-details" />
+
+### Section
+
+<ComponentPreview name="list-box-section" />

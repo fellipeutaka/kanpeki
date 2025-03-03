@@ -162,6 +162,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/components/label",
         },
         {
+          title: "List Box",
+          href: "/docs/components/list-box",
+          label: "New",
+        },
+        {
           title: "Pagination",
           href: "/docs/components/pagination",
           disabled: true,
