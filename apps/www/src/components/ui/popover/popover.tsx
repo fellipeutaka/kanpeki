@@ -24,7 +24,8 @@ export function PopoverContent({
   const popoverContext = useSlottedContext(PopoverContext);
   const isMenuTrigger = popoverContext?.trigger === "MenuTrigger";
   const isSubmenuTrigger = popoverContext?.trigger === "SubmenuTrigger";
-  const isMenu = isMenuTrigger || isSubmenuTrigger;
+  const isSelectTrigger = popoverContext?.trigger === "Select";
+  const isMenu = isMenuTrigger || isSubmenuTrigger || isSelectTrigger;
   const _placement = placement ?? (isSubmenuTrigger ? "right" : "bottom");
 
   return (

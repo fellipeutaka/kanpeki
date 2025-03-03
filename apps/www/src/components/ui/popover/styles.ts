@@ -21,7 +21,7 @@ export const PopoverStyles = {
     ],
     variants: {
       isMenu: {
-        true: ["p-0.5"],
+        true: ["overflow-y-auto p-0.5"],
       },
     },
   }),
