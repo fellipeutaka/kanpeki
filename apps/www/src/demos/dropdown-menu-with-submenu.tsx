@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "~/components/ui/button";
 import { DropdownMenu } from "~/components/ui/dropdown-menu";
 import { Popover } from "~/components/ui/popover";
