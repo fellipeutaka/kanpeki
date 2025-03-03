@@ -11,6 +11,10 @@ export const docsConfig: DocsConfig = {
       href: "/docs/components",
     },
     {
+      title: "Storybook",
+      href: "/storybook",
+    },
+    {
       title: "Icons",
       href: "/icons",
       disabled: true,
@@ -141,8 +145,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu",
-          disabled: true,
-          label: "Soon",
+          label: "New",
         },
         {
           title: "Form",

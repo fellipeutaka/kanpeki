@@ -50,11 +50,11 @@ Add the following to your styles/globals.css file. You can learn more about usin
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --font-sans: var(--font-family-sans), ui-sans-serif, system-ui, sans-serif,
+@theme inline {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: var(--font-family-mono), ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
 
   --color-bg: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
   --color-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
@@ -113,10 +113,24 @@ Add the following to your styles/globals.css file. You can learn more about usin
 
   html {
     scroll-behavior: smooth;
+
+    scrollbar-color: var(--color-border) transparent;
+    scrollbar-width: thin;
+
+    &.light {
+      color-scheme: light;
+    }
+
+    &.dark {
+      color-scheme: dark;
+    }
   }
 
   body {
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+
+    @apply antialiased bg-bg text-fg;
   }
 }
 ```

@@ -1,12 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 
 const sans = Geist({
-  variable: "--font-family-sans",
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
 const mono = Geist_Mono({
-  variable: "--font-family-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 

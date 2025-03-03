@@ -1,0 +1,78 @@
+---
+title: Dropdown Menu
+description: A list of actions or options that a user can choose.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Menu.html
+---
+
+<ComponentPreview name="dropdown-menu-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add dropdown-menu
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="dropdown-menu" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+```tsx
+import { DropdownMenu } from "~/components/ui/dropdown-menu";
+```
+
+```tsx
+<DropdownMenu.Root>
+  <Button variant="outline">Open</Button>
+
+  <Popover.Content>
+    <DropdownMenu.Content>
+      <DropdownMenu.Item>Inbox</DropdownMenu.Item>
+      <DropdownMenu.Item>Sent</DropdownMenu.Item>
+      <DropdownMenu.Item>New Message</DropdownMenu.Item>
+    </DropdownMenu.Content>
+  </Popover.Content>
+</DropdownMenu.Root>
+```
+
+## With Submenu
+
+### Default
+
+<ComponentPreview name="dropdown-menu-with-submenu" />
+
+---
+
+### Checkboxes
+
+<ComponentPreview name="dropdown-menu-with-checkboxes" />
+
+---
+
+### Radio Group
+
+<ComponentPreview name="dropdown-menu-with-radio-group" />
