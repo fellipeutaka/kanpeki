@@ -89,7 +89,7 @@ export function DropdownMenuContent<T extends object>({
   );
 }
 
-interface DropdownMenuItemProps<T extends object>
+export interface DropdownMenuItemProps<T extends object>
   extends React.ComponentProps<typeof MenuItem<T>> {
   isDanger?: boolean;
   type?: "default" | "checkbox" | "radio";
@@ -190,14 +190,14 @@ export function DropdownMenuSeparator({
   );
 }
 
-interface DropdownMenuLabelProps
+export interface DropdownMenuLabelProps
   extends Omit<React.ComponentProps<typeof Text>, "slot"> {}
 
 export function DropdownMenuLabel(props: DropdownMenuLabelProps) {
   return <Text {...props} slot="label" />;
 }
 
-interface DropdownMenuDescriptionProps extends DropdownMenuLabelProps {}
+export interface DropdownMenuDescriptionProps extends DropdownMenuLabelProps {}
 
 export function DropdownMenuDescription(props: DropdownMenuDescriptionProps) {
   return <Text {...props} slot="description" />;
