@@ -100,4 +100,8 @@
 
     @apply antialiased bg-bg text-fg;
   }
+
+  input:-webkit-autofill {
+    background-clip: text;
+  }
 }

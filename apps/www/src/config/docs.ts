@@ -201,8 +201,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Select",
           href: "/docs/components/select",
-          disabled: true,
-          label: "Planned",
+          label: "New",
         },
         {
           title: "Separator",

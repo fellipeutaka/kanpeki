@@ -1,0 +1,104 @@
+---
+title: Select
+description: A select displays a collapsible list of options and allows a user to select one of them.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/Select.html
+---
+
+<ComponentPreview name="select-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add select
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="select" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { Select } from "~/components/ui/select";
+```
+
+```tsx
+<Select.Root>
+  <Select.Trigger />
+
+  <Select.Popover>
+    <Select.Content items={fruits}>
+      {(item) => (
+        <Select.Item id={item.id} textValue={item.name}>
+          {item.name}
+          <Icons.Check className="size-0 opacity-0 group-selected:size-4 group-selected:opacity-100" />
+        </Select.Item>
+      )}
+    </Select.Content>
+  </Select.Popover>
+</Select.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  SelectContent,
+  SelectItem,
+  SelectPopover,
+  SelectRoot,
+  SelectTrigger,
+} from "~/components/ui/select";
+```
+
+```tsx
+<SelectRoot>
+  <SelectTrigger />
+
+  <SelectPopover>
+    <SelectContent items={fruits}>
+      {(item) => (
+        <SelectItem id={item.id} textValue={item.name}>
+          {item.name}
+          <Icons.Check className="size-0 opacity-0 group-selected:size-4 group-selected:opacity-100" />
+        </SelectItem>
+      )}
+    </SelectContent>
+  </SelectPopover>
+</SelectRoot>
+```
+
+## Examples
+
+### Unselectable
+
+<ComponentPreview name="select-unselectable" />
+
+### With Label
+
+<ComponentPreview name="select-with-label" />
