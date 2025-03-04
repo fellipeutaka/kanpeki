@@ -150,8 +150,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Form",
           href: "/docs/components/form",
-          disabled: true,
-          label: "Planned",
+          label: "New",
         },
         {
           title: "Hover Card",
