@@ -1,18 +1,13 @@
 "use client";
 
-import {
-  FieldError,
-  Form as FormPrimitive,
-  Text,
-  type TextProps,
-} from "react-aria-components";
+import { FieldError, Form, Text } from "react-aria-components";
 import { FormStyles } from "./styles";
 
-export interface FormRootProps
-  extends React.ComponentProps<typeof FormPrimitive> {}
-export const FormRoot = FormPrimitive;
+export interface FormRootProps extends React.ComponentProps<typeof Form> {}
+export const FormRoot = Form;
 
-interface FormDescriptionProps extends Omit<TextProps, "slot"> {
+interface FormDescriptionProps
+  extends Omit<React.ComponentProps<typeof Text>, "slot"> {
   isWarning?: boolean;
 }
 

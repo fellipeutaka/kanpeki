@@ -1,3 +1,7 @@
+"use client";
+
+import { use } from "react";
+import { DisclosureStateContext } from "react-aria-components";
 import type { NpmCommands } from "~/@types/unist";
 import { cn } from "~/lib/cva";
 import {
@@ -31,6 +35,8 @@ export function Pre({
   __src__,
   ...props
 }: PreProps) {
+  const state = use(DisclosureStateContext);
+
   const commands = (
     __npmCommand__
       ? {
@@ -50,21 +56,19 @@ export function Pre({
         className="absolute top-2.5 right-4 z-10 max-sm:group-has-[[data-state=visible]]:opacity-0"
       />
 
-      <ScrollAreaViewport className="group-data-[state=closed]/collapsible:!overflow-hidden max-h-[40rem]">
+      <ScrollAreaViewport className="max-h-[40rem]">
         <pre className={cn("py-4", className)} {...props} tabIndex={-1} />
       </ScrollAreaViewport>
-      <ScrollAreaScrollbar
-        className="group-data-[state=closed]/collapsible:hidden"
-        orientation="vertical"
-      >
-        <ScrollAreaThumb />
-      </ScrollAreaScrollbar>
-      <ScrollAreaScrollbar
-        className="group-data-[state=closed]/collapsible:hidden"
-        orientation="horizontal"
-      >
-        <ScrollAreaThumb />
-      </ScrollAreaScrollbar>
+      {state && !state.isExpanded ? null : (
+        <ScrollAreaScrollbar orientation="vertical">
+          <ScrollAreaThumb />
+        </ScrollAreaScrollbar>
+      )}
+      {state && !state.isExpanded ? null : (
+        <ScrollAreaScrollbar orientation="horizontal">
+          <ScrollAreaThumb />
+        </ScrollAreaScrollbar>
+      )}
     </ScrollAreaRoot>
   );
 }
