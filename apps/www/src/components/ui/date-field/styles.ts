@@ -3,7 +3,7 @@ import { TextFieldStyles } from "../textfield/styles";
 
 export const DateFieldStyles = {
   Root: cva({
-    base: ["flex flex-col"],
+    base: ["group flex flex-col gap-y-1.5"],
   }),
   Input: compose(
     TextFieldStyles.Root,
@@ -17,12 +17,13 @@ export const DateFieldStyles = {
   ),
   Segment: cva({
     base: [
-      "inline shrink-0 rounded p-0.5 type-literal:px-0 text-fg tabular-nums tracking-wider caret-transparent outline outline-0",
-      "lg:text-sm",
-      "focus:bg-primary focus:text-primary-fg",
-      "disabled:text-fg/50",
-      "placeholder-shown:text-muted-fg",
-      "invalid:bg-danger invalid:text-danger-fg",
+      "inline rounded p-0.5 text-fg tabular-nums caret-transparent outline-hidden",
+      "type-literal:px-0 type-literal:text-muted-fg/70",
+      "data-placeholder:text-muted-fg/70",
+      "focus:bg-accent focus:text-fg focus:data-placeholder:text-fg",
+      "invalid:text-danger invalid:data-placeholder:text-danger",
+      "invalid:focus:bg-danger invalid:focus:text-white invalid:focus:placeholder:text-white",
+      "disabled:cursor-not-allowed disabled:opacity-50",
     ],
   }),
 };
