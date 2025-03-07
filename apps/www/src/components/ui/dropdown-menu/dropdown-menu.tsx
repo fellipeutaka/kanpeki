@@ -106,6 +106,12 @@ export function DropdownMenuItem<T extends object>({
   const _textValue =
     textValue ?? (typeof children === "string" ? children : undefined);
 
+  if (!_textValue) {
+    console.warn(
+      'DropdownMenuItem: "textValue" is required when "children" is not a string'
+    );
+  }
+
   return (
     <MenuItem
       {...props}
@@ -113,8 +119,6 @@ export function DropdownMenuItem<T extends object>({
       textValue={_textValue}
       className={(values) =>
         DropdownMenuStyles.Item({
-          isFocused: values.isFocused,
-          isDisabled: values.isDisabled,
           type,
           className:
             typeof className === "function" ? className(values) : className,

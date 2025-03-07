@@ -1,15 +1,17 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Collection } from "react-aria-components";
 import type { NavItem, SidebarNavItem } from "~/config/docs";
 import { Button } from "./ui/button";
 import { Command } from "./ui/command";
 import { Dialog } from "./ui/dialog";
+import { DropdownMenu } from "./ui/dropdown-menu";
 import { Icons } from "./ui/icons";
 import { ScrollArea } from "./ui/scroll-area";
+import { TextSearch } from "./ui/text-search";
+import { TextField } from "./ui/textfield";
 
 interface CommandMenuProps {
   mainNav: NavItem[];
@@ -19,7 +21,6 @@ interface CommandMenuProps {
 export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { setTheme } = useTheme();
-  const router = useRouter();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -47,20 +48,6 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
     return () => controller.abort();
   }, []);
 
-  function handleNavigate(href: string) {
-    return () => {
-      router.push(href);
-      setIsOpen(false);
-    };
-  }
-
-  function handleSetTheme(theme: string) {
-    return () => {
-      setIsOpen(false);
-      setTheme(theme);
-    };
-  }
-
   return (
     <Dialog.Root isOpen={isOpen} onOpenChange={setIsOpen}>
       <Button
@@ -74,68 +61,99 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
-      <Command.Dialog>
-        <Command.Input placeholder="Type a command or search..." />
-        <ScrollArea.Root>
-          <ScrollArea.Viewport className="max-h-[18.75rem]">
-            <Command.List className="max-h-full">
-              <Command.Empty>No results found.</Command.Empty>
-              <Command.Group heading="Links">
-                {mainNav.map((navItem) => (
-                  <Command.Item
-                    key={navItem.href}
-                    value={navItem.title}
-                    disabled={navItem.disabled}
-                    onSelect={handleNavigate(navItem.href)}
-                    asChild
+      <Dialog.Overlay>
+        <Dialog.Modal className="p-0">
+          <Dialog.Content>
+            <Command.Root>
+              <TextSearch.Root className="flex-row items-center gap-2 border-b">
+                <TextSearch.Icon className="ml-3" />
+                <TextField.Input
+                  autoFocus
+                  className="py-4 text-sm"
+                  placeholder="Type a command or search..."
+                />
+                <TextField.Input
+                  className="py-4 sm:hidden"
+                  placeholder="Type a command or search..."
+                />
+              </TextSearch.Root>
+              <ScrollArea.Root>
+                <ScrollArea.Viewport className="max-h-[18.75rem]">
+                  <Command.List
+                    renderEmptyState={() => (
+                      <Command.Empty>No results found.</Command.Empty>
+                    )}
+                    className="px-2 **:data-[slot=command-item]:py-3"
                   >
-                    <Link href={navItem.href}>
-                      <Icons.File className="mr-2 size-5" />
-                      {navItem.title}
-                    </Link>
-                  </Command.Item>
-                ))}
-              </Command.Group>
-              {sidebarNav.map((group) => (
-                <Command.Group key={group.title} heading={group.title}>
-                  {group.items?.map((navItem) => (
-                    <Command.Item
-                      key={navItem.href}
-                      value={navItem.title}
-                      disabled={navItem.disabled}
-                      onSelect={handleNavigate(navItem.href)}
-                      asChild
-                    >
-                      <Link href={navItem.href}>
-                        <Icons.Circle className="mr-2 size-5" />
-                        {navItem.title}
-                      </Link>
-                    </Command.Item>
-                  ))}
-                </Command.Group>
-              ))}
-              <Command.Separator />
-              <Command.Group heading="Theme">
-                <Command.Item onSelect={handleSetTheme("light")}>
-                  <Icons.Sun className="mr-2 size-5" />
-                  Light
-                </Command.Item>
-                <Command.Item onSelect={handleSetTheme("dark")}>
-                  <Icons.Moon className="mr-2 size-5" />
-                  Dark
-                </Command.Item>
-                <Command.Item onSelect={handleSetTheme("system")}>
-                  <Icons.Laptop className="mr-2 size-5" />
-                  System
-                </Command.Item>
-              </Command.Group>
-            </Command.List>
-          </ScrollArea.Viewport>
-          <ScrollArea.Scrollbar orientation="vertical">
-            <ScrollArea.Thumb />
-          </ScrollArea.Scrollbar>
-        </ScrollArea.Root>
-      </Command.Dialog>
+                    <Command.Group>
+                      <Command.Header>Links</Command.Header>
+                      <Collection items={mainNav}>
+                        {(navItem) => (
+                          <Command.Item
+                            id={navItem.href}
+                            textValue={navItem.title}
+                            isDisabled={navItem.disabled}
+                            href={navItem.disabled ? undefined : navItem.href}
+                          >
+                            <Icons.File className="size-5" />
+                            {navItem.title}
+                          </Command.Item>
+                        )}
+                      </Collection>
+                    </Command.Group>
+                    <Collection items={sidebarNav}>
+                      {(group) => (
+                        <Command.Group id={group.title}>
+                          <Command.Header>{group.title}</Command.Header>
+                          {group.items?.map((navItem) => (
+                            <Command.Item
+                              key={navItem.href}
+                              textValue={navItem.title}
+                              isDisabled={navItem.disabled}
+                              href={navItem.disabled ? undefined : navItem.href}
+                            >
+                              <Icons.Circle className="size-5" />
+                              {navItem.title}
+                            </Command.Item>
+                          ))}
+                        </Command.Group>
+                      )}
+                    </Collection>
+                    <DropdownMenu.Separator />
+                    <Command.Group>
+                      <Command.Header>Theme</Command.Header>
+                      <Command.Item
+                        textValue="Light"
+                        onAction={() => setTheme("light")}
+                      >
+                        <Icons.Sun className="size-5" />
+                        Light
+                      </Command.Item>
+                      <Command.Item
+                        textValue="Dark"
+                        onAction={() => setTheme("dark")}
+                      >
+                        <Icons.Moon className="size-5" />
+                        Dark
+                      </Command.Item>
+                      <Command.Item
+                        textValue="System"
+                        onAction={() => setTheme("system")}
+                      >
+                        <Icons.Laptop className="size-5" />
+                        System
+                      </Command.Item>
+                    </Command.Group>
+                  </Command.List>
+                </ScrollArea.Viewport>
+                <ScrollArea.Scrollbar orientation="vertical">
+                  <ScrollArea.Thumb />
+                </ScrollArea.Scrollbar>
+              </ScrollArea.Root>
+            </Command.Root>
+          </Dialog.Content>
+        </Dialog.Modal>
+      </Dialog.Overlay>
     </Dialog.Root>
   );
 }

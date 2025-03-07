@@ -3,8 +3,8 @@
 import {
   DialogTrigger,
   OverlayArrow,
+  Popover,
   PopoverContext,
-  Popover as PopoverPrimitive,
   useSlottedContext,
 } from "react-aria-components";
 import { PopoverStyles } from "./styles";
@@ -14,7 +14,7 @@ export interface PopoverRootProps
 export const PopoverRoot = DialogTrigger;
 
 export interface PopoverContentProps
-  extends React.ComponentProps<typeof PopoverPrimitive> {}
+  extends React.ComponentProps<typeof Popover> {}
 
 export function PopoverContent({
   className,
@@ -29,7 +29,7 @@ export function PopoverContent({
   const _placement = placement ?? (isSubmenuTrigger ? "right" : "bottom");
 
   return (
-    <PopoverPrimitive
+    <Popover
       {...props}
       placement={_placement}
       className={(values) =>
