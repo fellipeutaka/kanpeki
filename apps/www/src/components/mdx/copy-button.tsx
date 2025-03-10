@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import type { NpmCommands } from "~/@types/unist";
 import { useCopyToClipboard } from "~/hooks/use-copy-to-clipboard";
 import { cx } from "~/lib/cva";
 import { Button, type ButtonProps } from "../ui/button";
 import { DropdownMenu } from "../ui/dropdown-menu";
 import { Icons } from "../ui/icons";
 import { Popover } from "../ui/popover";
+import type { NpmCommands } from "./pre";
 
 export interface CopyButtonProps extends ButtonProps {
   text: string;
@@ -41,7 +41,7 @@ export function CopyButton({ text, className, ...props }: CopyButtonProps) {
 }
 
 export interface CopyNpmButtonProps extends ButtonProps {
-  commands: Required<NpmCommands>;
+  commands: NonNullable<NpmCommands>;
 }
 
 export function CopyNpmButton({
@@ -77,27 +77,19 @@ export function CopyNpmButton({
 
       <Popover.Content className="min-w-32" placement="bottom end">
         <DropdownMenu.Content>
-          <DropdownMenu.Item
-            onAction={() => copy({ text: commands.__npmCommand__ })}
-          >
+          <DropdownMenu.Item onAction={() => copy({ text: commands.npm })}>
             <Icons.Npm className="mr-2 size-4" />
             npm
           </DropdownMenu.Item>
-          <DropdownMenu.Item
-            onAction={() => copy({ text: commands.__yarnCommand__ })}
-          >
+          <DropdownMenu.Item onAction={() => copy({ text: commands.yarn })}>
             <Icons.Yarn className="mr-2 size-4" />
             yarn
           </DropdownMenu.Item>
-          <DropdownMenu.Item
-            onAction={() => copy({ text: commands.__pnpmCommand__ })}
-          >
+          <DropdownMenu.Item onAction={() => copy({ text: commands.pnpm })}>
             <Icons.Pnpm className="mr-2 size-4" />
             pnpm
           </DropdownMenu.Item>
-          <DropdownMenu.Item
-            onAction={() => copy({ text: commands.__bunCommand__ })}
-          >
+          <DropdownMenu.Item onAction={() => copy({ text: commands.bun })}>
             <Icons.Bun className="mr-2 size-4" />
             bun
           </DropdownMenu.Item>

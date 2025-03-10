@@ -23,13 +23,15 @@ npm install cva@beta tailwind-merge tailwindcss-motion tailwindcss-react-aria-co
 
 I use the `~` alias. This is how I configure it in tsconfig.json:
 
-```json {3-6} title="tsconfig.json"
+```json title="tsconfig.json"
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": ".", // [!code highlight]
+    // [!code highlight]
     "paths": {
+      // [!code highlight]
       "~/*": ["./src/*"]
-    }
+    } // [!code highlight]
   }
 }
 ```

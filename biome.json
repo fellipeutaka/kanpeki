@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "ignore": [".next", ".velite", "dist", "node_modules"]
+    "ignore": [".next", ".source", "dist", "node_modules"]
   },
   "organizeImports": {
     "enabled": true

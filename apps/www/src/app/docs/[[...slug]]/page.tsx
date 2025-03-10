@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MDXContent } from "~/components/mdx/mdx-content";
-import { getItemIds } from "~/utils/get-item-ids";
-import { getDocBySlug, getDocs } from "~/utils/mdx";
+import { mdxComponents } from "~/components/mdx/mdx-components";
+import { source } from "~/lib/source";
 import { Contribute } from "./_components/contribute";
 import { DocsHeader } from "./_components/docs-header";
 import { DocsPager } from "./_components/docs-pager";
@@ -12,30 +11,26 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const doc = await getDocBySlug(slug);
+  const page = source.getPage(slug);
 
-  if (!doc) {
+  if (!page) {
     return {};
   }
 
   return {
-    title: doc.title,
-    description: doc.description,
+    title: page.data.title,
+    description: page.data.description,
     openGraph: {
-      title: doc.title,
-      description: doc.description,
+      title: page.data.title,
+      description: page.data.description,
       type: "article",
-      url: doc.slug,
+      url: page.slugs.join("/"),
     },
   };
 }
 
-export async function generateStaticParams() {
-  const docs = await getDocs();
-
-  return docs.map((doc) => ({
-    slug: doc.slugAsParams.split("/"),
-  }));
+export function generateStaticParams() {
+  return source.generateParams();
 }
 
 interface PageProps {
@@ -46,27 +41,28 @@ interface PageProps {
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  const doc = await getDocBySlug(slug);
 
-  if (!doc) {
+  const page = source.getPage(slug);
+
+  if (!page) {
     notFound();
   }
 
-  const itemIds = getItemIds(doc.toc);
+  const { body: MDXContent, toc } = await page.data.load();
 
   return (
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <div className="mx-auto w-full min-w-0">
-        <DocsHeader doc={doc} />
+        <DocsHeader page={page} />
         <div className="mdx flex w-full max-w-full flex-col pt-8 pb-12">
-          <MDXContent code={doc.content} />
+          <MDXContent components={mdxComponents} />
         </div>
-        <DocsPager doc={doc} />
+        <DocsPager url={page.url} />
       </div>
-      {doc.toc.length > 0 && (
+      {toc.length > 0 && (
         <div className="hidden text-sm xl:block">
-          <TableOfContents toc={doc.toc} itemIds={itemIds}>
-            <Contribute doc={doc} />
+          <TableOfContents toc={toc}>
+            <Contribute url={page.url} path={`docs/${page.file.path}`} />
           </TableOfContents>
         </div>
       )}

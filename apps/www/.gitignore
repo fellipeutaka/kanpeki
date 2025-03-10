@@ -39,5 +39,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# mdx files (velite)
-.velite
+# mdx files (fumadocs)
+.source

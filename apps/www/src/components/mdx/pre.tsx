@@ -2,7 +2,6 @@
 
 import { use } from "react";
 import { DisclosureStateContext } from "react-aria-components";
-import type { NpmCommands } from "~/@types/unist";
 import { cn } from "~/lib/cva";
 import {
   ScrollAreaRoot,
@@ -16,67 +15,100 @@ import {
   CopyNpmButton,
   type CopyNpmButtonProps,
 } from "./copy-button";
+import { LanguageIcon } from "./language-icon";
 
-interface PreProps extends React.ComponentProps<"pre">, NpmCommands {
-  "data-language"?: string;
-  __rawString__: string;
-  __src__?: string;
+export type NpmCommands = {
+  npm: string;
+  yarn: string;
+  pnpm: string;
+  bun: string;
+} | null;
+
+interface PreProps extends React.ComponentProps<"pre"> {
+  "data-language": string;
+  "data-source": string;
+  "data-npm"?: string;
+  "data-yarn"?: string;
+  "data-pnpm"?: string;
+  "data-bun"?: string;
 }
 
 export function Pre({
   className,
   title,
   "data-language": language,
-  __rawString__,
-  __npmCommand__,
-  __yarnCommand__,
-  __pnpmCommand__,
-  __bunCommand__,
-  __src__,
+  "data-source": __rawString__,
+  "data-npm": npmCommand,
+  "data-yarn": yarnCommand,
+  "data-pnpm": pnpmCommand,
+  "data-bun": bunCommand,
   ...props
 }: PreProps) {
   const state = use(DisclosureStateContext);
 
-  const commands = (
-    __npmCommand__
-      ? {
-          __npmCommand__,
-          __yarnCommand__,
-          __pnpmCommand__,
-          __bunCommand__,
-        }
-      : null
-  ) as Required<NpmCommands> | null;
+  const commands = npmCommand
+    ? ({
+        npm: npmCommand,
+        yarn: yarnCommand,
+        pnpm: pnpmCommand,
+        bun: bunCommand,
+      } as NpmCommands)
+    : null;
 
   return (
-    <ScrollAreaRoot>
-      <CopyBtn
-        text={__rawString__}
-        commands={commands}
-        className="absolute top-2.5 right-4 z-10 max-sm:group-has-[[data-state=visible]]:opacity-0"
-      />
+    <figure
+      className={cn(
+        "group relative mt-6 overflow-hidden rounded-lg border text-sm",
+        className
+      )}
+      data-figure="code"
+      {...props}
+    >
+      {title ? (
+        <figcaption
+          className={cn(
+            "flex items-center gap-2 border-b px-4 py-1.5",
+            className
+          )}
+          {...props}
+        >
+          <LanguageIcon title={title} language={language} />
+          <span className="flex-1 truncate text-muted-fg">{title}</span>
+          <CopyButton text={__rawString__} />
+        </figcaption>
+      ) : null}
 
-      <ScrollAreaViewport className="max-h-[40rem]">
-        <pre className={cn("py-4", className)} {...props} tabIndex={-1} />
-      </ScrollAreaViewport>
-      {state && !state.isExpanded ? null : (
-        <ScrollAreaScrollbar orientation="vertical">
-          <ScrollAreaThumb />
-        </ScrollAreaScrollbar>
-      )}
-      {state && !state.isExpanded ? null : (
-        <ScrollAreaScrollbar orientation="horizontal">
-          <ScrollAreaThumb />
-        </ScrollAreaScrollbar>
-      )}
-    </ScrollAreaRoot>
+      <ScrollAreaRoot>
+        {title ? null : (
+          <CopyBtn
+            text={__rawString__}
+            commands={commands}
+            className="absolute top-2.5 right-4 z-10 max-sm:group-has-[[data-state=visible]]:opacity-0"
+          />
+        )}
+
+        <ScrollAreaViewport className="max-h-[40rem]">
+          <pre className={cn("py-4", className)} {...props} tabIndex={-1} />
+        </ScrollAreaViewport>
+        {state && !state.isExpanded ? null : (
+          <ScrollAreaScrollbar orientation="vertical">
+            <ScrollAreaThumb />
+          </ScrollAreaScrollbar>
+        )}
+        {state && !state.isExpanded ? null : (
+          <ScrollAreaScrollbar orientation="horizontal">
+            <ScrollAreaThumb />
+          </ScrollAreaScrollbar>
+        )}
+      </ScrollAreaRoot>
+    </figure>
   );
 }
 
 interface CopyBtnProps
   extends CopyButtonProps,
     Omit<CopyNpmButtonProps, "commands"> {
-  commands: Required<NpmCommands> | null;
+  commands: NpmCommands;
 }
 
 function CopyBtn({ commands, text, ...props }: CopyBtnProps) {

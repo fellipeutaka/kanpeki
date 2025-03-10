@@ -1,30 +1,32 @@
 import { BadgeStyles } from "~/components/ui/badge/styles";
 import { LinkButton } from "~/components/ui/button";
 import { Icons } from "~/components/ui/icons";
-import type { Doc } from "~/utils/mdx";
+import type { source } from "~/lib/source";
 import { DocsBreadcrumb } from "./docs-breadcrumb";
 
 interface DocsHeaderProps {
-  doc: Doc;
+  page: NonNullable<ReturnType<(typeof source)["getPage"]>>;
 }
 
-export function DocsHeader({ doc }: DocsHeaderProps) {
+export function DocsHeader({ page }: DocsHeaderProps) {
+  const { data, url } = page;
+
   return (
     <>
-      <DocsBreadcrumb doc={doc} />
+      <DocsBreadcrumb url={url} />
       <div className="space-y-2">
-        <h1 className="scroll-m-20 font-bold text-3xl tracking-tight">
-          {doc.title}
+        <h1 className="scroll-m-20 break-words font-bold text-3xl tracking-tight">
+          {data.title}
         </h1>
         <p className="text-balance text-base text-muted-fg">
-          {doc.description}
+          {data.description}
         </p>
       </div>
-      {doc.links && (
+      {data.links && (
         <div className="mt-4 flex items-center gap-x-2">
-          {doc.links?.docs && (
+          {data.links?.docs && (
             <LinkButton
-              href={doc.links.docs}
+              href={data.links.docs}
               target="_blank"
               rel="noopener noreferrer"
               className={BadgeStyles({
@@ -32,14 +34,14 @@ export function DocsHeader({ doc }: DocsHeaderProps) {
                 className: "h-auto gap-1.5",
               })}
             >
-              <DocsLinkIcon link={doc.links.docs} />
+              <DocsLinkIcon link={data.links.docs} />
               Docs
               <Icons.ExternalLink className="size-3" />
             </LinkButton>
           )}
-          {doc.links?.api && (
+          {data.links?.api && (
             <LinkButton
-              href={doc.links.api}
+              href={data.links.api}
               target="_blank"
               rel="noopener noreferrer"
               className={BadgeStyles({

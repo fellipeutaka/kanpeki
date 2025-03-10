@@ -1,37 +1,52 @@
-@import "./globals.css";
-
-figure[data-rehype-pretty-code-figure] code {
-  @apply p-0 bg-transparent;
+figure.shiki.shiki-themes code {
+  padding: 0;
+  background-color: transparent;
 }
 
-figure[data-rehype-pretty-code-figure] [data-line] {
-  @apply px-3;
+figure.shiki.shiki-themes .line {
+  padding-inline: 0.75rem;
+  width: 100%;
+  display: inline-block;
+
+  &.highlighted {
+    background-color: var(--color-muted);
+  }
 }
 
-[data-rehype-pretty-code-figure] span {
+.shiki.shiki-themes span {
   color: light-dark(var(--shiki-light), var(--shiki-dark));
 }
 
-figure[data-rehype-pretty-code-figure]
-  :where([data-highlighted-chars], [data-highlighted-line]) {
-  @apply bg-muted;
-}
-
 .mdx > .steps:first-child > h3:first-child {
-  @apply mt-0;
+  margin-top: 0;
 }
 
 .mdx > div:where([dir], [data-orientation]):first-child {
-  @apply mt-0;
+  margin-top: 0;
 }
 
 .steps > :where(h2, h3) {
-  @apply mt-8 mb-4 text-base font-semibold;
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
   counter-increment: step;
 
   &::before {
-    @apply absolute size-9 bg-muted rounded-full font-mono font-light grid place-content-center -indent-px border-4 border-bg;
-    @apply ml-[-50px] -mt-1;
+    position: absolute;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: var(--color-muted);
+    border-radius: calc(infinity * 1px);
+    font-family: var(--font-mono);
+    font-weight: 300;
+    display: grid;
+    place-content: center;
+    text-indent: -1px;
+    border-width: 4px;
+    border-color: var(--color-bg);
+    margin-left: -50px;
+    margin-top: -0.25rem;
     content: counter(step);
   }
 }
