@@ -1,11 +1,10 @@
 export {
   CommandRoot as Root,
-  CommandDialog as Dialog,
-  CommandInput as Input,
   CommandList as List,
-  CommandEmpty as Empty,
-  CommandGroup as Group,
+  CommandHeader as Header,
   CommandItem as Item,
+  CommandGroup as Group,
+  CommandEmpty as Empty,
   CommandSeparator as Separator,
   CommandShortcut as Shortcut,
 } from "./command";

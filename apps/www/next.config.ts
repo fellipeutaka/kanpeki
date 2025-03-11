@@ -1,15 +1,9 @@
-// @ts-check
+import { createMDX } from "fumadocs-mdx/next";
+import type { NextConfig } from "next";
 
-const isDev = process.argv.indexOf("dev") !== -1;
-const isBuild = process.argv.indexOf("build") !== -1;
-if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
-  process.env.VELITE_STARTED = "1";
-  const { build } = await import("velite");
-  await build({ watch: isDev, clean: !isDev });
-}
+const withMDX = createMDX();
 
-/** @type {import('next').NextConfig} */
-const config = {
+const config: NextConfig = {
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -44,4 +38,4 @@ const config = {
   },
 };
 
-export default config;
+export default withMDX(config);

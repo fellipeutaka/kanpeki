@@ -41,22 +41,28 @@ npx kanpeki-ui@latest add list-box
 
 ## Usage
 
+### Single import
+
 ```tsx
-import { DropdownMenu } from "~/components/ui/list-box";
+import { ListBox } from "~/components/ui/list-box";
 ```
 
 ```tsx
-<DropdownMenu.Root>
-  <Button variant="outline">Open</Button>
+<ListBox.Root>
+  {(item) => <ListBox.Item id={item.id}>{item.name}</ListBox.Item>}
+</ListBox.Root>
+```
 
-  <Popover.Content>
-    <DropdownMenu.Content>
-      <DropdownMenu.Item>Inbox</DropdownMenu.Item>
-      <DropdownMenu.Item>Sent</DropdownMenu.Item>
-      <DropdownMenu.Item>New Message</DropdownMenu.Item>
-    </DropdownMenu.Content>
-  </Popover.Content>
-</DropdownMenu.Root>
+### Multiple imports
+
+```tsx
+import { ListBoxItem, ListBoxRoot } from "~/components/ui/list-box";
+```
+
+```tsx
+<ListBoxRoot>
+  {(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+</ListBoxRoot>
 ```
 
 ## Examples

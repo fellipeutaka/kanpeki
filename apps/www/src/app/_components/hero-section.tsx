@@ -29,7 +29,7 @@ export function HeroSection() {
           Accessible, flexible, mobile friendly, modern UI components.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
-          <LinkButton href="/docs/introduction" size="lg">
+          <LinkButton href="/docs" size="lg">
             Get Started
           </LinkButton>
           <LinkButton

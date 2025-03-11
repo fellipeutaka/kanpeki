@@ -16,11 +16,15 @@ interface ComponentPreviewProps {
 }
 
 function getCodeString(children: React.ReactElement<ComponentPreviewChildren>) {
-  if (typeof children.props["data-rehype-pretty-code-figure"] === "string") {
-    return children.props?.children?.props.children?.[0]?.props.text ?? "";
-  }
+  try {
+    if (typeof children.props["data-rehype-pretty-code-figure"] === "string") {
+      return children.props?.children?.props.children?.[0]?.props.text ?? "";
+    }
 
-  return "";
+    return "";
+  } catch {
+    return "";
+  }
 }
 
 export function ComponentPreview({ children, name }: ComponentPreviewProps) {
@@ -49,7 +53,7 @@ export function ComponentPreview({ children, name }: ComponentPreviewProps) {
           </div>
         </div>
       </TabsContent>
-      <TabsContent id="code" className="**:data-rehype-pretty-code-figure:mt-0">
+      <TabsContent id="code" className="*:data-[figure=code]:mt-0">
         {children}
       </TabsContent>
     </TabsRoot>

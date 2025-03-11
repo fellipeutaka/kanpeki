@@ -23,20 +23,17 @@ export default function ReactHookForm() {
     resolver: standardSchemaResolver(formSchema),
   });
 
-  const handleSubmit = form.handleSubmit(
-    (data) => {
-      toast("You submitted the following values:", {
-        description: (
-          <pre className="mt-2 rounded-md p-4">
-            <code className="font-mono text-sm">
-              {JSON.stringify(data, null, 2)}
-            </code>
-          </pre>
-        ),
-      });
-    },
-    (err) => console.log(err)
-  );
+  const handleSubmit = form.handleSubmit((data) => {
+    toast("You submitted the following values:", {
+      description: (
+        <pre className="mt-2 rounded-md p-4">
+          <code className="font-mono text-sm">
+            {JSON.stringify(data, null, 2)}
+          </code>
+        </pre>
+      ),
+    });
+  });
 
   return (
     <Form.Root

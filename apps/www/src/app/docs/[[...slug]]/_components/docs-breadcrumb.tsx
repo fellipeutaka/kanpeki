@@ -1,21 +1,14 @@
-"use client";
-
+import { getBreadcrumbItems } from "fumadocs-core/breadcrumb";
 import { Fragment } from "react";
 import { Breadcrumb } from "~/components/ui/breadcrumb";
-import type { Doc } from "~/utils/mdx";
-
-function formatTitle(title: string) {
-  return title.replace(/-/g, " ");
-}
+import { source } from "~/lib/source";
 
 interface DocsBreadcrumbProps {
-  doc: Doc;
+  url: string;
 }
 
-export function DocsBreadcrumb({ doc }: DocsBreadcrumbProps) {
-  if (doc.title === "Introduction") {
-    return null;
-  }
+export function DocsBreadcrumb({ url }: DocsBreadcrumbProps) {
+  const items = getBreadcrumbItems(url, source.pageTree);
 
   return (
     <Breadcrumb.Root className="mb-4 gap-1 sm:gap-1">
@@ -23,22 +16,22 @@ export function DocsBreadcrumb({ doc }: DocsBreadcrumbProps) {
         <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
-      {doc.slugAsParams
-        .split("/")
-        .slice(0, -1)
-        .map((link) => (
-          <Fragment key={link}>
+      {items.map((item, index) => {
+        const url = item.url ?? "/docs/components";
+
+        return (
+          <Fragment key={url}>
             <Breadcrumb.Item>
-              <Breadcrumb.Link href={`/docs/${link}`} className="capitalize">
-                {formatTitle(link)}
-              </Breadcrumb.Link>
+              {index === items.length - 1 ? (
+                <Breadcrumb.Page>{item.name}</Breadcrumb.Page>
+              ) : (
+                <Breadcrumb.Link href={url}>{item.name}</Breadcrumb.Link>
+              )}
             </Breadcrumb.Item>
-            <Breadcrumb.Separator />
+            {index < items.length - 1 && <Breadcrumb.Separator />}
           </Fragment>
-        ))}
-      <Breadcrumb.Item>
-        <Breadcrumb.Page>{doc.title}</Breadcrumb.Page>
-      </Breadcrumb.Item>
+        );
+      })}
     </Breadcrumb.Root>
   );
 }

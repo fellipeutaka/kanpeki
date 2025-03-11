@@ -1,24 +1,16 @@
+import type { MDXComponents } from "mdx/types";
 import { cn } from "~/lib/cva";
 import { Alert } from "../ui/alert";
 import { LinkButton } from "../ui/button";
 import { Icons } from "../ui/icons";
 import { Link } from "../ui/link/link";
-import {
-  TabsContent,
-  TabsList,
-  type TabsListProps,
-  TabsRoot,
-  type TabsRootProps,
-  TabsTrigger,
-  type TabsTriggerProps,
-} from "../ui/tabs";
 import { Code } from "./code";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
-import { Figcaption } from "./figcaption";
 import { File, Files } from "./files";
 import { Folder } from "./folder";
 import { Heading } from "./heading";
+import { MdxTabs } from "./mdx-tabs";
 import { Pre } from "./pre";
 import { PropsTable } from "./props-table";
 import { Step, Steps } from "./steps";
@@ -90,30 +82,15 @@ export const mdxComponents = {
     <img {...props} className={cn("rounded-md border", className)} alt={alt} />
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
-
+  Code: Code,
   code: Code,
-  Code,
   pre: Pre,
-  figure: ({
-    className,
-    __src__,
-    ...props
-  }: React.ComponentProps<"figure"> & {
-    __src__?: string;
-  }) => (
-    <figure
-      className={cn(
-        "group relative mt-6 overflow-hidden rounded-lg border text-sm",
-        className
-      )}
-      {...props}
-    />
-  ),
-  figcaption: Figcaption,
   Link,
-  Icons,
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  Icons: Icons as any,
   LinkButton,
-  Alert,
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  Alert: Alert as any,
   Steps,
   Step,
   Files,
@@ -121,25 +98,9 @@ export const mdxComponents = {
   Folder,
   ComponentPreview,
   ComponentSource,
-  TabRoot: ({ className, ...props }: TabsRootProps) => (
-    <TabsRoot
-      variant="underline"
-      {...props}
-      className={cn("mt-6", className)}
-    />
-  ),
-  TabList: ({ className, ...props }: TabsListProps<object>) => (
-    <TabsList
-      {...props}
-      className={cn("orientation-horizontal:gap-x-0", className)}
-    />
-  ),
-  TabTrigger: ({ className, ...props }: TabsTriggerProps) => (
-    <TabsTrigger {...props} className={cn("px-4", className)} />
-  ),
-  TabContent: TabsContent,
+  TabRoot: MdxTabs.Root,
+  TabList: MdxTabs.List,
+  TabTrigger: MdxTabs.Trigger,
+  TabContent: MdxTabs.Content,
   PropsTable,
-} satisfies Record<string, SAFE_ANY>;
-
-// biome-ignore lint/suspicious/noExplicitAny: This is a type alias for any
-type SAFE_ANY = any;
+} satisfies MDXComponents;

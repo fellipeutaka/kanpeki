@@ -1,59 +1,30 @@
+import { findNeighbour } from "fumadocs-core/server";
 import { LinkButton } from "~/components/ui/button";
 import { Icons } from "~/components/ui/icons";
-import { type SidebarNavItem, docsConfig } from "~/config/docs";
-import type { Doc } from "~/utils/mdx";
-
-function getPagerForDoc(doc: Doc) {
-  const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null];
-  const activeIndex = flattenedLinks.findIndex((link) => {
-    return `/${doc.slug}` === link?.href;
-  });
-  const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
-  const next =
-    activeIndex !== flattenedLinks.length - 1
-      ? flattenedLinks[activeIndex + 1]
-      : null;
-
-  return {
-    prev,
-    next,
-  };
-}
-
-function flatten(links: SidebarNavItem[]): SidebarNavItem[] {
-  return links
-    .reduce<SidebarNavItem[]>((flat, link) => {
-      return flat.concat(link.items ? flatten(link.items) : link);
-    }, [])
-    .filter((link) => !link?.disabled);
-}
+import { source } from "~/lib/source";
 
 interface DocsPagerProps {
-  doc: Doc;
+  url: string;
 }
 
-export function DocsPager({ doc }: DocsPagerProps) {
-  const pager = getPagerForDoc(doc);
-
-  if (!pager) {
-    return null;
-  }
+export function DocsPager({ url }: DocsPagerProps) {
+  const neighbours = findNeighbour(source.pageTree, url);
 
   return (
     <div className="flex flex-row items-center justify-between">
-      {pager?.prev?.href && (
-        <LinkButton href={pager.prev.href} variant="outline">
+      {neighbours.previous && (
+        <LinkButton href={neighbours.previous.url} variant="outline">
           <Icons.ChevronLeft className="mr-2 size-4" />
-          {pager.prev.title}
+          {neighbours.previous.name}
         </LinkButton>
       )}
-      {pager?.next?.href && (
+      {neighbours.next && (
         <LinkButton
-          href={pager.next.href}
+          href={neighbours.next.url}
           variant="outline"
           className="ml-auto"
         >
-          {pager.next.title}
+          {neighbours.next.name}
           <Icons.ChevronRight className="ml-2 size-4" />
         </LinkButton>
       )}

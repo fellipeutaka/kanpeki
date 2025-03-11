@@ -1,13 +1,13 @@
 import { Icons } from "~/components/ui/icons";
 import { Link } from "~/components/ui/link/link";
 import { getGitHubIssueUrl, getGithubFileUrl } from "~/utils/github";
-import type { Doc } from "~/utils/mdx";
 
 interface ContributeProps {
-  doc: Doc;
+  url: string;
+  path: string;
 }
 
-export function Contribute({ doc }: ContributeProps) {
+export function Contribute({ url, path }: ContributeProps) {
   const contributeLinks = [
     {
       text: "Report an issue",
@@ -15,7 +15,7 @@ export function Contribute({ doc }: ContributeProps) {
       href: getGitHubIssueUrl({
         owner: "fellipeutaka",
         repo: "kanpeki",
-        title: `[bug]: ${doc.slugAsParams}`,
+        title: `[bug]: ${url}`,
         labels: ["bug", "documentation"],
         template: "bug_report.md",
       }),
@@ -26,7 +26,7 @@ export function Contribute({ doc }: ContributeProps) {
       href: getGitHubIssueUrl({
         owner: "fellipeutaka",
         repo: "kanpeki",
-        title: `[feat]: ${doc.slugAsParams}`,
+        title: `[feat]: ${url}`,
         labels: ["enhancement"],
         template: "feature_request.md",
       }),
@@ -34,7 +34,7 @@ export function Contribute({ doc }: ContributeProps) {
     {
       text: "Edit this page",
       icon: Icons.Pencil,
-      href: getGithubFileUrl(doc.slug),
+      href: getGithubFileUrl(path),
     },
   ];
 

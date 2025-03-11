@@ -1,6 +1,6 @@
-import type { Theme } from "rehype-pretty-code";
+import type { ThemeRegistration } from "shiki";
 
-export const vercelLightTheme: Theme = {
+export const vercelLightTheme: ThemeRegistration = {
   type: "light",
   settings: [
     {

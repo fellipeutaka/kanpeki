@@ -1,0 +1,86 @@
+---
+title: Date Field
+description: A date field allows users to enter and edit date and time values using a keyboard. Each part of a date value is displayed in an individually editable segment.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/DateField.html
+---
+
+<ComponentPreview name="date-field-demo" />
+
+## Installation
+
+<TabRoot>
+
+<TabList>
+  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="manual">Manual</TabTrigger>
+</TabList>
+<TabContent id="cli">
+
+```bash
+npx kanpeki-ui@latest add date-field
+```
+
+</TabContent>
+
+<TabContent id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="date-field" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabContent>
+
+</TabRoot>
+
+## Usage
+
+### Single import
+
+```tsx
+import { DateField } from "~/components/ui/date-field";
+```
+
+```tsx
+<DateField.Root>
+  <Label />
+  <DateField.Input>
+    {(segment) => <DateField.Segment segment={segment} />}
+  </DateField.Input>
+</DateField.Root>
+```
+
+### Multiple imports
+
+```tsx
+import {
+  DateFieldInput,
+  DateFieldRoot,
+  DateFieldSegment,
+} from "~/components/ui/date-field";
+```
+
+```tsx
+<DateFieldRoot>
+  <Label />
+  <DateFieldInput>
+    {(segment) => <DateFieldSegment segment={segment} />}
+  </DateFieldInput>
+</DateFieldRoot>
+```
+
+## Examples
+
+### Time
+
+<ComponentPreview name="date-field-time" />
+
+### Form
+
+<ComponentPreview name="date-field-form" />

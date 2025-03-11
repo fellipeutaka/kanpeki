@@ -119,6 +119,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Command",
           href: "/docs/components/command",
+          label: "Improved",
         },
         {
           title: "Context Menu",
@@ -133,6 +134,11 @@ export const docsConfig: DocsConfig = {
           label: "Planned",
         },
         {
+          title: "Date Field",
+          href: "/docs/components/date-field",
+          label: "New",
+        },
+        {
           title: "Date Picker",
           href: "/docs/components/date-picker",
           disabled: true,
@@ -145,12 +151,10 @@ export const docsConfig: DocsConfig = {
         {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu",
-          label: "New",
         },
         {
           title: "Form",
           href: "/docs/components/form",
-          label: "New",
         },
         {
           title: "Hover Card",
@@ -163,7 +167,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "List Box",
           href: "/docs/components/list-box",
-          label: "New",
         },
         {
           title: "Pagination",
@@ -200,7 +203,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Select",
           href: "/docs/components/select",
-          label: "New",
         },
         {
           title: "Separator",
@@ -245,7 +247,6 @@ export const docsConfig: DocsConfig = {
         {
           title: "Toggle",
           href: "/docs/components/toggle",
-          label: "New",
         },
         {
           title: "Toggle Group",

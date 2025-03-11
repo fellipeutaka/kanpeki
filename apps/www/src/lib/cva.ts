@@ -1,4 +1,4 @@
-import { defineConfig } from "cva";
+import { type ClassValue, defineConfig } from "cva";
 import { twMerge } from "tailwind-merge";
 
 export const {
@@ -14,3 +14,13 @@ export const {
 export { cx, cva as cv } from "cva";
 
 export type { VariantProps } from "cva";
+
+export type CVAClassProp =
+  | {
+      class?: ClassValue;
+      className?: never;
+    }
+  | {
+      class?: never;
+      className?: ClassValue;
+    };

@@ -46,6 +46,6 @@ export function getGitHubIssueUrl(params: GitHubIssueUrlParams): string {
   return `${baseUrl}?${urlParams.toString()}`;
 }
 
-export function getGithubFileUrl(slug: string) {
-  return `${siteConfig.links.github}/blob/main/apps/www/src/content/${slug}.mdx`;
+export function getGithubFileUrl(path: string) {
+  return `${siteConfig.links.github}/blob/main/apps/www/src/content/${path}`;
 }
