@@ -48,7 +48,9 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
-  const { body: MDXContent, toc } = await page.data.load();
+  // TODO: Wait to async be not experimental: https://fumadocs.vercel.app/docs/mdx/async
+  // const { body: MDXContent, toc } = await page.data.load();
+  const { body: MDXContent, toc } = page.data;
 
   return (
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">

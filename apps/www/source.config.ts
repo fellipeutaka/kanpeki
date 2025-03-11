@@ -20,7 +20,8 @@ export const docs = defineDocs({
         .partial()
         .optional(),
     }),
-    async: true,
+    // TODO: Wait to async be not experimental: https://fumadocs.vercel.app/docs/mdx/async
+    // async: true,
   },
 });
 
