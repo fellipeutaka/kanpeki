@@ -11,17 +11,16 @@ export function Toaster(props: ToasterProps) {
         unstyled: true,
         classNames: {
           toast: cx(
-            "flex items-center gap-1.5 rounded-xl border bg-bg p-4 font-sans text-fg text-sm shadow-lg",
-            "h-(--front-toast-height) w-(--width)"
+            "flex h-(--front-toast-height) w-(--width) items-center gap-1.5 rounded-xl border bg-bg p-4 font-sans",
+            "text-fg text-sm shadow-lg"
           ),
           description: "text-muted-fg",
           closeButton: cx(
-            "absolute top-0 left-0 grid size-5 cursor-pointer place-content-center rounded-full border bg-bg text-fg transition",
-            "transform-(--toast-close-button-transform)"
+            "transform-(--toast-close-button-transform) absolute top-0 left-0 grid size-5 cursor-pointer",
+            "place-content-center rounded-full border bg-bg text-fg transition"
           ),
           icon: cx(
-            "relative flex size-4 shrink-0 items-center",
-            "mr-(--toast-icon-margin-end) ml-(--toast-icon-margin-start)",
+            "relative mr-(--toast-icon-margin-end) ml-(--toast-icon-margin-start) flex size-4 shrink-0 items-center",
             "*:mr-(--toast-svg-margin-start) *:ml-(--toast-svg-margin-start) *:size-5"
           ),
         },
