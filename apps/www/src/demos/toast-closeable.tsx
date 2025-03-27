@@ -11,6 +11,7 @@ export default function ToastCloseableDemo() {
         toast.message("Event has been created", {
           description: "Monday, January 3rd at 6:00pm",
           closeButton: true,
+          duration: Number.POSITIVE_INFINITY,
         })
       }
     >
