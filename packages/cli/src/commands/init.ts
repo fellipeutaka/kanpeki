@@ -39,7 +39,7 @@ const PROJECT_DEV_DEPENDENCIES: string[] = [
   "cva@beta",
   "tailwind-merge",
   "tailwindcss-motion",
-  "tailwindcss-react-aria-components@nightly",
+  "tailwindcss-react-aria-components",
 ];
 
 interface InitOptions {
