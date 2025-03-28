@@ -187,8 +187,7 @@ export const docsConfig: DocsConfig = {
         {
           title: "Radio Group",
           href: "/docs/components/radio-group",
-          disabled: true,
-          label: "Planned",
+          label: "New",
         },
         {
           title: "Resizable",
