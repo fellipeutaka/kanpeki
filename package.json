@@ -2,7 +2,7 @@
   "name": "kanpeki",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.4.0",
+  "packageManager": "pnpm@10.13.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/fellipeutaka/kanpeki.git"
@@ -14,8 +14,7 @@
     "preview": "turbo run preview",
     "type-check": "turbo run type-check --parallel",
     "lint": "biome check",
-    "clean": "rimraf **/{.next,.turbo,node_modules,dist,out} -g",
-    "prepare": "husky"
+    "clean": "rimraf **/{.next,.turbo,node_modules,dist,out} -g"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
