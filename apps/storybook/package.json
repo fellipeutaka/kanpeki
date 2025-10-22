@@ -16,18 +16,18 @@
     "type-check": "tsc --noEmit --incremental false"
   },
   "dependencies": {
-    "@internationalized/date": "^3.7.0",
-    "@radix-ui/react-scroll-area": "^1.2.3",
-    "@react-stately/data": "^3.12.1",
+    "@internationalized/date": "catalog:",
+    "@radix-ui/react-scroll-area": "catalog:",
+    "@react-stately/data": "catalog:",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "cmdk": "^1.0.4",
-    "motion": "^12.4.4",
-    "react": "^19.0.0",
-    "react-aria-components": "^1.6.0",
-    "react-dom": "^19.0.0",
-    "recharts": "^2.15.1",
-    "sonner": "^1.7.4"
+    "motion": "catalog:",
+    "react": "catalog:",
+    "react-aria-components": "catalog:",
+    "react-dom": "catalog:",
+    "recharts": "catalog:",
+    "sonner": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "3.2.4",
@@ -44,12 +44,12 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
-    "cva": "1.0.0-beta.3",
+    "cva": "catalog:",
     "storybook": "8.5.6",
-    "tailwind-merge": "^3.0.1",
-    "tailwindcss": "^4.0.7",
-    "tailwindcss-motion": "^1.1.0",
-    "tailwindcss-react-aria-components": "nightly",
+    "tailwind-merge": "catalog:",
+    "tailwindcss": "catalog:",
+    "tailwindcss-motion": "catalog:",
+    "tailwindcss-react-aria-components": "catalog:",
     "vite": "^6.1.0",
     "vite-tsconfig-paths": "^5.1.4"
   }
