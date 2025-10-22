@@ -1,7 +1,13 @@
 {
-  "name": "storybook",
+  "name": "@kanpeki/storybook",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@10.19.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fellipeutaka/kanpeki.git",
+    "directory": "apps/storybook"
+  },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build -o ./dist",

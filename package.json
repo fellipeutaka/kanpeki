@@ -2,7 +2,7 @@
   "name": "kanpeki",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.19.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/fellipeutaka/kanpeki.git"
