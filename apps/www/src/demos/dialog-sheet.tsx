@@ -21,7 +21,7 @@ export default function DialogSheetDemo() {
                   </Dialog.Description>
                 </Dialog.Header>
                 <Dialog.Footer>
-                  <Button variant="outline" slot="close">
+                  <Button slot="close" variant="outline">
                     Cancel
                   </Button>
                   <Button slot="close">Continue</Button>

@@ -35,7 +35,7 @@ const fruits = [
 
 export default function ListBoxMultiple() {
   return (
-    <ListBox.Root items={fruits} selectionMode="multiple" aria-label="Bands">
+    <ListBox.Root aria-label="Bands" items={fruits} selectionMode="multiple">
       {(item) => <ListBox.Item id={item.id}>{item.name}</ListBox.Item>}
     </ListBox.Root>
   );

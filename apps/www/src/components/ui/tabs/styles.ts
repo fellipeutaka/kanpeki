@@ -1,12 +1,24 @@
 import { cva } from "~/lib/cva";
 
 export const TabsStyles = {
-  Root: cva({
-    base: [
-      "group flex w-full gap-4",
-      "orientation-horizontal:flex-col",
-      "orientation-vertical:flex-row",
-    ],
+  Content: cva({
+    base: ["flex-1 text-fg text-sm focus-visible:outline-hidden"],
+  }),
+  Indicator: cva({
+    base: ["absolute"],
+    defaultVariants: {
+      variant: "default",
+    },
+    variants: {
+      variant: {
+        default: ["inset-0 z-10 rounded-md bg-bg text-fg mix-blend-difference"],
+        underline: [
+          "rounded bg-primary",
+          "group-orientation-horizontal:-bottom-px group-orientation-horizontal:inset-x-0 group-orientation-horizontal:h-0.5 group-orientation-horizontal:w-full",
+          "group-orientation-vertical:top-0 group-orientation-vertical:left-0 group-orientation-vertical:h-full group-orientation-vertical:w-0.5 group-orientation-vertical:transform",
+        ],
+      },
+    },
   }),
   List: cva({
     base: [
@@ -14,6 +26,9 @@ export const TabsStyles = {
       "orientation-horizontal:flex-row",
       "orientation-vertical:flex-col orientation-vertical:items-start orientation-vertical:gap-y-4 orientation-vertical:border-l",
     ],
+    defaultVariants: {
+      variant: "default",
+    },
     variants: {
       variant: {
         default: [
@@ -24,14 +39,21 @@ export const TabsStyles = {
         ],
       },
     },
-    defaultVariants: {
-      variant: "default",
-    },
+  }),
+  Root: cva({
+    base: [
+      "group flex w-full gap-4",
+      "orientation-horizontal:flex-col",
+      "orientation-vertical:flex-row",
+    ],
   }),
   Trigger: cva({
     base: [
       "relative flex cursor-pointer items-center whitespace-nowrap font-medium text-sm outline-hidden transition",
     ],
+    defaultVariants: {
+      variant: "default",
+    },
     variants: {
       variant: {
         default: [
@@ -50,27 +72,5 @@ export const TabsStyles = {
         ],
       },
     },
-    defaultVariants: {
-      variant: "default",
-    },
-  }),
-  Indicator: cva({
-    base: ["absolute"],
-    variants: {
-      variant: {
-        default: ["inset-0 z-10 rounded-md bg-bg text-fg mix-blend-difference"],
-        underline: [
-          "rounded bg-primary",
-          "group-orientation-horizontal:-bottom-px group-orientation-horizontal:inset-x-0 group-orientation-horizontal:h-0.5 group-orientation-horizontal:w-full",
-          "group-orientation-vertical:top-0 group-orientation-vertical:left-0 group-orientation-vertical:h-full group-orientation-vertical:w-0.5 group-orientation-vertical:transform",
-        ],
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }),
-  Content: cva({
-    base: ["flex-1 text-fg text-sm focus-visible:outline-hidden"],
   }),
 };

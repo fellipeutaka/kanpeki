@@ -40,13 +40,13 @@ export function ListBoxItem<T extends object>({
       {...props}
       className={(values) =>
         ListBoxStyles.Item({
+          className:
+            typeof className === "function" ? className(values) : className,
           isDisabled: values.isDisabled,
           isDragging: values.isDragging,
           isFocusVisible: values.isFocusVisible,
           isHovered: values.isHovered,
           isSelected: values.isSelected,
-          className:
-            typeof className === "function" ? className(values) : className,
         })
       }
     />

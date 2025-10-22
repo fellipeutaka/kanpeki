@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { Badge } from "~/components/ui/badge";
 import { Link } from "~/components/ui/link/link";
 import { ScrollArea } from "~/components/ui/scroll-area";
-import { type NavLink, docsConfig } from "~/config/docs";
+import { docsConfig, type NavLink } from "~/config/docs";
 import { cva } from "~/lib/cva";
 
 export function DocsSidebar() {
@@ -15,15 +15,15 @@ export function DocsSidebar() {
       <ScrollArea.Root className="h-full py-6 pr-6 [mask-image:linear-gradient(black_80%,transparent)] lg:py-8">
         <ScrollArea.Viewport>
           {docsConfig.sidebarNav.map(({ title, items }) => (
-            <div key={title} className="mb-4">
+            <div className="mb-4" key={title}>
               <h4 className="mb-1 rounded-md px-2 py-1 font-semibold text-sm">
                 {title}
               </h4>
               <div className="grid grid-flow-row auto-rows-max text-sm">
                 {items?.map((item) => (
                   <DocsSidebarLink
-                    key={item.href}
                     item={item}
+                    key={item.href}
                     pathname={pathname}
                   />
                 ))}
@@ -68,8 +68,8 @@ function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
 
         {item.label && (
           <Badge
-            variant="secondary"
             className="ml-2 border-none px-1.5 py-0.5 text-muted-fg leading-none"
+            variant="secondary"
           >
             {item.label}
           </Badge>
@@ -80,8 +80,8 @@ function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
 
   return (
     <Link
-      href={item.href}
       className={SidebarLinkStyles({ active: pathname.includes(item.href) })}
+      href={item.href}
     >
       <span className="underline decoration-transparent transition group-hover:decoration-current">
         {item.title}

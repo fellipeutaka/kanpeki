@@ -38,29 +38,29 @@ function processComponentSource(node: UnistNode) {
         const source = replaceImports(fs.readFileSync(file.path, "utf8"));
 
         return u("element", {
-          tagName: "div",
-          properties: { className: "tab-pane" },
           children: [
             u("element", {
-              tagName: "pre",
-              properties: { __src__: file.path },
               children: [
                 u("element", {
-                  tagName: "code",
-                  properties: { className: ["language-tsx"] },
                   children: [{ type: "text", value: source }],
+                  properties: { className: ["language-tsx"] },
+                  tagName: "code",
                 }),
               ],
+              properties: { __src__: file.path },
+              tagName: "pre",
             }),
           ],
+          properties: { className: "tab-pane" },
+          tagName: "div",
         });
       });
 
       node.children?.push(
         u("element", {
-          tagName: "div",
-          properties: { className: "tabs-container" },
           children: tabs,
+          properties: { className: "tabs-container" },
+          tagName: "div",
         })
       );
     } catch (error) {
@@ -83,15 +83,15 @@ function processComponentPreview(node: UnistNode) {
 
       node.children?.push(
         u("element", {
-          tagName: "pre",
-          properties: { __src__: filePath, className: ["bananninha"] },
           children: [
             u("element", {
-              tagName: "code",
-              properties: { className: ["language-tsx"] },
               children: [{ type: "text", value: source }],
+              properties: { className: ["language-tsx"] },
+              tagName: "code",
             }),
           ],
+          properties: { __src__: filePath, className: ["bananninha"] },
+          tagName: "pre",
         })
       );
     } catch (error) {

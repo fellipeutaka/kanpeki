@@ -28,7 +28,7 @@ export function Folder({
       <Collapsible.Trigger
         className={FileStyles({ className: ["cursor-pointer", className] })}
       >
-        <FolderIcon title={name} isOpen={isOpen} />
+        <FolderIcon isOpen={isOpen} title={name} />
         {name}
       </Collapsible.Trigger>
       <Collapsible.Content>

@@ -1,6 +1,12 @@
 import { cva } from "~/lib/cva";
 
 export const TextFieldStyles = {
+  Input: cva({
+    base: [
+      "size-full min-w-0 select-none bg-transparent text-fg placeholder-muted-fg outline-hidden",
+      "[&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden",
+    ],
+  }),
   Provider: cva({
     base: ["group flex flex-col gap-y-1.5"],
   }),
@@ -11,12 +17,6 @@ export const TextFieldStyles = {
       "focus-within:border-ring/85 focus-within:ring-4 focus-within:ring-ring/20",
       "group-invalid:border-danger group-invalid:focus-within:border-danger group-invalid:focus-within:ring-4 group-invalid:focus-within:ring-danger/20",
       "disabled:bg-secondary disabled:opacity-50",
-    ],
-  }),
-  Input: cva({
-    base: [
-      "size-full min-w-0 select-none bg-transparent text-fg placeholder-muted-fg outline-hidden",
-      "[&::-ms-reveal]:hidden [&::-webkit-search-cancel-button]:hidden",
     ],
   }),
   Slot: cva({

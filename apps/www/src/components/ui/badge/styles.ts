@@ -6,23 +6,23 @@ export const BadgeStyles = cva({
     "border-(--badge-border) bg-(--badge-bg) text-(--badge-fg) text-xs transition",
     "border-sky-100 bg-sky-50 text-sky-700 dark:border-sky-500/15 dark:bg-sky-500/10 dark:text-sky-300",
   ],
+  defaultVariants: {
+    variant: "default",
+  },
   variants: {
     variant: {
-      default: [
-        "[--badge-color-fg:var(--color-primary-fg)] [--badge-color:var(--color-primary)]",
-      ],
-      secondary: [
-        "border-transparent bg-secondary text-secondary-fg",
-        "hover:bg-secondary/80",
-      ],
       danger: [
         "border-transparent bg-red-ui text-red-dim",
         "selection:bg-red-5 dark:selection:bg-reddark-5",
       ],
+      default: [
+        "[--badge-color-fg:var(--color-primary-fg)] [--badge-color:var(--color-primary)]",
+      ],
       outline: ["text-fg"],
+      secondary: [
+        "border-transparent bg-secondary text-secondary-fg",
+        "hover:bg-secondary/80",
+      ],
     },
-  },
-  defaultVariants: {
-    variant: "default",
   },
 });

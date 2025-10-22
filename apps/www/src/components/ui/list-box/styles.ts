@@ -1,14 +1,13 @@
 import { cva } from "~/lib/cva";
 
 export const ListBoxStyles = {
-  Root: cva({
-    base: [
-      "flex max-h-96 w-full min-w-72 flex-col gap-y-1 overflow-y-auto rounded-xl border p-1 shadow-lg outline-hidden [scrollbar-width:thin] [&::-webkit-scrollbar]:size-0.5",
-    ],
-  }),
   Item: cva({
     base: "relative cursor-pointer rounded-[calc(var(--radius)-1px)] p-2 text-base outline-hidden lg:text-sm",
     variants: {
+      isDisabled: {
+        true: "cursor-default text-muted-fg opacity-70",
+      },
+      isDragging: { true: "cursor-grabbing bg-secondary text-secondary-fg" },
       isFocusVisible: {
         true: "bg-secondary text-secondary-fg [&:focus-visible_[slot=description]]:text-accent-fg/70 [&:focus-visible_[slot=label]]:text-accent-fg",
       },
@@ -18,14 +17,15 @@ export const ListBoxStyles = {
       isSelected: {
         true: "bg-accent text-accent-fg **:data-[slot=icon]:text-accent-fg **:data-[slot=label]:text-accent-fg [&_.text-muted-fg]:text-accent-fg/80",
       },
-      isDragging: { true: "cursor-grabbing bg-secondary text-secondary-fg" },
-      isDisabled: {
-        true: "cursor-default text-muted-fg opacity-70",
-      },
     },
   }),
   Picker: cva({
     base: ["max-h-72 overflow-auto p-1 outline-hidden"],
+  }),
+  Root: cva({
+    base: [
+      "flex max-h-96 w-full min-w-72 flex-col gap-y-1 overflow-y-auto rounded-xl border p-1 shadow-lg outline-hidden [scrollbar-width:thin] [&::-webkit-scrollbar]:size-0.5",
+    ],
   }),
   Section: cva({
     base: [

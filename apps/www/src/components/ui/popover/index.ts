@@ -1,3 +1,3 @@
-export * from "./popover";
 export * as Popover from "./namespace";
+export * from "./popover";
 export * from "./styles";

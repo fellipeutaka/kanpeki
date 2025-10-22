@@ -37,17 +37,17 @@ const fruits = [
 ];
 
 export default function SelectUnselectableDemo() {
-  const [fruit, setFruit] = useState<Key>("");
+  const [fruit, setFruit] = useState<Key | null>(null);
 
-  function handleSelectionChange(key: Key) {
-    setFruit(key === fruit ? "" : key);
+  function handleSelectionChange(key: Key | null) {
+    setFruit(key === fruit ? null : key);
   }
 
   return (
     <Select.Root
-      selectedKey={fruit}
-      onSelectionChange={handleSelectionChange}
       aria-label="Fruits"
+      onChange={handleSelectionChange}
+      value={fruit}
     >
       <Select.Trigger className="w-44" />
 

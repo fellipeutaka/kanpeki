@@ -1,5 +1,5 @@
 export {
   SwitchRoot as Root,
-  SwitchTrack as Track,
   SwitchThumb as Thumb,
+  SwitchTrack as Track,
 } from "./switch";

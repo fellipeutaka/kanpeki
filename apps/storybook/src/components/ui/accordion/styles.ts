@@ -1,6 +1,11 @@
 import { cva } from "~/lib/cva";
 
 export const AccordionStyles = {
+  Content: cva({
+    base: [
+      "overflow-hidden text-sm transition-all transition-discrete [interpolate-size:allow-keywords] group-expanded:h-auto aria-hidden:h-0",
+    ],
+  }),
   Item: cva({
     base: ["group border-b"],
   }),
@@ -12,11 +17,6 @@ export const AccordionStyles = {
   TriggerIcon: cva({
     base: [
       "size-4 shrink-0 text-muted-fg transition-transform duration-200 group-expanded:rotate-180",
-    ],
-  }),
-  Content: cva({
-    base: [
-      "overflow-hidden text-sm transition-all transition-discrete [interpolate-size:allow-keywords] group-expanded:h-auto aria-hidden:h-0",
     ],
   }),
 };

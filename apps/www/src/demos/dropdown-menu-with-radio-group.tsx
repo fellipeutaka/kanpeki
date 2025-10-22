@@ -13,8 +13,8 @@ const items = [
   },
   {
     id: "activity-bar",
-    name: "Activity Bar",
     isDisabled: true,
+    name: "Activity Bar",
   },
   {
     id: "panel",
@@ -36,15 +36,15 @@ export default function DropdownMenuWithRadioGroupDemo() {
       <Popover.Content>
         <DropdownMenu.Content
           items={items}
-          selectedKeys={selected}
           onSelectionChange={setSelected}
+          selectedKeys={selected}
           selectionMode="single"
         >
           {(item) => (
             <DropdownMenu.Item
-              type="radio"
               id={item.id}
               isDisabled={item.isDisabled}
+              type="radio"
             >
               {item.name}
             </DropdownMenu.Item>

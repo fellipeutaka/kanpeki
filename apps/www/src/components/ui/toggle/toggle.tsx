@@ -14,10 +14,10 @@ export function Toggle({ className, variant, size, ...props }: ToggleProps) {
       {...props}
       className={(values) =>
         ToggleStyles({
-          variant,
-          size,
           className:
             typeof className === "function" ? className(values) : className,
+          size,
+          variant,
         })
       }
     />

@@ -7,14 +7,13 @@ import { toast } from "~/components/ui/toast";
 export default function ToastCustomDemo() {
   return (
     <Button
-      variant="outline"
       onPress={() =>
         toast.custom((t) => (
           <div>
             <Button
-              variant="unset"
               className="transform-(--toast-close-button-transform) absolute top-0 left-0 grid size-5 pressed:scale-95 cursor-pointer place-content-center rounded-full border bg-bg p-0 transition"
               onPress={() => toast.dismiss(t)}
+              variant="unset"
             >
               <Icons.X className="size-3" />
             </Button>
@@ -23,6 +22,7 @@ export default function ToastCustomDemo() {
           </div>
         ))
       }
+      variant="outline"
     >
       Show Toast
     </Button>

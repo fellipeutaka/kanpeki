@@ -1,8 +1,8 @@
 export {
-  SliderRoot as Root,
+  SliderFiller as Filler,
   SliderHeader as Header,
   SliderOutput as Output,
-  SliderTrack as Track,
+  SliderRoot as Root,
   SliderThumb as Thumb,
-  SliderFiller as Filler,
+  SliderTrack as Track,
 } from "./slider";

@@ -21,19 +21,19 @@ const Icons = {
   ChevronDown: (props) => (
     <svg
       aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      width={32}
       height={32}
       viewBox="0 0 24 24"
+      width={32}
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path
+        d="M6 9l6 6 6-6"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M6 9l6 6 6-6"
       />
     </svg>
   ),
@@ -63,8 +63,8 @@ export function TableRoot({ children, className, ...props }: TableRootProps) {
       ) : (
         <TablePrimitive
           {...props}
-          data-resizable="false"
           className={TableStyles.Root({ className })}
+          data-resizable="false"
         >
           {children}
         </TablePrimitive>
@@ -121,9 +121,9 @@ export function TableColumn({
       {...props}
       className={(values) =>
         TableStyles.Column({
-          isResizable,
           className:
             typeof className === "function" ? className(values) : className,
+          isResizable,
         })
       }
     />

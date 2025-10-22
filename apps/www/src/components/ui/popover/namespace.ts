@@ -1,5 +1,5 @@
 export {
-  PopoverRoot as Root,
-  PopoverContent as Content,
   PopoverArrow as Arrow,
+  PopoverContent as Content,
+  PopoverRoot as Root,
 } from "./popover";

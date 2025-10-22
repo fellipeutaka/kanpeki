@@ -19,9 +19,6 @@ export default function TanstackForm() {
     defaultValues: {
       username: "",
     } satisfies FormSchema,
-    validators: {
-      onChange: formSchema,
-    },
     onSubmit({ value }) {
       toast("You submitted the following values:", {
         description: (
@@ -33,6 +30,9 @@ export default function TanstackForm() {
         ),
       });
     },
+    validators: {
+      onChange: formSchema,
+    },
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,18 +43,18 @@ export default function TanstackForm() {
 
   return (
     <Form.Root
+      className="w-full space-y-6"
       onSubmit={handleSubmit}
       validationBehavior="aria"
-      className="w-full space-y-6"
     >
       <form.Field name="username">
         {(field) => (
           <TextField.Provider
-            name={field.name}
-            value={field.state.value}
-            onChange={field.handleChange}
-            onBlur={field.handleBlur}
             isInvalid={field.state.meta.errors.length > 0}
+            name={field.name}
+            onBlur={field.handleBlur}
+            onChange={field.handleChange}
+            value={field.state.value}
           >
             <Label>Username</Label>
 

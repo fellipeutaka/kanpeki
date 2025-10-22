@@ -9,19 +9,18 @@ import { vercelLightTheme } from "~/styles/vercel-light";
 export const docs = defineDocs({
   dir: "src/content/docs",
   docs: {
+    async: true,
     schema: z.object({
-      title: z.string().max(32),
       description: z.string().max(256),
       links: z
         .object({
-          docs: z.string().url(),
           api: z.string().url(),
+          docs: z.string().url(),
         })
         .partial()
         .optional(),
+      title: z.string().max(32),
     }),
-    // TODO: Wait to async be not experimental: https://fumadocs.vercel.app/docs/mdx/async
-    // async: true,
   },
 });
 
@@ -29,11 +28,11 @@ export default defineConfig({
   lastModifiedTime: "git",
   mdxOptions: {
     rehypeCodeOptions: {
-      themes: {
-        light: vercelLightTheme,
-        dark: vercelDarkTheme,
-      },
       icon: false,
+      themes: {
+        dark: vercelDarkTheme,
+        light: vercelLightTheme,
+      },
       transformers: [
         ...(rehypeCodeDefaultOptions.transformers ?? []),
         transformerNpmCommands(),

@@ -7,28 +7,37 @@ export const ButtonStyles = cva({
     "pending:cursor-wait pending:opacity-50 disabled:cursor-not-allowed disabled:opacity-50",
     "pressed:scale-95",
   ],
+  defaultVariants: {
+    size: "default",
+    variant: "default",
+  },
 
   variants: {
+    size: {
+      default: ["h-9 px-4 py-2"],
+      icon: ["size-9"],
+      lg: ["h-10 rounded-md px-8"],
+      sm: ["h-8 rounded-md px-3 text-xs"],
+    },
     variant: {
+      danger: [
+        "bg-danger text-danger-fg shadow-xs",
+        "hover:bg-danger/90",
+        "focus-visible:ring-danger",
+      ],
       default: [
         "bg-primary text-primary-fg shadow-sm",
         "hover:bg-primary/90",
         "focus-visible:ring-primary",
       ],
-      success: [
-        "bg-success text-success-fg shadow-xs",
-        "hover:bg-success/90",
-        "focus-visible:ring-success",
+      ghost: [
+        "hover:bg-accent hover:text-accent-fg",
+        "focus-visible:ring-accent",
       ],
-      warning: [
-        "bg-warning text-warning-fg shadow-xs",
-        "hover:bg-warning/90",
-        "focus-visible:ring-warning",
-      ],
-      danger: [
-        "bg-danger text-danger-fg shadow-xs",
-        "hover:bg-danger/90",
-        "focus-visible:ring-danger",
+      link: [
+        "text-primary underline-offset-4",
+        "hover:underline",
+        "focus-visible:ring-ring",
       ],
       outline: [
         "border border-input bg-bg shadow-xs",
@@ -40,26 +49,17 @@ export const ButtonStyles = cva({
         "hover:bg-secondary/80",
         "focus-visible:ring-secondary",
       ],
-      ghost: [
-        "hover:bg-accent hover:text-accent-fg",
-        "focus-visible:ring-accent",
-      ],
-      link: [
-        "text-primary underline-offset-4",
-        "hover:underline",
-        "focus-visible:ring-ring",
+      success: [
+        "bg-success text-success-fg shadow-xs",
+        "hover:bg-success/90",
+        "focus-visible:ring-success",
       ],
       unset: null,
+      warning: [
+        "bg-warning text-warning-fg shadow-xs",
+        "hover:bg-warning/90",
+        "focus-visible:ring-warning",
+      ],
     },
-    size: {
-      default: ["h-9 px-4 py-2"],
-      sm: ["h-8 rounded-md px-3 text-xs"],
-      lg: ["h-10 rounded-md px-8"],
-      icon: ["size-9"],
-    },
-  },
-  defaultVariants: {
-    variant: "default",
-    size: "default",
   },
 });

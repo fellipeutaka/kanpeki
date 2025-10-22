@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { lazy, Suspense } from "react";
 import { Spinner } from "../ui/spinner/spinner";
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "../ui/tabs";
 import { CopyButton } from "./copy-button";
@@ -31,12 +31,12 @@ export function ComponentPreview({ children, name }: ComponentPreviewProps) {
   const Preview = lazy(() => import(`~/demos/${name}`));
 
   return (
-    <TabsRoot className="mt-6" variant="underline" defaultSelectedKey="preview">
+    <TabsRoot className="mt-6" defaultSelectedKey="preview" variant="underline">
       <TabsList className="mb-3 orientation-horizontal:gap-x-0">
-        <TabsTrigger id="preview" className="px-4">
+        <TabsTrigger className="px-4" id="preview">
           Preview
         </TabsTrigger>
-        <TabsTrigger id="code" className="px-4">
+        <TabsTrigger className="px-4" id="code">
           Code
         </TabsTrigger>
       </TabsList>
@@ -53,7 +53,7 @@ export function ComponentPreview({ children, name }: ComponentPreviewProps) {
           </div>
         </div>
       </TabsContent>
-      <TabsContent id="code" className="*:data-[figure=code]:mt-0">
+      <TabsContent className="*:data-[figure=code]:mt-0" id="code">
         {children}
       </TabsContent>
     </TabsRoot>

@@ -5,26 +5,26 @@ import { DropdownMenu } from "~/components/ui/dropdown-menu";
 import { Popover } from "~/components/ui/popover";
 
 const roles = [
-  { id: 1, name: "Admin", description: "Has full access to all resources" },
+  { description: "Has full access to all resources", id: 1, name: "Admin" },
   {
+    description: "Can edit content but has limited access to settings",
     id: 2,
     name: "Editor",
-    description: "Can edit content but has limited access to settings",
   },
   {
+    description: "Can view content but cannot make changes",
     id: 3,
     name: "Viewer",
-    description: "Can view content but cannot make changes",
   },
   {
+    description: "Can contribute content for review",
     id: 4,
     name: "Contributor",
-    description: "Can contribute content for review",
   },
   {
+    description: "Limited access, mostly for viewing purposes",
     id: 5,
     name: "Guest",
-    description: "Limited access, mostly for viewing purposes",
   },
 ];
 

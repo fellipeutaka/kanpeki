@@ -1,5 +1,5 @@
 export {
-  TooltipRoot as Root,
-  TooltipContent as Content,
   TooltipArrow as Arrow,
+  TooltipContent as Content,
+  TooltipRoot as Root,
 } from "./tooltip";

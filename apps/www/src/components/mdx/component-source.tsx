@@ -14,9 +14,9 @@ export function ComponentSource({ children }: ComponentSourceProps) {
 
   return (
     <Collapsible.Root
+      className="group/collapsible relative overflow-hidden"
       isExpanded={isOpen}
       onExpandedChange={setIsOpen}
-      className="group/collapsible relative overflow-hidden"
     >
       <Collapsible.Content className="[content-visibility:visible] aria-hidden:h-40">
         {children}
@@ -27,10 +27,10 @@ export function ComponentSource({ children }: ComponentSourceProps) {
           )}
         >
           <Button
-            onPress={() => setIsOpen((state) => !state)}
-            variant="secondary"
-            size="sm"
             className="pointer-events-auto mb-4"
+            onPress={() => setIsOpen((state) => !state)}
+            size="sm"
+            variant="secondary"
           >
             {isOpen ? "Collapse" : "Expand"}
           </Button>

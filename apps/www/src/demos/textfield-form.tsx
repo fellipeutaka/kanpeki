@@ -6,7 +6,7 @@ import { TextField } from "~/components/ui/textfield";
 export default function TextFieldFormDemo() {
   return (
     <Form.Root className="w-full space-y-6">
-      <TextField.Provider isRequired minLength={2} maxLength={16}>
+      <TextField.Provider isRequired maxLength={16} minLength={2}>
         <Label>Username</Label>
 
         <TextField.Root>

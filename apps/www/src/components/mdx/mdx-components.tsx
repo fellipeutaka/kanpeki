@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types";
+import Image from "next/image";
 import { cn } from "~/lib/cva";
 import { Alert } from "../ui/alert";
 import { LinkButton } from "../ui/button";
@@ -16,6 +17,28 @@ import { PropsTable } from "./props-table";
 import { Step, Steps } from "./steps";
 
 export const mdxComponents = {
+  // biome-ignore lint/suspicious/noExplicitAny: This is needed for MDX compatibility
+  Alert: Alert as any,
+  a: ({ className, href, ...props }: React.ComponentProps<"a">) => (
+    <a
+      className={cn("font-medium underline underline-offset-4", className)}
+      href={href}
+      {...props}
+    />
+  ),
+  blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
+    <blockquote
+      className={cn("mt-6 border-l-2 pl-6 italic *:text-muted-fg", className)}
+      {...props}
+    />
+  ),
+  Code,
+  ComponentPreview,
+  ComponentSource,
+  code: Code,
+  File,
+  Files,
+  Folder,
   h1: (props: React.ComponentProps<"h1">) => (
     <h1 className="heading mt-2 scroll-m-20 font-bold text-4xl" {...props} />
   ),
@@ -54,53 +77,36 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  a: ({ className, ...props }: React.ComponentProps<"a">) => (
-    <a
-      className={cn("font-medium underline underline-offset-4", className)}
+  hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
+  // biome-ignore lint/suspicious/noExplicitAny: This is needed for MDX compatibility
+  Icons: Icons as any,
+  img: ({ className, alt, ...props }: React.ComponentProps<typeof Image>) => (
+    <Image
       {...props}
+      alt={alt}
+      className={cn("rounded-md border", className)}
     />
   ),
-  p: ({ className, ...props }: React.ComponentProps<"p">) => (
-    <p className={cn("not-first:mt-6 leading-7", className)} {...props} />
-  ),
-  ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
-    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+  Link,
+  LinkButton,
+  li: ({ className, ...props }: React.ComponentProps<"li">) => (
+    <li className={cn("mt-2", className)} {...props} />
   ),
   ol: ({ className, ...props }: React.ComponentProps<"ol">) => (
     <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
   ),
-  li: ({ className, ...props }: React.ComponentProps<"li">) => (
-    <li className={cn("mt-2", className)} {...props} />
-  ),
-  blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
-    <blockquote
-      className={cn("mt-6 border-l-2 pl-6 italic *:text-muted-fg", className)}
-      {...props}
-    />
-  ),
-  img: ({ className, alt, ...props }: React.ComponentProps<"img">) => (
-    <img {...props} className={cn("rounded-md border", className)} alt={alt} />
-  ),
-  hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
-  Code: Code,
-  code: Code,
-  pre: Pre,
-  Link,
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  Icons: Icons as any,
-  LinkButton,
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  Alert: Alert as any,
-  Steps,
-  Step,
-  Files,
-  File,
-  Folder,
-  ComponentPreview,
-  ComponentSource,
-  TabRoot: MdxTabs.Root,
-  TabList: MdxTabs.List,
-  TabTrigger: MdxTabs.Trigger,
-  TabContent: MdxTabs.Content,
   PropsTable,
+  p: ({ className, ...props }: React.ComponentProps<"p">) => (
+    <p className={cn("not-first:mt-6 leading-7", className)} {...props} />
+  ),
+  pre: Pre,
+  Step,
+  Steps,
+  TabContent: MdxTabs.Content,
+  TabList: MdxTabs.List,
+  TabRoot: MdxTabs.Root,
+  TabTrigger: MdxTabs.Trigger,
+  ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
+    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+  ),
 } satisfies MDXComponents;

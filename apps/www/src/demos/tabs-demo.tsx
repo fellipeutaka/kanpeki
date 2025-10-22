@@ -6,7 +6,7 @@ import { TextField } from "~/components/ui/textfield";
 
 export default function TabsDemo() {
   return (
-    <Tabs.Root defaultSelectedKey="account" className="max-w-96">
+    <Tabs.Root className="max-w-96" defaultSelectedKey="account">
       <Tabs.List>
         <Tabs.Trigger id="account">Account</Tabs.Trigger>
         <Tabs.Trigger id="password">Password</Tabs.Trigger>

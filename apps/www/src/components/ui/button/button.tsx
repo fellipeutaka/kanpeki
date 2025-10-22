@@ -14,10 +14,10 @@ export function Button({ className, variant, size, ...props }: ButtonProps) {
       {...props}
       className={(values) =>
         ButtonStyles({
-          variant,
-          size,
           className:
             typeof className === "function" ? className(values) : className,
+          size,
+          variant,
         })
       }
     />
@@ -39,10 +39,10 @@ export function LinkButton({
       {...props}
       className={(values) =>
         ButtonStyles({
-          variant,
-          size,
           className:
             typeof className === "function" ? className(values) : className,
+          size,
+          variant,
         })
       }
     />

@@ -3,8 +3,8 @@ import { Accordion } from "~/components/ui/accordion";
 export default function AccordionDemo() {
   return (
     <Accordion.Root
-      defaultExpandedKeys={["item-1"]}
       className="w-full max-w-96"
+      defaultExpandedKeys={["item-1"]}
     >
       <Accordion.Item id="item-1">
         <Accordion.Trigger>Is it accessible?</Accordion.Trigger>

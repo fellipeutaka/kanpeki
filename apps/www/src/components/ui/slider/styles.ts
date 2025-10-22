@@ -1,12 +1,10 @@
 import { cva } from "~/lib/cva";
 
 export const SliderStyles = {
-  Root: cva({
+  Filler: cva({
     base: [
-      "flex flex-col gap-2",
-      "orientation-vertical:h-56 orientation-vertical:items-center",
-      "orientation-horizontal:w-full",
-      "disabled:opacity-50",
+      "rounded-full bg-primary group-disabled/track:bg-bg-disabled",
+      "group-orientation-horizontal/top-0 pointer-events-none absolute group-orientation-vertical/track:bottom-0 group-orientation-horizontal/track:h-full group-orientation-vertical/track:w-full",
     ],
   }),
   Header: cva({
@@ -15,10 +13,12 @@ export const SliderStyles = {
   Output: cva({
     base: ["text-muted-fg text-sm tabular-nums"],
   }),
-  Track: cva({
+  Root: cva({
     base: [
-      "group/track relative cursor-pointer rounded-full bg-zinc-200 disabled:cursor-default disabled:bg-bg-disabled dark:bg-zinc-800",
-      "orientation-horizontal:h-1.5 orientation-horizontal:w-full orientation-vertical:w-1.5 orientation-vertical:flex-1 grow",
+      "flex flex-col gap-2",
+      "orientation-vertical:h-56 orientation-vertical:items-center",
+      "orientation-horizontal:w-full",
+      "disabled:opacity-50",
     ],
   }),
   Thumb: cva({
@@ -30,10 +30,10 @@ export const SliderStyles = {
       "dragging:size-[1.30rem] size-[1.15rem] dragging:border-primary",
     ],
   }),
-  Filler: cva({
+  Track: cva({
     base: [
-      "rounded-full bg-primary group-disabled/track:bg-bg-disabled",
-      "group-orientation-horizontal/top-0 pointer-events-none absolute group-orientation-vertical/track:bottom-0 group-orientation-horizontal/track:h-full group-orientation-vertical/track:w-full",
+      "group/track relative cursor-pointer rounded-full bg-zinc-200 disabled:cursor-default disabled:bg-bg-disabled dark:bg-zinc-800",
+      "orientation-horizontal:h-1.5 orientation-horizontal:w-full orientation-vertical:w-1.5 orientation-vertical:flex-1 grow",
     ],
   }),
 };

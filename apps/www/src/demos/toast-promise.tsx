@@ -18,16 +18,14 @@ async function promise() {
 export default function ToastPromiseDemo() {
   return (
     <Button
-      variant="outline"
       onPress={() =>
         toast.promise(promise, {
-          loading: "Loading...",
-          success: (data) => {
-            return `${data.name} toast has been added`;
-          },
           error: (err) => `Error: ${err.message}`,
+          loading: "Loading...",
+          success: (data) => `${data.name} toast has been added`,
         })
       }
+      variant="outline"
     >
       Promise
     </Button>

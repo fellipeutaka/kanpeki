@@ -18,8 +18,8 @@ export default function PopoverDemo() {
 
           <div className="grid gap-2">
             <TextField.Provider
-              defaultValue="100%"
               className="grid grid-cols-3 items-center gap-4"
+              defaultValue="100%"
             >
               <Label>Width</Label>
               <TextField.Root className="col-span-2 h-8">
@@ -28,8 +28,8 @@ export default function PopoverDemo() {
             </TextField.Provider>
 
             <TextField.Provider
-              defaultValue="300px"
               className="grid grid-cols-3 items-center gap-4"
+              defaultValue="300px"
             >
               <Label>Max. width</Label>
               <TextField.Root className="col-span-2 h-8">
@@ -38,8 +38,8 @@ export default function PopoverDemo() {
             </TextField.Provider>
 
             <TextField.Provider
-              defaultValue="25px"
               className="grid grid-cols-3 items-center gap-4"
+              defaultValue="25px"
             >
               <Label>Height</Label>
               <TextField.Root className="col-span-2 h-8">
@@ -48,8 +48,8 @@ export default function PopoverDemo() {
             </TextField.Provider>
 
             <TextField.Provider
-              defaultValue="none"
               className="grid grid-cols-3 items-center gap-4"
+              defaultValue="none"
             >
               <Label>Max. height</Label>
               <TextField.Root className="col-span-2 h-8">

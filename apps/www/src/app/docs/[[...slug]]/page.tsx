@@ -18,14 +18,14 @@ export async function generateMetadata({
   }
 
   return {
-    title: page.data.title,
     description: page.data.description,
     openGraph: {
-      title: page.data.title,
       description: page.data.description,
+      title: page.data.title,
       type: "article",
       url: page.slugs.join("/"),
     },
+    title: page.data.title,
   };
 }
 
@@ -48,9 +48,7 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
-  // TODO: Wait to async be not experimental: https://fumadocs.vercel.app/docs/mdx/async
-  // const { body: MDXContent, toc } = await page.data.load();
-  const { body: MDXContent, toc } = page.data;
+  const { body: MDXContent, toc } = await page.data.load();
 
   return (
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
@@ -64,7 +62,7 @@ export default async function Page({ params }: PageProps) {
       {toc.length > 0 && (
         <div className="hidden text-sm xl:block">
           <TableOfContents toc={toc}>
-            <Contribute url={page.url} path={`docs/${page.file.path}`} />
+            <Contribute path={`docs/${page.path}`} url={page.url} />
           </TableOfContents>
         </div>
       )}

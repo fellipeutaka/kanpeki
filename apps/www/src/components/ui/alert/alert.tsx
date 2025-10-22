@@ -8,8 +8,8 @@ export interface AlertRootProps
 export function AlertRoot({ className, variant, ...props }: AlertRootProps) {
   return (
     <div
+      className={AlertStyles.Root({ className, variant })}
       role="alert"
-      className={AlertStyles.Root({ variant, className })}
       {...props}
     />
   );

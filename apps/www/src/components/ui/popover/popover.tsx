@@ -31,14 +31,14 @@ export function PopoverContent({
   return (
     <Popover
       {...props}
-      placement={_placement}
       className={(values) =>
         PopoverStyles.Content({
-          isMenu,
           className:
             typeof className === "function" ? className(values) : className,
+          isMenu,
         })
       }
+      placement={_placement}
     />
   );
 }
@@ -50,9 +50,9 @@ export function PopoverArrow({ className, ...props }: PopoverArrowProps) {
     <OverlayArrow className="group">
       <svg
         aria-hidden="true"
-        width={12}
         height={12}
         viewBox="0 0 12 12"
+        width={12}
         {...props}
         className={PopoverStyles.Arrow({ className })}
       >

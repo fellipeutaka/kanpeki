@@ -1,6 +1,6 @@
 export {
   ScrollAreaRoot as Root,
-  ScrollAreaViewport as Viewport,
   ScrollAreaScrollbar as Scrollbar,
   ScrollAreaThumb as Thumb,
+  ScrollAreaViewport as Viewport,
 } from "./scroll-area";

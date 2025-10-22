@@ -3,17 +3,17 @@ import { TextField } from "~/components/ui/textfield";
 const Icons = {
   User: (props) => (
     <svg
-      role="img"
       aria-label="User"
-      xmlns="http://www.w3.org/2000/svg"
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
       fill="none"
+      height={24}
+      role="img"
       stroke="currentColor"
-      strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2" />

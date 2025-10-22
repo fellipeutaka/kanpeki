@@ -4,8 +4,6 @@ import { ListBox } from "~/components/ui/list-box";
 
 const bands = [
   {
-    id: 1,
-    name: "The Beatles",
     albums: [
       {
         id: 101,
@@ -20,10 +18,10 @@ const bands = [
         name: "Revolver",
       },
     ],
+    id: 1,
+    name: "The Beatles",
   },
   {
-    id: 2,
-    name: "Led Zeppelin",
     albums: [
       {
         id: 201,
@@ -42,10 +40,10 @@ const bands = [
         name: "Led Zeppelin II",
       },
     ],
+    id: 2,
+    name: "Led Zeppelin",
   },
   {
-    id: 3,
-    name: "Pink Floyd",
     albums: [
       {
         id: 301,
@@ -68,10 +66,10 @@ const bands = [
         name: "Meddle",
       },
     ],
+    id: 3,
+    name: "Pink Floyd",
   },
   {
-    id: 4,
-    name: "Queen",
     albums: [
       {
         id: 401,
@@ -98,10 +96,10 @@ const bands = [
         name: "Queen II",
       },
     ],
+    id: 4,
+    name: "Queen",
   },
   {
-    id: 5,
-    name: "The Rolling Stones",
     albums: [
       {
         id: 501,
@@ -128,10 +126,10 @@ const bands = [
         name: "Tattoo You",
       },
     ],
+    id: 5,
+    name: "The Rolling Stones",
   },
   {
-    id: 6,
-    name: "Nirvana",
     albums: [
       {
         id: 601,
@@ -146,10 +144,10 @@ const bands = [
         name: "Bleach",
       },
     ],
+    id: 6,
+    name: "Nirvana",
   },
   {
-    id: 7,
-    name: "The Doors",
     albums: [
       {
         id: 701,
@@ -168,10 +166,10 @@ const bands = [
         name: "Morrison Hotel",
       },
     ],
+    id: 7,
+    name: "The Doors",
   },
   {
-    id: 8,
-    name: "Radiohead",
     albums: [
       {
         id: 801,
@@ -190,10 +188,10 @@ const bands = [
         name: "In Rainbows",
       },
     ],
+    id: 8,
+    name: "Radiohead",
   },
   {
-    id: 9,
-    name: "AC/DC",
     albums: [
       {
         id: 901,
@@ -208,10 +206,10 @@ const bands = [
         name: "Let There Be Rock",
       },
     ],
+    id: 9,
+    name: "AC/DC",
   },
   {
-    id: 10,
-    name: "The Who",
     albums: [
       {
         id: 1001,
@@ -234,17 +232,19 @@ const bands = [
         name: "The Who Sell Out",
       },
     ],
+    id: 10,
+    name: "The Who",
   },
 ];
 
 export default function ListBoxSection() {
   return (
-    <ListBox.Root items={bands} aria-label="Bands" selectionMode="multiple">
+    <ListBox.Root aria-label="Bands" items={bands} selectionMode="multiple">
       {(item) => (
         <ListBox.Section id={item.id}>
           <ListBox.SectionHeader>{item.name}</ListBox.SectionHeader>
           {item.albums.map((album) => (
-            <ListBox.Item key={album.id} id={album.id}>
+            <ListBox.Item id={album.id} key={album.id}>
               {album.name}
             </ListBox.Item>
           ))}

@@ -26,13 +26,13 @@ export function DocsHeader({ page }: DocsHeaderProps) {
         <div className="mt-4 flex items-center gap-x-2">
           {data.links?.docs && (
             <LinkButton
-              href={data.links.docs}
-              target="_blank"
-              rel="noopener noreferrer"
               className={BadgeStyles({
-                variant: "secondary",
                 className: "h-auto gap-1.5",
+                variant: "secondary",
               })}
+              href={data.links.docs}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <DocsLinkIcon link={data.links.docs} />
               Docs
@@ -41,13 +41,13 @@ export function DocsHeader({ page }: DocsHeaderProps) {
           )}
           {data.links?.api && (
             <LinkButton
-              href={data.links.api}
-              target="_blank"
-              rel="noopener noreferrer"
               className={BadgeStyles({
-                variant: "secondary",
                 className: "h-auto gap-1.5",
+                variant: "secondary",
               })}
+              href={data.links.api}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               API Reference
               <Icons.ExternalLink className="size-3" />

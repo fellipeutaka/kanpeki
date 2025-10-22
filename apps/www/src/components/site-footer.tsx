@@ -1,4 +1,4 @@
-import { type NavItem, docsConfig } from "~/config/docs";
+import { docsConfig, type NavItem } from "~/config/docs";
 import { siteConfig } from "~/config/site";
 import { Badge } from "./ui/badge";
 import { LinkButton } from "./ui/button";
@@ -11,25 +11,25 @@ const footerLinks: {
   links: NavItem[];
 }[] = [
   {
-    title: "Useful Links",
     links: docsConfig.mainNav,
+    title: "Useful Links",
   },
   {
-    title: "Support",
     links: [
       {
-        title: "Open an issue",
         href: "https://github.com/fellipeutaka/kanpeki/issues/new",
+        title: "Open an issue",
       },
       {
-        title: "Request a feature",
         href: "https://github.com/fellipeutaka/kanpeki/discussions/new?category=ideas",
+        title: "Request a feature",
       },
       {
-        title: "Request an element",
         href: "https://github.com/fellipeutaka/kanpeki/discussions/new?category=requests",
+        title: "Request an element",
       },
     ],
+    title: "Support",
   },
 ];
 
@@ -39,8 +39,8 @@ export function SiteFooter() {
       <div className="flex flex-col items-start justify-between gap-10 lg:flex-row">
         <div className="flex max-w-sm flex-col items-start">
           <a
-            href="/"
             className="flex items-center gap-2 rounded outline-hidden ring-0 ring-border-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            href="/"
           >
             <Icons.Logo className="size-6" />
             <span className="font-bold leading-normal tracking-tighter">
@@ -53,22 +53,22 @@ export function SiteFooter() {
           </p>
           <div className="mt-4 flex items-center gap-2">
             <LinkButton
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="ghost"
-              size="icon"
               aria-label="Twitter"
+              href={siteConfig.links.twitter}
+              rel="noopener noreferrer"
+              size="icon"
+              target="_blank"
+              variant="ghost"
             >
               <Icons.Twitter className="size-4" />
             </LinkButton>
             <LinkButton
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="ghost"
-              size="icon"
               aria-label="GitHub"
+              href={siteConfig.links.github}
+              rel="noopener noreferrer"
+              size="icon"
+              target="_blank"
+              variant="ghost"
             >
               <Icons.GitHub className="size-5" />
             </LinkButton>
@@ -76,17 +76,17 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap gap-8 sm:gap-16">
           {footerLinks.map((group) => (
-            <div key={group.title} className="space-y-2">
+            <div className="space-y-2" key={group.title}>
               <p className="font-bold">{group.title}</p>
               <div className="flex flex-col gap-2">
                 {group.links.map((item) => (
                   <Link
-                    key={item.href}
-                    href={item.href}
-                    isDisabled={item.disabled}
                     className={
                       "text-muted-fg text-sm underline decoration-transparent transition duration-200 not-[data-[disabled=true]]:hover:decoration-current"
                     }
+                    href={item.href}
+                    isDisabled={item.disabled}
+                    key={item.href}
                   >
                     {item.title}
                   </Link>
@@ -102,19 +102,19 @@ export function SiteFooter() {
       <p className="text-balance text-center text-muted-fg text-sm leading-loose md:text-left">
         Built by{" "}
         <Link
-          variant="underline"
           href={siteConfig.links.twitter}
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
+          variant="underline"
         >
           Fellipe Utaka
         </Link>
         . The source code is available on{" "}
         <Link
-          variant="underline"
           href={siteConfig.links.github}
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
+          variant="underline"
         >
           GitHub
         </Link>

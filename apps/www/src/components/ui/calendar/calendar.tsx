@@ -77,9 +77,9 @@ export function CalendarCell({
       {...props}
       className={(values) =>
         CalendarStyles.Cell({
-          isToday: isToday(values.date, getLocalTimeZone()),
           className:
             typeof className === "function" ? className(values) : className,
+          isToday: isToday(values.date, getLocalTimeZone()),
         })
       }
     />

@@ -1,8 +1,8 @@
 export {
-  CardRoot as Root,
-  CardHeader as Header,
-  CardTitle as Title,
-  CardDescription as Description,
   CardContent as Content,
+  CardDescription as Description,
   CardFooter as Footer,
+  CardHeader as Header,
+  CardRoot as Root,
+  CardTitle as Title,
 } from "./card";

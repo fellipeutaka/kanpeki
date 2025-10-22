@@ -18,23 +18,23 @@ export function CopyButton({ text, className, ...props }: CopyButtonProps) {
 
   return (
     <Button
+      aria-label="Copy code to clipboard"
       className={cx(
         "size-8 bg-secondary opacity-0 hover:bg-bg focus-visible:opacity-100 group-hover:opacity-100",
         className
       )}
+      onPress={() => copy({ text })}
       size="icon"
       variant="outline"
-      onPress={() => copy({ text })}
-      aria-label="Copy code to clipboard"
       {...props}
     >
       <Icons.Copy
-        data-visible={isCopied}
         className="absolute size-4 scale-100 transition-transform data-[visible='true']:scale-0"
+        data-visible={isCopied}
       />
       <Icons.Check
-        data-visible={isCopied}
         className="size-4 transition-transform data-[visible='false']:scale-0"
+        data-visible={isCopied}
       />
     </Button>
   );
@@ -55,6 +55,7 @@ export function CopyNpmButton({
   return (
     <DropdownMenu.Root isOpen={isOpen} onOpenChange={setIsOpen}>
       <Button
+        aria-label="Copy code to clipboard"
         className={cx(
           "size-8 bg-secondary hover:bg-bg focus-visible:opacity-100 group-hover:opacity-100 [@media(pointer:fine)]:opacity-0",
           isOpen && "bg-bg opacity-100!",
@@ -62,16 +63,15 @@ export function CopyNpmButton({
         )}
         size="icon"
         variant="outline"
-        aria-label="Copy code to clipboard"
         {...props}
       >
         <Icons.Copy
-          data-visible={isCopied}
           className="absolute size-4 scale-100 transition-transform data-[visible='true']:scale-0"
+          data-visible={isCopied}
         />
         <Icons.Check
-          data-visible={isCopied}
           className="size-4 transition-transform data-[visible='false']:scale-0"
+          data-visible={isCopied}
         />
       </Button>
 

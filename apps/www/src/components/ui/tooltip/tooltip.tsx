@@ -22,13 +22,13 @@ export function TooltipContent({
   return (
     <TooltipPrimitive
       {...props}
-      offset={offset}
       className={(values) =>
         TooltipStyles.Content({
           className:
             typeof className === "function" ? className(values) : className,
         })
       }
+      offset={offset}
     />
   );
 }
@@ -41,10 +41,10 @@ export function TooltipArrow({ className, ...props }: TooltipArrowProps) {
     <OverlayArrow {...props}>
       <svg
         aria-hidden="true"
-        width={12}
+        className={TooltipStyles.Arrow({ className })}
         height={12}
         viewBox="0 0 12 12"
-        className={TooltipStyles.Arrow({ className })}
+        width={12}
       >
         <path d="M0 0 L6 6 L12 0" />
       </svg>

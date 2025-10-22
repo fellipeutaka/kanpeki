@@ -20,8 +20,8 @@ export default function DialogDemo() {
 
             <div className="grid gap-4 py-4">
               <TextField.Provider
-                defaultValue="Fellipe Utaka"
                 className="grid grid-cols-4 items-center gap-4"
+                defaultValue="Fellipe Utaka"
               >
                 <Label className="ml-auto">Name</Label>
                 <TextField.Root className="col-span-3">
@@ -30,8 +30,8 @@ export default function DialogDemo() {
               </TextField.Provider>
 
               <TextField.Provider
-                defaultValue="@fellipeutaka"
                 className="grid grid-cols-4 items-center gap-4"
+                defaultValue="@fellipeutaka"
               >
                 <Label className="ml-auto">Username</Label>
                 <TextField.Root className="col-span-3">
@@ -40,7 +40,7 @@ export default function DialogDemo() {
               </TextField.Provider>
             </div>
             <Dialog.Footer>
-              <Button variant="outline" slot="close">
+              <Button slot="close" variant="outline">
                 Cancel
               </Button>
               <Button slot="close">Save changes</Button>
@@ -48,16 +48,16 @@ export default function DialogDemo() {
             <Dialog.Close>
               <svg
                 aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
+                className="size-4"
                 fill="none"
+                height={24}
                 stroke="currentColor"
-                strokeWidth={2}
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="size-4"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path d="M18 6L6 18M6 6l12 12" />
               </svg>

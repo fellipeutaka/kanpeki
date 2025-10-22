@@ -8,6 +8,7 @@ import { toast } from "~/components/ui/toast";
 export default function CheckboxForm() {
   return (
     <Form.Root
+      className="space-y-2"
       onSubmit={(e) => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(e.currentTarget));
@@ -22,7 +23,6 @@ export default function CheckboxForm() {
           ),
         });
       }}
-      className="space-y-2"
     >
       <Checkbox.Provider name="terms">
         <Checkbox.Root>

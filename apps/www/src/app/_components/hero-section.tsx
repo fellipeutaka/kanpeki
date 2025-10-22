@@ -8,12 +8,12 @@ export function HeroSection() {
     <section className="w-full items-start justify-between md:flex">
       <div className="space-y-6 pt-4">
         <LinkButton
+          className="group"
           href={siteConfig.links.github}
-          target="_blank"
           rel="noopener noreferrer"
           size="sm"
+          target="_blank"
           variant="secondary"
-          className="group"
         >
           <Icons.Sparkles className="mr-2 size-4 text-primary" />
           Star us on GitHub
@@ -34,50 +34,50 @@ export function HeroSection() {
           </LinkButton>
           <LinkButton
             href={siteConfig.links.github}
-            variant="outline"
             size="lg"
+            variant="outline"
           >
             <Icons.GitHub className="mr-2 size-5" />
             GitHub
           </LinkButton>
         </div>
         <div className="flex flex-wrap gap-8 pt-6">
-          <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
+          <a href="https://react.dev" rel="noopener noreferrer" target="_blank">
             <Icons.React className="size-10" />
           </a>
           <a
             href="https://www.typescriptlang.org"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <Icons.TypeScript className="size-10" />
           </a>
           <a
             href="https://tailwindcss.com"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <Icons.TailwindCSS className="size-10" />
           </a>
           <a
             href="https://react-spectrum.adobe.com/react-aria/hooks.html"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <Icons.Adobe className="size-10 text-red-600" />
           </a>
           <a
             href="https://www.radix-ui.com"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <Icons.RadixUI className="size-10" />
           </a>
           <a
-            href="https://motion.dev"
-            target="_blank"
-            rel="noopener noreferrer"
             aria-label="Motion"
+            href="https://motion.dev"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <Icons.Motion className="size-10" />
           </a>

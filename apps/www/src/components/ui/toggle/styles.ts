@@ -8,7 +8,16 @@ export const ToggleStyles = cva({
     "disabled:pointer-events-none disabled:opacity-50",
     "selected:bg-accent selected:text-accent-fg [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   ],
+  defaultVariants: {
+    size: "default",
+    variant: "default",
+  },
   variants: {
+    size: {
+      default: ["h-9 min-w-9 px-2"],
+      lg: ["h-10 min-w-10 px-2.5"],
+      sm: ["h-8 min-w-8 px-1.5"],
+    },
     variant: {
       default: ["bg-transparent"],
       outline: [
@@ -16,14 +25,5 @@ export const ToggleStyles = cva({
         "hover:bg-accent hover:text-accent-fg",
       ],
     },
-    size: {
-      default: ["h-9 min-w-9 px-2"],
-      sm: ["h-8 min-w-8 px-1.5"],
-      lg: ["h-10 min-w-10 px-2.5"],
-    },
-  },
-  defaultVariants: {
-    variant: "default",
-    size: "default",
   },
 });

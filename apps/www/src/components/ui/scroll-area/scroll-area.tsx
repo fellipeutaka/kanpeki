@@ -35,8 +35,8 @@ export function ScrollAreaScrollbar({
   return (
     <Scrollbar
       {...props}
-      orientation={orientation}
       className={ScrollAreaStyles.Scrollbar({ className, orientation })}
+      orientation={orientation}
     />
   );
 }

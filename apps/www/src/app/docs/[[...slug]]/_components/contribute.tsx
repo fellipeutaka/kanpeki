@@ -10,31 +10,31 @@ interface ContributeProps {
 export function Contribute({ url, path }: ContributeProps) {
   const contributeLinks = [
     {
-      text: "Report an issue",
-      icon: Icons.Bug,
       href: getGitHubIssueUrl({
-        owner: "fellipeutaka",
-        repo: "kanpeki",
-        title: `[bug]: ${url}`,
         labels: ["bug", "documentation"],
-        template: "bug_report.md",
-      }),
-    },
-    {
-      text: "Request a feature",
-      icon: Icons.Lightbulb,
-      href: getGitHubIssueUrl({
         owner: "fellipeutaka",
         repo: "kanpeki",
-        title: `[feat]: ${url}`,
-        labels: ["enhancement"],
-        template: "feature_request.md",
+        template: "bug_report.md",
+        title: `[bug]: ${url}`,
       }),
+      icon: Icons.Bug,
+      text: "Report an issue",
     },
     {
-      text: "Edit this page",
-      icon: Icons.Pencil,
+      href: getGitHubIssueUrl({
+        labels: ["enhancement"],
+        owner: "fellipeutaka",
+        repo: "kanpeki",
+        template: "feature_request.md",
+        title: `[feat]: ${url}`,
+      }),
+      icon: Icons.Lightbulb,
+      text: "Request a feature",
+    },
+    {
       href: getGithubFileUrl(path),
+      icon: Icons.Pencil,
+      text: "Edit this page",
     },
   ];
 
@@ -45,10 +45,10 @@ export function Contribute({ url, path }: ContributeProps) {
         {contributeLinks.map((link) => (
           <li key={link.href}>
             <Link
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center text-muted-fg text-sm hover:text-fg"
+              href={link.href}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <link.icon className="mr-2 size-4" />
               {link.text}

@@ -1,4 +1,4 @@
 export {
-  RadioGroupRoot as Root,
   RadioGroupItem as Item,
+  RadioGroupRoot as Root,
 } from "./radio-group";

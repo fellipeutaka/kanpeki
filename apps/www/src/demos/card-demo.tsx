@@ -4,19 +4,19 @@ import { Switch } from "~/components/ui/switch";
 
 const notifications = [
   {
+    description: "1 hour ago",
     id: "1",
     title: "Your call has been confirmed.",
-    description: "1 hour ago",
   },
   {
+    description: "1 hour ago",
     id: "2",
     title: "You have a new message!",
-    description: "1 hour ago",
   },
   {
+    description: "2 hours ago",
     id: "3",
     title: "Your subscription is expiring soon!",
-    description: "2 hours ago",
   },
 ];
 
@@ -33,16 +33,16 @@ export default function CardDemo() {
         <div className="flex items-center gap-4 rounded-md border p-4">
           <svg
             aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width={24}
-            height={24}
-            viewBox="0 0 24 24"
+            className="size-6"
             fill="none"
+            height={24}
             stroke="currentColor"
-            strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="size-6"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M6 8a6 6 0 0112 0c0 7 3 9 3 9H3s3-2 3-9m4.3 13a1.94 1.94 0 003.4 0" />
           </svg>
@@ -63,8 +63,8 @@ export default function CardDemo() {
         <div>
           {notifications.map((notification) => (
             <div
-              key={notification.id}
               className="mb-4 grid grid-cols-[1.5rem_1fr] items-start pb-4 last:mb-0 last:pb-0"
+              key={notification.id}
             >
               <span className="flex h-2 w-2 translate-y-1 rounded-full bg-violet-500" />
               <div className="space-y-1">
@@ -83,16 +83,16 @@ export default function CardDemo() {
         <Button className="w-full">
           <svg
             aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width={24}
-            height={24}
-            viewBox="0 0 24 24"
+            className="mr-2 size-4"
             fill="none"
+            height={24}
             stroke="currentColor"
-            strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="mr-2 size-4"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <path d="M20 6L9 17l-5-5" />
           </svg>

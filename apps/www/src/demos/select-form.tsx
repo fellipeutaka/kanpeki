@@ -41,6 +41,7 @@ const fruits = [
 export default function SelectFormDemo() {
   return (
     <Form.Root
+      className="space-y-6"
       onSubmit={(e) => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(e.currentTarget));
@@ -55,9 +56,8 @@ export default function SelectFormDemo() {
           ),
         });
       }}
-      className="space-y-6"
     >
-      <Select.Root name="fruits" aria-label="Fruits" isRequired>
+      <Select.Root aria-label="Fruits" isRequired name="fruits">
         <Label>Choose a fruit</Label>
 
         <Select.Trigger className="w-44" />

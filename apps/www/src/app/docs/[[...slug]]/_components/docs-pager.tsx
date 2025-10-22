@@ -1,4 +1,4 @@
-import { findNeighbour } from "fumadocs-core/server";
+import { findNeighbour } from "fumadocs-core/page-tree";
 import { LinkButton } from "~/components/ui/button";
 import { Icons } from "~/components/ui/icons";
 import { source } from "~/lib/source";
@@ -20,9 +20,9 @@ export function DocsPager({ url }: DocsPagerProps) {
       )}
       {neighbours.next && (
         <LinkButton
+          className="ml-auto"
           href={neighbours.next.url}
           variant="outline"
-          className="ml-auto"
         >
           {neighbours.next.name}
           <Icons.ChevronRight className="ml-2 size-4" />

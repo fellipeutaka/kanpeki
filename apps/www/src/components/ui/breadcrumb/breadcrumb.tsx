@@ -11,15 +11,15 @@ const Icons = {
   ChevronRight: (props) => (
     <svg
       aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      width={24}
-      height={24}
-      viewBox="0 0 24 24"
       fill="none"
+      height={24}
       stroke="currentColor"
-      strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path d="M9 18l6-6-6-6" />
@@ -28,17 +28,17 @@ const Icons = {
   DotsHorizontal: (props) => (
     <svg
       aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      width={32}
       height={32}
       viewBox="0 0 15 15"
+      width={32}
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <path
+        clipRule="evenodd"
+        d="M3.625 7.5a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0m5 0a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0M12.5 8.625a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25"
         fill="currentColor"
         fillRule="evenodd"
-        d="M3.625 7.5a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0m5 0a1.125 1.125 0 11-2.25 0 1.125 1.125 0 012.25 0M12.5 8.625a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25"
-        clipRule="evenodd"
       />
     </svg>
   ),
@@ -91,10 +91,10 @@ export interface BreadcrumbPageProps extends React.ComponentProps<"span"> {}
 export function BreadcrumbPage({ className, ...props }: BreadcrumbPageProps) {
   return (
     <span
+      aria-current="page"
+      aria-disabled
       role="link"
       tabIndex={-1}
-      aria-disabled
-      aria-current="page"
       {...props}
       className={BreadcrumbStyles.Page({ className })}
     />
@@ -124,9 +124,9 @@ export function BreadcrumbEllipsis({
 }: BreadcrumbEllipsisProps) {
   return (
     <span
-      role="presentation"
       aria-hidden
       aria-label="More"
+      role="presentation"
       {...props}
       className={BreadcrumbStyles.Ellipsis({ className })}
     >

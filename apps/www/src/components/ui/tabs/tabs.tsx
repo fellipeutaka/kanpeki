@@ -54,9 +54,9 @@ export function TabsList<T extends object>({
         {...props}
         className={(values) =>
           TabsStyles.List({
-            variant,
             className:
               typeof className === "function" ? className(values) : className,
+            variant,
           })
         }
       />
@@ -79,9 +79,9 @@ export function TabsTrigger({
       {...props}
       className={(values) =>
         TabsStyles.Trigger({
-          variant,
           className:
             typeof className === "function" ? className(values) : className,
+          variant,
         })
       }
     >
@@ -94,7 +94,7 @@ export function TabsTrigger({
                 variant,
               })}
               layoutId="current-selected"
-              transition={{ type: "spring", stiffness: 500, damping: 40 }}
+              transition={{ damping: 40, stiffness: 500, type: "spring" }}
             />
           )}
         </>

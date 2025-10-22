@@ -13,9 +13,9 @@ const rockPopBands = [
 export default function ListBoxDemo() {
   return (
     <ListBox.Root
+      aria-label="Bands"
       items={rockPopBands}
       selectionMode="single"
-      aria-label="Bands"
     >
       {(item) => <ListBox.Item id={item.id}>{item.name}</ListBox.Item>}
     </ListBox.Root>

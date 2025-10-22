@@ -17,8 +17,8 @@ export default function ToastStatusDemo() {
 function ToastSuccess() {
   return (
     <Button
-      variant="outline"
       onPress={() => toast.success("Event has been created")}
+      variant="outline"
     >
       Success
     </Button>
@@ -28,10 +28,10 @@ function ToastSuccess() {
 function ToastInfo() {
   return (
     <Button
-      variant="outline"
       onPress={() =>
         toast.info("Be at the area 10 minutes before the event time")
       }
+      variant="outline"
     >
       Info
     </Button>
@@ -41,10 +41,10 @@ function ToastInfo() {
 function ToastWarning() {
   return (
     <Button
-      variant="outline"
       onPress={() =>
         toast.warning("Event start time cannot be earlier than 8am")
       }
+      variant="outline"
     >
       Warning
     </Button>
@@ -54,8 +54,8 @@ function ToastWarning() {
 function ToastError() {
   return (
     <Button
-      variant="outline"
       onPress={() => toast.error("Event has not been created")}
+      variant="outline"
     >
       Error
     </Button>

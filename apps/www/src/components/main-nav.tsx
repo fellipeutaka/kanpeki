@@ -16,14 +16,14 @@ export function MainNav({ mainNav }: MainNavProps) {
 
   return (
     <div className="mr-4 hidden md:flex">
-      <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
+      <Link className="mr-4 flex items-center gap-2 lg:mr-6" href="/">
         <Icons.Logo className="size-6" />
         <span className="hidden font-bold lg:block">{siteConfig.name}</span>
         <Badge variant="secondary">Alpha</Badge>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
         {mainNav.map((item) => (
-          <MainNavLink key={item.href} item={item} pathname={pathname} />
+          <MainNavLink item={item} key={item.href} pathname={pathname} />
         ))}
       </nav>
     </div>
@@ -46,9 +46,9 @@ function MainNavLink({ item, pathname }: MainNavLinkProps) {
 
   return (
     <Link
-      href={item.href}
-      data-active={pathname.startsWith(item.href)}
       className="text-fg/60 transition hover:text-fg/80 data-[active=true]:text-fg"
+      data-active={pathname.startsWith(item.href)}
+      href={item.href}
     >
       {item.title}
     </Link>

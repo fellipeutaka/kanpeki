@@ -1,11 +1,11 @@
 export {
-  CalendarRoot as Root,
+  CalendarCell as Cell,
+  CalendarGrid as Grid,
+  CalendarGridBody as GridBody,
+  CalendarGridHeader as GridHeader,
   CalendarHeader as Header,
+  CalendarHeaderCell as HeaderCell,
   CalendarMonth as Month,
   CalendarNav as Nav,
-  CalendarGrid as Grid,
-  CalendarGridHeader as GridHeader,
-  CalendarHeaderCell as HeaderCell,
-  CalendarGridBody as GridBody,
-  CalendarCell as Cell,
+  CalendarRoot as Root,
 } from "./calendar";

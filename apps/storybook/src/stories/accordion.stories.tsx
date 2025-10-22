@@ -3,18 +3,18 @@ import { Accordion } from "~/components/ui/accordion";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Components/Accordion",
-  component: Accordion.Root,
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-    isDisabled: { control: "boolean" },
-    allowsMultipleExpanded: { control: "boolean" },
-  },
   args: {
-    isDisabled: false,
     allowsMultipleExpanded: false,
     className: "w-96",
+    isDisabled: false,
   },
+  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  argTypes: {
+    allowsMultipleExpanded: { control: "boolean" },
+    isDisabled: { control: "boolean" },
+  },
+  component: Accordion.Root,
+  title: "Components/Accordion",
 } satisfies Meta<typeof Accordion.Root>;
 
 export default meta;

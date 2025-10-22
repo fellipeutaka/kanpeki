@@ -6,12 +6,22 @@ import { Spinner } from "~/components/ui/spinner";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Components/Button",
-  component: Button,
+  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+  args: {
+    isDisabled: false,
+    isPending: false,
+    onPress: fn(),
+    size: "default",
+    variant: "default",
+  },
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     isDisabled: { control: "boolean" },
     isPending: { control: "boolean" },
+    size: {
+      control: "select",
+      options: ["default", "lg", "sm", "icon"] satisfies ButtonProps["size"][],
+    },
     variant: {
       control: "select",
       options: [
@@ -26,19 +36,9 @@ const meta = {
         "unset",
       ] satisfies ButtonProps["variant"][],
     },
-    size: {
-      control: "select",
-      options: ["default", "lg", "sm", "icon"] satisfies ButtonProps["size"][],
-    },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: {
-    onPress: fn(),
-    isDisabled: false,
-    isPending: false,
-    variant: "default",
-    size: "default",
-  },
+  component: Button,
+  title: "Components/Button",
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -47,57 +47,57 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
-    variant: "default",
     children: "Button",
+    variant: "default",
   },
 };
 
 export const Secondary: Story = {
   args: {
-    variant: "secondary",
     children: "Button",
+    variant: "secondary",
   },
 };
 
 export const Danger: Story = {
   args: {
-    variant: "danger",
     children: "Button",
+    variant: "danger",
   },
 };
 
 export const Ghost: Story = {
   args: {
-    variant: "ghost",
     children: "Button",
+    variant: "ghost",
   },
 };
 
 export const Link: Story = {
   args: {
-    variant: "link",
     children: "Button",
+    variant: "link",
   },
 };
 
 export const Large: Story = {
   args: {
-    size: "lg",
     children: "Button",
+    size: "lg",
   },
 };
 
 export const Small: Story = {
   args: {
-    size: "sm",
     children: "Button",
+    size: "sm",
   },
 };
 
 export const Icon: Story = {
   args: {
-    size: "icon",
     children: <Icons.ChevronRight className="size-4" />,
+    size: "icon",
   },
   argTypes: {
     children: { control: { disable: true } },
@@ -106,17 +106,17 @@ export const Icon: Story = {
 
 export const Disabled: Story = {
   args: {
-    variant: "secondary",
-    isDisabled: true,
     children: "Button",
+    isDisabled: true,
+    variant: "secondary",
   },
 };
 
 export const Pending: Story = {
   args: {
-    variant: "default",
+    children: [<Spinner className="mr-2" key="spinner" />, "Please wait"],
     isPending: true,
-    children: [<Spinner key="spinner" className="mr-2" />, "Please wait"],
+    variant: "default",
   },
   argTypes: {
     children: { control: { disable: true } },

@@ -10,10 +10,10 @@ export default function CalendarDemo() {
       <Calendar.Header>
         <Calendar.Nav className="w-full justify-between">
           <Button
-            size="icon"
-            variant="outline"
             className="size-8 text-muted-fg sm:size-7"
+            size="icon"
             slot="previous"
+            variant="outline"
           >
             <Icons.ChevronLeft className="size-4" />
           </Button>
@@ -21,10 +21,10 @@ export default function CalendarDemo() {
           <Calendar.Month />
 
           <Button
-            size="icon"
-            variant="outline"
             className="size-8 text-muted-fg sm:size-7"
+            size="icon"
             slot="next"
+            variant="outline"
           >
             <Icons.ChevronRight className="size-4" />
           </Button>

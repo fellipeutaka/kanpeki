@@ -2,13 +2,13 @@ import { cva } from "~/lib/cva";
 import { DropdownMenuStyles } from "../dropdown-menu";
 
 export const CommandStyles = {
+  Empty: cva({
+    base: ["p-4 text-center text-muted-fg text-sm"],
+  }),
   Header: (props?: { className?: string }) =>
     DropdownMenuStyles.Header({
       className: ["font-medium text-muted-fg text-xs", props?.className],
     }),
-  Empty: cva({
-    base: ["p-4 text-center text-muted-fg text-sm"],
-  }),
   Shortcut: cva({
     base: ["ml-auto text-muted-fg text-xs tracking-widest"],
   }),

@@ -7,10 +7,12 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans:
+    var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 
   --color-bg: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
   --color-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
@@ -54,8 +56,8 @@
 }
 
 @utility container {
-  margin-inline: auto;
   padding-inline: 2rem;
+  margin-inline: auto;
 }
 
 @utility ring-default {

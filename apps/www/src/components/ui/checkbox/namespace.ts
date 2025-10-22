@@ -1,5 +1,5 @@
 export {
+  CheckboxIndicator as Indicator,
   CheckboxProvider as Provider,
   CheckboxRoot as Root,
-  CheckboxIndicator as Indicator,
 } from "./checkbox";

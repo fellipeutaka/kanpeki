@@ -18,7 +18,7 @@ interface Theme {
   readonly dark: string;
 }
 
-const Themes: Theme = { light: "", dark: ".dark" };
+const Themes: Theme = { dark: ".dark", light: "" };
 
 export interface ChartConfig {
   [key: string]: {
@@ -57,14 +57,14 @@ export function ChartRoot({
   return (
     <ChartContext.Provider value={{ config }}>
       <div
-        data-chart={chartId}
         className={cn(
           "cks flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-fg [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-hidden [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-bg-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-hidden [&_.recharts-surface]:outline-hidden",
           className
         )}
+        data-chart={chartId}
         {...props}
       >
-        <Style id={chartId} config={config} />
+        <Style config={config} id={chartId} />
         <ResponsiveContainer>{children}</ResponsiveContainer>
       </div>
     </ChartContext.Provider>
@@ -190,11 +190,11 @@ export function ChartTooltipContent<
 
   return (
     <div
-      ref={ref}
       className={cn(
         "grid min-w-[10rem] items-start gap-1.5 rounded-lg border border-border/60 bg-popover px-2.5 py-1.5 text-popover-fg text-xs shadow-xl",
         className
       )}
+      ref={ref}
     >
       {nestLabel ? null : tooltipLabel}
       <div className="grid gap-1.5">
@@ -205,11 +205,11 @@ export function ChartTooltipContent<
 
           return (
             <div
-              key={item.dataKey}
               className={cn(
                 "flex w-full flex-wrap items-stretch gap-2 *:data-[slot=icon]:size-2.5 *:data-[slot=icon]:text-muted-fg",
                 indicator === "dot" && "items-center"
               )}
+              key={item.dataKey}
             >
               {formatter && item?.value !== undefined && item.name ? (
                 formatter(item.value, item.name, item, index, item.payload)
@@ -223,11 +223,11 @@ export function ChartTooltipContent<
                         className={cn(
                           "shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)",
                           {
+                            "my-0.5": nestLabel && indicator === "dashed",
                             "size-2.5": indicator === "dot",
-                            "w-1": indicator === "line",
                             "w-0 border-[1.5px] border-dashed bg-transparent":
                               indicator === "dashed",
-                            "my-0.5": nestLabel && indicator === "dashed",
+                            "w-1": indicator === "line",
                           }
                         )}
                         style={
@@ -304,10 +304,10 @@ export function ChartLegendContent({
 
         return (
           <div
-            key={item.value}
             className={cn(
               "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-fg"
             )}
+            key={item.value}
           >
             {itemConfig?.icon && !hideIcon ? (
               <itemConfig.icon />
@@ -331,7 +331,7 @@ const resolvePayloadConfig = (
   key: string
 ) => {
   if (typeof payload !== "object" || payload === null) {
-    return undefined;
+    return;
   }
 
   const nestedPayload =

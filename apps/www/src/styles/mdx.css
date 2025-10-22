@@ -4,9 +4,9 @@ figure.shiki.shiki-themes code {
 }
 
 figure.shiki.shiki-themes .line {
-  padding-inline: 0.75rem;
-  width: 100%;
   display: inline-block;
+  width: 100%;
+  padding-inline: 0.75rem;
 
   &.highlighted {
     background-color: var(--color-muted);
@@ -27,26 +27,26 @@ figure.shiki.shiki-themes .line {
 
 .steps > :where(h2, h3) {
   margin: 2rem 0 1rem;
-  font-weight: 600;
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.5;
   counter-increment: step;
 
   &::before {
     position: absolute;
-    width: 2.25rem;
-    height: 2.25rem;
-    background-color: var(--color-muted);
-    border-radius: calc(infinity * 1px);
-    font-family: var(--font-mono);
-    font-weight: 300;
     display: grid;
     place-content: center;
-    text-indent: -1px;
-    border-width: 4px;
-    border-color: var(--color-bg);
-    margin-left: -50px;
+    width: 2.25rem;
+    height: 2.25rem;
     margin-top: -0.25rem;
+    margin-left: -50px;
+    font-family: var(--font-mono);
+    font-weight: 300;
+    text-indent: -1px;
     content: counter(step);
+    background-color: var(--color-muted);
+    border-color: var(--color-bg);
+    border-width: 4px;
+    border-radius: calc(infinity * 1px);
   }
 }

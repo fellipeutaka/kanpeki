@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import type { SortedResult } from "fumadocs-core/server";
+import type { SortedResult } from "fumadocs-core/search";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Collection } from "react-aria-components";
@@ -27,14 +27,14 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
   const isQueryNonEmpty = query.trim() !== "";
 
   const searchQuery = useQuery<SortedResult[]>({
-    queryKey: ["search", query],
+    enabled: isQueryNonEmpty,
     queryFn: async ({ signal }) => {
       const url = new URL("/api/search", window.location.origin);
       url.searchParams.append("query", query);
       const res = await fetch(url, { signal });
       return await res.json();
     },
-    enabled: isQueryNonEmpty,
+    queryKey: ["search", query],
   });
 
   useEffect(() => {
@@ -66,9 +66,9 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
   return (
     <Dialog.Root isOpen={isOpen} onOpenChange={setIsOpen}>
       <Button
-        variant="outline"
-        className="relative h-8 w-full justify-start rounded-[0.5rem] bg-muted/50 font-normal text-muted-fg text-sm shadow-none sm:pr-12 md:w-40 lg:w-64"
+        className="relative h-8 w-full justify-start rounded-lg bg-muted/50 font-normal text-muted-fg text-sm shadow-none sm:pr-12 md:w-40 lg:w-64"
         onPress={() => setIsOpen(true)}
+        variant="outline"
       >
         <span className="hidden lg:inline-flex">Search documentation...</span>
         <span className="inline-flex lg:hidden">Search...</span>
@@ -100,19 +100,19 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
               <ScrollArea.Root>
                 <ScrollArea.Viewport className="max-h-[18.75rem]">
                   <Command.List
+                    className="px-2 **:data-[slot=command-item]:min-h-10 **:data-[slot=command-item]:py-0"
+                    items={searchQuery.data ?? []}
+                    onAction={() => setQuery("")}
                     renderEmptyState={() => (
                       <Command.Empty>No results found.</Command.Empty>
                     )}
-                    onAction={() => setQuery("")}
-                    items={searchQuery.data ?? []}
-                    className="px-2 **:data-[slot=command-item]:min-h-10 **:data-[slot=command-item]:py-0"
                   >
                     {isQueryNonEmpty ? (
                       (item) => (
                         <Command.Item
+                          href={item.url}
                           id={item.id}
                           textValue={item.content}
-                          href={item.url}
                         >
                           <CommandMenuSearchIcon type={item.type} />
                           <span className="w-0 flex-1 truncate">
@@ -171,10 +171,10 @@ function DefaultCommandMenuItems({ mainNav, sidebarNav }: CommandMenuProps) {
         <Collection items={mainNav}>
           {(navItem) => (
             <Command.Item
-              id={navItem.href}
-              textValue={navItem.title}
-              isDisabled={navItem.disabled}
               href={navItem.disabled ? undefined : navItem.href}
+              id={navItem.href}
+              isDisabled={navItem.disabled}
+              textValue={navItem.title}
             >
               <Icons.File className="size-5" />
               {navItem.title}
@@ -188,10 +188,10 @@ function DefaultCommandMenuItems({ mainNav, sidebarNav }: CommandMenuProps) {
             <Command.Header>{group.title}</Command.Header>
             {group.items?.map((navItem) => (
               <Command.Item
+                href={navItem.disabled ? undefined : navItem.href}
+                isDisabled={navItem.disabled}
                 key={navItem.href}
                 textValue={navItem.title}
-                isDisabled={navItem.disabled}
-                href={navItem.disabled ? undefined : navItem.href}
               >
                 <Icons.Circle className="size-5" />
                 {navItem.title}
@@ -203,15 +203,15 @@ function DefaultCommandMenuItems({ mainNav, sidebarNav }: CommandMenuProps) {
       <DropdownMenu.Separator />
       <Command.Group>
         <Command.Header>Theme</Command.Header>
-        <Command.Item textValue="Light" onAction={() => setTheme("light")}>
+        <Command.Item onAction={() => setTheme("light")} textValue="Light">
           <Icons.Sun className="size-5" />
           Light
         </Command.Item>
-        <Command.Item textValue="Dark" onAction={() => setTheme("dark")}>
+        <Command.Item onAction={() => setTheme("dark")} textValue="Dark">
           <Icons.Moon className="size-5" />
           Dark
         </Command.Item>
-        <Command.Item textValue="System" onAction={() => setTheme("system")}>
+        <Command.Item onAction={() => setTheme("system")} textValue="System">
           <Icons.Laptop className="size-5" />
           System
         </Command.Item>

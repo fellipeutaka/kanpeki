@@ -1,6 +1,12 @@
 import { cva } from "~/lib/cva";
 
 export const PopoverStyles = {
+  Arrow: cva({
+    base: [
+      "block fill-popover stroke-border",
+      "group-placement-left:-rotate-90 group-placement-bottom:rotate-180 group-placement-right:rotate-90",
+    ],
+  }),
   Content: cva({
     base: [
       "z-50 min-w-(--trigger-width) rounded-md border bg-popover bg-clip-padding p-4 text-popover-fg shadow-xs",
@@ -24,11 +30,5 @@ export const PopoverStyles = {
         true: ["overflow-y-auto p-0.5"],
       },
     },
-  }),
-  Arrow: cva({
-    base: [
-      "block fill-popover stroke-border",
-      "group-placement-left:-rotate-90 group-placement-bottom:rotate-180 group-placement-right:rotate-90",
-    ],
   }),
 };

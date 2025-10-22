@@ -2,7 +2,7 @@ import { Tabs } from "~/components/ui/tabs";
 
 export default function TabsVerticalDemo() {
   return (
-    <Tabs.Root orientation="vertical" aria-label="E-Learning Platform">
+    <Tabs.Root aria-label="E-Learning Platform" orientation="vertical">
       <Tabs.List>
         <Tabs.Trigger id="c">Courses</Tabs.Trigger>
         <Tabs.Trigger id="e">Exams</Tabs.Trigger>

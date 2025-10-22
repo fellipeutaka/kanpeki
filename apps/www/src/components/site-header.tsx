@@ -26,23 +26,23 @@ export function SiteHeader() {
           </div>
           <nav className="flex items-center">
             <LinkButton
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="ghost"
-              size="icon"
               aria-label="GitHub"
+              href={siteConfig.links.github}
+              rel="noopener noreferrer"
+              size="icon"
+              target="_blank"
+              variant="ghost"
             >
               <Icons.GitHub className="size-4" />
             </LinkButton>
 
             <LinkButton
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="ghost"
-              size="icon"
               aria-label="Twitter"
+              href={siteConfig.links.twitter}
+              rel="noopener noreferrer"
+              size="icon"
+              target="_blank"
+              variant="ghost"
             >
               <Icons.Twitter className="size-3" />
             </LinkButton>

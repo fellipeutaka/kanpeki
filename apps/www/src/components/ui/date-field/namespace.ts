@@ -1,5 +1,5 @@
 export {
-  DateFieldRoot as Root,
   DateFieldInput as Input,
+  DateFieldRoot as Root,
   DateFieldSegment as Segment,
 } from "./date-field";

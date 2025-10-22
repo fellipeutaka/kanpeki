@@ -2,9 +2,6 @@ import { compose, cva } from "~/lib/cva";
 import { TextFieldStyles } from "../textfield/styles";
 
 export const DateFieldStyles = {
-  Root: cva({
-    base: ["group flex flex-col gap-y-1.5"],
-  }),
   Input: compose(
     TextFieldStyles.Root,
     cva({
@@ -15,6 +12,9 @@ export const DateFieldStyles = {
       ],
     })
   ),
+  Root: cva({
+    base: ["group flex flex-col gap-y-1.5"],
+  }),
   Segment: cva({
     base: [
       "inline rounded p-0.5 text-fg tabular-nums caret-transparent outline-hidden",

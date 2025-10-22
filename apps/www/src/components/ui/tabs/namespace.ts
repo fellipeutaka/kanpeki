@@ -1,6 +1,6 @@
 export {
-  TabsRoot as Root,
-  TabsList as List,
-  TabsTrigger as Trigger,
   TabsContent as Content,
+  TabsList as List,
+  TabsRoot as Root,
+  TabsTrigger as Trigger,
 } from "./tabs";

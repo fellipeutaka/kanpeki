@@ -11,13 +11,13 @@ export function RadioGroupRoot({ className, ...props }: RadioGroupRootProps) {
   return (
     <RadioGroup
       {...props}
-      data-slot="radio-group-root"
       className={(values) =>
         RadioGroupStyles.Root({
           className:
             typeof className === "function" ? className(values) : className,
         })
       }
+      data-slot="radio-group-root"
     />
   );
 }
@@ -44,8 +44,8 @@ export function RadioGroupItem({
       {(values) => (
         <>
           <Icons.Circle
-            data-slot="icon"
             className="size-3.5 fill-transparent transition group-selected:fill-primary"
+            data-slot="icon"
           />
           {typeof children === "function" ? children(values) : children}
         </>

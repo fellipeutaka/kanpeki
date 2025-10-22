@@ -1,6 +1,6 @@
 export {
-  AvatarRoot as Root,
-  AvatarImage as Image,
   AvatarFallback as Fallback,
+  AvatarImage as Image,
   AvatarPlaceholder as Placeholder,
+  AvatarRoot as Root,
 } from "./avatar";

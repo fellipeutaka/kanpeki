@@ -55,9 +55,9 @@ export function RangeCalendarCell({
       {...props}
       className={(values) =>
         RangeCalendarStyles.Cell({
-          isToday: isToday(values.date, getLocalTimeZone()),
           className:
             typeof className === "function" ? className(values) : className,
+          isToday: isToday(values.date, getLocalTimeZone()),
         })
       }
     />

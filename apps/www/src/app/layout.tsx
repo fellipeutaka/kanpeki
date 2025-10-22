@@ -8,11 +8,13 @@ import { siteConfig } from "~/config/site";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
-  },
-  metadataBase: new URL(siteConfig.url),
+  authors: [
+    {
+      name: "Fellipe Utaka",
+      url: "https://fellipeutaka.vercel.app",
+    },
+  ],
+  creator: "Fellipe Utaka",
   description: siteConfig.description,
   keywords: [
     "Next.js",
@@ -22,42 +24,40 @@ export const metadata: Metadata = {
     "React Aria",
     "Radix UI",
   ],
-  authors: [
-    {
-      name: "Fellipe Utaka",
-      url: "https://fellipeutaka.vercel.app",
-    },
-  ],
-  creator: "Fellipe Utaka",
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    title: siteConfig.name,
     description: siteConfig.description,
-    siteName: siteConfig.name,
     images: [
       {
+        alt: siteConfig.name,
+        height: 630,
         url: siteConfig.ogImage,
         width: 1200,
-        height: 630,
-        alt: siteConfig.name,
       },
     ],
+    locale: "en_US",
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    type: "website",
+    url: siteConfig.url,
+  },
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    creator: "@fellipeutaka",
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@fellipeutaka",
+    title: siteConfig.name,
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { color: "white", media: "(prefers-color-scheme: light)" },
+    { color: "black", media: "(prefers-color-scheme: dark)" },
   ],
 };
 
@@ -68,9 +68,9 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <html
+      className={`${fonts.sans.variable} ${fonts.mono.variable}`}
       lang="en"
       suppressHydrationWarning
-      className={`${fonts.sans.variable} ${fonts.mono.variable}`}
     >
       <body className="grid min-h-dvh grid-rows-[auto_1fr_auto] font-sans">
         <Providers>

@@ -9,6 +9,7 @@ import { Switch } from "~/components/ui/switch";
 export default function SelectFormDemo() {
   return (
     <Form.Root
+      className="w-full space-y-6"
       onSubmit={(e) => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(e.currentTarget));
@@ -23,7 +24,6 @@ export default function SelectFormDemo() {
           ),
         });
       }}
-      className="w-full space-y-6"
     >
       <h3 className="mb-4 font-medium text-lg">Email Notifications</h3>
 

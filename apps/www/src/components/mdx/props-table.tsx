@@ -40,14 +40,14 @@ export function PropsTable({ data }: PropsTableProps) {
 
                   {item.description && (
                     <Popover.Root>
-                      <Button size="icon" variant="ghost" className="size-6">
+                      <Button className="size-6" size="icon" variant="ghost">
                         <Icons.Info className="size-4" />
                       </Button>
 
                       <Popover.Content
+                        className="text-sm"
                         placement="top"
                         style={{ maxWidth: 350 }}
-                        className="text-sm"
                       >
                         {item.description}
                       </Popover.Content>
@@ -61,14 +61,14 @@ export function PropsTable({ data }: PropsTableProps) {
 
                   {item.type && (
                     <Popover.Root>
-                      <Button size="icon" variant="ghost" className="size-6">
+                      <Button className="size-6" size="icon" variant="ghost">
                         <Icons.Info className="size-4" />
                       </Button>
 
                       <Popover.Content
+                        className="text-sm"
                         placement="top"
                         style={{ maxWidth: 350 }}
-                        className="text-sm"
                       >
                         <Code className="bg-transparent">{item.type}</Code>
                       </Popover.Content>

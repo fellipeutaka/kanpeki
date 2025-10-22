@@ -19,10 +19,10 @@ export function FormDescription({
   return (
     <Text
       {...props}
-      slot="description"
       className={FormStyles.Description({
         className: isWarning ? "text-warning" : className,
       })}
+      slot="description"
     />
   );
 }

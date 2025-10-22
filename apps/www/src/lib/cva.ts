@@ -11,9 +11,8 @@ export const {
   },
 });
 
-export { cx, cva as cv } from "cva";
-
 export type { VariantProps } from "cva";
+export { cva as cv, cx } from "cva";
 
 export type CVAClassProp =
   | {

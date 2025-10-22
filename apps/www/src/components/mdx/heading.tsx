@@ -15,7 +15,7 @@ export const Heading = <T extends Types = "h1">(props: HeadingProps<T>) => {
 
   return (
     <Component className={cn("scroll-m-20", className)} id={id} {...rest}>
-      <a href={`#${id}`} className="group">
+      <a className="group" href={`#${id}`}>
         {children}
         <Icons.Link
           aria-label="Link to section"

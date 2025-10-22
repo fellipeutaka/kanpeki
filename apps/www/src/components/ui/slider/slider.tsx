@@ -106,6 +106,7 @@ export function SliderFiller({ className, ...props }: SliderFillerProps) {
   return (
     <div
       {...props}
+      className={SliderStyles.Filler({ className })}
       style={
         values.length === 1
           ? orientation === "horizontal"
@@ -121,7 +122,6 @@ export function SliderFiller({ className, ...props }: SliderFillerProps) {
                 height: `${Math.abs(getThumbPercent(0) - getThumbPercent(1)) * 100}%`,
               }
       }
-      className={SliderStyles.Filler({ className })}
     />
   );
 }

@@ -1,7 +1,6 @@
 import type { ThemeRegistration } from "shiki";
 
 export const vercelLightTheme: ThemeRegistration = {
-  type: "light",
   settings: [
     {
       scope: ["comment", "punctuation.definition.comment", "string.comment"],
@@ -29,8 +28,8 @@ export const vercelLightTheme: ThemeRegistration = {
     {
       scope: "meta.diff.range",
       settings: {
-        foreground: "#c472fb",
         fontStyle: "bold",
+        foreground: "#c472fb",
       },
     },
     {
@@ -80,15 +79,15 @@ export const vercelLightTheme: ThemeRegistration = {
         "meta.separator",
       ],
       settings: {
-        foreground: "#52a8ff",
         fontStyle: "bold",
+        foreground: "#52a8ff",
       },
     },
     {
       scope: ["constant.other.reference.link", "string.other.link"],
       settings: {
-        foreground: "#52a8ff",
         fontStyle: "underline",
+        foreground: "#52a8ff",
       },
     },
     {
@@ -125,15 +124,15 @@ export const vercelLightTheme: ThemeRegistration = {
     {
       scope: "markup.italic",
       settings: {
-        foreground: "#ededed",
         fontStyle: "italic",
+        foreground: "#ededed",
       },
     },
     {
       scope: "markup.bold",
       settings: {
-        foreground: "#ededed",
         fontStyle: "bold",
+        foreground: "#ededed",
       },
     },
     {
@@ -204,4 +203,5 @@ export const vercelLightTheme: ThemeRegistration = {
       },
     },
   ],
+  type: "light",
 };

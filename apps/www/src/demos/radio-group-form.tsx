@@ -25,7 +25,7 @@ export default function RadioGroupFormDemo() {
         });
       }}
     >
-      <RadioGroup.Root name="pet" isRequired>
+      <RadioGroup.Root isRequired name="pet">
         <Label>Favorite pet</Label>
 
         <RadioGroup.Item value="dogs">Dog</RadioGroup.Item>

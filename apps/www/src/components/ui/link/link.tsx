@@ -17,9 +17,9 @@ export function Link({ className, variant, ...props }: LinkProps) {
       {...props}
       className={(values) =>
         LinkStyles({
-          variant,
           className:
             typeof className === "function" ? className(values) : className,
+          variant,
         })
       }
     />

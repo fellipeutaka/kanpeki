@@ -37,13 +37,13 @@ export default function ReactHookForm() {
 
   return (
     <Form.Root
+      className="w-full space-y-6"
       onSubmit={handleSubmit}
       validationBehavior="aria"
-      className="w-full space-y-6"
     >
       <Controller
-        name="username"
         control={form.control}
+        name="username"
         render={({ field: { ref, ...field }, fieldState }) => (
           <TextField.Provider {...field} isInvalid={fieldState.invalid}>
             <Label>Username</Label>

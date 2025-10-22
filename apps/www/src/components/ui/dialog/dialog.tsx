@@ -28,8 +28,8 @@ export function DialogOverlay({
   return (
     <ModalOverlay
       {...props}
-      isDismissable={isDismissable}
       className={DialogStyles.Overlay({ className, isBlurred })}
+      isDismissable={isDismissable}
     />
   );
 }
@@ -48,9 +48,9 @@ export function DialogModal({
       {...props}
       className={(values) =>
         DialogStyles.Modal({
-          side,
           className:
             typeof className === "function" ? className(values) : className,
+          side,
         })
       }
       data-side={side}
@@ -76,8 +76,8 @@ export function DialogHeader({ className, ...props }: DialogHeaderProps) {
   return (
     <header
       {...props}
-      data-slot="dialog-header"
       className={DialogStyles.Header({ className })}
+      data-slot="dialog-header"
     />
   );
 }
@@ -96,8 +96,8 @@ export function DialogTitle({ className, ...props }: DialogTitleProps) {
     <Heading
       level={2}
       {...props}
-      data-slot="dialog-title"
       className={DialogStyles.Title({ className })}
+      data-slot="dialog-title"
     />
   );
 }
@@ -128,8 +128,8 @@ export function DialogClose({
   return (
     <Button
       {...props}
-      slot="close"
       className={DialogStyles.Close({ className })}
+      slot="close"
     >
       {children}
     </Button>

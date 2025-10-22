@@ -28,9 +28,9 @@ export function File({ name, className, ...props }: FileProps) {
   return (
     <div {...props} className={FileStyles({ className })}>
       <LanguageIcon
-        title={name}
-        language={name.split(".").pop() || ""}
         className="size-4"
+        language={name.split(".").pop() || ""}
+        title={name}
       />
       {name}
     </div>

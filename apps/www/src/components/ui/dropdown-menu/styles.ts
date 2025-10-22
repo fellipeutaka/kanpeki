@@ -2,12 +2,21 @@ import { compose, cva } from "~/lib/cva";
 import { SeparatorStyles } from "../separator/styles";
 
 export const DropdownMenuStyles = {
+  CheckboxIcon: cva({
+    base: [
+      "absolute left-2 grid size-4 shrink-0 place-content-center opacity-0 transition-opacity",
+      "group-aria-checked:opacity-100",
+    ],
+  }),
   Content: cva({
     base: [
       "overflow-auto rounded-xl p-1 outline-hidden",
       "[clip-path:inset(0_0_0_0_round_calc(var(--radius)-2px))]",
       "sm:max-h-[inherit]",
     ],
+  }),
+  Header: cva({
+    base: ["px-2 py-1.5 font-semibold text-sm"],
   }),
   Item: cva({
     base: [
@@ -22,13 +31,13 @@ export const DropdownMenuStyles = {
     variants: {
       type: {
         checkbox: ["relative pl-8"],
-        radio: ["relative pl-8"],
         default: [""],
+        radio: ["relative pl-8"],
       },
     },
   }),
-  Shortcut: cva({
-    base: ["ml-auto text-xs tracking-widest opacity-60"],
+  ItemDetails: cva({
+    base: ["flex flex-col gap-y-1"],
   }),
   Separator: compose(
     SeparatorStyles,
@@ -36,16 +45,7 @@ export const DropdownMenuStyles = {
       base: ["my-1"],
     })
   ),
-  Header: cva({
-    base: ["px-2 py-1.5 font-semibold text-sm"],
-  }),
-  CheckboxIcon: cva({
-    base: [
-      "absolute left-2 grid size-4 shrink-0 place-content-center opacity-0 transition-opacity",
-      "group-aria-checked:opacity-100",
-    ],
-  }),
-  ItemDetails: cva({
-    base: ["flex flex-col gap-y-1"],
+  Shortcut: cva({
+    base: ["ml-auto text-xs tracking-widest opacity-60"],
   }),
 };

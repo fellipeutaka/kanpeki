@@ -23,13 +23,13 @@ export function AvatarRoot({ className, ...props }: AvatarRootProps) {
   const [status, setStatus] = useState<Status>("idle");
 
   return (
-    <AvatarContext.Provider value={{ status, onStatusChange: setStatus }}>
+    <AvatarContext.Provider value={{ onStatusChange: setStatus, status }}>
       <span className={AvatarStyles.Root({ className })} {...props} />
     </AvatarContext.Provider>
   );
 }
 
-function useImageLoadingStatus(src?: string) {
+function useImageLoadingStatus(src?: string | Blob) {
   const [status, setStatus] = useState<Status>("idle");
 
   useLayoutEffect(() => {
@@ -48,9 +48,20 @@ function useImageLoadingStatus(src?: string) {
     setStatus("loading");
     image.onload = updateStatus("success");
     image.onerror = updateStatus("error");
-    image.src = src;
+
+    let objectUrl: string | undefined;
+    if (typeof src !== "string") {
+      objectUrl = URL.createObjectURL(src);
+      image.src = objectUrl;
+    } else {
+      image.src = src;
+    }
+
     return () => {
       isMounted = false;
+      if (objectUrl) {
+        URL.revokeObjectURL(objectUrl);
+      }
     };
   }, [src]);
 
@@ -59,7 +70,13 @@ function useImageLoadingStatus(src?: string) {
 
 export interface AvatarImageProps extends React.ComponentProps<"img"> {}
 
-export function AvatarImage({ className, src, ...props }: AvatarImageProps) {
+export function AvatarImage({
+  className,
+  src,
+  width,
+  height,
+  ...props
+}: AvatarImageProps) {
   const context = useAvatarContext();
   const status = useImageLoadingStatus(src);
 
@@ -76,9 +93,11 @@ export function AvatarImage({ className, src, ...props }: AvatarImageProps) {
   return (
     <img
       {...props}
-      src={src}
       alt={props.alt}
       className={AvatarStyles.Image({ className })}
+      height={height}
+      src={src}
+      width={width}
     />
   );
 }

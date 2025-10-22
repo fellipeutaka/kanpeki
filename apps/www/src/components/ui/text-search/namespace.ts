@@ -1,6 +1,6 @@
 export {
-  TextSearchRoot as Root,
-  TextSearchIcon as Icon,
-  TextSearchSpinner as Spinner,
   TextSearchClearButton as ClearButton,
+  TextSearchIcon as Icon,
+  TextSearchRoot as Root,
+  TextSearchSpinner as Spinner,
 } from "./text-search";

@@ -9,6 +9,7 @@ import { Label } from "~/components/ui/label";
 export default function DateFieldFormDemo() {
   return (
     <Form.Root
+      className="space-y-2"
       onSubmit={(e) => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(e.currentTarget));
@@ -23,7 +24,6 @@ export default function DateFieldFormDemo() {
           ),
         });
       }}
-      className="space-y-2"
     >
       <DateField.Root isRequired name="birthdate">
         <Label>Birthdate</Label>

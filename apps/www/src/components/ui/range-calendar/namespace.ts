@@ -1,11 +1,11 @@
 export {
-  RangeCalendarRoot as Root,
+  RangeCalendarCell as Cell,
+  RangeCalendarGrid as Grid,
+  RangeCalendarGridBody as GridBody,
+  RangeCalendarGridHeader as GridHeader,
   RangeCalendarHeader as Header,
+  RangeCalendarHeaderCell as HeaderCell,
   RangeCalendarMonth as Month,
   RangeCalendarNav as Nav,
-  RangeCalendarGrid as Grid,
-  RangeCalendarGridHeader as GridHeader,
-  RangeCalendarHeaderCell as HeaderCell,
-  RangeCalendarGridBody as GridBody,
-  RangeCalendarCell as Cell,
+  RangeCalendarRoot as Root,
 } from "./range-calendar";

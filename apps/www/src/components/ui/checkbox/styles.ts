@@ -1,6 +1,9 @@
 import { cva } from "~/lib/cva";
 
 export const CheckboxStyles = {
+  Indicator: cva({
+    base: ["hidden size-3"],
+  }),
   Provider: cva({
     base: [
       "group flex items-center gap-2 text-sm transition",
@@ -20,8 +23,5 @@ export const CheckboxStyles = {
       "group-invalid:border-danger/70 group-invalid:bg-danger/20 group-invalid:text-danger-fg group-invalid:ring-danger/20",
       "group-disabled:cursor-not-allowed",
     ],
-  }),
-  Indicator: cva({
-    base: ["hidden size-3"],
   }),
 };

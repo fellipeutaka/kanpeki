@@ -3,34 +3,34 @@ import { Icons } from "~/components/ui/icons";
 
 const avatars = [
   {
-    src: "https://github.com/fellipeutaka.png",
     alt: "@fellipeutaka",
     fallback: "FU",
+    src: "https://github.com/fellipeutaka.png",
   },
   {
-    src: "https://github.com/victormicco.png",
     alt: "@victormicco",
     fallback: "VM",
+    src: "https://github.com/victormicco.png",
   },
   {
-    src: "https://github.com/shadcn.png",
     alt: "@shadcn",
     fallback: "SN",
+    src: "https://github.com/shadcn.png",
   },
   {
-    src: "https://github.com/devongovett.png",
     alt: "@devongovett",
     fallback: "DG",
+    src: "https://github.com/devongovett.png",
   },
   {
-    src: "https://github.com/benoitgrelard.png",
     alt: "@benoitgrelard",
     fallback: "BG",
+    src: "https://github.com/benoitgrelard.png",
   },
   {
-    src: "https://github.com/adamwathan.png",
     alt: "@adamwathan",
     fallback: "AW",
+    src: "https://github.com/adamwathan.png",
   },
 ] as const satisfies {
   src: string;
@@ -43,7 +43,7 @@ export default function AvatarGroupDemo() {
     <div className="-space-x-2 flex">
       {avatars.map((avatar) => (
         <Avatar.Root className="outline outline-border" key={avatar.alt}>
-          <Avatar.Image src={avatar.src} alt={avatar.alt} />
+          <Avatar.Image alt={avatar.alt} src={avatar.src} />
           <Avatar.Fallback>{avatar.fallback}</Avatar.Fallback>
           <Avatar.Placeholder>
             <Icons.User className="size-6" />

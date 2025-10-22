@@ -13,8 +13,8 @@ const items = [
   },
   {
     id: "activity-bar",
-    name: "Activity Bar",
     isDisabled: true,
+    name: "Activity Bar",
   },
   {
     id: "panel",
@@ -36,15 +36,15 @@ export default function DropdownMenuWithCheckboxesDemo() {
       <Popover.Content>
         <DropdownMenu.Content
           items={items}
-          selectedKeys={selected}
           onSelectionChange={setSelected}
+          selectedKeys={selected}
           selectionMode="multiple"
         >
           {(item) => (
             <DropdownMenu.Item
-              type="checkbox"
               id={item.id}
               isDisabled={item.isDisabled}
+              type="checkbox"
             >
               {item.name}
             </DropdownMenu.Item>
