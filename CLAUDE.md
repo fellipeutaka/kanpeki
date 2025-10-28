@@ -50,9 +50,9 @@ Pre-commit hooks automatically run:
 Commit message linting enforces conventional commit format.
 
 ### Commit Message Format
-Use conventional commits with emojis:
+Use conventional commits:
 ```
-<type>(<scope>): <emoji> <short description>
+<type>(<scope>): <short description>
 
 [Optional longer description explaining why the change was made]
 ```
@@ -61,7 +61,7 @@ Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
 Example:
 ```
-feat(auth): ✨ Add user authentication
+feat(auth): add user authentication
 
 Added user authentication using JWT for secure access.
 ```
