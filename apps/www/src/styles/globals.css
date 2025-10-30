@@ -154,4 +154,9 @@
   input:-webkit-autofill {
     background-clip: text;
   }
+
+  ::selection {
+    color: var(--color-background);
+    background: var(--color-foreground);
+  }
 }

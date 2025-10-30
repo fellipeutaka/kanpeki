@@ -74,8 +74,8 @@ export function InputOTPSeparator({ ...props }: InputOTPSeparatorProps) {
   return (
     <div
       data-slot="input-otp-separator"
+      // biome-ignore lint/a11y/useAriaPropsForRole: This is a decorative separator
       role="separator"
-      // biome-ignore lint/a11y/useSemanticElements: <explanation>
       tabIndex={-1}
       {...props}
     >
