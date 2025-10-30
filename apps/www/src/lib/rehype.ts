@@ -6,6 +6,7 @@ import { transformerNpmCommands } from "./shiki";
 
 export const rehypeCodeOptions: RehypeCodeOptions = {
   icon: false,
+  inline: "tailing-curly-colon",
   themes: {
     dark: vercelDarkTheme,
     light: vercelLightTheme,
