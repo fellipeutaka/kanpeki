@@ -4,7 +4,6 @@ import { type ExternalToast, toast } from "sonner";
 interface CopyOptions {
   text: string;
   timeout?: number;
-  successMessage?: React.ReactNode;
   errorMessage?: React.ReactNode;
 }
 
@@ -24,12 +23,11 @@ export function useCopyToClipboard() {
       return;
     }
 
-    const { text, timeout, successMessage, errorMessage } = options;
+    const { text, timeout, errorMessage } = options;
 
     try {
       await navigator.clipboard.writeText(text);
       setIsCopied(true);
-      toast.success(successMessage ?? "Copied to clipboard!", toastOptions);
 
       setTimeout(() => {
         setIsCopied(false);

@@ -1,7 +1,7 @@
-import { ChartAreaDemo } from "~/registry/demos/chart-area-demo";
-import { ChartBarDemo } from "~/registry/demos/chart-bar-demo";
-import { ChartBarMixed } from "~/registry/demos/chart-bar-mixed";
-import { ChartLineDemo } from "~/registry/demos/chart-line-demo";
+import { ChartAreaDemo } from "~/registry/examples/chart-area-demo";
+import { ChartBarDemo } from "~/registry/examples/chart-bar-demo";
+import { ChartBarMixed } from "~/registry/examples/chart-bar-mixed";
+import { ChartLineDemo } from "~/registry/examples/chart-line-demo";
 
 export function ChartDemo() {
   return (

@@ -12,7 +12,6 @@ import { Code } from "./code";
 import { CodeBlock, type NpmCommands } from "./code-block";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
-import { CopyButton } from "./copy-button";
 import { File, Files } from "./files";
 import { Folder } from "./folder";
 import { Heading } from "./heading";
@@ -131,7 +130,11 @@ export const mdxComponents = {
           <CodeBlock.Header>
             <LanguageIcon language={language} title={title} />
             <CodeBlock.Title>{title}</CodeBlock.Title>
-            <CopyButton text={rawText} />
+            <CodeBlock.CopyButton
+              className="static"
+              commands={commands}
+              text={rawText}
+            />
           </CodeBlock.Header>
         )}
 

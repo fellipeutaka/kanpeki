@@ -15,7 +15,7 @@ Components are styled using Tailwind CSS. You need to install Tailwind CSS in yo
 
 Add the following dependencies to your project:
 
-```bash
+```bash title="Terminal"
 npm install cva@beta tailwind-merge tailwindcss-motion tailwindcss-react-aria-components -D
 ```
 
@@ -155,10 +155,6 @@ export const {
     onComplete: (className) => twMerge(className),
   },
 });
-
-export { cx } from "cva";
-
-export type { VariantProps } from "cva";
 ```
 
 ## That's it ✨

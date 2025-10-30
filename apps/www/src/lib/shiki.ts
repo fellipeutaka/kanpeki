@@ -31,7 +31,7 @@ export async function highlightCode(code: string, language = "tsx") {
     langs: ["typescript", "tsx", "css", "json", "bash"],
   });
 
-  const html = highlighter.codeToHtml(code, {
+  const html = highlighter.codeToHtml(code.trimEnd(), {
     ...rehypeCodeOptions,
     lang: language,
     transformers: [
