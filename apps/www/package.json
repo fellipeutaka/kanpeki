@@ -29,11 +29,11 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "embla-carousel-react": "^8.6.0",
-    "fumadocs-core": "^16.0.0",
+    "fumadocs-core": "^16.0.5",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.548.0",
     "motion": "catalog:",
-    "next": "^16.0.0",
+    "next": "^16.0.1",
     "next-themes": "catalog:",
     "react": "catalog:",
     "react-aria-components": "catalog:",
@@ -41,7 +41,7 @@
     "react-hook-form": "catalog:",
     "react-resizable-panels": "^3.0.6",
     "recharts": "catalog:",
-    "shiki": "^3.13.0",
+    "shiki": "^3.14.0",
     "sonner": "catalog:",
     "ts-morph": "^27.0.2",
     "zod": "catalog:"
@@ -54,14 +54,12 @@
     "@types/react-dom": "catalog:",
     "@types/unist": "^3.0.3",
     "cva": "catalog:",
-    "fumadocs-mdx": "^13.0.0",
+    "fumadocs-mdx": "^13.0.2",
     "postcss": "^8.5.6",
     "shadcn": "^3.5.0",
     "tailwind-merge": "catalog:",
     "tailwindcss": "catalog:",
     "tailwindcss-motion": "catalog:",
-    "tailwindcss-react-aria-components": "catalog:",
-    "unist-builder": "^4.0.0",
-    "unist-util-visit": "^5.0.0"
+    "tailwindcss-react-aria-components": "catalog:"
   }
 }
