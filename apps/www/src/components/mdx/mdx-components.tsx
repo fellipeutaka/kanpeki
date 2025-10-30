@@ -21,8 +21,6 @@ import { Pre, type PreProps } from "./pre";
 import { PropsTable } from "./props-table";
 import { Step, Steps } from "./steps";
 
-// &:is(:where(.peer)[data-slot="alert-root"] ~ *)
-
 export const mdxComponents = {
   h1: (props: React.ComponentProps<"h1">) => (
     <h1 className="heading mt-2 scroll-m-20 font-bold text-4xl" {...props} />
@@ -162,10 +160,7 @@ export const mdxComponents = {
   Alert,
   Step,
   Steps,
-  TabContent: MdxTabs.Content,
-  TabList: MdxTabs.List,
-  TabRoot: MdxTabs.Root,
-  TabTrigger: MdxTabs.Trigger,
+  Tabs: MdxTabs,
 
   File,
   Files,

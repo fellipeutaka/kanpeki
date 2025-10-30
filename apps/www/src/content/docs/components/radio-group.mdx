@@ -9,21 +9,21 @@ links:
 
 ## Installation
 
-<TabRoot>
+<Tabs.Root>
 
-<TabList>
-  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
-  <TabTrigger id="manual">Manual</TabTrigger>
-</TabList>
-<TabContent id="cli">
+<Tabs.List>
+  <Tabs.Trigger id="cli" isDisabled>CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
 
 ```bash
 npx kanpeki-ui@latest add radio-group
 ```
 
-</TabContent>
+</Tabs.Content>
 
-<TabContent id="manual">
+<Tabs.Content id="manual">
 
 <Steps>
 
@@ -35,9 +35,9 @@ npx kanpeki-ui@latest add radio-group
 
 </Steps>
 
-</TabContent>
+</Tabs.Content>
 
-</TabRoot>
+</Tabs.Root>
 
 ## Usage
 
@@ -50,7 +50,7 @@ import { RadioGroup } from "~/components/ui/radio-group";
 ```tsx
 <RadioGroup.Root>
   <RadioGroup.Item value="r1">Default</RadioGroup.Item>
-  <RadioGroup.Item value="r2">Comfortable</RadioGroup.Item>
+  <RadioGroup.Item value="r2">ComforTabs.le</RadioGroup.Item>
   <RadioGroup.Item value="r3">Compact</RadioGroup.Item>
 </RadioGroup.Root>
 ```
@@ -64,7 +64,7 @@ import { RadioGroupItem, RadioGroupRoot } from "~/components/ui/radio-group";
 ```tsx
 <RadioGroupRoot>
   <RadioGroupItem value="r1">Default</RadioGroupItem>
-  <RadioGroupItem value="r2">Comfortable</RadioGroupItem>
+  <RadioGroupItem value="r2">ComforTabs.le</RadioGroupItem>
   <RadioGroupItem value="r3">Compact</RadioGroupItem>
 </RadioGroupRoot>
 ```
