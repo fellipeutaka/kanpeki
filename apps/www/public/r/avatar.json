@@ -19,7 +19,7 @@
     },
     {
       "path": "src/registry/ui/avatar/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const AvatarStyles = {\n  Fallback: cva({\n    base: [\n      \"size-full select-none place-content-center rounded-full bg-muted\",\n      \"grid group-data-[status=success]:hidden\",\n    ],\n  }),\n  Image: cva({\n    base: [\"aspect-square size-full\"],\n  }),\n  Placeholder: cva({\n    base: [\"grid size-full animate-pulse place-content-center bg-muted\"],\n  }),\n  Root: cva({\n    base: [\"group relative flex size-8 shrink-0 overflow-hidden rounded-full\"],\n  }),\n};\n",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const AvatarStyles = {\n  Fallback: cva({\n    base: [\n      \"col-start-1 row-start-1 size-full select-none place-content-center rounded-full bg-muted\",\n      \"grid group-data-[status=success]:hidden\",\n    ],\n  }),\n  Image: cva({\n    base: [\"aspect-square size-full\"],\n  }),\n  Placeholder: cva({\n    base: [\n      \"col-start-1 row-start-1 grid size-full animate-pulse place-content-center bg-muted\",\n    ],\n  }),\n  Root: cva({\n    base: [\"group relative grid size-8 shrink-0 overflow-hidden rounded-full\"],\n  }),\n};\n",
       "type": "registry:ui"
     },
     {

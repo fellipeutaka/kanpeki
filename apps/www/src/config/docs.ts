@@ -89,13 +89,11 @@ export const docsConfig: DocsConfig = {
         {
           disabled: true,
           href: "/docs/components/carousel",
-          label: "Planned",
           title: "Carousel",
         },
         {
           disabled: true,
           href: "/docs/components/chart",
-          label: "Planned",
           title: "Chart",
         },
         {
@@ -109,35 +107,29 @@ export const docsConfig: DocsConfig = {
         {
           disabled: true,
           href: "/docs/components/combobox",
-          label: "Planned",
           title: "Combobox",
         },
         {
           href: "/docs/components/command",
-          label: "Improved",
           title: "Command",
         },
         {
           disabled: true,
           href: "/docs/components/context-menu",
-          label: "Planned",
           title: "Context Menu",
         },
         {
           disabled: true,
           href: "/docs/components/data-table",
-          label: "Planned",
           title: "Data Table",
         },
         {
           href: "/docs/components/date-field",
-          label: "New",
           title: "Date Field",
         },
         {
           disabled: true,
           href: "/docs/components/date-picker",
-          label: "Planned",
           title: "Date Picker",
         },
         {
@@ -167,7 +159,6 @@ export const docsConfig: DocsConfig = {
         {
           disabled: true,
           href: "/docs/components/pagination",
-          label: "Planned",
           title: "Pagination",
         },
         {
@@ -177,18 +168,15 @@ export const docsConfig: DocsConfig = {
         {
           disabled: true,
           href: "/docs/components/progress",
-          label: "Planned",
           title: "Progress",
         },
         {
           href: "/docs/components/radio-group",
-          label: "New",
           title: "Radio Group",
         },
         {
           disabled: true,
           href: "/docs/components/resizable",
-          label: "Planned",
           title: "Resizable",
         },
         {
@@ -246,7 +234,6 @@ export const docsConfig: DocsConfig = {
         {
           disabled: true,
           href: "/docs/components/toggle-group",
-          label: "Planned",
           title: "Toggle Group",
         },
         {
