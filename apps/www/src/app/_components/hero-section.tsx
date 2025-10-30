@@ -38,7 +38,7 @@ export function HeroSection() {
             size="lg"
             variant="outline"
           >
-            <Icons.GitHub className="mr-2 size-5" />
+            <Icons.GitHub className="size-5" />
             GitHub
           </LinkButton>
         </div>
