@@ -9,6 +9,7 @@ const folderNameMap = new Map([
   ["hooks", [Icons.HookFolder, Icons.HookFolderOpen]],
   ["styles", [Icons.CssFolder, Icons.CssFolderOpen]],
   ["utils", [Icons.UtilsFolder, Icons.UtilsFolderOpen]],
+  ["lib", [Icons.UtilsFolder, Icons.UtilsFolderOpen]],
   ["ui", [Icons.ThemeFolder, Icons.ThemeFolderOpen]],
 ]);
 
