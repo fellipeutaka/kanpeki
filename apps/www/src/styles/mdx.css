@@ -1,52 +1,67 @@
-figure.shiki.shiki-themes code {
-  padding: 0;
-  background-color: transparent;
+figure[data-figure="code"] code {
+    padding: 0;
+    background-color: transparent;
 }
 
-figure.shiki.shiki-themes .line {
-  padding-inline: 0.75rem;
-  width: 100%;
-  display: inline-block;
+figure[data-figure="code"] .line {
+    display: inline-block;
+    width: 100%;
+    padding-inline: calc(var(--spacing) * 3);
 
-  &.highlighted {
-    background-color: var(--color-muted);
-  }
+    &.highlighted {
+        position: relative;
+        background-color: hsla(213, 71%, 20%, 1);
+
+        &::before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 2px;
+            content: "";
+            background: hsla(210, 100%, 66%, 1);
+        }
+    }
 }
 
 .shiki.shiki-themes span {
-  color: light-dark(var(--shiki-light), var(--shiki-dark));
+    color: light-dark(var(--shiki-light), var(--shiki-dark)) !important;
 }
 
-.mdx > .steps:first-child > h3:first-child {
-  margin-top: 0;
+.mdx>div:where([dir], [data-orientation]):first-child {
+    margin-top: 0;
 }
 
-.mdx > div:where([dir], [data-orientation]):first-child {
-  margin-top: 0;
+.mdx>.steps:first-child>h3:first-child {
+    margin-top: 0;
 }
 
-.steps > :where(h2, h3) {
-  margin: 2rem 0 1rem;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.5;
-  counter-increment: step;
+.mdx .steps> :where(h2, h3) {
+    margin: 2rem 0 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    counter-increment: step;
 
-  &::before {
-    position: absolute;
-    width: 2.25rem;
-    height: 2.25rem;
-    background-color: var(--color-muted);
-    border-radius: calc(infinity * 1px);
-    font-family: var(--font-mono);
-    font-weight: 300;
-    display: grid;
-    place-content: center;
-    text-indent: -1px;
-    border-width: 4px;
-    border-color: var(--color-bg);
-    margin-left: -50px;
-    margin-top: -0.25rem;
-    content: counter(step);
-  }
+    &::before {
+        position: absolute;
+        display: grid;
+        place-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-top: -0.25rem;
+        margin-left: -50px;
+        font-family: var(--font-mono);
+        font-weight: 300;
+        text-indent: -1px;
+        content: counter(step);
+        background-color: var(--color-muted);
+        border-color: var(--color-background);
+        border-width: 4px;
+        border-radius: calc(infinity * 1px);
+    }
+}
+
+.mdx h2~div[data-slot="alert-root"] {
+    margin-block-start: calc(var(--spacing) * 6);
 }

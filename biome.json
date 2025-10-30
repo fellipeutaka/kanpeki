@@ -1,23 +1,67 @@
 {
   "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
-  "files": {
-    "ignore": [".next", ".source", "dist", "node_modules"]
+  "extends": ["ultracite/core", "ultracite/react", "ultracite/next"],
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
   },
-  "organizeImports": {
-    "enabled": true
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
   },
-  "vcs": {
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
+  },
+  "assist": {
     "enabled": true,
-    "clientKind": "git"
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space"
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedAttributes": "on",
+        "useSortedProperties": "on"
+      }
+    }
   },
   "linter": {
-    "enabled": true,
     "rules": {
-      "all": true,
+      "suspicious": {
+        "noConsole": {
+          "fix": "safe",
+          "level": "warn",
+          "options": {
+            "allow": ["info", "warn", "error"]
+          }
+        },
+        "noUnknownAtRules": "off"
+      },
+      "correctness": {
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "warn"
+        }
+      },
+      "style": {
+        "noDefaultExport": "error",
+        "useNamingConvention": "off",
+        "noMagicNumbers": "off",
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "filenameCases": ["kebab-case"]
+          }
+        },
+        "useConsistentTypeDefinitions": {
+          "fix": "safe",
+          "level": "error",
+          "options": {
+            "style": "interface"
+          }
+        }
+      },
       "nursery": {
         "useSortedClasses": {
           "fix": "safe",
@@ -26,62 +70,12 @@
             "functions": ["cva", "cv", "cn", "cx"]
           }
         }
-      },
-      "complexity": {
-        "noExcessiveCognitiveComplexity": "off"
-      },
-      "style": {
-        "useNamingConvention": "off",
-        "noImplicitBoolean": "off",
-        "useFilenamingConvention": {
-          "level": "error",
-          "options": {
-            "filenameCases": ["kebab-case"]
-          }
-        }
-      },
-      "correctness": {
-        "noNodejsModules": "off",
-        "noUnusedVariables": "error",
-        "noUndeclaredDependencies": "off",
-        "useImportExtensions": "off",
-        "noUnusedLabels": "error",
-        "noUnusedImports": "error",
-        "noUnusedFunctionParameters": "error",
-        "noUnusedPrivateClassMembers": "error"
-      },
-      "suspicious": {
-        "noReactSpecificProps": "off",
-        "noConsole": "off"
       }
     }
   },
   "overrides": [
     {
-      "include": [
-        "apps/www/src/app/**/page.tsx",
-        "apps/www/src/app/**/layout.tsx",
-        "apps/www/src/app/**/template.tsx",
-        "apps/www/src/app/**/loading.tsx",
-        "apps/www/src/app/**/error.tsx",
-        "apps/www/src/app/**/not-found.tsx",
-        "apps/www/src/app/**/default.tsx",
-        "apps/www/src/app/**/icon.tsx",
-        "apps/www/src/app/**/apple-icon.tsx",
-        "apps/www/src/app/**/manifest.ts",
-        "apps/www/src/app/**/opengraph-image.tsx",
-        "apps/www/src/app/**/twitter-image.tsx",
-        "apps/www/src/app/**/robots.ts",
-        "apps/www/src/app/**/sitemap.ts",
-
-        "apps/www/src/demos/*.tsx",
-        "**/*.config.ts",
-        "**/*.config.js",
-
-        "apps/storybook/.storybook/main.ts",
-        "apps/storybook/.storybook/preview.ts",
-        "apps/storybook/src/stories/*.stories.tsx"
-      ],
+      "includes": ["**/*.config.{js,ts}"],
       "linter": {
         "rules": {
           "style": {
@@ -91,34 +85,14 @@
       }
     },
     {
-      "include": ["apps/**/src/components/ui/*/index.ts"],
+      "includes": ["**/*-skeleton.tsx"],
       "linter": {
         "rules": {
-          "performance": {
-            "noReExportAll": "off"
-          }
-        }
-      }
-    },
-    {
-      "include": [
-        "apps/**/src/components/ui/*/index.ts",
-        "apps/**/src/components/ui/*/namespace.ts",
-        "apps/**/src/lib/cva.ts"
-      ],
-      "linter": {
-        "rules": {
-          "performance": {
-            "noBarrelFile": "off"
+          "suspicious": {
+            "noArrayIndexKey": "off"
           }
         }
       }
     }
-  ],
-  "javascript": {
-    "globals": ["React"],
-    "formatter": {
-      "trailingCommas": "es5"
-    }
-  }
+  ]
 }

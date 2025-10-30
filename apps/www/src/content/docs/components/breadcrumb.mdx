@@ -9,21 +9,21 @@ links:
 
 ## Installation
 
-<TabRoot>
+<Tabs.Root>
 
-<TabList>
-  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
-  <TabTrigger id="manual">Manual</TabTrigger>
-</TabList>
-<TabContent id="cli">
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
 
 ```bash
-npx kanpeki-ui@latest add breadcrumb
+npx shadcn@latest add @kanpeki/breadcrumb
 ```
 
-</TabContent>
+</Tabs.Content>
 
-<TabContent id="manual">
+<Tabs.Content id="manual">
 
 <Steps>
 
@@ -35,9 +35,9 @@ npx kanpeki-ui@latest add breadcrumb
 
 </Steps>
 
-</TabContent>
+</Tabs.Content>
 
-</TabRoot>
+</Tabs.Root>
 
 ## Usage
 
@@ -106,7 +106,7 @@ Use a custom component as `children` for `<BreadcrumbSeparator />{:tsx}` to crea
 
 ```tsx {2,6-8}
 import { Breadcrumb } from "~/components/ui/breadcrumb";
-import { Icons } from "~/components/ui/icons";
+import { Icons } from "~/components/icons";
 
 <Breadcrumb.Root>
   {/* ... */}

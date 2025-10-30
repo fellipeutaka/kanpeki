@@ -1,4 +1,4 @@
-import type { TableOfContents as Toc } from "fumadocs-core/server";
+import type { TableOfContents as Toc } from "fumadocs-core/toc";
 import { AnchorProvider } from "fumadocs-core/toc";
 import { DocsTocTree } from "./docs-toc-tree";
 

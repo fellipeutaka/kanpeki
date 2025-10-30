@@ -1,13 +1,26 @@
 export const siteConfig = {
-  name: "Kanpeki",
-  url: "https://kanpeki.vercel.app",
-  ogImage: "https://kanpeki.vercel.app/og.jpg",
   description:
-    "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+    "A set of perfect-designed components built on top of React Aria and Motion.",
   links: {
-    twitter: "https://twitter.com/fellipeutaka",
     github: "https://github.com/fellipeutaka/kanpeki",
+    twitter: "https://twitter.com/fellipeutaka",
   },
+  name: "Kanpeki",
+  ogImage: "https://kanpeki.vercel.app/og.jpg",
+  url: "https://kanpeki.vercel.app",
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Server Components",
+    "React Aria",
+    "Radix UI",
+    "TypeScript",
+    "Component Library",
+    "Open Source",
+    "Accessible",
+    "Customizable",
+  ] as string[],
 } as const;
 
 export type SiteConfig = typeof siteConfig;

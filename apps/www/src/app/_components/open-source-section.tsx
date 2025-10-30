@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Icons } from "~/components/ui/icons";
+import { Icons } from "~/components/icons";
 import { siteConfig } from "~/config/site";
 
 export function OpenSourceSection() {
@@ -11,15 +11,15 @@ export function OpenSourceSection() {
           open-source
         </span>
       </h2>
-      <p className="mx-auto max-w-2xl text-balance text-lg text-muted-fg">
+      <p className="mx-auto max-w-2xl text-balance text-lg text-muted-foreground">
         Our source code is available on GitHub - feel free to read, review, or
         contribute to it however you want!
       </p>
       <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href={siteConfig.links.github}
         className="mx-auto flex w-max select-none transition-opacity hover:opacity-80"
+        href={siteConfig.links.github}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <div className="flex items-center gap-2 rounded-md border border-muted bg-muted px-4">
           <Icons.GitHub className="size-6" />
@@ -59,12 +59,12 @@ async function getGitHubStars() {
 
     const json = await response.json();
 
-    return Number.parseInt(json.stargazers_count).toLocaleString();
+    return Number.parseInt(json.stargazers_count, 10).toLocaleString();
   } catch {
     return null;
   }
 }
 
 async function StarsAmount() {
-  return (await getGitHubStars()) ?? 99999;
+  return (await getGitHubStars()) ?? 99_999;
 }

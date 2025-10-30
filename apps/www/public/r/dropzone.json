@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropzone",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/dropzone/index.ts",
+      "content": "export * from \"./dropzone\";\nexport * as Dropzone from \"./namespace\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/dropzone/dropzone.tsx",
+      "content": "\"use client\";\n\nimport { composeRenderProps, DropZone, Text } from \"react-aria-components\";\nimport { DropzoneStyles } from \"./styles\";\n\nexport interface DropzoneProviderProps\n  extends React.ComponentProps<typeof DropZone> {}\n\nexport function DropzoneProvider({\n  className,\n  ...props\n}: DropzoneProviderProps) {\n  return (\n    <DropZone\n      data-slot=\"dropzone-provider\"\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        DropzoneStyles.Provider({ className })\n      )}\n    />\n  );\n}\n\nexport interface DropzoneRootProps extends React.ComponentProps<\"div\"> {}\n\nexport function DropzoneRoot({ className, ...props }: DropzoneRootProps) {\n  return (\n    <div\n      data-slot=\"dropzone-root\"\n      {...props}\n      className={DropzoneStyles.Root({ className })}\n    />\n  );\n}\n\nexport interface DropzoneLabelProps extends React.ComponentProps<typeof Text> {}\n\nexport function DropzoneLabel({ className, ...props }: DropzoneLabelProps) {\n  return (\n    <Text\n      className={DropzoneStyles.Label({ className })}\n      data-slot=\"dropzone-label\"\n      slot=\"label\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/dropzone/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const DropzoneStyles = {\n  Label: cva({\n    base: [\"font-medium text-sm\"],\n  }),\n  Provider: cva({\n    base: [\"group relative\"],\n  }),\n  Root: cva({\n    base: [\n      \"grid w-full select-none place-content-center rounded-lg border-2 border-dashed transition\",\n      \"group-drop-target:border-primary\",\n    ],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/dropzone/namespace.ts",
+      "content": "export {\n  DropzoneLabel as Label,\n  DropzoneProvider as Provider,\n  DropzoneRoot as Root,\n} from \"./dropzone\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

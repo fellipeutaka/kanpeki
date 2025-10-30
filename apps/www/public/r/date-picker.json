@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/date-picker/index.ts",
+      "content": "export * from \"./date-picker\";\nexport * as DatePicker from \"./namespace\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/date-picker/date-picker.tsx",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport {\n  composeRenderProps,\n  DatePicker,\n  type DateValue,\n} from \"react-aria-components\";\nimport { DatePickerStyles } from \"./styles\";\n\nexport interface DatePickerRootProps<T extends DateValue>\n  extends React.ComponentProps<typeof DatePicker<T>> {}\n\nexport function DatePickerRoot<T extends DateValue>({\n  className,\n  ...props\n}: DatePickerRootProps<T>) {\n  return (\n    <DatePicker\n      className={composeRenderProps(className, (className) =>\n        DatePickerStyles.Root({ className })\n      )}\n      data-slot=\"date-picker-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface DatePickerIconProps\n  extends Omit<React.ComponentProps<\"span\">, \"children\"> {}\n\nexport function DatePickerIcon({ className, ...props }: DatePickerIconProps) {\n  return (\n    <span\n      aria-hidden=\"true\"\n      className={DatePickerStyles.Icon({ className })}\n      data-slot=\"date-picker-icon\"\n      {...props}\n    >\n      <ChevronDownIcon className=\"size-4 text-muted-foreground transition group-open:rotate-180\" />\n    </span>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/date-picker/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const DatePickerStyles = {\n  Icon: cva({\n    base: [\"ml-auto\"],\n  }),\n  Root: cva({\n    base: [\"group\"],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/date-picker/namespace.ts",
+      "content": "export {\n  DatePickerIcon as Icon,\n  DatePickerRoot as Root,\n} from \"./date-picker\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

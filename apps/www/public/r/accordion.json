@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/accordion/index.ts",
+      "content": "export * from \"./accordion\";\nexport * as Accordion from \"./namespace\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/accordion/accordion.tsx",
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport {\n  Button,\n  composeRenderProps,\n  Disclosure,\n  DisclosureGroup,\n  DisclosurePanel,\n} from \"react-aria-components\";\nimport { AccordionStyles } from \"./styles\";\n\nexport interface AccordionRootProps\n  extends React.ComponentProps<typeof DisclosureGroup> {}\n\nexport function AccordionRoot(props: AccordionRootProps) {\n  return <DisclosureGroup data-slot=\"accordion-root\" {...props} />;\n}\n\nexport interface AccordionItemProps\n  extends React.ComponentProps<typeof Disclosure> {}\n\nexport function AccordionItem({ className, ...props }: AccordionItemProps) {\n  return (\n    <Disclosure\n      className={composeRenderProps(className, (className) =>\n        AccordionStyles.Item({ className })\n      )}\n      data-slot=\"accordion-item\"\n      {...props}\n    />\n  );\n}\n\nexport interface AccordionTriggerProps\n  extends Omit<React.ComponentProps<typeof Button>, \"slot\"> {}\n\nexport function AccordionTrigger({\n  className,\n  children,\n  ...props\n}: AccordionTriggerProps) {\n  return (\n    <Button\n      className={composeRenderProps(className, (className) =>\n        AccordionStyles.Trigger({ className })\n      )}\n      data-slot=\"accordion-trigger\"\n      slot=\"trigger\"\n      {...props}\n    >\n      {composeRenderProps(children, (children) => (\n        <>\n          {children}\n          <ChevronDownIcon className={AccordionStyles.Icon()} />\n        </>\n      ))}\n    </Button>\n  );\n}\n\nexport interface AccordionContentProps\n  extends React.ComponentProps<typeof DisclosurePanel> {}\n\nexport function AccordionContent({\n  className,\n  ...props\n}: AccordionContentProps) {\n  return (\n    <DisclosurePanel\n      className={AccordionStyles.Content({\n        className,\n      })}\n      data-slot=\"accordion-content\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/accordion/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const AccordionStyles = {\n  Content: cva({\n    base: [\n      \"overflow-hidden pb-4 text-sm transition-[height,content_visibility] transition-discrete duration-300 [interpolate-size:allow-keywords] aria-hidden:h-0 aria-hidden:pb-0\",\n    ],\n  }),\n  Icon: cva({\n    base: [\n      \"pointer-events-none size-4 shrink-0 translate-y-0.5 text-muted-foreground transition-transform duration-200 group-expanded:rotate-180\",\n    ],\n  }),\n  Item: cva({\n    base: [\"group border-b last:border-b-0\"],\n  }),\n  Trigger: cva({\n    base: [\n      \"flex w-full flex-1 items-start justify-between gap-4 rounded-md py-4 text-left font-medium text-sm outline-none transition-all\",\n      \"hover:underline\",\n      \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n      \"disabled:pointer-events-none disabled:opacity-50\",\n    ],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/accordion/namespace.ts",
+      "content": "export {\n  AccordionContent as Content,\n  AccordionItem as Item,\n  AccordionRoot as Root,\n  AccordionTrigger as Trigger,\n} from \"./accordion\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

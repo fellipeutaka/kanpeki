@@ -1,5 +1,6 @@
-import { cn } from "~/lib/cva";
-import { type IconProps, Icons } from "../ui/icons";
+import { FileIcon, type LucideIcon, TerminalIcon } from "lucide-react";
+import { type Icon, type IconProps, Icons } from "~/components/icons";
+import { cn } from "~/registry/lib/cva";
 
 const titleMap = new Map([
   ["tailwind.config.{js,cjs,mjs,ts}", Icons.TailwindCSS],
@@ -9,17 +10,17 @@ const titleMap = new Map([
   ["tsconfig.json", Icons.TSConfig],
 ]);
 
-const extensionMap = new Map([
+const extensionMap = new Map<string, Icon | LucideIcon>([
   ["cjs", Icons.JavaScript],
   ["js", Icons.JavaScript],
   ["ts", Icons.TypeScript],
   ["jsx", Icons.React],
   ["tsx", Icons.React],
   ["mdx", Icons.Mdx],
-  ["bash", Icons.Terminal],
-  ["sh", Icons.Terminal],
-  ["shell", Icons.Terminal],
-  ["zsh", Icons.Terminal],
+  ["bash", TerminalIcon],
+  ["sh", TerminalIcon],
+  ["shell", TerminalIcon],
+  ["zsh", TerminalIcon],
   ["json", Icons.Json],
   ["css", Icons.Css],
   ["astro", Icons.Astro],
@@ -55,7 +56,7 @@ export function LanguageIcon({
   ...props
 }: LanguageIconProps) {
   const IconComponent =
-    getIconByTitle(title) || extensionMap.get(language) || Icons.File;
+    getIconByTitle(title) || extensionMap.get(language) || FileIcon;
 
   return <IconComponent className={cn("size-3.5", className)} {...props} />;
 }

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/switch/index.ts",
+      "content": "export * as Switch from \"./namespace\";\nexport * from \"./styles\";\nexport * from \"./switch\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/switch/switch.tsx",
+      "content": "\"use client\";\n\nimport { composeRenderProps, Switch } from \"react-aria-components\";\nimport { SwitchStyles } from \"./styles\";\n\nexport interface SwitchRootProps extends React.ComponentProps<typeof Switch> {}\n\nexport function SwitchRoot({ className, ...props }: SwitchRootProps) {\n  return (\n    <Switch\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        SwitchStyles.Root({\n          className,\n        })\n      )}\n      data-slot=\"switch-root\"\n    />\n  );\n}\n\nexport interface SwitchTrackProps extends React.ComponentProps<\"span\"> {}\n\nexport function SwitchTrack({ className, ...props }: SwitchTrackProps) {\n  return (\n    <span\n      {...props}\n      className={SwitchStyles.Track({ className })}\n      data-slot=\"switch-track\"\n    />\n  );\n}\n\nexport interface SwitchThumbProps extends React.ComponentProps<\"span\"> {}\n\nexport function SwitchThumb({ className, ...props }: SwitchThumbProps) {\n  return (\n    <span\n      {...props}\n      className={SwitchStyles.Thumb({ className })}\n      data-slot=\"switch-thumb\"\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/switch/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SwitchStyles = {\n  Root: cva({\n    base: [\"group inline-flex touch-none items-center gap-2\"],\n  }),\n  Thumb: cva({\n    base: [\n      \"pointer-events-none block size-4 translate-x-0 rounded-full shadow-lg ring-0 transition-all\",\n      \"group-selected:ml-4\",\n      \"group-pressed:w-5\",\n      \"group-selected:group-pressed:ml-3\",\n\n      \"bg-background dark:bg-foreground dark:group-selected:bg-primary-foreground\",\n    ],\n  }),\n  Track: cva({\n    base: [\n      \"group inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent bg-input shadow-xs transition\",\n      \"group-focus-visible:ring-default\",\n      \"group-invalid:ring-destructive\",\n      \"group-disabled:cursor-not-allowed group-disabled:opacity-50\",\n      \"group-selected:bg-primary\",\n    ],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/switch/namespace.ts",
+      "content": "export {\n  SwitchRoot as Root,\n  SwitchThumb as Thumb,\n  SwitchTrack as Track,\n} from \"./switch\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

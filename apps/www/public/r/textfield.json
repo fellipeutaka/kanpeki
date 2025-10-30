@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textfield",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/textfield/index.ts",
+      "content": "export * from \"./styles\";\nexport * from \"./textfield\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/textfield/textfield.tsx",
+      "content": "\"use client\";\n\nimport { composeRenderProps, TextField } from \"react-aria-components\";\nimport { TextfieldStyles } from \"./styles\";\n\nexport interface TextfieldProps\n  extends React.ComponentProps<typeof TextField> {}\n\nexport function Textfield({ className, ...props }: TextfieldProps) {\n  return (\n    <TextField\n      className={composeRenderProps(className, (className) =>\n        TextfieldStyles({ className })\n      )}\n      data-slot=\"textfield\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/textfield/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const TextfieldStyles = cva({\n  base: [\"grid gap-3\"],\n});\n",
+      "type": "registry:ui"
+    }
+  ]
+}

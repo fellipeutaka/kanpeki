@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-group-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/avatar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/avatar-group-demo.tsx",
+      "content": "import { UserIcon } from \"lucide-react\";\nimport { Avatar } from \"~/registry/ui/avatar\";\n\nexport function AvatarGroupDemo() {\n  return (\n    <Avatar.Root>\n      <Avatar.Image\n        alt=\"@fellipeutaka\"\n        src=\"https://github.com/fellipeutaka.png\"\n      />\n      <Avatar.Placeholder>\n        <UserIcon />\n      </Avatar.Placeholder>\n      <Avatar.Fallback>FU</Avatar.Fallback>\n    </Avatar.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

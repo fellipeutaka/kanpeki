@@ -1,0 +1,84 @@
+{
+  "$schema": "../../node_modules/@biomejs/biome/configuration_schema.json",
+  "root": false,
+  "extends": "//",
+  "linter": {
+    "rules": {
+      "style": {
+        "noNestedTernary": "off"
+      },
+      "correctness": {
+        "noUnknownTypeSelector": "off"
+      },
+      "performance": {
+        "noNamespaceImport": "off",
+        "noBarrelFile": "off"
+      },
+      "nursery": {
+        "noShadow": "off"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["src/registry/__index__.tsx", "public/**/*"],
+      "linter": {
+        "enabled": false
+      },
+      "assist": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
+    },
+    {
+      "includes": [
+        "src/app/**/page.tsx",
+        "src/app/**/layout.tsx",
+        "src/app/**/template.tsx",
+        "src/app/**/loading.tsx",
+        "src/app/**/error.tsx",
+        "src/app/**/not-found.tsx",
+        "src/app/**/default.tsx",
+        "src/app/**/icon.tsx",
+        "src/app/**/apple-icon.tsx",
+        "src/app/**/manifest.ts",
+        "src/app/**/opengraph-image.tsx",
+        "src/app/**/twitter-image.tsx",
+        "src/app/**/robots.ts",
+        "src/app/**/sitemap.ts",
+        "src/registry/examples/*.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/registry/ui/**/*.tsx", "src/registry/examples/*.tsx"],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noImgElement": "off"
+          },
+          "style": {
+            "noExportedImports": "off"
+          },
+          "a11y": {
+            "useSemanticElements": "off"
+          },
+          "complexity": {
+            "noExcessiveCognitiveComplexity": "off"
+          },
+          "correctness": {
+            "useExhaustiveDependencies": "off"
+          }
+        }
+      }
+    }
+  ]
+}

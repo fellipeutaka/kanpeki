@@ -1,10 +1,9 @@
 "use client";
 
-import { Button } from "../ui/button";
-import { Card } from "../ui/card";
-import { Icons } from "../ui/icons";
-import { Popover } from "../ui/popover";
-import { Table } from "../ui/table";
+import { InfoIcon, MinusIcon } from "lucide-react";
+import { Button } from "~/registry/ui/button";
+import { Popover } from "~/registry/ui/popover";
+import { Table } from "~/registry/ui/table";
 import { Code } from "./code";
 
 interface PropsTableProps {
@@ -20,18 +19,18 @@ interface PropsTableProps {
 
 export function PropsTable({ data }: PropsTableProps) {
   return (
-    <Card.Root className="mt-5 overflow-hidden">
+    <div className="mt-5 overflow-hidden rounded-xl border">
       <Table.Root aria-label="Component props">
         <Table.Header className="bg-muted">
           <Table.Row>
-            <Table.Column isRowHeader>Prop</Table.Column>
-            <Table.Column>Type</Table.Column>
-            <Table.Column>Default</Table.Column>
+            <Table.Head>Prop</Table.Head>
+            <Table.Head>Type</Table.Head>
+            <Table.Head>Default</Table.Head>
           </Table.Row>
         </Table.Header>
-        <Table.Body items={data}>
-          {(item) => (
-            <Table.Row className="last:border-none" id={item.name}>
+        <Table.Body>
+          {data.map((item) => (
+            <Table.Row className="last:border-none" key={item.name}>
               <Table.Cell>
                 <div className="flex items-center gap-2">
                   <Code className="text-[#0550AE] dark:text-[#79C0FF]">
@@ -40,14 +39,14 @@ export function PropsTable({ data }: PropsTableProps) {
 
                   {item.description && (
                     <Popover.Root>
-                      <Button size="icon" variant="ghost" className="size-6">
-                        <Icons.Info className="size-4" />
+                      <Button className="size-6" size="icon" variant="ghost">
+                        <InfoIcon className="size-4" />
                       </Button>
 
                       <Popover.Content
+                        className="text-sm"
                         placement="top"
                         style={{ maxWidth: 350 }}
-                        className="text-sm"
                       >
                         {item.description}
                       </Popover.Content>
@@ -61,14 +60,14 @@ export function PropsTable({ data }: PropsTableProps) {
 
                   {item.type && (
                     <Popover.Root>
-                      <Button size="icon" variant="ghost" className="size-6">
-                        <Icons.Info className="size-4" />
+                      <Button className="size-6" size="icon" variant="ghost">
+                        <InfoIcon className="size-4" />
                       </Button>
 
                       <Popover.Content
+                        className="text-sm"
                         placement="top"
                         style={{ maxWidth: 350 }}
-                        className="text-sm"
                       >
                         <Code className="bg-transparent">{item.type}</Code>
                       </Popover.Content>
@@ -80,13 +79,13 @@ export function PropsTable({ data }: PropsTableProps) {
                 {item.default ? (
                   <Code>{item.default}</Code>
                 ) : (
-                  <Icons.Minus className="size-4 text-muted-fg" />
+                  <MinusIcon className="size-4 text-muted-foreground" />
                 )}
               </Table.Cell>
             </Table.Row>
-          )}
+          ))}
         </Table.Body>
       </Table.Root>
-    </Card.Root>
+    </div>
   );
 }

@@ -1,278 +1,261 @@
-import type { Icons } from "~/components/ui/icons";
+import type { Icons } from "~/components/icons";
 
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
-      title: "Docs",
       href: "/docs/introduction",
+      title: "Docs",
     },
     {
-      title: "Components",
       href: "/docs/components",
+      title: "Components",
     },
     {
-      title: "Storybook",
       href: "/storybook",
+      title: "Storybook",
     },
     {
-      title: "Icons",
+      disabled: true,
       href: "/icons",
-      disabled: true,
+      title: "Icons",
     },
     {
-      title: "Examples",
-      href: "/examples",
       disabled: true,
+      href: "/examples",
+      title: "Examples",
     },
   ],
   sidebarNav: [
     {
-      title: "Getting Started",
       items: [
         {
-          title: "Introduction",
           href: "/docs/introduction",
+          title: "Introduction",
         },
         {
-          title: "Installation",
           href: "/docs/installation",
+          title: "Installation",
         },
         {
-          title: "kanpeki.json",
-          href: "/docs/kanpeki-json",
-        },
-        {
-          title: "Dark Mode",
           href: "/docs/dark-mode",
+          title: "Dark Mode",
         },
         {
-          title: "CLI",
-          href: "/docs/cli",
+          disabled: true,
+          href: "/docs/changelog",
+          title: "Changelog",
         },
         {
-          title: "Typography",
           href: "/docs/typography",
+          title: "Typography",
         },
       ],
+      title: "Getting Started",
     },
     {
-      title: "Components",
       items: [
         {
-          title: "Accordion",
           href: "/docs/components/accordion",
+          title: "Accordion",
         },
         {
-          title: "Alert",
           href: "/docs/components/alert",
+          title: "Alert",
         },
         {
-          title: "Avatar",
           href: "/docs/components/avatar",
+          title: "Avatar",
         },
         {
-          title: "Badge",
           href: "/docs/components/badge",
+          title: "Badge",
         },
         {
-          title: "Breadcrumb",
           href: "/docs/components/breadcrumb",
+          title: "Breadcrumb",
         },
         {
-          title: "Button",
           href: "/docs/components/button",
+          title: "Button",
         },
         {
-          title: "Calendar",
           href: "/docs/components/calendar",
+          title: "Calendar",
         },
         {
-          title: "Card",
           href: "/docs/components/card",
+          title: "Card",
         },
         {
-          title: "Carousel",
+          disabled: true,
           href: "/docs/components/carousel",
-          disabled: true,
-          label: "Planned",
+          title: "Carousel",
         },
         {
-          title: "Chart",
+          disabled: true,
           href: "/docs/components/chart",
-          disabled: true,
-          label: "Planned",
+          title: "Chart",
         },
         {
-          title: "Checkbox",
           href: "/docs/components/checkbox",
+          title: "Checkbox",
         },
         {
-          title: "Collapsible",
           href: "/docs/components/collapsible",
+          title: "Collapsible",
         },
         {
-          title: "Combobox",
+          disabled: true,
           href: "/docs/components/combobox",
-          disabled: true,
-          label: "Planned",
+          title: "Combobox",
         },
         {
-          title: "Command",
           href: "/docs/components/command",
-          label: "Improved",
+          title: "Command",
         },
         {
-          title: "Context Menu",
+          disabled: true,
           href: "/docs/components/context-menu",
-          disabled: true,
-          label: "Planned",
+          title: "Context Menu",
         },
         {
-          title: "Data Table",
+          disabled: true,
           href: "/docs/components/data-table",
-          disabled: true,
-          label: "Planned",
+          title: "Data Table",
         },
         {
-          title: "Date Field",
           href: "/docs/components/date-field",
-          label: "New",
+          title: "Date Field",
         },
         {
-          title: "Date Picker",
+          disabled: true,
           href: "/docs/components/date-picker",
-          disabled: true,
-          label: "Planned",
+          title: "Date Picker",
         },
         {
-          title: "Dialog",
           href: "/docs/components/dialog",
+          title: "Dialog",
         },
         {
-          title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu",
+          title: "Dropdown Menu",
         },
         {
-          title: "Form",
           href: "/docs/components/form",
+          title: "Form",
         },
         {
-          title: "Hover Card",
           href: "/docs/components/tooltip#hover-card",
+          title: "Hover Card",
         },
         {
-          title: "Label",
           href: "/docs/components/label",
+          title: "Label",
         },
         {
-          title: "List Box",
           href: "/docs/components/list-box",
+          title: "List Box",
         },
         {
-          title: "Pagination",
+          disabled: true,
           href: "/docs/components/pagination",
-          disabled: true,
-          label: "Planned",
+          title: "Pagination",
         },
         {
-          title: "Popover",
           href: "/docs/components/popover",
+          title: "Popover",
         },
         {
-          title: "Progress",
+          disabled: true,
           href: "/docs/components/progress",
-          disabled: true,
-          label: "Planned",
+          title: "Progress",
         },
         {
-          title: "Radio Group",
           href: "/docs/components/radio-group",
-          disabled: true,
-          label: "Planned",
+          title: "Radio Group",
         },
         {
-          title: "Resizable",
+          disabled: true,
           href: "/docs/components/resizable",
-          disabled: true,
-          label: "Planned",
+          title: "Resizable",
         },
         {
-          title: "Scroll Area",
           href: "/docs/components/scroll-area",
+          title: "Scroll Area",
         },
         {
-          title: "Select",
           href: "/docs/components/select",
+          title: "Select",
         },
         {
-          title: "Separator",
           href: "/docs/components/separator",
+          title: "Separator",
         },
         {
-          title: "Skeleton",
           href: "/docs/components/skeleton",
+          title: "Skeleton",
         },
         {
-          title: "Spinner",
           href: "/docs/components/spinner",
+          title: "Spinner",
         },
         {
-          title: "Slider",
           href: "/docs/components/slider",
+          title: "Slider",
         },
         {
-          title: "Switch",
           href: "/docs/components/switch",
+          title: "Switch",
         },
         {
-          title: "Table",
           href: "/docs/components/table",
+          title: "Table",
         },
         {
-          title: "Tabs",
           href: "/docs/components/tabs",
+          title: "Tabs",
         },
         {
-          title: "TextArea",
           href: "/docs/components/textarea",
+          title: "TextArea",
         },
         {
-          title: "TextField",
           href: "/docs/components/textfield",
+          title: "TextField",
         },
         {
-          title: "Toast",
           href: "/docs/components/toast",
+          title: "Toast",
         },
         {
-          title: "Toggle",
           href: "/docs/components/toggle",
+          title: "Toggle",
         },
         {
-          title: "Toggle Group",
-          href: "/docs/components/toggle-group",
           disabled: true,
-          label: "Planned",
+          href: "/docs/components/toggle-group",
+          title: "Toggle Group",
         },
         {
-          title: "Tooltip",
           href: "/docs/components/tooltip",
+          title: "Tooltip",
         },
       ],
+      title: "Components",
     },
   ],
 };
 
-export type DocsConfig = {
+export interface DocsConfig {
   mainNav: MainNavItem[];
   sidebarNav: SidebarNavItem[];
-};
+}
 
-export type NavItem = {
+export interface NavItem {
   title: string;
   href: string;
   disabled?: boolean;
-};
+}
 
 export type MainNavItem = NavItem;
 
@@ -292,9 +275,9 @@ export type SidebarNavItem = {
     }
 );
 
-export type NavLink = {
+export interface NavLink {
   title: string;
   href: string;
   disabled?: boolean;
   label?: string;
-};
+}

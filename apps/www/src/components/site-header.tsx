@@ -1,10 +1,10 @@
-import { Icons } from "~/components/ui/icons";
+import { Icons } from "~/components/icons";
 import { docsConfig } from "~/config/docs";
 import { siteConfig } from "~/config/site";
+import { LinkButton } from "~/registry/ui/link-button";
 import { CommandMenu } from "./command-menu";
 import { MainNav } from "./main-nav";
 import { ModeSwitcher } from "./mode-switcher";
-import { LinkButton } from "./ui/button";
 
 // const filteredMainNav = docsConfig.mainNav.filter((item) => !item.disabled);
 // const filteredSidebarNav = docsConfig.sidebarNav.filter(
@@ -13,7 +13,7 @@ import { LinkButton } from "./ui/button";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-border/40 border-b bg-bg/95 backdrop-blur-sm supports-backdrop-filter:bg-bg/60">
+    <header className="sticky top-0 z-50 w-full border-border/40 border-b bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60">
       <div className="container flex h-14 max-w-(--breakpoint-2xl) items-center">
         <MainNav mainNav={docsConfig.mainNav} />
         {/* <MobileNav mainNav={filteredMainNav} sidebarNav={filteredSidebarNav} /> */}
@@ -26,23 +26,23 @@ export function SiteHeader() {
           </div>
           <nav className="flex items-center">
             <LinkButton
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="ghost"
-              size="icon"
               aria-label="GitHub"
+              href={siteConfig.links.github}
+              rel="noopener noreferrer"
+              size="icon"
+              target="_blank"
+              variant="ghost"
             >
               <Icons.GitHub className="size-4" />
             </LinkButton>
 
             <LinkButton
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="ghost"
-              size="icon"
               aria-label="Twitter"
+              href={siteConfig.links.twitter}
+              rel="noopener noreferrer"
+              size="icon"
+              target="_blank"
+              variant="ghost"
             >
               <Icons.Twitter className="size-3" />
             </LinkButton>

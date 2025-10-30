@@ -1,7 +1,7 @@
-import { findNeighbour } from "fumadocs-core/server";
-import { LinkButton } from "~/components/ui/button";
-import { Icons } from "~/components/ui/icons";
+import { findNeighbour } from "fumadocs-core/page-tree";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { source } from "~/lib/source";
+import { LinkButton } from "~/registry/ui/link-button";
 
 interface DocsPagerProps {
   url: string;
@@ -14,18 +14,18 @@ export function DocsPager({ url }: DocsPagerProps) {
     <div className="flex flex-row items-center justify-between">
       {neighbours.previous && (
         <LinkButton href={neighbours.previous.url} variant="outline">
-          <Icons.ChevronLeft className="mr-2 size-4" />
+          <ChevronLeftIcon className="size-4" />
           {neighbours.previous.name}
         </LinkButton>
       )}
       {neighbours.next && (
         <LinkButton
+          className="ml-auto"
           href={neighbours.next.url}
           variant="outline"
-          className="ml-auto"
         >
           {neighbours.next.name}
-          <Icons.ChevronRight className="ml-2 size-4" />
+          <ChevronRightIcon className="size-4" />
         </LinkButton>
       )}
     </div>

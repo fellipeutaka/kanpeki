@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast",
+  "type": "registry:ui",
+  "dependencies": [
+    "sonner",
+    "next-themes"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/toast/index.tsx",
+      "content": "\"use client\";\n\nimport { useTheme } from \"next-themes\";\nimport { Toaster as Sonner, type ToasterProps } from \"sonner\";\n\nexport function Toaster(props: ToasterProps) {\n  const { theme = \"system\" } = useTheme();\n\n  return (\n    <Sonner\n      style={\n        {\n          \"--normal-background\": \"var(--popover)\",\n          \"--normal-border\": \"var(--border)\",\n          \"--normal-text\": \"var(--popover-foreground)\",\n        } as React.CSSProperties\n      }\n      theme={theme as ToasterProps[\"theme\"]}\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
-import { BadgeStyles } from "~/components/ui/badge/styles";
-import { LinkButton } from "~/components/ui/button";
-import { Icons } from "~/components/ui/icons";
+import { ExternalLinkIcon } from "lucide-react";
+import { Icons } from "~/components/icons";
 import type { source } from "~/lib/source";
+import { BadgeStyles } from "~/registry/ui/badge/styles";
+import { LinkButton } from "~/registry/ui/link-button";
 import { DocsBreadcrumb } from "./docs-breadcrumb";
 
 interface DocsHeaderProps {
@@ -15,10 +16,10 @@ export function DocsHeader({ page }: DocsHeaderProps) {
     <>
       <DocsBreadcrumb url={url} />
       <div className="space-y-2">
-        <h1 className="scroll-m-20 break-words font-bold text-3xl tracking-tight">
+        <h1 className="wrap-break-word scroll-m-20 font-bold text-3xl tracking-tight">
           {data.title}
         </h1>
-        <p className="text-balance text-base text-muted-fg">
+        <p className="text-balance text-base text-muted-foreground">
           {data.description}
         </p>
       </div>
@@ -26,31 +27,31 @@ export function DocsHeader({ page }: DocsHeaderProps) {
         <div className="mt-4 flex items-center gap-x-2">
           {data.links?.docs && (
             <LinkButton
-              href={data.links.docs}
-              target="_blank"
-              rel="noopener noreferrer"
               className={BadgeStyles({
-                variant: "secondary",
                 className: "h-auto gap-1.5",
+                variant: "secondary",
               })}
+              href={data.links.docs}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <DocsLinkIcon link={data.links.docs} />
               Docs
-              <Icons.ExternalLink className="size-3" />
+              <ExternalLinkIcon className="size-3" />
             </LinkButton>
           )}
           {data.links?.api && (
             <LinkButton
-              href={data.links.api}
-              target="_blank"
-              rel="noopener noreferrer"
               className={BadgeStyles({
-                variant: "secondary",
                 className: "h-auto gap-1.5",
+                variant: "secondary",
               })}
+              href={data.links.api}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               API Reference
-              <Icons.ExternalLink className="size-3" />
+              <ExternalLinkIcon className="size-3" />
             </LinkButton>
           )}
         </div>

@@ -7,21 +7,21 @@ description: Displays a callout for user attention.
 
 ## Installation
 
-<TabRoot>
+<Tabs.Root>
 
-<TabList>
-  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
-  <TabTrigger id="manual">Manual</TabTrigger>
-</TabList>
-<TabContent id="cli">
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
 
 ```bash
-npx kanpeki-ui@latest add alert
+npx shadcn@latest add @kanpeki/alert
 ```
 
-</TabContent>
+</Tabs.Content>
 
-<TabContent id="manual">
+<Tabs.Content id="manual">
 
 <Steps>
 
@@ -33,9 +33,9 @@ npx kanpeki-ui@latest add alert
 
 </Steps>
 
-</TabContent>
+</Tabs.Content>
 
-</TabRoot>
+</Tabs.Root>
 
 ## Usage
 
@@ -43,7 +43,7 @@ npx kanpeki-ui@latest add alert
 
 ```tsx
 import { Alert } from "~/components/ui/alert";
-import { Icons } from "~/components/ui/icons";
+import { Icons } from "~/components/icons";
 ```
 
 ```tsx
@@ -60,7 +60,7 @@ import { Icons } from "~/components/ui/icons";
 
 ```tsx
 import { AlertRoot, AlertDescription, AlertTitle } from "~/components/ui/alert";
-import { Icons } from "~/components/ui/icons";
+import { Icons } from "~/components/icons";
 ```
 
 ```tsx
@@ -79,13 +79,9 @@ import { Icons } from "~/components/ui/icons";
 
 <ComponentPreview name="alert-demo" />
 
-### Warning
+### Destructive
 
-<ComponentPreview name="alert-warning" />
-
-### Danger
-
-<ComponentPreview name="alert-danger" />
+<ComponentPreview name="alert-destructive-demo" />
 
 ## API Reference
 

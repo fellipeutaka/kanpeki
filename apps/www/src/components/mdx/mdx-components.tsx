@@ -1,17 +1,23 @@
+// biome-ignore-all assist/source/useSortedKeys: For better organization
+
 import type { MDXComponents } from "mdx/types";
-import { cn } from "~/lib/cva";
-import { Alert } from "../ui/alert";
-import { LinkButton } from "../ui/button";
-import { Icons } from "../ui/icons";
-import { Link } from "../ui/link/link";
+import Image from "next/image";
+import { Icons } from "~/components/icons";
+import { cn } from "~/registry/lib/cva";
+import { Alert } from "~/registry/ui/alert";
+import { Link } from "~/registry/ui/link/link";
+import { LinkButton } from "~/registry/ui/link-button";
+import { ScrollArea } from "~/registry/ui/scroll-area";
 import { Code } from "./code";
+import { CodeBlock, type NpmCommands } from "./code-block";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { File, Files } from "./files";
 import { Folder } from "./folder";
 import { Heading } from "./heading";
+import { LanguageIcon } from "./language-icon";
 import { MdxTabs } from "./mdx-tabs";
-import { Pre } from "./pre";
+import { Pre, type PreProps } from "./pre";
 import { PropsTable } from "./props-table";
 import { Step, Steps } from "./steps";
 
@@ -54,11 +60,35 @@ export const mdxComponents = {
       {...props}
     />
   ),
-  a: ({ className, ...props }: React.ComponentProps<"a">) => (
+  hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
+  a: ({ className, href, ...props }: React.ComponentProps<"a">) => (
     <a
       className={cn("font-medium underline underline-offset-4", className)}
+      href={href}
       {...props}
     />
+  ),
+  blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
+    <blockquote
+      className={cn(
+        "mt-6 border-l-2 pl-6 italic *:text-muted-foreground",
+        className
+      )}
+      {...props}
+    />
+  ),
+  img: ({ className, alt, ...props }: React.ComponentProps<typeof Image>) => (
+    <Image
+      {...props}
+      alt={alt}
+      className={cn("rounded-md border", className)}
+    />
+  ),
+  li: ({ className, ...props }: React.ComponentProps<"li">) => (
+    <li className={cn("mt-2", className)} {...props} />
+  ),
+  ol: ({ className, ...props }: React.ComponentProps<"ol">) => (
+    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
   ),
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
     <p className={cn("not-first:mt-6 leading-7", className)} {...props} />
@@ -66,41 +96,80 @@ export const mdxComponents = {
   ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
     <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
   ),
-  ol: ({ className, ...props }: React.ComponentProps<"ol">) => (
-    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
-  ),
-  li: ({ className, ...props }: React.ComponentProps<"li">) => (
-    <li className={cn("mt-2", className)} {...props} />
-  ),
-  blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
-    <blockquote
-      className={cn("mt-6 border-l-2 pl-6 italic *:text-muted-fg", className)}
-      {...props}
-    />
-  ),
-  img: ({ className, alt, ...props }: React.ComponentProps<"img">) => (
-    <img {...props} className={cn("rounded-md border", className)} alt={alt} />
-  ),
-  hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
-  Code: Code,
+  pre: ({
+    title,
+    "data-language": language,
+    "data-raw": rawText,
+    "data-npm": npmCommand,
+    "data-yarn": yarnCommand,
+    "data-pnpm": pnpmCommand,
+    "data-bun": bunCommand,
+    ...props
+  }: {
+    "data-language": string;
+    "data-raw": string;
+    "data-npm"?: string;
+    "data-yarn"?: string;
+    "data-pnpm"?: string;
+    "data-bun"?: string;
+  } & PreProps) => {
+    const commands = npmCommand
+      ? ({
+          bun: bunCommand,
+          npm: npmCommand,
+          pnpm: pnpmCommand,
+          yarn: yarnCommand,
+        } as NpmCommands)
+      : null;
+
+    return (
+      <CodeBlock.Root>
+        {title && (
+          <CodeBlock.Header>
+            <LanguageIcon language={language} title={title} />
+            <CodeBlock.Title>{title}</CodeBlock.Title>
+            <CodeBlock.CopyButton
+              className="static"
+              commands={commands}
+              text={rawText}
+            />
+          </CodeBlock.Header>
+        )}
+
+        <ScrollArea.Root>
+          {!title && (
+            <CodeBlock.CopyButton commands={commands} text={rawText} />
+          )}
+
+          <ScrollArea.Viewport className="max-h-160">
+            <Pre {...props} />
+          </ScrollArea.Viewport>
+          <ScrollArea.Scrollbar orientation="vertical">
+            <ScrollArea.Thumb />
+          </ScrollArea.Scrollbar>
+          <ScrollArea.Scrollbar orientation="horizontal">
+            <ScrollArea.Thumb />
+          </ScrollArea.Scrollbar>
+        </ScrollArea.Root>
+      </CodeBlock.Root>
+    );
+  },
   code: Code,
-  pre: Pre,
-  Link,
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  Icons: Icons as any,
-  LinkButton,
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  Alert: Alert as any,
-  Steps,
+  Code,
+
+  Alert,
   Step,
-  Files,
+  Steps,
+  Tabs: MdxTabs,
+
   File,
+  Files,
   Folder,
+  PropsTable,
+  Icons,
+  Link,
+  LinkButton,
+
   ComponentPreview,
   ComponentSource,
-  TabRoot: MdxTabs.Root,
-  TabList: MdxTabs.List,
-  TabTrigger: MdxTabs.Trigger,
-  TabContent: MdxTabs.Content,
-  PropsTable,
-} satisfies MDXComponents;
+} as unknown as MDXComponents;

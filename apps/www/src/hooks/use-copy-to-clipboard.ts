@@ -1,21 +1,16 @@
 import { useState } from "react";
-import type { ExternalToast } from "sonner";
-import { toast } from "~/components/ui/toast";
+import { type ExternalToast, toast } from "sonner";
 
 interface CopyOptions {
   text: string;
   timeout?: number;
-  successMessage?: React.ReactNode;
   errorMessage?: React.ReactNode;
 }
 
 export function useCopyToClipboard() {
   const [isCopied, setIsCopied] = useState(false);
 
-  const copy = async (
-    { text, timeout, successMessage, errorMessage }: CopyOptions,
-    toastOptions?: ExternalToast
-  ) => {
+  const copy = async (options: CopyOptions, toastOptions?: ExternalToast) => {
     if (isCopied) {
       return;
     }
@@ -28,10 +23,11 @@ export function useCopyToClipboard() {
       return;
     }
 
+    const { text, timeout, errorMessage } = options;
+
     try {
       await navigator.clipboard.writeText(text);
       setIsCopied(true);
-      toast.success(successMessage ?? "Copied to clipboard!", toastOptions);
 
       setTimeout(() => {
         setIsCopied(false);

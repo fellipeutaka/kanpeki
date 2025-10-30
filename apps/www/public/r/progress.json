@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/progress/index.ts",
+      "content": "export * as Progress from \"./namespace\";\nexport * from \"./progress\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/progress/progress.tsx",
+      "content": "\"use client\";\n\nimport { createContext, use } from \"react\";\nimport {\n  composeRenderProps,\n  ProgressBar,\n  type ProgressBarRenderProps,\n} from \"react-aria-components\";\nimport { ProgressStyles } from \"./styles\";\n\nconst InternalProgressContext = createContext<ProgressBarRenderProps | null>(\n  null\n);\n\nexport interface ProgressRootProps\n  extends React.ComponentProps<typeof ProgressBar> {}\n\nexport function ProgressRoot({\n  className,\n  children,\n  ...props\n}: ProgressRootProps) {\n  return (\n    <ProgressBar\n      className={composeRenderProps(className, (className) =>\n        ProgressStyles.Root({ className })\n      )}\n      data-slot=\"progress-root\"\n      {...props}\n    >\n      {composeRenderProps(children, (children, values) => (\n        <InternalProgressContext value={values}>\n          {children}\n        </InternalProgressContext>\n      ))}\n    </ProgressBar>\n  );\n}\n\nexport interface ProgressIndicatorProps extends React.ComponentProps<\"div\"> {}\n\nexport function ProgressIndicator({\n  className,\n  ...props\n}: ProgressIndicatorProps) {\n  const ctx = use(InternalProgressContext);\n  if (!ctx) {\n    throw new Error(\n      \"ProgressIndicator must be used within a Progress component\"\n    );\n  }\n  const { percentage = 0 } = ctx;\n\n  return (\n    <div\n      {...props}\n      className={ProgressStyles.Indicator({ className })}\n      data-slot=\"progress-indicator\"\n      style={{ transform: `translateX(-${100 - percentage}%)` }}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/progress/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const ProgressStyles = {\n  Indicator: cva({\n    base: [\n      \"size-full flex-1 bg-primary transition-transform duration-700 will-change-transform\",\n    ],\n  }),\n  Root: cva({\n    base: [\"relative h-2 w-full overflow-hidden rounded-full bg-primary/20\"],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/progress/namespace.ts",
+      "content": "export {\n  ProgressIndicator as Indicator,\n  ProgressRoot as Root,\n} from \"./progress\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

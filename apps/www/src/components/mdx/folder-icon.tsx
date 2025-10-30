@@ -1,5 +1,5 @@
-import { cn } from "~/lib/cva";
-import { type IconProps, Icons } from "../ui/icons";
+import { type IconProps, Icons } from "~/components/icons";
+import { cn } from "~/registry/lib/cva";
 
 const folderNameMap = new Map([
   ["src", [Icons.SrcFolder, Icons.SrcFolderOpen]],
@@ -9,6 +9,7 @@ const folderNameMap = new Map([
   ["hooks", [Icons.HookFolder, Icons.HookFolderOpen]],
   ["styles", [Icons.CssFolder, Icons.CssFolderOpen]],
   ["utils", [Icons.UtilsFolder, Icons.UtilsFolderOpen]],
+  ["lib", [Icons.UtilsFolder, Icons.UtilsFolderOpen]],
   ["ui", [Icons.ThemeFolder, Icons.ThemeFolderOpen]],
 ]);
 

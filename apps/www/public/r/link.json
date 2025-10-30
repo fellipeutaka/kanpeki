@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "link",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/link/index.ts",
+      "content": "export * from \"./link\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/link/link.tsx",
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { composeRenderProps, Link as RACLink } from \"react-aria-components\";\nimport { LinkStyles } from \"./styles\";\n\nexport interface LinkProps\n  extends React.ComponentProps<typeof RACLink>,\n    VariantProps<typeof LinkStyles> {}\n\nexport function Link({ className, variant, underline, ...props }: LinkProps) {\n  return (\n    <RACLink\n      className={composeRenderProps(className, (className) =>\n        LinkStyles({ className, underline, variant })\n      )}\n      data-slot=\"link\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/link/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const LinkStyles = cva({\n  defaultVariants: {\n    variant: \"default\",\n  },\n  variants: {\n    underline: {\n      always: [\"underline underline-offset-4\"],\n      hover: [\"underline-offset-4 hover:underline\"],\n    },\n    variant: {\n      default: [\n        \"rounded-md current:font-normal outline-none transition-all\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n\n        \"current:text-foreground text-muted-foreground\",\n        \"hover:text-foreground\",\n      ],\n      foreground: [\n        \"rounded-md current:font-normal outline-none transition-all\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n\n        \"text-foreground\",\n        \"hover:text-foreground/90 dark:hover:text-foreground/60\",\n      ],\n      primary: [\n        \"rounded-md current:font-normal outline-none transition-all\",\n        \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n\n        \"text-primary\",\n        \"hover:text-primary/90 dark:hover:text-primary/60\",\n      ],\n      unstyled: null,\n    },\n  },\n});\n",
+      "type": "registry:ui"
+    }
+  ]
+}

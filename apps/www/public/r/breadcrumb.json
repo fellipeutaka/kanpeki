@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/breadcrumb/index.ts",
+      "content": "export * from \"./breadcrumb\";\nexport * as Breadcrumb from \"./namespace\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/breadcrumb/breadcrumb.tsx",
+      "content": "\"use client\";\n\nimport { ChevronRightIcon, MoreHorizontalIcon } from \"lucide-react\";\nimport {\n  Breadcrumb,\n  Breadcrumbs,\n  composeRenderProps,\n} from \"react-aria-components\";\nimport { BreadcrumbStyles } from \"./styles\";\n\nexport interface BreadcrumbRootProps<T extends object>\n  extends React.ComponentProps<typeof Breadcrumbs<T>> {}\n\nexport function BreadcrumbRoot<T extends object>({\n  className,\n  ...props\n}: BreadcrumbRootProps<T>) {\n  return (\n    <Breadcrumbs\n      className={BreadcrumbStyles.Root({ className })}\n      data-slot=\"breadcrumb-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface BreadcrumbItemProps\n  extends React.ComponentProps<typeof Breadcrumb> {}\n\nexport function BreadcrumbItem({ className, ...props }: BreadcrumbItemProps) {\n  return (\n    <Breadcrumb\n      className={BreadcrumbStyles.Item({ className })}\n      data-slot=\"breadcrumb-item\"\n      {...props}\n    />\n  );\n}\n\nexport interface BreadcrumbSeparatorProps\n  extends React.ComponentProps<typeof Breadcrumb> {}\n\nexport function BreadcrumbSeparator({\n  children,\n  className,\n  ...props\n}: BreadcrumbSeparatorProps) {\n  return (\n    <Breadcrumb\n      className={composeRenderProps(className, (className) =>\n        BreadcrumbStyles.Separator({ className })\n      )}\n      data-slot=\"breadcrumb-separator\"\n      {...props}\n    >\n      {children ?? <ChevronRightIcon />}\n    </Breadcrumb>\n  );\n}\n\nexport interface BreadcrumbEllipsisProps extends React.ComponentProps<\"span\"> {}\n\nexport function BreadcrumbEllipsis({\n  className,\n  ...props\n}: BreadcrumbEllipsisProps) {\n  return (\n    <span\n      aria-hidden=\"true\"\n      className={BreadcrumbStyles.Ellipsis({ className })}\n      data-slot=\"breadcrumb-ellipsis\"\n      role=\"presentation\"\n      {...props}\n    >\n      <MoreHorizontalIcon className=\"size-4\" />\n      <span className=\"sr-only\">More</span>\n    </span>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/breadcrumb/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const BreadcrumbStyles = {\n  Ellipsis: cva({\n    base: [\"flex size-9 items-center justify-center\"],\n  }),\n  Item: cva({\n    base: [\"inline-flex items-center gap-1.5\"],\n  }),\n  Root: cva({\n    base: [\n      \"flex flex-wrap items-center gap-1.5 break-words text-muted-foreground text-sm sm:gap-2.5\",\n    ],\n  }),\n  Separator: cva({\n    base: [\"[&>svg]:size-3.5\"],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/breadcrumb/namespace.ts",
+      "content": "export {\n  BreadcrumbEllipsis as Ellipsis,\n  BreadcrumbItem as Item,\n  BreadcrumbRoot as Root,\n  BreadcrumbSeparator as Separator,\n} from \"./breadcrumb\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

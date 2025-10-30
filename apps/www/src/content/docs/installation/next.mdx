@@ -61,7 +61,7 @@ import "~/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
 import { fonts } from "~/config/fonts";
-import { cx } from "~/lib/cva";
+import { cx } from "cva";
 
 export const metadata: Metadata = {
   title: {
@@ -86,7 +86,7 @@ export default function Layout({ children }: LayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cx(
-          "min-h-dvh bg-bg font-sans text-fg antialiased",
+          "min-h-dvh bg-background font-sans text-foreground antialiased",
           fonts.sans.variable
         )}
       >
@@ -141,11 +141,11 @@ Here's how I structure my Next.js apps. You can use this as a reference:
           <File name="namespace.ts" />
           <File name="styles.ts" />
         </Folder>
-        <Folder name="tabs">
+        <Folder name="Tabs.s">
           <File name="index.ts" />
           <File name="namespace.ts" />
           <File name="styles.ts" />
-          <File name="tabs.tsx" />
+          <File name="Tabs.s.tsx" />
         </Folder>
       </Folder>
     </Folder>
@@ -159,7 +159,7 @@ Here's how I structure my Next.js apps. You can use this as a reference:
       <File name="globals.css" />
     </Folder>
   </Folder>
-  <File name="kanpeki.json" />
+  <File name="components.json" />
   <File name="next.config.ts" />
   <File name="package.json" />
   <File name="postcss.config.js" />
@@ -175,7 +175,7 @@ Here's how I structure my Next.js apps. You can use this as a reference:
 You can now start adding components to your project.
 
 ```bash
-npx kanpeki-ui@latest add button
+npx shadcn@latest add @kanpeki/button
 ```
 
 The command above will add the `Button` component to your project. You can then import it like this:

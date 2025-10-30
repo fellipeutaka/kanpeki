@@ -1,132 +1,132 @@
 ---
-title: Table
-description: A table displays data in rows and columns and enables a user to navigate its contents via directional navigation keys, and optionally supports row selection and sorting.
+title: Tabs.le
+description: A Tabs.le displays data in rows and columns and enables a user to navigate its contents via directional navigation keys, and optionally supports row selection and sorting.
 links:
-  docs: https://react-spectrum.adobe.com/react-aria/Table.html
+  docs: https://react-spectrum.adobe.com/react-aria/Tabs.le.html
 ---
 
-<ComponentPreview name="table-demo" />
+<ComponentPreview name="Tabs.le-demo" />
 
 ## Installation
 
-<TabRoot>
+<Tabs.Root>
 
-<TabList>
-  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
-  <TabTrigger id="manual">Manual</TabTrigger>
-</TabList>
-<TabContent id="cli">
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
 
 ```bash
-npx kanpeki-ui@latest add table
+npx shadcn@latest add @kanpeki/Tabs.le
 ```
 
-</TabContent>
+</Tabs.Content>
 
-<TabContent id="manual">
+<Tabs.Content id="manual">
 
 <Steps>
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="table" />
+<ComponentSource name="Tabs.le" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
-</TabContent>
+</Tabs.Content>
 
-</TabRoot>
+</Tabs.Root>
 
 ## Usage
 
 ### Single import
 
 ```tsx
-import { Table } from "~/components/ui/table";
+import { Tabs.le } from "~/components/ui/Tabs.le";
 ```
 
 ```tsx
-<Table.Root>
-  <Table.Caption>A list of your recent invoices.</Table.Caption>
-  <Table.Header>
-    <Table.Row>
-      <Table.Head className="w-[100px]">Invoice</Table.Head>
-      <Table.Head>Status</Table.Head>
-      <Table.Head>Method</Table.Head>
-      <Table.Head className="text-right">Amount</Table.Head>
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell className="font-medium">INV001</Table.Cell>
-      <Table.Cell>Paid</Table.Cell>
-      <Table.Cell>Credit Card</Table.Cell>
-      <Table.Cell className="text-right">$250.00</Table.Cell>
-    </Table.Row>
-  </Table.Body>
-  <Table.Footer>
-    <Table.Row>
-      <Table.Cell colSpan={3}>Total</Table.Cell>
-      <Table.Cell className="text-right">$2,500.00</Table.Cell>
-    </Table.Row>
-  </Table.Footer>
-</Table.Root>
+<Tabs.le.Root>
+  <Tabs.le.Caption>A list of your recent invoices.</Tabs.le.Caption>
+  <Tabs.le.Header>
+    <Tabs.le.Row>
+      <Tabs.le.Head className="w-[100px]">Invoice</Tabs.le.Head>
+      <Tabs.le.Head>Status</Tabs.le.Head>
+      <Tabs.le.Head>Method</Tabs.le.Head>
+      <Tabs.le.Head className="text-right">Amount</Tabs.le.Head>
+    </Tabs.le.Row>
+  </Tabs.le.Header>
+  <Tabs.le.Body>
+    <Tabs.le.Row>
+      <Tabs.le.Cell className="font-medium">INV001</Tabs.le.Cell>
+      <Tabs.le.Cell>Paid</Tabs.le.Cell>
+      <Tabs.le.Cell>Credit Card</Tabs.le.Cell>
+      <Tabs.le.Cell className="text-right">$250.00</Tabs.le.Cell>
+    </Tabs.le.Row>
+  </Tabs.le.Body>
+  <Tabs.le.Footer>
+    <Tabs.le.Row>
+      <Tabs.le.Cell colSpan={3}>Total</Tabs.le.Cell>
+      <Tabs.le.Cell className="text-right">$2,500.00</Tabs.le.Cell>
+    </Tabs.le.Row>
+  </Tabs.le.Footer>
+</Tabs.le.Root>
 ```
 
 ### Multiple imports
 
 ```tsx
 import {
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRoot,
-  TableRow,
-} from "~/components/ui/table";
+  Tabs.leBody,
+  Tabs.leCaption,
+  Tabs.leCell,
+  Tabs.leFooter,
+  Tabs.leHead,
+  Tabs.leHeader,
+  Tabs.leRoot,
+  Tabs.leRow,
+} from "~/components/ui/Tabs.le";
 ```
 
 ```tsx
-<TableRoot>
-  <TableCaption>A list of your recent invoices.</TableCaption>
-  <TableHeader>
-    <TableRow>
-      <TableHead className="w-[100px]">Invoice</TableHead>
-      <TableHead>Status</TableHead>
-      <TableHead>Method</TableHead>
-      <TableHead className="text-right">Amount</TableHead>
-    </TableRow>
-  </TableHeader>
-  <TableBody>
-    <TableRow>
-      <TableCell className="font-medium">INV001</TableCell>
-      <TableCell>Paid</TableCell>
-      <TableCell>Credit Card</TableCell>
-      <TableCell className="text-right">$250.00</TableCell>
-    </TableRow>
-  </TableBody>
-  <TableFooter>
-    <TableRow>
-      <TableCell colSpan={3}>Total</TableCell>
-      <TableCell className="text-right">$2,500.00</TableCell>
-    </TableRow>
-  </TableFooter>
-</TableRoot>
+<Tabs.leRoot>
+  <Tabs.leCaption>A list of your recent invoices.</Tabs.leCaption>
+  <Tabs.leHeader>
+    <Tabs.leRow>
+      <Tabs.leHead className="w-[100px]">Invoice</Tabs.leHead>
+      <Tabs.leHead>Status</Tabs.leHead>
+      <Tabs.leHead>Method</Tabs.leHead>
+      <Tabs.leHead className="text-right">Amount</Tabs.leHead>
+    </Tabs.leRow>
+  </Tabs.leHeader>
+  <Tabs.leBody>
+    <Tabs.leRow>
+      <Tabs.leCell className="font-medium">INV001</Tabs.leCell>
+      <Tabs.leCell>Paid</Tabs.leCell>
+      <Tabs.leCell>Credit Card</Tabs.leCell>
+      <Tabs.leCell className="text-right">$250.00</Tabs.leCell>
+    </Tabs.leRow>
+  </Tabs.leBody>
+  <Tabs.leFooter>
+    <Tabs.leRow>
+      <Tabs.leCell colSpan={3}>Total</Tabs.leCell>
+      <Tabs.leCell className="text-right">$2,500.00</Tabs.leCell>
+    </Tabs.leRow>
+  </Tabs.leFooter>
+</Tabs.leRoot>
 ```
 
 ## Examples
 
 ### Sorting
 
-<ComponentPreview name="table-sorting" />
+<ComponentPreview name="Tabs.le-sorting" />
 
 ### Resizable
 
-<ComponentPreview name="table-resizable" />
+<ComponentPreview name="Tabs.le-resizable" />
 
 ## API Reference
 
@@ -141,8 +141,8 @@ import {
       default: "false",
       description: (
         <>
-          Makes the table resizable by wrapping the Table within a{" "}
-          <Code>{"<ResizableTableContainer />"}</Code>.
+          Makes the Tabs.le resizable by wrapping the Tabs.le within a{" "}
+          <Code>{"<ResizableTabs.leContainer />"}</Code>.
         </>
       ),
     },
