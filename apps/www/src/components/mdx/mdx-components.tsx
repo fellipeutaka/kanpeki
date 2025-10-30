@@ -154,6 +154,7 @@ export const mdxComponents = {
     );
   },
   code: Code,
+  Code,
 
   Alert,
   Step,
