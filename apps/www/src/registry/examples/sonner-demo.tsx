@@ -4,6 +4,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "~/registry/ui/button/button";
 
+// biome-ignore lint/suspicious/noTemplateCurlyInString: This is used for code snippet display
 const promiseCode = "`${data.name} toast has been added`";
 
 const allTypes = [

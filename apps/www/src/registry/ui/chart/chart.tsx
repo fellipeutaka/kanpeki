@@ -86,7 +86,7 @@ export const ChartStyle = ({ id, config }: ChartStyleProps) => {
 
   return (
     <style
-      // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: This is fine.
       dangerouslySetInnerHTML={{
         __html: Object.entries(THEMES)
           .map(
@@ -192,7 +192,6 @@ export function ChartTooltipContent({
     <div className={ChartStyles.TooltipContent({ className })}>
       {nestLabel ? null : tooltipLabel}
       <div className="grid gap-1.5">
-        {/* biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation> */}
         {payload.map((item, index) => {
           const key = `${nameKey || item.name || item.dataKey || "value"}`;
           const itemConfig = getPayloadConfigFromPayload(config, item, key);

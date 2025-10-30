@@ -86,7 +86,12 @@ export function SidebarProvider({
       }
 
       // This sets the cookie to keep the sidebar state.
-      document.cookie = `${SIDEBAR_COOKIE_NAME}=${openState}; path=/; max-age=${SIDEBAR_COOKIE_MAX_AGE}`;
+      cookieStore.set({
+        expires: new Date(Date.now() + SIDEBAR_COOKIE_MAX_AGE * 1000).getTime(),
+        name: SIDEBAR_COOKIE_NAME,
+        path: "/",
+        value: openState.toString(),
+      });
     },
     [setOpenProp, open]
   );

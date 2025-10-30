@@ -66,7 +66,13 @@ export interface AvatarImageProps extends React.ComponentProps<"img"> {
   src?: string;
 }
 
-export function AvatarImage({ className, src, ...props }: AvatarImageProps) {
+export function AvatarImage({
+  className,
+  src,
+  width,
+  height,
+  ...props
+}: AvatarImageProps) {
   const context = useAvatarContext();
   const status = useImageLoadingStatus(src);
 
@@ -86,7 +92,9 @@ export function AvatarImage({ className, src, ...props }: AvatarImageProps) {
       alt={props.alt}
       className={AvatarStyles.Image({ className })}
       data-slot="avatar-image"
+      height={height}
       src={src}
+      width={width}
     />
   );
 }

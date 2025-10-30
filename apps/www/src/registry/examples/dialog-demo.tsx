@@ -73,7 +73,7 @@ function DialogScrollableContent() {
                 Lorem Ipsum
               </h4>
               {Array.from({ length: 10 }).map((_, index) => (
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                // biome-ignore lint/suspicious/noArrayIndexKey: This is fine
                 <p className="mb-4 leading-normal" key={index}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -114,7 +114,7 @@ function DialogWithStickyFooter() {
                 Lorem Ipsum
               </h4>
               {Array.from({ length: 10 }).map((_, index) => (
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                // biome-ignore lint/suspicious/noArrayIndexKey: This is fine
                 <p className="mb-4 leading-normal" key={index}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.

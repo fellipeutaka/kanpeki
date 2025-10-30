@@ -1,8 +1,6 @@
 {
   "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": [
-    "ultracite/core"
-  ],
+  "extends": ["ultracite/core", "ultracite/react", "ultracite/next"],
   "css": {
     "parser": {
       "tailwindDirectives": true
@@ -36,11 +34,7 @@
           "fix": "safe",
           "level": "warn",
           "options": {
-            "allow": [
-              "info",
-              "warn",
-              "error"
-            ]
+            "allow": ["info", "warn", "error"]
           }
         },
         "noUnknownAtRules": "off"
@@ -58,9 +52,7 @@
         "useFilenamingConvention": {
           "level": "error",
           "options": {
-            "filenameCases": [
-              "kebab-case"
-            ]
+            "filenameCases": ["kebab-case"]
           }
         },
         "useConsistentTypeDefinitions": {
@@ -76,12 +68,7 @@
           "fix": "safe",
           "level": "error",
           "options": {
-            "functions": [
-              "cva",
-              "cv",
-              "cn",
-              "cx"
-            ]
+            "functions": ["cva", "cv", "cn", "cx"]
           }
         }
       }
@@ -89,9 +76,7 @@
   },
   "overrides": [
     {
-      "includes": [
-        "**/*.config.{js,ts}"
-      ],
+      "includes": ["**/*.config.{js,ts}"],
       "linter": {
         "rules": {
           "style": {
@@ -101,9 +86,7 @@
       }
     },
     {
-      "includes": [
-        "**/*-skeleton.tsx"
-      ],
+      "includes": ["**/*-skeleton.tsx"],
       "linter": {
         "rules": {
           "suspicious": {

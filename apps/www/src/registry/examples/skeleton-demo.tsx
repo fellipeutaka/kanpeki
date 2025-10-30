@@ -13,7 +13,7 @@ export function SkeletonDemo() {
       </div>
       <div className="flex w-full flex-wrap items-start gap-4">
         {Array.from({ length: 3 }).map((_, index) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          // biome-ignore lint/suspicious/noArrayIndexKey: This is fine
           <Card.Root className="@md:w-auto w-full @md:min-w-sm" key={index}>
             <Card.Header>
               <Skeleton className="h-4 w-2/3" />

@@ -21,7 +21,7 @@
   },
   "overrides": [
     {
-      "includes": ["src/registry/__index__.tsx"],
+      "includes": ["src/registry/__index__.tsx", "public/**/*"],
       "linter": {
         "enabled": false
       },
