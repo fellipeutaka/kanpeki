@@ -16,7 +16,7 @@ export function DocsHeader({ page }: DocsHeaderProps) {
     <>
       <DocsBreadcrumb url={url} />
       <div className="space-y-2">
-        <h1 className="scroll-m-20 break-words font-bold text-3xl tracking-tight">
+        <h1 className="wrap-break-word scroll-m-20 font-bold text-3xl tracking-tight">
           {data.title}
         </h1>
         <p className="text-balance text-base text-muted-foreground">

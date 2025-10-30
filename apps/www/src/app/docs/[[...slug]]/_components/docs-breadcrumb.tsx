@@ -9,7 +9,9 @@ interface DocsBreadcrumbProps {
 }
 
 export function DocsBreadcrumb({ url }: DocsBreadcrumbProps) {
-  const items = getBreadcrumbItems(url, source.pageTree);
+  const items = getBreadcrumbItems(url, source.pageTree, {
+    includePage: true,
+  });
 
   return (
     <Breadcrumb.Root className="mb-4 gap-1 sm:gap-1">

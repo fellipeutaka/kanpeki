@@ -45,7 +45,7 @@ export function Contribute({ url, path }: ContributeProps) {
         {contributeLinks.map((link) => (
           <li key={link.href}>
             <Link
-              className="inline-flex items-center text-muted-foreground text-sm hover:text-foreground"
+              className="inline-flex items-center gap-2 text-muted-foreground text-sm hover:text-foreground"
               href={link.href}
               rel="noopener noreferrer"
               target="_blank"
