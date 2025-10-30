@@ -1,6 +1,7 @@
-import { LinkButton } from "~/components/ui/button";
-import { Icons } from "~/components/ui/icons";
+import { ChevronRightIcon, SparklesIcon } from "lucide-react";
+import { Icons } from "~/components/icons";
 import { siteConfig } from "~/config/site";
+import { LinkButton } from "~/registry/ui/link-button";
 import { HeroIllustration } from "./hero-illustration";
 
 export function HeroSection() {
@@ -15,9 +16,9 @@ export function HeroSection() {
           target="_blank"
           variant="secondary"
         >
-          <Icons.Sparkles className="mr-2 size-4 text-primary" />
+          <SparklesIcon className="size-4 text-primary" />
           Star us on GitHub
-          <Icons.ChevronRight className="ml-2 size-4 transition group-hover:translate-x-0.5" />
+          <ChevronRightIcon className="size-4 transition group-hover:translate-x-0.5" />
         </LinkButton>
         <h1 className="max-w-xl text-balance font-bold font-display text-4xl leading-tight tracking-tight md:text-5xl lg:text-6xl">
           Elevate Your Design to{" "}
@@ -25,7 +26,7 @@ export function HeroSection() {
             Perfection
           </span>
         </h1>
-        <p className="text-md text-muted-fg md:text-lg lg:text-xl">
+        <p className="text-md text-muted-foreground md:text-lg lg:text-xl">
           Accessible, flexible, mobile friendly, modern UI components.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">

@@ -1,7 +1,8 @@
-import { BadgeStyles } from "~/components/ui/badge/styles";
-import { LinkButton } from "~/components/ui/button";
-import { Icons } from "~/components/ui/icons";
+import { ExternalLinkIcon } from "lucide-react";
+import { Icons } from "~/components/icons";
 import type { source } from "~/lib/source";
+import { BadgeStyles } from "~/registry/ui/badge/styles";
+import { LinkButton } from "~/registry/ui/link-button";
 import { DocsBreadcrumb } from "./docs-breadcrumb";
 
 interface DocsHeaderProps {
@@ -18,7 +19,7 @@ export function DocsHeader({ page }: DocsHeaderProps) {
         <h1 className="scroll-m-20 break-words font-bold text-3xl tracking-tight">
           {data.title}
         </h1>
-        <p className="text-balance text-base text-muted-fg">
+        <p className="text-balance text-base text-muted-foreground">
           {data.description}
         </p>
       </div>
@@ -36,7 +37,7 @@ export function DocsHeader({ page }: DocsHeaderProps) {
             >
               <DocsLinkIcon link={data.links.docs} />
               Docs
-              <Icons.ExternalLink className="size-3" />
+              <ExternalLinkIcon className="size-3" />
             </LinkButton>
           )}
           {data.links?.api && (
@@ -50,7 +51,7 @@ export function DocsHeader({ page }: DocsHeaderProps) {
               target="_blank"
             >
               API Reference
-              <Icons.ExternalLink className="size-3" />
+              <ExternalLinkIcon className="size-3" />
             </LinkButton>
           )}
         </div>

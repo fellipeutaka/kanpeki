@@ -1,11 +1,11 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Badge } from "~/components/ui/badge";
-import { Link } from "~/components/ui/link/link";
-import { ScrollArea } from "~/components/ui/scroll-area";
 import { docsConfig, type NavLink } from "~/config/docs";
-import { cva } from "~/lib/cva";
+import { cva } from "~/registry/lib/cva";
+import { Badge } from "~/registry/ui/badge";
+import { Link } from "~/registry/ui/link/link";
+import { ScrollArea } from "~/registry/ui/scroll-area";
 
 export function DocsSidebar() {
   const pathname = usePathname();
@@ -41,12 +41,12 @@ export function DocsSidebar() {
 
 const SidebarLinkStyles = cva({
   base: [
-    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-fg",
+    "group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-muted-foreground",
     "aria-disabled:cursor-not-allowed aria-disabled:select-none aria-disabled:opacity-50",
   ],
   variants: {
     active: {
-      true: ["font-medium text-fg"],
+      true: ["font-medium text-foreground"],
     },
   },
 });
@@ -68,7 +68,7 @@ function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
 
         {item.label && (
           <Badge
-            className="ml-2 border-none px-1.5 py-0.5 text-muted-fg leading-none"
+            className="ml-2 border-none px-1.5 py-0.5 text-muted-foreground leading-none"
             variant="secondary"
           >
             {item.label}

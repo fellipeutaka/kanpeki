@@ -39,7 +39,7 @@ npx kanpeki-ui@latest add toast
 import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/navigation";
 import { RouterProvider } from "react-aria-components";
-import { Toaster } from "./ui/toast";
+import { Toaster } from "~/registry/ui/toast";
 
 declare module "react-aria-components" {
   interface RouterConfig {
@@ -81,7 +81,7 @@ export function Providers({ children }: ProvidersProps) {
 ## Usage
 
 ```tsx
-import { toast } from "~/components/ui/toast";
+import { toast } from "~/registry/ui/toast";
 ```
 
 ```tsx

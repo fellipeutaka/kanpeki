@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/table/index.ts",
+      "content": "export * as Table from \"./namespace\";\nexport * from \"./styles\";\nexport * from \"./table\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/table/table.tsx",
+      "content": "import { TableStyles } from \"./styles\";\n\nexport interface TableRootProps extends React.ComponentProps<\"table\"> {}\n\nexport function TableRoot({ className, ...props }: TableRootProps) {\n  return (\n    <div className={TableStyles.Container()} data-slot=\"table-container\">\n      <table\n        className={TableStyles.Root({ className })}\n        data-slot=\"table\"\n        {...props}\n      />\n    </div>\n  );\n}\n\nexport interface TableHeaderProps extends React.ComponentProps<\"thead\"> {}\n\nexport function TableHeader({ className, ...props }: TableHeaderProps) {\n  return (\n    <thead\n      className={TableStyles.Header({ className })}\n      data-slot=\"table-header\"\n      {...props}\n    />\n  );\n}\n\nexport interface TableBodyProps extends React.ComponentProps<\"tbody\"> {}\n\nexport function TableBody({ className, ...props }: TableBodyProps) {\n  return (\n    <tbody\n      className={TableStyles.Body({ className })}\n      data-slot=\"table-body\"\n      {...props}\n    />\n  );\n}\n\nexport interface TableFooterProps extends React.ComponentProps<\"tfoot\"> {}\n\nexport function TableFooter({ className, ...props }: TableFooterProps) {\n  return (\n    <tfoot\n      className={TableStyles.Footer({ className })}\n      data-slot=\"table-footer\"\n      {...props}\n    />\n  );\n}\n\nexport interface TableRowProps extends React.ComponentProps<\"tr\"> {}\n\nexport function TableRow({ className, ...props }: TableRowProps) {\n  return (\n    <tr\n      className={TableStyles.Row({ className })}\n      data-slot=\"table-row\"\n      {...props}\n    />\n  );\n}\n\nexport interface TableHeadProps extends React.ComponentProps<\"th\"> {}\n\nexport function TableHead({ className, ...props }: TableHeadProps) {\n  return (\n    <th\n      className={TableStyles.Head({ className })}\n      data-slot=\"table-head\"\n      {...props}\n    />\n  );\n}\n\nexport interface TableCellProps extends React.ComponentProps<\"td\"> {}\n\nexport function TableCell({ className, ...props }: TableCellProps) {\n  return (\n    <td\n      className={TableStyles.Cell({ className })}\n      data-slot=\"table-cell\"\n      {...props}\n    />\n  );\n}\n\nexport interface TableCaptionProps extends React.ComponentProps<\"caption\"> {}\n\nexport function TableCaption({ className, ...props }: TableCaptionProps) {\n  return (\n    <caption\n      className={TableStyles.Caption({ className })}\n      data-slot=\"table-caption\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/table/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const TableStyles = {\n  Body: cva({\n    base: [\"[&_tr:last-child]:border-0\"],\n  }),\n  Caption: cva({\n    base: [\"mt-4 text-muted-foreground text-sm\"],\n  }),\n  Cell: cva({\n    base: [\n      \"whitespace-nowrap p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]\",\n    ],\n  }),\n  Container: cva({\n    base: [\"relative w-full overflow-x-auto\"],\n  }),\n  Footer: cva({\n    base: [\"border-t bg-muted/50 font-medium [&>tr]:last:border-b-0\"],\n  }),\n  Head: cva({\n    base: [\n      \"h-10 whitespace-nowrap px-2 text-left align-middle font-medium text-foreground\",\n      \"[&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]\",\n    ],\n  }),\n  Header: cva({\n    base: [\"[&_tr]:border-b\"],\n  }),\n  Root: cva({\n    base: [\"w-full caption-bottom text-sm\"],\n  }),\n  Row: cva({\n    base: [\n      \"border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted\",\n    ],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/table/namespace.ts",
+      "content": "export {\n  TableBody as Body,\n  TableCaption as Caption,\n  TableCell as Cell,\n  TableFooter as Footer,\n  TableHead as Head,\n  TableHeader as Header,\n  TableRoot as Root,\n  TableRow as Row,\n} from \"./table\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

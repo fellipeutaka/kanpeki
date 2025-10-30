@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/badge/index.ts",
+      "content": "export * from \"./badge\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/badge/badge.tsx",
+      "content": "import type { VariantProps } from \"cva\";\nimport { BadgeStyles } from \"./styles\";\n\nexport interface BadgeProps\n  extends React.ComponentProps<\"span\">,\n    VariantProps<typeof BadgeStyles> {}\n\nexport function Badge({ className, variant, ...props }: BadgeProps) {\n  return (\n    <span\n      className={BadgeStyles({ className, variant })}\n      data-slot=\"badge\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/badge/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const BadgeStyles = cva({\n  base: \"inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border px-2 py-0.5 font-medium text-xs transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3\",\n  defaultVariants: {\n    variant: \"default\",\n  },\n\n  variants: {\n    variant: {\n      danger:\n        \"border-transparent bg-destructive text-white focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40 [a&]:hover:bg-destructive/90\",\n      default:\n        \"border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90\",\n      outline:\n        \"text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground\",\n      secondary:\n        \"border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90\",\n    },\n  },\n});\n",
+      "type": "registry:ui"
+    }
+  ]
+}

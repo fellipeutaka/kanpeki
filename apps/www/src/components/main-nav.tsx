@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Icons } from "~/components/icons";
 import type { NavItem } from "~/config/docs";
 import { siteConfig } from "~/config/site";
-import { Badge } from "./ui/badge";
-import { Icons } from "./ui/icons";
+import { Badge } from "~/registry/ui/badge";
 
 interface MainNavProps {
   mainNav: NavItem[];
@@ -38,7 +38,10 @@ interface MainNavLinkProps {
 function MainNavLink({ item, pathname }: MainNavLinkProps) {
   if (item.disabled) {
     return (
-      <span aria-disabled className="cursor-not-allowed text-fg/60 opacity-50">
+      <span
+        aria-disabled
+        className="cursor-not-allowed text-foreground/60 opacity-50"
+      >
         {item.title}
       </span>
     );
@@ -46,7 +49,7 @@ function MainNavLink({ item, pathname }: MainNavLinkProps) {
 
   return (
     <Link
-      className="text-fg/60 transition hover:text-fg/80 data-[active=true]:text-fg"
+      className="text-foreground/60 transition hover:text-foreground/80 data-[active=true]:text-foreground"
       data-active={pathname.startsWith(item.href)}
       href={item.href}
     >

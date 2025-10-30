@@ -1,4 +1,4 @@
-import { cn } from "~/lib/cva";
+import { cn } from "~/registry/lib/cva";
 
 export function Code({ className, ...props }: React.ComponentProps<"code">) {
   return (

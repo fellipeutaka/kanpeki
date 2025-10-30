@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/label/index.ts",
+      "content": "export * from \"./label\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/label/label.tsx",
+      "content": "\"use client\";\n\nimport { Label as RACLabel } from \"react-aria-components\";\nimport { LabelStyles } from \"./styles\";\n\nexport interface LabelProps extends React.ComponentProps<typeof RACLabel> {}\n\nexport function Label({ className, ...props }: LabelProps) {\n  return (\n    <RACLabel\n      className={LabelStyles({ className })}\n      data-slot=\"label\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/label/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const LabelStyles = cva({\n  base: [\n    \"flex select-none items-center gap-2 font-medium text-sm leading-none\",\n    \"peer-disabled:cursor-not-allowed peer-disabled:opacity-50\",\n    \"group-disabled:pointer-events-none group-disabled:opacity-50\",\n  ],\n});\n",
+      "type": "registry:ui"
+    }
+  ]
+}

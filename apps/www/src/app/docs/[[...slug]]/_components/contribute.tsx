@@ -1,5 +1,5 @@
-import { Icons } from "~/components/ui/icons";
-import { Link } from "~/components/ui/link/link";
+import { BugIcon, LightbulbIcon, PencilIcon } from "lucide-react";
+import { Link } from "~/registry/ui/link/link";
 import { getGitHubIssueUrl, getGithubFileUrl } from "~/utils/github";
 
 interface ContributeProps {
@@ -17,7 +17,7 @@ export function Contribute({ url, path }: ContributeProps) {
         template: "bug_report.md",
         title: `[bug]: ${url}`,
       }),
-      icon: Icons.Bug,
+      icon: BugIcon,
       text: "Report an issue",
     },
     {
@@ -28,12 +28,12 @@ export function Contribute({ url, path }: ContributeProps) {
         template: "feature_request.md",
         title: `[feat]: ${url}`,
       }),
-      icon: Icons.Lightbulb,
+      icon: LightbulbIcon,
       text: "Request a feature",
     },
     {
       href: getGithubFileUrl(path),
-      icon: Icons.Pencil,
+      icon: PencilIcon,
       text: "Edit this page",
     },
   ];
@@ -45,12 +45,12 @@ export function Contribute({ url, path }: ContributeProps) {
         {contributeLinks.map((link) => (
           <li key={link.href}>
             <Link
-              className="inline-flex items-center text-muted-fg text-sm hover:text-fg"
+              className="inline-flex items-center text-muted-foreground text-sm hover:text-foreground"
               href={link.href}
               rel="noopener noreferrer"
               target="_blank"
             >
-              <link.icon className="mr-2 size-4" />
+              <link.icon className="size-4" />
               {link.text}
             </Link>
           </li>

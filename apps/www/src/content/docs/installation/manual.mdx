@@ -58,41 +58,41 @@ Add the following to your styles/globals.css file. You can learn more about usin
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
 
-  --color-bg: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
-  --color-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
+  --color-background: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
+  --color-foreground: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
 
   --color-card: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
-  --color-card-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
+  --color-card-foreground: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
 
   --color-popover: light-dark(oklch(1 0 0), oklch(0.16 0.01 262.25));
-  --color-popover-fg: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
+  --color-popover-foreground: light-dark(oklch(0.16 0.01 262.25), oklch(0.98 0 0));
 
   --color-primary: light-dark(oklch(0.85 0.2 93), oklch(0.85 0.2 93));
-  --color-primary-fg: light-dark(oklch(0 0 0), oklch(0 0 0));
+  --color-primary-foreground: light-dark(oklch(0 0 0), oklch(0 0 0));
 
   --color-secondary: light-dark(
     oklch(0.96 0.01 262.25),
     oklch(0.23 0.01 262.25)
   );
-  --color-secondary-fg: light-dark(oklch(0.25 0.01 262.25), oklch(0.98 0 0));
+  --color-secondary-foreground: light-dark(oklch(0.25 0.01 262.25), oklch(0.98 0 0));
 
   --color-muted: light-dark(oklch(0.96 0.01 262.25), oklch(0.23 0.01 262.25));
-  --color-muted-fg: light-dark(oklch(0.5 0.01 262.25), oklch(0.67 0.01 262.25));
+  --color-muted-foreground: light-dark(oklch(0.5 0.01 262.25), oklch(0.67 0.01 262.25));
 
   --color-accent: light-dark(oklch(0.96 0.01 262.25), oklch(0.23 0.01 262.25));
-  --color-accent-fg: light-dark(oklch(0.25 0.01 262.25), oklch(0.98 0 0));
+  --color-accent-foreground: light-dark(oklch(0.25 0.01 262.25), oklch(0.98 0 0));
 
   --color-success: light-dark(oklch(0.62 0.18 0.53), oklch(0.62 0.18 0.53));
-  --color-success-fg: light-dark(oklch(0.83 0.13 0.97), oklch(0.83 0.13 0.97));
+  --color-success-foreground: light-dark(oklch(0.83 0.13 0.97), oklch(0.83 0.13 0.97));
 
   --color-info: light-dark(oklch(0.76 0.19 0.67), oklch(0.76 0.19 0.67));
-  --color-info-fg: light-dark(oklch(1 0 0.75), oklch(0.76 0.19 0.67));
+  --color-info-foreground: light-dark(oklch(1 0 0.75), oklch(0.76 0.19 0.67));
 
   --color-warning: light-dark(oklch(0.5 1 100), oklch(76 0.4 70));
-  --color-warning-fg: light-dark(oklch(0.4 0.18 0.3), oklch(0.4 0.18 0.3));
+  --color-warning-foreground: light-dark(oklch(0.4 0.18 0.3), oklch(0.4 0.18 0.3));
 
-  --color-danger: light-dark(oklch(0.57 0.22 27.16), oklch(0.33 0.15 27.16));
-  --color-danger-fg: light-dark(oklch(0.98 0 0), oklch(0.98 0 0));
+  --color-destructive: light-dark(oklch(0.57 0.22 27.16), oklch(0.33 0.15 27.16));
+  --color-destructive-foreground: light-dark(oklch(0.98 0 0), oklch(0.98 0 0));
 
   --color-border: light-dark(oklch(0.89 0.01 262.25), oklch(0.23 0.01 262.25));
   --color-input: light-dark(oklch(0.89 0.01 262.25), oklch(0.23 0.01 262.25));
@@ -132,7 +132,7 @@ Add the following to your styles/globals.css file. You can learn more about usin
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
 
-    @apply antialiased bg-bg text-fg;
+    @apply antialiased bg-background text-foreground;
   }
 }
 ```

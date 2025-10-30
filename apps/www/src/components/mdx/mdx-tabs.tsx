@@ -1,4 +1,4 @@
-import { cn } from "~/lib/cva";
+import { cn } from "~/registry/lib/cva";
 import {
   TabsContent,
   TabsList,
@@ -7,7 +7,7 @@ import {
   type TabsRootProps,
   TabsTrigger,
   type TabsTriggerProps,
-} from "../ui/tabs";
+} from "~/registry/ui/tabs";
 
 export const MdxTabs = {
   Content: TabsContent,
@@ -18,11 +18,7 @@ export const MdxTabs = {
     />
   ),
   Root: ({ className, ...props }: TabsRootProps) => (
-    <TabsRoot
-      variant="underline"
-      {...props}
-      className={cn("mt-6", className)}
-    />
+    <TabsRoot {...props} className={cn("mt-6", className)} />
   ),
   Trigger: ({ className, ...props }: TabsTriggerProps) => (
     <TabsTrigger {...props} className={cn("px-4", className)} />

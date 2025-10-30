@@ -1,7 +1,8 @@
 import { getBreadcrumbItems } from "fumadocs-core/breadcrumb";
 import { Fragment } from "react";
-import { Breadcrumb } from "~/components/ui/breadcrumb";
 import { source } from "~/lib/source";
+import { Breadcrumb } from "~/registry/ui/breadcrumb";
+import { Link } from "~/registry/ui/link";
 
 interface DocsBreadcrumbProps {
   url: string;
@@ -13,7 +14,7 @@ export function DocsBreadcrumb({ url }: DocsBreadcrumbProps) {
   return (
     <Breadcrumb.Root className="mb-4 gap-1 sm:gap-1">
       <Breadcrumb.Item>
-        <Breadcrumb.Link href="/docs">Docs</Breadcrumb.Link>
+        <Link href="/docs">Docs</Link>
       </Breadcrumb.Item>
       <Breadcrumb.Separator />
       {items.map((item, index) => {
@@ -23,9 +24,9 @@ export function DocsBreadcrumb({ url }: DocsBreadcrumbProps) {
           <Fragment key={url}>
             <Breadcrumb.Item>
               {index === items.length - 1 ? (
-                <Breadcrumb.Page>{item.name}</Breadcrumb.Page>
+                <Link>{item.name}</Link>
               ) : (
-                <Breadcrumb.Link href={url}>{item.name}</Breadcrumb.Link>
+                <Link href={url}>{item.name}</Link>
               )}
             </Breadcrumb.Item>
             {index < items.length - 1 && <Breadcrumb.Separator />}

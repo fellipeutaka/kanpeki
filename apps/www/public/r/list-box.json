@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "list-box",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/list-box/index.ts",
+      "content": "export * from \"./list-box\";\nexport * as Listbox from \"./namespace\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/list-box/list-box.tsx",
+      "content": "\"use client\";\n\nimport { CheckIcon } from \"lucide-react\";\nimport {\n  composeRenderProps,\n  Header,\n  ListBox,\n  ListBoxItem,\n  ListBoxSection,\n} from \"react-aria-components\";\nimport { ListboxStyles } from \"./styles\";\n\nexport interface ListboxRootProps<T extends object>\n  extends React.ComponentProps<typeof ListBox<T>> {}\n\nexport function ListboxRoot<T extends object>({\n  className,\n  ...props\n}: ListboxRootProps<T>) {\n  return (\n    <ListBox\n      className={composeRenderProps(className, (className) =>\n        ListboxStyles.Root({ className })\n      )}\n      data-slot=\"listbox-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface ListboxItemProps<T extends object>\n  extends React.ComponentProps<typeof ListBoxItem<T>> {}\n\nexport function ListboxItem<T extends object>({\n  className,\n  children,\n  textValue,\n  ...props\n}: ListboxItemProps<T>) {\n  const _textValue =\n    (textValue ?? typeof children === \"string\") ? String(children) : undefined;\n\n  return (\n    <ListBoxItem\n      className={composeRenderProps(className, (className) =>\n        ListboxStyles.Item({ className })\n      )}\n      data-slot=\"listbox-item\"\n      textValue={_textValue}\n      {...props}\n    >\n      {composeRenderProps(children, (children, values) => (\n        <>\n          {values.isSelected && (\n            <span className=\"absolute right-2 flex size-3.5 items-center justify-center\">\n              <CheckIcon className=\"size-4\" />\n            </span>\n          )}\n\n          {children}\n        </>\n      ))}\n    </ListBoxItem>\n  );\n}\n\nexport interface ListboxEmptyProps extends React.ComponentProps<\"div\"> {}\n\nexport function ListboxEmpty({ className, ...props }: ListboxEmptyProps) {\n  return (\n    <div\n      className={ListboxStyles.Empty({ className })}\n      data-slot=\"listbox-empty\"\n      {...props}\n    />\n  );\n}\n\nexport interface ListboxGroupProps<T extends object>\n  extends React.ComponentProps<typeof ListBoxSection<T>> {}\n\nexport function ListboxGroup<T extends object>(props: ListboxGroupProps<T>) {\n  return <ListBoxSection data-slot=\"listbox-group\" {...props} />;\n}\n\nexport interface ListboxLabelProps\n  extends React.ComponentProps<typeof Header> {}\n\nexport function ListboxLabel({ className, ...props }: ListboxLabelProps) {\n  return (\n    <Header\n      className={ListboxStyles.Label({ className })}\n      data-slot=\"listbox-label\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/list-box/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const ListboxStyles = {\n  Empty: cva({\n    base: [\"pointer-events-none py-6 text-center text-sm\"],\n  }),\n  Item: cva({\n    base: [\n      \"relative flex w-full cursor-default select-none items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden\",\n      \"focus:bg-accent focus:text-accent-foreground\",\n      \"disabled:pointer-events-none disabled:opacity-50\",\n      \"[&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n      \"*:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2\",\n    ],\n  }),\n  Label: cva({\n    base: [\"px-2 py-1.5 font-medium text-muted-foreground text-xs\"],\n  }),\n  Root: cva({\n    base: [\n      \"relative z-50 min-w-32 overflow-y-auto overflow-x-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md\",\n    ],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/list-box/namespace.ts",
+      "content": "export {\n  ListboxEmpty as Empty,\n  ListboxGroup as Group,\n  ListboxItem as Item,\n  ListboxLabel as Label,\n  ListboxRoot as Root,\n} from \"./list-box\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

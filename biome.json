@@ -1,6 +1,13 @@
 {
   "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite"],
+  "extends": [
+    "ultracite/core"
+  ],
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "javascript": {
     "formatter": {
       "quoteStyle": "double"
@@ -29,7 +36,11 @@
           "fix": "safe",
           "level": "warn",
           "options": {
-            "allow": ["info", "warn", "error"]
+            "allow": [
+              "info",
+              "warn",
+              "error"
+            ]
           }
         },
         "noUnknownAtRules": "off"
@@ -47,35 +58,40 @@
         "useFilenamingConvention": {
           "level": "error",
           "options": {
-            "filenameCases": ["kebab-case"]
+            "filenameCases": [
+              "kebab-case"
+            ]
           }
-        }
-      },
-      "nursery": {
+        },
         "useConsistentTypeDefinitions": {
           "fix": "safe",
           "level": "error",
           "options": {
             "style": "interface"
           }
-        },
+        }
+      },
+      "nursery": {
         "useSortedClasses": {
           "fix": "safe",
           "level": "error",
           "options": {
-            "functions": ["cva", "cv", "cn", "cx"]
+            "functions": [
+              "cva",
+              "cv",
+              "cn",
+              "cx"
+            ]
           }
-        },
-        "noQwikUseVisibleTask": "off",
-        "useQwikClasslist": "off",
-        "useQwikMethodUsage": "off",
-        "useQwikValidLexicalScope": "off"
+        }
       }
     }
   },
   "overrides": [
     {
-      "includes": ["**/*.config.{js,ts}"],
+      "includes": [
+        "**/*.config.{js,ts}"
+      ],
       "linter": {
         "rules": {
           "style": {
@@ -85,7 +101,9 @@
       }
     },
     {
-      "includes": ["**/*-skeleton.tsx"],
+      "includes": [
+        "**/*-skeleton.tsx"
+      ],
       "linter": {
         "rules": {
           "suspicious": {

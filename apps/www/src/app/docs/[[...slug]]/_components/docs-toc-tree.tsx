@@ -1,9 +1,9 @@
 "use client";
 
+import { cx } from "cva";
 import type { TableOfContents } from "fumadocs-core/toc";
 import { ScrollProvider, TOCItem } from "fumadocs-core/toc";
 import { useRef } from "react";
-import { cx } from "~/lib/cva";
 
 interface DocsTocTreeProps {
   tree: TableOfContents;
@@ -19,9 +19,9 @@ export function DocsTocTree({ tree }: DocsTocTreeProps) {
           <li className="space-y-2" key={item.url}>
             <TOCItem
               className={cx(
-                "inline-block text-muted-fg text-sm leading-[1.2] no-underline transition-colors",
-                "hover:text-fg",
-                "data-[active=true]:font-medium data-[active=true]:text-fg",
+                "inline-block text-muted-foreground text-sm leading-[1.2] no-underline transition-colors",
+                "hover:text-foreground",
+                "data-[active=true]:font-medium data-[active=true]:text-foreground",
                 "pl-[calc(var(--indent)-2rem)]"
               )}
               href={item.url}

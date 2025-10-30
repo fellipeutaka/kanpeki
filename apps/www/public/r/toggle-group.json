@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@kanpeki/toggle"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/toggle-group/index.ts",
+      "content": "export * as ToggleGroup from \"./namespace\";\nexport * from \"./styles\";\nexport * from \"./toggle-group\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/toggle-group/toggle-group.tsx",
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { createContext, useContext } from \"react\";\nimport {\n  composeRenderProps,\n  ToggleButton,\n  ToggleButtonGroup,\n} from \"react-aria-components\";\nimport { ToggleStyles } from \"~/registry/ui/toggle\";\nimport { ToggleGroupStyles } from \"./styles\";\n\nconst ToggleGroupContext = createContext<VariantProps<typeof ToggleStyles>>({\n  size: \"default\",\n  variant: \"default\",\n});\n\nexport type ToggleGroupRootProps = React.ComponentProps<\n  typeof ToggleButtonGroup\n> &\n  VariantProps<typeof ToggleStyles>;\n\nexport function ToggleGroupRoot({\n  className,\n  variant,\n  size,\n  ...props\n}: ToggleGroupRootProps) {\n  return (\n    <ToggleGroupContext.Provider value={{ size, variant }}>\n      <ToggleButtonGroup\n        className={composeRenderProps(className, (className) =>\n          ToggleGroupStyles.Root({ className })\n        )}\n        data-size={size}\n        data-slot=\"toggle-group-root\"\n        data-variant={variant}\n        {...props}\n      />\n    </ToggleGroupContext.Provider>\n  );\n}\n\nexport interface ToggleGroupItemProps\n  extends React.ComponentProps<typeof ToggleButton>,\n    VariantProps<typeof ToggleStyles> {}\n\nexport function ToggleGroupItem({\n  className,\n  variant,\n  size,\n  ...props\n}: ToggleGroupItemProps) {\n  const context = useContext(ToggleGroupContext);\n  const _variant = context.variant ?? variant;\n  const _size = context.size ?? size;\n\n  return (\n    <ToggleButton\n      className={composeRenderProps(className, (className) =>\n        ToggleStyles({\n          className: ToggleGroupStyles.Item({ className }),\n          size: _size,\n          variant: _variant,\n        })\n      )}\n      data-size={_size}\n      data-slot=\"toggle-group-item\"\n      data-variant={_variant}\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/toggle-group/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const ToggleGroupStyles = {\n  Item: cva({\n    base: [\n      \"min-w-0 flex-1 shrink-0 rounded-none shadow-none\",\n      \"first:rounded-l-md last:rounded-r-md\",\n      \"focus:z-10 focus-visible:z-10\",\n      \"data-[variant=outline]:border-l-0 data-[variant=outline]:first:border-l\",\n    ],\n  }),\n  Root: cva({\n    base: [\n      \"group/toggle-group flex w-fit items-center rounded-md data-[variant=outline]:shadow-xs\",\n    ],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/toggle-group/namespace.ts",
+      "content": "export {\n  ToggleGroupItem as Item,\n  ToggleGroupRoot as Root,\n} from \"./toggle-group\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

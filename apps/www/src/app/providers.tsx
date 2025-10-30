@@ -6,8 +6,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useRouter } from "next/navigation";
 import { ThemeProvider } from "next-themes";
 import { RouterProvider } from "react-aria-components";
-import { Toaster } from "~/components/ui/toast";
 import { getQueryClient } from "~/lib/tanstack-query";
+import { Toaster } from "~/registry/ui/toast";
 
 declare module "react-aria-components" {
   interface RouterConfig {

@@ -1,10 +1,10 @@
+import { Icons } from "~/components/icons";
 import { docsConfig, type NavItem } from "~/config/docs";
 import { siteConfig } from "~/config/site";
-import { Badge } from "./ui/badge";
-import { LinkButton } from "./ui/button";
-import { Icons } from "./ui/icons";
-import { Link } from "./ui/link/link";
-import { Separator } from "./ui/separator";
+import { Badge } from "~/registry/ui/badge";
+import { Link } from "~/registry/ui/link/link";
+import { LinkButton } from "~/registry/ui/link-button";
+import { Separator } from "~/registry/ui/separator";
 
 const footerLinks: {
   title: string;
@@ -39,7 +39,7 @@ export function SiteFooter() {
       <div className="flex flex-col items-start justify-between gap-10 lg:flex-row">
         <div className="flex max-w-sm flex-col items-start">
           <a
-            className="flex items-center gap-2 rounded outline-hidden ring-0 ring-border-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            className="flex items-center gap-2 rounded outline-hidden ring-0 ring-border-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             href="/"
           >
             <Icons.Logo className="size-6" />
@@ -48,7 +48,7 @@ export function SiteFooter() {
             </span>
             <Badge variant="secondary">Alpha</Badge>
           </a>
-          <p className="mt-2 text-md text-muted-fg">
+          <p className="mt-2 text-md text-muted-foreground">
             Accessible, mobile friendly, modern UI components.
           </p>
           <div className="mt-4 flex items-center gap-2">
@@ -82,7 +82,7 @@ export function SiteFooter() {
                 {group.links.map((item) => (
                   <Link
                     className={
-                      "text-muted-fg text-sm underline decoration-transparent transition duration-200 not-[data-[disabled=true]]:hover:decoration-current"
+                      "text-muted-foreground text-sm underline decoration-transparent transition duration-200 not-[data-[disabled=true]]:hover:decoration-current"
                     }
                     href={item.href}
                     isDisabled={item.disabled}
@@ -99,13 +99,12 @@ export function SiteFooter() {
 
       <Separator className="mt-12 mb-4" />
 
-      <p className="text-balance text-center text-muted-fg text-sm leading-loose md:text-left">
+      <p className="text-balance text-center text-muted-foreground text-sm leading-loose md:text-left">
         Built by{" "}
         <Link
           href={siteConfig.links.twitter}
           rel="noopener noreferrer"
           target="_blank"
-          variant="underline"
         >
           Fellipe Utaka
         </Link>
@@ -114,7 +113,6 @@ export function SiteFooter() {
           href={siteConfig.links.github}
           rel="noopener noreferrer"
           target="_blank"
-          variant="underline"
         >
           GitHub
         </Link>

@@ -1,5 +1,5 @@
-import { LinkButton } from "~/components/ui/button";
-import { Separator } from "~/components/ui/separator";
+import { LinkButton } from "~/registry/ui/link-button";
+import { Separator } from "~/registry/ui/separator";
 
 export default function Page() {
   return (

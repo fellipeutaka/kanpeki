@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@kanpeki/label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/radio-group/index.ts",
+      "content": "export * as RadioGroup from \"./namespace\";\nexport * from \"./radio-group\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/radio-group/radio-group.tsx",
+      "content": "\"use client\";\n\nimport { CircleIcon } from \"lucide-react\";\nimport {\n  composeRenderProps,\n  RadioGroup as RACRadioGroup,\n  Radio,\n} from \"react-aria-components\";\nimport { RadioGroupStyles } from \"./styles\";\n\nexport interface RadioGroupRootProps\n  extends React.ComponentProps<typeof RACRadioGroup> {}\n\nexport function RadioGroupRoot({ className, ...props }: RadioGroupRootProps) {\n  return (\n    <RACRadioGroup\n      className={composeRenderProps(className, (className) =>\n        RadioGroupStyles.Root({ className })\n      )}\n      data-slot=\"radio-group-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface RadioGroupItemProps\n  extends React.ComponentProps<typeof Radio> {}\n\nexport function RadioGroupItem({ className, ...props }: RadioGroupItemProps) {\n  return (\n    <Radio\n      className={composeRenderProps(className, (className) =>\n        RadioGroupStyles.Item({ className })\n      )}\n      data-slot=\"radio-group-item\"\n      {...props}\n    />\n  );\n}\n\nexport interface RadioGroupIndicatorProps\n  extends Omit<React.ComponentProps<\"span\">, \"children\"> {}\n\nexport function RadioGroupIndicator({\n  className,\n  ...props\n}: RadioGroupIndicatorProps) {\n  return (\n    <span\n      {...props}\n      aria-hidden=\"true\"\n      className={RadioGroupStyles.Indicator({ className })}\n      data-slot=\"radio-group-indicator\"\n    >\n      <CircleIcon className=\"size-2 fill-primary opacity-0 transition group-selected:opacity-100\" />\n    </span>\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/radio-group/styles.ts",
+      "content": "import { compose, cva } from \"~/registry/lib/cva\";\nimport { LabelStyles } from \"../label\";\n\nexport const RadioGroupStyles = {\n  Indicator: cva({\n    base: [\n      \"grid aspect-square size-4 shrink-0 place-content-center rounded-full border border-input text-primary\",\n      \"shadow-xs outline-none transition\",\n      \"group-focus-visible:border-ring group-focus-visible:ring-[3px] group-focus-visible:ring-ring/50\",\n      \"group-disabled:cursor-not-allowed group-disabled:opacity-50\",\n      \"group-aria-invalid:border-destructive group-aria-invalid:ring-destructive/20\",\n      \"group-dark:bg-input/30 group-dark:aria-invalid:ring-destructive/40\",\n    ],\n  }),\n  Item: compose(\n    LabelStyles,\n    cva({\n      base: [\"group flex w-fit items-center gap-3\"],\n    })\n  ),\n  Root: cva({\n    base: [\"grid gap-3\"],\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/radio-group/namespace.ts",
+      "content": "export {\n  RadioGroupIndicator as Indicator,\n  RadioGroupItem as Item,\n  RadioGroupRoot as Root,\n} from \"./radio-group\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

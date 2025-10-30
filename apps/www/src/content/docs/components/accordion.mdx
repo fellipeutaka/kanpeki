@@ -12,13 +12,13 @@ links:
 <TabRoot>
 
 <TabList>
-  <TabTrigger id="cli" isDisabled>CLI</TabTrigger>
+  <TabTrigger id="cli">CLI</TabTrigger>
   <TabTrigger id="manual">Manual</TabTrigger>
 </TabList>
 <TabContent id="cli">
 
 ```bash
-npx kanpeki-ui@latest add accordion
+npx shadcn-ui@latest add accordion
 ```
 
 </TabContent>
@@ -44,7 +44,7 @@ npx kanpeki-ui@latest add accordion
 ### Single import
 
 ```tsx
-import { Accordion } from "~/components/ui/accordion";
+import { Accordion } from "~/registry/ui/accordion";
 ```
 
 ```tsx
@@ -66,7 +66,7 @@ import {
   AccordionItem,
   AccordionRoot,
   AccordionTrigger,
-} from "~/components/ui/accordion";
+} from "~/registry/ui/accordion";
 ```
 
 ```tsx
@@ -83,7 +83,7 @@ import {
 ## Animation
 
 <Alert.Root variant="warning">
-  <Icons.TriangleAlert className="size-4" />
+  <Icons.TriangleAlert />
   <Alert.Description>
     The Accordion component uses the `interpolate-size: allow-keywords` CSS
     property to animate the height of the content. This property is not

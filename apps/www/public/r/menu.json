@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/menu/index.ts",
+      "content": "export * from \"./menu\";\nexport * as Menu from \"./namespace\";\nexport * from \"./styles\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/menu/menu.tsx",
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { CheckIcon, ChevronRightIcon, CircleIcon } from \"lucide-react\";\nimport {\n  Button,\n  composeRenderProps,\n  Header,\n  MenuItem as Item,\n  Menu,\n  MenuSection,\n  MenuTrigger as Root,\n  Separator,\n  SubmenuTrigger,\n} from \"react-aria-components\";\n\nimport { cn } from \"~/registry/lib/cva\";\nimport { MenuStyles } from \"./styles\";\n\nexport interface MenuRootProps extends React.ComponentProps<typeof Root> {}\n\nexport function MenuRoot(props: MenuRootProps) {\n  return <Root data-slot=\"menu-root\" {...props} />;\n}\n\nexport interface MenuTriggerProps extends React.ComponentProps<typeof Button> {}\n\nexport function MenuTrigger(props: MenuTriggerProps) {\n  return <Button data-slot=\"menu-trigger\" {...props} />;\n}\n\nexport interface MenuContentProps<T extends object>\n  extends React.ComponentProps<typeof Menu<T>>,\n    VariantProps<typeof MenuStyles.Content> {}\n\nexport function MenuContent<T extends object>({\n  className,\n  variant,\n  ...props\n}: MenuContentProps<T>) {\n  return (\n    <Menu\n      className={composeRenderProps(className, (className) =>\n        MenuStyles.Content({ className, variant })\n      )}\n      data-slot=\"menu-content\"\n      {...props}\n    />\n  );\n}\n\nexport interface MenuGroupProps\n  extends React.ComponentProps<typeof MenuSection> {}\n\nexport function MenuGroup(props: MenuGroupProps) {\n  return <MenuSection data-slot=\"menu-group\" {...props} />;\n}\n\nexport interface MenuItemProps\n  extends React.ComponentProps<typeof Item>,\n    VariantProps<typeof MenuStyles.Item> {}\n\nexport function MenuItem({\n  className,\n  inset,\n  variant,\n  children,\n  ...props\n}: MenuItemProps) {\n  return (\n    <Item\n      className={composeRenderProps(className, (className) =>\n        MenuStyles.Item({ className, inset, variant })\n      )}\n      data-inset={inset}\n      data-slot=\"menu-item\"\n      {...props}\n    >\n      {composeRenderProps(children, (children, values) => (\n        <>\n          <span\n            className=\"flex size-3.5 items-center justify-center empty:hidden\"\n            data-slot=\"menu-item-indicator\"\n          >\n            {values.selectionMode === \"single\" && (\n              <CircleIcon\n                className=\"size-2 fill-current text-current opacity-0 transition-opacity group-selected:opacity-100\"\n                data-slot=\"indicator\"\n              />\n            )}\n\n            {values.selectionMode === \"multiple\" && (\n              <CheckIcon\n                className=\"size-4 text-current opacity-0 transition-opacity group-selected:opacity-100\"\n                data-slot=\"checked-icon\"\n              />\n            )}\n          </span>\n\n          {children}\n          {values.hasSubmenu && (\n            <ChevronRightIcon className=\"ml-auto size-4\" data-slot=\"chevron\" />\n          )}\n        </>\n      ))}\n    </Item>\n  );\n}\n\nexport interface MenuLabelProps extends React.ComponentProps<typeof Header> {\n  inset?: boolean;\n}\n\nexport function MenuLabel({ className, inset, ...props }: MenuLabelProps) {\n  return (\n    <Header\n      className={cn(\n        \"px-2 py-1.5 font-medium text-sm data-[inset]:pl-8\",\n        className\n      )}\n      data-inset={inset}\n      data-slot=\"menu-label\"\n      {...props}\n    />\n  );\n}\n\nexport interface MenuSeparatorProps\n  extends React.ComponentProps<typeof Separator> {}\n\nexport function MenuSeparator({ className, ...props }: MenuSeparatorProps) {\n  return (\n    <Separator\n      className={cn(\"-mx-1 my-1 h-px bg-border\", className)}\n      data-slot=\"menu-separator\"\n      {...props}\n    />\n  );\n}\n\nexport interface MenuSubProps\n  extends React.ComponentProps<typeof SubmenuTrigger> {}\n\nexport function MenuSub(props: MenuSubProps) {\n  return <SubmenuTrigger data-slot=\"menu-sub\" {...props} />;\n}\n\nexport interface MenuEmptyProps extends React.ComponentProps<\"div\"> {}\n\nexport function MenuEmpty({ className, ...props }: MenuEmptyProps) {\n  return (\n    <div\n      className={MenuStyles.Empty({ className })}\n      data-slot=\"menu-empty\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/menu/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const MenuStyles = {\n  Content: cva({\n    base: [\n      \"z-50 min-w-32 overflow-y-auto overflow-x-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-none\",\n    ],\n    variants: {\n      variant: {\n        command: [\n          \"max-h-[300px] border-none\",\n          \"**:data-[slot=menu-item]:py-3\",\n          \"**:data-[slot=menu-label]:text-muted-foreground **:data-[slot=menu-label]:text-xs\",\n        ],\n      },\n    },\n  }),\n  Empty: cva({\n    base: [\"py-6 text-center text-sm\"],\n  }),\n  Item: cva({\n    base: [\n      \"group relative flex select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm\",\n      \"outline-hidden focus:bg-accent focus:text-accent-foreground\",\n      \"disabled:pointer-events-none disabled:opacity-50\",\n      \"[&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    ],\n    variants: {\n      inset: {\n        true: \"pl-8\",\n      },\n      variant: {\n        destructive: [\n          \"*:[svg]:!text-destructive text-destructive focus:bg-destructive/10\",\n          \"focus:text-destructive dark:focus:bg-destructive/20\",\n        ],\n      },\n    },\n  }),\n};\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/menu/namespace.ts",
+      "content": "export {\n  MenuContent as Content,\n  MenuEmpty as Empty,\n  MenuGroup as Group,\n  MenuItem as Item,\n  MenuLabel as Label,\n  MenuRoot as Root,\n  MenuSeparator as Separator,\n  MenuSub as Sub,\n  MenuTrigger as Trigger,\n} from \"./menu\";\n",
+      "type": "registry:ui"
+    }
+  ]
+}

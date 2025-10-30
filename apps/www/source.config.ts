@@ -1,10 +1,6 @@
-import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
 import { defineConfig, defineDocs } from "fumadocs-mdx/config";
 import { z } from "zod";
-import { rehypeComponent } from "~/lib/mdx-plugins/rehype-component";
-import { transformerNpmCommands } from "~/lib/mdx-plugins/rehype-npm-commands";
-import { vercelDarkTheme } from "~/styles/vercel-dark";
-import { vercelLightTheme } from "~/styles/vercel-light";
+import { rehypeCodeOptions } from "~/lib/rehype";
 
 export const docs = defineDocs({
   dir: "src/content/docs",
@@ -14,8 +10,8 @@ export const docs = defineDocs({
       description: z.string().max(256),
       links: z
         .object({
-          api: z.string().url(),
-          docs: z.string().url(),
+          api: z.url(),
+          docs: z.url(),
         })
         .partial()
         .optional(),
@@ -27,17 +23,6 @@ export const docs = defineDocs({
 export default defineConfig({
   lastModifiedTime: "git",
   mdxOptions: {
-    rehypeCodeOptions: {
-      icon: false,
-      themes: {
-        dark: vercelDarkTheme,
-        light: vercelLightTheme,
-      },
-      transformers: [
-        ...(rehypeCodeDefaultOptions.transformers ?? []),
-        transformerNpmCommands(),
-      ],
-    },
-    rehypePlugins: (v) => [rehypeComponent, ...v],
+    rehypeCodeOptions,
   },
 });

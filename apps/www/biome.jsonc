@@ -21,6 +21,18 @@
   },
   "overrides": [
     {
+      "includes": ["src/registry/__index__.tsx"],
+      "linter": {
+        "enabled": false
+      },
+      "assist": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
+    },
+    {
       "includes": [
         "src/app/**/page.tsx",
         "src/app/**/layout.tsx",
@@ -36,8 +48,7 @@
         "src/app/**/twitter-image.tsx",
         "src/app/**/robots.ts",
         "src/app/**/sitemap.ts",
-
-        "src/demos/*.tsx"
+        "src/registry/examples/*.tsx"
       ],
       "linter": {
         "rules": {
@@ -48,7 +59,7 @@
       }
     },
     {
-      "includes": ["src/components/ui/**/*.tsx", "src/demos/*.tsx"],
+      "includes": ["src/registry/ui/**/*.tsx", "src/registry/examples/*.tsx"],
       "linter": {
         "rules": {
           "performance": {

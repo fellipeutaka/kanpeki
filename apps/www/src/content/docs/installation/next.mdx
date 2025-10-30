@@ -61,7 +61,7 @@ import "~/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
 import { fonts } from "~/config/fonts";
-import { cx } from "~/lib/cva";
+import { cx } from "cva";
 
 export const metadata: Metadata = {
   title: {
@@ -86,7 +86,7 @@ export default function Layout({ children }: LayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cx(
-          "min-h-dvh bg-bg font-sans text-fg antialiased",
+          "min-h-dvh bg-background font-sans text-foreground antialiased",
           fonts.sans.variable
         )}
       >
@@ -181,7 +181,7 @@ npx kanpeki-ui@latest add button
 The command above will add the `Button` component to your project. You can then import it like this:
 
 ```tsx {1,6}
-import { Button } from "~/components/ui/button";
+import { Button } from "~/registry/ui/button";
 
 export default function Home() {
   return (

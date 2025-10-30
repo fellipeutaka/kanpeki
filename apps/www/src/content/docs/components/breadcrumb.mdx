@@ -44,7 +44,7 @@ npx kanpeki-ui@latest add breadcrumb
 ### Single import
 
 ```tsx
-import { Breadcrumb } from "~/components/ui/breadcrumb";
+import { Breadcrumb } from "~/registry/ui/breadcrumb";
 ```
 
 ```tsx
@@ -73,7 +73,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
   BreadcrumbPage,
-} from "~/components/ui/breadcrumb";
+} from "~/registry/ui/breadcrumb";
 ```
 
 ```tsx
@@ -105,8 +105,8 @@ Use a custom component as `children` for `<BreadcrumbSeparator />{:tsx}` to crea
 <ComponentPreview name="breadcrumb-custom-separator" />
 
 ```tsx {2,6-8}
-import { Breadcrumb } from "~/components/ui/breadcrumb";
-import { Icons } from "~/components/ui/icons";
+import { Breadcrumb } from "~/registry/ui/breadcrumb";
+import { Icons } from "~/components/icons";
 
 <Breadcrumb.Root>
   {/* ... */}
@@ -125,10 +125,10 @@ You can compose `<BreadcrumbItem />{:tsx}` with a `<DropdownMenu />{:tsx}` to cr
 
 ```tsx {1-5,10-22}
 import { Button } from "react-aria-components";
-import { Breadcrumb } from "~/components/ui/breadcrumb";
-import { DropdownMenu } from "~/components/ui/dropdown-menu";
-import { LinkStyles } from "~/components/ui/link";
-import { Popover } from "~/components/ui/popover";
+import { Breadcrumb } from "~/registry/ui/breadcrumb";
+import { DropdownMenu } from "~/registry/ui/dropdown-menu";
+import { LinkStyles } from "~/registry/ui/link";
+import { Popover } from "~/registry/ui/popover";
 
 <Breadcrumb.Root>
   {/* ... */}
@@ -158,7 +158,7 @@ There's a `<BreadcrumbEllipsis />{:tsx}` component to show a collapsed state whe
 <ComponentPreview name="breadcrumb-collapsed" />
 
 ```tsx {1,6}
-import { Breadcrumb } from "~/components/ui/breadcrumb";
+import { Breadcrumb } from "~/registry/ui/breadcrumb";
 
 <Breadcrumb.Root>
   {/* ... */}

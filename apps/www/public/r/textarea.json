@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:ui",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/textarea/index.ts",
+      "content": "export * from \"./styles\";\nexport * from \"./textarea\";\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/textarea/textarea.tsx",
+      "content": "\"use client\";\n\nimport { TextArea } from \"react-aria-components\";\nimport { TextareaStyles } from \"./styles\";\n\nexport interface TextareaProps extends React.ComponentProps<typeof TextArea> {}\n\nexport function Textarea({ className, ...props }: TextareaProps) {\n  return (\n    <TextArea\n      className={TextareaStyles({ className })}\n      data-slot=\"textarea\"\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/registry/ui/textarea/styles.ts",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const TextareaStyles = cva({\n  base: [\n    \"field-sizing-content flex min-h-16 w-full resize-none rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-xs\",\n    \"outline-none transition-[color,box-shadow] placeholder:text-muted-foreground\",\n    \"focus:border-ring focus:ring-[3px] focus:ring-ring/50\",\n    \"disabled:cursor-not-allowed disabled:opacity-50\",\n    \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:ring-destructive/40\",\n  ],\n});\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,30 +1,37 @@
-import { Card } from "~/components/ui/card";
-import { Icons } from "~/components/ui/icons";
+import {
+  AccessibilityIcon,
+  PaletteIcon,
+  PuzzleIcon,
+  RocketIcon,
+  UsersIcon,
+  ZapIcon,
+} from "lucide-react";
 import { siteConfig } from "~/config/site";
+import { Card } from "~/registry/ui/card";
 
 const features = [
   {
     description:
       "Easily customize the appearance and behavior of our components to match your brand and design.",
-    icon: <Icons.Palette className="size-6 text-amber-500" />,
+    icon: <PaletteIcon className="size-6 text-amber-500" />,
     title: "Fully Customizable",
   },
   {
     description:
       "Our components follow the WAI-ARIA guidelines, provide keyboard support and sensible focus management.",
-    icon: <Icons.Accessibility className="size-6 text-violet-500" />,
+    icon: <AccessibilityIcon className="size-6 text-violet-500" />,
     title: "Accessible",
   },
   {
     description:
       "Kanpeki is based on Tailwind CSS, it means that there are no runtime styles, and no unnecessary classes in your bundle.",
-    icon: <Icons.Zap className="size-6 text-green-500" />,
+    icon: <ZapIcon className="size-6 text-green-500" />,
     title: "No runtime styles",
   },
   {
     description:
       "Install only the components and hooks you need, and keep your bundle size to a minimum.",
-    icon: <Icons.Rocket className="size-6 text-orange-500" />,
+    icon: <RocketIcon className="size-6 text-orange-500" />,
     title: "Minimal bundle size",
   },
   {
@@ -51,7 +58,7 @@ const features = [
   {
     description:
       "Kanpeki is built using the composition pattern, which means that you can easily extend and compose components.",
-    icon: <Icons.Puzzle className="size-6 text-red-500" />,
+    icon: <PuzzleIcon className="size-6 text-red-500" />,
     title: "Composition Pattern",
   },
   {
@@ -78,7 +85,7 @@ const features = [
   {
     description:
       "Join a growing community of developers who use and contribute to Kanpeki.",
-    icon: <Icons.Users className="size-6 text-fuchsia-500" />,
+    icon: <UsersIcon className="size-6 text-fuchsia-500" />,
     title: "Extensive Community",
   },
 ] as const satisfies {
@@ -94,7 +101,7 @@ export function FeatureSection() {
         <h2 className="font-bold text-3xl tracking-tighter sm:text-5xl">
           Why Choose {siteConfig.name}?
         </h2>
-        <p className="max-w-3xl text-balance text-muted-fg md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <p className="max-w-3xl text-balance text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
           {siteConfig.name} offers a wide range of high-quality, customizable
           React components that will help you build stunning web applications
           with ease.

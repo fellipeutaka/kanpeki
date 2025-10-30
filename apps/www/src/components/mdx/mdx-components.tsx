@@ -1,44 +1,30 @@
+// biome-ignore-all assist/source/useSortedKeys: For better organization
+
 import type { MDXComponents } from "mdx/types";
 import Image from "next/image";
-import { cn } from "~/lib/cva";
-import { Alert } from "../ui/alert";
-import { LinkButton } from "../ui/button";
-import { Icons } from "../ui/icons";
-import { Link } from "../ui/link/link";
+import { Icons } from "~/components/icons";
+import { cn } from "~/registry/lib/cva";
+import { Alert } from "~/registry/ui/alert";
+import { Link } from "~/registry/ui/link/link";
+import { LinkButton } from "~/registry/ui/link-button";
+import { ScrollArea } from "~/registry/ui/scroll-area";
 import { Code } from "./code";
+import { CodeBlock, type NpmCommands } from "./code-block";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
+import { CopyButton } from "./copy-button";
 import { File, Files } from "./files";
 import { Folder } from "./folder";
 import { Heading } from "./heading";
+import { LanguageIcon } from "./language-icon";
 import { MdxTabs } from "./mdx-tabs";
-import { Pre } from "./pre";
+import { Pre, type PreProps } from "./pre";
 import { PropsTable } from "./props-table";
 import { Step, Steps } from "./steps";
 
+// &:is(:where(.peer)[data-slot="alert-root"] ~ *)
+
 export const mdxComponents = {
-  // biome-ignore lint/suspicious/noExplicitAny: This is needed for MDX compatibility
-  Alert: Alert as any,
-  a: ({ className, href, ...props }: React.ComponentProps<"a">) => (
-    <a
-      className={cn("font-medium underline underline-offset-4", className)}
-      href={href}
-      {...props}
-    />
-  ),
-  blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
-    <blockquote
-      className={cn("mt-6 border-l-2 pl-6 italic *:text-muted-fg", className)}
-      {...props}
-    />
-  ),
-  Code,
-  ComponentPreview,
-  ComponentSource,
-  code: Code,
-  File,
-  Files,
-  Folder,
   h1: (props: React.ComponentProps<"h1">) => (
     <h1 className="heading mt-2 scroll-m-20 font-bold text-4xl" {...props} />
   ),
@@ -78,8 +64,22 @@ export const mdxComponents = {
     />
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
-  // biome-ignore lint/suspicious/noExplicitAny: This is needed for MDX compatibility
-  Icons: Icons as any,
+  a: ({ className, href, ...props }: React.ComponentProps<"a">) => (
+    <a
+      className={cn("font-medium underline underline-offset-4", className)}
+      href={href}
+      {...props}
+    />
+  ),
+  blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
+    <blockquote
+      className={cn(
+        "mt-6 border-l-2 pl-6 italic *:text-muted-foreground",
+        className
+      )}
+      {...props}
+    />
+  ),
   img: ({ className, alt, ...props }: React.ComponentProps<typeof Image>) => (
     <Image
       {...props}
@@ -87,26 +87,90 @@ export const mdxComponents = {
       className={cn("rounded-md border", className)}
     />
   ),
-  Link,
-  LinkButton,
   li: ({ className, ...props }: React.ComponentProps<"li">) => (
     <li className={cn("mt-2", className)} {...props} />
   ),
   ol: ({ className, ...props }: React.ComponentProps<"ol">) => (
     <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
   ),
-  PropsTable,
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
     <p className={cn("not-first:mt-6 leading-7", className)} {...props} />
   ),
-  pre: Pre,
+  ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
+    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+  ),
+  pre: ({
+    title,
+    "data-language": language,
+    "data-raw": rawText,
+    "data-npm": npmCommand,
+    "data-yarn": yarnCommand,
+    "data-pnpm": pnpmCommand,
+    "data-bun": bunCommand,
+    ...props
+  }: {
+    "data-language": string;
+    "data-raw": string;
+    "data-npm"?: string;
+    "data-yarn"?: string;
+    "data-pnpm"?: string;
+    "data-bun"?: string;
+  } & PreProps) => {
+    const commands = npmCommand
+      ? ({
+          bun: bunCommand,
+          npm: npmCommand,
+          pnpm: pnpmCommand,
+          yarn: yarnCommand,
+        } as NpmCommands)
+      : null;
+
+    return (
+      <CodeBlock.Root>
+        {title && (
+          <CodeBlock.Header>
+            <LanguageIcon language={language} title={title} />
+            <CodeBlock.Title>{title}</CodeBlock.Title>
+            <CopyButton text={rawText} />
+          </CodeBlock.Header>
+        )}
+
+        <ScrollArea.Root>
+          {!title && (
+            <CodeBlock.CopyButton commands={commands} text={rawText} />
+          )}
+
+          <ScrollArea.Viewport className="max-h-160">
+            <Pre {...props} />
+          </ScrollArea.Viewport>
+          <ScrollArea.Scrollbar orientation="vertical">
+            <ScrollArea.Thumb />
+          </ScrollArea.Scrollbar>
+          <ScrollArea.Scrollbar orientation="horizontal">
+            <ScrollArea.Thumb />
+          </ScrollArea.Scrollbar>
+        </ScrollArea.Root>
+      </CodeBlock.Root>
+    );
+  },
+  code: Code,
+
+  Alert,
   Step,
   Steps,
   TabContent: MdxTabs.Content,
   TabList: MdxTabs.List,
   TabRoot: MdxTabs.Root,
   TabTrigger: MdxTabs.Trigger,
-  ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
-    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
-  ),
-} satisfies MDXComponents;
+
+  File,
+  Files,
+  Folder,
+  PropsTable,
+  Icons,
+  Link,
+  LinkButton,
+
+  ComponentPreview,
+  ComponentSource,
+} as unknown as MDXComponents;
