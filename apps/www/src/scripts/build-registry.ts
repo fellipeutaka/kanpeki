@@ -1,8 +1,9 @@
+import { execFile } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { rimraf } from "rimraf";
 import { registrySchema } from "shadcn/schema";
-import registry from "../../registry.json" with { type: "json" };
+import { registry } from "~/registry/registry";
 
 const parsedRegistry = registrySchema.parse(registry);
 
@@ -56,7 +57,7 @@ export const Index: Record<string, any> = {`;
   index += `
   }`;
 
-  console.log(`#️⃣  ${Object.keys(registry.items).length} items found`);
+  console.log(`#️⃣  ${Object.keys(parsedRegistry.items).length} items found`);
 
   // Write style index.
   rimraf.sync(path.join(process.cwd(), "src/registry/__index__.tsx"));
@@ -66,9 +67,37 @@ export const Index: Record<string, any> = {`;
   );
 }
 
+async function buildRegistryJsonFile() {
+  const registryJsonPath = path.join(process.cwd(), "registry.json");
+  // 2. Write the content of the registry to `registry.json`
+  rimraf.sync(registryJsonPath);
+  await fs.writeFile(registryJsonPath, JSON.stringify(parsedRegistry, null, 2));
+
+  // 3. Format the registry.json file.
+  await new Promise<void>((resolve, reject) => {
+    execFile("biome", ["format", "--write", registryJsonPath], (error) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve();
+      }
+    });
+  });
+
+  // 3. Copy the registry.json to the www/public/r directory.
+  await fs.cp(
+    path.join(process.cwd(), "registry.json"),
+    path.join(process.cwd(), "../www/public/r/registry.json"),
+    { recursive: true }
+  );
+}
+
 try {
   console.log("📁 Building src/registry/__index__.tsx...");
   await buildRegistryIndex();
+
+  console.log("💅 Building registry.json...");
+  await buildRegistryJsonFile();
 } catch (error) {
   console.error(error);
   process.exit(1);

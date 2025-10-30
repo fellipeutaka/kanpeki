@@ -1,49 +1,12 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "kanpeki",
   "homepage": "https://kanpeki.vercel.app",
-  "tailwind": {
-    "config": {
-      "plugins": ["tailwindcss-react-aria-components", "tailwindcss-motion"]
-    }
-  },
   "items": [
-    {
-      "name": "custom-plugin",
-      "type": "registry:item",
-      "css": {
-        "@plugin \"tailwindcss-react-aria-components\"": {},
-        "@plugin \"tailwindcss-motion\"": {}
-      },
-      "devDependencies": [
-        "tailwindcss-motion",
-        "tailwindcss-react-aria-components"
-      ]
-    },
-    {
-      "name": "cva",
-      "type": "registry:lib",
-      "files": [
-        {
-          "path": "src/registry/lib/cva.ts",
-          "type": "registry:lib"
-        }
-      ],
-      "devDependencies": ["cva@beta", "tailwind-merge"]
-    },
-    {
-      "name": "use-is-mobile",
-      "type": "registry:hook",
-      "files": [
-        {
-          "path": "src/registry/hooks/use-is-mobile.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
     {
       "name": "accordion",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/accordion/index.ts",
@@ -61,13 +24,12 @@
           "path": "src/registry/ui/accordion/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "alert",
       "type": "registry:ui",
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/alert/index.ts",
@@ -85,8 +47,7 @@
           "path": "src/registry/ui/alert/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "aspect-ratio",
@@ -101,17 +62,18 @@
     {
       "name": "autocomplete",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
       "files": [
         {
           "path": "src/registry/ui/autocomplete/index.tsx",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"]
+      ]
     },
     {
       "name": "avatar",
       "type": "registry:ui",
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/avatar/index.ts",
@@ -129,12 +91,12 @@
           "path": "src/registry/ui/avatar/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "badge",
       "type": "registry:ui",
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/badge/index.ts",
@@ -148,12 +110,13 @@
           "path": "src/registry/ui/badge/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "breadcrumb",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/breadcrumb/index.ts",
@@ -171,13 +134,13 @@
           "path": "src/registry/ui/breadcrumb/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "button",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/button/index.ts",
@@ -191,13 +154,13 @@
           "path": "src/registry/ui/button/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "calendar",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "@internationalized/date"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/calendar/index.ts",
@@ -215,13 +178,12 @@
           "path": "src/registry/ui/calendar/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "@internationalized/date"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "card",
       "type": "registry:ui",
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/card/index.ts",
@@ -239,12 +201,17 @@
           "path": "src/registry/ui/card/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "carousel",
       "type": "registry:ui",
+      "dependencies": ["embla-carousel-react", "lucide-react"],
+      "registryDependencies": [
+        "@kanpeki/cva",
+        "@kanpeki/custom-plugin",
+        "@kanpeki/button"
+      ],
       "files": [
         {
           "path": "src/registry/ui/carousel/index.ts",
@@ -258,17 +225,13 @@
           "path": "src/registry/ui/carousel/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["embla-carousel-react", "lucide-react"],
-      "registryDependencies": [
-        "@kanpeki/cva",
-        "@kanpeki/custom-plugin",
-        "@kanpeki/button"
       ]
     },
     {
       "name": "chart",
       "type": "registry:ui",
+      "dependencies": ["recharts@2"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/chart/index.ts",
@@ -286,13 +249,13 @@
           "path": "src/registry/ui/chart/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["recharts@2"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "checkbox",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/checkbox/index.ts",
@@ -310,13 +273,13 @@
           "path": "src/registry/ui/checkbox/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "collapsible",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/collapsible/index.ts",
@@ -334,13 +297,17 @@
           "path": "src/registry/ui/collapsible/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "combobox",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": [
+        "@kanpeki/cva",
+        "@kanpeki/custom-plugin",
+        "@kanpeki/button"
+      ],
       "files": [
         {
           "path": "src/registry/ui/combobox/index.ts",
@@ -358,17 +325,13 @@
           "path": "src/registry/ui/combobox/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": [
-        "@kanpeki/cva",
-        "@kanpeki/custom-plugin",
-        "@kanpeki/button"
       ]
     },
     {
       "name": "date-field",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/date-field/index.ts",
@@ -386,13 +349,13 @@
           "path": "src/registry/ui/date-field/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "date-picker",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/date-picker/index.ts",
@@ -410,13 +373,13 @@
           "path": "src/registry/ui/date-picker/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "dialog",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/dialog/index.ts",
@@ -434,13 +397,13 @@
           "path": "src/registry/ui/dialog/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "drawer",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react", "motion"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/drawer/index.ts",
@@ -458,13 +421,13 @@
           "path": "src/registry/ui/drawer/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react", "motion"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "dropzone",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/dropzone/index.ts",
@@ -482,13 +445,13 @@
           "path": "src/registry/ui/dropzone/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "form",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/form/index.ts",
@@ -506,13 +469,13 @@
           "path": "src/registry/ui/form/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "input",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/input/index.ts",
@@ -526,13 +489,13 @@
           "path": "src/registry/ui/input/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "input-otp",
       "type": "registry:ui",
+      "dependencies": ["input-otp", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/input-otp/index.ts",
@@ -550,13 +513,13 @@
           "path": "src/registry/ui/input-otp/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["input-otp", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "keyboard",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/keyboard/index.ts",
@@ -570,13 +533,13 @@
           "path": "src/registry/ui/keyboard/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "label",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/label/index.ts",
@@ -590,13 +553,13 @@
           "path": "src/registry/ui/label/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "link",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/link/index.ts",
@@ -610,24 +573,24 @@
           "path": "src/registry/ui/link/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "link-button",
       "type": "registry:ui",
+      "registryDependencies": ["@kanpeki/button"],
       "files": [
         {
           "path": "src/registry/ui/link-button/index.tsx",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": ["@kanpeki/button"]
+      ]
     },
     {
       "name": "list-box",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/list-box/index.ts",
@@ -645,13 +608,13 @@
           "path": "src/registry/ui/list-box/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "menu",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/menu/index.ts",
@@ -669,13 +632,13 @@
           "path": "src/registry/ui/menu/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "number-field",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/number-field/index.ts",
@@ -689,13 +652,13 @@
           "path": "src/registry/ui/number-field/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "pagination",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/button"],
       "files": [
         {
           "path": "src/registry/ui/pagination/index.ts",
@@ -713,13 +676,13 @@
           "path": "src/registry/ui/pagination/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/button"]
+      ]
     },
     {
       "name": "popover",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/popover/index.ts",
@@ -737,13 +700,13 @@
           "path": "src/registry/ui/popover/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "progress",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/progress/index.ts",
@@ -761,13 +724,13 @@
           "path": "src/registry/ui/progress/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "radio-group",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/label"],
       "files": [
         {
           "path": "src/registry/ui/radio-group/index.ts",
@@ -785,13 +748,13 @@
           "path": "src/registry/ui/radio-group/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/label"]
+      ]
     },
     {
       "name": "resizable",
       "type": "registry:ui",
+      "dependencies": ["react-resizable-panels", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/resizable/index.ts",
@@ -809,13 +772,13 @@
           "path": "src/registry/ui/resizable/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-resizable-panels", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "scroll-area",
       "type": "registry:ui",
+      "dependencies": ["@radix-ui/react-scroll-area"],
+      "registryDependencies": ["@kanpeki/cva"],
       "files": [
         {
           "path": "src/registry/ui/scroll-area/index.ts",
@@ -833,13 +796,13 @@
           "path": "src/registry/ui/scroll-area/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["@radix-ui/react-scroll-area"],
-      "registryDependencies": ["@kanpeki/cva"]
+      ]
     },
     {
       "name": "search-field",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/search-field/index.ts",
@@ -857,13 +820,13 @@
           "path": "src/registry/ui/search-field/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "select",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/select/index.ts",
@@ -881,13 +844,13 @@
           "path": "src/registry/ui/select/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "separator",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/separator/index.ts",
@@ -901,13 +864,13 @@
           "path": "src/registry/ui/separator/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "sheet",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components", "lucide-react"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/sheet/index.ts",
@@ -925,13 +888,20 @@
           "path": "src/registry/ui/sheet/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components", "lucide-react"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "sidebar",
       "type": "registry:ui",
+      "registryDependencies": [
+        "@kanpeki/use-is-mobile",
+        "@kanpeki/button",
+        "@kanpeki/input",
+        "@kanpeki/separator",
+        "@kanpeki/sheet",
+        "@kanpeki/skeleton",
+        "@kanpeki/tooltip"
+      ],
       "files": [
         {
           "path": "src/registry/ui/sidebar/index.tsx",
@@ -949,20 +919,12 @@
           "path": "src/registry/ui/sidebar/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": [
-        "@kanpeki/use-is-mobile",
-        "@kanpeki/button",
-        "@kanpeki/input",
-        "@kanpeki/separator",
-        "@kanpeki/sheet",
-        "@kanpeki/skeleton",
-        "@kanpeki/tooltip"
       ]
     },
     {
       "name": "skeleton",
       "type": "registry:ui",
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/skeleton/index.ts",
@@ -976,12 +938,13 @@
           "path": "src/registry/ui/skeleton/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "slider",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/slider/index.ts",
@@ -999,24 +962,24 @@
           "path": "src/registry/ui/slider/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "spinner",
       "type": "registry:ui",
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/spinner/index.tsx",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "switch",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/switch/index.ts",
@@ -1034,13 +997,12 @@
           "path": "src/registry/ui/switch/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "table",
       "type": "registry:ui",
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/table/index.ts",
@@ -1058,12 +1020,13 @@
           "path": "src/registry/ui/table/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "tabs",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/tabs/index.ts",
@@ -1081,13 +1044,13 @@
           "path": "src/registry/ui/tabs/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "textarea",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/textarea/index.ts",
@@ -1101,13 +1064,13 @@
           "path": "src/registry/ui/textarea/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "textfield",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/textfield/index.ts",
@@ -1121,24 +1084,24 @@
           "path": "src/registry/ui/textfield/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "toast",
       "type": "registry:ui",
+      "dependencies": ["sonner", "next-themes"],
       "files": [
         {
           "path": "src/registry/ui/toast/index.tsx",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["sonner", "next-themes"]
+      ]
     },
     {
       "name": "toggle",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/toggle/index.ts",
@@ -1152,13 +1115,13 @@
           "path": "src/registry/ui/toggle/styles.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
     },
     {
       "name": "toggle-group",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/toggle"],
       "files": [
         {
           "path": "src/registry/ui/toggle-group/index.ts",
@@ -1176,13 +1139,13 @@
           "path": "src/registry/ui/toggle-group/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/toggle"]
+      ]
     },
     {
       "name": "tooltip",
       "type": "registry:ui",
+      "dependencies": ["react-aria-components"],
+      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
       "files": [
         {
           "path": "src/registry/ui/tooltip/index.ts",
@@ -1200,9 +1163,28 @@
           "path": "src/registry/ui/tooltip/namespace.ts",
           "type": "registry:ui"
         }
-      ],
-      "dependencies": ["react-aria-components"],
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"]
+      ]
+    },
+    {
+      "name": "cva",
+      "type": "registry:lib",
+      "devDependencies": ["cva@beta", "tailwind-merge"],
+      "files": [
+        {
+          "path": "src/registry/lib/cva.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "use-is-mobile",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "src/registry/hooks/use-is-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
     },
     {
       "name": "accordion-demo",
@@ -1214,6 +1196,23 @@
           "type": "registry:example"
         }
       ]
+    },
+    {
+      "name": "custom-plugin",
+      "type": "registry:item",
+      "devDependencies": [
+        "tailwindcss-motion",
+        "tailwindcss-react-aria-components"
+      ],
+      "tailwind": {
+        "config": {
+          "plugins": ["tailwindcss-react-aria-components", "tailwindcss-motion"]
+        }
+      },
+      "css": {
+        "@plugin \"tailwindcss-react-aria-components\"": {},
+        "@plugin \"tailwindcss-motion\"": {}
+      }
     }
   ]
 }

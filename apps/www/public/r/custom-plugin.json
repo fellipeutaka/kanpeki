@@ -6,6 +6,14 @@
     "tailwindcss-motion",
     "tailwindcss-react-aria-components"
   ],
+  "tailwind": {
+    "config": {
+      "plugins": [
+        "tailwindcss-react-aria-components",
+        "tailwindcss-motion"
+      ]
+    }
+  },
   "css": {
     "@plugin \"tailwindcss-react-aria-components\"": {},
     "@plugin \"tailwindcss-motion\"": {}

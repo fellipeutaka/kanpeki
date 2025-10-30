@@ -4,42 +4,6 @@
 import { lazy } from "react";
 
 export const Index: Record<string, any> = {
-  "cva": {
-    name: "cva",
-    description: "",
-    type: "registry:lib",
-    registryDependencies: undefined,
-    files: [{
-      path: "src/registry/lib/cva.ts",
-      type: "registry:lib",
-      target: ""
-    }],
-    component: lazy(async () => {
-      const mod = await import("~/registry/lib/cva.ts")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cva"
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
-  "use-is-mobile": {
-    name: "use-is-mobile",
-    description: "",
-    type: "registry:hook",
-    registryDependencies: undefined,
-    files: [{
-      path: "src/registry/hooks/use-is-mobile.ts",
-      type: "registry:hook",
-      target: ""
-    }],
-    component: lazy(async () => {
-      const mod = await import("~/registry/hooks/use-is-mobile.ts")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "use-is-mobile"
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
   "accordion": {
     name: "accordion",
     description: "",
@@ -1513,6 +1477,42 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/ui/tooltip/index.ts")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tooltip"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "cva": {
+    name: "cva",
+    description: "",
+    type: "registry:lib",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/lib/cva.ts",
+      type: "registry:lib",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/lib/cva.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "cva"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "use-is-mobile": {
+    name: "use-is-mobile",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/hooks/use-is-mobile.ts",
+      type: "registry:hook",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/hooks/use-is-mobile.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "use-is-mobile"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
