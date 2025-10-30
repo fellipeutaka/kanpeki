@@ -9,6 +9,5 @@ import { ui } from "./ui/_registry";
 export const registry = {
   name: "kanpeki",
   homepage: "https://kanpeki.vercel.app",
-
   items: [...ui, ...lib, ...hooks, ...examples, ...styles],
 } satisfies Registry;

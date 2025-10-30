@@ -16,14 +16,7 @@ export const metadata: Metadata = {
   ],
   creator: "Fellipe Utaka",
   description: siteConfig.description,
-  keywords: [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Server Components",
-    "React Aria",
-    "Radix UI",
-  ],
+  keywords: siteConfig.keywords,
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     description: siteConfig.description,
