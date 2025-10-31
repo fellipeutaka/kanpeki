@@ -1680,4 +1680,130 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "typography-demo": {
+    name: "typography-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/typography"],
+    files: [{
+      path: "src/registry/examples/typography-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/typography-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "typography-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "typography-h1-demo": {
+    name: "typography-h1-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/typography"],
+    files: [{
+      path: "src/registry/examples/typography-h1-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/typography-h1-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "typography-h1-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "typography-h2-demo": {
+    name: "typography-h2-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/typography"],
+    files: [{
+      path: "src/registry/examples/typography-h2-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/typography-h2-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "typography-h2-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "typography-h3-demo": {
+    name: "typography-h3-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/typography"],
+    files: [{
+      path: "src/registry/examples/typography-h3-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/typography-h3-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "typography-h3-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "typography-h4-demo": {
+    name: "typography-h4-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/typography"],
+    files: [{
+      path: "src/registry/examples/typography-h4-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/typography-h4-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "typography-h4-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "typography-p-demo": {
+    name: "typography-p-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/typography"],
+    files: [{
+      path: "src/registry/examples/typography-p-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/typography-p-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "typography-p-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "typography-blockquote-demo": {
+    name: "typography-blockquote-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/typography"],
+    files: [{
+      path: "src/registry/examples/typography-blockquote-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/typography-blockquote-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "typography-blockquote-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   }

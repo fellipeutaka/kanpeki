@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography-h2-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/typography"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/typography-h2-demo.tsx",
+      "content": "export function TypographyH2() {\n  return <h2 className=\"heading-2\">The People of the Kingdom</h2>;\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

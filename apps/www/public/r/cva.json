@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "cva",
   "type": "registry:lib",
-  "devDependencies": [
+  "dependencies": [
     "cva@beta",
     "tailwind-merge"
   ],
