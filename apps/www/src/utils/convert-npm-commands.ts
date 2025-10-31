@@ -10,7 +10,7 @@ export function convertNpmCommands(npmCommand: string) {
 
   if (npmCommand?.startsWith("npx create-")) {
     return {
-      bun: npmCommand.replace("npx create-", "bun create"),
+      bun: npmCommand.replace("npx create-", "bun create "),
       npm: npmCommand,
       pnpm: npmCommand.replace("npx create-", "pnpm create "),
       yarn: npmCommand.replace("npx create-", "yarn create "),

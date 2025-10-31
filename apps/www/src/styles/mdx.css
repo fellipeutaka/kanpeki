@@ -26,6 +26,10 @@ figure[data-figure="code"] .line {
 
 .shiki.shiki-themes span {
     color: light-dark(var(--shiki-light), var(--shiki-dark)) !important;
+
+    &.highlighted-word {
+        background-color: hsla(213, 71%, 20%, 1);
+    }
 }
 
 .mdx>div:where([dir], [data-orientation]):first-child {

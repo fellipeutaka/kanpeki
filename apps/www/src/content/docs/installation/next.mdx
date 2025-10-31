@@ -17,19 +17,19 @@ You will be asked a few questions to create the project:
 
 ```bash
 ? What is your project named? » my-app
-? Would you like to use ESLint? » No / Yes
+? Which linter would you like to use? » Biome
 ? Would you like to customize the default import alias (@/*)? » No / Yes
 ```
 
 Currently, I prefer to use [Biome.js](https://biomejs.dev) instead of ESLint. You can use ESLint if you prefer.
 Also I prefer to use `~` as the alias. You can use `@` or any other alias if you prefer.
 
-### Run the CLI
+### Run the shadcn CLI
 
-Run the `kanpeki-ui` init command to setup your project:
+Run the `shadcn` init command to setup your project:
 
 ```bash
-npx kanpeki-ui@latest init
+npx shadcn@latest init
 ```
 
 ### Fonts
@@ -37,7 +37,7 @@ npx kanpeki-ui@latest init
 I use [Geist](https://vercel.com/font) as the default font.
 You can use any font you like.
 
-Here's how I configure Inter for Next.js:
+Here's how I configure Geist for Next.js:
 
 **1. Create a `font.ts` file inside `src/config`:**
 
@@ -45,22 +45,20 @@ Here's how I configure Inter for Next.js:
 import { Geist } from "next/font/google";
 
 const sans = Geist({
-  variable: "--font-family-sans",
   subsets: ["latin"],
+  variable: "--font-sans",
 });
 
-export const fonts = {
-  sans,
-};
+export const fonts = [sans.variable];
 ```
 
 **2. Import the font in the root layout:**
 
-```tsx title=app/layout.tsx {4,31}
+```tsx title=app/layout.tsx
 import "~/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
-import { fonts } from "~/config/fonts";
+import { fonts } from "~/config/fonts"; // [!code highlight]
 import { cx } from "cva";
 
 export const metadata: Metadata = {
@@ -83,13 +81,9 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cx(
-          "min-h-dvh bg-background font-sans text-foreground antialiased",
-          fonts.sans.variable
-        )}
-      >
+    // [!code word:cx(fonts)]
+    <html className={cx(fonts)} lang="en" suppressHydrationWarning>
+      <body>
         {children}
       </body>
     </html>
@@ -99,7 +93,7 @@ export default function Layout({ children }: LayoutProps) {
 
 **3. Configure `--font-sans` in `globals.css`**
 
-```ts title="globals.css" {9-10}
+```ts title="globals.css"
 @import "tailwindcss";
 
 @plugin "tailwindcss-react-aria-components";
@@ -107,14 +101,13 @@ export default function Layout({ children }: LayoutProps) {
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --font-sans: var(--font-family-sans), ui-sans-serif, system-ui, sans-serif,
+@theme inline {
+  // [!code word:var(--font-sans)]
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   ...
 }
-
-...
 ```
 
 ### App structure
@@ -180,12 +173,13 @@ npx shadcn@latest add @kanpeki/button
 
 The command above will add the `Button` component to your project. You can then import it like this:
 
-```tsx {1,6}
-import { Button } from "~/components/ui/button";
+```tsx
+import { Button } from "~/components/ui/button"; // [!code highlight]
 
 export default function Home() {
   return (
     <div>
+      {/* [!code highlight] */}
       <Button>Click me</Button>
     </div>
   );

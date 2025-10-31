@@ -10,7 +10,4 @@ const mono = Geist_Mono({
   variable: "--font-mono",
 });
 
-export const fonts = {
-  mono,
-  sans,
-};
+export const fonts = [sans.variable, mono.variable];

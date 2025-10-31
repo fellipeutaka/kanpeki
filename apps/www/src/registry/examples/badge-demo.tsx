@@ -8,13 +8,13 @@ export function BadgeDemo() {
       <div className="flex w-full flex-wrap gap-2">
         <Badge>Badge</Badge>
         <Badge variant="secondary">Secondary</Badge>
-        <Badge variant="danger">Destructive</Badge>
+        <Badge variant="destructive">Destructive</Badge>
         <Badge variant="outline">Outline</Badge>
         <Badge variant="outline">
           <CheckIcon />
           Badge
         </Badge>
-        <Badge variant="danger">
+        <Badge variant="destructive">
           <AlertCircleIcon />
           Alert
         </Badge>
@@ -23,7 +23,7 @@ export function BadgeDemo() {
         </Badge>
         <Badge
           className="h-5 min-w-5 rounded-full px-1 font-mono tabular-nums"
-          variant="danger"
+          variant="destructive"
         >
           99
         </Badge>
@@ -41,7 +41,7 @@ export function BadgeDemo() {
         <a className={BadgeStyles({ variant: "secondary" })} href="/">
           Link <ArrowRightIcon />
         </a>
-        <a className={BadgeStyles({ variant: "danger" })} href="/">
+        <a className={BadgeStyles({ variant: "destructive" })} href="/">
           Link <ArrowRightIcon />
         </a>
         <a className={BadgeStyles({ variant: "outline" })} href="/">
