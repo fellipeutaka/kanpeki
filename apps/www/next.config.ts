@@ -26,7 +26,7 @@ const config: NextConfig = {
       source: "/docs/components",
     },
     {
-      destination: "https://kanpeki-storybook.vercel.app",
+      destination: siteConfig.links.storybook,
       permanent: false,
       source: "/storybook",
     },
