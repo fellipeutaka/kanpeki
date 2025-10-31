@@ -101,6 +101,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "calendar-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/calendar"],
+    files: [
+      {
+        path: "src/registry/examples/calendar-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-range-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/calendar"],
+    files: [
+      {
+        path: "src/registry/examples/calendar-range-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "typography-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/typography"],

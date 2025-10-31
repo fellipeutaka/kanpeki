@@ -1680,6 +1680,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "calendar-demo": {
+    name: "calendar-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/calendar"],
+    files: [{
+      path: "src/registry/examples/calendar-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/calendar-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "calendar-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "calendar-range-demo": {
+    name: "calendar-range-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/calendar"],
+    files: [{
+      path: "src/registry/examples/calendar-range-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/calendar-range-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "calendar-range-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "typography-demo": {
     name: "typography-demo",
     description: "",
