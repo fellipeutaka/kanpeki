@@ -33,7 +33,7 @@ Kanpeki uses modern tools that improve developer experience:
 
 ### CVA Beta (Class Variance Authority)
 
-Instead of the old `class-variance-authority` package, we use the new beta version simply called `cva`. This new version addresses one of the biggest complaints: the name was just too long.
+Instead of the old `class-variance-authority` package, we use the new beta version simply called [`cva`](https://beta.cva.style/). This new version addresses one of the biggest complaints: the name was just too long.
 
 **Key improvements:**
 
@@ -62,10 +62,10 @@ export function cn(...inputs: ClassValue[]) {
 ```
 
 - **New features:**
-  - `compose` - Shallow merge multiple cva components
-  - `defineConfig` - Extend cva globally
-  - Cleaner API with single parameter (base styles via `base` property)
-  - Better TypeScript support
+  - [`compose`](https://beta.cva.style/getting-started/composing-components) - Shallow merge multiple `cva` components
+  - [`defineConfig`](https://beta.cva.style/api-reference#defineconfig) - Generate `cva`, `cx` and `compose` functions based on your preferred configuration
+  - [Cleaner API with single parameter (base styles via `base` property)](https://beta.cva.style/getting-started/whats-new#2-cva-now-accepts-a-single-parameter)
+  - [Better TypeScript support](https://beta.cva.style/getting-started/whats-new#4-clearer-type-guards)
 
 This is why Kanpeki doesn't need `class-variance-authority` or `clsx`.
 
