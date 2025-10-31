@@ -25,4 +25,13 @@ export function convertNpmCommands(npmCommand: string) {
       yarn: npmCommand,
     };
   }
+
+  if (npmCommand?.startsWith("npm remove")) {
+    return {
+      bun: npmCommand.replace("npm remove", "bun remove"),
+      npm: npmCommand,
+      pnpm: npmCommand.replace("npm remove", "pnpm remove"),
+      yarn: npmCommand.replace("npm remove", "yarn remove"),
+    };
+  }
 }

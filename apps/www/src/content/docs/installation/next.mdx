@@ -32,16 +32,61 @@ Run the `shadcn` init command to setup your project:
 npx shadcn@latest init
 ```
 
-### Fonts
+### Remove unused shadcn packages
+
+Kanpeki uses modern tooling instead of shadcn's defaults. Remove packages you won't need:
+
+```bash
+npm remove class-variance-authority clsx tw-animate-css
+```
+
+**Why?** Kanpeki uses [CVA beta](/introduction#cva-beta-class-variance-authority) and [tailwindcss-motion](/introduction#tailwind-css-motion) instead. See the [introduction](/docs/introduction#modern-tooling) for details.
+
+**Delete these files:**
+- `src/lib/utils.ts` (optional - keep if you have other utilities)
+
+**Remove this import from `src/styles/globals.css`:**
+
+```css title="globals.css"
+@import "tailwindcss";
+@import "tw-animate-css"; /* [!code --] */
+```
+
+### That's it ✨
+
+You can now start adding components to your project.
+
+```bash
+npx shadcn@latest add @kanpeki/button
+```
+
+The command above will add the `Button` component to your project. You can then import it like this:
+
+```tsx
+import { Button } from "~/components/ui/button"; // [!code highlight]
+
+export default function Home() {
+  return (
+    <div>
+      {/* [!code highlight] */}
+      <Button>Click me</Button>
+    </div>
+  );
+}
+```
+
+</Steps>
+
+### Fonts (optional)
 
 I use [Geist](https://vercel.com/font) as the default font.
 You can use any font you like.
 
 Here's how I configure Geist for Next.js:
 
-**1. Create a `font.ts` file inside `src/config`:**
+**1. Create a `fonts.ts` file inside `src/config`:**
 
-```ts title=font.ts
+```ts title=fonts.ts
 import { Geist } from "next/font/google";
 
 const sans = Geist({
@@ -162,28 +207,3 @@ Here's how I structure my Next.js apps. You can use this as a reference:
 - I place the UI components in the `src/components/ui` folder.
 - The `lib` folder contains configuration for external libraries.
 - The `styles` folder contains the global CSS.
-
-### That's it ✨
-
-You can now start adding components to your project.
-
-```bash
-npx shadcn@latest add @kanpeki/button
-```
-
-The command above will add the `Button` component to your project. You can then import it like this:
-
-```tsx
-import { Button } from "~/components/ui/button"; // [!code highlight]
-
-export default function Home() {
-  return (
-    <div>
-      {/* [!code highlight] */}
-      <Button>Click me</Button>
-    </div>
-  );
-}
-```
-
-</Steps>
