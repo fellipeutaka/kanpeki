@@ -43,7 +43,11 @@ Instead of the old `class-variance-authority` package, we use the new beta versi
 import { defineConfig } from "cva";
 import { twMerge } from "tailwind-merge";
 
-export const { cva, cx: cn, compose } = defineConfig({
+export const {
+  cva,
+  cx: cn,
+  compose,
+} = defineConfig({
   hooks: {
     onComplete: (className) => twMerge(className),
   },

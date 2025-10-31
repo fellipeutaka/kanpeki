@@ -73,5 +73,9 @@ function DocsLinkIcon({ link }: DocsLinkIconProps) {
     return <Icons.RadixUI className="size-3" />;
   }
 
+  if (link.startsWith("https://ui.shadcn.com")) {
+    return <Icons.Shadcn className="size-3" />;
+  }
+
   return null;
 }
