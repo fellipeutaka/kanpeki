@@ -17,15 +17,15 @@ const footerLinks: {
   {
     links: [
       {
-        href: "https://github.com/fellipeutaka/kanpeki/issues/new",
+        href: `${siteConfig.links.github}/issues/new`,
         title: "Open an issue",
       },
       {
-        href: "https://github.com/fellipeutaka/kanpeki/discussions/new?category=ideas",
+        href: `${siteConfig.links.github}/discussions/new?category=ideas`,
         title: "Request a feature",
       },
       {
-        href: "https://github.com/fellipeutaka/kanpeki/discussions/new?category=requests",
+        href: `${siteConfig.links.github}/discussions/new?category=requests`,
         title: "Request an element",
       },
     ],

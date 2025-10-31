@@ -1,5 +1,6 @@
 import { createMDX } from "fumadocs-mdx/next";
 import type { NextConfig } from "next";
+import { siteConfig } from "~/config/site";
 
 const withMDX = createMDX();
 
@@ -10,8 +11,8 @@ const config: NextConfig = {
   reactStrictMode: true,
   redirects: async () => [
     {
-      destination: "https://github.com/fellipeutaka/kanpeki",
-      permanent: false,
+      destination: siteConfig.links.github,
+      permanent: true,
       source: "/github",
     },
     {

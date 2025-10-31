@@ -4,6 +4,7 @@ export const siteConfig = {
   links: {
     github: "https://github.com/fellipeutaka/kanpeki",
     twitter: "https://twitter.com/fellipeutaka",
+    storybook: "https://kanpeki-storybook.vercel.app",
   },
   name: "Kanpeki",
   ogImage: "https://kanpeki.vercel.app/og.jpg",
