@@ -104,12 +104,13 @@ Use a custom component as `children` for `<BreadcrumbSeparator />{:tsx}` to crea
 
 <ComponentPreview name="breadcrumb-custom-separator" />
 
-```tsx {2,6-8}
+```tsx
 import { Breadcrumb } from "~/components/ui/breadcrumb";
-import { Icons } from "~/components/icons";
+import { SlashIcon } from "lucide-react"; // [!code highlight]
 
 <Breadcrumb.Root>
   {/* ... */}
+  {/* [!code highlight:3] */}
   <Breadcrumb.Separator>
     <Icons.Slash className="size-4" />
   </Breadcrumb.Separator>
@@ -123,12 +124,12 @@ You can compose `<BreadcrumbItem />{:tsx}` with a `<DropdownMenu />{:tsx}` to cr
 
 <ComponentPreview name="breadcrumb-dropdown" />
 
-```tsx {1-5,10-22}
-import { Button } from "react-aria-components";
-import { Breadcrumb } from "~/components/ui/breadcrumb";
-import { DropdownMenu } from "~/components/ui/dropdown-menu";
-import { LinkStyles } from "~/components/ui/link";
-import { Popover } from "~/components/ui/popover";
+```tsx
+import { Button } from "react-aria-components"; // [!code highlight]
+import { Breadcrumb } from "~/components/ui/breadcrumb"; // [!code highlight]
+import { DropdownMenu } from "~/components/ui/dropdown-menu"; // [!code highlight]
+import { LinkStyles } from "~/components/ui/link"; // [!code highlight]
+import { Popover } from "~/components/ui/popover"; // [!code highlight]
 
 <Breadcrumb.Root>
   {/* ... */}
@@ -157,12 +158,13 @@ There's a `<BreadcrumbEllipsis />{:tsx}` component to show a collapsed state whe
 
 <ComponentPreview name="breadcrumb-collapsed" />
 
-```tsx {1,6}
-import { Breadcrumb } from "~/components/ui/breadcrumb";
+```tsx
+import { Breadcrumb } from "~/components/ui/breadcrumb"; // [!code highlight]
 
 <Breadcrumb.Root>
   {/* ... */}
   <Breadcrumb.Item>
+    {/* [!code highlight] */}
     <Breadcrumb.Ellipsis className="size-4" />
   </Breadcrumb.Item>
   {/* ... */}

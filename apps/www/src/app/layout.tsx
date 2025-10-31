@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
 
+import { cx } from "cva";
 import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "~/components/site-footer";
 import { SiteHeader } from "~/components/site-header";
@@ -60,11 +61,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <html
-      className={`${fonts.sans.variable} ${fonts.mono.variable}`}
-      lang="en"
-      suppressHydrationWarning
-    >
+    <html className={cx(fonts)} lang="en" suppressHydrationWarning>
       <body className="grid min-h-dvh grid-rows-[auto_1fr_auto] font-sans">
         <Providers>
           <SiteHeader />

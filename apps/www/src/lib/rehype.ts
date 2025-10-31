@@ -1,3 +1,7 @@
+import {
+  transformerNotationHighlight,
+  transformerNotationWordHighlight,
+} from "@shikijs/transformers";
 import type { RehypeCodeOptions } from "fumadocs-core/mdx-plugins";
 import { rehypeCodeDefaultOptions } from "fumadocs-core/mdx-plugins";
 import { vercelDarkTheme } from "~/styles/vercel-dark";
@@ -14,5 +18,7 @@ export const rehypeCodeOptions: RehypeCodeOptions = {
   transformers: [
     ...(rehypeCodeDefaultOptions.transformers ?? []),
     transformerNpmCommands(),
+    transformerNotationHighlight(),
+    transformerNotationWordHighlight(),
   ],
 };

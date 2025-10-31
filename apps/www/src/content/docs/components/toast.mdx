@@ -33,13 +33,13 @@ npx shadcn@latest add @kanpeki/toast
 
 <Step>Add the Toaster component</Step>
 
-```tsx title="src/app/providers.tsx" {6,32}
+```tsx title="src/app/providers.tsx"
 "use client";
 
 import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/navigation";
 import { RouterProvider } from "react-aria-components";
-import { Toaster } from "~/components/ui/toast";
+import { Toaster } from "~/components/ui/toast"; // [!code highlight]
 
 declare module "react-aria-components" {
   interface RouterConfig {
@@ -65,6 +65,7 @@ export function Providers({ children }: ProvidersProps) {
     >
       <RouterProvider navigate={router.push}>
         {children}
+        {/* [!code highlight] */}
         <Toaster />
       </RouterProvider>
     </ThemeProvider>
@@ -81,7 +82,7 @@ export function Providers({ children }: ProvidersProps) {
 ## Usage
 
 ```tsx
-import { toast } from "~/components/ui/toast";
+import { toast } from "sonner";
 ```
 
 ```tsx
