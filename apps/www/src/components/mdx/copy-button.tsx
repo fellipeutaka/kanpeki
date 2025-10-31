@@ -21,7 +21,7 @@ export function CopyButton({ text, className, ...props }: CopyButtonProps) {
     <Button
       aria-label="Copy code to clipboard"
       className={cx(
-        "size-8 bg-secondary opacity-0 hover:bg-background focus-visible:opacity-100 group-hover:opacity-100",
+        "size-8 opacity-0 backdrop-blur-lg focus-visible:opacity-100 group-hover:opacity-100",
         className
       )}
       onPress={() => copy({ text })}

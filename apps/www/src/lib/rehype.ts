@@ -1,4 +1,5 @@
 import {
+  transformerNotationDiff,
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
@@ -20,5 +21,7 @@ export const rehypeCodeOptions: RehypeCodeOptions = {
     transformerNpmCommands(),
     transformerNotationHighlight(),
     transformerNotationWordHighlight(),
+    transformerNotationDiff(),
   ],
+  defaultColor: false,
 };

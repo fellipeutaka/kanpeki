@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-secondary-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/badge"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/badge-secondary-demo.tsx",
+      "content": "import { Badge } from \"~/registry/ui/badge\";\n\nexport function BadgeSecondaryDemo() {\n  return <Badge variant=\"secondary\">Badge</Badge>;\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

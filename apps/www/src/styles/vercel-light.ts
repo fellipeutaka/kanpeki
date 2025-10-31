@@ -118,21 +118,21 @@ export const vercelLightTheme: ThemeRegistration = {
         "brackethighlighter.quote",
       ],
       settings: {
-        foreground: "#ededed",
+        foreground: "#171717",
       },
     },
     {
       scope: "markup.italic",
       settings: {
         fontStyle: "italic",
-        foreground: "#ededed",
+        foreground: "#171717",
       },
     },
     {
       scope: "markup.bold",
       settings: {
         fontStyle: "bold",
-        foreground: "#ededed",
+        foreground: "#171717",
       },
     },
     {
@@ -159,7 +159,7 @@ export const vercelLightTheme: ThemeRegistration = {
         "token.error-token",
       ],
       settings: {
-        foreground: "#f75f8f",
+        foreground: "#c41562",
       },
     },
     {

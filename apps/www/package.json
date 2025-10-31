@@ -8,6 +8,9 @@
     "url": "https://github.com/fellipeutaka/kanpeki.git",
     "directory": "apps/www"
   },
+  "browserslist": [
+    "baseline newly available"
+  ],
   "scripts": {
     "postinstall": "fumadocs-mdx",
     "dev": "next dev --turbopack",

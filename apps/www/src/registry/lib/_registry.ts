@@ -10,6 +10,6 @@ export const lib: Registry["items"] = [
         type: "registry:lib",
       },
     ],
-    devDependencies: ["cva@beta", "tailwind-merge"],
+    dependencies: ["cva@beta", "tailwind-merge"],
   },
 ];

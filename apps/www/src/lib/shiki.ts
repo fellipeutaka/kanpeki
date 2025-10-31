@@ -28,7 +28,7 @@ export function transformerNpmCommands(): ShikiTransformer {
 
 export async function highlightCode(code: string, language = "tsx") {
   const highlighter = await getSingletonHighlighter({
-    langs: ["typescript", "tsx", "css", "json", "bash"],
+    langs: ["typescript", "tsx"],
   });
 
   const html = highlighter.codeToHtml(code.trimEnd(), {

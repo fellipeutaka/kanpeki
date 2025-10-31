@@ -10,34 +10,60 @@ figure[data-figure="code"] .line {
 
     &.highlighted {
         position: relative;
-        background-color: hsla(213, 71%, 20%, 1);
+        background-color: light-dark(oklch(0.96 0.02 253.46), oklch(0.31 0.08 255.38));
 
         &::before {
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 2px;
+            inset: 0;
+            color: oklch(0.72 0.15 250.78);
             content: "";
-            background: hsla(210, 100%, 66%, 1);
+            border-inline-start: 2px solid currentColor;
+        }
+    }
+
+    &.diff.add {
+        position: relative;
+        background-color: light-dark(oklch(1 0.11 145.96), oklch(0.4 0.11 145.96));
+
+        &::before {
+            position: absolute;
+            inset: 0;
+            padding-inline-start: 1px;
+            color: light-dark(oklch(0.5 0.24 145.57), oklch(0.88 0.24 145.57));
+            content: "+";
+            border-inline-start: 2px solid currentColor;
+        }
+    }
+
+    &.diff.remove {
+        position: relative;
+        background-color: light-dark(oklch(1 0.1 26.14), oklch(0.3 0.1 26.14));
+
+        &::before {
+            position: absolute;
+            inset: 0;
+            padding-inline-start: 1px;
+            color: oklch(0.68 0.21 24.69);
+            content: "-";
+            border-inline-start: 2px solid currentColor;
         }
     }
 }
 
 .shiki.shiki-themes span {
-    color: light-dark(var(--shiki-light), var(--shiki-dark)) !important;
+    color: light-dark(var(--shiki-light), var(--shiki-dark));
 
     &.highlighted-word {
-        background-color: hsla(213, 71%, 20%, 1);
+        background-color: light-dark(oklch(0.96 0.02 253.46), oklch(0.31 0.08 255.38));
     }
 }
 
 .mdx>div:where([dir], [data-orientation]):first-child {
-    margin-top: 0;
+    margin-block-start: 0;
 }
 
 .mdx>.steps:first-child>h3:first-child {
-    margin-top: 0;
+    margin-block-start: 0;
 }
 
 .mdx .steps> :where(h2, h3) {
@@ -53,15 +79,12 @@ figure[data-figure="code"] .line {
         place-content: center;
         width: 2.25rem;
         height: 2.25rem;
-        margin-top: -0.25rem;
-        margin-left: -50px;
+        margin-block-start: -0.25rem;
+        margin-inline-start: -50px;
         font-family: var(--font-mono);
         font-weight: 300;
-        text-indent: -1px;
         content: counter(step);
         background-color: var(--color-muted);
-        border-color: var(--color-background);
-        border-width: 4px;
         border-radius: calc(infinity * 1px);
     }
 }

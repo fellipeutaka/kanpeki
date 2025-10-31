@@ -1242,6 +1242,50 @@
       ]
     },
     {
+      "name": "badge-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/badge"],
+      "files": [
+        {
+          "path": "src/registry/examples/badge-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-destructive-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/badge"],
+      "files": [
+        {
+          "path": "src/registry/examples/badge-destructive-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-outline-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/badge"],
+      "files": [
+        {
+          "path": "src/registry/examples/badge-outline-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-secondary-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/badge"],
+      "files": [
+        {
+          "path": "src/registry/examples/badge-secondary-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "custom-plugin",
       "type": "registry:item",
       "devDependencies": [
