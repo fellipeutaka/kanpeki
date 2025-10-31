@@ -9,7 +9,7 @@ description: Install and configure Next.js.
 
 Start by creating a new Next.js project using `create-next-app`:
 
-```bash
+```bash title="Terminal"
 npx create-next-app@latest --tailwind --ts --empty --app --src-dir --turbopack
 ```
 
@@ -93,7 +93,7 @@ export default function Layout({ children }: LayoutProps) {
 
 **3. Configure `--font-sans` in `globals.css`**
 
-```ts title="globals.css"
+```css title="globals.css"
 @import "tailwindcss";
 
 @plugin "tailwindcss-react-aria-components";
@@ -134,11 +134,11 @@ Here's how I structure my Next.js apps. You can use this as a reference:
           <File name="namespace.ts" />
           <File name="styles.ts" />
         </Folder>
-        <Folder name="Tabs.s">
+        <Folder name="tabs">
           <File name="index.ts" />
           <File name="namespace.ts" />
           <File name="styles.ts" />
-          <File name="Tabs.s.tsx" />
+          <File name="tabs.tsx" />
         </Folder>
       </Folder>
     </Folder>

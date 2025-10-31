@@ -25,7 +25,7 @@ figure[data-figure="code"] .line {
 }
 
 .shiki.shiki-themes span {
-    color: light-dark(var(--shiki-light), var(--shiki-dark)) !important;
+    color: light-dark(var(--shiki-light), var(--shiki-dark));
 
     &.highlighted-word {
         background-color: hsla(213, 71%, 20%, 1);

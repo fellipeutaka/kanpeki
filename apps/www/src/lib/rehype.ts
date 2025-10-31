@@ -21,4 +21,5 @@ export const rehypeCodeOptions: RehypeCodeOptions = {
     transformerNotationHighlight(),
     transformerNotationWordHighlight(),
   ],
+  defaultColor: false,
 };

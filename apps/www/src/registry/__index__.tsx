@@ -1608,4 +1608,76 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "badge-demo": {
+    name: "badge-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/badge"],
+    files: [{
+      path: "src/registry/examples/badge-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/badge-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "badge-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "badge-destructive-demo": {
+    name: "badge-destructive-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/badge"],
+    files: [{
+      path: "src/registry/examples/badge-destructive-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/badge-destructive-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "badge-destructive-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "badge-outline-demo": {
+    name: "badge-outline-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/badge"],
+    files: [{
+      path: "src/registry/examples/badge-outline-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/badge-outline-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "badge-outline-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "badge-secondary-demo": {
+    name: "badge-secondary-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/badge"],
+    files: [{
+      path: "src/registry/examples/badge-secondary-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/badge-secondary-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "badge-secondary-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   }
