@@ -27,6 +27,7 @@ bun run dev              # Start Next.js dev server with Turbopack
 bun run build            # Build the Next.js site
 bun run type-check       # Type check the www app
 bun run postinstall      # Process MDX files (runs automatically after install)
+bun run registry:build   # Build component registry (runs shadcn build)
 ```
 
 ## Code Quality Tools
@@ -61,9 +62,9 @@ Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
 Example:
 ```
-feat(auth): add user authentication
+feat(www): add command menu
 
-Added user authentication using JWT for secure access.
+Added command menu for search docs.
 ```
 
 ## Architecture
@@ -77,35 +78,42 @@ This is a Turborepo monorepo with workspaces:
 ### Component Registry System
 The heart of Kanpeki is the **registry system** located in `apps/www/src/registry/`:
 
-- `registry/default/` - The default component registry with:
-  - `ui/` - Actual UI component implementations (accordion, alert, button, calendar, etc.)
-  - `lib/` - Shared utilities and helpers
-  - `hooks/` - React hooks
-  - `demos/` - Demo/example components shown in documentation
+- `ui/` - UI component implementations (50+ components: accordion, alert, avatar, badge, button, calendar, card, carousel, checkbox, combobox, dialog, drawer, form, input, menu, pagination, popover, select, sidebar, table, tabs, tooltip, etc.)
+- `lib/` - Shared utilities and helpers
+- `hooks/` - React hooks
+- `examples/` - Component examples/demos shown in documentation
+- `styles/` - Registry styles
 
 This registry allows users to copy/paste individual components into their projects rather than installing as an npm package.
 
 ### Documentation Architecture (apps/www)
 Built with Fumadocs for MDX-based documentation:
 
-- `src/content/docs/` - MDX documentation files organized by topic:
-  - `components/` - Component documentation pages
-  - `introduction.mdx`, `installation.mdx`, etc. - Getting started guides
+- `src/content/docs/` - MDX documentation files:
+  - `components/` - Component docs (30+ pages)
+  - `installation/` - Installation guides
+  - `dark-mode/` - Theme guides
+  - `introduction.mdx`, `typography.mdx` - Getting started guides
 - `src/app/` - Next.js App Router pages
 - `src/components/` - Site-specific components (header, footer, etc.)
-- `src/demos/` - Component demonstrations (100+ demo files)
+- `src/registry/` - Component registry (see Component Registry System section)
 - `src/lib/` - Utility functions and shared logic
 - `src/styles/` - Global styles and Tailwind configuration
 - `src/utils/` - Helper utilities
+- `src/hooks/` - Site-specific React hooks
+- `src/config/` - Site configuration
+- `src/scripts/` - Build and utility scripts
 
 ### Key Technologies
-- **React 19** with Server Components
+- **React 19.2** with Server Components
 - **Next.js 16** with App Router and Turbopack
 - **React Aria Components** - Accessible component primitives
-- **Tailwind CSS 4** - Utility-first styling
-- **Fumadocs** - MDX documentation framework
-- **CVA** (Class Variance Authority) - Component variants
-- **Biome** - Fast linter/formatter (replaces ESLint/Prettier)
+- **Tailwind CSS 4.1** - Utility-first styling
+- **Fumadocs 16** - MDX documentation framework
+- **CVA beta** (Class Variance Authority) - Component variants
+- **Biome 2.3** - Fast linter/formatter (replaces ESLint/Prettier)
+- **Shiki 3** - Syntax highlighting
+- **Turbo 2.5** - Monorepo build system
 
 ### Styling Patterns
 Components use:
@@ -116,20 +124,23 @@ Components use:
 - `tailwindcss-motion` for animations
 
 ### Data Fetching & State
-- TanStack Query for server state management
-- React Hook Form + TanStack Form for form handling
-- Zod for schema validation
+- **TanStack Query 5** for server state management
+- **React Hook Form 7** for form handling
+- **TanStack Form** for advanced form features
+- **Zod 4** for schema validation
+- **@hookform/resolvers** for form validation integration
 
 ## Working with Components
 
 When creating or modifying components:
-1. Place UI components in `apps/www/src/registry/default/ui/`
-2. Create corresponding demos in `apps/www/src/demos/`
+1. Place UI components in `apps/www/src/registry/ui/`
+2. Create corresponding examples in `apps/www/src/registry/examples/`
 3. Add documentation in `apps/www/src/content/docs/components/`
-4. Follow the existing component patterns (React Aria + Tailwind + CVA)
+4. Follow existing component patterns (React Aria + Tailwind + CVA)
 5. Ensure accessibility with React Aria Components
 6. Use kebab-case for file names
 7. Export named exports (no default exports)
+8. Run `bun run registry:build` to rebuild registry after changes
 
 ## TypeScript Configuration
 
