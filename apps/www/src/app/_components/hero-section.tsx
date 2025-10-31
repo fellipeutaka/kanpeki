@@ -1,6 +1,7 @@
 import { ChevronRightIcon, SparklesIcon } from "lucide-react";
 import { Icons } from "~/components/icons";
 import { siteConfig } from "~/config/site";
+import { Badge } from "~/registry/ui/badge";
 import { LinkButton } from "~/registry/ui/link-button";
 import { HeroIllustration } from "./hero-illustration";
 
@@ -42,37 +43,52 @@ export function HeroSection() {
             GitHub
           </LinkButton>
         </div>
-        <div className="flex flex-wrap gap-8 pt-6">
+        <div className="flex flex-wrap gap-2 pt-6">
           <a href="https://react.dev" rel="noopener noreferrer" target="_blank">
-            <Icons.React className="size-10" />
+            <Badge className="px-4 py-2" variant="outline">
+              <Icons.React className="size-5" />
+              React
+            </Badge>
           </a>
           <a
             href="https://www.typescriptlang.org"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Icons.TypeScript className="size-10" />
+            <Badge className="px-4 py-2" variant="outline">
+              <Icons.TypeScript className="size-5" />
+              TypeScript
+            </Badge>
           </a>
           <a
             href="https://tailwindcss.com"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Icons.TailwindCSS className="size-10" />
+            <Badge className="px-4 py-2" variant="outline">
+              <Icons.TailwindCSS className="size-5" />
+              Tailwind CSS
+            </Badge>
           </a>
           <a
             href="https://react-spectrum.adobe.com/react-aria/hooks.html"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Icons.Adobe className="size-10 text-red-600" />
+            <Badge className="px-4 py-2" variant="outline">
+              <Icons.Adobe className="size-5 text-red-600" />
+              Adobe
+            </Badge>
           </a>
           <a
             href="https://www.radix-ui.com"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Icons.RadixUI className="size-10" />
+            <Badge className="px-4 py-2" variant="outline">
+              <Icons.RadixUI className="size-5" />
+              Radix UI
+            </Badge>
           </a>
           <a
             aria-label="Motion"
@@ -80,7 +96,10 @@ export function HeroSection() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Icons.Motion className="size-10" />
+            <Badge className="px-4 py-2" variant="outline">
+              <Icons.Motion className="size-5" />
+              Motion
+            </Badge>
           </a>
         </div>
       </div>

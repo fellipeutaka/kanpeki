@@ -110,10 +110,10 @@ export function FeatureSection() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {features.map((feature) => (
           <Card.Root key={feature.title}>
-            <Card.Header className="flex-row items-center gap-2">
-              <div className="grid place-content-center rounded-full bg-secondary/80 p-2">
+            <Card.Header className="flex items-center gap-2">
+              <Card.Action className="grid place-content-center rounded-full bg-secondary/80 p-2">
                 {feature.icon}
-              </div>
+              </Card.Action>
 
               <Card.Title>{feature.title}</Card.Title>
             </Card.Header>
