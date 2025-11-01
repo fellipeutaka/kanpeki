@@ -26,12 +26,9 @@ I use the `~` alias. This is how I configure it in tsconfig.json:
 ```json title="tsconfig.json"
 {
   "compilerOptions": {
-    "baseUrl": ".", // [!code highlight]
-    // [!code highlight]
-    "paths": {
-      // [!code highlight]
-      "~/*": ["./src/*"]
-    } // [!code highlight]
+    "paths": {// [!code highlight]
+      "~/*": ["./src/*"]// [!code highlight]
+    }// [!code highlight]
   }
 }
 ```

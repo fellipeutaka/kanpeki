@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/calendar-demo.tsx",
+      "content": "\"use client\";\n\nimport { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport { Button } from \"~/registry/ui/button/button\";\nimport { Calendar } from \"~/registry/ui/calendar\";\n\nexport function CalendarDemo() {\n  return (\n    <Calendar.Root variant=\"outline\">\n      <Calendar.Header>\n        <Calendar.Nav>\n          <Button\n            className=\"size-8 text-muted-foreground sm:size-7\"\n            size=\"icon\"\n            slot=\"previous\"\n            variant=\"outline\"\n          >\n            <ChevronLeftIcon className=\"size-4\" />\n          </Button>\n\n          <Calendar.Month />\n\n          <Button\n            className=\"size-8 text-muted-foreground sm:size-7\"\n            size=\"icon\"\n            slot=\"next\"\n            variant=\"outline\"\n          >\n            <ChevronRightIcon className=\"size-4\" />\n          </Button>\n        </Calendar.Nav>\n      </Calendar.Header>\n\n      <Calendar.Grid weekdayStyle=\"short\">\n        <Calendar.GridHeader>\n          {(weekDay) => <Calendar.HeaderCell>{weekDay}</Calendar.HeaderCell>}\n        </Calendar.GridHeader>\n\n        <Calendar.GridBody>\n          {(date) => <Calendar.Cell date={date} shape=\"rounded\" />}\n        </Calendar.GridBody>\n      </Calendar.Grid>\n    </Calendar.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

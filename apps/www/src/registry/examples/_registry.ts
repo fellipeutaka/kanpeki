@@ -101,6 +101,72 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "calendar-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/calendar"],
+    files: [
+      {
+        path: "src/registry/examples/calendar-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "calendar-range-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/calendar"],
+    files: [
+      {
+        path: "src/registry/examples/calendar-range-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tooltip-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tooltip"],
+    files: [
+      {
+        path: "src/registry/examples/tooltip-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tooltip-hover-card-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tooltip"],
+    files: [
+      {
+        path: "src/registry/examples/tooltip-hover-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tooltip-positions-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tooltip"],
+    files: [
+      {
+        path: "src/registry/examples/tooltip-positions-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tooltip-with-arrow-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tooltip"],
+    files: [
+      {
+        path: "src/registry/examples/tooltip-with-arrow-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "typography-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/typography"],

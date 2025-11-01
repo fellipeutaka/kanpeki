@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-range-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/calendar"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/calendar-range-demo.tsx",
+      "content": "\"use client\";\n\nimport { getLocalTimeZone, today } from \"@internationalized/date\";\nimport { ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport { Button } from \"~/registry/ui/button/button\";\nimport { Calendar } from \"~/registry/ui/calendar\";\n\nexport function CalendarRangeDemo() {\n  return (\n    <Calendar.Range\n      isDateUnavailable={(date) => date.compare(today(getLocalTimeZone())) > 0}\n      variant=\"outline\"\n      visibleDuration={{ months: 2 }}\n    >\n      <Calendar.Header>\n        <Calendar.Nav>\n          <Button\n            className=\"size-8 text-muted-foreground sm:size-7\"\n            size=\"icon\"\n            slot=\"previous\"\n            variant=\"outline\"\n          >\n            <ChevronLeftIcon className=\"size-4\" />\n          </Button>\n\n          <Calendar.Month />\n\n          <Button\n            className=\"size-8 text-muted-foreground sm:size-7\"\n            size=\"icon\"\n            slot=\"next\"\n            variant=\"outline\"\n          >\n            <ChevronRightIcon className=\"size-4\" />\n          </Button>\n        </Calendar.Nav>\n      </Calendar.Header>\n\n      <div className=\"flex gap-2\">\n        <Calendar.Grid weekdayStyle=\"short\">\n          <Calendar.GridHeader>\n            {(weekDay) => <Calendar.HeaderCell>{weekDay}</Calendar.HeaderCell>}\n          </Calendar.GridHeader>\n\n          <Calendar.GridBody>\n            {(date) => <Calendar.Cell date={date} />}\n          </Calendar.GridBody>\n        </Calendar.Grid>\n\n        <Calendar.Grid offset={{ months: 1 }} weekdayStyle=\"short\">\n          <Calendar.GridHeader>\n            {(weekDay) => <Calendar.HeaderCell>{weekDay}</Calendar.HeaderCell>}\n          </Calendar.GridHeader>\n\n          <Calendar.GridBody>\n            {(date) => <Calendar.Cell date={date} />}\n          </Calendar.GridBody>\n        </Calendar.Grid>\n      </div>\n    </Calendar.Range>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

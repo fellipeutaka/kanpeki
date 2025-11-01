@@ -39,15 +39,27 @@ export function TooltipRoot({
 }
 
 export interface TooltipContentProps
-  extends React.ComponentProps<typeof Tooltip> {}
+  extends React.ComponentProps<typeof Tooltip> {
+  /**
+   * The additional offset applied along the main axis between the element and its
+   * anchor element.
+   * @default 8
+   */
+  offset?: number;
+}
 
-export function TooltipContent({ className, ...props }: TooltipContentProps) {
+export function TooltipContent({
+  className,
+  offset = 8,
+  ...props
+}: TooltipContentProps) {
   return (
     <Tooltip
       className={composeRenderProps(className, (className) =>
         TooltipStyles.Content({ className })
       )}
       data-slot="tooltip-content"
+      offset={offset}
       {...props}
     />
   );
