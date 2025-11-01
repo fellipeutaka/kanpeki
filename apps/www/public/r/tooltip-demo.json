@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/tooltip"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/tooltip-demo.tsx",
+      "content": "import { Button } from \"~/registry/ui/button/button\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function TooltipDemo() {\n  return (\n    <Tooltip.Root>\n      <Button variant=\"outline\">Hover</Button>\n      <Tooltip.Content offset={8}>\n        <p>Add to library</p>\n\n        <Tooltip.Arrow />\n      </Tooltip.Content>\n    </Tooltip.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
