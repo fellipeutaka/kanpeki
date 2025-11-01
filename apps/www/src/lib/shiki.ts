@@ -45,8 +45,22 @@ export function transformerNpmCommands(): ShikiTransformer {
   };
 }
 
+let singletonHighlighter: Awaited<
+  ReturnType<typeof getSingletonHighlighter>
+> | null = null;
+
+async function getHighlighter(
+  options?: Parameters<typeof getSingletonHighlighter>[0]
+) {
+  if (!singletonHighlighter) {
+    singletonHighlighter = await getSingletonHighlighter(options);
+  }
+
+  return singletonHighlighter;
+}
+
 export async function highlightCode(code: string, language = "tsx") {
-  const highlighter = await getSingletonHighlighter({
+  const highlighter = await getHighlighter({
     langs: ["typescript", "tsx"],
   });
 
