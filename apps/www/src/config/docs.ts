@@ -15,14 +15,13 @@ export const docsConfig: DocsConfig = {
       title: "Storybook",
     },
     {
-      disabled: true,
-      href: "/icons",
-      title: "Icons",
+      href: "/playground",
+      title: "Playground",
     },
     {
       disabled: true,
-      href: "/examples",
-      title: "Examples",
+      href: "/icons",
+      title: "Icons",
     },
   ],
   sidebarNav: [
