@@ -1716,6 +1716,78 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "menu-demo": {
+    name: "menu-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/menu"],
+    files: [{
+      path: "src/registry/examples/menu-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/menu-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "menu-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "menu-checkboxes-demo": {
+    name: "menu-checkboxes-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/menu"],
+    files: [{
+      path: "src/registry/examples/menu-checkboxes-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/menu-checkboxes-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "menu-checkboxes-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "menu-checkboxes-demo": {
+    name: "menu-checkboxes-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/menu"],
+    files: [{
+      path: "src/registry/examples/menu-checkboxes-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/menu-checkboxes-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "menu-checkboxes-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "menu-radio-group-demo": {
+    name: "menu-radio-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/menu"],
+    files: [{
+      path: "src/registry/examples/menu-radio-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/menu-radio-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "menu-radio-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "tooltip-demo": {
     name: "tooltip-demo",
     description: "",

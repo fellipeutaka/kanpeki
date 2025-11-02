@@ -1308,6 +1308,50 @@
       ]
     },
     {
+      "name": "menu-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/menu"],
+      "files": [
+        {
+          "path": "src/registry/examples/menu-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "menu-checkboxes-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/menu"],
+      "files": [
+        {
+          "path": "src/registry/examples/menu-checkboxes-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "menu-checkboxes-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/menu"],
+      "files": [
+        {
+          "path": "src/registry/examples/menu-checkboxes-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "menu-radio-group-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/menu"],
+      "files": [
+        {
+          "path": "src/registry/examples/menu-radio-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "tooltip-demo",
       "type": "registry:example",
       "registryDependencies": ["@kanpeki/tooltip"],

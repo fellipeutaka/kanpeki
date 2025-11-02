@@ -15,14 +15,13 @@ export const docsConfig: DocsConfig = {
       title: "Storybook",
     },
     {
-      disabled: true,
-      href: "/icons",
-      title: "Icons",
+      href: "/playground",
+      title: "Playground",
     },
     {
       disabled: true,
-      href: "/examples",
-      title: "Examples",
+      href: "/icons",
+      title: "Icons",
     },
   ],
   sidebarNav: [
@@ -137,10 +136,6 @@ export const docsConfig: DocsConfig = {
           title: "Dialog",
         },
         {
-          href: "/docs/components/dropdown-menu",
-          title: "Dropdown Menu",
-        },
-        {
           href: "/docs/components/form",
           title: "Form",
         },
@@ -155,6 +150,10 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/list-box",
           title: "List Box",
+        },
+        {
+          href: "/docs/components/menu",
+          title: "Menu",
         },
         {
           disabled: true,

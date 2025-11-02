@@ -1,6 +1,6 @@
-import type { Registry } from "shadcn/schema";
+import type { RegistryItem } from "shadcn/schema";
 
-export const examples: Registry["items"] = [
+const accordionExamples: RegistryItem[] = [
   {
     name: "accordion-demo",
     type: "registry:example",
@@ -12,6 +12,9 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+];
+
+const alertExamples: RegistryItem[] = [
   {
     name: "alert-demo",
     type: "registry:example",
@@ -34,6 +37,9 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+];
+
+const avatarExamples: RegistryItem[] = [
   {
     name: "avatar-demo",
     type: "registry:example",
@@ -56,6 +62,9 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+];
+
+const badgeExamples: RegistryItem[] = [
   {
     name: "badge-demo",
     type: "registry:example",
@@ -100,6 +109,9 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+];
+
+const calendarExamples: RegistryItem[] = [
   {
     name: "calendar-demo",
     type: "registry:example",
@@ -122,6 +134,56 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+];
+
+const menuExamples: RegistryItem[] = [
+  {
+    name: "menu-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/menu"],
+    files: [
+      {
+        path: "src/registry/examples/menu-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "menu-checkboxes-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/menu"],
+    files: [
+      {
+        path: "src/registry/examples/menu-checkboxes-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "menu-checkboxes-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/menu"],
+    files: [
+      {
+        path: "src/registry/examples/menu-checkboxes-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "menu-radio-group-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/menu"],
+    files: [
+      {
+        path: "src/registry/examples/menu-radio-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const tooltipExamples: RegistryItem[] = [
   {
     name: "tooltip-demo",
     type: "registry:example",
@@ -166,6 +228,9 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+];
+
+const typographyExamples: RegistryItem[] = [
   {
     name: "typography-demo",
     type: "registry:example",
@@ -243,4 +308,15 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+];
+
+export const examples: RegistryItem[] = [
+  ...accordionExamples,
+  ...alertExamples,
+  ...avatarExamples,
+  ...badgeExamples,
+  ...calendarExamples,
+  ...menuExamples,
+  ...tooltipExamples,
+  ...typographyExamples,
 ];
