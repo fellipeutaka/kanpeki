@@ -1788,6 +1788,96 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "toast-demo": {
+    name: "toast-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [{
+      path: "src/registry/examples/toast-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toast-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toast-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toast-promise-demo": {
+    name: "toast-promise-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [{
+      path: "src/registry/examples/toast-promise-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toast-promise-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toast-promise-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toast-status-demo": {
+    name: "toast-status-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [{
+      path: "src/registry/examples/toast-status-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toast-status-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toast-status-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toast-with-description-demo": {
+    name: "toast-with-description-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [{
+      path: "src/registry/examples/toast-with-description-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toast-with-description-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toast-with-description-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toast-custom-demo": {
+    name: "toast-custom-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [{
+      path: "src/registry/examples/toast-custom-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toast-custom-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toast-custom-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "tooltip-demo": {
     name: "tooltip-demo",
     description: "",

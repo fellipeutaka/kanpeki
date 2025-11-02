@@ -183,6 +183,64 @@ const menuExamples: RegistryItem[] = [
   },
 ];
 
+const toastExamples: RegistryItem[] = [
+  {
+    name: "toast-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-promise-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-promise-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-status-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-status-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-with-description-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-with-description-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const tooltipExamples: RegistryItem[] = [
   {
     name: "tooltip-demo",
@@ -317,6 +375,7 @@ export const examples: RegistryItem[] = [
   ...badgeExamples,
   ...calendarExamples,
   ...menuExamples,
+  ...toastExamples,
   ...tooltipExamples,
   ...typographyExamples,
 ];

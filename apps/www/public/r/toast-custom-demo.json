@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-custom-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/toast-custom-demo.tsx",
+      "content": "\"use client\";\n\nimport { XIcon } from \"lucide-react\";\nimport { toast } from \"sonner\";\nimport { Button, RACButton } from \"~/registry/ui/button\";\n\nexport function ToastCustomDemo() {\n  return (\n    <Button\n      variant=\"outline\"\n      onPress={() =>\n        toast.custom((t) => (\n          <div>\n            <RACButton\n              className=\"transform-(--toast-close-button-transform) absolute top-0 left-0 grid size-5 pressed:scale-95 cursor-pointer place-content-center rounded-full border bg-bg p-0 transition\"\n              onPress={() => toast.dismiss(t)}\n            >\n              <XIcon className=\"size-3\" />\n            </RACButton>\n            <div className=\"font-medium\">Event has been created</div>\n            <div className=\"text-muted-fg\">Monday, January 3rd at 6:00pm</div>\n          </div>\n        ))\n      }\n    >\n      Show Toast\n    </Button>\n  );\n}",
+      "type": "registry:example"
+    }
+  ]
+}
