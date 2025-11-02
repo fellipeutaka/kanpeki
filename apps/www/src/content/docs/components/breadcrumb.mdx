@@ -120,33 +120,33 @@ import { SlashIcon } from "lucide-react"; // [!code highlight]
 
 ### Dropdown
 
-You can compose `<BreadcrumbItem />{:tsx}` with a `<DropdownMenu />{:tsx}` to create a dropdown in the breadcrumb.
+You can compose `<BreadcrumbItem />{:tsx}` with a `<Menu />{:tsx}` to create a dropdown in the breadcrumb.
 
 <ComponentPreview name="breadcrumb-dropdown" />
 
 ```tsx
 import { Button } from "react-aria-components"; // [!code highlight]
 import { Breadcrumb } from "~/components/ui/breadcrumb"; // [!code highlight]
-import { DropdownMenu } from "~/components/ui/dropdown-menu"; // [!code highlight]
+import { Menu } from "~/components/ui/menu"; // [!code highlight]
 import { LinkStyles } from "~/components/ui/link"; // [!code highlight]
 import { Popover } from "~/components/ui/popover"; // [!code highlight]
 
 <Breadcrumb.Root>
   {/* ... */}
   <Breadcrumb.Item>
-    <DropdownMenu.Root>
+    <Menu.Root>
       <Button className={LinkStyles({ variant: "default" })}>Components</Button>
 
       <Popover.Content>
         <Popover.Arrow />
 
-        <DropdownMenu.Content>
-          <DropdownMenu.Item>Documentation</DropdownMenu.Item>
-          <DropdownMenu.Item>Themes</DropdownMenu.Item>
-          <DropdownMenu.Item>GitHub</DropdownMenu.Item>
-        </DropdownMenu.Content>
+        <Menu.Content>
+          <Menu.Item>Documentation</Menu.Item>
+          <Menu.Item>Themes</Menu.Item>
+          <Menu.Item>GitHub</Menu.Item>
+        </Menu.Content>
       </Popover.Content>
-    </DropdownMenu.Root>
+    </Menu.Root>
   </Breadcrumb.Item>
   {/* ... */}
 </Breadcrumb.Root>;

@@ -1,3 +1,5 @@
+"use client";
+
 import type { VariantProps } from "cva";
 import { Keyboard as RACKeyboard } from "react-aria-components";
 import { KeyboardStyles } from "./styles";

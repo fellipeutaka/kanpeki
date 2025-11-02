@@ -1,6 +1,6 @@
-import type { Registry } from "shadcn/schema";
+import type { RegistryItem } from "shadcn/schema";
 
-export const styles: Registry["items"] = [
+export const styles: RegistryItem[] = [
   {
     name: "custom-plugin",
     type: "registry:item",

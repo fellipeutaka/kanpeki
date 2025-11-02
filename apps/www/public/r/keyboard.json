@@ -17,12 +17,12 @@
     },
     {
       "path": "src/registry/ui/keyboard/keyboard.tsx",
-      "content": "import type { VariantProps } from \"cva\";\nimport { Keyboard as RACKeyboard } from \"react-aria-components\";\nimport { KeyboardStyles } from \"./styles\";\n\nexport interface KeyboardProps\n  extends React.ComponentProps<typeof RACKeyboard>,\n    VariantProps<typeof KeyboardStyles> {}\n\nexport function Keyboard({ className, variant, ...props }: KeyboardProps) {\n  return (\n    <RACKeyboard\n      {...props}\n      className={KeyboardStyles({ className, variant })}\n      data-slot=\"keyboard\"\n    />\n  );\n}\n",
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { Keyboard as RACKeyboard } from \"react-aria-components\";\nimport { KeyboardStyles } from \"./styles\";\n\nexport interface KeyboardProps\n  extends React.ComponentProps<typeof RACKeyboard>,\n    VariantProps<typeof KeyboardStyles> {}\n\nexport function Keyboard({ className, variant, ...props }: KeyboardProps) {\n  return (\n    <RACKeyboard\n      {...props}\n      className={KeyboardStyles({ className, variant })}\n      data-slot=\"keyboard\"\n    />\n  );\n}\n",
       "type": "registry:ui"
     },
     {
       "path": "src/registry/ui/keyboard/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const KeyboardStyles = cva({\n  defaultVariants: {\n    variant: \"default\",\n  },\n  variants: {\n    variant: {\n      default:\n        \"pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-medium font-mono text-[10px] text-muted-foreground opacity-100\",\n      menu: \"ml-auto text-muted-foreground text-xs tracking-widest\",\n    },\n  },\n});\n",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const KeyboardStyles = cva({\n  defaultVariants: {\n    variant: \"default\",\n  },\n  variants: {\n    variant: {\n      default:\n        \"pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-medium font-mono text-[10px] text-muted-foreground\",\n      menu: \"ml-auto text-muted-foreground text-xs tracking-widest\",\n    },\n  },\n});\n",
       "type": "registry:ui"
     }
   ]

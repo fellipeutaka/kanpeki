@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-checkboxes-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/menu"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/menu-checkboxes-demo.tsx",
+      "content": "\"use client\";\n\nimport {\n  CreditCardIcon,\n  LogOutIcon,\n  Settings2Icon,\n  UserIcon,\n} from \"lucide-react\";\nimport { useState } from \"react\";\nimport type { Selection } from \"react-aria-components\";\nimport { Button } from \"~/registry/ui/button/button\";\nimport { Menu } from \"~/registry/ui/menu\";\nimport { Popover } from \"~/registry/ui/popover\";\n\nexport function MenuCheckboxesDemo() {\n  const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set([]));\n\n  return (\n    <Menu.Root>\n      <Button variant=\"outline\">Checkboxes</Button>\n\n      <Popover.Content placement=\"bottom start\">\n        <Menu.Content className=\"w-56\">\n          <Menu.Group>\n            <Menu.Label>Account</Menu.Label>\n            <Menu.Item>\n              <UserIcon /> Profile\n            </Menu.Item>\n            <Menu.Item>\n              <CreditCardIcon /> Billing\n            </Menu.Item>\n            <Menu.Item>\n              <Settings2Icon /> Settings\n            </Menu.Item>\n          </Menu.Group>\n          <Menu.Separator />\n          <Menu.Group\n            onSelectionChange={setSelectedKeys}\n            selectedKeys={selectedKeys}\n            selectionMode=\"multiple\"\n          >\n            <Menu.Label>Appearance</Menu.Label>\n            <Menu.Item>Status Bar</Menu.Item>\n            <Menu.Item isDisabled>Activity Bar</Menu.Item>\n            <Menu.Item>Panel</Menu.Item>\n          </Menu.Group>\n          <Menu.Separator />\n          <Menu.Group>\n            <Menu.Item>\n              <LogOutIcon /> Sign Out\n            </Menu.Item>\n          </Menu.Group>\n        </Menu.Content>\n      </Popover.Content>\n    </Menu.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
