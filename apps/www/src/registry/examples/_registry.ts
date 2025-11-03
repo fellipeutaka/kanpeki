@@ -136,6 +136,20 @@ const calendarExamples: RegistryItem[] = [
   },
 ];
 
+const cardExamples: RegistryItem[] = [
+  {
+    name: "card-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/card"],
+    files: [
+      {
+        path: "src/registry/examples/card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const menuExamples: RegistryItem[] = [
   {
     name: "menu-demo",
@@ -374,6 +388,7 @@ export const examples: RegistryItem[] = [
   ...avatarExamples,
   ...badgeExamples,
   ...calendarExamples,
+  ...cardExamples,
   ...menuExamples,
   ...toastExamples,
   ...tooltipExamples,

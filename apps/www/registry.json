@@ -1308,6 +1308,17 @@
       ]
     },
     {
+      "name": "card-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/card"],
+      "files": [
+        {
+          "path": "src/registry/examples/card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "menu-demo",
       "type": "registry:example",
       "registryDependencies": ["@kanpeki/menu"],

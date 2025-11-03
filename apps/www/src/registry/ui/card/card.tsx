@@ -77,7 +77,7 @@ export interface CardFooterProps extends React.ComponentProps<"div"> {}
 export function CardFooter({ className, ...props }: CardFooterProps) {
   return (
     <div
-      className={CardStyles.Content({ className })}
+      className={CardStyles.Footer({ className })}
       data-slot="card-footer"
       {...props}
     />

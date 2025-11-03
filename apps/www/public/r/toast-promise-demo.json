@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/registry/examples/toast-promise-demo.tsx",
-      "content": "\"use client\";\n\nimport { Button } from \"~/registry/ui/button\";\nimport { toast } from \"sonner\";\n\nasync function promise() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  if (Math.random() > 0.5) {\n    throw new Error(\"Failed to add toast\");\n  }\n\n  return {\n    name: \"Sonner\",\n  };\n}\n\nexport function ToastPromiseDemo() {\n  return (\n    <Button\n      variant=\"outline\"\n      onPress={() =>\n        toast.promise(promise, {\n          loading: \"Loading...\",\n          success: (data) => {\n            return `${data.name} toast has been added`;\n          },\n          error: (err) => `Error: ${err.message}`,\n        })\n      }\n    >\n      Promise\n    </Button>\n  );\n}",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\n\nasync function promise() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  if (Math.random() > 0.5) {\n    throw new Error(\"Failed to add toast\");\n  }\n\n  return {\n    name: \"Sonner\",\n  };\n}\n\nexport function ToastPromiseDemo() {\n  return (\n    <Button\n      onPress={() =>\n        toast.promise(promise, {\n          loading: \"Loading...\",\n          success: (data) => `${data.name} toast has been added`,\n          error: (err) => `Error: ${err.message}`,\n        })\n      }\n      variant=\"outline\"\n    >\n      Promise\n    </Button>\n  );\n}\n",
       "type": "registry:example"
     }
   ]

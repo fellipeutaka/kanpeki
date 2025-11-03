@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/registry/examples/toast-demo.tsx",
-      "content": "\"use client\";\n\nimport { Button } from \"~/registry/ui/button\";\nimport { toast } from \"sonner\";\n\nexport function ToastDemo() {\n  return (\n    <Button variant=\"outline\" onPress={() => toast(\"Event has been created\")}>\n      Show Toast\n    </Button>\n  );\n}",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\n\nexport function ToastDemo() {\n  return (\n    <Button onPress={() => toast(\"Event has been created\")} variant=\"outline\">\n      Show Toast\n    </Button>\n  );\n}\n",
       "type": "registry:example"
     }
   ]
