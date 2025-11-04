@@ -111,6 +111,53 @@ const badgeExamples: RegistryItem[] = [
   },
 ];
 
+const breadcrumbExamples: RegistryItem[] = [
+  {
+    name: "breadcrumb-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [
+      {
+        path: "src/registry/examples/breadcrumb-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "breadcrumb-custom-separator-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [
+      {
+        path: "src/registry/examples/breadcrumb-custom-separator-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "breadcrumb-dropdown-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [
+      {
+        path: "src/registry/examples/breadcrumb-dropdown-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "breadcrumb-collapsed-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [
+      {
+        path: "src/registry/examples/breadcrumb-collapsed-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const calendarExamples: RegistryItem[] = [
   {
     name: "calendar-demo",
@@ -387,6 +434,7 @@ export const examples: RegistryItem[] = [
   ...alertExamples,
   ...avatarExamples,
   ...badgeExamples,
+  ...breadcrumbExamples,
   ...calendarExamples,
   ...cardExamples,
   ...menuExamples,

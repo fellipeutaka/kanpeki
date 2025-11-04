@@ -1,7 +1,7 @@
 import { getRegistryFileMeta, getRegistryItem } from "~/lib/registry";
-import { highlightCode } from "~/lib/shiki";
 import { ScrollArea } from "~/registry/ui/scroll-area";
 import { Tabs } from "~/registry/ui/tabs";
+import { highlightCode } from "~/utils/highlight-code";
 import { CodeBlock } from "./code-block";
 
 interface ComponentSourceProps {

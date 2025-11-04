@@ -1680,6 +1680,78 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "breadcrumb-demo": {
+    name: "breadcrumb-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [{
+      path: "src/registry/examples/breadcrumb-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/breadcrumb-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "breadcrumb-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "breadcrumb-custom-separator-demo": {
+    name: "breadcrumb-custom-separator-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [{
+      path: "src/registry/examples/breadcrumb-custom-separator-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/breadcrumb-custom-separator-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "breadcrumb-custom-separator-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "breadcrumb-dropdown-demo": {
+    name: "breadcrumb-dropdown-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [{
+      path: "src/registry/examples/breadcrumb-dropdown-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/breadcrumb-dropdown-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "breadcrumb-dropdown-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "breadcrumb-collapsed-demo": {
+    name: "breadcrumb-collapsed-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [{
+      path: "src/registry/examples/breadcrumb-collapsed-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/breadcrumb-collapsed-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "breadcrumb-collapsed-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "calendar-demo": {
     name: "calendar-demo",
     description: "",
