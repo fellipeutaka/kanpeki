@@ -1418,6 +1418,28 @@
       ]
     },
     {
+      "name": "separator-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/separator"],
+      "files": [
+        {
+          "path": "src/registry/examples/separator-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "separator-vertical-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/separator"],
+      "files": [
+        {
+          "path": "src/registry/examples/separator-vertical-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "skeleton-demo",
       "type": "registry:example",
       "registryDependencies": ["@kanpeki/skeleton"],
@@ -1431,7 +1453,7 @@
     {
       "name": "skeleton-card-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/skeleton"],
+      "registryDependencies": ["@kanpeki/skeleton", "@kanpeki/card"],
       "files": [
         {
           "path": "src/registry/examples/skeleton-card-demo.tsx",

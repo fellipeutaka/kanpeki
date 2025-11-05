@@ -258,6 +258,31 @@ const menuExamples: RegistryItem[] = [
   },
 ];
 
+const separatorExamples: RegistryItem[] = [
+  {
+    name: "separator-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/separator"],
+    files: [
+      {
+        path: "src/registry/examples/separator-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "separator-vertical-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/separator"],
+    files: [
+      {
+        path: "src/registry/examples/separator-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const skeletonExamples: RegistryItem[] = [
   {
     name: "skeleton-demo",
@@ -478,6 +503,7 @@ export const examples: RegistryItem[] = [
   ...cardExamples,
   ...listBoxExamples,
   ...menuExamples,
+  ...separatorExamples,
   ...skeletonExamples,
   ...toastExamples,
   ...tooltipExamples,

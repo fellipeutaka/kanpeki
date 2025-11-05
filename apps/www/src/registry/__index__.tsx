@@ -1896,6 +1896,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "separator-demo": {
+    name: "separator-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/separator"],
+    files: [{
+      path: "src/registry/examples/separator-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/separator-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "separator-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "separator-vertical-demo": {
+    name: "separator-vertical-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/separator"],
+    files: [{
+      path: "src/registry/examples/separator-vertical-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/separator-vertical-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "separator-vertical-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "skeleton-demo": {
     name: "skeleton-demo",
     description: "",
@@ -1918,7 +1954,7 @@ export const Index: Record<string, any> = {
     name: "skeleton-card-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["@kanpeki/skeleton"],
+    registryDependencies: ["@kanpeki/skeleton","@kanpeki/card"],
     files: [{
       path: "src/registry/examples/skeleton-card-demo.tsx",
       type: "registry:example",

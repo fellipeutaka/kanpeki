@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "src/registry/examples/skeleton-demo.tsx",
-      "content": "import { Card } from \"~/registry/ui/card\";\nimport { Skeleton } from \"~/registry/ui/skeleton\";\n\nexport function SkeletonDemo() {\n  return (\n    <div className=\"flex w-full flex-wrap items-start gap-4\">\n      <div className=\"flex items-center gap-4\">\n        <Skeleton className=\"size-10 shrink-0 rounded-full\" />\n        <div className=\"grid gap-2\">\n          <Skeleton className=\"h-4 w-[150px]\" />\n          <Skeleton className=\"h-4 w-[100px]\" />\n        </div>\n      </div>\n      <div className=\"flex w-full flex-wrap items-start gap-4\">\n        {Array.from({ length: 3 }).map((_, index) => (\n          // biome-ignore lint/suspicious/noArrayIndexKey: This is fine\n          <Card.Root className=\"@md:w-auto w-full @md:min-w-sm\" key={index}>\n            <Card.Header>\n              <Skeleton className=\"h-4 w-2/3\" />\n              <Skeleton className=\"h-4 w-1/2\" />\n            </Card.Header>\n            <Card.Content>\n              <Skeleton className=\"aspect-square w-full\" />\n            </Card.Content>\n          </Card.Root>\n        ))}\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { Skeleton } from \"~/registry/ui/skeleton\";\n\nexport function SkeletonDemo() {\n  return (\n    <div className=\"flex items-center space-x-4\">\n      <Skeleton className=\"h-12 w-12 rounded-full\" />\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-[250px]\" />\n        <Skeleton className=\"h-4 w-[200px]\" />\n      </div>\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }
   ]

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-vertical-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/separator"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/separator-vertical-demo.tsx",
+      "content": "import { Separator } from \"~/registry/ui/separator\";\n\nexport function SeparatorVerticalDemo() {\n  return (\n    <main className=\"grid size-full place-content-center\">\n      <div className=\"flex items-center gap-6\">\n        <h1 className=\"font-medium text-2xl\">404</h1>\n        <Separator orientation=\"vertical\" />\n        <h2 className=\"text-sm\">This page could not be found.</h2>\n      </div>\n    </main>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
