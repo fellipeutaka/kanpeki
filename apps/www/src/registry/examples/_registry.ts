@@ -197,6 +197,20 @@ const cardExamples: RegistryItem[] = [
   },
 ];
 
+const listBoxExamples: RegistryItem[] = [
+  {
+    name: "list-box-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/list-box"],
+    files: [
+      {
+        path: "src/registry/examples/list-box-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const menuExamples: RegistryItem[] = [
   {
     name: "menu-demo",
@@ -238,6 +252,31 @@ const menuExamples: RegistryItem[] = [
     files: [
       {
         path: "src/registry/examples/menu-radio-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const skeletonExamples: RegistryItem[] = [
+  {
+    name: "skeleton-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/skeleton"],
+    files: [
+      {
+        path: "src/registry/examples/skeleton-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-card-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/skeleton", "@kanpeki/card"],
+    files: [
+      {
+        path: "src/registry/examples/skeleton-card-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -437,7 +476,9 @@ export const examples: RegistryItem[] = [
   ...breadcrumbExamples,
   ...calendarExamples,
   ...cardExamples,
+  ...listBoxExamples,
   ...menuExamples,
+  ...skeletonExamples,
   ...toastExamples,
   ...tooltipExamples,
   ...typographyExamples,

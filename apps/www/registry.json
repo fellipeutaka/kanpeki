@@ -1363,6 +1363,17 @@
       ]
     },
     {
+      "name": "list-box-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/list-box"],
+      "files": [
+        {
+          "path": "src/registry/examples/list-box-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "menu-demo",
       "type": "registry:example",
       "registryDependencies": ["@kanpeki/menu"],
@@ -1402,6 +1413,28 @@
       "files": [
         {
           "path": "src/registry/examples/menu-radio-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/skeleton"],
+      "files": [
+        {
+          "path": "src/registry/examples/skeleton-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-card-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/skeleton"],
+      "files": [
+        {
+          "path": "src/registry/examples/skeleton-card-demo.tsx",
           "type": "registry:example"
         }
       ]
