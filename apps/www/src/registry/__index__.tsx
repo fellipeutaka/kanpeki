@@ -1968,6 +1968,60 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "spinner-demo": {
+    name: "spinner-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/spinner-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/spinner-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "spinner-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "spinner-color-demo": {
+    name: "spinner-color-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner"],
+    files: [{
+      path: "src/registry/examples/spinner-color-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/spinner-color-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "spinner-color-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "spinner-size-demo": {
+    name: "spinner-size-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner"],
+    files: [{
+      path: "src/registry/examples/spinner-size-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/spinner-size-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "spinner-size-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "toast-demo": {
     name: "toast-demo",
     description: "",

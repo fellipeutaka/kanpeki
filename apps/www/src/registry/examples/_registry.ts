@@ -308,6 +308,42 @@ const skeletonExamples: RegistryItem[] = [
   },
 ];
 
+const spinnerExamples: RegistryItem[] = [
+  {
+    name: "spinner-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner", "@kanpeki/button"],
+    files: [
+      {
+        path: "src/registry/examples/spinner-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-color-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner"],
+    files: [
+      {
+        path: "src/registry/examples/spinner-color-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-size-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner"],
+    files: [
+      {
+        path: "src/registry/examples/spinner-size-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const toastExamples: RegistryItem[] = [
   {
     name: "toast-demo",
@@ -505,6 +541,7 @@ export const examples: RegistryItem[] = [
   ...menuExamples,
   ...separatorExamples,
   ...skeletonExamples,
+  ...spinnerExamples,
   ...toastExamples,
   ...tooltipExamples,
   ...typographyExamples,
