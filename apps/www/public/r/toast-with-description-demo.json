@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-with-description-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/toast-with-description-demo.tsx",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\n\nexport function ToastWithDescriptionDemo() {\n  return (\n    <Button\n      onPress={() =>\n        toast.message(\"Event has been created\", {\n          description: \"Monday, January 3rd at 6:00pm\",\n        })\n      }\n      variant=\"outline\"\n    >\n      Show Toast\n    </Button>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

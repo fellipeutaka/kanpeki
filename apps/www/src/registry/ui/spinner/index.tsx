@@ -10,13 +10,17 @@ const bars = Array.from({ length: 12 }, (_, i) => ({
 
 export function Spinner({ className, ...props }: SpinnerProps) {
   return (
-    <div className={cn("size-4", className)} data-slot="spinner" {...props}>
+    <div
+      className={cn("size-4 text-current", className)}
+      data-slot="spinner"
+      {...props}
+    >
       <div className="relative top-1/2 left-1/2 h-[inherit] w-[inherit]">
         {bars.map((bar) => (
           <div
             aria-hidden="true"
             className={cx(
-              "-left-[10%] -top-[3.9%] motion-opacity-loop-5/reset motion-duration-1200 motion-ease-linear absolute h-[8%] w-[24%] rounded-md bg-primary"
+              "-left-[10%] -top-[3.9%] motion-opacity-loop-5/reset motion-duration-1200 motion-ease-linear absolute h-[8%] w-[24%] rounded-md bg-current"
             )}
             data-slot="spinner-bar"
             key={bar.id}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-collapsed-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/breadcrumb-collapsed-demo.tsx",
+      "content": "import { Breadcrumb } from \"~/registry/ui/breadcrumb\";\nimport { Link } from \"~/registry/ui/link\";\n\nexport function BreadcrumbCollapsedDemo() {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.Item>\n        <Link href=\"/\">Home</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator />\n      <Breadcrumb.Item>\n        <Breadcrumb.Ellipsis className=\"size-4\" />\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator />\n      <Breadcrumb.Item>\n        <Link href=\"/docs/components\">Components</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator />\n      <Breadcrumb.Item>\n        <Link>Breadcrumb</Link>\n      </Breadcrumb.Item>\n    </Breadcrumb.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

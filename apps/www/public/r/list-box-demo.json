@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "list-box-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/list-box"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/list-box-demo.tsx",
+      "content": "\"use client\";\n\nimport { Listbox } from \"~/registry/ui/list-box\";\n\nconst rockPopBands = [\n  { id: \"1\", name: \"Nirvana\" },\n  { id: \"2\", name: \"Radiohead\" },\n  { id: \"3\", name: \"Foo Fighters\" },\n  { id: \"4\", name: \"Arctic Monkeys\" },\n  { id: \"5\", name: \"The Strokes\" },\n];\n\nexport function ListBoxDemo() {\n  return (\n    <Listbox.Root\n      aria-label=\"Bands\"\n      items={rockPopBands}\n      selectionMode=\"single\"\n    >\n      {(item) => <Listbox.Item id={item.id}>{item.name}</Listbox.Item>}\n    </Listbox.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

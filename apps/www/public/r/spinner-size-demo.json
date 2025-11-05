@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-size-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/spinner"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/spinner-size-demo.tsx",
+      "content": "import { Spinner } from \"~/registry/ui/spinner\";\n\nexport function SpinnerSizeDemo() {\n  return (\n    <div className=\"flex flex-wrap items-start gap-4\">\n      <Spinner />\n      <Spinner className=\"size-5\" />\n      <Spinner className=\"size-6 text-primary\" />\n      <Spinner className=\"size-6 text-destructive\" />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

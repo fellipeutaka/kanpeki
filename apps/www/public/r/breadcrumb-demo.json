@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/breadcrumb-demo.tsx",
+      "content": "import { Breadcrumb } from \"~/registry/ui/breadcrumb\";\nimport { Button } from \"~/registry/ui/button/button\";\nimport { Link } from \"~/registry/ui/link/link\";\nimport { Menu } from \"~/registry/ui/menu\";\nimport { Popover } from \"~/registry/ui/popover\";\n\nexport function BreadcrumbDemo() {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.Item>\n        <Link href=\"/\">Home</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator />\n      <Breadcrumb.Item>\n        <Menu.Root>\n          <Button size=\"icon\" variant=\"unstyled\">\n            <Breadcrumb.Ellipsis />\n          </Button>\n\n          <Popover.Content>\n            <Menu.Content>\n              <Menu.Item>Documentation</Menu.Item>\n              <Menu.Item>Themes</Menu.Item>\n              <Menu.Item>GitHub</Menu.Item>\n            </Menu.Content>\n          </Popover.Content>\n        </Menu.Root>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator />\n      <Breadcrumb.Item>\n        <Link href=\"/docs/components\">Components</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator />\n      <Breadcrumb.Item>\n        <Link>Breadcrumb</Link>\n      </Breadcrumb.Item>\n    </Breadcrumb.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

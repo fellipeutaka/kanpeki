@@ -111,6 +111,53 @@ const badgeExamples: RegistryItem[] = [
   },
 ];
 
+const breadcrumbExamples: RegistryItem[] = [
+  {
+    name: "breadcrumb-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [
+      {
+        path: "src/registry/examples/breadcrumb-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "breadcrumb-custom-separator-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [
+      {
+        path: "src/registry/examples/breadcrumb-custom-separator-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "breadcrumb-dropdown-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [
+      {
+        path: "src/registry/examples/breadcrumb-dropdown-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "breadcrumb-collapsed-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/breadcrumb"],
+    files: [
+      {
+        path: "src/registry/examples/breadcrumb-collapsed-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const calendarExamples: RegistryItem[] = [
   {
     name: "calendar-demo",
@@ -130,6 +177,34 @@ const calendarExamples: RegistryItem[] = [
     files: [
       {
         path: "src/registry/examples/calendar-range-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const cardExamples: RegistryItem[] = [
+  {
+    name: "card-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/card"],
+    files: [
+      {
+        path: "src/registry/examples/card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const listBoxExamples: RegistryItem[] = [
+  {
+    name: "list-box-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/list-box"],
+    files: [
+      {
+        path: "src/registry/examples/list-box-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -177,6 +252,150 @@ const menuExamples: RegistryItem[] = [
     files: [
       {
         path: "src/registry/examples/menu-radio-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const separatorExamples: RegistryItem[] = [
+  {
+    name: "separator-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/separator"],
+    files: [
+      {
+        path: "src/registry/examples/separator-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "separator-vertical-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/separator"],
+    files: [
+      {
+        path: "src/registry/examples/separator-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const skeletonExamples: RegistryItem[] = [
+  {
+    name: "skeleton-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/skeleton"],
+    files: [
+      {
+        path: "src/registry/examples/skeleton-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-card-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/skeleton", "@kanpeki/card"],
+    files: [
+      {
+        path: "src/registry/examples/skeleton-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const spinnerExamples: RegistryItem[] = [
+  {
+    name: "spinner-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner", "@kanpeki/button"],
+    files: [
+      {
+        path: "src/registry/examples/spinner-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-color-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner"],
+    files: [
+      {
+        path: "src/registry/examples/spinner-color-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-size-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/spinner"],
+    files: [
+      {
+        path: "src/registry/examples/spinner-size-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const toastExamples: RegistryItem[] = [
+  {
+    name: "toast-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-promise-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-promise-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-status-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-status-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-with-description-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-with-description-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toast-custom-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toast"],
+    files: [
+      {
+        path: "src/registry/examples/toast-custom-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -315,8 +534,15 @@ export const examples: RegistryItem[] = [
   ...alertExamples,
   ...avatarExamples,
   ...badgeExamples,
+  ...breadcrumbExamples,
   ...calendarExamples,
+  ...cardExamples,
+  ...listBoxExamples,
   ...menuExamples,
+  ...separatorExamples,
+  ...skeletonExamples,
+  ...spinnerExamples,
+  ...toastExamples,
   ...tooltipExamples,
   ...typographyExamples,
 ];

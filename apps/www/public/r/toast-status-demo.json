@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-status-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/toast"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/toast-status-demo.tsx",
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\n\nexport function ToastStatusDemo() {\n  return (\n    <div className=\"grid grid-cols-2 gap-2\">\n      <ToastSuccess />\n      <ToastInfo />\n      <ToastWarning />\n      <ToastError />\n    </div>\n  );\n}\n\nfunction ToastSuccess() {\n  return (\n    <Button\n      onPress={() => toast.success(\"Event has been created\")}\n      variant=\"outline\"\n    >\n      Success\n    </Button>\n  );\n}\n\nfunction ToastInfo() {\n  return (\n    <Button\n      onPress={() =>\n        toast.info(\"Be at the area 10 minutes before the event time\")\n      }\n      variant=\"outline\"\n    >\n      Info\n    </Button>\n  );\n}\n\nfunction ToastWarning() {\n  return (\n    <Button\n      onPress={() =>\n        toast.warning(\"Event start time cannot be earlier than 8am\")\n      }\n      variant=\"outline\"\n    >\n      Warning\n    </Button>\n  );\n}\n\nfunction ToastError() {\n  return (\n    <Button\n      onPress={() => toast.error(\"Event has not been created\")}\n      variant=\"outline\"\n    >\n      Error\n    </Button>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
