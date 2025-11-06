@@ -63,25 +63,49 @@ import { LinkButton } from "~/components/ui/link-button";
 
 ## Examples
 
-### Secondary
+### Sizes
 
-<ComponentPreview name="button-secondary" />
+<ComponentPreview name="button-sizes-demo" />
 
-### Outline
+### Custom Variants
 
-<ComponentPreview name="button-outline" />
+<ComponentPreview name="button-variants-demo" />
 
-### Destructive
+### Icon
 
-<ComponentPreview name="button-destructive" />
+<ComponentPreview name="button-icon-demo" />
 
-### Ghost
+<Card.Root className="mt-6">
+  <Card.Header className="flex items-center gap-2">
+    <Card.Action className="grid place-content-center rounded-full bg-secondary/80 p-2">
+      <Icons.TriangleAlert className="text-amber-400" />
+    </Card.Action>
 
-<ComponentPreview name="button-ghost" />
+    <Card.Title>Icon-only buttons need accessible labels.</Card.Title>
+  </Card.Header>
+  <Card.Content>
+    <Card.Description>
+      Choose your preferred approach:
 
-### Link
+      ```tsx
+      // Option 1: aria-label (concise)
+      // [!code word:aria-label="Search"]
+      <Button size="icon" aria-label="Search">
+        <SearchIcon />
+      </Button>
 
-<ComponentPreview name="button-link" />
+      // Option 2: visually hidden text
+      <Button size="icon">
+        <SearchIcon />
+        // [!code highlight]
+        <span className="sr-only">Search</span>
+      </Button>
+      ```
+
+      Both work identically. Use `aria-label` for brevity or `sr-only` for visibility in your code.
+    </Card.Description>
+  </Card.Content>
+</Card.Root>
 
 ## API Reference
 

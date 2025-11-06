@@ -1330,6 +1330,50 @@
       ]
     },
     {
+      "name": "button-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/button"],
+      "files": [
+        {
+          "path": "src/registry/examples/button-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-sizes-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/button", "lucide-react"],
+      "files": [
+        {
+          "path": "src/registry/examples/button-sizes-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-variants-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/button"],
+      "files": [
+        {
+          "path": "src/registry/examples/button-variants-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-icon-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/button"],
+      "files": [
+        {
+          "path": "src/registry/examples/button-icon-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "calendar-demo",
       "type": "registry:example",
       "registryDependencies": ["@kanpeki/calendar"],
@@ -1490,6 +1534,28 @@
       "files": [
         {
           "path": "src/registry/examples/spinner-size-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "switch-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/switch"],
+      "files": [
+        {
+          "path": "src/registry/examples/switch-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "switch-group-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/switch"],
+      "files": [
+        {
+          "path": "src/registry/examples/switch-group-demo.tsx",
           "type": "registry:example"
         }
       ]

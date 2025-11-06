@@ -158,6 +158,53 @@ const breadcrumbExamples: RegistryItem[] = [
   },
 ];
 
+const buttonExamples: RegistryItem[] = [
+  {
+    name: "button-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button"],
+    files: [
+      {
+        path: "src/registry/examples/button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "button-sizes-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button", "lucide-react"],
+    files: [
+      {
+        path: "src/registry/examples/button-sizes-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "button-variants-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button"],
+    files: [
+      {
+        path: "src/registry/examples/button-variants-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "button-icon-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button"],
+    files: [
+      {
+        path: "src/registry/examples/button-icon-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const calendarExamples: RegistryItem[] = [
   {
     name: "calendar-demo",
@@ -338,6 +385,31 @@ const spinnerExamples: RegistryItem[] = [
     files: [
       {
         path: "src/registry/examples/spinner-size-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const switchExamples: RegistryItem[] = [
+  {
+    name: "switch-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/switch"],
+    files: [
+      {
+        path: "src/registry/examples/switch-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "switch-group-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/switch"],
+    files: [
+      {
+        path: "src/registry/examples/switch-group-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -535,6 +607,7 @@ export const examples: RegistryItem[] = [
   ...avatarExamples,
   ...badgeExamples,
   ...breadcrumbExamples,
+  ...buttonExamples,
   ...calendarExamples,
   ...cardExamples,
   ...listBoxExamples,
@@ -542,6 +615,7 @@ export const examples: RegistryItem[] = [
   ...separatorExamples,
   ...skeletonExamples,
   ...spinnerExamples,
+  ...switchExamples,
   ...toastExamples,
   ...tooltipExamples,
   ...typographyExamples,

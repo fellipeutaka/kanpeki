@@ -12,7 +12,7 @@ export function CodeBlockRoot({ className, ...props }: CodeBlockRootProps) {
   return (
     <figure
       className={cn(
-        "group relative mt-6 overflow-hidden rounded-lg border text-sm",
+        "group relative mt-6 w-full overflow-hidden rounded-lg border text-sm",
         className
       )}
       data-figure="code"

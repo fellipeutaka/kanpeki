@@ -1752,6 +1752,78 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "button-demo": {
+    name: "button-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/button-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-sizes-demo": {
+    name: "button-sizes-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-sizes-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-sizes-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-sizes-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-variants-demo": {
+    name: "button-variants-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/button-variants-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-variants-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-variants-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-icon-demo": {
+    name: "button-icon-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/button-icon-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-icon-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-icon-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "calendar-demo": {
     name: "calendar-demo",
     description: "",
@@ -2017,6 +2089,42 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/examples/spinner-size-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "spinner-size-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "switch-demo": {
+    name: "switch-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/switch"],
+    files: [{
+      path: "src/registry/examples/switch-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/switch-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "switch-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "switch-group-demo": {
+    name: "switch-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/switch"],
+    files: [{
+      path: "src/registry/examples/switch-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/switch-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "switch-group-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

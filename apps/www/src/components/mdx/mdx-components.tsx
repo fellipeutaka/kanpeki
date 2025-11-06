@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Icons } from "~/components/icons";
 import { cn } from "~/registry/lib/cva";
 import { Alert } from "~/registry/ui/alert";
+import { Card } from "~/registry/ui/card";
 import { Link } from "~/registry/ui/link/link";
 import { LinkButton } from "~/registry/ui/link-button";
 import { ScrollArea } from "~/registry/ui/scroll-area";
@@ -158,6 +159,7 @@ export const mdxComponents = {
   Code,
 
   Alert,
+  Card,
   Step,
   Steps,
   Tabs: MdxTabs,
