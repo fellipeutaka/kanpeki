@@ -9,6 +9,10 @@ links:
 
 ## Installation
 
+The Select is built using a composition of the `<Popover />{:tsx}` and the `<Listbox />{:tsx}` components.
+
+See installation instructions for the [Popover](/docs/components/popover#installation) and the [Listbox](/docs/components/list-box#installation) components.
+
 <Tabs.Root>
 
 <Tabs.List>
@@ -39,70 +43,88 @@ npx shadcn@latest add @kanpeki/select
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
+import { Listbox } from "~/components/ui/list-box";
+import { Popover } from "~/components/ui/popover";
 import { Select } from "~/components/ui/select";
-```
 
-```tsx
 <Select.Root>
-  <Select.Trigger />
-
-  <Select.Popover>
-    <Select.Content items={fruits}>
-      {(item) => (
-        <Select.Item id={item.id} textValue={item.name}>
-          {item.name}
-          <Icons.Check className="size-0 opacity-0 group-selected:size-4 group-selected:opacity-100" />
-        </Select.Item>
-      )}
-    </Select.Content>
-  </Select.Popover>
+  <Select.Trigger>
+    <Select.Value />
+  </Select.Trigger>
+  <Popover.Content>
+    <Listbox.Root>
+      <Listbox.Item></Listbox.Item>
+    </Listbox.Root>
+  </Popover.Content>
 </Select.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
-import {
-  SelectContent,
-  SelectItem,
-  SelectPopover,
-  SelectRoot,
-  SelectTrigger,
-} from "~/components/ui/select";
-```
+import { ListboxItem, ListboxRoot } from "~/components/ui/list-box";
+import { PopoverContent } from "~/components/ui/popover";
+import { SelectRoot, SelectTrigger, SelectValue } from "~/components/ui/select";
 
-```tsx
 <SelectRoot>
-  <SelectTrigger />
-
-  <SelectPopover>
-    <SelectContent items={fruits}>
-      {(item) => (
-        <SelectItem id={item.id} textValue={item.name}>
-          {item.name}
-          <Icons.Check className="size-0 opacity-0 group-selected:size-4 group-selected:opacity-100" />
-        </SelectItem>
-      )}
-    </SelectContent>
-  </SelectPopover>
+  <SelectTrigger>
+    <SelectValue />
+  </SelectTrigger>
+  <PopoverContent>
+    <ListboxRoot>
+      <ListboxItem />
+    </ListboxRoot>
+  </PopoverContent>
 </SelectRoot>
 ```
 
+</Tabs.Content>
+
+</Tabs.Root>
+
 ## Examples
-
-### UnselecTabs.le
-
-<ComponentPreview name="select-unselecTabs.le" />
 
 ### With Label
 
-<ComponentPreview name="select-with-label" />
+<ComponentPreview name="select-with-label-demo" />
+
+### Scrollable
+
+<ComponentPreview name="select-scrollable-demo" />
+
+### Infinite Scroll
+
+<ComponentPreview name="select-infinite-scroll-demo" />
+
+### Multiple Selection
+
+<Alert.Root variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Title>Under Construction</Alert.Title>
+  <Alert.Description>
+    This component is currently being built. Check back soon for updates!
+  </Alert.Description>
+</Alert.Root>
 
 ### Form
 
-<ComponentPreview name="select-form" />
+<Alert.Root variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Title>Under Construction</Alert.Title>
+  <Alert.Description>
+    This component is currently being built. Check back soon for updates!
+  </Alert.Description>
+</Alert.Root>

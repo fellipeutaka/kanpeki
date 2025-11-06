@@ -18,7 +18,7 @@ export const ListboxStyles = {
   }),
   Root: cva({
     base: [
-      "relative z-50 min-w-32 overflow-y-auto overflow-x-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md",
+      "relative z-50 min-w-32 overflow-y-auto overflow-x-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md outline-hidden",
     ],
   }),
 };

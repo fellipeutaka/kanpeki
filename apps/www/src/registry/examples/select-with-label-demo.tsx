@@ -1,11 +1,14 @@
+import { Label } from "~/registry/ui/label";
 import { Listbox } from "~/registry/ui/list-box";
 import { Popover } from "~/registry/ui/popover";
 
 import { Select } from "~/registry/ui/select";
 
-export function SelectDemo() {
+export function SelectWithLabelDemo() {
   return (
     <Select.Root aria-label="Fruits" placeholder="Select a fruit">
+      <Label>Choose a fruit</Label>
+
       <Select.Trigger className="w-[180px]">
         <Select.Value />
       </Select.Trigger>
