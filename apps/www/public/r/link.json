@@ -17,7 +17,7 @@
     },
     {
       "path": "src/registry/ui/link/link.tsx",
-      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { composeRenderProps, Link as RACLink } from \"react-aria-components\";\nimport { LinkStyles } from \"./styles\";\n\nexport interface LinkProps\n  extends React.ComponentProps<typeof RACLink>,\n    VariantProps<typeof LinkStyles> {}\n\nexport function Link({ className, variant, underline, ...props }: LinkProps) {\n  return (\n    <RACLink\n      className={composeRenderProps(className, (className) =>\n        LinkStyles({ className, underline, variant })\n      )}\n      data-slot=\"link\"\n      {...props}\n    />\n  );\n}\n",
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { composeRenderProps, Link as RACLink } from \"react-aria-components\";\nimport { LinkStyles } from \"./styles\";\n\nexport interface LinkProps\n  extends React.ComponentProps<typeof RACLink>,\n    VariantProps<typeof LinkStyles> {}\n\nexport function Link({ className, variant, underline, ...props }: LinkProps) {\n  return (\n    <RACLink\n      className={composeRenderProps(className, (className) =>\n        LinkStyles({ className, underline, variant })\n      )}\n      data-slot=\"link\"\n      {...props}\n    />\n  );\n}\n\nexport { RACLink };\n",
       "type": "registry:ui"
     },
     {

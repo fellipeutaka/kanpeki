@@ -19,7 +19,7 @@
     "preview": "next build && next start",
     "type-check": "tsc --noEmit --incremental false",
     "lint": "biome check",
-    "registry:build": "bun run src/scripts/build-registry.ts && shadcn build"
+    "registry:build": "bun run src/scripts/build-registry.ts"
   },
   "dependencies": {
     "@fumadocs/mdx-remote": "^1.4.3",
