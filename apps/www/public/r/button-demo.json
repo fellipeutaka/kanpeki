@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/button"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/button-demo.tsx",
+      "content": "import { Button } from \"~/registry/ui/button\";\n\nexport function ButtonDemo() {\n  return <Button>Button</Button>;\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

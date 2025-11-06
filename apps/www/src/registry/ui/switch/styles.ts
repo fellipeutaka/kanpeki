@@ -1,9 +1,13 @@
-import { cva } from "~/registry/lib/cva";
+import { compose, cva } from "~/registry/lib/cva";
+import { LabelStyles } from "~/registry/ui/label";
 
 export const SwitchStyles = {
-  Root: cva({
-    base: ["group inline-flex touch-none items-center gap-2"],
-  }),
+  Root: compose(
+    cva({
+      base: ["group inline-flex touch-none items-center gap-2"],
+    }),
+    LabelStyles
+  ),
   Thumb: cva({
     base: [
       "pointer-events-none block size-4 translate-x-0 rounded-full shadow-lg ring-0 transition-all",
