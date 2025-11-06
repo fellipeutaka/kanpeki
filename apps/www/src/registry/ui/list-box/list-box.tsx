@@ -6,6 +6,7 @@ import {
   Header,
   ListBox,
   ListBoxItem,
+  ListBoxLoadMoreItem,
   ListBoxSection,
 } from "react-aria-components";
 import { ListboxStyles } from "./styles";
@@ -91,6 +92,24 @@ export function ListboxLabel({ className, ...props }: ListboxLabelProps) {
     <Header
       className={ListboxStyles.Label({ className })}
       data-slot="listbox-label"
+      {...props}
+    />
+  );
+}
+
+export interface ListboxLoadMoreItemProps
+  extends React.ComponentProps<typeof ListBoxLoadMoreItem> {}
+
+export function ListboxLoadMoreItem({
+  className,
+  ...props
+}: ListboxLoadMoreItemProps) {
+  return (
+    <ListBoxLoadMoreItem
+      className={ListboxStyles.Item({
+        className: ["justify-center px-0", className],
+      })}
+      data-slot="listbox-load-more-item"
       {...props}
     />
   );

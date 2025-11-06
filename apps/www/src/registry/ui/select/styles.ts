@@ -5,7 +5,7 @@ export const SelectStyles = {
     base: [
       "group flex w-fit items-center justify-between gap-2 whitespace-nowrap rounded-md border border-input bg-transparent",
       "px-3 py-2 text-sm shadow-xs outline-none transition-[color,box-shadow]",
-      "focus:border-ring focus:ring-[3px] focus:ring-ring/50",
+      "focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50",
       "disabled:cursor-not-allowed disabled:opacity-50",
       "group-invalid:border-destructive group-invalid:ring-destructive/20",
       "dark:bg-input/30 dark:group-invalid:ring-destructive/40 dark:hover:bg-input/50",

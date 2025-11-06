@@ -19,3 +19,5 @@ export function Link({ className, variant, underline, ...props }: LinkProps) {
     />
   );
 }
+
+export { RACLink };

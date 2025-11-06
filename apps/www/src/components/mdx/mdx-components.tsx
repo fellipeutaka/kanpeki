@@ -6,7 +6,7 @@ import { Icons } from "~/components/icons";
 import { cn } from "~/registry/lib/cva";
 import { Alert } from "~/registry/ui/alert";
 import { Card } from "~/registry/ui/card";
-import { Link } from "~/registry/ui/link/link";
+import { Link, RACLink } from "~/registry/ui/link/link";
 import { LinkButton } from "~/registry/ui/link-button";
 import { ScrollArea } from "~/registry/ui/scroll-area";
 import { Code } from "./code";
@@ -62,8 +62,8 @@ export const mdxComponents = {
     />
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
-  a: ({ className, href, ...props }: React.ComponentProps<"a">) => (
-    <a
+  a: ({ className, href, ...props }: React.ComponentProps<typeof RACLink>) => (
+    <RACLink
       className={cn("font-medium underline underline-offset-4", className)}
       href={href}
       {...props}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-unselectable-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/select"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/select-unselectable-demo.tsx",
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport type { Key } from \"react-aria-components\";\nimport { Listbox } from \"~/registry/ui/list-box\";\nimport { Popover } from \"~/registry/ui/popover\";\n\nimport { Select } from \"~/registry/ui/select\";\n\nconst fruits = [\n  {\n    id: 1,\n    name: \"Apple\",\n  },\n  {\n    id: 2,\n    name: \"Banana\",\n  },\n  {\n    id: 3,\n    name: \"Blueberry\",\n  },\n  {\n    id: 4,\n    name: \"Orange\",\n  },\n  {\n    id: 5,\n    name: \"Strawberry\",\n  },\n  {\n    id: 6,\n    name: \"Grapes\",\n  },\n  {\n    id: 7,\n    name: \"Mango\",\n  },\n];\n\nexport function SelectUnselectableDemo() {\n  const [fruit, setFruit] = useState<Key | null>(null);\n\n  function handleSelectionChange(key: Key | Key[] | null) {\n    if (Array.isArray(key)) {\n      return;\n    }\n\n    setFruit(key === fruit ? null : key);\n  }\n\n  return (\n    <Select.Root\n      aria-label=\"Fruits\"\n      onChange={handleSelectionChange}\n      placeholder=\"Select a fruit\"\n      value={fruit}\n    >\n      <Select.Trigger className=\"w-44\">\n        <Select.Value />\n      </Select.Trigger>\n\n      <Popover.Content>\n        <Listbox.Root items={fruits}>\n          {(item) => (\n            <Listbox.Item id={item.id} textValue={item.name}>\n              {item.name}\n            </Listbox.Item>\n          )}\n        </Listbox.Root>\n      </Popover.Content>\n    </Select.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

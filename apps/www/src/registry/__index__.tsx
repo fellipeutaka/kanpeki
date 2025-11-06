@@ -2004,6 +2004,78 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "select-demo": {
+    name: "select-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/select"],
+    files: [{
+      path: "src/registry/examples/select-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/select-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "select-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "select-with-label-demo": {
+    name: "select-with-label-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/select","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/select-with-label-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/select-with-label-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "select-with-label-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "select-scrollable-demo": {
+    name: "select-scrollable-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/select"],
+    files: [{
+      path: "src/registry/examples/select-scrollable-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/select-scrollable-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "select-scrollable-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "select-infinite-scroll-demo": {
+    name: "select-infinite-scroll-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/select","@kanpeki/label","@kanpeki/list-box","@kanpeki/popover","@kanpeki/spinner","@tanstack/react-query"],
+    files: [{
+      path: "src/registry/examples/select-infinite-scroll-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/select-infinite-scroll-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "select-infinite-scroll-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "skeleton-demo": {
     name: "skeleton-demo",
     description: "",
