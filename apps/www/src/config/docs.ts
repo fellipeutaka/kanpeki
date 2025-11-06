@@ -62,6 +62,10 @@ export const docsConfig: DocsConfig = {
           title: "Alert",
         },
         {
+          href: "/docs/components/autocomplete",
+          title: "Autocomplete",
+        },
+        {
           href: "/docs/components/avatar",
           title: "Avatar",
         },
@@ -107,10 +111,6 @@ export const docsConfig: DocsConfig = {
           disabled: true,
           href: "/docs/components/combobox",
           title: "Combobox",
-        },
-        {
-          href: "/docs/components/command",
-          title: "Command",
         },
         {
           disabled: true,

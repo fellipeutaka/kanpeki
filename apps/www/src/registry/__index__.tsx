@@ -1572,6 +1572,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "autocomplete-demo": {
+    name: "autocomplete-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/autocomplete","@kanpeki/dialog","@kanpeki/keyboard","@kanpeki/menu","@kanpeki/search-field"],
+    files: [{
+      path: "src/registry/examples/autocomplete-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/autocomplete-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "autocomplete-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "autocomplete-dialog-demo": {
+    name: "autocomplete-dialog-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/autocomplete","@kanpeki/dialog","@kanpeki/keyboard","@kanpeki/menu","@kanpeki/search-field"],
+    files: [{
+      path: "src/registry/examples/autocomplete-dialog-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/autocomplete-dialog-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "autocomplete-dialog-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "avatar-demo": {
     name: "avatar-demo",
     description: "",
