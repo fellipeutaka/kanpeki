@@ -317,6 +317,20 @@ const checkboxExamples: RegistryItem[] = [
   },
 ];
 
+const collapsibleExamples: RegistryItem[] = [
+  {
+    name: "collapsible-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/collapsible"],
+    files: [
+      {
+        path: "src/registry/examples/collapsible-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const listBoxExamples: RegistryItem[] = [
   {
     name: "list-box-demo",
@@ -764,6 +778,7 @@ export const examples: RegistryItem[] = [
   ...calendarExamples,
   ...cardExamples,
   ...checkboxExamples,
+  ...collapsibleExamples,
   ...listBoxExamples,
   ...menuExamples,
   ...separatorExamples,

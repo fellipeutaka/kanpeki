@@ -39,18 +39,22 @@ npx shadcn@latest add @kanpeki/alert
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
+import { TerminalIcon } from "lucide-react";
 import { Alert } from "~/components/ui/alert";
-import { Icons } from "~/components/icons";
-```
 
-```tsx
 <Alert.Root>
-  <Icons.Terminal className="size-4" />
+  <TerminalIcon className="size-4" />
   <Alert.Title>Heads up!</Alert.Title>
   <Alert.Description>
     You can add components and dependencies to your app using the cli.
@@ -58,22 +62,26 @@ import { Icons } from "~/components/icons";
 </Alert.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
+import { TerminalIcon } from "lucide-react";
 import { AlertRoot, AlertDescription, AlertTitle } from "~/components/ui/alert";
-import { Icons } from "~/components/icons";
-```
 
-```tsx
 <AlertRoot>
-  <Icons.Terminal className="size-4" />
+  <TerminalIcon className="size-4" />
   <AlertTitle>Heads up!</AlertTitle>
   <AlertDescription>
     You can add components and dependencies to your app using the cli.
   </AlertDescription>
 </AlertRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 

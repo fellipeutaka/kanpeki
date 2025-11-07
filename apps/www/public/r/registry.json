@@ -1474,6 +1474,17 @@
       ]
     },
     {
+      "name": "collapsible-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/collapsible"],
+      "files": [
+        {
+          "path": "src/registry/examples/collapsible-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "list-box-demo",
       "type": "registry:example",
       "registryDependencies": ["@kanpeki/list-box"],

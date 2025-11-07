@@ -39,15 +39,19 @@ npx shadcn-ui@latest add @kanpeki/accordion
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Accordion } from "~/components/ui/accordion";
-```
 
-```tsx
 <Accordion.Root defaultExpandedKeys={["item-1"]}>
   <Accordion.Item value="item-1">
     <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
@@ -58,7 +62,9 @@ import { Accordion } from "~/components/ui/accordion";
 </Accordion.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -67,9 +73,7 @@ import {
   AccordionRoot,
   AccordionTrigger,
 } from "~/components/ui/accordion";
-```
 
-```tsx
 <AccordionRoot defaultExpandedKeys={["item-1"]}>
   <AccordionItem value="item-1">
     <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -79,6 +83,10 @@ import {
   </AccordionItem>
 </AccordionRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Animation
 

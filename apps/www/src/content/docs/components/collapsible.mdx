@@ -39,15 +39,19 @@ npx shadcn@latest add @kanpeki/collapsible
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Collapsible } from "~/components/ui/collapsible";
-```
 
-```tsx
 <Collapsible.Root>
   <Collapsible.Trigger>Is it accessible?</Collapsible.Trigger>
   <Collapsible.Content>
@@ -56,7 +60,9 @@ import { Collapsible } from "~/components/ui/collapsible";
 </Collapsible.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -64,15 +70,32 @@ import {
   CollapsibleRoot,
   CollapsibleTrigger,
 } from "~/components/ui/collapsible";
-```
 
-```tsx
 <CollapsibleRoot>
   <CollapsibleTrigger>Is it accessible?</CollapsibleTrigger>
   <CollapsibleContent>
     Yes. It adheres to the WAI-ARIA design pattern.
   </CollapsibleContent>
 </CollapsibleRoot>
+```
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Trigger
+
+You can use the `<Collapsible.Trigger />{:tsx}` component to create a button that toggles the visibility of the collapsible content,
+or you can use the `<Button />{:tsx}` component as the trigger by passing it a `slot="trigger"{:tsx}` prop.
+
+```tsx
+<Collapsible.Root>
+  {/* [!code highlight] */}
+  <Button slot="trigger" variant="ghost">Is it accessible?</Button>
+  <Collapsible.Content>
+    Yes. It adheres to the WAI-ARIA design pattern.
+  </Collapsible.Content>
+</Collapsible.Root>
 ```
 
 ## Animation

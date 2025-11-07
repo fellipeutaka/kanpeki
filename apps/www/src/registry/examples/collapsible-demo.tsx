@@ -1,30 +1,18 @@
-"use client";
-
 import { ChevronsUpDownIcon } from "lucide-react";
-
-import { useState } from "react";
-import { ButtonStyles } from "~/registry/ui/button";
+import { Button } from "~/registry/ui/button";
 import { Collapsible } from "~/registry/ui/collapsible";
 
 export function CollapsibleDemo() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <Collapsible.Root
-      className="flex w-full flex-col gap-2 md:w-[350px]"
-      isExpanded={isOpen}
-      onExpandedChange={setIsOpen}
-    >
+    <Collapsible.Root className="flex w-full flex-col gap-2 md:w-[350px]">
       <div className="flex items-center justify-between gap-4 px-4">
         <h4 className="line-clamp-1 font-semibold text-sm">
           @peduarte starred 3 repositories
         </h4>
-        <Collapsible.Trigger
-          className={ButtonStyles({ size: "sm", variant: "ghost" })}
-        >
+        <Button size="sm" slot="trigger" variant="ghost">
           <ChevronsUpDownIcon className="size-4" />
           <span className="sr-only">Toggle</span>
-        </Collapsible.Trigger>
+        </Button>
       </div>
       <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-xs">
         @radix-ui/primitives
