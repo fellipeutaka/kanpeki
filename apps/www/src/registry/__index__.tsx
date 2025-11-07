@@ -2040,6 +2040,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "scroll-area-demo": {
+    name: "scroll-area-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/scroll-area"],
+    files: [{
+      path: "src/registry/examples/scroll-area-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/scroll-area-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "scroll-area-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "scroll-area-horizontal-demo": {
+    name: "scroll-area-horizontal-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/scroll-area"],
+    files: [{
+      path: "src/registry/examples/scroll-area-horizontal-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/scroll-area-horizontal-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "scroll-area-horizontal-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "select-demo": {
     name: "select-demo",
     description: "",

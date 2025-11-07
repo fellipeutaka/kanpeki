@@ -39,15 +39,19 @@ npx shadcn@latest add @kanpeki/scroll-area
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { ScrollArea } from "~/components/ui/scroll-area";
-```
 
-```tsx
 <ScrollArea.Root>
   <ScrollArea.Viewport>...</ScrollArea.Viewport>
   <ScrollArea.Scrollbar orientation="vertical">
@@ -59,7 +63,9 @@ import { ScrollArea } from "~/components/ui/scroll-area";
 </ScrollArea.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -68,9 +74,7 @@ import {
   ScrollAreaScrollbar,
   ScrollAreaThumb,
 } from "~/components/ui/scroll-area";
-```
 
-```tsx
 <ScrollAreaRoot>
   <ScrollAreaViewport>...</ScrollAreaViewport>
   <ScrollAreaScrollbar orientation="vertical">
@@ -82,11 +86,15 @@ import {
 </ScrollAreaRoot>
 ```
 
+</Tabs.Content>
+
+</Tabs.Root>
+
 ## Examples
 
 ### Horizontal
 
-<ComponentPreview name="scroll-area-horizontal" />
+<ComponentPreview name="scroll-area-horizontal-demo" />
 
 ## API Reference
 

@@ -367,6 +367,31 @@ const separatorExamples: RegistryItem[] = [
   },
 ];
 
+const scrollAreaExamples: RegistryItem[] = [
+  {
+    name: "scroll-area-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/scroll-area"],
+    files: [
+      {
+        path: "src/registry/examples/scroll-area-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-area-horizontal-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/scroll-area"],
+    files: [
+      {
+        path: "src/registry/examples/scroll-area-horizontal-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const selectExamples: RegistryItem[] = [
   {
     name: "select-demo",
@@ -705,6 +730,7 @@ export const examples: RegistryItem[] = [
   ...listBoxExamples,
   ...menuExamples,
   ...separatorExamples,
+  ...scrollAreaExamples,
   ...selectExamples,
   ...skeletonExamples,
   ...spinnerExamples,
