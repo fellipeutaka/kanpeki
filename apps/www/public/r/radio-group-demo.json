@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/radio-group"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/radio-group-demo.tsx",
+      "content": "import { Label } from \"~/registry/ui/label/label\";\nimport { RadioGroup } from \"~/registry/ui/radio-group\";\n\nexport function RadioGroupDemo() {\n  return (\n    <RadioGroup.Root aria-label=\"Display density\" defaultValue=\"comfortable\">\n      <RadioGroup.Item value=\"default\">\n        <RadioGroup.Indicator />\n        <Label>Default</Label>\n      </RadioGroup.Item>\n\n      <RadioGroup.Item value=\"comfortable\">\n        <RadioGroup.Indicator />\n        <Label>Comfortable</Label>\n      </RadioGroup.Item>\n\n      <RadioGroup.Item value=\"compact\">\n        <RadioGroup.Indicator />\n        <Label>Compact</Label>\n      </RadioGroup.Item>\n    </RadioGroup.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

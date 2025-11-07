@@ -2076,6 +2076,60 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "radio-group-demo": {
+    name: "radio-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/radio-group"],
+    files: [{
+      path: "src/registry/examples/radio-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/radio-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "radio-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "radio-group-with-description-demo": {
+    name: "radio-group-with-description-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/radio-group"],
+    files: [{
+      path: "src/registry/examples/radio-group-with-description-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/radio-group-with-description-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "radio-group-with-description-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "radio-group-disabled-demo": {
+    name: "radio-group-disabled-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/radio-group"],
+    files: [{
+      path: "src/registry/examples/radio-group-disabled-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/radio-group-disabled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "radio-group-disabled-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "separator-demo": {
     name: "separator-demo",
     description: "",
