@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/checkbox"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/checkbox-demo.tsx",
+      "content": "import { Checkbox } from \"~/registry/ui/checkbox\";\n\nexport function CheckboxDemo() {\n  return (\n    <Checkbox.Provider>\n      <Checkbox.Root>\n        <Checkbox.Indicator />\n      </Checkbox.Root>\n      Accept terms and conditions\n    </Checkbox.Provider>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

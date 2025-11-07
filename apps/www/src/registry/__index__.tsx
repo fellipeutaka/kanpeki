@@ -1914,6 +1914,60 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "checkbox-demo": {
+    name: "checkbox-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [{
+      path: "src/registry/examples/checkbox-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/checkbox-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "checkbox-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "checkbox-disabled-demo": {
+    name: "checkbox-disabled-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [{
+      path: "src/registry/examples/checkbox-disabled-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/checkbox-disabled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "checkbox-disabled-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "checkbox-group-demo": {
+    name: "checkbox-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [{
+      path: "src/registry/examples/checkbox-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/checkbox-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "checkbox-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "list-box-demo": {
     name: "list-box-demo",
     description: "",

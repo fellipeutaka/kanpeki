@@ -281,6 +281,42 @@ const cardExamples: RegistryItem[] = [
   },
 ];
 
+const checkboxExamples: RegistryItem[] = [
+  {
+    name: "checkbox-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [
+      {
+        path: "src/registry/examples/checkbox-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "checkbox-disabled-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [
+      {
+        path: "src/registry/examples/checkbox-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "checkbox-group-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [
+      {
+        path: "src/registry/examples/checkbox-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const listBoxExamples: RegistryItem[] = [
   {
     name: "list-box-demo",
@@ -727,6 +763,7 @@ export const examples: RegistryItem[] = [
   ...buttonExamples,
   ...calendarExamples,
   ...cardExamples,
+  ...checkboxExamples,
   ...listBoxExamples,
   ...menuExamples,
   ...separatorExamples,

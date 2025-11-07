@@ -1441,6 +1441,39 @@
       ]
     },
     {
+      "name": "checkbox-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/checkbox"],
+      "files": [
+        {
+          "path": "src/registry/examples/checkbox-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-disabled-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/checkbox"],
+      "files": [
+        {
+          "path": "src/registry/examples/checkbox-disabled-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "checkbox-group-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/checkbox"],
+      "files": [
+        {
+          "path": "src/registry/examples/checkbox-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "list-box-demo",
       "type": "registry:example",
       "registryDependencies": ["@kanpeki/list-box"],

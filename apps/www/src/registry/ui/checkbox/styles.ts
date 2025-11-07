@@ -12,7 +12,7 @@ export const CheckboxStyles = {
   }),
   Root: cva({
     base: [
-      "grid size-4 shrink-0 place-content-center rounded border border-toggle bg-secondary text-background transition",
+      "grid size-4 shrink-0 place-content-center rounded-sm border border-toggle bg-secondary text-background transition",
 
       "group-selected:border-primary/70 group-selected:bg-primary group-selected:text-primary-foreground",
       "group-selected:group-invalid:border-destructive/70 group-selected:group-invalid:bg-destructive group-selected:group-invalid:text-destructive-foreground",
