@@ -39,19 +39,24 @@ npx shadcn@latest add @kanpeki/card
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Card } from "~/components/ui/card";
-```
 
-```tsx
 <Card.Root>
   <Card.Header>
     <Card.Title>Card Title</Card.Title>
     <Card.Description>Card Description</Card.Description>
+    <Card.Action>Card Action</Card.Action>
   </Card.Header>
   <Card.Content>
     <p>Card Content</p>
@@ -62,24 +67,26 @@ import { Card } from "~/components/ui/card";
 </Card.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
-  CardRoot,
-  CardHeader,
-  CardTitle,
-  CardDescription,
+  CardAction,
   CardContent,
+  CardDescription,
   CardFooter,
+  CardHeader,
+  CardRoot,
+  CardTitle,
 } from "~/components/ui/card";
-```
 
-```tsx
 <CardRoot>
   <CardHeader>
     <CardTitle>Card Title</CardTitle>
     <CardDescription>Card Description</CardDescription>
+    <CardAction>Card Action</CardAction>
   </CardHeader>
   <CardContent>
     <p>Card Content</p>
@@ -89,6 +96,10 @@ import {
   </CardFooter>
 </CardRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 

@@ -39,46 +39,66 @@ npx shadcn@latest add @kanpeki/checkbox
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Checkbox } from "~/components/ui/checkbox";
-```
 
-```tsx
 <Checkbox.Provider>
   <Checkbox.Root>
     <Checkbox.Indicator />
   </Checkbox.Root>
+  Label
 </Checkbox.Provider>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
+  CheckboxIndicator,
   CheckboxProvider,
   CheckboxRoot,
-  CheckboxIndicator,
 } from "~/components/ui/checkbox";
-```
 
-```tsx
 <CheckboxProvider>
   <CheckboxRoot>
     <CheckboxIndicator />
   </CheckboxRoot>
+  Label
 </CheckboxProvider>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 
 ### Disabled
 
-<ComponentPreview name="checkbox-disabled" />
+<ComponentPreview name="checkbox-disabled-demo" />
+
+### Group
+
+<ComponentPreview name="checkbox-group-demo" />
 
 ### Form
 
-<ComponentPreview name="checkbox-form" />
+<Alert.Root variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Title>Under Construction</Alert.Title>
+  <Alert.Description>
+    This component is currently being built. Check back soon for updates!
+  </Alert.Description>
+</Alert.Root>

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/scroll-area"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/scroll-area-demo.tsx",
+      "content": "import { Fragment } from \"react\";\nimport { ScrollArea } from \"~/registry/ui/scroll-area\";\nimport { Separator } from \"~/registry/ui/separator\";\n\nconst tags = Array.from({ length: 50 }).map(\n  (_, i, a) => `v1.2.0-beta.${a.length - i}`\n);\n\nexport function ScrollAreaDemo() {\n  return (\n    <ScrollArea.Root>\n      <ScrollArea.Viewport className=\"h-72 w-48 rounded-md border\">\n        <div className=\"p-4\">\n          <h4 className=\"mb-4 font-medium text-sm leading-none\">Tags</h4>\n          {tags.map((tag) => (\n            <Fragment key={tag}>\n              <div className=\"text-sm\">{tag}</div>\n              <Separator className=\"my-2\" />\n            </Fragment>\n          ))}\n        </div>\n      </ScrollArea.Viewport>\n      <ScrollArea.Scrollbar orientation=\"vertical\">\n        <ScrollArea.Thumb />\n      </ScrollArea.Scrollbar>\n    </ScrollArea.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

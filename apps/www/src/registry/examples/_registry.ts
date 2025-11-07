@@ -39,6 +39,43 @@ const alertExamples: RegistryItem[] = [
   },
 ];
 
+const autocompleteExamples: RegistryItem[] = [
+  {
+    name: "autocomplete-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "@kanpeki/autocomplete",
+      "@kanpeki/dialog",
+      "@kanpeki/keyboard",
+      "@kanpeki/menu",
+      "@kanpeki/search-field",
+    ],
+    files: [
+      {
+        path: "src/registry/examples/autocomplete-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "autocomplete-dialog-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "@kanpeki/autocomplete",
+      "@kanpeki/dialog",
+      "@kanpeki/keyboard",
+      "@kanpeki/menu",
+      "@kanpeki/search-field",
+    ],
+    files: [
+      {
+        path: "src/registry/examples/autocomplete-dialog-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const avatarExamples: RegistryItem[] = [
   {
     name: "avatar-demo",
@@ -244,6 +281,56 @@ const cardExamples: RegistryItem[] = [
   },
 ];
 
+const checkboxExamples: RegistryItem[] = [
+  {
+    name: "checkbox-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [
+      {
+        path: "src/registry/examples/checkbox-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "checkbox-disabled-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [
+      {
+        path: "src/registry/examples/checkbox-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "checkbox-group-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/checkbox"],
+    files: [
+      {
+        path: "src/registry/examples/checkbox-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const collapsibleExamples: RegistryItem[] = [
+  {
+    name: "collapsible-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/collapsible"],
+    files: [
+      {
+        path: "src/registry/examples/collapsible-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const listBoxExamples: RegistryItem[] = [
   {
     name: "list-box-demo",
@@ -324,6 +411,31 @@ const separatorExamples: RegistryItem[] = [
     files: [
       {
         path: "src/registry/examples/separator-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const scrollAreaExamples: RegistryItem[] = [
+  {
+    name: "scroll-area-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/scroll-area"],
+    files: [
+      {
+        path: "src/registry/examples/scroll-area-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "scroll-area-horizontal-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/scroll-area"],
+    files: [
+      {
+        path: "src/registry/examples/scroll-area-horizontal-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -658,15 +770,19 @@ const typographyExamples: RegistryItem[] = [
 export const examples: RegistryItem[] = [
   ...accordionExamples,
   ...alertExamples,
+  ...autocompleteExamples,
   ...avatarExamples,
   ...badgeExamples,
   ...breadcrumbExamples,
   ...buttonExamples,
   ...calendarExamples,
   ...cardExamples,
+  ...checkboxExamples,
+  ...collapsibleExamples,
   ...listBoxExamples,
   ...menuExamples,
   ...separatorExamples,
+  ...scrollAreaExamples,
   ...selectExamples,
   ...skeletonExamples,
   ...spinnerExamples,

@@ -1,12 +1,12 @@
 import { Checkbox } from "~/registry/ui/checkbox";
 
-export function CheckboxDemo() {
+export function CheckboxDisabledDemo() {
   return (
-    <Checkbox.Provider>
+    <Checkbox.Provider isDisabled>
       <Checkbox.Root>
         <Checkbox.Indicator />
       </Checkbox.Root>
-      Accept terms and conditions
+      Enable notifications
     </Checkbox.Provider>
   );
 }

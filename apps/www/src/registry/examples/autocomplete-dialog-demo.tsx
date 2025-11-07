@@ -17,7 +17,7 @@ import { Keyboard } from "~/registry/ui/keyboard";
 import { Menu } from "~/registry/ui/menu";
 import { SearchField } from "~/registry/ui/search-field";
 
-export function CommandDemo() {
+export function AutocompleteDialogDemo() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
