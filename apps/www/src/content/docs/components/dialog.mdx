@@ -39,75 +39,91 @@ npx shadcn@latest add @kanpeki/dialog
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Button } from "~/components/ui/button";
 import { Dialog } from "~/components/ui/dialog";
-```
 
-```tsx
 <Dialog.Root>
-  <Button>Open</Button>
+  <Button>Trigger</Button>
 
   <Dialog.Overlay>
     <Dialog.Modal>
       <Dialog.Content>
         <Dialog.Header>
-          <Dialog.Title>Are you absolutely sure?</Dialog.Title>
-          <Dialog.Description>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </Dialog.Description>
+          <Dialog.Title />
+          <Dialog.Description />
         </Dialog.Header>
+
+        <Dialog.Footer>
+          <Button slot="close" />
+        </Dialog.Footer>
+
+        <Dialog.Close />
       </Dialog.Content>
     </Dialog.Modal>
   </Dialog.Overlay>
 </Dialog.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import { Button } from "~/components/ui/button";
 import {
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogModal,
   DialogOverlay,
   DialogRoot,
   DialogTitle,
 } from "~/components/ui/dialog";
-```
 
-```tsx
 <DialogRoot>
-  <Button>Open</Button>
+  <Button>Trigger</Button>
 
   <DialogOverlay>
     <DialogModal>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Are you absolutely sure?</DialogTitle>
-          <DialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </DialogDescription>
+          <DialogTitle />
+          <DialogDescription />
         </DialogHeader>
+
+        <DialogFooter>
+          <Button slot="close" />
+        </DialogFooter>
+
+        <DialogClose />
       </DialogContent>
     </DialogModal>
   </DialogOverlay>
 </DialogRoot>
 ```
 
+</Tabs.Content>
+
+</Tabs.Root>
+
 ## Examples
 
-### Dialog
+### Scrollable
 
-<ComponentPreview name="dialog-demo" />
+<ComponentPreview name="dialog-scrollable-demo" />
 
 ### Alert Dialog
 
@@ -121,7 +137,7 @@ to prevent the dialog from being dismissed by clicking outside of it.
 
 Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet dialog.
 
-<ComponentPreview name="dialog-sheet" />
+<ComponentPreview name="dialog-sheet-demo" />
 
 ## API Reference
 
