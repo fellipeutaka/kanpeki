@@ -331,6 +331,54 @@ const collapsibleExamples: RegistryItem[] = [
   },
 ];
 
+const dialogExamples: RegistryItem[] = [
+  {
+    name: "dialog-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/dialog"],
+    files: [
+      {
+        path: "src/registry/examples/dialog-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "dialog-scrollable-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/dialog"],
+    files: [
+      {
+        path: "src/registry/examples/dialog-scrollable-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "alert-dialog-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/dialog"],
+    files: [
+      {
+        path: "src/registry/examples/alert-dialog-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  // TODO: If sheet is split into a dedicated example registry, remove it here
+  {
+    name: "dialog-sheet-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/sheet"],
+    files: [
+      {
+        path: "src/registry/examples/sheet-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const listBoxExamples: RegistryItem[] = [
   {
     name: "list-box-demo",
@@ -386,6 +434,42 @@ const menuExamples: RegistryItem[] = [
     files: [
       {
         path: "src/registry/examples/menu-radio-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const radioGroupExamples: RegistryItem[] = [
+  {
+    name: "radio-group-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/radio-group"],
+    files: [
+      {
+        path: "src/registry/examples/radio-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "radio-group-with-description-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/radio-group"],
+    files: [
+      {
+        path: "src/registry/examples/radio-group-with-description-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "radio-group-disabled-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/radio-group"],
+    files: [
+      {
+        path: "src/registry/examples/radio-group-disabled-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -779,8 +863,10 @@ export const examples: RegistryItem[] = [
   ...cardExamples,
   ...checkboxExamples,
   ...collapsibleExamples,
+  ...dialogExamples,
   ...listBoxExamples,
   ...menuExamples,
+  ...radioGroupExamples,
   ...separatorExamples,
   ...scrollAreaExamples,
   ...selectExamples,
