@@ -19,7 +19,7 @@ export function BreadcrumbDropdownDemo() {
           </RACButton>
 
           <Popover.Content>
-            <Popover.Anchor />
+            <Popover.Arrow />
 
             <Menu.Content>
               <Menu.Item>Documentation</Menu.Item>

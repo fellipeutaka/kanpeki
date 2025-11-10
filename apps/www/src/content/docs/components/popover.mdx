@@ -39,16 +39,20 @@ npx shadcn@latest add @kanpeki/popover
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Button } from "~/components/ui/button";
 import { Popover } from "~/components/ui/popover";
-```
 
-```tsx
 <Popover.Root>
   <Button>...</Button>
 
@@ -59,7 +63,9 @@ import { Popover } from "~/components/ui/popover";
 </Popover.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import { Button } from "~/components/ui/button";
@@ -68,9 +74,7 @@ import {
   PopoverContent,
   PopoverRoot,
 } from "~/components/ui/popover";
-```
 
-```tsx
 <PopoverRoot>
   <Button>...</Button>
   <PopoverContent>
@@ -80,8 +84,12 @@ import {
 </PopoverRoot>
 ```
 
+</Tabs.Content>
+
+</Tabs.Root>
+
 ## Examples
 
 ### With Arrow
 
-<ComponentPreview name="popover-with-arrow" />
+<ComponentPreview name="popover-with-arrow-demo" />

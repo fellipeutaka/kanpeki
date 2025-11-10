@@ -2148,6 +2148,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "popover-demo": {
+    name: "popover-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/popover"],
+    files: [{
+      path: "src/registry/examples/popover-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/popover-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "popover-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "popover-with-arrow-demo": {
+    name: "popover-with-arrow-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/popover"],
+    files: [{
+      path: "src/registry/examples/popover-with-arrow-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/popover-with-arrow-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "popover-with-arrow-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "radio-group-demo": {
     name: "radio-group-demo",
     description: "",

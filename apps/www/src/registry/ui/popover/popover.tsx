@@ -62,9 +62,33 @@ export function PopoverContent({
   );
 }
 
-export interface PopoverAnchorProps
+export interface PopoverArrowProps
   extends React.ComponentProps<typeof OverlayArrow> {}
 
-export function PopoverAnchor({ ...props }: PopoverAnchorProps) {
-  return <OverlayArrow data-slot="popover-anchor" {...props} />;
+export function PopoverArrow({
+  className,
+  children,
+  ...props
+}: PopoverArrowProps) {
+  return (
+    <OverlayArrow
+      className={composeRenderProps(className, (className) =>
+        PopoverStyles.Arrow({
+          className,
+        })
+      )}
+      data-slot="popover-arrow"
+      {...props}
+    >
+      {composeRenderProps(
+        children,
+        (children) =>
+          children ?? (
+            <svg aria-hidden="true" height={12} viewBox="0 0 12 12" width={12}>
+              <path d="M0 0 L6 6 L12 0" />
+            </svg>
+          )
+      )}
+    </OverlayArrow>
+  );
 }

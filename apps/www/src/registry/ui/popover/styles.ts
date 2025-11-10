@@ -3,8 +3,8 @@ import { cva } from "~/registry/lib/cva";
 export const PopoverStyles = {
   Arrow: cva({
     base: [
-      "block fill-popover stroke-border",
-      "group-placement-left:-rotate-90 group-placement-bottom:rotate-180 group-placement-right:rotate-90",
+      "[&_svg]:fill-popover [&_svg]:stroke-border",
+      "placement-left:-rotate-90 placement-bottom:rotate-180 placement-right:rotate-90",
     ],
   }),
   Content: cva({

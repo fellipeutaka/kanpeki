@@ -440,6 +440,31 @@ const menuExamples: RegistryItem[] = [
   },
 ];
 
+const popoverExamples: RegistryItem[] = [
+  {
+    name: "popover-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/popover"],
+    files: [
+      {
+        path: "src/registry/examples/popover-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "popover-with-arrow-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/popover"],
+    files: [
+      {
+        path: "src/registry/examples/popover-with-arrow-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const radioGroupExamples: RegistryItem[] = [
   {
     name: "radio-group-demo",
@@ -866,6 +891,7 @@ export const examples: RegistryItem[] = [
   ...dialogExamples,
   ...listBoxExamples,
   ...menuExamples,
+  ...popoverExamples,
   ...radioGroupExamples,
   ...separatorExamples,
   ...scrollAreaExamples,
