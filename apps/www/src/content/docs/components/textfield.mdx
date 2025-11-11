@@ -39,15 +39,19 @@ npx shadcn@latest add @kanpeki/textfield
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { TextField } from "~/components/ui/text-field";
-```
 
-```tsx
 <TextField.Provider>
   <TextField.Root>
     <TextField.Slot />
@@ -57,7 +61,9 @@ import { TextField } from "~/components/ui/text-field";
 </TextField.Provider>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -66,9 +72,7 @@ import {
   TextFieldSlot,
   TextFieldInput,
 } from "~/components/ui/text-field";
-```
 
-```tsx
 <TextFieldProvider>
   <TextFieldRoot>
     <TextFieldSlot />
@@ -77,6 +81,10 @@ import {
   </TextFieldRoot>
 </TextFieldProvider>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 

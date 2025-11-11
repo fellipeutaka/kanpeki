@@ -39,15 +39,19 @@ npx shadcn@latest add @kanpeki/table
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Table } from "~/components/ui/table";
-```
 
-```tsx
 <Table.Root>
   <Table.Caption>A list of your recent invoices.</Table.Caption>
   <Table.Header>
@@ -75,7 +79,9 @@ import { Table } from "~/components/ui/table";
 </Table.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -88,9 +94,7 @@ import {
   TableRoot,
   TableRow,
 } from "~/components/ui/table";
-```
 
-```tsx
 <TableRoot>
   <TableCaption>A list of your recent invoices.</TableCaption>
   <TableHeader>
@@ -117,6 +121,10 @@ import {
   </TableFooter>
 </TableRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 

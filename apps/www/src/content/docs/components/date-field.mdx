@@ -39,15 +39,19 @@ npx shadcn@latest add @kanpeki/date-field
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { DateField } from "~/components/ui/date-field";
-```
 
-```tsx
 <DateField.Root>
   <Label />
   <DateField.Input>
@@ -56,7 +60,9 @@ import { DateField } from "~/components/ui/date-field";
 </DateField.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -64,9 +70,7 @@ import {
   DateFieldRoot,
   DateFieldSegment,
 } from "~/components/ui/date-field";
-```
 
-```tsx
 <DateFieldRoot>
   <Label />
   <DateFieldInput>
@@ -74,6 +78,10 @@ import {
   </DateFieldInput>
 </DateFieldRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 

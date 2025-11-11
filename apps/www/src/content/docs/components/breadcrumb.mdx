@@ -39,16 +39,20 @@ npx shadcn@latest add @kanpeki/breadcrumb
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Breadcrumb } from "~/components/ui/breadcrumb";
 import { Link } from "~/components/ui/link";
-```
 
-```tsx
 <Breadcrumb.Root>
   <Breadcrumb.Item>
     <Link />
@@ -64,7 +68,9 @@ import { Link } from "~/components/ui/link";
 </Breadcrumb.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -76,9 +82,7 @@ import {
   BreadcrumbPage,
 } from "~/components/ui/breadcrumb";
 import { Link } from "~/components/ui/link";
-```
 
-```tsx
 <BreadcrumbRoot>
   <BreadcrumbItem>
     <Link />
@@ -93,6 +97,10 @@ import { Link } from "~/components/ui/link";
   </BreadcrumbItem>
 </BreadcrumbRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 

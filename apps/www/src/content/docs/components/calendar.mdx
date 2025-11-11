@@ -39,16 +39,20 @@ npx shadcn@latest add @kanpeki/calendar
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Button } from "~/components/ui/button";
 import { Calendar } from "~/components/ui/calendar";
-```
 
-```tsx
 <Calendar.Root>
   <Calendar.Header>
     <Calendar.Nav>
@@ -69,7 +73,9 @@ import { Calendar } from "~/components/ui/calendar";
 </Calendar.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import { Button } from "~/components/ui/button";
@@ -84,9 +90,7 @@ import {
   CalendarNav,
   CalendarRoot,
 } from "~/components/ui/calendar";
-```
 
-```tsx
 <CalendarRoot>
   <CalendarHeader>
     <CalendarNav>
@@ -106,6 +110,10 @@ import {
   </CalendarGrid>
 </CalendarRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 
