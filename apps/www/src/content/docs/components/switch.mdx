@@ -39,15 +39,19 @@ npx shadcn@latest add @kanpeki/switch
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Switch } from "~/components/ui/switch";
-```
 
-```tsx
 <Switch.Root>
   <Switch.Track>
     <Switch.Thumb />
@@ -55,19 +59,23 @@ import { Switch } from "~/components/ui/switch";
 </Switch.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import { SwitchRoot, SwitchTrack, SwitchThumb } from "~/components/ui/switch";
-```
 
-```tsx
 <SwitchRoot>
   <SwitchTrack>
     <SwitchThumb />
   </SwitchTrack>
 </SwitchRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 

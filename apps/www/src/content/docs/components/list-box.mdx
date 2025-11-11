@@ -39,31 +39,39 @@ npx shadcn@latest add @kanpeki/list-box
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { ListBox } from "~/components/ui/list-box";
-```
 
-```tsx
 <ListBox.Root>
   {(item) => <ListBox.Item id={item.id}>{item.name}</ListBox.Item>}
 </ListBox.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import { ListBoxItem, ListBoxRoot } from "~/components/ui/list-box";
-```
 
-```tsx
 <ListBoxRoot>
   {(item) => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
 </ListBoxRoot>
 ```
+
+</Tabs.Content>
+
+</Tabs.Root>
 
 ## Examples
 
