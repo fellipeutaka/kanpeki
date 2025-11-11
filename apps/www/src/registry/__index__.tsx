@@ -2418,6 +2418,96 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "slider-demo": {
+    name: "slider-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider"],
+    files: [{
+      path: "src/registry/examples/slider-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/slider-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "slider-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "slider-multiple-demo": {
+    name: "slider-multiple-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider"],
+    files: [{
+      path: "src/registry/examples/slider-multiple-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/slider-multiple-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "slider-multiple-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "slider-with-label-demo": {
+    name: "slider-with-label-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/slider-with-label-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/slider-with-label-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "slider-with-label-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "slider-custom-stepping-demo": {
+    name: "slider-custom-stepping-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/slider-custom-stepping-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/slider-custom-stepping-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "slider-custom-stepping-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "slider-vertical-demo": {
+    name: "slider-vertical-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider"],
+    files: [{
+      path: "src/registry/examples/slider-vertical-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/slider-vertical-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "slider-vertical-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "spinner-demo": {
     name: "spinner-demo",
     description: "",
