@@ -5,7 +5,7 @@ links:
   docs: https://react-spectrum.adobe.com/react-aria/Tabs.html
 ---
 
-<ComponentPreview name="Tabs-demo" />
+<ComponentPreview name="tabs-demo" />
 
 ## Installation
 
@@ -39,28 +39,30 @@ npx shadcn@latest add @kanpeki/tabs
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Tabs } from "~/components/ui/tabs";
-```
 
-```tsx
-<Tabs.Root defaultValue="account">
+<Tabs.Root>
   <Tabs.List>
-    <Tabs.Trigger value="account">Account</Tabs.Trigger>
-    <Tabs.Trigger value="password">Password</Tabs.Trigger>
+    <Tabs.Trigger />
   </Tabs.List>
-  <Tabs.Content value="account">
-    Make changes to your account here.
-  </Tabs.Content>
-  <Tabs.Content value="password">Change your password here.</Tabs.Content>
+  <Tabs.Content />
 </Tabs.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -69,21 +71,31 @@ import {
   TabsTrigger,
   TabsContent,
 } from "~/components/ui/tabs";
-```
 
-```tsx
-<TabsRoot defaultValue="account">
+<TabsRoot>
   <TabsList>
-    <TabsTrigger value="account">Account</TabsTrigger>
-    <TabsTrigger value="password">Password</TabsTrigger>
+    <TabsTrigger />
   </TabsList>
-  <TabsContent value="account">Make changes to your account here.</TabsContent>
-  <TabsContent value="password">Change your password here.</TabsContent>
+  <TabsContent />
 </TabsRoot>
 ```
 
+</Tabs.Content>
+
+</Tabs.Root>
+
 ## Examples
+
+### Disabled
+
+<ComponentPreview name="tabs-disabled-demo" />
 
 ### Vertical
 
-<ComponentPreview name="tabs-vertical" />
+<Alert.Root variant="warning">
+  <Icons.TriangleAlert className="size-4" />
+  <Alert.Title>Under Construction</Alert.Title>
+  <Alert.Description>
+    This component is currently being built. Check back soon for updates!
+  </Alert.Description>
+</Alert.Root>

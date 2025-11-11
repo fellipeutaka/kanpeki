@@ -749,6 +749,49 @@ const switchExamples: RegistryItem[] = [
   },
 ];
 
+const tabsExamples: RegistryItem[] = [
+  {
+    name: "tabs-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "@kanpeki/button",
+      "@kanpeki/card",
+      "@kanpeki/input",
+      "@kanpeki/label",
+      "@kanpeki/textfield",
+      "@kanpeki/tabs",
+    ],
+    files: [
+      {
+        path: "src/registry/examples/tabs-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-disabled-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tabs"],
+    files: [
+      {
+        path: "src/registry/examples/tabs-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-vertical-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tabs"],
+    files: [
+      {
+        path: "src/registry/examples/tabs-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const toastExamples: RegistryItem[] = [
   {
     name: "toast-demo",
@@ -1030,6 +1073,7 @@ export const examples: RegistryItem[] = [
   ...sliderExamples,
   ...spinnerExamples,
   ...switchExamples,
+  ...tabsExamples,
   ...toastExamples,
   ...toggleExamples,
   ...tooltipExamples,

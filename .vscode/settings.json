@@ -26,5 +26,6 @@
     {
       "file": ".copilot-commit-message-instructions.md"
     }
-  ]
+  ],
+  "typescript.preferences.autoImportFileExcludePatterns": ["lucide-react"]
 }

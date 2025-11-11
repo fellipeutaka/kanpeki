@@ -5,7 +5,6 @@ import {
   BellIcon,
   ChevronsUpDownIcon,
   CreditCardIcon,
-  LogOut,
   LogOutIcon,
   MoreHorizontalIcon,
   PencilIcon,
@@ -228,7 +227,7 @@ function MenuWithAvatar() {
           </Menu.Group>
           <Menu.Separator />
           <Menu.Item>
-            <LogOut />
+            <LogOutIcon />
             Sign Out
           </Menu.Item>
         </Menu.Content>
@@ -290,7 +289,7 @@ function MenuAvatarOnly() {
           </Menu.Group>
           <Menu.Separator />
           <Menu.Item>
-            <LogOut />
+            <LogOutIcon />
             Sign Out
           </Menu.Item>
         </Menu.Content>

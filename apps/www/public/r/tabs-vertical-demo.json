@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-vertical-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/tabs"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/tabs-vertical-demo.tsx",
+      "content": "import { Tabs } from \"~/registry/ui/tabs\";\n\nexport function TabsVerticalDemo() {\n  return (\n    <Tabs.Root aria-label=\"E-Learning Platform\" orientation=\"vertical\">\n      <Tabs.List>\n        <Tabs.Trigger id=\"c\">Courses</Tabs.Trigger>\n        <Tabs.Trigger id=\"e\">Exams</Tabs.Trigger>\n        <Tabs.Trigger id=\"g\">Grades</Tabs.Trigger>\n        <Tabs.Trigger id=\"f\">Forums</Tabs.Trigger>\n        <Tabs.Trigger id=\"p\">Profile</Tabs.Trigger>\n      </Tabs.List>\n      <Tabs.Content id=\"c\">\n        Enroll in courses and access learning materials on various subjects.\n      </Tabs.Content>\n      <Tabs.Content id=\"e\">\n        Take practice exams and quizzes to test your knowledge.\n      </Tabs.Content>\n      <Tabs.Content id=\"g\">\n        View your grades and track your academic progress.\n      </Tabs.Content>\n      <Tabs.Content id=\"f\">\n        Participate in discussion forums with other students and instructors.\n      </Tabs.Content>\n      <Tabs.Content id=\"p\">\n        Update your profile and customize your learning preferences.\n      </Tabs.Content>\n    </Tabs.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -11,7 +11,7 @@
   "files": [
     {
       "path": "src/registry/examples/toggle-custom-fill-demo.tsx",
-      "content": "import { ItalicIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleCustomFillDemo() {\n  return (\n    <Toggle aria-label=\"Toggle italic\" variant=\"outline\">\n      <ItalicIcon />\n      Italic\n    </Toggle>\n  );\n}\n",
+      "content": "import { ThumbsUpIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleCustomFillDemo() {\n  return (\n    <Toggle\n      aria-label=\"Toggle book\"\n      className=\"selected:[&_svg]:fill-accent-foreground\"\n    >\n      <ThumbsUpIcon className=\"fill-transparent transition duration-300\" />\n    </Toggle>\n  );\n}\n",
       "type": "registry:example"
     }
   ]
