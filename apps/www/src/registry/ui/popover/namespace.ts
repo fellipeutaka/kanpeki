@@ -1,5 +1,5 @@
 export {
-  PopoverAnchor as Anchor,
+  PopoverArrow as Arrow,
   PopoverContent as Content,
   PopoverRoot as Root,
   PopoverTrigger as Trigger,

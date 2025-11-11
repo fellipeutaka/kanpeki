@@ -1,8 +1,12 @@
 import { Slider } from "~/registry/ui/slider";
 
-export function SliderDemo() {
+export function SliderVerticalDemo() {
   return (
-    <Slider.Root aria-label="Single value slider" defaultValue={[50]}>
+    <Slider.Root
+      aria-label="Vertical slider"
+      defaultValue={[50]}
+      orientation="vertical"
+    >
       <Slider.Track>
         <Slider.Range />
         <Slider.Thumb />

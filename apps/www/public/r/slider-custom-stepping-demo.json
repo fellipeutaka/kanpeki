@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-custom-stepping-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/slider",
+    "@kanpeki/label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/slider-custom-stepping-demo.tsx",
+      "content": "import { Label } from \"~/registry/ui/label\";\nimport { Slider } from \"~/registry/ui/slider\";\n\nexport function SliderCustomSteppingDemo() {\n  return (\n    <Slider.Root\n      aria-label=\"Rating\"\n      className=\"max-w-1/2\"\n      defaultValue={[0]}\n      maxValue={5}\n      step={0.5}\n    >\n      <Slider.Header>\n        <Label>Rating</Label>\n\n        <Slider.Output />\n      </Slider.Header>\n      <Slider.Track>\n        <Slider.Range />\n        <Slider.Thumb />\n      </Slider.Track>\n    </Slider.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

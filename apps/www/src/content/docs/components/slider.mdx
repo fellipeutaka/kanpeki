@@ -39,15 +39,19 @@ npx shadcn@latest add @kanpeki/slider
 
 </Tabs.Root>
 
-## Usage
+## Anatomy
 
-### Single import
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
 
 ```tsx
 import { Slider } from "~/components/ui/slider";
-```
 
-```tsx
 <Slider.Root>
   <Slider.Track>
     <Slider.Filler />
@@ -56,7 +60,9 @@ import { Slider } from "~/components/ui/slider";
 </Slider.Root>
 ```
 
-### Multiple imports
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
 
 ```tsx
 import {
@@ -65,9 +71,7 @@ import {
   SliderThumb,
   SliderTrack,
 } from "~/components/ui/slider";
-```
 
-```tsx
 <SliderRoot>
   <SliderTrack>
     <SliderFiller />
@@ -76,11 +80,27 @@ import {
 </SliderRoot>
 ```
 
+</Tabs.Content>
+
+</Tabs.Root>
+
 ## Examples
+
+### Multiple Thumbs
+
+<ComponentPreview name="slider-multiple-demo" />
 
 ### With Label
 
-<ComponentPreview name="slider-with-label" />
+<ComponentPreview name="slider-with-label-demo" />
+
+### Custom Stepping
+
+<ComponentPreview name="slider-custom-stepping-demo" />
+
+### Vertical
+
+<ComponentPreview name="slider-vertical-demo" />
 
 ### With Tooltip
 

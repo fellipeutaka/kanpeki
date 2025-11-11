@@ -440,6 +440,31 @@ const menuExamples: RegistryItem[] = [
   },
 ];
 
+const popoverExamples: RegistryItem[] = [
+  {
+    name: "popover-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/popover"],
+    files: [
+      {
+        path: "src/registry/examples/popover-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "popover-with-arrow-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/popover"],
+    files: [
+      {
+        path: "src/registry/examples/popover-with-arrow-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const radioGroupExamples: RegistryItem[] = [
   {
     name: "radio-group-demo",
@@ -599,6 +624,64 @@ const skeletonExamples: RegistryItem[] = [
     files: [
       {
         path: "src/registry/examples/skeleton-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const sliderExamples: RegistryItem[] = [
+  {
+    name: "slider-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider"],
+    files: [
+      {
+        path: "src/registry/examples/slider-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "slider-multiple-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider"],
+    files: [
+      {
+        path: "src/registry/examples/slider-multiple-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "slider-with-label-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider", "@kanpeki/label"],
+    files: [
+      {
+        path: "src/registry/examples/slider-with-label-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "slider-custom-stepping-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider", "@kanpeki/label"],
+    files: [
+      {
+        path: "src/registry/examples/slider-custom-stepping-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "slider-vertical-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/slider"],
+    files: [
+      {
+        path: "src/registry/examples/slider-vertical-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -866,11 +949,13 @@ export const examples: RegistryItem[] = [
   ...dialogExamples,
   ...listBoxExamples,
   ...menuExamples,
+  ...popoverExamples,
   ...radioGroupExamples,
   ...separatorExamples,
   ...scrollAreaExamples,
   ...selectExamples,
   ...skeletonExamples,
+  ...sliderExamples,
   ...spinnerExamples,
   ...switchExamples,
   ...toastExamples,

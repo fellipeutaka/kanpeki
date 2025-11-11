@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-with-arrow-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/popover"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/popover-with-arrow-demo.tsx",
+      "content": "\"use client\";\n\nimport { Dialog } from \"react-aria-components\";\nimport { Button } from \"~/registry/ui/button/button\";\nimport { Input } from \"~/registry/ui/input\";\nimport { Label } from \"~/registry/ui/label/label\";\nimport { Popover } from \"~/registry/ui/popover\";\nimport { Textfield } from \"~/registry/ui/textfield\";\n\nexport function PopoverWithArrowDemo() {\n  return (\n    <Popover.Root>\n      <Button variant=\"outline\">Open popover</Button>\n\n      <Popover.Content className=\"w-80\" placement=\"bottom start\">\n        <Popover.Arrow />\n\n        <Dialog className=\"grid gap-4\">\n          <div className=\"grid gap-1.5\">\n            <h4 className=\"font-medium leading-none\">Dimensions</h4>\n            <p className=\"text-muted-foreground text-sm\">\n              Set the dimensions for the layer.\n            </p>\n          </div>\n          <div className=\"grid gap-2\">\n            <Textfield\n              autoFocus\n              className=\"grid grid-cols-3 items-center gap-4\"\n              defaultValue=\"100%\"\n            >\n              <Label>Width</Label>\n              <Input className=\"col-span-2 h-8\" />\n            </Textfield>\n            <Textfield\n              className=\"grid grid-cols-3 items-center gap-4\"\n              defaultValue=\"300px\"\n            >\n              <Label>Max. width</Label>\n              <Input className=\"col-span-2 h-8\" />\n            </Textfield>\n            <Textfield\n              className=\"grid grid-cols-3 items-center gap-4\"\n              defaultValue=\"25px\"\n            >\n              <Label>Height</Label>\n              <Input className=\"col-span-2 h-8\" />\n            </Textfield>\n            <Textfield\n              className=\"grid grid-cols-3 items-center gap-4\"\n              defaultValue=\"none\"\n            >\n              <Label>Max. height</Label>\n              <Input className=\"col-span-2 h-8\" />\n            </Textfield>\n          </div>\n        </Dialog>\n      </Popover.Content>\n    </Popover.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
