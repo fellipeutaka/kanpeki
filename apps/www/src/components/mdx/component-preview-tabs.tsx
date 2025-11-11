@@ -1,3 +1,4 @@
+import { AppWindowIcon, CodeIcon } from "lucide-react";
 import { Suspense } from "react";
 import { cn } from "~/registry/lib/cva";
 import { Spinner } from "~/registry/ui/spinner";
@@ -22,9 +23,11 @@ export function ComponentPreviewTabs({
     >
       <Tabs.List className="mb-3 orientation-horizontal:gap-x-0">
         <Tabs.Trigger className="px-4" id="preview">
+          <AppWindowIcon />
           Preview
         </Tabs.Trigger>
         <Tabs.Trigger className="px-4" id="code">
+          <CodeIcon />
           Code
         </Tabs.Trigger>
       </Tabs.List>

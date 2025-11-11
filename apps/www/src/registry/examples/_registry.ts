@@ -749,6 +749,49 @@ const switchExamples: RegistryItem[] = [
   },
 ];
 
+const tabsExamples: RegistryItem[] = [
+  {
+    name: "tabs-demo",
+    type: "registry:example",
+    registryDependencies: [
+      "@kanpeki/button",
+      "@kanpeki/card",
+      "@kanpeki/input",
+      "@kanpeki/label",
+      "@kanpeki/textfield",
+      "@kanpeki/tabs",
+    ],
+    files: [
+      {
+        path: "src/registry/examples/tabs-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-disabled-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tabs"],
+    files: [
+      {
+        path: "src/registry/examples/tabs-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-vertical-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tabs"],
+    files: [
+      {
+        path: "src/registry/examples/tabs-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const toastExamples: RegistryItem[] = [
   {
     name: "toast-demo",
@@ -801,6 +844,78 @@ const toastExamples: RegistryItem[] = [
     files: [
       {
         path: "src/registry/examples/toast-custom-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
+const toggleExamples: RegistryItem[] = [
+  {
+    name: "toggle-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-outline-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-outline-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-small-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-small-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-large-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-large-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-disabled-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-custom-fill-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-custom-fill-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -958,7 +1073,9 @@ export const examples: RegistryItem[] = [
   ...sliderExamples,
   ...spinnerExamples,
   ...switchExamples,
+  ...tabsExamples,
   ...toastExamples,
+  ...toggleExamples,
   ...tooltipExamples,
   ...typographyExamples,
 ];

@@ -2598,6 +2598,60 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "tabs-demo": {
+    name: "tabs-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button","@kanpeki/card","@kanpeki/input","@kanpeki/label","@kanpeki/textfield","@kanpeki/tabs"],
+    files: [{
+      path: "src/registry/examples/tabs-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/tabs-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tabs-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "tabs-disabled-demo": {
+    name: "tabs-disabled-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tabs"],
+    files: [{
+      path: "src/registry/examples/tabs-disabled-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/tabs-disabled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tabs-disabled-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "tabs-vertical-demo": {
+    name: "tabs-vertical-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/tabs"],
+    files: [{
+      path: "src/registry/examples/tabs-vertical-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/tabs-vertical-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tabs-vertical-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "toast-demo": {
     name: "toast-demo",
     description: "",
@@ -2683,6 +2737,114 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/examples/toast-custom-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toast-custom-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-demo": {
+    name: "toggle-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [{
+      path: "src/registry/examples/toggle-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-outline-demo": {
+    name: "toggle-outline-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [{
+      path: "src/registry/examples/toggle-outline-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-outline-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-outline-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-small-demo": {
+    name: "toggle-small-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [{
+      path: "src/registry/examples/toggle-small-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-small-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-small-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-large-demo": {
+    name: "toggle-large-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [{
+      path: "src/registry/examples/toggle-large-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-large-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-large-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-disabled-demo": {
+    name: "toggle-disabled-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [{
+      path: "src/registry/examples/toggle-disabled-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-disabled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-disabled-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-custom-fill-demo": {
+    name: "toggle-custom-fill-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [{
+      path: "src/registry/examples/toggle-custom-fill-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-custom-fill-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-custom-fill-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

@@ -17,7 +17,7 @@
     },
     {
       "path": "src/registry/ui/toggle/toggle.tsx",
-      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { ToggleButton } from \"react-aria-components\";\nimport { ToggleStyles } from \"./styles\";\n\nexport interface ToggleProps\n  extends React.ComponentProps<typeof ToggleButton>,\n    VariantProps<typeof ToggleStyles> {}\n\nexport function Toggle({ className, variant, size, ...props }: ToggleProps) {\n  return (\n    <ToggleButton\n      className={ToggleStyles({ className, size, variant })}\n      data-slot=\"toggle\"\n      {...props}\n    />\n  );\n}\n",
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { composeRenderProps, ToggleButton } from \"react-aria-components\";\nimport { ToggleStyles } from \"./styles\";\n\nexport interface ToggleProps\n  extends React.ComponentProps<typeof ToggleButton>,\n    VariantProps<typeof ToggleStyles> {}\n\nexport function Toggle({ className, variant, size, ...props }: ToggleProps) {\n  return (\n    <ToggleButton\n      className={composeRenderProps(className, (className) =>\n        ToggleStyles({ className, size, variant })\n      )}\n      data-slot=\"toggle\"\n      {...props}\n    />\n  );\n}\n",
       "type": "registry:ui"
     },
     {
