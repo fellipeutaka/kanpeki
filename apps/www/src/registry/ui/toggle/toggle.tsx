@@ -1,7 +1,7 @@
 "use client";
 
 import type { VariantProps } from "cva";
-import { ToggleButton } from "react-aria-components";
+import { composeRenderProps, ToggleButton } from "react-aria-components";
 import { ToggleStyles } from "./styles";
 
 export interface ToggleProps
@@ -11,7 +11,9 @@ export interface ToggleProps
 export function Toggle({ className, variant, size, ...props }: ToggleProps) {
   return (
     <ToggleButton
-      className={ToggleStyles({ className, size, variant })}
+      className={composeRenderProps(className, (className) =>
+        ToggleStyles({ className, size, variant })
+      )}
       data-slot="toggle"
       {...props}
     />

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-custom-fill-demo",
+  "type": "registry:example",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@kanpeki/toggle"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/toggle-custom-fill-demo.tsx",
+      "content": "import { ItalicIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleCustomFillDemo() {\n  return (\n    <Toggle aria-label=\"Toggle italic\" variant=\"outline\">\n      <ItalicIcon />\n      Italic\n    </Toggle>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -807,6 +807,78 @@ const toastExamples: RegistryItem[] = [
   },
 ];
 
+const toggleExamples: RegistryItem[] = [
+  {
+    name: "toggle-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-outline-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-outline-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-small-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-small-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-large-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-large-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-disabled-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-custom-fill-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle"],
+    dependencies: ["lucide-react"],
+    files: [
+      {
+        path: "src/registry/examples/toggle-custom-fill-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const tooltipExamples: RegistryItem[] = [
   {
     name: "tooltip-demo",
@@ -959,6 +1031,7 @@ export const examples: RegistryItem[] = [
   ...spinnerExamples,
   ...switchExamples,
   ...toastExamples,
+  ...toggleExamples,
   ...tooltipExamples,
   ...typographyExamples,
 ];
