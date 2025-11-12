@@ -1986,6 +1986,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "date-field-demo": {
+    name: "date-field-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/date-field","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/date-field-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/date-field-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "date-field-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "date-field-disabled-demo": {
+    name: "date-field-disabled-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/date-field","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/date-field-disabled-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/date-field-disabled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "date-field-disabled-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "dialog-demo": {
     name: "dialog-demo",
     description: "",

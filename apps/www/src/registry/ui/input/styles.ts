@@ -11,6 +11,7 @@ export const InputStyles = cva({
     "md:text-sm dark:bg-input/30",
     "focus:border-ring focus:ring-[3px] focus:ring-ring/50",
     "aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40",
+    "invalid:border-destructive invalid:ring-destructive/20 dark:invalid:ring-destructive/40",
 
     // For search field
     "[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none",

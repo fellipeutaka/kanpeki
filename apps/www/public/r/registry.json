@@ -1485,6 +1485,28 @@
       ]
     },
     {
+      "name": "date-field-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/date-field", "@kanpeki/label"],
+      "files": [
+        {
+          "path": "src/registry/examples/date-field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-field-disabled-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/date-field", "@kanpeki/label"],
+      "files": [
+        {
+          "path": "src/registry/examples/date-field-disabled-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "dialog-demo",
       "type": "registry:example",
       "registryDependencies": ["@kanpeki/dialog"],

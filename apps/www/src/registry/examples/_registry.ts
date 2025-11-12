@@ -331,6 +331,31 @@ const collapsibleExamples: RegistryItem[] = [
   },
 ];
 
+const dateFieldExamples: RegistryItem[] = [
+  {
+    name: "date-field-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/date-field", "@kanpeki/label"],
+    files: [
+      {
+        path: "src/registry/examples/date-field-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "date-field-disabled-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/date-field", "@kanpeki/label"],
+    files: [
+      {
+        path: "src/registry/examples/date-field-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+];
+
 const dialogExamples: RegistryItem[] = [
   {
     name: "dialog-demo",
@@ -1061,6 +1086,7 @@ export const examples: RegistryItem[] = [
   ...cardExamples,
   ...checkboxExamples,
   ...collapsibleExamples,
+  ...dateFieldExamples,
   ...dialogExamples,
   ...listBoxExamples,
   ...menuExamples,
