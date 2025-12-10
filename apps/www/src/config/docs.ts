@@ -140,8 +140,8 @@ export const docsConfig: DocsConfig = {
           title: "Form",
         },
         {
-          href: "/docs/components/tooltip#hover-card",
-          title: "Hover Card",
+          href: "/docs/components/input-otp",
+          title: "Input OTP",
         },
         {
           href: "/docs/components/label",

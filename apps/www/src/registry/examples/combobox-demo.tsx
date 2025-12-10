@@ -146,7 +146,7 @@ function UserCombobox({
     <Select.Root
       aria-label="Users"
       className="w-full md:max-w-[200px]"
-      defaultSelectedKey={selectedUserId}
+      defaultValue={selectedUserId}
       placeholder="Select user..."
     >
       <Select.Trigger className="w-full">
@@ -213,7 +213,7 @@ function TimezoneCombobox({
       className="w-full md:max-w-[200px]"
       onSelectionChange={setValue}
       placeholder="Select timezone"
-      selectedKey={value}
+      value={value}
     >
       <Select.Trigger className="w-full">
         <Select.Value>

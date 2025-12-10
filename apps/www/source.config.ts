@@ -1,4 +1,5 @@
 import { defineConfig, defineDocs } from "fumadocs-mdx/config";
+import lastModified from "fumadocs-mdx/plugins/last-modified";
 import { z } from "zod";
 import { rehypeCodeOptions } from "~/lib/rehype";
 
@@ -21,7 +22,7 @@ export const docs = defineDocs({
 });
 
 export default defineConfig({
-  lastModifiedTime: "git",
+  plugins: [lastModified()],
   mdxOptions: {
     rehypeCodeOptions,
   },

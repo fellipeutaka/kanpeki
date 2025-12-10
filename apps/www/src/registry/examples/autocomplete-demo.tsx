@@ -20,7 +20,7 @@ export function AutocompleteDemo() {
     <Card.Root className="w-full">
       <Autocomplete>
         <Card.Header>
-          <SearchField.Root aria-label="Search">
+          <SearchField.Root aria-label="Search" className="px-0">
             <SearchIcon />
             <SearchField.Input placeholder="Type a command or search..." />
             <SearchField.Button />
