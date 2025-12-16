@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "src/registry/ui/number-field/index.tsx",
-      "content": "\"use client\";\n\nimport {\n  NumberField as RACNumberField,\n} from \"react-aria-components\";\n\nexport interface NumberFieldProps\n  extends React.ComponentProps<typeof RACNumberField> {}\n\nexport function NumberField(props: NumberFieldProps) {\n  return (\n    <RACNumberField\n      data-slot=\"number-field\"\n      {...props}\n    />\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { NumberField as RACNumberField } from \"react-aria-components\";\n\nexport interface NumberFieldProps\n  extends React.ComponentProps<typeof RACNumberField> {}\n\nexport function NumberField(props: NumberFieldProps) {\n  return <RACNumberField data-slot=\"number-field\" {...props} />;\n}\n",
       "type": "registry:ui"
     }
   ]

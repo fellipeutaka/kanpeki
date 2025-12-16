@@ -157,6 +157,30 @@
       ]
     },
     {
+      "name": "button-group",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui/react", "react-aria-components"],
+      "registryDependencies": ["@kanpeki/separator"],
+      "files": [
+        {
+          "path": "src/registry/ui/button-group/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/button-group/button-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/button-group/namespace.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/button-group/styles.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "calendar",
       "type": "registry:ui",
       "dependencies": ["react-aria-components", "@internationalized/date"],
@@ -448,6 +472,30 @@
       ]
     },
     {
+      "name": "field",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui/react", "react-aria-components"],
+      "registryDependencies": ["@kanpeki/label", "@kanpeki/separator"],
+      "files": [
+        {
+          "path": "src/registry/ui/field/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/field/field.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/field/namespace.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/field/styles.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "form",
       "type": "registry:ui",
       "dependencies": ["react-aria-components"],
@@ -475,6 +523,34 @@
         },
         {
           "path": "src/registry/ui/input/styles.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui/react", "react-aria-components"],
+      "registryDependencies": [
+        "@kanpeki/button",
+        "@kanpeki/input",
+        "@kanpeki/textarea"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/input-group/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/input-group/input-group.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/input-group/namespace.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/input-group/styles.ts",
           "type": "registry:ui"
         }
       ]

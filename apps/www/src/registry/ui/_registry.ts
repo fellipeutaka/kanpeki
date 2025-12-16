@@ -156,6 +156,30 @@ export const ui: RegistryItem[] = [
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
   },
   {
+    name: "button-group",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/registry/ui/button-group/index.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/button-group/button-group.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/button-group/namespace.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/button-group/styles.ts",
+        type: "registry:ui",
+      },
+    ],
+    dependencies: ["@base-ui/react", "react-aria-components"],
+    registryDependencies: ["@kanpeki/separator"],
+  },
+  {
     name: "calendar",
     type: "registry:ui",
     files: [
@@ -447,6 +471,30 @@ export const ui: RegistryItem[] = [
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
   },
   {
+    name: "field",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/registry/ui/field/index.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/field/field.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/field/namespace.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/field/styles.ts",
+        type: "registry:ui",
+      },
+    ],
+    dependencies: ["@base-ui/react", "react-aria-components"],
+    registryDependencies: ["@kanpeki/label", "@kanpeki/separator"],
+  },
+  {
     name: "form",
     type: "registry:ui",
     files: [
@@ -477,6 +525,34 @@ export const ui: RegistryItem[] = [
     ],
     dependencies: ["react-aria-components"],
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
+  },
+  {
+    name: "input-group",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/registry/ui/input-group/index.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/input-group/input-group.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/input-group/namespace.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/input-group/styles.ts",
+        type: "registry:ui",
+      },
+    ],
+    dependencies: ["@base-ui/react", "react-aria-components"],
+    registryDependencies: [
+      "@kanpeki/button",
+      "@kanpeki/input",
+      "@kanpeki/textarea",
+    ],
   },
   {
     name: "input-otp",

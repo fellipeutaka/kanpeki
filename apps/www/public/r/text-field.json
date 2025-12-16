@@ -12,7 +12,7 @@
   "files": [
     {
       "path": "src/registry/ui/text-field/index.tsx",
-      "content": "\"use client\";\n\nimport { TextField as RACTextField } from \"react-aria-components\";\n\nexport interface TextFieldProps\n  extends React.ComponentProps<typeof RACTextField> {}\n\nexport function TextField(props: TextFieldProps) {\n  return (\n    <RACTextField\n      data-slot=\"TextField\"\n      {...props}\n    />\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { TextField as RACTextField } from \"react-aria-components\";\n\nexport interface TextFieldProps\n  extends React.ComponentProps<typeof RACTextField> {}\n\nexport function TextField(props: TextFieldProps) {\n  return <RACTextField data-slot=\"TextField\" {...props} />;\n}\n",
       "type": "registry:ui"
     }
   ]

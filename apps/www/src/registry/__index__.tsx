@@ -212,6 +212,36 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "button-group": {
+    name: "button-group",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["@kanpeki/separator"],
+    files: [{
+      path: "src/registry/ui/button-group/index.ts",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/button-group/button-group.tsx",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/button-group/namespace.ts",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/button-group/styles.ts",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/ui/button-group/index.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "calendar": {
     name: "calendar",
     description: "",
@@ -568,6 +598,36 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "field": {
+    name: "field",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["@kanpeki/label","@kanpeki/separator"],
+    files: [{
+      path: "src/registry/ui/field/index.ts",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/field/field.tsx",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/field/namespace.ts",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/field/styles.ts",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/ui/field/index.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "field"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "form": {
     name: "form",
     description: "",
@@ -607,6 +667,36 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/ui/input/index.ts")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group": {
+    name: "input-group",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["@kanpeki/button","@kanpeki/input","@kanpeki/textarea"],
+    files: [{
+      path: "src/registry/ui/input-group/index.ts",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/input-group/input-group.tsx",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/input-group/namespace.ts",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/input-group/styles.ts",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/ui/input-group/index.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
