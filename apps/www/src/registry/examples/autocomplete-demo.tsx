@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Autocomplete } from "~/registry/ui/autocomplete";
 import { Card } from "~/registry/ui/card";
+import { InputGroup } from "~/registry/ui/input-group";
 import { Keyboard } from "~/registry/ui/keyboard";
 import { Menu } from "~/registry/ui/menu";
 import { SearchField } from "~/registry/ui/search-field";
@@ -20,11 +21,17 @@ export function AutocompleteDemo() {
     <Card.Root className="w-full">
       <Autocomplete>
         <Card.Header>
-          <SearchField.Root aria-label="Search" className="px-0">
-            <SearchIcon />
-            <SearchField.Input placeholder="Type a command or search..." />
-            <SearchField.Button />
-          </SearchField.Root>
+          <InputGroup.Root
+            render={<SearchField.Root aria-label="Search" className="px-0" />}
+          >
+            <InputGroup.Addon>
+              <SearchIcon />
+            </InputGroup.Addon>
+            <InputGroup.Input placeholder="Type a command or search..." />
+            <InputGroup.Addon align="inline-end">
+              <SearchField.Button />
+            </InputGroup.Addon>
+          </InputGroup.Root>
         </Card.Header>
 
         <Card.Content>

@@ -1,0 +1,389 @@
+---
+title: TanStack Form
+description: Build forms with TanStack Form and Zod validation.
+links:
+  docs: https://tanstack.com/form
+---
+
+This guide shows how to build forms using TanStack Form with Kanpeki's [Field](/docs/components/field) component and Zod schema validation.
+
+## Demo
+
+<ComponentPreview name="tanstack-form" />
+
+## Approach
+
+TanStack Form provides headless form state management. We combine it with:
+
+- `Field` components for layout and accessibility
+- Zod for schema validation
+- Real-time validation feedback
+
+## Anatomy
+
+```tsx
+<form
+  onSubmit={(e) => {
+    e.preventDefault();
+    form.handleSubmit();
+  }}
+>
+  <Field.Group>
+    <form.Field
+      name="email"
+      children={(field) => {
+        const isInvalid =
+          field.state.meta.isTouched && !field.state.meta.isValid;
+        return (
+          <Field.Root data-invalid={isInvalid}>
+            <Field.Label htmlFor={field.name}>Email</Field.Label>
+            <Input
+              id={field.name}
+              name={field.name}
+              value={field.state.value}
+              onBlur={field.handleBlur}
+              onChange={(e) => field.handleChange(e.target.value)}
+              aria-invalid={isInvalid}
+            />
+            <Field.Description>Helper text</Field.Description>
+            {isInvalid && <Field.Error errors={field.state.meta.errors} />}
+          </Field.Root>
+        );
+      }}
+    />
+  </Field.Group>
+  <Button type="submit">Submit</Button>
+</form>
+```
+
+## Setup
+
+### Install dependencies
+
+```bash
+npm install @tanstack/react-form zod
+```
+
+### Create a schema
+
+Define your form shape with Zod:
+
+```tsx
+import { z } from "zod";
+
+const formSchema = z.object({
+  title: z
+    .string()
+    .min(5, "Title must be at least 5 characters.")
+    .max(32, "Title must be at most 32 characters."),
+  description: z
+    .string()
+    .min(20, "Description must be at least 20 characters."),
+});
+```
+
+### Setup the form
+
+Use `useForm` with Zod validation:
+
+```tsx
+import { useForm } from "@tanstack/react-form";
+
+const form = useForm({
+  defaultValues: {
+    title: "",
+    description: "",
+  },
+  validators: {
+    onSubmit: formSchema,
+  },
+  onSubmit: ({ value }) => {
+    console.log(value);
+  },
+});
+```
+
+## Validation
+
+### Validation Modes
+
+TanStack Form supports different validation strategies:
+
+| Mode       | Description                     |
+| ---------- | ------------------------------- |
+| `onSubmit` | Validate on form submission     |
+| `onChange` | Validate on every change        |
+| `onBlur`   | Validate when field loses focus |
+
+```tsx
+const form = useForm({
+  validators: {
+    onSubmit: formSchema,
+    onChange: formSchema,
+    onBlur: formSchema,
+  },
+});
+```
+
+### Displaying Errors
+
+Use `Field.Error` with the `errors` prop:
+
+```tsx
+<form.Field
+  name="email"
+  children={(field) => {
+    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
+    return (
+      <Field.Root data-invalid={isInvalid}>
+        <Field.Label htmlFor={field.name}>Email</Field.Label>
+        <Input
+          id={field.name}
+          value={field.state.value}
+          onChange={(e) => field.handleChange(e.target.value)}
+          onBlur={field.handleBlur}
+          aria-invalid={isInvalid}
+        />
+        {isInvalid && <Field.Error errors={field.state.meta.errors} />}
+      </Field.Root>
+    );
+  }}
+/>
+```
+
+## Field Types
+
+### Input
+
+```tsx
+<form.Field
+  name="username"
+  children={(field) => {
+    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
+    return (
+      <Field.Root data-invalid={isInvalid}>
+        <Field.Label htmlFor={field.name}>Username</Field.Label>
+        <Input
+          id={field.name}
+          name={field.name}
+          value={field.state.value}
+          onBlur={field.handleBlur}
+          onChange={(e) => field.handleChange(e.target.value)}
+          aria-invalid={isInvalid}
+          placeholder="johndoe"
+        />
+        {isInvalid && <Field.Error errors={field.state.meta.errors} />}
+      </Field.Root>
+    );
+  }}
+/>
+```
+
+### Textarea
+
+```tsx
+<form.Field
+  name="bio"
+  children={(field) => {
+    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
+    return (
+      <Field.Root data-invalid={isInvalid}>
+        <Field.Label htmlFor={field.name}>Bio</Field.Label>
+        <Textarea
+          id={field.name}
+          name={field.name}
+          value={field.state.value}
+          onBlur={field.handleBlur}
+          onChange={(e) => field.handleChange(e.target.value)}
+          aria-invalid={isInvalid}
+          placeholder="Tell us about yourself..."
+        />
+        {isInvalid && <Field.Error errors={field.state.meta.errors} />}
+      </Field.Root>
+    );
+  }}
+/>
+```
+
+### Select
+
+```tsx
+<form.Field
+  name="country"
+  children={(field) => {
+    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
+    return (
+      <Field.Root data-invalid={isInvalid}>
+        <Field.Label>Country</Field.Label>
+        <Select.Root
+          name={field.name}
+          selectedKey={field.state.value}
+          onSelectionChange={(key) => field.handleChange(key as string)}
+        >
+          <Select.Trigger aria-invalid={isInvalid}>
+            <Select.Value placeholder="Select a country" />
+          </Select.Trigger>
+          <Popover.Content>
+            <Listbox.Root>
+              <Listbox.Item id="us">United States</Listbox.Item>
+              <Listbox.Item id="uk">United Kingdom</Listbox.Item>
+              <Listbox.Item id="ca">Canada</Listbox.Item>
+            </Listbox.Root>
+          </Popover.Content>
+        </Select.Root>
+        {isInvalid && <Field.Error errors={field.state.meta.errors} />}
+      </Field.Root>
+    );
+  }}
+/>
+```
+
+### Checkbox
+
+For checkbox arrays, use `mode="array"`:
+
+```tsx
+<form.Field
+  name="notifications"
+  mode="array"
+  children={(field) => {
+    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
+    return (
+      <Field.Set>
+        <Field.Legend variant="label">Notifications</Field.Legend>
+        <Field.Group data-slot="checkbox-group">
+          {options.map((option) => (
+            <Field.Root
+              key={option.id}
+              orientation="horizontal"
+              data-invalid={isInvalid}
+            >
+              <Checkbox.Provider
+                isSelected={field.state.value.includes(option.id)}
+                onChange={(checked) => {
+                  if (checked) {
+                    field.pushValue(option.id);
+                  } else {
+                    const index = field.state.value.indexOf(option.id);
+                    if (index > -1) field.removeValue(index);
+                  }
+                }}
+              >
+                <Checkbox.Root>
+                  <Checkbox.Indicator />
+                </Checkbox.Root>
+              </Checkbox.Provider>
+              <Field.Label>{option.label}</Field.Label>
+            </Field.Root>
+          ))}
+        </Field.Group>
+        {isInvalid && <Field.Error errors={field.state.meta.errors} />}
+      </Field.Set>
+    );
+  }}
+/>
+```
+
+### Switch
+
+```tsx
+<form.Field
+  name="marketing"
+  children={(field) => {
+    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
+    return (
+      <Field.Root orientation="horizontal" data-invalid={isInvalid}>
+        <Field.Content>
+          <Field.Title>Marketing emails</Field.Title>
+          <Field.Description>
+            Receive emails about new products and features.
+          </Field.Description>
+        </Field.Content>
+        <Switch.Root
+          isSelected={field.state.value}
+          onChange={field.handleChange}
+        >
+          <Switch.Track>
+            <Switch.Thumb />
+          </Switch.Track>
+        </Switch.Root>
+      </Field.Root>
+    );
+  }}
+/>
+```
+
+## Resetting the Form
+
+Use `form.reset()` to reset to default values:
+
+```tsx
+<Button type="button" variant="outline" onClick={() => form.reset()}>
+  Reset
+</Button>
+```
+
+## Array Fields
+
+TanStack Form supports dynamic array fields with `mode="array"`:
+
+```tsx
+const formSchema = z.object({
+  emails: z
+    .array(z.object({ address: z.string().email() }))
+    .min(1, "Add at least one email."),
+});
+
+<form.Field
+  name="emails"
+  mode="array"
+  children={(field) => (
+    <Field.Set>
+      <Field.Legend variant="label">Email Addresses</Field.Legend>
+      <Field.Group>
+        {field.state.value.map((_, index) => (
+          <form.Field
+            key={index}
+            name={`emails[${index}].address`}
+            children={(subField) => {
+              const isInvalid =
+                subField.state.meta.isTouched && !subField.state.meta.isValid;
+              return (
+                <Field.Root data-invalid={isInvalid}>
+                  <Input
+                    value={subField.state.value}
+                    onChange={(e) => subField.handleChange(e.target.value)}
+                    onBlur={subField.handleBlur}
+                    aria-invalid={isInvalid}
+                    placeholder="name@example.com"
+                  />
+                  {isInvalid && (
+                    <Field.Error errors={subField.state.meta.errors} />
+                  )}
+                </Field.Root>
+              );
+            }}
+          />
+        ))}
+      </Field.Group>
+      <Button
+        type="button"
+        variant="outline"
+        size="sm"
+        onClick={() => field.pushValue({ address: "" })}
+      >
+        Add Email
+      </Button>
+    </Field.Set>
+  )}
+/>;
+```
+
+### Array Helpers
+
+| Method                  | Description              |
+| ----------------------- | ------------------------ |
+| `field.pushValue(item)` | Add item to end of array |
+| `field.removeValue(i)`  | Remove item at index     |
+| `field.insertValue(i)`  | Insert item at index     |
+| `field.swapValues(a,b)` | Swap items at indices    |

@@ -1,0 +1,131 @@
+---
+title: Forms
+description: How to build accessible forms with Kanpeki.
+---
+
+## Architecture
+
+Kanpeki's form system is built on three layers:
+
+### Field (Layout)
+
+[Field](/docs/components/field) is the composition and layout root. It owns:
+
+- Label placement and styling
+- Description text
+- Error message rendering
+- Visual structure and orientation
+
+```tsx
+<Field.Root>
+  <Field.Label>Email</Field.Label>
+  {/* control */}
+  <Field.Description>Helper text</Field.Description>
+  <Field.Error />
+</Field.Root>
+```
+
+### TextField (Behavior)
+
+[TextField](/docs/components/textfield) is a React Aria component that provides:
+
+- Automatic ID wiring (label, description, error)
+- Validation state
+- Keyboard and focus handling
+- ARIA attributes
+
+TextField is composed **into** Field using the `render` prop:
+
+```tsx
+<Field.Root render={<TextField type="email" isRequired />}>
+  <Field.Label>Email</Field.Label>
+  <Input />
+  <Field.Description>We'll never share your email.</Field.Description>
+  <Field.Error />
+</Field.Root>
+```
+
+### Form (Coordination)
+
+[Form](/docs/components/form) is a minimal wrapper that handles:
+
+- Submission via `onSubmit`
+- Server-side validation errors
+- Reset handling
+
+Form does **not** manage fields or control layout.
+
+## Composition Pattern
+
+The recommended pattern composes TextField into Field:
+
+```tsx
+<Form onSubmit={handleSubmit}>
+  <Field.Root render={<TextField name="email" type="email" isRequired />}>
+    <Field.Label>Email</Field.Label>
+    <Input placeholder="john@example.com" />
+    <Field.Description>We'll never share your email.</Field.Description>
+    <Field.Error />
+  </Field.Root>
+  <Button type="submit">Submit</Button>
+</Form>
+```
+
+### Without TextField
+
+You can use Field with Input directly, but you lose React Aria's automatic ID wiring:
+
+```tsx
+<Field.Root>
+  <Field.Label htmlFor="email">Email</Field.Label>
+  <Input id="email" aria-describedby="email-desc" />
+  <Field.Description id="email-desc">Helper text</Field.Description>
+</Field.Root>
+```
+
+This requires manual `htmlFor`, `id`, and `aria-describedby` attributes.
+
+## Libraries
+
+Choose a form library based on your needs:
+
+<div className="grid sm:grid-cols-2 gap-4 mt-8 sm:gap-6">
+  <LinkButton
+    variant="outline"
+    className="p-6 sm:p-10 flex flex-col size-full"
+    href="/docs/forms/tanstack-form"
+  >
+    <Icons.Tanstack className="size-10" />
+    <p className="font-medium mt-2">TanStack Form</p>
+  </LinkButton>
+  <LinkButton
+    variant="outline"
+    className="p-6 sm:p-10 flex flex-col size-full"
+    href="/docs/forms/react-hook-form"
+  >
+    <div className="bg-pink-500 grid place-content-center size-10 p-2 rounded-full">
+      <Icons.ReactHookForm className="size-full fill-current" />
+    </div>
+    <p className="font-medium mt-2">React Hook Form</p>
+  </LinkButton>
+  <LinkButton
+    variant="outline"
+    className="p-6 sm:p-10 flex flex-col size-full"
+    href="/docs/forms/react-aria"
+  >
+    <Icons.Adobe className="size-10 text-red-600" />
+    <p className="font-medium mt-2">React Aria</p>
+  </LinkButton>
+  <LinkButton
+    variant="outline"
+    className="p-6 sm:p-10 flex flex-col size-full"
+    href="/docs/forms/use-action-state"
+    isDisabled
+  >
+    <Icons.React className="size-10" />
+    <div className="flex flex-col items-center">
+      <p className="font-medium mt-2">useActionState</p>
+      <p className="text-muted-foreground text-xs">(Coming Soon)</p>
+    </div>
+  </LinkButton>
+</div>

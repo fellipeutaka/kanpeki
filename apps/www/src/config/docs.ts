@@ -40,6 +40,10 @@ export const docsConfig: DocsConfig = {
           title: "Dark Mode",
         },
         {
+          href: "/docs/forms",
+          title: "Forms",
+        },
+        {
           disabled: true,
           href: "/docs/changelog",
           title: "Changelog",
@@ -134,6 +138,10 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/dialog",
           title: "Dialog",
+        },
+        {
+          href: "/docs/components/field",
+          title: "Field",
         },
         {
           href: "/docs/components/form",

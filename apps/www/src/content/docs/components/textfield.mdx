@@ -5,7 +5,19 @@ links:
   docs: https://react-spectrum.adobe.com/react-aria/TextField.html
 ---
 
-<ComponentPreview name="textfield-demo" />
+<Alert.Root>
+  <AlertIcon className="size-4" />
+  <Alert.Description>
+    TextField is a **client-only adapter** around React Aria Components. It
+    exists to: - Explicitly define a client boundary (`"use client"`) - Isolate
+    React Aria as an implementation detail - Provide a stable public API and
+    consistent developer experience **TextField is not meant to be used
+    directly.** It should be composed into [Field](/docs/components/field) for
+    proper layout and structure. See the [Forms architecture
+    overview](/docs/forms) to understand how TextField, Field, and Form work
+    together.
+  </Alert.Description>
+</Alert.Root>
 
 ## Installation
 
@@ -18,7 +30,7 @@ links:
 <Tabs.Content id="cli">
 
 ```bash
-npx shadcn@latest add @kanpeki/textfield
+npx shadcn@latest add @kanpeki/text-field
 ```
 
 </Tabs.Content>
@@ -29,9 +41,7 @@ npx shadcn@latest add @kanpeki/textfield
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="textfield" />
-
-<Step>Update the import paths to match your project setup.</Step>
+<ComponentSource name="text-field" />
 
 </Steps>
 
@@ -39,67 +49,120 @@ npx shadcn@latest add @kanpeki/textfield
 
 </Tabs.Root>
 
+## Overview
+
+TextField is a **behavior and accessibility layer** built on React Aria. It is not a visual component—it provides:
+
+- Automatic ID wiring between label, input, description, and error
+- Validation state management
+- Keyboard and focus handling
+- ARIA attributes for screen readers
+
+TextField is designed to be composed **into** the [Field](/docs/components/field) component, which handles layout and visual structure.
+
+### Before you start
+
+TextField is **not responsible for**:
+
+- Layout or visual structure
+- Rendering labels, descriptions, or error messages
+- Styling or positioning
+
+For complete form fields, use [Field](/docs/components/field) as your composition root. TextField handles behavior; Field handles presentation.
+
+**Recommended reading:**
+
+- [Field documentation](/docs/components/field) – Learn about the composition root
+- [Forms architecture overview](/docs/forms) – Understand how all pieces fit together
+
 ## Anatomy
 
-<Tabs.Root>
-
-<Tabs.List>
-  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
-  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
-</Tabs.List>
-<Tabs.Content id="single">
+TextField wraps your input and connects it to Field's label, description, and error elements.
 
 ```tsx
+import { Field } from "~/components/ui/field";
+import { Input } from "~/components/ui/input";
 import { TextField } from "~/components/ui/text-field";
 
-<TextField.Provider>
-  <TextField.Root>
-    <TextField.Slot />
-    <TextField.Input />
-    <TextField.Slot />
-  </TextField.Root>
-</TextField.Provider>
+<Field.Root render={<TextField type="email" />}>
+  <Field.Label>Email</Field.Label>
+  <Input placeholder="john@example.com" />
+  <Field.Description>We'll never share your email.</Field.Description>
+  <Field.Error />
+</Field.Root>;
 ```
 
-</Tabs.Content>
-
-<Tabs.Content id="multiple">
-
-```tsx
-import {
-  TextFieldProvider,
-  TextFieldRoot,
-  TextFieldSlot,
-  TextFieldInput,
-} from "~/components/ui/text-field";
-
-<TextFieldProvider>
-  <TextFieldRoot>
-    <TextFieldSlot />
-    <TextFieldInput />
-    <TextFieldSlot />
-  </TextFieldRoot>
-</TextFieldProvider>
-```
-
-</Tabs.Content>
-
-</Tabs.Root>
+The `render` prop on `Field.Root` accepts the TextField component. This pattern allows Field to provide layout while TextField provides behavior.
 
 ## Examples
+
+### Basic
+
+<ComponentPreview name="textfield-demo" />
+
+### With Description
+
+<ComponentPreview name="textfield-with-description" />
 
 ### With Icon
 
 <ComponentPreview name="textfield-with-icon" />
 
-### With Label
-
-<ComponentPreview name="textfield-with-label" />
-
 ### Password
 
 <ComponentPreview name="textfield-password" />
 
+### Validation
+
+TextField integrates with React Aria's validation system. Use `isRequired`, `isInvalid`, or custom validation.
+
+<ComponentPreview name="textfield-validation" />
+
 ### Form
 
+TextField works with the [Form](/docs/components/form) component for submission and validation.
+
 <ComponentPreview name="textfield-form" />
+
+## Props
+
+TextField accepts all props from React Aria's [TextField](https://react-spectrum.adobe.com/react-aria/TextField.html#props).
+
+| Prop           | Type                      | Default  | Description                         |
+| -------------- | ------------------------- | -------- | ----------------------------------- |
+| `type`         | `string`                  | `"text"` | Input type (email, password, etc.)  |
+| `isRequired`   | `boolean`                 | `false`  | Whether the field is required       |
+| `isInvalid`    | `boolean`                 | `false`  | Whether the field is in error state |
+| `isDisabled`   | `boolean`                 | `false`  | Whether the field is disabled       |
+| `isReadOnly`   | `boolean`                 | `false`  | Whether the field is read-only      |
+| `value`        | `string`                  |          | Controlled value                    |
+| `defaultValue` | `string`                  |          | Default value (uncontrolled)        |
+| `onChange`     | `(value: string) => void` |          | Called when value changes           |
+| `name`         | `string`                  |          | Form field name                     |
+| `autoComplete` | `string`                  |          | Autocomplete hint                   |
+| `maxLength`    | `number`                  |          | Maximum character length            |
+| `minLength`    | `number`                  |          | Minimum character length            |
+| `pattern`      | `string`                  |          | Validation pattern                  |
+
+## Accessibility
+
+When TextField is composed with Field:
+
+- `Field.Label` is automatically associated via `aria-labelledby`
+- `Field.Description` is associated via `aria-describedby`
+- `Field.Error` is associated via `aria-describedby` when invalid
+- Focus management and keyboard navigation are handled automatically
+
+### Without TextField
+
+If you use `Field.Root` with `Input` directly (without TextField), you must manually wire IDs:
+
+```tsx
+<Field.Root>
+  <Field.Label htmlFor="email">Email</Field.Label>
+  <Input id="email" aria-describedby="email-desc" />
+  <Field.Description id="email-desc">Helper text</Field.Description>
+</Field.Root>
+```
+
+This approach loses React Aria's automatic association and is not recommended for production forms.

@@ -6,6 +6,7 @@ import type { Key } from "react-aria-components";
 import { Autocomplete } from "~/registry/ui/autocomplete";
 import { Avatar } from "~/registry/ui/avatar";
 import { Combobox } from "~/registry/ui/combobox";
+import { InputGroup } from "~/registry/ui/input-group";
 import { Listbox } from "~/registry/ui/list-box";
 import { Popover } from "~/registry/ui/popover";
 import { SearchField } from "~/registry/ui/search-field";
@@ -155,11 +156,17 @@ function UserCombobox({
 
       <Popover.Content className="rounded-md border bg-popover shadow-md">
         <Autocomplete>
-          <SearchField.Root aria-label="Search" autoFocus>
-            <SearchIcon />
-            <SearchField.Input placeholder="Search user..." />
-            <SearchField.Button />
-          </SearchField.Root>
+          <InputGroup.Root
+            render={<SearchField.Root aria-label="Search" autoFocus />}
+          >
+            <InputGroup.Addon>
+              <SearchIcon />
+            </InputGroup.Addon>
+            <InputGroup.Input placeholder="Search user..." />
+            <InputGroup.Addon align="inline-end">
+              <SearchField.Button />
+            </InputGroup.Addon>
+          </InputGroup.Root>
           <Listbox.Root
             className="rounded-none border-none shadow-none"
             items={users}
@@ -234,11 +241,17 @@ function TimezoneCombobox({
 
       <Popover.Content className="rounded-md border bg-popover shadow-md">
         <Autocomplete>
-          <SearchField.Root aria-label="Search" autoFocus>
-            <SearchIcon />
-            <SearchField.Input placeholder="Search timezone..." />
-            <SearchField.Button />
-          </SearchField.Root>
+          <InputGroup.Root
+            render={<SearchField.Root aria-label="Search" autoFocus />}
+          >
+            <InputGroup.Addon>
+              <SearchIcon />
+            </InputGroup.Addon>
+            <InputGroup.Input placeholder="Search timezone..." />
+            <InputGroup.Addon align="inline-end">
+              <SearchField.Button />
+            </InputGroup.Addon>
+          </InputGroup.Root>
           <Listbox.Root
             className="max-h-[300px] rounded-none border-none shadow-none"
             items={timezones}

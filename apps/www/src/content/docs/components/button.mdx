@@ -44,7 +44,7 @@ npx shadcn@latest add @kanpeki/button
 ```tsx
 import { Button } from "~/components/ui/button";
 
-<Button variant="outline">Button</Button>
+<Button variant="outline">Button</Button>;
 ```
 
 ## Examples
@@ -64,10 +64,11 @@ import { Button } from "~/components/ui/button";
 <Card.Root className="mt-6">
   <Card.Header className="flex items-center gap-2">
     <Card.Action className="grid place-content-center rounded-full bg-secondary/80 p-2">
-      <Icons.TriangleAlert className="text-amber-400" />
+      <AlertIcon variant="warning" className="text-amber-400" />
     </Card.Action>
 
     <Card.Title>Icon-only buttons need accessible labels.</Card.Title>
+
   </Card.Header>
   <Card.Content>
     <Card.Description>
@@ -90,6 +91,7 @@ import { Button } from "~/components/ui/button";
 
       Both work identically. Use `aria-label` for brevity or `sr-only` for visibility in your code.
     </Card.Description>
+
   </Card.Content>
 </Card.Root>
 

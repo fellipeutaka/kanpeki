@@ -42,12 +42,18 @@
         "noUnusedImports": {
           "fix": "safe",
           "level": "warn"
+        },
+        "useImageSize": "off",
+        "noChildrenProp": {
+          "level": "off", // Changed from "off" to "error"
+          "options": {
+            // "allowFunctions": true
+          }
         }
       },
       "style": {
         "noDefaultExport": "error",
         "useNamingConvention": "off",
-        "noMagicNumbers": "off",
         "useFilenamingConvention": {
           "level": "error",
           "options": {
@@ -60,7 +66,8 @@
           "options": {
             "style": "interface"
           }
-        }
+        },
+        "noDescendingSpecificity": "off"
       },
       "nursery": {
         "useSortedClasses": {
@@ -69,7 +76,8 @@
           "options": {
             "functions": ["cva", "cv", "cn", "cx"]
           }
-        }
+        },
+        "noLeakedRender": "off"
       }
     }
   },

@@ -57,7 +57,7 @@ import { Collapsible } from "~/components/ui/collapsible";
   <Collapsible.Content>
     Yes. It adheres to the WAI-ARIA design pattern.
   </Collapsible.Content>
-</Collapsible.Root>
+</Collapsible.Root>;
 ```
 
 </Tabs.Content>
@@ -76,7 +76,7 @@ import {
   <CollapsibleContent>
     Yes. It adheres to the WAI-ARIA design pattern.
   </CollapsibleContent>
-</CollapsibleRoot>
+</CollapsibleRoot>;
 ```
 
 </Tabs.Content>
@@ -91,7 +91,9 @@ or you can use the `<Button />{:tsx}` component as the trigger by passing it a `
 ```tsx
 <Collapsible.Root>
   {/* [!code highlight] */}
-  <Button slot="trigger" variant="ghost">Is it accessible?</Button>
+  <Button slot="trigger" variant="ghost">
+    Is it accessible?
+  </Button>
   <Collapsible.Content>
     Yes. It adheres to the WAI-ARIA design pattern.
   </Collapsible.Content>
@@ -101,7 +103,7 @@ or you can use the `<Button />{:tsx}` component as the trigger by passing it a `
 ## Animation
 
 <Alert.Root variant="warning">
-  <Icons.TriangleAlert className="size-4" />
+  <AlertIcon variant="warning" className="size-4" />
   <Alert.Description>
     The collapsible component uses the `interpolate-size: allow-keywords` CSS
     property to animate the height of the content. This property is not

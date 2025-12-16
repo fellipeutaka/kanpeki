@@ -37,6 +37,7 @@
       "packages/**/*"
     ],
     "catalog": {
+      "@base-ui/react": "^1.0.0",
       "@hookform/resolvers": "^5.2.2",
       "@internationalized/date": "^3.10.0",
       "@radix-ui/react-scroll-area": "^1.2.10",

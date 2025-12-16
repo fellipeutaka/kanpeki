@@ -574,24 +574,12 @@ export const Index: Record<string, any> = {
     type: "registry:ui",
     registryDependencies: ["@kanpeki/cva","@kanpeki/custom-plugin"],
     files: [{
-      path: "src/registry/ui/form/index.ts",
-      type: "registry:ui",
-      target: ""
-    },{
-      path: "src/registry/ui/form/form.tsx",
-      type: "registry:ui",
-      target: ""
-    },{
-      path: "src/registry/ui/form/styles.ts",
-      type: "registry:ui",
-      target: ""
-    },{
-      path: "src/registry/ui/form/namespace.ts",
+      path: "src/registry/ui/form/index.tsx",
       type: "registry:ui",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/ui/form/index.ts")
+      const mod = await import("~/registry/ui/form/index.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "form"
       return { default: mod.default || mod[exportName] }
     }),
@@ -816,20 +804,12 @@ export const Index: Record<string, any> = {
     type: "registry:ui",
     registryDependencies: ["@kanpeki/cva","@kanpeki/custom-plugin"],
     files: [{
-      path: "src/registry/ui/number-field/index.ts",
-      type: "registry:ui",
-      target: ""
-    },{
-      path: "src/registry/ui/number-field/number-field.tsx",
-      type: "registry:ui",
-      target: ""
-    },{
-      path: "src/registry/ui/number-field/styles.ts",
+      path: "src/registry/ui/number-field/index.tsx",
       type: "registry:ui",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/ui/number-field/index.ts")
+      const mod = await import("~/registry/ui/number-field/index.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "number-field"
       return { default: mod.default || mod[exportName] }
     }),
@@ -1352,27 +1332,19 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "textfield": {
-    name: "textfield",
+  "text-field": {
+    name: "text-field",
     description: "",
     type: "registry:ui",
     registryDependencies: ["@kanpeki/cva","@kanpeki/custom-plugin"],
     files: [{
-      path: "src/registry/ui/textfield/index.ts",
-      type: "registry:ui",
-      target: ""
-    },{
-      path: "src/registry/ui/textfield/textfield.tsx",
-      type: "registry:ui",
-      target: ""
-    },{
-      path: "src/registry/ui/textfield/styles.ts",
+      path: "src/registry/ui/text-field/index.tsx",
       type: "registry:ui",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/ui/textfield/index.ts")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield"
+      const mod = await import("~/registry/ui/text-field/index.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "text-field"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

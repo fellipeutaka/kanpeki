@@ -5,7 +5,7 @@ import { Card } from "~/registry/ui/card";
 import { Input } from "~/registry/ui/input";
 import { Label } from "~/registry/ui/label/label";
 import { Tabs } from "~/registry/ui/tabs";
-import { Textfield } from "~/registry/ui/textfield";
+import { TextField } from "~/registry/ui/text-field";
 
 export function TabsDemo() {
   return (
@@ -25,14 +25,14 @@ export function TabsDemo() {
               </Card.Description>
             </Card.Header>
             <Card.Content className="grid gap-6">
-              <Textfield defaultValue="Pedro Duarte">
+              <TextField defaultValue="Pedro Duarte">
                 <Label>Name</Label>
                 <Input />
-              </Textfield>
-              <Textfield defaultValue="@peduarte">
+              </TextField>
+              <TextField defaultValue="@peduarte">
                 <Label>Username</Label>
                 <Input />
-              </Textfield>
+              </TextField>
             </Card.Content>
             <Card.Footer>
               <Button>Save changes</Button>
@@ -49,14 +49,14 @@ export function TabsDemo() {
               </Card.Description>
             </Card.Header>
             <Card.Content className="grid gap-6">
-              <Textfield>
+              <TextField>
                 <Label>Current password</Label>
                 <Input type="password" />
-              </Textfield>
-              <Textfield>
+              </TextField>
+              <TextField>
                 <Label>New password</Label>
                 <Input type="password" />
-              </Textfield>
+              </TextField>
             </Card.Content>
             <Card.Footer>
               <Button>Save password</Button>

@@ -11,18 +11,8 @@
   ],
   "files": [
     {
-      "path": "src/registry/ui/number-field/index.ts",
-      "content": "export * from \"./number-field\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/number-field/number-field.tsx",
-      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  NumberField as RACNumberField,\n} from \"react-aria-components\";\nimport { NumberFieldStyles } from \"./styles\";\n\nexport interface NumberFieldProps\n  extends React.ComponentProps<typeof RACNumberField> {}\n\nexport function NumberField({ className, ...props }: NumberFieldProps) {\n  return (\n    <RACNumberField\n      className={composeRenderProps(className, (className) =>\n        NumberFieldStyles({ className })\n      )}\n      data-slot=\"number-field\"\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/number-field/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const NumberFieldStyles = cva({\n  base: [\"grid gap-3\"],\n});\n",
+      "path": "src/registry/ui/number-field/index.tsx",
+      "content": "\"use client\";\n\nimport {\n  NumberField as RACNumberField,\n} from \"react-aria-components\";\n\nexport interface NumberFieldProps\n  extends React.ComponentProps<typeof RACNumberField> {}\n\nexport function NumberField(props: NumberFieldProps) {\n  return (\n    <RACNumberField\n      data-slot=\"number-field\"\n      {...props}\n    />\n  );\n}\n",
       "type": "registry:ui"
     }
   ]

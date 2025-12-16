@@ -9,6 +9,7 @@ import { Card } from "~/registry/ui/card";
 import { Link, RACLink } from "~/registry/ui/link/link";
 import { LinkButton } from "~/registry/ui/link-button";
 import { ScrollArea } from "~/registry/ui/scroll-area";
+import { AlertIcon } from "./alert-icon";
 import { Code } from "./code";
 import { CodeBlock, type NpmCommands } from "./code-block";
 import { ComponentPreview } from "./component-preview";
@@ -159,6 +160,7 @@ export const mdxComponents = {
   Code,
 
   Alert,
+  AlertIcon,
   Card,
   Step,
   Steps,

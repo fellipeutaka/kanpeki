@@ -17,7 +17,7 @@
     },
     {
       "path": "src/registry/ui/textarea/textarea.tsx",
-      "content": "\"use client\";\n\nimport { TextArea } from \"react-aria-components\";\nimport { TextareaStyles } from \"./styles\";\n\nexport interface TextareaProps extends React.ComponentProps<typeof TextArea> {}\n\nexport function Textarea({ className, ...props }: TextareaProps) {\n  return (\n    <TextArea\n      className={TextareaStyles({ className })}\n      data-slot=\"textarea\"\n      {...props}\n    />\n  );\n}\n",
+      "content": "\"use client\";\n\nimport { composeRenderProps, TextArea } from \"react-aria-components\";\nimport { TextareaStyles } from \"./styles\";\n\nexport interface TextareaProps extends React.ComponentProps<typeof TextArea> {}\n\nexport function Textarea({ className, ...props }: TextareaProps) {\n  return (\n    <TextArea\n      className={composeRenderProps(className, (className) =>\n        TextareaStyles({ className })\n      )}\n      data-slot=\"textarea\"\n      {...props}\n    />\n  );\n}\n",
       "type": "registry:ui"
     },
     {

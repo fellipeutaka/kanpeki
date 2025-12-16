@@ -55,19 +55,17 @@ export const viewport: Viewport = {
   ],
 };
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: LayoutProps<"/">) {
   return (
     <html className={cx(fonts)} lang="en" suppressHydrationWarning>
-      <body className="grid min-h-dvh grid-rows-[auto_1fr_auto] font-sans">
-        <Providers>
-          <SiteHeader />
-          {children}
-          <SiteFooter />
-        </Providers>
+      <body>
+        <div className="isolate grid min-h-dvh grid-rows-[auto_1fr_auto] font-sans">
+          <Providers>
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </Providers>
+        </div>
       </body>
     </html>
   );

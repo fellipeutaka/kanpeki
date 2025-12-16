@@ -451,19 +451,7 @@ export const ui: RegistryItem[] = [
     type: "registry:ui",
     files: [
       {
-        path: "src/registry/ui/form/index.ts",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/form/form.tsx",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/form/styles.ts",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/form/namespace.ts",
+        path: "src/registry/ui/form/index.tsx",
         type: "registry:ui",
       },
     ],
@@ -638,15 +626,7 @@ export const ui: RegistryItem[] = [
     type: "registry:ui",
     files: [
       {
-        path: "src/registry/ui/number-field/index.ts",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/number-field/number-field.tsx",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/number-field/styles.ts",
+        path: "src/registry/ui/number-field/index.tsx",
         type: "registry:ui",
       },
     ],
@@ -1066,19 +1046,11 @@ export const ui: RegistryItem[] = [
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
   },
   {
-    name: "textfield",
+    name: "text-field",
     type: "registry:ui",
     files: [
       {
-        path: "src/registry/ui/textfield/index.ts",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/textfield/textfield.tsx",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/textfield/styles.ts",
+        path: "src/registry/ui/text-field/index.tsx",
         type: "registry:ui",
       },
     ],

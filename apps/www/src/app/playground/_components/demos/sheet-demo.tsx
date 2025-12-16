@@ -2,7 +2,7 @@ import { Button } from "~/registry/ui/button/button";
 import { Input } from "~/registry/ui/input";
 import { Label } from "~/registry/ui/label/label";
 import { Sheet } from "~/registry/ui/sheet";
-import { Textfield } from "~/registry/ui/textfield";
+import { TextField } from "~/registry/ui/text-field";
 
 const SHEET_SIDES = ["top", "right", "bottom", "left"] as const;
 
@@ -23,14 +23,14 @@ export function SheetDemo() {
                 </Sheet.Description>
               </Sheet.Header>
               <div className="grid flex-1 auto-rows-min gap-6 px-4">
-                <Textfield defaultValue="Pedro Duarte">
+                <TextField defaultValue="Pedro Duarte">
                   <Label>Name</Label>
                   <Input />
-                </Textfield>
-                <Textfield defaultValue="@peduarte">
+                </TextField>
+                <TextField defaultValue="@peduarte">
                   <Label>Username</Label>
                   <Input />
-                </Textfield>
+                </TextField>
               </div>
               <Sheet.Footer className="grid w-full gap-2 *:flex *:w-full">
                 <Button type="submit">Save changes</Button>

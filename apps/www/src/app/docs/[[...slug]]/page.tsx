@@ -9,7 +9,7 @@ import { TableOfContents } from "./_components/table-of-contents";
 
 export async function generateMetadata({
   params,
-}: PageProps): Promise<Metadata> {
+}: PageProps<"/docs/[[...slug]]">): Promise<Metadata> {
   const { slug } = await params;
   const page = source.getPage(slug);
 
@@ -33,13 +33,7 @@ export function generateStaticParams() {
   return source.generateParams();
 }
 
-interface PageProps {
-  params: Promise<{
-    slug: string[];
-  }>;
-}
-
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: PageProps<"/docs/[[...slug]]">) {
   const { slug } = await params;
 
   const page = source.getPage(slug);

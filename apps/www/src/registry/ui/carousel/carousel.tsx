@@ -130,6 +130,7 @@ export function CarouselRoot({
         scrollPrev,
       }}
     >
+      {/** biome-ignore lint/a11y/useAriaPropsSupportedByRole: The role is correct. */}
       <section
         aria-roledescription="carousel"
         className={cn("relative", className)}

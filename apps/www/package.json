@@ -22,6 +22,7 @@
     "registry:build": "bun run src/scripts/build-registry.ts"
   },
   "dependencies": {
+    "@base-ui/react": "catalog:",
     "@fumadocs/mdx-remote": "^1.4.3",
     "@hookform/resolvers": "catalog:",
     "@internationalized/date": "catalog:",

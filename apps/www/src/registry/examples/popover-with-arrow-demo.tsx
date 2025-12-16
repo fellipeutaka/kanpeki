@@ -5,7 +5,7 @@ import { Button } from "~/registry/ui/button/button";
 import { Input } from "~/registry/ui/input";
 import { Label } from "~/registry/ui/label/label";
 import { Popover } from "~/registry/ui/popover";
-import { Textfield } from "~/registry/ui/textfield";
+import { TextField } from "~/registry/ui/text-field";
 
 export function PopoverWithArrowDemo() {
   return (
@@ -23,35 +23,35 @@ export function PopoverWithArrowDemo() {
             </p>
           </div>
           <div className="grid gap-2">
-            <Textfield
+            <TextField
               autoFocus
               className="grid grid-cols-3 items-center gap-4"
               defaultValue="100%"
             >
               <Label>Width</Label>
               <Input className="col-span-2 h-8" />
-            </Textfield>
-            <Textfield
+            </TextField>
+            <TextField
               className="grid grid-cols-3 items-center gap-4"
               defaultValue="300px"
             >
               <Label>Max. width</Label>
               <Input className="col-span-2 h-8" />
-            </Textfield>
-            <Textfield
+            </TextField>
+            <TextField
               className="grid grid-cols-3 items-center gap-4"
               defaultValue="25px"
             >
               <Label>Height</Label>
               <Input className="col-span-2 h-8" />
-            </Textfield>
-            <Textfield
+            </TextField>
+            <TextField
               className="grid grid-cols-3 items-center gap-4"
               defaultValue="none"
             >
               <Label>Max. height</Label>
               <Input className="col-span-2 h-8" />
-            </Textfield>
+            </TextField>
           </div>
         </Dialog>
       </Popover.Content>
