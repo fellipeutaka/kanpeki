@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textfield-form",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/textfield"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/textfield/textfield-form.tsx",
+      "content": "\"use client\";\n\nimport type { FormEvent } from \"react\";\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Form } from \"~/registry/ui/form\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function TextfieldForm() {\n  function handleSubmit(e: FormEvent<HTMLFormElement>) {\n    e.preventDefault();\n    const formData = new FormData(e.currentTarget);\n    const data = Object.fromEntries(formData);\n    toast(JSON.stringify(data, null, 2));\n  }\n\n  return (\n    <Form\n      className=\"flex w-full max-w-sm flex-col gap-4\"\n      onSubmit={handleSubmit}\n    >\n      <Field.Root render={<TextField isRequired name=\"email\" type=\"email\" />}>\n        <Field.Label>Email</Field.Label>\n        <Input placeholder=\"john@example.com\" />\n        <Field.Description>We'll never share your email.</Field.Description>\n        <Field.Error />\n      </Field.Root>\n      <Field.Root render={<TextField isRequired name=\"username\" />}>\n        <Field.Label>Username</Field.Label>\n        <Input placeholder=\"johndoe\" />\n        <Field.Error />\n      </Field.Root>\n      <Button type=\"submit\">Submit</Button>\n    </Form>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

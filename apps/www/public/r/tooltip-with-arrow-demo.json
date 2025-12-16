@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/tooltip-with-arrow-demo.tsx",
+      "path": "src/registry/examples/tooltip/tooltip-with-arrow-demo.tsx",
       "content": "import { InfoIcon } from \"lucide-react\";\nimport { Button } from \"~/registry/ui/button/button\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function TooltipWithArrowDemo() {\n  return (\n    <Tooltip.Root>\n      <Button size=\"icon\" variant=\"ghost\">\n        <InfoIcon />\n        <span className=\"sr-only\">Info</span>\n      </Button>\n      <Tooltip.Content className=\"max-w-80 text-pretty text-center\">\n        To learn more about how this works, check out the docs. If you have any\n        questions, please reach out to us.\n        <Tooltip.Arrow />\n      </Tooltip.Content>\n    </Tooltip.Root>\n  );\n}\n",
       "type": "registry:example"
     }

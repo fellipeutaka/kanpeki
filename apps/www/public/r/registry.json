@@ -1240,7 +1240,7 @@
       "registryDependencies": ["@kanpeki/accordion"],
       "files": [
         {
-          "path": "src/registry/examples/accordion-demo.tsx",
+          "path": "src/registry/examples/accordion/accordion-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1251,7 +1251,7 @@
       "registryDependencies": ["@kanpeki/alert"],
       "files": [
         {
-          "path": "src/registry/examples/alert-demo.tsx",
+          "path": "src/registry/examples/alert/alert-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1262,7 +1262,18 @@
       "registryDependencies": ["@kanpeki/alert"],
       "files": [
         {
-          "path": "src/registry/examples/alert-destructive-demo.tsx",
+          "path": "src/registry/examples/alert/alert-destructive-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/aspect"],
+      "files": [
+        {
+          "path": "src/registry/examples/aspect-ratio/aspect-ratio-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1279,7 +1290,7 @@
       ],
       "files": [
         {
-          "path": "src/registry/examples/autocomplete-demo.tsx",
+          "path": "src/registry/examples/autocomplete/autocomplete-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1296,7 +1307,7 @@
       ],
       "files": [
         {
-          "path": "src/registry/examples/autocomplete-dialog-demo.tsx",
+          "path": "src/registry/examples/autocomplete/autocomplete-dialog-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1307,7 +1318,7 @@
       "registryDependencies": ["@kanpeki/avatar"],
       "files": [
         {
-          "path": "src/registry/examples/avatar-demo.tsx",
+          "path": "src/registry/examples/avatar/avatar-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1318,7 +1329,7 @@
       "registryDependencies": ["@kanpeki/avatar"],
       "files": [
         {
-          "path": "src/registry/examples/avatar-group-demo.tsx",
+          "path": "src/registry/examples/avatar/avatar-group-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1329,7 +1340,7 @@
       "registryDependencies": ["@kanpeki/badge"],
       "files": [
         {
-          "path": "src/registry/examples/badge-demo.tsx",
+          "path": "src/registry/examples/badge/badge-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1340,7 +1351,7 @@
       "registryDependencies": ["@kanpeki/badge"],
       "files": [
         {
-          "path": "src/registry/examples/badge-destructive-demo.tsx",
+          "path": "src/registry/examples/badge/badge-destructive-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1351,7 +1362,7 @@
       "registryDependencies": ["@kanpeki/badge"],
       "files": [
         {
-          "path": "src/registry/examples/badge-outline-demo.tsx",
+          "path": "src/registry/examples/badge/badge-outline-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1362,40 +1373,7 @@
       "registryDependencies": ["@kanpeki/badge"],
       "files": [
         {
-          "path": "src/registry/examples/badge-secondary-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "breadcrumb-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/breadcrumb"],
-      "files": [
-        {
-          "path": "src/registry/examples/breadcrumb-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "breadcrumb-custom-separator-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/breadcrumb"],
-      "files": [
-        {
-          "path": "src/registry/examples/breadcrumb-custom-separator-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "breadcrumb-dropdown-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/breadcrumb"],
-      "files": [
-        {
-          "path": "src/registry/examples/breadcrumb-dropdown-demo.tsx",
+          "path": "src/registry/examples/badge/badge-secondary-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1406,7 +1384,40 @@
       "registryDependencies": ["@kanpeki/breadcrumb"],
       "files": [
         {
-          "path": "src/registry/examples/breadcrumb-collapsed-demo.tsx",
+          "path": "src/registry/examples/breadcrumb/breadcrumb-collapsed-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-custom-separator-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/breadcrumb"],
+      "files": [
+        {
+          "path": "src/registry/examples/breadcrumb/breadcrumb-custom-separator-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/breadcrumb"],
+      "files": [
+        {
+          "path": "src/registry/examples/breadcrumb/breadcrumb-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb-dropdown-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/breadcrumb"],
+      "files": [
+        {
+          "path": "src/registry/examples/breadcrumb/breadcrumb-dropdown-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1417,29 +1428,7 @@
       "registryDependencies": ["@kanpeki/button"],
       "files": [
         {
-          "path": "src/registry/examples/button-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "button-sizes-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/button", "lucide-react"],
-      "files": [
-        {
-          "path": "src/registry/examples/button-sizes-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "button-variants-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/button"],
-      "files": [
-        {
-          "path": "src/registry/examples/button-variants-demo.tsx",
+          "path": "src/registry/examples/button/button-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1450,7 +1439,29 @@
       "registryDependencies": ["@kanpeki/button"],
       "files": [
         {
-          "path": "src/registry/examples/button-icon-demo.tsx",
+          "path": "src/registry/examples/button/button-icon-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-sizes-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/button", "lucide-react"],
+      "files": [
+        {
+          "path": "src/registry/examples/button/button-sizes-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "button-variants-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/button"],
+      "files": [
+        {
+          "path": "src/registry/examples/button/button-variants-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1461,7 +1472,7 @@
       "registryDependencies": ["@kanpeki/calendar"],
       "files": [
         {
-          "path": "src/registry/examples/calendar-demo.tsx",
+          "path": "src/registry/examples/calendar/calendar-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1472,7 +1483,7 @@
       "registryDependencies": ["@kanpeki/calendar"],
       "files": [
         {
-          "path": "src/registry/examples/calendar-range-demo.tsx",
+          "path": "src/registry/examples/calendar/calendar-range-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1483,7 +1494,62 @@
       "registryDependencies": ["@kanpeki/card"],
       "files": [
         {
-          "path": "src/registry/examples/card-demo.tsx",
+          "path": "src/registry/examples/card/card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "carousel-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/carousel"],
+      "files": [
+        {
+          "path": "src/registry/examples/carousel/carousel-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "chart-area-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/chart"],
+      "files": [
+        {
+          "path": "src/registry/examples/chart/chart-area-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "chart-bar-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/chart"],
+      "files": [
+        {
+          "path": "src/registry/examples/chart/chart-bar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "chart-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/chart"],
+      "files": [
+        {
+          "path": "src/registry/examples/chart/chart-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "chart-line-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/chart"],
+      "files": [
+        {
+          "path": "src/registry/examples/chart/chart-line-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1494,7 +1560,7 @@
       "registryDependencies": ["@kanpeki/checkbox"],
       "files": [
         {
-          "path": "src/registry/examples/checkbox-demo.tsx",
+          "path": "src/registry/examples/checkbox/checkbox-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1505,7 +1571,7 @@
       "registryDependencies": ["@kanpeki/checkbox"],
       "files": [
         {
-          "path": "src/registry/examples/checkbox-disabled-demo.tsx",
+          "path": "src/registry/examples/checkbox/checkbox-disabled-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1516,7 +1582,7 @@
       "registryDependencies": ["@kanpeki/checkbox"],
       "files": [
         {
-          "path": "src/registry/examples/checkbox-group-demo.tsx",
+          "path": "src/registry/examples/checkbox/checkbox-group-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1527,7 +1593,18 @@
       "registryDependencies": ["@kanpeki/collapsible"],
       "files": [
         {
-          "path": "src/registry/examples/collapsible-demo.tsx",
+          "path": "src/registry/examples/collapsible/collapsible-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "combobox-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/combobox"],
+      "files": [
+        {
+          "path": "src/registry/examples/combobox/combobox-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1538,7 +1615,7 @@
       "registryDependencies": ["@kanpeki/date-field", "@kanpeki/label"],
       "files": [
         {
-          "path": "src/registry/examples/date-field-demo.tsx",
+          "path": "src/registry/examples/date-field/date-field-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1549,7 +1626,18 @@
       "registryDependencies": ["@kanpeki/date-field", "@kanpeki/label"],
       "files": [
         {
-          "path": "src/registry/examples/date-field-disabled-demo.tsx",
+          "path": "src/registry/examples/date-field/date-field-disabled-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "date-picker-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/date-picker"],
+      "files": [
+        {
+          "path": "src/registry/examples/date-picker/date-picker-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1560,7 +1648,7 @@
       "registryDependencies": ["@kanpeki/dialog"],
       "files": [
         {
-          "path": "src/registry/examples/dialog-demo.tsx",
+          "path": "src/registry/examples/dialog/dialog-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1571,7 +1659,7 @@
       "registryDependencies": ["@kanpeki/dialog"],
       "files": [
         {
-          "path": "src/registry/examples/dialog-scrollable-demo.tsx",
+          "path": "src/registry/examples/dialog/dialog-scrollable-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1582,18 +1670,216 @@
       "registryDependencies": ["@kanpeki/dialog"],
       "files": [
         {
-          "path": "src/registry/examples/alert-dialog-demo.tsx",
+          "path": "src/registry/examples/dialog/alert-dialog-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "dialog-sheet-demo",
+      "name": "drawer-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/sheet"],
+      "registryDependencies": ["@kanpeki/drawer"],
       "files": [
         {
-          "path": "src/registry/examples/sheet-demo.tsx",
+          "path": "src/registry/examples/drawer/drawer-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "dropzone-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/dropzone"],
+      "files": [
+        {
+          "path": "src/registry/examples/dropzone/dropzone-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-checkbox-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-checkbox-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-fieldset-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-fieldset-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-group-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-input-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-radio-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-radio-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-responsive-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-responsive-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-select-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-select-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-switch-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-switch-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "field-textarea-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/field"],
+      "files": [
+        {
+          "path": "src/registry/examples/field/field-textarea-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "login-form",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/form"],
+      "files": [
+        {
+          "path": "src/registry/examples/form/login-form.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tanstack-form",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/form"],
+      "files": [
+        {
+          "path": "src/registry/examples/form/tanstack-form.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hover-card-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/hover"],
+      "files": [
+        {
+          "path": "src/registry/examples/hover-card/hover-card-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/input"],
+      "files": [
+        {
+          "path": "src/registry/examples/input/input-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/input"],
+      "files": [
+        {
+          "path": "src/registry/examples/input/input-otp-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "label-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/label"],
+      "files": [
+        {
+          "path": "src/registry/examples/label/label-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "link-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/link"],
+      "files": [
+        {
+          "path": "src/registry/examples/link/link-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1604,7 +1890,18 @@
       "registryDependencies": ["@kanpeki/list-box"],
       "files": [
         {
-          "path": "src/registry/examples/list-box-demo.tsx",
+          "path": "src/registry/examples/list-box/list-box-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "menu-checkboxes-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/menu"],
+      "files": [
+        {
+          "path": "src/registry/examples/menu/menu-checkboxes-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1615,29 +1912,7 @@
       "registryDependencies": ["@kanpeki/menu"],
       "files": [
         {
-          "path": "src/registry/examples/menu-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "menu-checkboxes-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/menu"],
-      "files": [
-        {
-          "path": "src/registry/examples/menu-checkboxes-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "menu-checkboxes-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/menu"],
-      "files": [
-        {
-          "path": "src/registry/examples/menu-checkboxes-demo.tsx",
+          "path": "src/registry/examples/menu/menu-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1648,7 +1923,29 @@
       "registryDependencies": ["@kanpeki/menu"],
       "files": [
         {
-          "path": "src/registry/examples/menu-radio-group-demo.tsx",
+          "path": "src/registry/examples/menu/menu-radio-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "number-field-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/number"],
+      "files": [
+        {
+          "path": "src/registry/examples/number-field/number-field-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "pagination-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/pagination"],
+      "files": [
+        {
+          "path": "src/registry/examples/pagination/pagination-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1659,7 +1956,7 @@
       "registryDependencies": ["@kanpeki/popover"],
       "files": [
         {
-          "path": "src/registry/examples/popover-demo.tsx",
+          "path": "src/registry/examples/popover/popover-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1670,7 +1967,18 @@
       "registryDependencies": ["@kanpeki/popover"],
       "files": [
         {
-          "path": "src/registry/examples/popover-with-arrow-demo.tsx",
+          "path": "src/registry/examples/popover/popover-with-arrow-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "progress-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/progress"],
+      "files": [
+        {
+          "path": "src/registry/examples/progress/progress-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1681,18 +1989,7 @@
       "registryDependencies": ["@kanpeki/radio-group"],
       "files": [
         {
-          "path": "src/registry/examples/radio-group-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "radio-group-with-description-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/radio-group"],
-      "files": [
-        {
-          "path": "src/registry/examples/radio-group-with-description-demo.tsx",
+          "path": "src/registry/examples/radio-group/radio-group-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1703,29 +2000,29 @@
       "registryDependencies": ["@kanpeki/radio-group"],
       "files": [
         {
-          "path": "src/registry/examples/radio-group-disabled-demo.tsx",
+          "path": "src/registry/examples/radio-group/radio-group-disabled-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "separator-demo",
+      "name": "radio-group-with-description-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/separator"],
+      "registryDependencies": ["@kanpeki/radio-group"],
       "files": [
         {
-          "path": "src/registry/examples/separator-demo.tsx",
+          "path": "src/registry/examples/radio-group/radio-group-with-description-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "separator-vertical-demo",
+      "name": "resizable-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/separator"],
+      "registryDependencies": ["@kanpeki/resizable"],
       "files": [
         {
-          "path": "src/registry/examples/separator-vertical-demo.tsx",
+          "path": "src/registry/examples/resizable/resizable-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1736,7 +2033,7 @@
       "registryDependencies": ["@kanpeki/scroll-area"],
       "files": [
         {
-          "path": "src/registry/examples/scroll-area-demo.tsx",
+          "path": "src/registry/examples/scroll-area/scroll-area-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1747,7 +2044,7 @@
       "registryDependencies": ["@kanpeki/scroll-area"],
       "files": [
         {
-          "path": "src/registry/examples/scroll-area-horizontal-demo.tsx",
+          "path": "src/registry/examples/scroll-area/scroll-area-horizontal-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1758,29 +2055,7 @@
       "registryDependencies": ["@kanpeki/select"],
       "files": [
         {
-          "path": "src/registry/examples/select-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "select-with-label-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/select", "@kanpeki/label"],
-      "files": [
-        {
-          "path": "src/registry/examples/select-with-label-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "select-scrollable-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/select"],
-      "files": [
-        {
-          "path": "src/registry/examples/select-scrollable-demo.tsx",
+          "path": "src/registry/examples/select/select-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1798,18 +2073,62 @@
       ],
       "files": [
         {
-          "path": "src/registry/examples/select-infinite-scroll-demo.tsx",
+          "path": "src/registry/examples/select/select-infinite-scroll-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "skeleton-demo",
+      "name": "select-scrollable-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/skeleton"],
+      "registryDependencies": ["@kanpeki/select"],
       "files": [
         {
-          "path": "src/registry/examples/skeleton-demo.tsx",
+          "path": "src/registry/examples/select/select-scrollable-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "select-with-label-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/select", "@kanpeki/label"],
+      "files": [
+        {
+          "path": "src/registry/examples/select/select-with-label-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "separator-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/separator"],
+      "files": [
+        {
+          "path": "src/registry/examples/separator/separator-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "separator-vertical-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/separator"],
+      "files": [
+        {
+          "path": "src/registry/examples/separator/separator-vertical-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/sheet"],
+      "files": [
+        {
+          "path": "src/registry/examples/sheet/sheet-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1820,40 +2139,18 @@
       "registryDependencies": ["@kanpeki/skeleton", "@kanpeki/card"],
       "files": [
         {
-          "path": "src/registry/examples/skeleton-card-demo.tsx",
+          "path": "src/registry/examples/skeleton/skeleton-card-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "slider-demo",
+      "name": "skeleton-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/slider"],
+      "registryDependencies": ["@kanpeki/skeleton"],
       "files": [
         {
-          "path": "src/registry/examples/slider-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "slider-multiple-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/slider"],
-      "files": [
-        {
-          "path": "src/registry/examples/slider-multiple-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "slider-with-label-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/slider", "@kanpeki/label"],
-      "files": [
-        {
-          "path": "src/registry/examples/slider-with-label-demo.tsx",
+          "path": "src/registry/examples/skeleton/skeleton-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1864,7 +2161,29 @@
       "registryDependencies": ["@kanpeki/slider", "@kanpeki/label"],
       "files": [
         {
-          "path": "src/registry/examples/slider-custom-stepping-demo.tsx",
+          "path": "src/registry/examples/slider/slider-custom-stepping-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "slider-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/slider"],
+      "files": [
+        {
+          "path": "src/registry/examples/slider/slider-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "slider-multiple-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/slider"],
+      "files": [
+        {
+          "path": "src/registry/examples/slider/slider-multiple-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1875,18 +2194,18 @@
       "registryDependencies": ["@kanpeki/slider"],
       "files": [
         {
-          "path": "src/registry/examples/slider-vertical-demo.tsx",
+          "path": "src/registry/examples/slider/slider-vertical-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "spinner-demo",
+      "name": "slider-with-label-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/spinner", "@kanpeki/button"],
+      "registryDependencies": ["@kanpeki/slider", "@kanpeki/label"],
       "files": [
         {
-          "path": "src/registry/examples/spinner-demo.tsx",
+          "path": "src/registry/examples/slider/slider-with-label-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1897,7 +2216,18 @@
       "registryDependencies": ["@kanpeki/spinner"],
       "files": [
         {
-          "path": "src/registry/examples/spinner-color-demo.tsx",
+          "path": "src/registry/examples/spinner/spinner-color-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "spinner-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/spinner", "@kanpeki/button"],
+      "files": [
+        {
+          "path": "src/registry/examples/spinner/spinner-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1908,7 +2238,7 @@
       "registryDependencies": ["@kanpeki/spinner"],
       "files": [
         {
-          "path": "src/registry/examples/spinner-size-demo.tsx",
+          "path": "src/registry/examples/spinner/spinner-size-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1919,7 +2249,7 @@
       "registryDependencies": ["@kanpeki/switch"],
       "files": [
         {
-          "path": "src/registry/examples/switch-demo.tsx",
+          "path": "src/registry/examples/switch/switch-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1930,7 +2260,18 @@
       "registryDependencies": ["@kanpeki/switch"],
       "files": [
         {
-          "path": "src/registry/examples/switch-group-demo.tsx",
+          "path": "src/registry/examples/switch/switch-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "table-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/table"],
+      "files": [
+        {
+          "path": "src/registry/examples/table/table-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1948,7 +2289,7 @@
       ],
       "files": [
         {
-          "path": "src/registry/examples/tabs-demo.tsx",
+          "path": "src/registry/examples/tabs/tabs-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1959,7 +2300,7 @@
       "registryDependencies": ["@kanpeki/tabs"],
       "files": [
         {
-          "path": "src/registry/examples/tabs-disabled-demo.tsx",
+          "path": "src/registry/examples/tabs/tabs-disabled-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1970,51 +2311,84 @@
       "registryDependencies": ["@kanpeki/tabs"],
       "files": [
         {
-          "path": "src/registry/examples/tabs-vertical-demo.tsx",
+          "path": "src/registry/examples/tabs/tabs-vertical-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "toast-demo",
+      "name": "textarea-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/toast"],
+      "registryDependencies": ["@kanpeki/textarea"],
       "files": [
         {
-          "path": "src/registry/examples/toast-demo.tsx",
+          "path": "src/registry/examples/textarea/textarea-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "toast-promise-demo",
+      "name": "textfield-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/toast"],
+      "registryDependencies": ["@kanpeki/textfield"],
       "files": [
         {
-          "path": "src/registry/examples/toast-promise-demo.tsx",
+          "path": "src/registry/examples/textfield/textfield-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "toast-status-demo",
+      "name": "textfield-form",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/toast"],
+      "registryDependencies": ["@kanpeki/textfield"],
       "files": [
         {
-          "path": "src/registry/examples/toast-status-demo.tsx",
+          "path": "src/registry/examples/textfield/textfield-form.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "toast-with-description-demo",
+      "name": "textfield-password",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/toast"],
+      "registryDependencies": ["@kanpeki/textfield"],
       "files": [
         {
-          "path": "src/registry/examples/toast-with-description-demo.tsx",
+          "path": "src/registry/examples/textfield/textfield-password.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textfield-validation",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/textfield"],
+      "files": [
+        {
+          "path": "src/registry/examples/textfield/textfield-validation.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textfield-with-description",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/textfield"],
+      "files": [
+        {
+          "path": "src/registry/examples/textfield/textfield-with-description.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textfield-with-icon",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/textfield"],
+      "files": [
+        {
+          "path": "src/registry/examples/textfield/textfield-with-icon.tsx",
           "type": "registry:example"
         }
       ]
@@ -2025,64 +2399,51 @@
       "registryDependencies": ["@kanpeki/toast"],
       "files": [
         {
-          "path": "src/registry/examples/toast-custom-demo.tsx",
+          "path": "src/registry/examples/toast/toast-custom-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "toggle-demo",
+      "name": "toast-demo",
       "type": "registry:example",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["@kanpeki/toggle"],
+      "registryDependencies": ["@kanpeki/toast"],
       "files": [
         {
-          "path": "src/registry/examples/toggle-demo.tsx",
+          "path": "src/registry/examples/toast/toast-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "toggle-outline-demo",
+      "name": "toast-promise-demo",
       "type": "registry:example",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["@kanpeki/toggle"],
+      "registryDependencies": ["@kanpeki/toast"],
       "files": [
         {
-          "path": "src/registry/examples/toggle-outline-demo.tsx",
+          "path": "src/registry/examples/toast/toast-promise-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "toggle-small-demo",
+      "name": "toast-status-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/toggle"],
+      "registryDependencies": ["@kanpeki/toast"],
       "files": [
         {
-          "path": "src/registry/examples/toggle-small-demo.tsx",
+          "path": "src/registry/examples/toast/toast-status-demo.tsx",
           "type": "registry:example"
         }
       ]
     },
     {
-      "name": "toggle-large-demo",
+      "name": "toast-with-description-demo",
       "type": "registry:example",
-      "registryDependencies": ["@kanpeki/toggle"],
+      "registryDependencies": ["@kanpeki/toast"],
       "files": [
         {
-          "path": "src/registry/examples/toggle-large-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "toggle-disabled-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/toggle"],
-      "files": [
-        {
-          "path": "src/registry/examples/toggle-disabled-demo.tsx",
+          "path": "src/registry/examples/toast/toast-with-description-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -2094,7 +2455,75 @@
       "registryDependencies": ["@kanpeki/toggle"],
       "files": [
         {
-          "path": "src/registry/examples/toggle-custom-fill-demo.tsx",
+          "path": "src/registry/examples/toggle/toggle-custom-fill-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-demo",
+      "type": "registry:example",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["@kanpeki/toggle"],
+      "files": [
+        {
+          "path": "src/registry/examples/toggle/toggle-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-disabled-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/toggle"],
+      "files": [
+        {
+          "path": "src/registry/examples/toggle/toggle-disabled-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/toggle"],
+      "files": [
+        {
+          "path": "src/registry/examples/toggle/toggle-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-large-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/toggle"],
+      "files": [
+        {
+          "path": "src/registry/examples/toggle/toggle-large-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-outline-demo",
+      "type": "registry:example",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["@kanpeki/toggle"],
+      "files": [
+        {
+          "path": "src/registry/examples/toggle/toggle-outline-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "toggle-small-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/toggle"],
+      "files": [
+        {
+          "path": "src/registry/examples/toggle/toggle-small-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -2105,7 +2534,7 @@
       "registryDependencies": ["@kanpeki/tooltip"],
       "files": [
         {
-          "path": "src/registry/examples/tooltip-demo.tsx",
+          "path": "src/registry/examples/tooltip/tooltip-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -2116,7 +2545,7 @@
       "registryDependencies": ["@kanpeki/tooltip"],
       "files": [
         {
-          "path": "src/registry/examples/tooltip-hover-card-demo.tsx",
+          "path": "src/registry/examples/tooltip/tooltip-hover-card-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -2127,7 +2556,7 @@
       "registryDependencies": ["@kanpeki/tooltip"],
       "files": [
         {
-          "path": "src/registry/examples/tooltip-positions-demo.tsx",
+          "path": "src/registry/examples/tooltip/tooltip-positions-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -2138,73 +2567,7 @@
       "registryDependencies": ["@kanpeki/tooltip"],
       "files": [
         {
-          "path": "src/registry/examples/tooltip-with-arrow-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "typography-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/typography"],
-      "files": [
-        {
-          "path": "src/registry/examples/typography-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "typography-h1-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/typography"],
-      "files": [
-        {
-          "path": "src/registry/examples/typography-h1-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "typography-h2-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/typography"],
-      "files": [
-        {
-          "path": "src/registry/examples/typography-h2-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "typography-h3-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/typography"],
-      "files": [
-        {
-          "path": "src/registry/examples/typography-h3-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "typography-h4-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/typography"],
-      "files": [
-        {
-          "path": "src/registry/examples/typography-h4-demo.tsx",
-          "type": "registry:example"
-        }
-      ]
-    },
-    {
-      "name": "typography-p-demo",
-      "type": "registry:example",
-      "registryDependencies": ["@kanpeki/typography"],
-      "files": [
-        {
-          "path": "src/registry/examples/typography-p-demo.tsx",
+          "path": "src/registry/examples/tooltip/tooltip-with-arrow-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -2215,7 +2578,73 @@
       "registryDependencies": ["@kanpeki/typography"],
       "files": [
         {
-          "path": "src/registry/examples/typography-blockquote-demo.tsx",
+          "path": "src/registry/examples/typography/typography-blockquote-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/typography"],
+      "files": [
+        {
+          "path": "src/registry/examples/typography/typography-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-h1-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/typography"],
+      "files": [
+        {
+          "path": "src/registry/examples/typography/typography-h1-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-h2-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/typography"],
+      "files": [
+        {
+          "path": "src/registry/examples/typography/typography-h2-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-h3-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/typography"],
+      "files": [
+        {
+          "path": "src/registry/examples/typography/typography-h3-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-h4-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/typography"],
+      "files": [
+        {
+          "path": "src/registry/examples/typography/typography-h4-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "typography-p-demo",
+      "type": "registry:example",
+      "registryDependencies": ["@kanpeki/typography"],
+      "files": [
+        {
+          "path": "src/registry/examples/typography/typography-p-demo.tsx",
           "type": "registry:example"
         }
       ]

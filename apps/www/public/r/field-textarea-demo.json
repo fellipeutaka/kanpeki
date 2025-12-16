@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-textarea-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/field/field-textarea-demo.tsx",
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { TextField } from \"~/registry/ui/text-field\";\nimport { Textarea } from \"~/registry/ui/textarea\";\n\nexport function FieldTextareaDemo() {\n  return (\n    <Field.Root render={<TextField />}>\n      <Field.Label>Bio</Field.Label>\n      <Textarea placeholder=\"Tell us about yourself...\" />\n      <Field.Description>Max 500 characters.</Field.Description>\n    </Field.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

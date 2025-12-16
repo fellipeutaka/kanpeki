@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/tabs-disabled-demo.tsx",
+      "path": "src/registry/examples/tabs/tabs-disabled-demo.tsx",
       "content": "import { Tabs } from \"~/registry/ui/tabs\";\n\nexport function TabsDisabledDemo() {\n  return (\n    <Tabs.Root aria-label=\"Disabled tabs example\">\n      <Tabs.List>\n        <Tabs.Trigger id=\"tab1\">Tab 1</Tabs.Trigger>\n        <Tabs.Trigger id=\"tab2\" isDisabled>\n          Tab 2\n        </Tabs.Trigger>\n        <Tabs.Trigger id=\"tab3\">Tab 3</Tabs.Trigger>\n      </Tabs.List>\n      <Tabs.Content id=\"tab1\">Content for Tab 1</Tabs.Content>\n      <Tabs.Content id=\"tab2\">Content for Tab 2</Tabs.Content>\n      <Tabs.Content id=\"tab3\">Content for Tab 3</Tabs.Content>\n    </Tabs.Root>\n  );\n}\n",
       "type": "registry:example"
     }

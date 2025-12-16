@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/toggle-disabled-demo.tsx",
+      "path": "src/registry/examples/toggle/toggle-disabled-demo.tsx",
       "content": "import { ThumbsDownIcon } from \"lucide-react\";\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleDisabledDemo() {\n  return (\n    <Toggle aria-label=\"Toggle dislike\" isDisabled variant=\"outline\">\n      <ThumbsDownIcon />\n    </Toggle>\n  );\n}\n",
       "type": "registry:example"
     }

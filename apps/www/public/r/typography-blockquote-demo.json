@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/typography-blockquote-demo.tsx",
+      "path": "src/registry/examples/typography/typography-blockquote-demo.tsx",
       "content": "export function TypographyBlockquote() {\n  return (\n    <blockquote className=\"blockquote\">\n      \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair that\n      they should pay for the privilege.\"\n    </blockquote>\n  );\n}\n",
       "type": "registry:example"
     }

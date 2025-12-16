@@ -8,7 +8,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/date-field-disabled-demo.tsx",
+      "path": "src/registry/examples/date-field/date-field-disabled-demo.tsx",
       "content": "\"use client\";\n\nimport { getLocalTimeZone, today } from \"@internationalized/date\";\nimport { DateField } from \"~/registry/ui/date-field\";\nimport { InputStyles } from \"~/registry/ui/input\";\nimport { Label } from \"~/registry/ui/label\";\n\nexport function DateFieldDisabledDemo() {\n  return (\n    <DateField.Root isDisabled minValue={today(getLocalTimeZone())}>\n      <Label>Event date</Label>\n      <DateField.Input className={InputStyles()}>\n        {(segment) => <DateField.Segment segment={segment} />}\n      </DateField.Input>\n    </DateField.Root>\n  );\n}\n",
       "type": "registry:example"
     }

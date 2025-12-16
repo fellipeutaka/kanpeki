@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/typography-h3-demo.tsx",
+      "path": "src/registry/examples/typography/typography-h3-demo.tsx",
       "content": "export function TypographyH3() {\n  return <h3 className=\"heading-3\">The Joke Tax</h3>;\n}\n",
       "type": "registry:example"
     }

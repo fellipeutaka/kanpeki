@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/pagination"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/pagination/pagination-demo.tsx",
+      "content": "import { Pagination } from \"~/registry/ui/pagination\";\n\nexport function PaginationDemo() {\n  return (\n    <div className=\"flex flex-col gap-6\">\n      <Pagination.Root>\n        <Pagination.Content>\n          <Pagination.Item>\n            <Pagination.Previous href=\"#\" />\n          </Pagination.Item>\n          <Pagination.Item>\n            <Pagination.Link href=\"#\">1</Pagination.Link>\n          </Pagination.Item>\n          <Pagination.Item>\n            <Pagination.Link href=\"#\" isActive>\n              2\n            </Pagination.Link>\n          </Pagination.Item>\n          <Pagination.Item>\n            <Pagination.Link href=\"#\">3</Pagination.Link>\n          </Pagination.Item>\n          <Pagination.Item>\n            <Pagination.Ellipsis />\n          </Pagination.Item>\n          <Pagination.Item>\n            <Pagination.Next href=\"#\" />\n          </Pagination.Item>\n        </Pagination.Content>\n      </Pagination.Root>\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

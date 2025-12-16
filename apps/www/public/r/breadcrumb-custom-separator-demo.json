@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/breadcrumb-custom-separator-demo.tsx",
+      "path": "src/registry/examples/breadcrumb/breadcrumb-custom-separator-demo.tsx",
       "content": "import { SlashIcon } from \"lucide-react\";\nimport { Breadcrumb } from \"~/registry/ui/breadcrumb\";\nimport { Link } from \"~/registry/ui/link\";\n\nexport function BreadcrumbCustomSeparatorDemo() {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.Item>\n        <Link href=\"/\">Home</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator>\n        <SlashIcon className=\"size-4\" />\n      </Breadcrumb.Separator>\n      <Breadcrumb.Item>\n        <Link href=\"/docs/components\">Components</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator>\n        <SlashIcon className=\"size-4\" />\n      </Breadcrumb.Separator>\n      <Breadcrumb.Item>\n        <Link>Breadcrumb</Link>\n      </Breadcrumb.Item>\n    </Breadcrumb.Root>\n  );\n}\n",
       "type": "registry:example"
     }

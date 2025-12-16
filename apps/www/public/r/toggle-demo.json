@@ -10,7 +10,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/toggle-demo.tsx",
+      "path": "src/registry/examples/toggle/toggle-demo.tsx",
       "content": "import { BoldIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleDemo() {\n  return (\n    <Toggle aria-label=\"Toggle bold\">\n      <BoldIcon />\n    </Toggle>\n  );\n}\n",
       "type": "registry:example"
     }

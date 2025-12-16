@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/badge-outline-demo.tsx",
+      "path": "src/registry/examples/badge/badge-outline-demo.tsx",
       "content": "import { Badge } from \"~/registry/ui/badge\";\n\nexport function BadgeOutlineDemo() {\n  return <Badge variant=\"outline\">Badge</Badge>;\n}\n",
       "type": "registry:example"
     }

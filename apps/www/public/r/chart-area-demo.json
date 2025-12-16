@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-area-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/chart"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/chart/chart-area-demo.tsx",
+      "content": "\"use client\";\n\nimport { TrendingUpIcon } from \"lucide-react\";\nimport { Area, AreaChart, CartesianGrid, XAxis } from \"recharts\";\n\nimport { Card } from \"~/registry/ui/card\";\nimport { Chart, type ChartConfig } from \"~/registry/ui/chart\";\n\nexport const description = \"A simple area chart\";\n\nconst chartData = [\n  { desktop: 186, month: \"January\" },\n  { desktop: 305, month: \"February\" },\n  { desktop: 237, month: \"March\" },\n  { desktop: 73, month: \"April\" },\n  { desktop: 209, month: \"May\" },\n  { desktop: 214, month: \"June\" },\n];\n\nconst chartConfig = {\n  desktop: {\n    color: \"var(--chart-1)\",\n    label: \"Desktop\",\n  },\n} satisfies ChartConfig;\n\nexport function ChartAreaDemo() {\n  return (\n    <Card.Root>\n      <Card.Header>\n        <Card.Title>Area Chart</Card.Title>\n        <Card.Description>\n          Showing total visitors for the last 6 months\n        </Card.Description>\n      </Card.Header>\n      <Card.Content>\n        <Chart.Root config={chartConfig}>\n          <AreaChart\n            accessibilityLayer\n            data={chartData}\n            margin={{\n              left: 12,\n              right: 12,\n            }}\n          >\n            <CartesianGrid vertical={false} />\n            <XAxis\n              axisLine={false}\n              dataKey=\"month\"\n              tickFormatter={(value) => value.slice(0, 3)}\n              tickLine={false}\n              tickMargin={8}\n            />\n            <Chart.Tooltip\n              content={<Chart.TooltipContent indicator=\"line\" />}\n              cursor={false}\n            />\n            <Area\n              dataKey=\"desktop\"\n              fill=\"var(--color-desktop)\"\n              fillOpacity={0.4}\n              stroke=\"var(--color-desktop)\"\n              type=\"natural\"\n            />\n          </AreaChart>\n        </Chart.Root>\n      </Card.Content>\n      <Card.Footer>\n        <div className=\"flex w-full items-start gap-2 text-sm\">\n          <div className=\"grid gap-2\">\n            <div className=\"flex items-center gap-2 font-medium leading-none\">\n              Trending up by 5.2% this month{\" \"}\n              <TrendingUpIcon className=\"h-4 w-4\" />\n            </div>\n            <div className=\"flex items-center gap-2 text-muted-foreground leading-none\">\n              January - June 2024\n            </div>\n          </div>\n        </div>\n      </Card.Footer>\n    </Card.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

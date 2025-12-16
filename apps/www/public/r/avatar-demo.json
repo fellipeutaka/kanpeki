@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/avatar-demo.tsx",
+      "path": "src/registry/examples/avatar/avatar-demo.tsx",
       "content": "import { UserIcon } from \"lucide-react\";\nimport { Avatar } from \"~/registry/ui/avatar\";\n\nexport function AvatarDemo() {\n  return (\n    <Avatar.Root>\n      <Avatar.Image\n        alt=\"@fellipeutaka\"\n        src=\"https://github.com/fellipeutaka.png\"\n      />\n      <Avatar.Placeholder>\n        <UserIcon />\n      </Avatar.Placeholder>\n      <Avatar.Fallback>FU</Avatar.Fallback>\n    </Avatar.Root>\n  );\n}\n",
       "type": "registry:example"
     }

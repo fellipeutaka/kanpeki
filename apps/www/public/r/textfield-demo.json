@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textfield-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/textfield"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/textfield/textfield-demo.tsx",
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function TextfieldDemo() {\n  return (\n    <Field.Root render={<TextField />}>\n      <Field.Label>Name</Field.Label>\n      <Input placeholder=\"Enter your name\" />\n    </Field.Root>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

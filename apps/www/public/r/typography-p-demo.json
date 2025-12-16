@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/typography-p-demo.tsx",
+      "path": "src/registry/examples/typography/typography-p-demo.tsx",
       "content": "export function TypographyP() {\n  return (\n    <p className=\"p\">\n      The king, seeing how much happier his subjects were, realized the error of\n      his ways and repealed the joke tax.\n    </p>\n  );\n}\n",
       "type": "registry:example"
     }

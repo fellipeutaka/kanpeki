@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-group-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/field"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/field/field-group-demo.tsx",
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function FieldGroupDemo() {\n  return (\n    <Field.Group>\n      <Field.Root render={<TextField type=\"email\" />}>\n        <Field.Label>Email</Field.Label>\n        <Input placeholder=\"john@example.com\" />\n      </Field.Root>\n      <Field.Separator>Or</Field.Separator>\n      <Field.Root render={<TextField type=\"tel\" />}>\n        <Field.Label>Phone</Field.Label>\n        <Input placeholder=\"+1 (555) 123-4567\" />\n      </Field.Root>\n    </Field.Group>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

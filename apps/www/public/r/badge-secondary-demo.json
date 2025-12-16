@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/badge-secondary-demo.tsx",
+      "path": "src/registry/examples/badge/badge-secondary-demo.tsx",
       "content": "import { Badge } from \"~/registry/ui/badge\";\n\nexport function BadgeSecondaryDemo() {\n  return <Badge variant=\"secondary\">Badge</Badge>;\n}\n",
       "type": "registry:example"
     }

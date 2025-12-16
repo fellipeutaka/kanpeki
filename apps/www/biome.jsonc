@@ -59,7 +59,10 @@
       }
     },
     {
-      "includes": ["src/registry/ui/**/*.tsx", "src/registry/examples/*.tsx"],
+      "includes": [
+        "src/registry/ui/**/*.tsx",
+        "src/registry/examples/**/*.tsx"
+      ],
       "linter": {
         "rules": {
           "performance": {

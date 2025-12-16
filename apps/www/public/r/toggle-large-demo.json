@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/toggle-large-demo.tsx",
+      "path": "src/registry/examples/toggle/toggle-large-demo.tsx",
       "content": "import { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleLargeDemo() {\n  return (\n    <Toggle size=\"lg\" variant=\"outline\">\n      Large\n    </Toggle>\n  );\n}\n",
       "type": "registry:example"
     }

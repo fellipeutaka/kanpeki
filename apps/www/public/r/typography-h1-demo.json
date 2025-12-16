@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/typography-h1-demo.tsx",
+      "path": "src/registry/examples/typography/typography-h1-demo.tsx",
       "content": "export function TypographyH1() {\n  return (\n    <h1 className=\"heading-1\">Taxing Laughter: The Joke Tax Chronicles</h1>\n  );\n}\n",
       "type": "registry:example"
     }

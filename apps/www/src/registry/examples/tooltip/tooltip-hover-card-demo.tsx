@@ -1,7 +1,7 @@
 import { CalendarIcon } from "lucide-react";
+import { AvatarDemo } from "~/registry/examples/avatar/avatar-demo";
 import { RACButton } from "~/registry/ui/button/button";
 import { Tooltip } from "~/registry/ui/tooltip";
-import { AvatarDemo } from "./avatar-demo";
 
 export function TooltipHoverCardDemo() {
   return (

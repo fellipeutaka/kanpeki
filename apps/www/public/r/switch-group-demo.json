@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/switch-group-demo.tsx",
+      "path": "src/registry/examples/switch/switch-group-demo.tsx",
       "content": "import { Switch } from \"~/registry/ui/switch\";\n\nexport function SwitchGroupDemo() {\n  return (\n    <Switch.Root className=\"gap-6 rounded-lg border selected:border-blue-600 p-4 font-medium text-sm leading-none transition-colors\">\n      <div className=\"flex flex-col gap-1\">\n        <div className=\"font-medium\">Share across devices</div>\n        <div className=\"font-normal text-muted-foreground text-sm\">\n          Focus is shared across devices, and turns off when you leave the app.\n        </div>\n      </div>\n\n      <Switch.Track className=\"group-selected:bg-blue-500 dark:group-selected:bg-blue-600\">\n        <Switch.Thumb />\n      </Switch.Track>\n    </Switch.Root>\n  );\n}\n",
       "type": "registry:example"
     }

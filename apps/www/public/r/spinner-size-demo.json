@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/spinner-size-demo.tsx",
+      "path": "src/registry/examples/spinner/spinner-size-demo.tsx",
       "content": "import { Spinner } from \"~/registry/ui/spinner\";\n\nexport function SpinnerSizeDemo() {\n  return (\n    <div className=\"flex items-center gap-6\">\n      <Spinner className=\"size-3\" />\n      <Spinner className=\"size-4\" />\n      <Spinner className=\"size-6\" />\n      <Spinner className=\"size-8\" />\n    </div>\n  );\n}\n",
       "type": "registry:example"
     }

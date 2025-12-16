@@ -10,7 +10,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/toggle-outline-demo.tsx",
+      "path": "src/registry/examples/toggle/toggle-outline-demo.tsx",
       "content": "import { ItalicIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleOutlineDemo() {\n  return (\n    <Toggle aria-label=\"Toggle italic\" variant=\"outline\">\n      <ItalicIcon />\n      Italic\n    </Toggle>\n  );\n}\n",
       "type": "registry:example"
     }

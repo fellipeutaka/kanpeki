@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/badge-destructive-demo.tsx",
+      "path": "src/registry/examples/badge/badge-destructive-demo.tsx",
       "content": "import { Badge } from \"~/registry/ui/badge\";\n\nexport function BadgeDestructiveDemo() {\n  return <Badge variant=\"destructive\">Badge</Badge>;\n}\n",
       "type": "registry:example"
     }

@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/button-demo.tsx",
+      "path": "src/registry/examples/button/button-demo.tsx",
       "content": "import { Button } from \"~/registry/ui/button\";\n\nexport function ButtonDemo() {\n  return <Button>Button</Button>;\n}\n",
       "type": "registry:example"
     }

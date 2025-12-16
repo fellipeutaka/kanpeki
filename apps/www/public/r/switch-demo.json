@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/switch-demo.tsx",
+      "path": "src/registry/examples/switch/switch-demo.tsx",
       "content": "import { Switch } from \"~/registry/ui/switch\";\n\nexport function SwitchDemo() {\n  return (\n    <Switch.Root>\n      <Switch.Track>\n        <Switch.Thumb />\n      </Switch.Track>\n      Airplane Mode\n    </Switch.Root>\n  );\n}\n",
       "type": "registry:example"
     }

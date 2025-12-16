@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/toggle-small-demo.tsx",
+      "path": "src/registry/examples/toggle/toggle-small-demo.tsx",
       "content": "import { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleSmallDemo() {\n  return (\n    <Toggle size=\"sm\" variant=\"outline\">\n      Small\n    </Toggle>\n  );\n}\n",
       "type": "registry:example"
     }

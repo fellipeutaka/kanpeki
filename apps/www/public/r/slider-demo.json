@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "src/registry/examples/slider-demo.tsx",
+      "path": "src/registry/examples/slider/slider-demo.tsx",
       "content": "import { Slider } from \"~/registry/ui/slider\";\n\nexport function SliderDemo() {\n  return (\n    <Slider.Root aria-label=\"Single value slider\" defaultValue={[50]}>\n      <Slider.Track>\n        <Slider.Range />\n        <Slider.Thumb />\n      </Slider.Track>\n    </Slider.Root>\n  );\n}\n",
       "type": "registry:example"
     }
