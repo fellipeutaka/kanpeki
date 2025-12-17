@@ -1,6 +1,5 @@
 "use client";
 
-import type { FormEvent } from "react";
 import { toast } from "sonner";
 import { Button } from "~/registry/ui/button";
 import { Field } from "~/registry/ui/field";
@@ -9,7 +8,7 @@ import { Input } from "~/registry/ui/input";
 import { TextField } from "~/registry/ui/text-field";
 
 export function TextfieldForm() {
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);

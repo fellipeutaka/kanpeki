@@ -3326,6 +3326,78 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "textarea-disabled-demo": {
+    name: "textarea-disabled-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/textarea"],
+    files: [{
+      path: "src/registry/examples/textarea/textarea-disabled-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/textarea/textarea-disabled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textarea-disabled-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "textarea-with-label-demo": {
+    name: "textarea-with-label-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/textarea","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/textarea/textarea-with-label-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/textarea/textarea-with-label-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textarea-with-label-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "textarea-with-text-demo": {
+    name: "textarea-with-text-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/textarea","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/textarea/textarea-with-text-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/textarea/textarea-with-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textarea-with-text-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "textarea-auto-resize-demo": {
+    name: "textarea-auto-resize-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/textarea"],
+    files: [{
+      path: "src/registry/examples/textarea/textarea-auto-resize-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/textarea/textarea-auto-resize-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textarea-auto-resize-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "textfield-demo": {
     name: "textfield-demo",
     description: "",

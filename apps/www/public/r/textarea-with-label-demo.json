@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea-with-label-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "@kanpeki/textarea",
+    "@kanpeki/label"
+  ],
+  "files": [
+    {
+      "path": "src/registry/examples/textarea/textarea-with-label-demo.tsx",
+      "content": "import { Label } from \"~/registry/ui/label\";\nimport { Textarea } from \"~/registry/ui/textarea\";\n\nexport function TextareaWithLabelDemo() {\n  return (\n    <div className=\"grid w-full gap-3\">\n      <Label htmlFor=\"message\">Your message</Label>\n      <Textarea id=\"message\" placeholder=\"Type your message here.\" />\n    </div>\n  );\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
