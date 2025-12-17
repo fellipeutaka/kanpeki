@@ -35,7 +35,7 @@ const avatars = [
 
 export function AvatarGroupDemo() {
   return (
-    <div className="-space-x-2 flex">
+    <div className="flex -space-x-2">
       {avatars.map((avatar) => (
         <Avatar.Root className="ring ring-background" key={avatar.alt}>
           <Avatar.Image alt={avatar.alt} src={avatar.src} />

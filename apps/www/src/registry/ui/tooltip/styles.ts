@@ -3,7 +3,7 @@ import { cva } from "~/registry/lib/cva";
 export const TooltipStyles = {
   Arrow: cva({
     base: [
-      "group-placement-left:-rotate-90 fill-popover stroke-border group-placement-bottom:rotate-180 group-placement-right:rotate-90",
+      "fill-popover stroke-border group-placement-bottom:rotate-180 group-placement-left:-rotate-90 group-placement-right:rotate-90",
     ],
   }),
   Content: cva({

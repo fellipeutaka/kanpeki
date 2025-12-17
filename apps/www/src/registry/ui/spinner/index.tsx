@@ -20,7 +20,7 @@ export function Spinner({ className, ...props }: SpinnerProps) {
           <div
             aria-hidden="true"
             className={cx(
-              "-left-[10%] -top-[3.9%] motion-opacity-loop-5/reset motion-duration-1200 motion-ease-linear absolute h-[8%] w-[24%] rounded-md bg-current"
+              "motion-opacity-loop-5/reset motion-duration-1200 motion-ease-linear absolute -top-[3.9%] -left-[10%] h-[8%] w-[24%] rounded-md bg-current"
             )}
             data-slot="spinner-bar"
             key={bar.id}

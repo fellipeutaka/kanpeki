@@ -81,7 +81,7 @@ export function CardDemo() {
           </ol>
         </Card.Content>
         <Card.Footer>
-          <div className="-space-x-2 flex *:data-[slot=avatar-root]:ring-2 *:data-[slot=avatar-root]:ring-background *:data-[slot=avatar-root]:grayscale">
+          <div className="flex -space-x-2 *:data-[slot=avatar-root]:ring-2 *:data-[slot=avatar-root]:ring-background *:data-[slot=avatar-root]:grayscale">
             <Avatar.Root>
               <Avatar.Image alt="@shadcn" src="https://github.com/shadcn.png" />
               <Avatar.Fallback>CN</Avatar.Fallback>
