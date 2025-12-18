@@ -199,6 +199,37 @@ Each example should:
 <ComponentPreview name="component-variant" />
 ````
 
+## Inline Code Syntax Highlighting
+
+When referencing components, props, or attributes in prose, use the `{:tsx}` suffix for syntax highlighting:
+
+**Component references:**
+
+- ✅ `<Component>{:tsx}` or `<Component.Item>{:tsx}`
+- ❌ `Component` or `Component.Item`
+
+**Props and attributes:**
+
+- ✅ `variant{:tsx}`, `isInvalid{:tsx}`, `data-invalid{:tsx}`, `aria-label{:tsx}`
+- ❌ `variant`, `isInvalid`, `data-invalid`, `aria-label`
+
+**Prop values:**
+
+- ✅ `variant="primary"{:tsx}`, `role="dialog"{:tsx}`
+- ❌ `variant="primary"`, `role="dialog"`
+
+Examples:
+
+```mdx
+Use `<TextField>{:tsx}` with the `isInvalid{:tsx}` prop.
+
+Set `orientation="horizontal"{:tsx}` on `<Field.Root>{:tsx}`.
+
+Add `aria-label{:tsx}` for accessibility.
+```
+
+**Exception:** Do NOT use `{:tsx}` in code blocks (fenced with triple backticks) or prop names within `<PropsTable>` data.
+
 ## Alert/Callout Pattern
 
 Use `<Alert.Root>` with `<AlertIcon />` (NOT `<Callout>`):
@@ -346,3 +377,4 @@ If needed, add API documentation using `<PropsTable>`:
 - [ ] All imports use `~/registry/` or `~/components/` prefix
 - [ ] Named exports for all example functions
 - [ ] Alert components use `<Alert.Root>` with `<AlertIcon />`
+- [ ] Component and prop references use `{:tsx}` syntax in prose
