@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Listbox } from \"~/registry/ui/list-box\";\nimport { Popover } from \"~/registry/ui/popover\";\n\nimport { Select } from \"~/registry/ui/select\";\n\nexport function SelectDemo() {\n  return (\n    <Select.Root aria-label=\"Fruits\" placeholder=\"Select a fruit\">\n      <Select.Trigger className=\"w-[180px]\">\n        <Select.Value />\n      </Select.Trigger>\n      <Popover.Content>\n        <Listbox.Root>\n          <Listbox.Label>Fruits</Listbox.Label>\n          <Listbox.Item id=\"apple\">Apple</Listbox.Item>\n          <Listbox.Item id=\"banana\">Banana</Listbox.Item>\n          <Listbox.Item id=\"blueberry\">Blueberry</Listbox.Item>\n          <Listbox.Item id=\"grapes\" isDisabled>\n            Grapes\n          </Listbox.Item>\n          <Listbox.Item id=\"pineapple\">Pineapple</Listbox.Item>\n        </Listbox.Root>\n      </Popover.Content>\n    </Select.Root>\n  );\n}\n",
+      "path": "src/registry/examples/select/select-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "select-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/select"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/select/select-demo.tsx",
-      "content": "import { Listbox } from \"~/registry/ui/list-box\";\nimport { Popover } from \"~/registry/ui/popover\";\n\nimport { Select } from \"~/registry/ui/select\";\n\nexport function SelectDemo() {\n  return (\n    <Select.Root aria-label=\"Fruits\" placeholder=\"Select a fruit\">\n      <Select.Trigger className=\"w-[180px]\">\n        <Select.Value />\n      </Select.Trigger>\n      <Popover.Content>\n        <Listbox.Root>\n          <Listbox.Label>Fruits</Listbox.Label>\n          <Listbox.Item id=\"apple\">Apple</Listbox.Item>\n          <Listbox.Item id=\"banana\">Banana</Listbox.Item>\n          <Listbox.Item id=\"blueberry\">Blueberry</Listbox.Item>\n          <Listbox.Item id=\"grapes\" isDisabled>\n            Grapes\n          </Listbox.Item>\n          <Listbox.Item id=\"pineapple\">Pineapple</Listbox.Item>\n        </Listbox.Root>\n      </Popover.Content>\n    </Select.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

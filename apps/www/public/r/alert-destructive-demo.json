@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { AlertCircleIcon } from \"lucide-react\";\nimport { Alert } from \"~/registry/ui/alert\";\n\nexport function AlertDestructiveDemo() {\n  return (\n    <Alert.Root variant=\"destructive\">\n      <AlertCircleIcon />\n      <Alert.Title>Something went wrong!</Alert.Title>\n      <Alert.Description>\n        Your session has expired. Please log in again.\n      </Alert.Description>\n    </Alert.Root>\n  );\n}\n",
+      "path": "src/registry/examples/alert/alert-destructive-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "alert-destructive-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/alert"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/alert/alert-destructive-demo.tsx",
-      "content": "import { AlertCircleIcon } from \"lucide-react\";\nimport { Alert } from \"~/registry/ui/alert\";\n\nexport function AlertDestructiveDemo() {\n  return (\n    <Alert.Root variant=\"destructive\">\n      <AlertCircleIcon />\n      <Alert.Title>Something went wrong!</Alert.Title>\n      <Alert.Description>\n        Your session has expired. Please log in again.\n      </Alert.Description>\n    </Alert.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Switch } from \"~/registry/ui/switch\";\n\nexport function SwitchDemo() {\n  return (\n    <Switch.Root>\n      <Switch.Track>\n        <Switch.Thumb />\n      </Switch.Track>\n      Airplane Mode\n    </Switch.Root>\n  );\n}\n",
+      "path": "src/registry/examples/switch/switch-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "switch-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/switch"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/switch/switch-demo.tsx",
-      "content": "import { Switch } from \"~/registry/ui/switch\";\n\nexport function SwitchDemo() {\n  return (\n    <Switch.Root>\n      <Switch.Track>\n        <Switch.Thumb />\n      </Switch.Track>\n      Airplane Mode\n    </Switch.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

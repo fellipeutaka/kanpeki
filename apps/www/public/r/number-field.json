@@ -1,19 +1,19 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "number-field",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { NumberField as RACNumberField } from \"react-aria-components\";\n\nexport interface NumberFieldProps\n  extends React.ComponentProps<typeof RACNumberField> {}\n\nexport function NumberField(props: NumberFieldProps) {\n  return <RACNumberField data-slot=\"number-field\" {...props} />;\n}\n",
+      "path": "src/registry/ui/number-field/index.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "number-field",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/number-field/index.tsx",
-      "content": "\"use client\";\n\nimport { NumberField as RACNumberField } from \"react-aria-components\";\n\nexport interface NumberFieldProps\n  extends React.ComponentProps<typeof RACNumberField> {}\n\nexport function NumberField(props: NumberFieldProps) {\n  return <RACNumberField data-slot=\"number-field\" {...props} />;\n}\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

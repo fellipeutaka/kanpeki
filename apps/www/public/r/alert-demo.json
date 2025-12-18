@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { CheckCircle2Icon } from \"lucide-react\";\nimport { Alert } from \"~/registry/ui/alert\";\n\nexport function AlertDemo() {\n  return (\n    <Alert.Root>\n      <CheckCircle2Icon />\n      <Alert.Title>Success! Your changes have been saved</Alert.Title>\n      <Alert.Description>\n        This is an alert. with icon, title and description.\n      </Alert.Description>\n    </Alert.Root>\n  );\n}\n",
+      "path": "src/registry/examples/alert/alert-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "alert-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/alert"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/alert/alert-demo.tsx",
-      "content": "import { CheckCircle2Icon } from \"lucide-react\";\nimport { Alert } from \"~/registry/ui/alert\";\n\nexport function AlertDemo() {\n  return (\n    <Alert.Root>\n      <CheckCircle2Icon />\n      <Alert.Title>Success! Your changes have been saved</Alert.Title>\n      <Alert.Description>\n        This is an alert. with icon, title and description.\n      </Alert.Description>\n    </Alert.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

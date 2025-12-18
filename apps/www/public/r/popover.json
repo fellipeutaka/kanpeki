@@ -1,34 +1,34 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "popover",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "export * as Popover from \"./namespace\";\nexport * from \"./popover\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/popover/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport {\n  Button,\n  composeRenderProps,\n  DialogTrigger,\n  OverlayArrow,\n  Popover,\n  PopoverContext,\n  useSlottedContext,\n} from \"react-aria-components\";\nimport { PopoverStyles } from \"./styles\";\n\nexport interface PopoverRootProps\n  extends React.ComponentProps<typeof DialogTrigger> {}\n\nexport function PopoverRoot(props: PopoverRootProps) {\n  return <DialogTrigger data-slot=\"popover\" {...props} />;\n}\n\nexport interface PopoverTriggerProps\n  extends React.ComponentProps<typeof Button> {}\n\nexport function PopoverTrigger(props: PopoverTriggerProps) {\n  return <Button data-slot=\"popover-trigger\" {...props} />;\n}\n\nexport interface PopoverContentProps\n  extends React.ComponentProps<typeof Popover> {\n  /**\n   * The additional offset applied along the main axis between the element and its\n   * anchor element.\n   * @default 4\n   */\n  offset?: number;\n}\n\nexport function PopoverContent({\n  className,\n  offset = 4,\n  placement,\n  ...props\n}: PopoverContentProps) {\n  const popoverContext = useSlottedContext(PopoverContext);\n  const isMenu = popoverContext?.trigger !== \"DialogTrigger\";\n  const isSubmenuTrigger = popoverContext?.trigger === \"SubmenuTrigger\";\n  const _placement = placement ?? (isSubmenuTrigger ? \"right\" : \"bottom start\");\n\n  return (\n    <Popover\n      className={composeRenderProps(className, (className) =>\n        PopoverStyles.Content({\n          className,\n          isMenu,\n        })\n      )}\n      data-slot=\"popover-content\"\n      offset={offset}\n      placement={_placement}\n      {...props}\n    />\n  );\n}\n\nexport interface PopoverArrowProps\n  extends React.ComponentProps<typeof OverlayArrow> {}\n\nexport function PopoverArrow({\n  className,\n  children,\n  ...props\n}: PopoverArrowProps) {\n  return (\n    <OverlayArrow\n      className={composeRenderProps(className, (className) =>\n        PopoverStyles.Arrow({\n          className,\n        })\n      )}\n      data-slot=\"popover-arrow\"\n      {...props}\n    >\n      {composeRenderProps(\n        children,\n        (children) =>\n          children ?? (\n            <svg aria-hidden=\"true\" height={12} viewBox=\"0 0 12 12\" width={12}>\n              <path d=\"M0 0 L6 6 L12 0\" />\n            </svg>\n          )\n      )}\n    </OverlayArrow>\n  );\n}\n",
+      "path": "src/registry/ui/popover/popover.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const PopoverStyles = {\n  Arrow: cva({\n    base: [\n      \"[&_svg]:fill-popover [&_svg]:stroke-border\",\n      \"placement-bottom:rotate-180 placement-left:-rotate-90 placement-right:rotate-90\",\n    ],\n  }),\n  Content: cva({\n    base: [\n      \"z-50 overflow-hidden shadow-md outline-hidden\",\n\n      \"motion-duration-150\",\n      \"entering:motion-opacity-in entering:motion-ease-out\",\n      \"entering:placement-left:motion-translate-x-in-[0.25rem]\",\n      \"entering:placement-right:motion-translate-x-in-[-0.25rem]\",\n      \"entering:placement-top:motion-translate-y-in-[0.25rem]\",\n      \"entering:placement-bottom:motion-translate-y-in-[-0.25rem]\",\n\n      \"exiting:motion-opacity-out exiting:motion-ease-in\",\n      \"exiting:placement-left:motion-translate-x-out-[0.25rem]\",\n      \"exiting:placement-right:motion-translate-x-out-[-0.25rem]\",\n      \"exiting:placement-top:motion-translate-y-out-[0.25rem]\",\n      \"exiting:placement-bottom:motion-translate-y-out-[-0.25rem]\",\n    ],\n    variants: {\n      isMenu: {\n        false: [\n          \"min-w-72 rounded-md border bg-popover p-4 text-popover-foreground\",\n        ],\n        true: [\n          \"min-w-(--trigger-width) *:data-[slot=listbox-root]:max-h-[inherit]\",\n        ],\n      },\n    },\n  }),\n};\n",
+      "path": "src/registry/ui/popover/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  PopoverArrow as Arrow,\n  PopoverContent as Content,\n  PopoverRoot as Root,\n  PopoverTrigger as Trigger,\n} from \"./popover\";\n",
+      "path": "src/registry/ui/popover/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "popover",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/popover/index.ts",
-      "content": "export * as Popover from \"./namespace\";\nexport * from \"./popover\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/popover/popover.tsx",
-      "content": "\"use client\";\n\nimport {\n  Button,\n  composeRenderProps,\n  DialogTrigger,\n  OverlayArrow,\n  Popover,\n  PopoverContext,\n  useSlottedContext,\n} from \"react-aria-components\";\nimport { PopoverStyles } from \"./styles\";\n\nexport interface PopoverRootProps\n  extends React.ComponentProps<typeof DialogTrigger> {}\n\nexport function PopoverRoot(props: PopoverRootProps) {\n  return <DialogTrigger data-slot=\"popover\" {...props} />;\n}\n\nexport interface PopoverTriggerProps\n  extends React.ComponentProps<typeof Button> {}\n\nexport function PopoverTrigger(props: PopoverTriggerProps) {\n  return <Button data-slot=\"popover-trigger\" {...props} />;\n}\n\nexport interface PopoverContentProps\n  extends React.ComponentProps<typeof Popover> {\n  /**\n   * The additional offset applied along the main axis between the element and its\n   * anchor element.\n   * @default 4\n   */\n  offset?: number;\n}\n\nexport function PopoverContent({\n  className,\n  offset = 4,\n  placement,\n  ...props\n}: PopoverContentProps) {\n  const popoverContext = useSlottedContext(PopoverContext);\n  const isMenu = popoverContext?.trigger !== \"DialogTrigger\";\n  const isSubmenuTrigger = popoverContext?.trigger === \"SubmenuTrigger\";\n  const _placement = placement ?? (isSubmenuTrigger ? \"right\" : \"bottom start\");\n\n  return (\n    <Popover\n      className={composeRenderProps(className, (className) =>\n        PopoverStyles.Content({\n          className,\n          isMenu,\n        })\n      )}\n      data-slot=\"popover-content\"\n      offset={offset}\n      placement={_placement}\n      {...props}\n    />\n  );\n}\n\nexport interface PopoverArrowProps\n  extends React.ComponentProps<typeof OverlayArrow> {}\n\nexport function PopoverArrow({\n  className,\n  children,\n  ...props\n}: PopoverArrowProps) {\n  return (\n    <OverlayArrow\n      className={composeRenderProps(className, (className) =>\n        PopoverStyles.Arrow({\n          className,\n        })\n      )}\n      data-slot=\"popover-arrow\"\n      {...props}\n    >\n      {composeRenderProps(\n        children,\n        (children) =>\n          children ?? (\n            <svg aria-hidden=\"true\" height={12} viewBox=\"0 0 12 12\" width={12}>\n              <path d=\"M0 0 L6 6 L12 0\" />\n            </svg>\n          )\n      )}\n    </OverlayArrow>\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/popover/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const PopoverStyles = {\n  Arrow: cva({\n    base: [\n      \"[&_svg]:fill-popover [&_svg]:stroke-border\",\n      \"placement-left:-rotate-90 placement-bottom:rotate-180 placement-right:rotate-90\",\n    ],\n  }),\n  Content: cva({\n    base: [\n      \"z-50 overflow-hidden shadow-md outline-hidden\",\n\n      \"motion-duration-150\",\n      \"entering:motion-opacity-in entering:motion-ease-out\",\n      \"entering:placement-left:motion-translate-x-in-[0.25rem]\",\n      \"entering:placement-right:motion-translate-x-in-[-0.25rem]\",\n      \"entering:placement-top:motion-translate-y-in-[0.25rem]\",\n      \"entering:placement-bottom:motion-translate-y-in-[-0.25rem]\",\n\n      \"exiting:motion-opacity-out exiting:motion-ease-in\",\n      \"exiting:placement-left:motion-translate-x-out-[0.25rem]\",\n      \"exiting:placement-right:motion-translate-x-out-[-0.25rem]\",\n      \"exiting:placement-top:motion-translate-y-out-[0.25rem]\",\n      \"exiting:placement-bottom:motion-translate-y-out-[-0.25rem]\",\n    ],\n    variants: {\n      isMenu: {\n        false: [\n          \"min-w-72 rounded-md border bg-popover p-4 text-popover-foreground\",\n        ],\n        true: [\n          \"min-w-(--trigger-width) *:data-[slot=listbox-root]:max-h-[inherit]\",\n        ],\n      },\n    },\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/popover/namespace.ts",
-      "content": "export {\n  PopoverArrow as Arrow,\n  PopoverContent as Content,\n  PopoverRoot as Root,\n  PopoverTrigger as Trigger,\n} from \"./popover\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

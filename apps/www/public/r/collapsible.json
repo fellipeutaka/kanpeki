@@ -1,34 +1,34 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "collapsible",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "export * from \"./collapsible\";\nexport * as Collapsible from \"./namespace\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/collapsible/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport {\n  Button,\n  composeRenderProps,\n  Disclosure,\n  DisclosurePanel,\n} from \"react-aria-components\";\nimport { CollapsibleStyles } from \"./styles\";\n\nexport interface CollapsibleRootProps\n  extends React.ComponentProps<typeof Disclosure> {}\n\nexport function CollapsibleRoot(props: CollapsibleRootProps) {\n  return <Disclosure data-slot=\"collapsible-root\" {...props} />;\n}\n\nexport interface CollapsibleTriggerProps\n  extends Omit<React.ComponentProps<typeof Button>, \"slot\"> {}\n\nexport function CollapsibleTrigger(props: CollapsibleTriggerProps) {\n  return <Button data-slot=\"collapsible-trigger\" slot=\"trigger\" {...props} />;\n}\n\nexport interface CollapsibleContentProps\n  extends React.ComponentProps<typeof DisclosurePanel> {}\n\nexport function CollapsibleContent({\n  className,\n  ...props\n}: CollapsibleContentProps) {\n  return (\n    <DisclosurePanel\n      className={composeRenderProps(className, (className) =>\n        CollapsibleStyles.Content({ className })\n      )}\n      data-slot=\"collapsible-content\"\n      {...props}\n    />\n  );\n}\n",
+      "path": "src/registry/ui/collapsible/collapsible.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const CollapsibleStyles = {\n  Content: cva({\n    base: [\n      \"overflow-hidden text-sm transition-[height,content_visibility] transition-discrete [interpolate-size:allow-keywords] aria-hidden:h-0\",\n    ],\n  }),\n};\n",
+      "path": "src/registry/ui/collapsible/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  CollapsibleContent as Content,\n  CollapsibleRoot as Root,\n  CollapsibleTrigger as Trigger,\n} from \"./collapsible\";\n",
+      "path": "src/registry/ui/collapsible/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "collapsible",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/collapsible/index.ts",
-      "content": "export * from \"./collapsible\";\nexport * as Collapsible from \"./namespace\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/collapsible/collapsible.tsx",
-      "content": "\"use client\";\n\nimport {\n  Button,\n  composeRenderProps,\n  Disclosure,\n  DisclosurePanel,\n} from \"react-aria-components\";\nimport { CollapsibleStyles } from \"./styles\";\n\nexport interface CollapsibleRootProps\n  extends React.ComponentProps<typeof Disclosure> {}\n\nexport function CollapsibleRoot(props: CollapsibleRootProps) {\n  return <Disclosure data-slot=\"collapsible-root\" {...props} />;\n}\n\nexport interface CollapsibleTriggerProps\n  extends Omit<React.ComponentProps<typeof Button>, \"slot\"> {}\n\nexport function CollapsibleTrigger(props: CollapsibleTriggerProps) {\n  return <Button data-slot=\"collapsible-trigger\" slot=\"trigger\" {...props} />;\n}\n\nexport interface CollapsibleContentProps\n  extends React.ComponentProps<typeof DisclosurePanel> {}\n\nexport function CollapsibleContent({\n  className,\n  ...props\n}: CollapsibleContentProps) {\n  return (\n    <DisclosurePanel\n      className={composeRenderProps(className, (className) =>\n        CollapsibleStyles.Content({ className })\n      )}\n      data-slot=\"collapsible-content\"\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/collapsible/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const CollapsibleStyles = {\n  Content: cva({\n    base: [\n      \"overflow-hidden text-sm transition-[height,content_visibility] transition-discrete [interpolate-size:allow-keywords] aria-hidden:h-0\",\n    ],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/collapsible/namespace.ts",
-      "content": "export {\n  CollapsibleContent as Content,\n  CollapsibleRoot as Root,\n  CollapsibleTrigger as Trigger,\n} from \"./collapsible\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

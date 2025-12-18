@@ -1,26 +1,26 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "export * from \"./skeleton\";\n",
+      "path": "src/registry/ui/skeleton/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { SkeletonStyles } from \"./styles\";\n\nexport interface SkeletonProps extends React.ComponentProps<\"div\"> {}\n\nexport function Skeleton({ className, ...props }: SkeletonProps) {\n  return (\n    <div\n      className={SkeletonStyles({ className })}\n      data-slot=\"skeleton\"\n      {...props}\n    />\n  );\n}\n",
+      "path": "src/registry/ui/skeleton/skeleton.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SkeletonStyles = cva({\n  base: [\"animate-pulse rounded-md bg-accent\"],\n});\n",
+      "path": "src/registry/ui/skeleton/styles.ts",
+      "type": "registry:ui"
+    }
+  ],
   "name": "skeleton",
-  "type": "registry:ui",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/skeleton/index.ts",
-      "content": "export * from \"./skeleton\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/skeleton/skeleton.tsx",
-      "content": "import { SkeletonStyles } from \"./styles\";\n\nexport interface SkeletonProps extends React.ComponentProps<\"div\"> {}\n\nexport function Skeleton({ className, ...props }: SkeletonProps) {\n  return (\n    <div\n      className={SkeletonStyles({ className })}\n      data-slot=\"skeleton\"\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/skeleton/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SkeletonStyles = cva({\n  base: [\"animate-pulse rounded-md bg-accent\"],\n});\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

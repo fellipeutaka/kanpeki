@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Label } from \"~/registry/ui/label\";\nimport { RadioGroup } from \"~/registry/ui/radio-group\";\n\nexport function FieldRadioDemo() {\n  return (\n    <Field.Set>\n      <Field.Legend>Notification preferences</Field.Legend>\n      <Field.Description>\n        How would you like to receive notifications?\n      </Field.Description>\n      <RadioGroup.Root data-slot=\"radio-group\" defaultValue=\"email\">\n        <Field.Root orientation=\"horizontal\">\n          <RadioGroup.Item value=\"email\">\n            <RadioGroup.Indicator />\n          </RadioGroup.Item>\n          <Label>Email</Label>\n        </Field.Root>\n        <Field.Root orientation=\"horizontal\">\n          <RadioGroup.Item value=\"sms\">\n            <RadioGroup.Indicator />\n          </RadioGroup.Item>\n          <Label>SMS</Label>\n        </Field.Root>\n        <Field.Root orientation=\"horizontal\">\n          <RadioGroup.Item value=\"push\">\n            <RadioGroup.Indicator />\n          </RadioGroup.Item>\n          <Label>Push notification</Label>\n        </Field.Root>\n      </RadioGroup.Root>\n    </Field.Set>\n  );\n}\n",
+      "path": "src/registry/examples/field/field-radio-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "field-radio-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/field"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/field/field-radio-demo.tsx",
-      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Label } from \"~/registry/ui/label\";\nimport { RadioGroup } from \"~/registry/ui/radio-group\";\n\nexport function FieldRadioDemo() {\n  return (\n    <Field.Set>\n      <Field.Legend>Notification preferences</Field.Legend>\n      <Field.Description>\n        How would you like to receive notifications?\n      </Field.Description>\n      <RadioGroup.Root data-slot=\"radio-group\" defaultValue=\"email\">\n        <Field.Root orientation=\"horizontal\">\n          <RadioGroup.Item value=\"email\">\n            <RadioGroup.Indicator />\n          </RadioGroup.Item>\n          <Label>Email</Label>\n        </Field.Root>\n        <Field.Root orientation=\"horizontal\">\n          <RadioGroup.Item value=\"sms\">\n            <RadioGroup.Indicator />\n          </RadioGroup.Item>\n          <Label>SMS</Label>\n        </Field.Root>\n        <Field.Root orientation=\"horizontal\">\n          <RadioGroup.Item value=\"push\">\n            <RadioGroup.Indicator />\n          </RadioGroup.Item>\n          <Label>Push notification</Label>\n        </Field.Root>\n      </RadioGroup.Root>\n    </Field.Set>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

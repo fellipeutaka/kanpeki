@@ -2570,6 +2570,78 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "input-file": {
+    name: "input-file",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/input/input-file.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input/input-file.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-file"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-disabled": {
+    name: "input-disabled",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input"],
+    files: [{
+      path: "src/registry/examples/input/input-disabled.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input/input-disabled.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-disabled"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-with-label": {
+    name: "input-with-label",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/input/input-with-label.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input/input-with-label.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-with-label"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-with-button": {
+    name: "input-with-button",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/input/input-with-button.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input/input-with-button.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-with-button"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "input-otp-demo": {
     name: "input-otp-demo",
     description: "",

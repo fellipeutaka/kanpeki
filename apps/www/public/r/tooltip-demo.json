@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Button } from \"~/registry/ui/button/button\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function TooltipDemo() {\n  return (\n    <Tooltip.Root>\n      <Button variant=\"outline\">Hover</Button>\n      <Tooltip.Content>\n        <p>Add to library</p>\n\n        <Tooltip.Arrow />\n      </Tooltip.Content>\n    </Tooltip.Root>\n  );\n}\n",
+      "path": "src/registry/examples/tooltip/tooltip-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "tooltip-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/tooltip"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/tooltip/tooltip-demo.tsx",
-      "content": "import { Button } from \"~/registry/ui/button/button\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function TooltipDemo() {\n  return (\n    <Tooltip.Root>\n      <Button variant=\"outline\">Hover</Button>\n      <Tooltip.Content>\n        <p>Add to library</p>\n\n        <Tooltip.Arrow />\n      </Tooltip.Content>\n    </Tooltip.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

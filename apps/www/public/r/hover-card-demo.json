@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { CalendarIcon } from \"lucide-react\";\n\nimport { Avatar } from \"~/registry/ui/avatar\";\nimport { Button } from \"~/registry/ui/button/button\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function HoverCardDemo() {\n  return (\n    <Tooltip.Root delay={700}>\n      <Button variant=\"link\">@nextjs</Button>\n\n      <Tooltip.Content\n        className=\"w-80 p-4 shadow-md\"\n        offset={4}\n        placement=\"right\"\n      >\n        <div className=\"flex justify-between gap-4\">\n          <Avatar.Root>\n            <Avatar.Image src=\"https://github.com/vercel.png\" />\n            <Avatar.Fallback>VC</Avatar.Fallback>\n          </Avatar.Root>\n          <div className=\"flex flex-col gap-1\">\n            <h4 className=\"font-semibold text-sm\">@nextjs</h4>\n            <p className=\"text-sm\">\n              The React Framework – created and maintained by @vercel.\n            </p>\n            <div className=\"mt-1 flex items-center gap-2\">\n              <CalendarIcon className=\"size-4 text-muted-foreground\" />{\" \"}\n              <span className=\"text-muted-foreground text-xs\">\n                Joined December 2021\n              </span>\n            </div>\n          </div>\n        </div>\n      </Tooltip.Content>\n    </Tooltip.Root>\n  );\n}\n",
+      "path": "src/registry/examples/hover-card/hover-card-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "hover-card-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/hover"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/hover-card/hover-card-demo.tsx",
-      "content": "import { CalendarIcon } from \"lucide-react\";\n\nimport { Avatar } from \"~/registry/ui/avatar\";\nimport { Button } from \"~/registry/ui/button/button\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function HoverCardDemo() {\n  return (\n    <Tooltip.Root delay={700}>\n      <Button variant=\"link\">@nextjs</Button>\n\n      <Tooltip.Content\n        className=\"w-80 p-4 shadow-md\"\n        offset={4}\n        placement=\"right\"\n      >\n        <div className=\"flex justify-between gap-4\">\n          <Avatar.Root>\n            <Avatar.Image src=\"https://github.com/vercel.png\" />\n            <Avatar.Fallback>VC</Avatar.Fallback>\n          </Avatar.Root>\n          <div className=\"flex flex-col gap-1\">\n            <h4 className=\"font-semibold text-sm\">@nextjs</h4>\n            <p className=\"text-sm\">\n              The React Framework – created and maintained by @vercel.\n            </p>\n            <div className=\"mt-1 flex items-center gap-2\">\n              <CalendarIcon className=\"size-4 text-muted-foreground\" />{\" \"}\n              <span className=\"text-muted-foreground text-xs\">\n                Joined December 2021\n              </span>\n            </div>\n          </div>\n        </div>\n      </Tooltip.Content>\n    </Tooltip.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

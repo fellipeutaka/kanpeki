@@ -1,11 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "custom-plugin",
-  "type": "registry:item",
+  "css": {
+    "@plugin \"tailwindcss-motion\"": {},
+    "@plugin \"tailwindcss-react-aria-components\"": {}
+  },
   "devDependencies": [
     "tailwindcss-motion",
     "tailwindcss-react-aria-components"
   ],
+  "name": "custom-plugin",
   "tailwind": {
     "config": {
       "plugins": [
@@ -14,8 +17,5 @@
       ]
     }
   },
-  "css": {
-    "@plugin \"tailwindcss-react-aria-components\"": {},
-    "@plugin \"tailwindcss-motion\"": {}
-  }
+  "type": "registry:item"
 }

@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { RadioGroup } from \"~/registry/ui/radio-group\";\n\nconst plans = [\n  {\n    description:\n      \"Perfect for small businesses getting started with our platform\",\n    id: \"starter\",\n    name: \"Starter Plan\",\n    price: \"$10\",\n  },\n  {\n    description: \"Advanced features for growing businesses with higher demands\",\n    id: \"pro\",\n    name: \"Pro Plan\",\n    price: \"$20\",\n  },\n] as const;\n\nexport function RadioGroupWithDescriptionDemo() {\n  return (\n    <RadioGroup.Root\n      aria-label=\"Plan selection\"\n      className=\"max-w-sm\"\n      defaultValue=\"starter\"\n    >\n      {plans.map((plan) => (\n        <RadioGroup.Item\n          className=\"items-start rounded-lg border selected:border-green-600 selected:bg-green-50 p-4 hover:bg-accent/50 dark:selected:border-green-900 dark:selected:bg-green-950\"\n          key={plan.id}\n          value={plan.id}\n        >\n          <RadioGroup.Indicator className=\"group-selected:border-green-600 not-dark:group-selected:bg-green-600 [&_svg]:fill-white [&_svg]:stroke-white\" />\n\n          <div className=\"grid gap-1 font-normal\">\n            <div className=\"font-medium\">{plan.name}</div>\n            <div className=\"text-muted-foreground leading-snug\">\n              {plan.description}\n            </div>\n          </div>\n        </RadioGroup.Item>\n      ))}\n    </RadioGroup.Root>\n  );\n}\n",
+      "path": "src/registry/examples/radio-group/radio-group-with-description-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "radio-group-with-description-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/radio-group"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/radio-group/radio-group-with-description-demo.tsx",
-      "content": "import { RadioGroup } from \"~/registry/ui/radio-group\";\n\nconst plans = [\n  {\n    description:\n      \"Perfect for small businesses getting started with our platform\",\n    id: \"starter\",\n    name: \"Starter Plan\",\n    price: \"$10\",\n  },\n  {\n    description: \"Advanced features for growing businesses with higher demands\",\n    id: \"pro\",\n    name: \"Pro Plan\",\n    price: \"$20\",\n  },\n] as const;\n\nexport function RadioGroupWithDescriptionDemo() {\n  return (\n    <RadioGroup.Root\n      aria-label=\"Plan selection\"\n      className=\"max-w-sm\"\n      defaultValue=\"starter\"\n    >\n      {plans.map((plan) => (\n        <RadioGroup.Item\n          className=\"items-start rounded-lg border selected:border-green-600 selected:bg-green-50 p-4 hover:bg-accent/50 dark:selected:border-green-900 dark:selected:bg-green-950\"\n          key={plan.id}\n          value={plan.id}\n        >\n          <RadioGroup.Indicator className=\"group-selected:border-green-600 not-dark:group-selected:bg-green-600 [&_svg]:fill-white [&_svg]:stroke-white\" />\n\n          <div className=\"grid gap-1 font-normal\">\n            <div className=\"font-medium\">{plan.name}</div>\n            <div className=\"text-muted-foreground leading-snug\">\n              {plan.description}\n            </div>\n          </div>\n        </RadioGroup.Item>\n      ))}\n    </RadioGroup.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

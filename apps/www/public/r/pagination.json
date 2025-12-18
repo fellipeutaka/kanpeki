@@ -1,34 +1,34 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "pagination",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components",
     "lucide-react"
   ],
+  "files": [
+    {
+      "content": "export * as Pagination from \"./namespace\";\nexport * from \"./pagination\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/pagination/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport {\n  ChevronLeftIcon,\n  ChevronRightIcon,\n  MoreHorizontalIcon,\n} from \"lucide-react\";\nimport { composeRenderProps, Link } from \"react-aria-components\";\n\nimport { type Button, ButtonStyles } from \"~/registry/ui/button\";\nimport { PaginationStyles } from \"./styles\";\n\nexport interface PaginationRootProps extends React.ComponentProps<\"nav\"> {}\n\nexport function PaginationRoot({ className, ...props }: PaginationRootProps) {\n  return (\n    <nav\n      aria-label=\"pagination\"\n      className={PaginationStyles.Root({ className })}\n      data-slot=\"pagination-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface PaginationContentProps extends React.ComponentProps<\"ul\"> {}\n\nexport function PaginationContent({\n  className,\n  ...props\n}: PaginationContentProps) {\n  return (\n    <ul\n      className={PaginationStyles.Content({ className })}\n      data-slot=\"pagination-content\"\n      {...props}\n    />\n  );\n}\n\nexport interface PaginationItemProps extends React.ComponentProps<\"li\"> {}\n\nexport function PaginationItem({ ...props }: PaginationItemProps) {\n  return <li data-slot=\"pagination-item\" {...props} />;\n}\n\nexport interface PaginationLinkProps\n  extends Pick<React.ComponentProps<typeof Button>, \"size\">,\n    React.ComponentProps<typeof Link> {\n  isActive?: boolean;\n}\n\nexport function PaginationLink({\n  className,\n  isActive,\n  size = \"icon\",\n  ...props\n}: PaginationLinkProps) {\n  return (\n    <Link\n      aria-current={isActive ? \"page\" : undefined}\n      className={composeRenderProps(className, (className) =>\n        ButtonStyles({\n          className,\n          size,\n          variant: isActive ? \"outline\" : \"ghost\",\n        })\n      )}\n      data-active={isActive}\n      data-slot=\"pagination-link\"\n      {...props}\n    />\n  );\n}\n\nexport interface PaginationPreviousProps\n  extends React.ComponentProps<typeof PaginationLink> {}\n\nexport function PaginationPrevious({\n  className,\n  ...props\n}: PaginationPreviousProps) {\n  return (\n    <PaginationLink\n      aria-label=\"Go to previous page\"\n      className={PaginationStyles.Navigation({\n        className,\n        variant: \"previous\",\n      })}\n      size=\"default\"\n      {...props}\n    >\n      <ChevronLeftIcon />\n      <span className=\"hidden sm:block\">Previous</span>\n    </PaginationLink>\n  );\n}\n\nexport interface PaginationNextProps\n  extends React.ComponentProps<typeof PaginationLink> {}\n\nexport function PaginationNext({ className, ...props }: PaginationNextProps) {\n  return (\n    <PaginationLink\n      aria-label=\"Go to next page\"\n      className={PaginationStyles.Navigation({\n        className,\n        variant: \"next\",\n      })}\n      size=\"default\"\n      {...props}\n    >\n      <span className=\"hidden sm:block\">Next</span>\n      <ChevronRightIcon />\n    </PaginationLink>\n  );\n}\n\nexport interface PaginationEllipsisProps extends React.ComponentProps<\"span\"> {}\n\nexport function PaginationEllipsis({\n  className,\n  ...props\n}: PaginationEllipsisProps) {\n  return (\n    <span\n      aria-hidden\n      className={PaginationStyles.Ellipsis({ className })}\n      data-slot=\"pagination-ellipsis\"\n      {...props}\n    >\n      <MoreHorizontalIcon className=\"size-4\" />\n      <span className=\"sr-only\">More pages</span>\n    </span>\n  );\n}\n",
+      "path": "src/registry/ui/pagination/pagination.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const PaginationStyles = {\n  Content: cva({\n    base: [\"flex flex-row items-center gap-1\"],\n  }),\n  Ellipsis: cva({\n    base: [\"flex size-9 items-center justify-center\"],\n  }),\n  Navigation: cva({\n    base: [\"gap-1 px-2.5\"],\n    variants: {\n      variant: {\n        next: [\"sm:pr-2.5\"],\n        previous: [\"sm:pl-2.5\"],\n      },\n    },\n  }),\n  Root: cva({\n    base: [\"mx-auto flex w-full justify-center\"],\n  }),\n};\n",
+      "path": "src/registry/ui/pagination/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  PaginationContent as Content,\n  PaginationEllipsis as Ellipsis,\n  PaginationItem as Item,\n  PaginationLink as Link,\n  PaginationNext as Next,\n  PaginationPrevious as Previous,\n  PaginationRoot as Root,\n} from \"./pagination\";\n",
+      "path": "src/registry/ui/pagination/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "pagination",
   "registryDependencies": [
     "@kanpeki/button"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/pagination/index.ts",
-      "content": "export * as Pagination from \"./namespace\";\nexport * from \"./pagination\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/pagination/pagination.tsx",
-      "content": "\"use client\";\n\nimport {\n  ChevronLeftIcon,\n  ChevronRightIcon,\n  MoreHorizontalIcon,\n} from \"lucide-react\";\nimport { composeRenderProps, Link } from \"react-aria-components\";\n\nimport { type Button, ButtonStyles } from \"~/registry/ui/button\";\nimport { PaginationStyles } from \"./styles\";\n\nexport interface PaginationRootProps extends React.ComponentProps<\"nav\"> {}\n\nexport function PaginationRoot({ className, ...props }: PaginationRootProps) {\n  return (\n    <nav\n      aria-label=\"pagination\"\n      className={PaginationStyles.Root({ className })}\n      data-slot=\"pagination-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface PaginationContentProps extends React.ComponentProps<\"ul\"> {}\n\nexport function PaginationContent({\n  className,\n  ...props\n}: PaginationContentProps) {\n  return (\n    <ul\n      className={PaginationStyles.Content({ className })}\n      data-slot=\"pagination-content\"\n      {...props}\n    />\n  );\n}\n\nexport interface PaginationItemProps extends React.ComponentProps<\"li\"> {}\n\nexport function PaginationItem({ ...props }: PaginationItemProps) {\n  return <li data-slot=\"pagination-item\" {...props} />;\n}\n\nexport interface PaginationLinkProps\n  extends Pick<React.ComponentProps<typeof Button>, \"size\">,\n    React.ComponentProps<typeof Link> {\n  isActive?: boolean;\n}\n\nexport function PaginationLink({\n  className,\n  isActive,\n  size = \"icon\",\n  ...props\n}: PaginationLinkProps) {\n  return (\n    <Link\n      aria-current={isActive ? \"page\" : undefined}\n      className={composeRenderProps(className, (className) =>\n        ButtonStyles({\n          className,\n          size,\n          variant: isActive ? \"outline\" : \"ghost\",\n        })\n      )}\n      data-active={isActive}\n      data-slot=\"pagination-link\"\n      {...props}\n    />\n  );\n}\n\nexport interface PaginationPreviousProps\n  extends React.ComponentProps<typeof PaginationLink> {}\n\nexport function PaginationPrevious({\n  className,\n  ...props\n}: PaginationPreviousProps) {\n  return (\n    <PaginationLink\n      aria-label=\"Go to previous page\"\n      className={PaginationStyles.Navigation({\n        className,\n        variant: \"previous\",\n      })}\n      size=\"default\"\n      {...props}\n    >\n      <ChevronLeftIcon />\n      <span className=\"hidden sm:block\">Previous</span>\n    </PaginationLink>\n  );\n}\n\nexport interface PaginationNextProps\n  extends React.ComponentProps<typeof PaginationLink> {}\n\nexport function PaginationNext({ className, ...props }: PaginationNextProps) {\n  return (\n    <PaginationLink\n      aria-label=\"Go to next page\"\n      className={PaginationStyles.Navigation({\n        className,\n        variant: \"next\",\n      })}\n      size=\"default\"\n      {...props}\n    >\n      <span className=\"hidden sm:block\">Next</span>\n      <ChevronRightIcon />\n    </PaginationLink>\n  );\n}\n\nexport interface PaginationEllipsisProps extends React.ComponentProps<\"span\"> {}\n\nexport function PaginationEllipsis({\n  className,\n  ...props\n}: PaginationEllipsisProps) {\n  return (\n    <span\n      aria-hidden\n      className={PaginationStyles.Ellipsis({ className })}\n      data-slot=\"pagination-ellipsis\"\n      {...props}\n    >\n      <MoreHorizontalIcon className=\"size-4\" />\n      <span className=\"sr-only\">More pages</span>\n    </span>\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/pagination/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const PaginationStyles = {\n  Content: cva({\n    base: [\"flex flex-row items-center gap-1\"],\n  }),\n  Ellipsis: cva({\n    base: [\"flex size-9 items-center justify-center\"],\n  }),\n  Navigation: cva({\n    base: [\"gap-1 px-2.5\"],\n    variants: {\n      variant: {\n        next: [\"sm:pr-2.5\"],\n        previous: [\"sm:pl-2.5\"],\n      },\n    },\n  }),\n  Root: cva({\n    base: [\"mx-auto flex w-full justify-center\"],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/pagination/namespace.ts",
-      "content": "export {\n  PaginationContent as Content,\n  PaginationEllipsis as Ellipsis,\n  PaginationItem as Item,\n  PaginationLink as Link,\n  PaginationNext as Next,\n  PaginationPrevious as Previous,\n  PaginationRoot as Root,\n} from \"./pagination\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

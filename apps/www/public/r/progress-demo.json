@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Progress } from \"~/registry/ui/progress\";\n\nexport function ProgressDemo() {\n  const [progress, setProgress] = useState(13);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setProgress(66), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <Progress.Root aria-label=\"Progress\" className=\"w-[60%]\" value={progress}>\n      <Progress.Indicator />\n    </Progress.Root>\n  );\n}\n",
+      "path": "src/registry/examples/progress/progress-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "progress-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/progress"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/progress/progress-demo.tsx",
-      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Progress } from \"~/registry/ui/progress\";\n\nexport function ProgressDemo() {\n  const [progress, setProgress] = useState(13);\n\n  useEffect(() => {\n    const timer = setTimeout(() => setProgress(66), 500);\n    return () => clearTimeout(timer);\n  }, []);\n\n  return (\n    <Progress.Root aria-label=\"Progress\" className=\"w-[60%]\" value={progress}>\n      <Progress.Indicator />\n    </Progress.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

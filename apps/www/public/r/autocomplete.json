@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "autocomplete",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
   "files": [
     {
-      "path": "src/registry/ui/autocomplete/index.tsx",
       "content": "\"use client\";\n\nimport {\n  Autocomplete as RACAutocomplete,\n  useFilter,\n} from \"react-aria-components\";\n\nexport interface AutocompleteProps\n  extends React.ComponentProps<typeof RACAutocomplete> {\n  options?: Intl.CollatorOptions;\n}\n\nexport function Autocomplete({ filter, options, ...props }: AutocompleteProps) {\n  const { contains } = useFilter({ sensitivity: \"base\", ...options });\n\n  return <RACAutocomplete filter={filter ?? contains} {...props} />;\n}\n",
+      "path": "src/registry/ui/autocomplete/index.tsx",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "name": "autocomplete",
+  "type": "registry:ui"
 }

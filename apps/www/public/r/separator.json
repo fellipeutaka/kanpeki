@@ -1,29 +1,29 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "separator",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "export * from \"./separator\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/separator/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport { Separator as RACSeparator } from \"react-aria-components\";\nimport { SeparatorStyles } from \"./styles\";\n\nexport interface SeparatorProps\n  extends React.ComponentProps<typeof RACSeparator> {}\n\nexport function Separator({\n  className,\n  orientation,\n  ...props\n}: SeparatorProps) {\n  return (\n    <RACSeparator\n      className={SeparatorStyles({ className })}\n      data-orientation={orientation}\n      data-slot=\"separator\"\n      orientation={orientation}\n      {...props}\n    />\n  );\n}\n",
+      "path": "src/registry/ui/separator/separator.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SeparatorStyles = cva({\n  base: [\n    \"shrink-0 bg-border\",\n    \"orientation-horizontal:h-px orientation-horizontal:w-full\",\n    \"orientation-vertical:h-full orientation-vertical:w-px\",\n  ],\n  // TODO: Think about this\n  // variants: {\n  //   variant: {\n  //     menu: \"-mx-1 my-1\",\n  //   },\n  // },\n});\n",
+      "path": "src/registry/ui/separator/styles.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "separator",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/separator/index.ts",
-      "content": "export * from \"./separator\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/separator/separator.tsx",
-      "content": "\"use client\";\n\nimport { Separator as RACSeparator } from \"react-aria-components\";\nimport { SeparatorStyles } from \"./styles\";\n\nexport interface SeparatorProps\n  extends React.ComponentProps<typeof RACSeparator> {}\n\nexport function Separator({\n  className,\n  orientation,\n  ...props\n}: SeparatorProps) {\n  return (\n    <RACSeparator\n      className={SeparatorStyles({ className })}\n      data-orientation={orientation}\n      data-slot=\"separator\"\n      orientation={orientation}\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/separator/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SeparatorStyles = cva({\n  base: [\n    \"shrink-0 bg-border\",\n    \"orientation-horizontal:h-px orientation-horizontal:w-full\",\n    \"orientation-vertical:h-full orientation-vertical:w-px\",\n  ],\n  // TODO: Think about this\n  // variants: {\n  //   variant: {\n  //     menu: \"-mx-1 my-1\",\n  //   },\n  // },\n});\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

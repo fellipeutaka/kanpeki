@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Button } from \"~/registry/ui/button\";\nimport { Input } from \"~/registry/ui/input\";\n\nexport function InputWithButton() {\n  return (\n    <div className=\"flex w-full max-w-sm items-center gap-2\">\n      <Input placeholder=\"Email\" type=\"email\" />\n      <Button type=\"submit\" variant=\"outline\">\n        Subscribe\n      </Button>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/input/input-with-button.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-with-button",
+  "registryDependencies": [
+    "@kanpeki/input",
+    "@kanpeki/button"
+  ],
+  "type": "registry:example"
+}

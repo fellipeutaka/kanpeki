@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { UserIcon } from \"lucide-react\";\nimport { Avatar } from \"~/registry/ui/avatar\";\n\nconst avatars = [\n  {\n    src: \"https://github.com/fellipeutaka.png\",\n    alt: \"@fellipeutaka\",\n    fallback: \"FU\",\n  },\n  {\n    src: \"https://github.com/shadcn.png\",\n    alt: \"@shadcn\",\n    fallback: \"SN\",\n  },\n  {\n    src: \"https://github.com/devongovett.png\",\n    alt: \"@devongovett\",\n    fallback: \"DG\",\n  },\n  {\n    src: \"https://github.com/benoitgrelard.png\",\n    alt: \"@benoitgrelard\",\n    fallback: \"BG\",\n  },\n  {\n    src: \"https://github.com/adamwathan.png\",\n    alt: \"@adamwathan\",\n    fallback: \"AW\",\n  },\n] as const satisfies {\n  src: string;\n  alt: string;\n  fallback: string;\n}[];\n\nexport function AvatarGroupDemo() {\n  return (\n    <div className=\"flex -space-x-2\">\n      {avatars.map((avatar) => (\n        <Avatar.Root className=\"ring ring-background\" key={avatar.alt}>\n          <Avatar.Image alt={avatar.alt} src={avatar.src} />\n          <Avatar.Fallback>{avatar.fallback}</Avatar.Fallback>\n          <Avatar.Placeholder>\n            <UserIcon className=\"size-6\" />\n          </Avatar.Placeholder>\n        </Avatar.Root>\n      ))}\n      <Avatar.Root>\n        <Avatar.Placeholder className=\"animate-none text-muted-foreground\">\n          +3\n        </Avatar.Placeholder>\n      </Avatar.Root>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/avatar/avatar-group-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "avatar-group-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/avatar"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/avatar/avatar-group-demo.tsx",
-      "content": "import { UserIcon } from \"lucide-react\";\nimport { Avatar } from \"~/registry/ui/avatar\";\n\nconst avatars = [\n  {\n    src: \"https://github.com/fellipeutaka.png\",\n    alt: \"@fellipeutaka\",\n    fallback: \"FU\",\n  },\n  {\n    src: \"https://github.com/shadcn.png\",\n    alt: \"@shadcn\",\n    fallback: \"SN\",\n  },\n  {\n    src: \"https://github.com/devongovett.png\",\n    alt: \"@devongovett\",\n    fallback: \"DG\",\n  },\n  {\n    src: \"https://github.com/benoitgrelard.png\",\n    alt: \"@benoitgrelard\",\n    fallback: \"BG\",\n  },\n  {\n    src: \"https://github.com/adamwathan.png\",\n    alt: \"@adamwathan\",\n    fallback: \"AW\",\n  },\n] as const satisfies {\n  src: string;\n  alt: string;\n  fallback: string;\n}[];\n\nexport function AvatarGroupDemo() {\n  return (\n    <div className=\"-space-x-2 flex\">\n      {avatars.map((avatar) => (\n        <Avatar.Root className=\"ring ring-background\" key={avatar.alt}>\n          <Avatar.Image alt={avatar.alt} src={avatar.src} />\n          <Avatar.Fallback>{avatar.fallback}</Avatar.Fallback>\n          <Avatar.Placeholder>\n            <UserIcon className=\"size-6\" />\n          </Avatar.Placeholder>\n        </Avatar.Root>\n      ))}\n      <Avatar.Root>\n        <Avatar.Placeholder className=\"animate-none text-muted-foreground\">\n          +3\n        </Avatar.Placeholder>\n      </Avatar.Root>\n    </div>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

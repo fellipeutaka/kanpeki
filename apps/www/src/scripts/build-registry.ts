@@ -1,4 +1,4 @@
-import { exec, execFile } from "node:child_process";
+import { exec } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { rimraf } from "rimraf";
@@ -74,15 +74,6 @@ async function buildRegistryJsonFile() {
   await fs.writeFile(registryJsonPath, JSON.stringify(parsedRegistry, null, 2));
 
   // 3. Format the registry.json file.
-  await new Promise<void>((resolve, reject) => {
-    execFile("biome", ["format", "--write", registryJsonPath], (error) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve();
-      }
-    });
-  });
 
   // 3. Copy the registry.json to the www/public/r directory.
   await fs.cp(

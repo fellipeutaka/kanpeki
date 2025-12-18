@@ -142,10 +142,17 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/field",
           title: "Field",
+          label: "New",
         },
         {
           href: "/docs/components/form",
           title: "Form",
+          label: "Updated",
+        },
+        {
+          href: "/docs/components/input",
+          title: "Input",
+          label: "New",
         },
         {
           href: "/docs/components/input-otp",
@@ -229,6 +236,7 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/textfield",
           title: "TextField",
+          label: "Updated",
         },
         {
           href: "/docs/components/toast",

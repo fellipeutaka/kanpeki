@@ -82,6 +82,25 @@
           }
         }
       }
+    },
+    {
+      "includes": [
+        "public/r/*.json",
+        "registry.json",
+        "src/content/docs/**/*.json"
+      ],
+      "assist": {
+        "actions": {
+          "source": {
+            "useSortedKeys": {
+              "level": "on",
+              "options": {
+                "sortOrder": "natural"
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }

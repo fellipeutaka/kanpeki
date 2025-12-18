@@ -1,11 +1,8 @@
-import { Field } from "~/registry/ui/field";
 import { Input } from "~/registry/ui/input";
-import { TextField } from "~/registry/ui/text-field";
 
 export function InputDemo() {
   return (
     <div className="flex flex-col flex-wrap gap-4 md:flex-row">
-      <TextFieldWithLabelDemo />
       <Input placeholder="Email" type="email" />
       <Input aria-invalid="true" placeholder="Error" type="text" />
       <Input placeholder="Password" type="password" />
@@ -22,14 +19,5 @@ export function InputDemo() {
       <Input placeholder="Week" type="week" />
       <Input disabled placeholder="Disabled" />
     </div>
-  );
-}
-
-function TextFieldWithLabelDemo() {
-  return (
-    <Field.Root render={<TextField type="email" />}>
-      <Field.Label>Email</Field.Label>
-      <Input placeholder="Email" />
-    </Field.Root>
   );
 }

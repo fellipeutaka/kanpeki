@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { CalendarIcon } from \"lucide-react\";\nimport { AvatarDemo } from \"~/registry/examples/avatar/avatar-demo\";\nimport { RACButton } from \"~/registry/ui/button/button\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function TooltipHoverCardDemo() {\n  return (\n    <Tooltip.Root>\n      <RACButton>\n        <AvatarDemo />\n      </RACButton>\n\n      <Tooltip.Content className=\"max-w-80 p-4\">\n        <div className=\"flex justify-between gap-4\">\n          <AvatarDemo />\n          <div className=\"space-y-1\">\n            <h4 className=\"font-semibold text-sm\">@fellipeutaka</h4>\n            <p className=\"text-sm\">\n              Software Engineer - loves building awesome user interfaces.\n            </p>\n            <div className=\"flex items-center gap-2 pt-2\">\n              <CalendarIcon className=\"size-4 opacity-70\" />\n              <span className=\"text-muted-fg text-xs\">\n                Joined December 2025\n              </span>\n            </div>\n          </div>\n        </div>\n      </Tooltip.Content>\n    </Tooltip.Root>\n  );\n}\n",
+      "path": "src/registry/examples/tooltip/tooltip-hover-card-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "tooltip-hover-card-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/tooltip"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/tooltip/tooltip-hover-card-demo.tsx",
-      "content": "import { CalendarIcon } from \"lucide-react\";\nimport { AvatarDemo } from \"~/registry/examples/avatar/avatar-demo\";\nimport { RACButton } from \"~/registry/ui/button/button\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function TooltipHoverCardDemo() {\n  return (\n    <Tooltip.Root>\n      <RACButton>\n        <AvatarDemo />\n      </RACButton>\n\n      <Tooltip.Content className=\"max-w-80 p-4\">\n        <div className=\"flex justify-between gap-4\">\n          <AvatarDemo />\n          <div className=\"space-y-1\">\n            <h4 className=\"font-semibold text-sm\">@fellipeutaka</h4>\n            <p className=\"text-sm\">\n              Software Engineer - loves building awesome user interfaces.\n            </p>\n            <div className=\"flex items-center gap-2 pt-2\">\n              <CalendarIcon className=\"size-4 opacity-70\" />\n              <span className=\"text-muted-fg text-xs\">\n                Joined December 2025\n              </span>\n            </div>\n          </div>\n        </div>\n      </Tooltip.Content>\n    </Tooltip.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

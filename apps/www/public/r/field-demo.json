@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function FieldDemo() {\n  return (\n    <Field.Set>\n      <Field.Legend>Profile</Field.Legend>\n      <Field.Description>\n        This information will be displayed on your profile.\n      </Field.Description>\n      <Field.Group>\n        <Field.Root render={<TextField />}>\n          <Field.Label>Full name</Field.Label>\n          <Input placeholder=\"John Doe\" />\n          <Field.Description>\n            This appears on invoices and emails.\n          </Field.Description>\n        </Field.Root>\n        <Field.Root render={<TextField isInvalid />}>\n          <Field.Label>Username</Field.Label>\n          <Input placeholder=\"johndoe\" />\n          <Field.Error>This username is already taken.</Field.Error>\n        </Field.Root>\n      </Field.Group>\n    </Field.Set>\n  );\n}\n",
+      "path": "src/registry/examples/field/field-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "field-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/field"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/field/field-demo.tsx",
-      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function FieldDemo() {\n  return (\n    <Field.Set>\n      <Field.Legend>Profile</Field.Legend>\n      <Field.Description>\n        This information will be displayed on your profile.\n      </Field.Description>\n      <Field.Group>\n        <Field.Root render={<TextField />}>\n          <Field.Label>Full name</Field.Label>\n          <Input placeholder=\"John Doe\" />\n          <Field.Description>\n            This appears on invoices and emails.\n          </Field.Description>\n        </Field.Root>\n        <Field.Root render={<TextField isInvalid />}>\n          <Field.Label>Username</Field.Label>\n          <Input placeholder=\"johndoe\" />\n          <Field.Error>This username is already taken.</Field.Error>\n        </Field.Root>\n      </Field.Group>\n    </Field.Set>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

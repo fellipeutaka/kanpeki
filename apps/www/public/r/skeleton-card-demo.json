@@ -1,16 +1,16 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Card } from \"~/registry/ui/card\";\nimport { Skeleton } from \"~/registry/ui/skeleton\";\n\nexport function SkeletonCard() {\n  return (\n    <Card.Root className=\"@md:w-auto w-full @md:min-w-sm\">\n      <Card.Header>\n        <Skeleton className=\"h-4 w-2/3\" />\n        <Skeleton className=\"h-4 w-1/2\" />\n      </Card.Header>\n      <Card.Content>\n        <Skeleton className=\"aspect-square w-full\" />\n      </Card.Content>\n    </Card.Root>\n  );\n}\n",
+      "path": "src/registry/examples/skeleton/skeleton-card-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "skeleton-card-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/skeleton",
     "@kanpeki/card"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/skeleton/skeleton-card-demo.tsx",
-      "content": "import { Card } from \"~/registry/ui/card\";\nimport { Skeleton } from \"~/registry/ui/skeleton\";\n\nexport function SkeletonCard() {\n  return (\n    <Card.Root className=\"@md:w-auto w-full @md:min-w-sm\">\n      <Card.Header>\n        <Skeleton className=\"h-4 w-2/3\" />\n        <Skeleton className=\"h-4 w-1/2\" />\n      </Card.Header>\n      <Card.Content>\n        <Skeleton className=\"aspect-square w-full\" />\n      </Card.Content>\n    </Card.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

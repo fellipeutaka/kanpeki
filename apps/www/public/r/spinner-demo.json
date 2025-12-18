@@ -1,16 +1,16 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Button } from \"~/registry/ui/button\";\nimport { Spinner } from \"~/registry/ui/spinner\";\n\nexport function SpinnerDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <Button isPending size=\"sm\">\n        <Spinner />\n        Loading...\n      </Button>\n      <Button isPending size=\"sm\" variant=\"outline\">\n        <Spinner />\n        Please wait\n      </Button>\n      <Button isPending size=\"sm\" variant=\"secondary\">\n        <Spinner />\n        Processing\n      </Button>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/spinner/spinner-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "spinner-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/spinner",
     "@kanpeki/button"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/spinner/spinner-demo.tsx",
-      "content": "import { Button } from \"~/registry/ui/button\";\nimport { Spinner } from \"~/registry/ui/spinner\";\n\nexport function SpinnerDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <Button isPending size=\"sm\">\n        <Spinner />\n        Loading...\n      </Button>\n      <Button isPending size=\"sm\" variant=\"outline\">\n        <Spinner />\n        Please wait\n      </Button>\n      <Button isPending size=\"sm\" variant=\"secondary\">\n        <Spinner />\n        Processing\n      </Button>\n    </div>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

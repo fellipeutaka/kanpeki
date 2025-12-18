@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\n\nasync function promise() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  if (Math.random() > 0.5) {\n    throw new Error(\"Failed to add toast\");\n  }\n\n  return {\n    name: \"Sonner\",\n  };\n}\n\nexport function ToastPromiseDemo() {\n  return (\n    <Button\n      onPress={() =>\n        toast.promise(promise, {\n          loading: \"Loading...\",\n          success: (data) => `${data.name} toast has been added`,\n          error: (err) => `Error: ${err.message}`,\n        })\n      }\n      variant=\"outline\"\n    >\n      Promise\n    </Button>\n  );\n}\n",
+      "path": "src/registry/examples/toast/toast-promise-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "toast-promise-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/toast"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/toast/toast-promise-demo.tsx",
-      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\n\nasync function promise() {\n  await new Promise((resolve) => setTimeout(resolve, 2000));\n\n  if (Math.random() > 0.5) {\n    throw new Error(\"Failed to add toast\");\n  }\n\n  return {\n    name: \"Sonner\",\n  };\n}\n\nexport function ToastPromiseDemo() {\n  return (\n    <Button\n      onPress={() =>\n        toast.promise(promise, {\n          loading: \"Loading...\",\n          success: (data) => `${data.name} toast has been added`,\n          error: (err) => `Error: ${err.message}`,\n        })\n      }\n      variant=\"outline\"\n    >\n      Promise\n    </Button>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

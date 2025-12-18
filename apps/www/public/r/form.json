@@ -1,19 +1,19 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "form",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { Form as RACForm } from \"react-aria-components\";\n\nexport interface FormProps extends React.ComponentProps<typeof RACForm> {}\nexport function Form(props: FormProps) {\n  return <RACForm {...props} data-slot=\"form\" />;\n}\n",
+      "path": "src/registry/ui/form/index.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "form",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/form/index.tsx",
-      "content": "\"use client\";\n\nimport { Form as RACForm } from \"react-aria-components\";\n\nexport interface FormProps extends React.ComponentProps<typeof RACForm> {}\nexport function Form(props: FormProps) {\n  return <RACForm {...props} data-slot=\"form\" />;\n}\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

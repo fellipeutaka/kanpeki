@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "export function TypographyP() {\n  return (\n    <p className=\"p\">\n      The king, seeing how much happier his subjects were, realized the error of\n      his ways and repealed the joke tax.\n    </p>\n  );\n}\n",
+      "path": "src/registry/examples/typography/typography-p-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "typography-p-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/typography"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/typography/typography-p-demo.tsx",
-      "content": "export function TypographyP() {\n  return (\n    <p className=\"p\">\n      The king, seeing how much happier his subjects were, realized the error of\n      his ways and repealed the joke tax.\n    </p>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

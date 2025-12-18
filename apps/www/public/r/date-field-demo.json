@@ -1,16 +1,16 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { getLocalTimeZone, today } from \"@internationalized/date\";\nimport { DateField } from \"~/registry/ui/date-field\";\nimport { InputStyles } from \"~/registry/ui/input\";\nimport { Label } from \"~/registry/ui/label\";\n\nexport function DateFieldDemo() {\n  return (\n    <DateField.Root minValue={today(getLocalTimeZone())}>\n      <Label>Event date</Label>\n      <DateField.Input className={InputStyles()}>\n        {(segment) => <DateField.Segment segment={segment} />}\n      </DateField.Input>\n    </DateField.Root>\n  );\n}\n",
+      "path": "src/registry/examples/date-field/date-field-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "date-field-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/date-field",
     "@kanpeki/label"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/date-field/date-field-demo.tsx",
-      "content": "\"use client\";\n\nimport { getLocalTimeZone, today } from \"@internationalized/date\";\nimport { DateField } from \"~/registry/ui/date-field\";\nimport { InputStyles } from \"~/registry/ui/input\";\nimport { Label } from \"~/registry/ui/label\";\n\nexport function DateFieldDemo() {\n  return (\n    <DateField.Root minValue={today(getLocalTimeZone())}>\n      <Label>Event date</Label>\n      <DateField.Input className={InputStyles()}>\n        {(segment) => <DateField.Segment segment={segment} />}\n      </DateField.Input>\n    </DateField.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

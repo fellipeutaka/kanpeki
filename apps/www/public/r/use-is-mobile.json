@@ -1,12 +1,12 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "use-is-mobile",
-  "type": "registry:hook",
   "files": [
     {
-      "path": "src/registry/hooks/use-is-mobile.ts",
       "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\n\nexport function useIsMobile(mobileBreakpoint = 768) {\n  const [isMobile, setIsMobile] = useState<boolean>();\n\n  useEffect(() => {\n    const mql = window.matchMedia(`(max-width: ${mobileBreakpoint - 1}px)`);\n    const onChange = () => {\n      setIsMobile(window.innerWidth < mobileBreakpoint);\n    };\n    mql.addEventListener(\"change\", onChange);\n    setIsMobile(window.innerWidth < mobileBreakpoint);\n\n    return () => mql.removeEventListener(\"change\", onChange);\n  }, [mobileBreakpoint]);\n\n  return !!isMobile;\n}\n",
+      "path": "src/registry/hooks/use-is-mobile.ts",
       "type": "registry:hook"
     }
-  ]
+  ],
+  "name": "use-is-mobile",
+  "type": "registry:hook"
 }

@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { MailIcon } from \"lucide-react\";\nimport { Field } from \"~/registry/ui/field\";\nimport { InputGroup } from \"~/registry/ui/input-group\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function TextfieldWithIcon() {\n  return (\n    <Field.Root render={<TextField type=\"email\" />}>\n      <Field.Label>Email</Field.Label>\n      <InputGroup.Root>\n        <InputGroup.Addon>\n          <MailIcon className=\"size-4 text-muted-foreground\" />\n        </InputGroup.Addon>\n        <InputGroup.Input placeholder=\"john@example.com\" />\n      </InputGroup.Root>\n    </Field.Root>\n  );\n}\n",
+      "path": "src/registry/examples/textfield/textfield-with-icon.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "textfield-with-icon",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/textfield"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/textfield/textfield-with-icon.tsx",
-      "content": "import { MailIcon } from \"lucide-react\";\nimport { Field } from \"~/registry/ui/field\";\nimport { InputGroup } from \"~/registry/ui/input-group\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function TextfieldWithIcon() {\n  return (\n    <Field.Root render={<TextField type=\"email\" />}>\n      <Field.Label>Email</Field.Label>\n      <InputGroup.Root>\n        <InputGroup.Addon>\n          <MailIcon className=\"size-4 text-muted-foreground\" />\n        </InputGroup.Addon>\n        <InputGroup.Input placeholder=\"john@example.com\" />\n      </InputGroup.Root>\n    </Field.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

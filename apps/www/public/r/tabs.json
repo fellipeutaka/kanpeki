@@ -1,34 +1,34 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "tabs",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "export * as Tabs from \"./namespace\";\nexport * from \"./styles\";\nexport * from \"./tabs\";\n",
+      "path": "src/registry/ui/tabs/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  Tab,\n  TabList,\n  TabPanel,\n  Tabs,\n} from \"react-aria-components\";\nimport { TabsStyle } from \"./styles\";\n\nexport interface TabsRootProps extends React.ComponentProps<typeof Tabs> {}\n\nexport function TabsRoot({ className, ...props }: TabsRootProps) {\n  return (\n    <Tabs\n      className={composeRenderProps(className, (className) =>\n        TabsStyle.Root({ className })\n      )}\n      data-slot=\"tabs-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface TabsListProps<T extends object>\n  extends React.ComponentProps<typeof TabList<T>> {}\n\nexport function TabsList<T extends object>({\n  className,\n  ...props\n}: TabsListProps<T>) {\n  return (\n    <TabList\n      className={composeRenderProps(className, (className) =>\n        TabsStyle.List({ className })\n      )}\n      data-slot=\"tabs-list\"\n      {...props}\n    />\n  );\n}\n\nexport interface TabsTriggerProps extends React.ComponentProps<typeof Tab> {}\n\nexport function TabsTrigger({ className, ...props }: TabsTriggerProps) {\n  return (\n    <Tab\n      className={composeRenderProps(className, (className) =>\n        TabsStyle.Trigger({ className })\n      )}\n      data-slot=\"tabs-trigger\"\n      {...props}\n    />\n  );\n}\n\nexport interface TabsContentProps\n  extends React.ComponentProps<typeof TabPanel> {}\n\nexport function TabsContent({ className, ...props }: TabsContentProps) {\n  return (\n    <TabPanel\n      className={composeRenderProps(className, (className) =>\n        TabsStyle.Content({ className })\n      )}\n      data-slot=\"tabs-content\"\n      {...props}\n    />\n  );\n}\n",
+      "path": "src/registry/ui/tabs/tabs.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const TabsStyle = {\n  Content: cva({\n    base: [\"flex-1 outline-none\"],\n  }),\n  List: cva({\n    base: [\n      \"inline-flex h-9 w-fit items-center justify-center rounded-lg bg-muted p-[3px] text-muted-foreground\",\n    ],\n  }),\n  Root: cva({\n    base: [\"flex flex-col gap-2\"],\n  }),\n  Trigger: cva({\n    base: [\n      \"inline-flex h-[calc(100%-1px)] flex-1 select-none items-center justify-center gap-1.5 whitespace-nowrap rounded-md border\",\n      \"border-transparent px-2 py-1 font-medium text-foreground text-sm transition-[color,box-shadow]\",\n      \"focus-visible:border-ring focus-visible:outline-1 focus-visible:outline-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n      \"disabled:pointer-events-none disabled:opacity-50\",\n      \"selected:bg-background selected:shadow-sm\",\n      \"dark:selected:border-input dark:selected:bg-input/30 dark:selected:text-foreground dark:text-muted-foreground\",\n      \"[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    ],\n  }),\n};\n",
+      "path": "src/registry/ui/tabs/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  TabsContent as Content,\n  TabsList as List,\n  TabsRoot as Root,\n  TabsTrigger as Trigger,\n} from \"./tabs\";\n",
+      "path": "src/registry/ui/tabs/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "tabs",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/tabs/index.ts",
-      "content": "export * as Tabs from \"./namespace\";\nexport * from \"./styles\";\nexport * from \"./tabs\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/tabs/tabs.tsx",
-      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  Tab,\n  TabList,\n  TabPanel,\n  Tabs,\n} from \"react-aria-components\";\nimport { TabsStyle } from \"./styles\";\n\nexport interface TabsRootProps extends React.ComponentProps<typeof Tabs> {}\n\nexport function TabsRoot({ className, ...props }: TabsRootProps) {\n  return (\n    <Tabs\n      className={composeRenderProps(className, (className) =>\n        TabsStyle.Root({ className })\n      )}\n      data-slot=\"tabs-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface TabsListProps<T extends object>\n  extends React.ComponentProps<typeof TabList<T>> {}\n\nexport function TabsList<T extends object>({\n  className,\n  ...props\n}: TabsListProps<T>) {\n  return (\n    <TabList\n      className={composeRenderProps(className, (className) =>\n        TabsStyle.List({ className })\n      )}\n      data-slot=\"tabs-list\"\n      {...props}\n    />\n  );\n}\n\nexport interface TabsTriggerProps extends React.ComponentProps<typeof Tab> {}\n\nexport function TabsTrigger({ className, ...props }: TabsTriggerProps) {\n  return (\n    <Tab\n      className={composeRenderProps(className, (className) =>\n        TabsStyle.Trigger({ className })\n      )}\n      data-slot=\"tabs-trigger\"\n      {...props}\n    />\n  );\n}\n\nexport interface TabsContentProps\n  extends React.ComponentProps<typeof TabPanel> {}\n\nexport function TabsContent({ className, ...props }: TabsContentProps) {\n  return (\n    <TabPanel\n      className={composeRenderProps(className, (className) =>\n        TabsStyle.Content({ className })\n      )}\n      data-slot=\"tabs-content\"\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/tabs/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const TabsStyle = {\n  Content: cva({\n    base: [\"flex-1 outline-none\"],\n  }),\n  List: cva({\n    base: [\n      \"inline-flex h-9 w-fit items-center justify-center rounded-lg bg-muted p-[3px] text-muted-foreground\",\n    ],\n  }),\n  Root: cva({\n    base: [\"flex flex-col gap-2\"],\n  }),\n  Trigger: cva({\n    base: [\n      \"inline-flex h-[calc(100%-1px)] flex-1 select-none items-center justify-center gap-1.5 whitespace-nowrap rounded-md border\",\n      \"border-transparent px-2 py-1 font-medium text-foreground text-sm transition-[color,box-shadow]\",\n      \"focus-visible:border-ring focus-visible:outline-1 focus-visible:outline-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n      \"disabled:pointer-events-none disabled:opacity-50\",\n      \"selected:bg-background selected:shadow-sm\",\n      \"dark:selected:border-input dark:selected:bg-input/30 dark:selected:text-foreground dark:text-muted-foreground\",\n      \"[&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    ],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/tabs/namespace.ts",
-      "content": "export {\n  TabsContent as Content,\n  TabsList as List,\n  TabsRoot as Root,\n  TabsTrigger as Trigger,\n} from \"./tabs\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

@@ -1,34 +1,34 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "button-group",
-  "type": "registry:ui",
   "dependencies": [
     "@base-ui/react",
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "export * from \"./button-group\";\nexport * as ButtonGroup from \"./namespace\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/button-group/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { mergeProps } from \"@base-ui/react/merge-props\";\nimport { useRender } from \"@base-ui/react/use-render\";\nimport type { VariantProps } from \"cva\";\nimport { Group } from \"react-aria-components\";\nimport { Separator } from \"~/registry/ui/separator\";\nimport { ButtonGroupStyles } from \"./styles\";\n\nexport interface ButtonGroupRootProps\n  extends React.ComponentProps<typeof Group>,\n    VariantProps<typeof ButtonGroupStyles.Root> {}\n\nexport function ButtonGroupRoot({\n  className,\n  orientation,\n  ...props\n}: ButtonGroupRootProps) {\n  return (\n    <Group\n      className={ButtonGroupStyles.Root({ orientation, className })}\n      data-orientation={orientation}\n      data-slot=\"button-group-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface ButtonGroupTextProps extends useRender.ComponentProps<\"div\"> {}\n\nexport function ButtonGroupText({\n  render,\n  className,\n  ...props\n}: ButtonGroupTextProps) {\n  const defaultProps: useRender.ElementProps<\"div\"> = {\n    className: ButtonGroupStyles.Text({ className }),\n    [\"data-slot\" as string]: \"button-group-text\",\n  };\n\n  return useRender({\n    defaultTagName: \"div\",\n    render,\n    props: mergeProps<\"div\">(defaultProps, props),\n  });\n}\n\nexport interface ButtonGroupSeparatorProps\n  extends React.ComponentProps<typeof Separator> {}\n\nexport function ButtonGroupSeparator({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: ButtonGroupSeparatorProps) {\n  return (\n    <Separator\n      className={ButtonGroupStyles.Separator({ className })}\n      data-slot=\"button-group-separator\"\n      orientation={orientation}\n      {...props}\n    />\n  );\n}\n",
+      "path": "src/registry/ui/button-group/button-group.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  ButtonGroupRoot as Root,\n  ButtonGroupSeparator as Separator,\n  ButtonGroupText as Text,\n} from \"./button-group\";\n",
+      "path": "src/registry/ui/button-group/namespace.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const ButtonGroupStyles = {\n  Root: cva({\n    base: \"flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1\",\n\n    variants: {\n      orientation: {\n        horizontal:\n          \"[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none\",\n        vertical:\n          \"flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none\",\n      },\n    },\n    defaultVariants: {\n      orientation: \"horizontal\",\n    },\n  }),\n  Text: cva({\n    base: \"flex items-center gap-2 rounded-md border bg-muted px-4 font-medium text-sm shadow-xs [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none\",\n  }),\n  Separator: cva({\n    base: \"relative m-0! orientation-vertical:h-auto self-stretch bg-input\",\n  }),\n};\n",
+      "path": "src/registry/ui/button-group/styles.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "button-group",
   "registryDependencies": [
     "@kanpeki/separator"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/button-group/index.ts",
-      "content": "export * from \"./button-group\";\nexport * as ButtonGroup from \"./namespace\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/button-group/button-group.tsx",
-      "content": "import { mergeProps } from \"@base-ui/react/merge-props\";\nimport { useRender } from \"@base-ui/react/use-render\";\nimport type { VariantProps } from \"cva\";\nimport { Group } from \"react-aria-components\";\nimport { Separator } from \"~/registry/ui/separator\";\nimport { ButtonGroupStyles } from \"./styles\";\n\nexport interface ButtonGroupRootProps\n  extends React.ComponentProps<typeof Group>,\n    VariantProps<typeof ButtonGroupStyles.Root> {}\n\nexport function ButtonGroupRoot({\n  className,\n  orientation,\n  ...props\n}: ButtonGroupRootProps) {\n  return (\n    <Group\n      className={ButtonGroupStyles.Root({ orientation, className })}\n      data-orientation={orientation}\n      data-slot=\"button-group-root\"\n      {...props}\n    />\n  );\n}\n\nexport interface ButtonGroupTextProps extends useRender.ComponentProps<\"div\"> {}\n\nexport function ButtonGroupText({\n  render,\n  className,\n  ...props\n}: ButtonGroupTextProps) {\n  const defaultProps: useRender.ElementProps<\"div\"> = {\n    className: ButtonGroupStyles.Text({ className }),\n    [\"data-slot\" as string]: \"button-group-text\",\n  };\n\n  return useRender({\n    defaultTagName: \"div\",\n    render,\n    props: mergeProps<\"div\">(defaultProps, props),\n  });\n}\n\nexport interface ButtonGroupSeparatorProps\n  extends React.ComponentProps<typeof Separator> {}\n\nexport function ButtonGroupSeparator({\n  className,\n  orientation = \"vertical\",\n  ...props\n}: ButtonGroupSeparatorProps) {\n  return (\n    <Separator\n      className={ButtonGroupStyles.Separator({ className })}\n      data-slot=\"button-group-separator\"\n      orientation={orientation}\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/button-group/namespace.ts",
-      "content": "export {\n  ButtonGroupRoot as Root,\n  ButtonGroupSeparator as Separator,\n  ButtonGroupText as Text,\n} from \"./button-group\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/button-group/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const ButtonGroupStyles = {\n  Root: cva({\n    base: \"flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1\",\n\n    variants: {\n      orientation: {\n        horizontal:\n          \"[&>*:not(:first-child)]:rounded-l-none [&>*:not(:first-child)]:border-l-0 [&>*:not(:last-child)]:rounded-r-none\",\n        vertical:\n          \"flex-col [&>*:not(:first-child)]:rounded-t-none [&>*:not(:first-child)]:border-t-0 [&>*:not(:last-child)]:rounded-b-none\",\n      },\n    },\n    defaultVariants: {\n      orientation: \"horizontal\",\n    },\n  }),\n  Text: cva({\n    base: \"flex items-center gap-2 rounded-md border bg-muted px-4 font-medium text-sm shadow-xs [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none\",\n  }),\n  Separator: cva({\n    base: \"relative m-0! orientation-vertical:h-auto self-stretch bg-input\",\n  }),\n};\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

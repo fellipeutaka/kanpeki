@@ -1,7 +1,13 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Button } from \"~/registry/ui/button/button\";\nimport { Card } from \"~/registry/ui/card\";\nimport { Input } from \"~/registry/ui/input\";\nimport { Label } from \"~/registry/ui/label/label\";\nimport { Tabs } from \"~/registry/ui/tabs\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function TabsDemo() {\n  return (\n    <Tabs.Root className=\"w-full max-w-[400px]\" defaultSelectedKey=\"account\">\n      <Tabs.List className=\"grid w-full grid-cols-2\">\n        <Tabs.Trigger id=\"account\">Account</Tabs.Trigger>\n        <Tabs.Trigger id=\"password\">Password</Tabs.Trigger>\n      </Tabs.List>\n      <Tabs.Content id=\"account\">\n        <Card.Root>\n          <Card.Header>\n            <Card.Title>Account</Card.Title>\n            <Card.Description>\n              Make changes to your account here. Click save when you&apos;re\n              done.\n            </Card.Description>\n          </Card.Header>\n          <Card.Content className=\"grid gap-6\">\n            <TextField defaultValue=\"Pedro Duarte\">\n              <Label>Name</Label>\n              <Input />\n            </TextField>\n            <TextField defaultValue=\"@peduarte\">\n              <Label>Username</Label>\n              <Input />\n            </TextField>\n          </Card.Content>\n          <Card.Footer>\n            <Button>Save changes</Button>\n          </Card.Footer>\n        </Card.Root>\n      </Tabs.Content>\n      <Tabs.Content id=\"password\">\n        <Card.Root>\n          <Card.Header>\n            <Card.Title>Password</Card.Title>\n            <Card.Description>\n              Change your password here. After saving, you&apos;ll be logged\n              out.\n            </Card.Description>\n          </Card.Header>\n          <Card.Content className=\"grid gap-6\">\n            <TextField>\n              <Label>Current password</Label>\n              <Input type=\"password\" />\n            </TextField>\n            <TextField>\n              <Label>New password</Label>\n              <Input type=\"password\" />\n            </TextField>\n          </Card.Content>\n          <Card.Footer>\n            <Button>Save password</Button>\n          </Card.Footer>\n        </Card.Root>\n      </Tabs.Content>\n    </Tabs.Root>\n  );\n}\n",
+      "path": "src/registry/examples/tabs/tabs-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "tabs-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/button",
     "@kanpeki/card",
@@ -10,11 +16,5 @@
     "@kanpeki/textfield",
     "@kanpeki/tabs"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/tabs/tabs-demo.tsx",
-      "content": "import { Button } from \"~/registry/ui/button/button\";\nimport { Card } from \"~/registry/ui/card\";\nimport { Input } from \"~/registry/ui/input\";\nimport { Label } from \"~/registry/ui/label/label\";\nimport { Tabs } from \"~/registry/ui/tabs\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function TabsDemo() {\n  return (\n    <Tabs.Root className=\"w-full max-w-[400px]\" defaultSelectedKey=\"account\">\n      <Tabs.List className=\"grid w-full grid-cols-2\">\n        <Tabs.Trigger id=\"account\">Account</Tabs.Trigger>\n        <Tabs.Trigger id=\"password\">Password</Tabs.Trigger>\n      </Tabs.List>\n      <Tabs.Content id=\"account\">\n        <Card.Root>\n          <Card.Header>\n            <Card.Title>Account</Card.Title>\n            <Card.Description>\n              Make changes to your account here. Click save when you&apos;re\n              done.\n            </Card.Description>\n          </Card.Header>\n          <Card.Content className=\"grid gap-6\">\n            <TextField defaultValue=\"Pedro Duarte\">\n              <Label>Name</Label>\n              <Input />\n            </TextField>\n            <TextField defaultValue=\"@peduarte\">\n              <Label>Username</Label>\n              <Input />\n            </TextField>\n          </Card.Content>\n          <Card.Footer>\n            <Button>Save changes</Button>\n          </Card.Footer>\n        </Card.Root>\n      </Tabs.Content>\n      <Tabs.Content id=\"password\">\n        <Card.Root>\n          <Card.Header>\n            <Card.Title>Password</Card.Title>\n            <Card.Description>\n              Change your password here. After saving, you&apos;ll be logged\n              out.\n            </Card.Description>\n          </Card.Header>\n          <Card.Content className=\"grid gap-6\">\n            <TextField>\n              <Label>Current password</Label>\n              <Input type=\"password\" />\n            </TextField>\n            <TextField>\n              <Label>New password</Label>\n              <Input type=\"password\" />\n            </TextField>\n          </Card.Content>\n          <Card.Footer>\n            <Button>Save password</Button>\n          </Card.Footer>\n        </Card.Root>\n      </Tabs.Content>\n    </Tabs.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

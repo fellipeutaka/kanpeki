@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Textarea } from \"~/registry/ui/textarea\";\n\nexport function TextareaAutoResizeDemo() {\n  return (\n    <Textarea\n      className=\"field-sizing-content max-h-[10lh]\"\n      placeholder=\"Add a comment...\"\n    />\n  );\n}\n",
+      "path": "src/registry/examples/textarea/textarea-auto-resize-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "textarea-auto-resize-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/textarea"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/textarea/textarea-auto-resize-demo.tsx",
-      "content": "import { Textarea } from \"~/registry/ui/textarea\";\n\nexport function TextareaAutoResizeDemo() {\n  return (\n    <Textarea\n      className=\"field-sizing-content max-h-[10lh]\"\n      placeholder=\"Add a comment...\"\n    />\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Listbox } from \"~/registry/ui/list-box\";\nimport { Popover } from \"~/registry/ui/popover\";\nimport { Select } from \"~/registry/ui/select\";\n\nexport function FieldSelectDemo() {\n  return (\n    <Field.Root>\n      <Field.Label>Favorite fruit</Field.Label>\n      <Select.Root placeholder=\"Select a fruit\">\n        <Select.Trigger className=\"w-[180px]\">\n          <Select.Value />\n        </Select.Trigger>\n        <Popover.Content>\n          <Listbox.Root>\n            <Listbox.Item id=\"apple\">Apple</Listbox.Item>\n            <Listbox.Item id=\"banana\">Banana</Listbox.Item>\n            <Listbox.Item id=\"blueberry\">Blueberry</Listbox.Item>\n            <Listbox.Item id=\"pineapple\">Pineapple</Listbox.Item>\n          </Listbox.Root>\n        </Popover.Content>\n      </Select.Root>\n      <Field.Description>Choose your favorite fruit.</Field.Description>\n    </Field.Root>\n  );\n}\n",
+      "path": "src/registry/examples/field/field-select-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "field-select-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/field"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/field/field-select-demo.tsx",
-      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Listbox } from \"~/registry/ui/list-box\";\nimport { Popover } from \"~/registry/ui/popover\";\nimport { Select } from \"~/registry/ui/select\";\n\nexport function FieldSelectDemo() {\n  return (\n    <Field.Root>\n      <Field.Label>Favorite fruit</Field.Label>\n      <Select.Root placeholder=\"Select a fruit\">\n        <Select.Trigger className=\"w-[180px]\">\n          <Select.Value />\n        </Select.Trigger>\n        <Popover.Content>\n          <Listbox.Root>\n            <Listbox.Item id=\"apple\">Apple</Listbox.Item>\n            <Listbox.Item id=\"banana\">Banana</Listbox.Item>\n            <Listbox.Item id=\"blueberry\">Blueberry</Listbox.Item>\n            <Listbox.Item id=\"pineapple\">Pineapple</Listbox.Item>\n          </Listbox.Root>\n        </Popover.Content>\n      </Select.Root>\n      <Field.Description>Choose your favorite fruit.</Field.Description>\n    </Field.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

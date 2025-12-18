@@ -1,16 +1,16 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Label } from \"~/registry/ui/label\";\nimport { Slider } from \"~/registry/ui/slider\";\n\nexport function SliderWithLabelDemo() {\n  return (\n    <Slider.Root\n      aria-label=\"Volume\"\n      formatOptions={{\n        style: \"unit\",\n        unit: \"percent\",\n        maximumFractionDigits: 0,\n      }}\n    >\n      <Slider.Header>\n        <Label>Volume</Label>\n\n        <Slider.Output />\n      </Slider.Header>\n      <Slider.Track>\n        <Slider.Range />\n        <Slider.Thumb />\n      </Slider.Track>\n    </Slider.Root>\n  );\n}\n",
+      "path": "src/registry/examples/slider/slider-with-label-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "slider-with-label-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/slider",
     "@kanpeki/label"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/slider/slider-with-label-demo.tsx",
-      "content": "import { Label } from \"~/registry/ui/label\";\nimport { Slider } from \"~/registry/ui/slider\";\n\nexport function SliderWithLabelDemo() {\n  return (\n    <Slider.Root\n      aria-label=\"Volume\"\n      formatOptions={{\n        style: \"unit\",\n        unit: \"percent\",\n        maximumFractionDigits: 0,\n      }}\n    >\n      <Slider.Header>\n        <Label>Volume</Label>\n\n        <Slider.Output />\n      </Slider.Header>\n      <Slider.Track>\n        <Slider.Range />\n        <Slider.Thumb />\n      </Slider.Track>\n    </Slider.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

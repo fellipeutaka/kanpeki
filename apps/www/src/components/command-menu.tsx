@@ -113,9 +113,9 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
               >
                 <InputGroup.Addon>
                   {searchQuery.isLoading ? (
-                    <Loader2Icon className="size-4 animate-spin" />
+                    <Loader2Icon className="animate-spin" />
                   ) : (
-                    <SearchIcon className="size-4" />
+                    <SearchIcon />
                   )}
                 </InputGroup.Addon>
                 <InputGroup.Input placeholder="Type a command or search..." />

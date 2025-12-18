@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Button } from \"~/registry/ui/button/button\";\n\nexport function ButtonVariantsDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2 md:flex-row\">\n      <Button>Default</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Danger</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/button/button-variants-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "button-variants-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/button"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/button/button-variants-demo.tsx",
-      "content": "import { Button } from \"~/registry/ui/button/button\";\n\nexport function ButtonVariantsDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2 md:flex-row\">\n      <Button>Default</Button>\n      <Button variant=\"outline\">Outline</Button>\n      <Button variant=\"ghost\">Ghost</Button>\n      <Button variant=\"destructive\">Danger</Button>\n      <Button variant=\"secondary\">Secondary</Button>\n      <Button variant=\"link\">Link</Button>\n    </div>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

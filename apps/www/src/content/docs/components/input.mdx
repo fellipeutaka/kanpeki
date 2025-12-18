@@ -1,0 +1,83 @@
+---
+title: Input
+description: Displays a form input field or a component that looks like an input field.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/TextField.html#text-field
+---
+
+<ComponentPreview name="input-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/input
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="input" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+```tsx
+import { Input } from "~/components/ui/input";
+
+<Input />;
+```
+
+## Examples
+
+### File
+
+<ComponentPreview name="input-file" />
+
+<Alert.Root>
+  <AlertIcon variant="info" />
+  <Alert.Description>
+    For more customizable file upload components, see [File
+    Trigger](/docs/components/file-trigger) or
+    [Dropzone](/docs/components/dropzone).
+  </Alert.Description>
+</Alert.Root>
+
+### Disabled
+
+<ComponentPreview name="input-disabled" />
+
+### With Label
+
+<ComponentPreview name="input-with-label" />
+
+<Alert.Root>
+  <AlertIcon variant="info" />
+  <Alert.Description>
+    For better form integration with labels, descriptions, and error messages,
+    use [Field](/docs/components/field#input) component with TextField.
+  </Alert.Description>
+</Alert.Root>
+
+### With Button
+
+<ComponentPreview name="input-with-button" />

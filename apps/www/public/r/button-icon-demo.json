@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { SearchIcon } from \"lucide-react\";\n\nimport { Button } from \"~/registry/ui/button/button\";\n\nexport function ButtonIconDemo() {\n  return (\n    <Button aria-label=\"Search\" size=\"icon\">\n      <SearchIcon />\n    </Button>\n  );\n}\n",
+      "path": "src/registry/examples/button/button-icon-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "button-icon-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/button"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/button/button-icon-demo.tsx",
-      "content": "import { SearchIcon } from \"lucide-react\";\n\nimport { Button } from \"~/registry/ui/button/button\";\n\nexport function ButtonIconDemo() {\n  return (\n    <Button aria-label=\"Search\" size=\"icon\">\n      <SearchIcon />\n    </Button>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

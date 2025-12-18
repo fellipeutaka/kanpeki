@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Accordion } from \"~/registry/ui/accordion\";\n\nexport function AccordionDemo() {\n  return (\n    <Accordion.Root\n      className=\"w-full max-w-96\"\n      defaultExpandedKeys={[\"item-1\"]}\n    >\n      <Accordion.Item id=\"item-1\">\n        <Accordion.Trigger>Is it accessible?</Accordion.Trigger>\n        <Accordion.Content>\n          Yes. It adheres to the WAI-ARIA design pattern.\n        </Accordion.Content>\n      </Accordion.Item>\n      <Accordion.Item id=\"item-2\">\n        <Accordion.Trigger>Is it styled?</Accordion.Trigger>\n        <Accordion.Content>\n          Yes. It comes with default styles that matches the other\n          components&apos; aesthetic.\n        </Accordion.Content>\n      </Accordion.Item>\n      <Accordion.Item id=\"item-3\">\n        <Accordion.Trigger>Is it animated?</Accordion.Trigger>\n        <Accordion.Content>\n          Yes. It's animated by default, but you can disable it if you prefer.\n        </Accordion.Content>\n      </Accordion.Item>\n    </Accordion.Root>\n  );\n}\n",
+      "path": "src/registry/examples/accordion/accordion-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "accordion-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/accordion"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/accordion/accordion-demo.tsx",
-      "content": "import { Accordion } from \"~/registry/ui/accordion\";\n\nexport function AccordionDemo() {\n  return (\n    <Accordion.Root\n      className=\"w-full max-w-96\"\n      defaultExpandedKeys={[\"item-1\"]}\n    >\n      <Accordion.Item id=\"item-1\">\n        <Accordion.Trigger>Is it accessible?</Accordion.Trigger>\n        <Accordion.Content>\n          Yes. It adheres to the WAI-ARIA design pattern.\n        </Accordion.Content>\n      </Accordion.Item>\n      <Accordion.Item id=\"item-2\">\n        <Accordion.Trigger>Is it styled?</Accordion.Trigger>\n        <Accordion.Content>\n          Yes. It comes with default styles that matches the other\n          components&apos; aesthetic.\n        </Accordion.Content>\n      </Accordion.Item>\n      <Accordion.Item id=\"item-3\">\n        <Accordion.Trigger>Is it animated?</Accordion.Trigger>\n        <Accordion.Content>\n          Yes. It's animated by default, but you can disable it if you prefer.\n        </Accordion.Content>\n      </Accordion.Item>\n    </Accordion.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }
