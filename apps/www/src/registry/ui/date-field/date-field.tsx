@@ -7,15 +7,25 @@ import {
   type DateValue,
   DateField as RACDateField,
 } from "react-aria-components";
+import { cn } from "~/registry/lib/cva";
 import { DateFieldStyles } from "./styles";
 
 export interface DateFieldRootProps<T extends DateValue>
   extends React.ComponentProps<typeof RACDateField<T>> {}
 
-export function DateFieldRoot<T extends DateValue>(
-  props: DateFieldRootProps<T>
-) {
-  return <RACDateField {...props} data-slot="date-field-root" />;
+export function DateFieldRoot<T extends DateValue>({
+  className,
+  ...props
+}: DateFieldRootProps<T>) {
+  return (
+    <RACDateField
+      {...props}
+      className={composeRenderProps(className, (className) =>
+        cn("group grid gap-3", className)
+      )}
+      data-slot="date-field-root"
+    />
+  );
 }
 
 export interface DateFieldInputProps

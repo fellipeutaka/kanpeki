@@ -1,34 +1,34 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "tooltip",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "export * as Tooltip from \"./namespace\";\nexport * from \"./styles\";\nexport * from \"./tooltip\";\n",
+      "path": "src/registry/ui/tooltip/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  OverlayArrow,\n  Tooltip,\n  TooltipTrigger,\n} from \"react-aria-components\";\nimport { TooltipStyles } from \"./styles\";\n\nexport interface TooltipRootProps\n  extends React.ComponentProps<typeof TooltipTrigger> {\n  /**\n   * The delay time for the tooltip to show up. [See guidelines](https://spectrum.adobe.com/page/tooltip/#Immediate-or-delayed-appearance).\n   * @default 0\n   */\n  delay?: number;\n\n  /**\n   * The delay time for the tooltip to close. [See guidelines](https://spectrum.adobe.com/page/tooltip/#Warmup-and-cooldown).\n   * @default 300\n   */\n  closeDelay?: number;\n}\n\nexport function TooltipRoot({\n  delay = 0,\n  closeDelay = 300,\n  ...props\n}: TooltipRootProps) {\n  return (\n    <TooltipTrigger\n      closeDelay={closeDelay}\n      data-slot=\"tooltip-root\"\n      delay={delay}\n      {...props}\n    />\n  );\n}\n\nexport interface TooltipContentProps\n  extends React.ComponentProps<typeof Tooltip> {\n  /**\n   * The additional offset applied along the main axis between the element and its\n   * anchor element.\n   * @default 8\n   */\n  offset?: number;\n}\n\nexport function TooltipContent({\n  className,\n  offset = 8,\n  ...props\n}: TooltipContentProps) {\n  return (\n    <Tooltip\n      className={composeRenderProps(className, (className) =>\n        TooltipStyles.Content({ className })\n      )}\n      data-slot=\"tooltip-content\"\n      offset={offset}\n      {...props}\n    />\n  );\n}\n\nexport interface TooltipArrowProps\n  extends React.ComponentProps<typeof OverlayArrow> {}\n\nexport function TooltipArrow({ className, ...props }: TooltipArrowProps) {\n  return (\n    <OverlayArrow {...props}>\n      <svg\n        aria-hidden=\"true\"\n        className={TooltipStyles.Arrow({ className })}\n        height={10}\n        viewBox=\"0 0 10 10\"\n        width={10}\n      >\n        <path d=\"M0 0 L5 5 L10 0\" />\n      </svg>\n    </OverlayArrow>\n  );\n}\n",
+      "path": "src/registry/ui/tooltip/tooltip.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const TooltipStyles = {\n  Arrow: cva({\n    base: [\n      \"fill-popover stroke-border group-placement-bottom:rotate-180 group-placement-left:-rotate-90 group-placement-right:rotate-90\",\n    ],\n  }),\n  Content: cva({\n    base: [\n      \"group motion-duration-150 z-50 rounded-md border bg-popover px-3 py-1.5 text-popover-foreground text-xs will-change-transform\",\n      \"entering:placement-left:motion-translate-x-in-[0.5rem]\",\n      \"entering:placement-right:motion-translate-x-in-[-0.5rem]\",\n      \"entering:placement-top:motion-translate-y-in-[0.5rem]\",\n      \"entering:placement-bottom:motion-translate-y-in-[-0.5rem]\",\n      \"entering:motion-opacity-in\",\n      \"exiting:motion-opacity-out\",\n    ],\n  }),\n};\n",
+      "path": "src/registry/ui/tooltip/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  TooltipArrow as Arrow,\n  TooltipContent as Content,\n  TooltipRoot as Root,\n} from \"./tooltip\";\n",
+      "path": "src/registry/ui/tooltip/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "tooltip",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/tooltip/index.ts",
-      "content": "export * as Tooltip from \"./namespace\";\nexport * from \"./styles\";\nexport * from \"./tooltip\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/tooltip/tooltip.tsx",
-      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  OverlayArrow,\n  Tooltip,\n  TooltipTrigger,\n} from \"react-aria-components\";\nimport { TooltipStyles } from \"./styles\";\n\nexport interface TooltipRootProps\n  extends React.ComponentProps<typeof TooltipTrigger> {\n  /**\n   * The delay time for the tooltip to show up. [See guidelines](https://spectrum.adobe.com/page/tooltip/#Immediate-or-delayed-appearance).\n   * @default 0\n   */\n  delay?: number;\n\n  /**\n   * The delay time for the tooltip to close. [See guidelines](https://spectrum.adobe.com/page/tooltip/#Warmup-and-cooldown).\n   * @default 300\n   */\n  closeDelay?: number;\n}\n\nexport function TooltipRoot({\n  delay = 0,\n  closeDelay = 300,\n  ...props\n}: TooltipRootProps) {\n  return (\n    <TooltipTrigger\n      closeDelay={closeDelay}\n      data-slot=\"tooltip-root\"\n      delay={delay}\n      {...props}\n    />\n  );\n}\n\nexport interface TooltipContentProps\n  extends React.ComponentProps<typeof Tooltip> {\n  /**\n   * The additional offset applied along the main axis between the element and its\n   * anchor element.\n   * @default 8\n   */\n  offset?: number;\n}\n\nexport function TooltipContent({\n  className,\n  offset = 8,\n  ...props\n}: TooltipContentProps) {\n  return (\n    <Tooltip\n      className={composeRenderProps(className, (className) =>\n        TooltipStyles.Content({ className })\n      )}\n      data-slot=\"tooltip-content\"\n      offset={offset}\n      {...props}\n    />\n  );\n}\n\nexport interface TooltipArrowProps\n  extends React.ComponentProps<typeof OverlayArrow> {}\n\nexport function TooltipArrow({ className, ...props }: TooltipArrowProps) {\n  return (\n    <OverlayArrow {...props}>\n      <svg\n        aria-hidden=\"true\"\n        className={TooltipStyles.Arrow({ className })}\n        height={10}\n        viewBox=\"0 0 10 10\"\n        width={10}\n      >\n        <path d=\"M0 0 L5 5 L10 0\" />\n      </svg>\n    </OverlayArrow>\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/tooltip/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const TooltipStyles = {\n  Arrow: cva({\n    base: [\n      \"group-placement-left:-rotate-90 fill-popover stroke-border group-placement-bottom:rotate-180 group-placement-right:rotate-90\",\n    ],\n  }),\n  Content: cva({\n    base: [\n      \"group motion-duration-150 z-50 rounded-md border bg-popover px-3 py-1.5 text-popover-foreground text-xs will-change-transform\",\n      \"entering:placement-left:motion-translate-x-in-[0.5rem]\",\n      \"entering:placement-right:motion-translate-x-in-[-0.5rem]\",\n      \"entering:placement-top:motion-translate-y-in-[0.5rem]\",\n      \"entering:placement-bottom:motion-translate-y-in-[-0.5rem]\",\n      \"entering:motion-opacity-in\",\n      \"exiting:motion-opacity-out\",\n    ],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/tooltip/namespace.ts",
-      "content": "export {\n  TooltipArrow as Arrow,\n  TooltipContent as Content,\n  TooltipRoot as Root,\n} from \"./tooltip\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Input } from \"~/registry/ui/input\";\n\nexport function InputDisabled() {\n  return <Input disabled placeholder=\"Email\" type=\"email\" />;\n}\n",
+      "path": "src/registry/examples/input/input-disabled.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-disabled",
+  "registryDependencies": [
+    "@kanpeki/input"
+  ],
+  "type": "registry:example"
+}

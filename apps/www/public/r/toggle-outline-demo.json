@@ -1,18 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "toggle-outline-demo",
-  "type": "registry:example",
   "dependencies": [
     "lucide-react"
   ],
+  "files": [
+    {
+      "content": "import { ItalicIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleOutlineDemo() {\n  return (\n    <Toggle aria-label=\"Toggle italic\" variant=\"outline\">\n      <ItalicIcon />\n      Italic\n    </Toggle>\n  );\n}\n",
+      "path": "src/registry/examples/toggle/toggle-outline-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "toggle-outline-demo",
   "registryDependencies": [
     "@kanpeki/toggle"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/toggle-outline-demo.tsx",
-      "content": "import { ItalicIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleOutlineDemo() {\n  return (\n    <Toggle aria-label=\"Toggle italic\" variant=\"outline\">\n      <ItalicIcon />\n      Italic\n    </Toggle>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

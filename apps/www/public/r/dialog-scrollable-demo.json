@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Button } from \"~/registry/ui/button\";\nimport { Dialog } from \"~/registry/ui/dialog\";\n\nexport function DialogScrollableDemo() {\n  return (\n    <Dialog.Root>\n      <Button variant=\"outline\">Scrollable Content</Button>\n\n      <Dialog.Overlay>\n        <Dialog.Modal className=\"sm:max-w-[425px]\">\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Scrollable Content</Dialog.Title>\n              <Dialog.Description>\n                This is a dialog. with scrollable content.\n              </Dialog.Description>\n            </Dialog.Header>\n            <div className=\"-mx-6 max-h-[500px] overflow-y-auto px-6 text-sm\">\n              <h4 className=\"mb-4 font-medium text-lg leading-none\">\n                Lorem Ipsum\n              </h4>\n              {Array.from({ length: 10 }).map((_, index) => (\n                // biome-ignore lint/suspicious/noArrayIndexKey: This is fine\n                <p className=\"mb-4 leading-normal\" key={index}>\n                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed\n                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n                  Ut enim ad minim veniam, quis nostrud exercitation ullamco\n                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute\n                  irure dolor in reprehenderit in voluptate velit esse cillum\n                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n                  cupidatat non proident, sunt in culpa qui officia deserunt\n                  mollit anim id est laborum.\n                </p>\n              ))}\n            </div>\n\n            <Dialog.Close />\n          </Dialog.Content>\n        </Dialog.Modal>\n      </Dialog.Overlay>\n    </Dialog.Root>\n  );\n}\n",
+      "path": "src/registry/examples/dialog/dialog-scrollable-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "dialog-scrollable-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/dialog"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/dialog-scrollable-demo.tsx",
-      "content": "import { Button } from \"~/registry/ui/button\";\nimport { Dialog } from \"~/registry/ui/dialog\";\n\nexport function DialogScrollableDemo() {\n  return (\n    <Dialog.Root>\n      <Button variant=\"outline\">Scrollable Content</Button>\n\n      <Dialog.Overlay>\n        <Dialog.Modal className=\"sm:max-w-[425px]\">\n          <Dialog.Content>\n            <Dialog.Header>\n              <Dialog.Title>Scrollable Content</Dialog.Title>\n              <Dialog.Description>\n                This is a dialog. with scrollable content.\n              </Dialog.Description>\n            </Dialog.Header>\n            <div className=\"-mx-6 max-h-[500px] overflow-y-auto px-6 text-sm\">\n              <h4 className=\"mb-4 font-medium text-lg leading-none\">\n                Lorem Ipsum\n              </h4>\n              {Array.from({ length: 10 }).map((_, index) => (\n                // biome-ignore lint/suspicious/noArrayIndexKey: This is fine\n                <p className=\"mb-4 leading-normal\" key={index}>\n                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed\n                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n                  Ut enim ad minim veniam, quis nostrud exercitation ullamco\n                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute\n                  irure dolor in reprehenderit in voluptate velit esse cillum\n                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat\n                  cupidatat non proident, sunt in culpa qui officia deserunt\n                  mollit anim id est laborum.\n                </p>\n              ))}\n            </div>\n\n            <Dialog.Close />\n          </Dialog.Content>\n        </Dialog.Modal>\n      </Dialog.Overlay>\n    </Dialog.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { composeRenderProps, Link } from \"react-aria-components\";\nimport { ButtonStyles } from \"../button\";\n\nexport interface LinkButtonProps\n  extends React.ComponentProps<typeof Link>,\n    VariantProps<typeof ButtonStyles> {}\n\nexport function LinkButton({\n  className,\n  variant,\n  size,\n  ...props\n}: LinkButtonProps) {\n  return (\n    <Link\n      className={composeRenderProps(className, (className) =>\n        ButtonStyles({ className, size, variant })\n      )}\n      data-slot=\"link\"\n      {...props}\n    />\n  );\n}\n",
+      "path": "src/registry/ui/link-button/index.tsx",
+      "type": "registry:ui"
+    }
+  ],
   "name": "link-button",
-  "type": "registry:ui",
   "registryDependencies": [
     "@kanpeki/button"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/link-button/index.tsx",
-      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { composeRenderProps, Link } from \"react-aria-components\";\nimport { ButtonStyles } from \"../button\";\n\nexport interface LinkButtonProps\n  extends React.ComponentProps<typeof Link>,\n    VariantProps<typeof ButtonStyles> {}\n\nexport function LinkButton({\n  className,\n  variant,\n  size,\n  ...props\n}: LinkButtonProps) {\n  return (\n    <Link\n      className={composeRenderProps(className, (className) =>\n        ButtonStyles({ className, size, variant })\n      )}\n      data-slot=\"link\"\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

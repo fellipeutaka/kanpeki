@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Badge } from \"~/registry/ui/badge\";\n\nexport function BadgeOutlineDemo() {\n  return <Badge variant=\"outline\">Badge</Badge>;\n}\n",
+      "path": "src/registry/examples/badge/badge-outline-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "badge-outline-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/badge"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/badge-outline-demo.tsx",
-      "content": "import { Badge } from \"~/registry/ui/badge\";\n\nexport function BadgeOutlineDemo() {\n  return <Badge variant=\"outline\">Badge</Badge>;\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

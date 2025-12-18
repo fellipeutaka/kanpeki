@@ -1,35 +1,35 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "checkbox",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components",
     "lucide-react"
   ],
+  "files": [
+    {
+      "content": "export * from \"./checkbox\";\nexport * as Checkbox from \"./namespace\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/checkbox/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport { CheckIcon, MinusIcon } from \"lucide-react\";\nimport { Checkbox, composeRenderProps } from \"react-aria-components\";\nimport { CheckboxStyles } from \"./styles\";\n\nexport interface CheckboxProviderProps\n  extends React.ComponentProps<typeof Checkbox> {}\n\nexport function CheckboxProvider({\n  className,\n  ...props\n}: CheckboxProviderProps) {\n  return (\n    <Checkbox\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        CheckboxStyles.Provider({ className })\n      )}\n      data-slot=\"checkbox-provider\"\n    />\n  );\n}\n\nexport interface CheckboxRootProps extends React.ComponentProps<\"div\"> {}\n\nexport function CheckboxRoot({ className, ...props }: CheckboxRootProps) {\n  return (\n    <div\n      {...props}\n      className={CheckboxStyles.Root({ className })}\n      data-slot=\"checkbox-root\"\n    />\n  );\n}\n\nexport interface CheckboxIndicatorProps extends React.ComponentProps<\"svg\"> {}\n\nexport function CheckboxIndicator({\n  className,\n  ...props\n}: CheckboxIndicatorProps) {\n  return (\n    <>\n      <MinusIcon\n        {...props}\n        className={CheckboxStyles.Indicator({\n          className: [className, \"group-indeterminate:block\"],\n        })}\n        data-slot=\"checkbox-indicator\"\n      />\n\n      <CheckIcon\n        {...props}\n        className={CheckboxStyles.Indicator({\n          className: [className, \"group-selected:block\"],\n        })}\n        data-slot=\"checkbox-indicator\"\n      />\n    </>\n  );\n}\n",
+      "path": "src/registry/ui/checkbox/checkbox.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const CheckboxStyles = {\n  Indicator: cva({\n    base: [\"hidden size-3\"],\n  }),\n  Provider: cva({\n    base: [\n      \"group flex items-center gap-3 font-medium text-sm leading-none transition\",\n      \"disabled:opacity-50\",\n    ],\n  }),\n  Root: cva({\n    base: [\n      \"grid size-4 shrink-0 place-content-center rounded-sm border border-toggle bg-secondary text-background transition\",\n\n      \"group-selected:border-primary/70 group-selected:bg-primary group-selected:text-primary-foreground\",\n      \"group-selected:group-invalid:border-destructive/70 group-selected:group-invalid:bg-destructive group-selected:group-invalid:text-destructive-foreground\",\n\n      \"group-focus-visible:border-primary/70 group-focus-visible:ring-4 group-focus-visible:ring-primary/20\",\n      \"group-focus-visible:group-invalid:border-destructive/70 group-focus-visible:group-invalid:text-destructive-foreground group-focus-visible:group-invalid:ring-destructive/20\",\n\n      \"group-invalid:border-destructive/70 group-invalid:bg-destructive/20 group-invalid:text-destructive-foreground group-invalid:ring-destructive/20\",\n      \"group-disabled:cursor-not-allowed\",\n    ],\n  }),\n};\n",
+      "path": "src/registry/ui/checkbox/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  CheckboxIndicator as Indicator,\n  CheckboxProvider as Provider,\n  CheckboxRoot as Root,\n} from \"./checkbox\";\n",
+      "path": "src/registry/ui/checkbox/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "checkbox",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/checkbox/index.ts",
-      "content": "export * from \"./checkbox\";\nexport * as Checkbox from \"./namespace\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/checkbox/checkbox.tsx",
-      "content": "\"use client\";\n\nimport { CheckIcon, MinusIcon } from \"lucide-react\";\nimport { Checkbox, composeRenderProps } from \"react-aria-components\";\nimport { CheckboxStyles } from \"./styles\";\n\nexport interface CheckboxProviderProps\n  extends React.ComponentProps<typeof Checkbox> {}\n\nexport function CheckboxProvider({\n  className,\n  ...props\n}: CheckboxProviderProps) {\n  return (\n    <Checkbox\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        CheckboxStyles.Provider({ className })\n      )}\n      data-slot=\"checkbox-provider\"\n    />\n  );\n}\n\nexport interface CheckboxRootProps extends React.ComponentProps<\"div\"> {}\n\nexport function CheckboxRoot({ className, ...props }: CheckboxRootProps) {\n  return (\n    <div\n      {...props}\n      className={CheckboxStyles.Root({ className })}\n      data-slot=\"checkbox-root\"\n    />\n  );\n}\n\nexport interface CheckboxIndicatorProps extends React.ComponentProps<\"svg\"> {}\n\nexport function CheckboxIndicator({\n  className,\n  ...props\n}: CheckboxIndicatorProps) {\n  return (\n    <>\n      <MinusIcon\n        {...props}\n        className={CheckboxStyles.Indicator({\n          className: [className, \"group-indeterminate:block\"],\n        })}\n        data-slot=\"checkbox-indicator\"\n      />\n\n      <CheckIcon\n        {...props}\n        className={CheckboxStyles.Indicator({\n          className: [className, \"group-selected:block\"],\n        })}\n        data-slot=\"checkbox-indicator\"\n      />\n    </>\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/checkbox/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const CheckboxStyles = {\n  Indicator: cva({\n    base: [\"hidden size-3\"],\n  }),\n  Provider: cva({\n    base: [\n      \"group flex items-center gap-3 font-medium text-sm leading-none transition\",\n      \"disabled:opacity-50\",\n    ],\n  }),\n  Root: cva({\n    base: [\n      \"grid size-4 shrink-0 place-content-center rounded-sm border border-toggle bg-secondary text-background transition\",\n\n      \"group-selected:border-primary/70 group-selected:bg-primary group-selected:text-primary-foreground\",\n      \"group-selected:group-invalid:border-destructive/70 group-selected:group-invalid:bg-destructive group-selected:group-invalid:text-destructive-foreground\",\n\n      \"group-focus-visible:border-primary/70 group-focus-visible:ring-4 group-focus-visible:ring-primary/20\",\n      \"group-focus-visible:group-invalid:border-destructive/70 group-focus-visible:group-invalid:text-destructive-foreground group-focus-visible:group-invalid:ring-destructive/20\",\n\n      \"group-invalid:border-destructive/70 group-invalid:bg-destructive/20 group-invalid:text-destructive-foreground group-invalid:ring-destructive/20\",\n      \"group-disabled:cursor-not-allowed\",\n    ],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/checkbox/namespace.ts",
-      "content": "export {\n  CheckboxIndicator as Indicator,\n  CheckboxProvider as Provider,\n  CheckboxRoot as Root,\n} from \"./checkbox\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

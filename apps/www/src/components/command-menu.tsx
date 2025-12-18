@@ -3,7 +3,6 @@
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
 import type { SortedResult } from "fumadocs-core/search";
 import {
-  CircleIcon,
   FileIcon,
   FileTextIcon,
   HashIcon,
@@ -22,11 +21,12 @@ import useDebouncedCallback from "~/hooks/use-debounced-callback";
 import { Autocomplete } from "~/registry/ui/autocomplete";
 import { Button } from "~/registry/ui/button";
 import { Dialog } from "~/registry/ui/dialog";
-import { Input } from "~/registry/ui/input";
+import { InputGroup } from "~/registry/ui/input-group";
 import { Keyboard } from "~/registry/ui/keyboard";
 import { Menu } from "~/registry/ui/menu";
 import { ScrollArea } from "~/registry/ui/scroll-area";
 import { SearchField } from "~/registry/ui/search-field";
+import { Separator } from "~/registry/ui/separator";
 
 interface CommandMenuProps {
   mainNav: NavItem[];
@@ -100,25 +100,30 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
           <Dialog.Content className="gap-0">
             <Autocomplete
               defaultInputValue={query}
+              disableVirtualFocus
               onInputChange={setDebouncedQuery}
             >
-              <SearchField.Root
-                autoFocus
-                className="h-12 items-center gap-2 border-b"
+              <InputGroup.Root
+                render={
+                  <SearchField.Root
+                    autoFocus
+                    className="h-12 items-center gap-2 border-transparent dark:bg-transparent"
+                  />
+                }
               >
-                {searchQuery.isLoading ? (
-                  <Loader2Icon className="size-4 animate-spin" />
-                ) : (
-                  <SearchIcon className="size-4" />
-                )}
-
-                <Input
-                  className="h-full border-none bg-transparent px-0 text-sm focus:ring-0 dark:bg-transparent"
-                  placeholder="Type a command or search..."
-                />
-
-                <SearchField.Button />
-              </SearchField.Root>
+                <InputGroup.Addon>
+                  {searchQuery.isLoading ? (
+                    <Loader2Icon className="animate-spin" />
+                  ) : (
+                    <SearchIcon />
+                  )}
+                </InputGroup.Addon>
+                <InputGroup.Input placeholder="Type a command or search..." />
+                <InputGroup.Addon align="inline-end">
+                  <SearchField.Button />
+                </InputGroup.Addon>
+              </InputGroup.Root>
+              <Separator />
               <ScrollArea.Root>
                 <ScrollArea.Viewport className="max-h-75">
                   <Menu.Content
@@ -180,7 +185,7 @@ function DefaultCommandMenuItems({ mainNav, sidebarNav }: CommandMenuProps) {
                 key={navItem.href}
                 textValue={navItem.title}
               >
-                <CircleIcon className="size-5" />
+                <FileTextIcon className="size-5" />
                 {navItem.title}
               </Menu.Item>
             ))}

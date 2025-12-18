@@ -11,7 +11,7 @@ export function DocsSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="-ml-2 fixed top-14 z-30 hidden h-[calc(100dvh-3.5rem)] w-full shrink-0 md:sticky md:block">
+    <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100dvh-3.5rem)] w-full shrink-0 md:sticky md:block">
       <ScrollArea.Root className="h-full py-6 pr-6 [mask-image:linear-gradient(black_80%,transparent)] lg:py-8">
         <ScrollArea.Viewport>
           {docsConfig.sidebarNav.map(({ title, items }) => (

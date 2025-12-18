@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Checkbox } from \"~/registry/ui/checkbox\";\n\nexport function CheckboxDisabledDemo() {\n  return (\n    <Checkbox.Provider isDisabled>\n      <Checkbox.Root>\n        <Checkbox.Indicator />\n      </Checkbox.Root>\n      Enable notifications\n    </Checkbox.Provider>\n  );\n}\n",
+      "path": "src/registry/examples/checkbox/checkbox-disabled-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "checkbox-disabled-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/checkbox"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/checkbox-disabled-demo.tsx",
-      "content": "import { Checkbox } from \"~/registry/ui/checkbox\";\n\nexport function CheckboxDisabledDemo() {\n  return (\n    <Checkbox.Provider isDisabled>\n      <Checkbox.Root>\n        <Checkbox.Indicator />\n      </Checkbox.Root>\n      Enable notifications\n    </Checkbox.Provider>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

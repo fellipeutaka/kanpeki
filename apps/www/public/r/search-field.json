@@ -1,35 +1,35 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "search-field",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components",
     "lucide-react"
   ],
+  "files": [
+    {
+      "content": "export * as SearchField from \"./namespace\";\nexport * from \"./search-field\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/search-field/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport { XIcon } from \"lucide-react\";\nimport { composeRenderProps, SearchField } from \"react-aria-components\";\nimport { InputGroupButton } from \"../input-group\";\nimport { SearchFieldStyles } from \"./styles\";\n\nexport interface SearchFieldRootProps\n  extends React.ComponentProps<typeof SearchField> {}\n\nexport function SearchFieldRoot(props: SearchFieldRootProps) {\n  return <SearchField {...props} data-slot=\"search-field-root\" />;\n}\n\nexport interface SearchFieldButtonProps\n  extends React.ComponentProps<typeof InputGroupButton> {}\n\nexport function SearchFieldButton({\n  className,\n  size = \"icon-xs\",\n  children,\n  ...props\n}: SearchFieldButtonProps) {\n  return (\n    <InputGroupButton\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        SearchFieldStyles.Close({ className })\n      )}\n      data-slot=\"search-field-button\"\n      size={size}\n    >\n      {composeRenderProps(children, (children) => children ?? <XIcon />)}\n    </InputGroupButton>\n  );\n}\n",
+      "path": "src/registry/ui/search-field/search-field.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SearchFieldStyles = {\n  Close: cva({\n    base: [\n      \"group-empty/input-group:pointer-events-none group-empty/input-group:opacity-0\",\n    ],\n  }),\n};\n",
+      "path": "src/registry/ui/search-field/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  SearchFieldButton as Button,\n  SearchFieldRoot as Root,\n} from \"./search-field\";\n",
+      "path": "src/registry/ui/search-field/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "search-field",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/search-field/index.ts",
-      "content": "export * as SearchField from \"./namespace\";\nexport * from \"./search-field\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/search-field/search-field.tsx",
-      "content": "\"use client\";\n\nimport { XIcon } from \"lucide-react\";\nimport {\n  Button,\n  composeRenderProps,\n  Input,\n  SearchField,\n} from \"react-aria-components\";\nimport { SearchFieldStyles } from \"./styles\";\n\nexport interface SearchFieldRootProps\n  extends React.ComponentProps<typeof SearchField> {}\n\nexport function SearchFieldRoot({ className, ...props }: SearchFieldRootProps) {\n  return (\n    <SearchField\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        SearchFieldStyles.Root({ className })\n      )}\n      data-slot=\"search-field-root\"\n    />\n  );\n}\n\nexport interface SearchFieldInputProps\n  extends React.ComponentProps<typeof Input> {}\n\nexport function SearchFieldInput({\n  className,\n  ...props\n}: SearchFieldInputProps) {\n  return (\n    <Input\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        SearchFieldStyles.Input({ className })\n      )}\n      data-slot=\"search-field-input\"\n    />\n  );\n}\n\nexport interface SearchFieldButtonProps\n  extends Omit<React.ComponentProps<typeof Button>, \"children\"> {}\n\nexport function SearchFieldButton({\n  className,\n  ...props\n}: SearchFieldButtonProps) {\n  return (\n    <Button\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        SearchFieldStyles.Close({ className })\n      )}\n      data-slot=\"search-field-input\"\n    >\n      <XIcon />\n    </Button>\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/search-field/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SearchFieldStyles = {\n  Close: cva({\n    base: [\n      \"group-empty:pointer-events-none group-empty:opacity-0\",\n      \"opacity-70 ring-offset-background transition-opacity\",\n      \"hover:opacity-100\",\n      \"focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2\",\n      \"disabled:pointer-events-none\",\n    ],\n  }),\n  Input: cva({\n    base: [\n      \"flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden\",\n      \"placeholder:text-muted-foreground\",\n      \"disabled:cursor-not-allowed disabled:opacity-50\",\n\n      // Hide default clear button\n      \"[&::-webkit-search-cancel-button]:appearance-none\",\n      \"[&::-webkit-search-decoration]:appearance-none\",\n    ],\n  }),\n  Root: cva({\n    base: [\n      \"group flex h-9 items-center gap-2 border-b px-3\",\n      \"[&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 [&_svg]:opacity-50\",\n    ],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/search-field/namespace.ts",
-      "content": "export {\n  SearchFieldButton as Button,\n  SearchFieldInput as Input,\n  SearchFieldRoot as Root,\n} from \"./search-field\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

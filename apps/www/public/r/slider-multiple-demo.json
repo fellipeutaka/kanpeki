@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Slider } from \"~/registry/ui/slider\";\n\nexport function SliderMultipleDemo() {\n  return (\n    <Slider.Root\n      aria-label=\"Multiple value slider\"\n      defaultValue={[25, 50]}\n      maxValue={100}\n      step={1}\n    >\n      <Slider.Track>\n        <Slider.Range />\n        <Slider.Thumb />\n      </Slider.Track>\n    </Slider.Root>\n  );\n}\n",
+      "path": "src/registry/examples/slider/slider-multiple-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "slider-multiple-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/slider"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/slider-multiple-demo.tsx",
-      "content": "import { Slider } from \"~/registry/ui/slider\";\n\nexport function SliderMultipleDemo() {\n  return (\n    <Slider.Root\n      aria-label=\"Multiple value slider\"\n      defaultValue={[25, 50]}\n      maxValue={100}\n      step={1}\n    >\n      <Slider.Track>\n        <Slider.Range />\n        <Slider.Thumb />\n      </Slider.Track>\n    </Slider.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

@@ -1,12 +1,12 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "aspect-ratio",
-  "type": "registry:ui",
   "files": [
     {
-      "path": "src/registry/ui/aspect-ratio/index.tsx",
       "content": "export interface AspectRatioProps extends React.ComponentProps<\"div\"> {\n  ratio?: number;\n}\n\nexport function AspectRatio({\n  ratio = 1 / 1,\n  style,\n  ...props\n}: AspectRatioProps) {\n  return (\n    <div\n      data-slot=\"aspect-ratio-wrapper\"\n      style={{\n        paddingBottom: `${100 / ratio}%`,\n        // ensures inner element is contained\n        position: \"relative\",\n        // ensures padding bottom trick maths works\n        width: \"100%\",\n      }}\n    >\n      <div\n        {...props}\n        data-slot=\"aspect-ratio\"\n        style={{\n          ...style,\n          bottom: 0,\n          left: 0,\n          // ensures children expand in ratio\n          position: \"absolute\",\n          right: 0,\n          top: 0,\n        }}\n      />\n    </div>\n  );\n}\n",
+      "path": "src/registry/ui/aspect-ratio/index.tsx",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "name": "aspect-ratio",
+  "type": "registry:ui"
 }

@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "export function TypographyBlockquote() {\n  return (\n    <blockquote className=\"blockquote\">\n      \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair that\n      they should pay for the privilege.\"\n    </blockquote>\n  );\n}\n",
+      "path": "src/registry/examples/typography/typography-blockquote-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "typography-blockquote-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/typography"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/typography-blockquote-demo.tsx",
-      "content": "export function TypographyBlockquote() {\n  return (\n    <blockquote className=\"blockquote\">\n      \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair that\n      they should pay for the privilege.\"\n    </blockquote>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

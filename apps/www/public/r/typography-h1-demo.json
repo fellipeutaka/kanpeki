@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "export function TypographyH1() {\n  return (\n    <h1 className=\"heading-1\">Taxing Laughter: The Joke Tax Chronicles</h1>\n  );\n}\n",
+      "path": "src/registry/examples/typography/typography-h1-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "typography-h1-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/typography"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/typography-h1-demo.tsx",
-      "content": "export function TypographyH1() {\n  return (\n    <h1 className=\"heading-1\">Taxing Laughter: The Joke Tax Chronicles</h1>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

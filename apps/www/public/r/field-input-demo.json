@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function FieldInputDemo() {\n  return (\n    <Field.Root render={<TextField type=\"email\" />}>\n      <Field.Label>Email</Field.Label>\n      <Input placeholder=\"john@example.com\" />\n      <Field.Description>We'll never share your email.</Field.Description>\n    </Field.Root>\n  );\n}\n",
+      "path": "src/registry/examples/field/field-input-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "field-input-demo",
+  "registryDependencies": [
+    "@kanpeki/field"
+  ],
+  "type": "registry:example"
+}

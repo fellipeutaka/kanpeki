@@ -2,7 +2,7 @@ import { Button } from "~/registry/ui/button/button";
 import { Dialog } from "~/registry/ui/dialog";
 import { Input } from "~/registry/ui/input";
 import { Label } from "~/registry/ui/label/label";
-import { Textfield } from "~/registry/ui/textfield";
+import { TextField } from "~/registry/ui/text-field";
 
 export function DialogDemo() {
   return (
@@ -30,14 +30,14 @@ function DialogWithForm() {
               </Dialog.Description>
             </Dialog.Header>
             <div className="grid gap-4">
-              <Textfield autoFocus defaultValue="Pedro Duarte" name="name">
+              <TextField autoFocus defaultValue="Pedro Duarte" name="name">
                 <Label>Name</Label>
                 <Input />
-              </Textfield>
-              <Textfield defaultValue="@peduarte" name="username">
+              </TextField>
+              <TextField defaultValue="@peduarte" name="username">
                 <Label>Username</Label>
                 <Input />
-              </Textfield>
+              </TextField>
             </div>
             <Dialog.Footer>
               <Button slot="close" variant="outline">

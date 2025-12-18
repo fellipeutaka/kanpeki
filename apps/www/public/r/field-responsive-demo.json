@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Input } from \"~/registry/ui/input\";\nimport { Switch } from \"~/registry/ui/switch\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function FieldResponsiveDemo() {\n  return (\n    <Field.Set>\n      <Field.Legend>Account Settings</Field.Legend>\n      <Field.Group>\n        <Field.Root orientation=\"responsive\" render={<TextField />}>\n          <Field.Label>Display name</Field.Label>\n          <Field.Content>\n            <Input placeholder=\"John Doe\" />\n            <Field.Description>\n              This is your public display name.\n            </Field.Description>\n          </Field.Content>\n        </Field.Root>\n        <Field.Root\n          orientation=\"responsive\"\n          render={<TextField type=\"email\" />}\n        >\n          <Field.Label>Email</Field.Label>\n          <Field.Content>\n            <Input placeholder=\"john@example.com\" />\n            <Field.Description>\n              We'll use this for account notifications.\n            </Field.Description>\n          </Field.Content>\n        </Field.Root>\n        <Field.Root orientation=\"responsive\">\n          <Field.Content>\n            <Field.Title>Two-factor authentication</Field.Title>\n            <Field.Description>\n              Add an extra layer of security to your account.\n            </Field.Description>\n          </Field.Content>\n          <Switch.Root>\n            <Switch.Track>\n              <Switch.Thumb />\n            </Switch.Track>\n          </Switch.Root>\n        </Field.Root>\n      </Field.Group>\n    </Field.Set>\n  );\n}\n",
+      "path": "src/registry/examples/field/field-responsive-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "field-responsive-demo",
+  "registryDependencies": [
+    "@kanpeki/field"
+  ],
+  "type": "registry:example"
+}

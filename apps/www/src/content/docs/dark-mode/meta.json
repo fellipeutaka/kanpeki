@@ -1,4 +1,4 @@
 {
-  "title": "Dark Mode",
-  "pages": ["next", "astro"]
+  "pages": ["next", "astro"],
+  "title": "Dark Mode"
 }

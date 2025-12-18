@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { SlashIcon } from \"lucide-react\";\nimport { Breadcrumb } from \"~/registry/ui/breadcrumb\";\nimport { Link } from \"~/registry/ui/link\";\n\nexport function BreadcrumbCustomSeparatorDemo() {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.Item>\n        <Link href=\"/\">Home</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator>\n        <SlashIcon className=\"size-4\" />\n      </Breadcrumb.Separator>\n      <Breadcrumb.Item>\n        <Link href=\"/docs/components\">Components</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator>\n        <SlashIcon className=\"size-4\" />\n      </Breadcrumb.Separator>\n      <Breadcrumb.Item>\n        <Link>Breadcrumb</Link>\n      </Breadcrumb.Item>\n    </Breadcrumb.Root>\n  );\n}\n",
+      "path": "src/registry/examples/breadcrumb/breadcrumb-custom-separator-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "breadcrumb-custom-separator-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/breadcrumb"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/breadcrumb-custom-separator-demo.tsx",
-      "content": "import { SlashIcon } from \"lucide-react\";\nimport { Breadcrumb } from \"~/registry/ui/breadcrumb\";\nimport { Link } from \"~/registry/ui/link\";\n\nexport function BreadcrumbCustomSeparatorDemo() {\n  return (\n    <Breadcrumb.Root>\n      <Breadcrumb.Item>\n        <Link href=\"/\">Home</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator>\n        <SlashIcon className=\"size-4\" />\n      </Breadcrumb.Separator>\n      <Breadcrumb.Item>\n        <Link href=\"/docs/components\">Components</Link>\n      </Breadcrumb.Item>\n      <Breadcrumb.Separator>\n        <SlashIcon className=\"size-4\" />\n      </Breadcrumb.Separator>\n      <Breadcrumb.Item>\n        <Link>Breadcrumb</Link>\n      </Breadcrumb.Item>\n    </Breadcrumb.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

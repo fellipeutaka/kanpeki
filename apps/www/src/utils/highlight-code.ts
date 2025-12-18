@@ -1,19 +1,5 @@
-import { getSingletonHighlighter } from "shiki";
 import { rehypeCodeOptions } from "~/lib/rehype";
-
-let singletonHighlighter: Awaited<
-  ReturnType<typeof getSingletonHighlighter>
-> | null = null;
-
-async function getHighlighter(
-  options?: Parameters<typeof getSingletonHighlighter>[0]
-) {
-  if (!singletonHighlighter) {
-    singletonHighlighter = await getSingletonHighlighter(options);
-  }
-
-  return singletonHighlighter;
-}
+import { getHighlighter } from "~/lib/shiki";
 
 export async function highlightCode(code: string, language = "tsx") {
   const highlighter = await getHighlighter({

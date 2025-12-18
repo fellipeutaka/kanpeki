@@ -1,33 +1,33 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "scroll-area",
-  "type": "registry:ui",
   "dependencies": [
     "@radix-ui/react-scroll-area"
   ],
+  "files": [
+    {
+      "content": "export * as ScrollArea from \"./namespace\";\nexport * from \"./scroll-area\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/scroll-area/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport { Root, Scrollbar, Thumb, Viewport } from \"@radix-ui/react-scroll-area\";\nimport { ScrollAreaStyles } from \"./styles\";\n\nexport interface ScrollAreaRootProps\n  extends React.ComponentProps<typeof Root> {}\n\nexport function ScrollAreaRoot({ className, ...props }: ScrollAreaRootProps) {\n  return <Root {...props} className={ScrollAreaStyles.Root({ className })} />;\n}\n\nexport interface ScrollAreaViewportProps\n  extends React.ComponentProps<typeof Viewport> {}\n\nexport function ScrollAreaViewport({\n  className,\n  ...props\n}: ScrollAreaViewportProps) {\n  return (\n    <Viewport {...props} className={ScrollAreaStyles.Viewport({ className })} />\n  );\n}\n\nexport interface ScrollAreaScrollbarProps\n  extends React.ComponentProps<typeof Scrollbar> {\n  orientation: \"vertical\" | \"horizontal\";\n}\n\nexport function ScrollAreaScrollbar({\n  className,\n  orientation,\n  ...props\n}: ScrollAreaScrollbarProps) {\n  return (\n    <Scrollbar\n      {...props}\n      className={ScrollAreaStyles.Scrollbar({ className, orientation })}\n      orientation={orientation}\n    />\n  );\n}\n\nexport interface ScrollAreaThumbProps\n  extends React.ComponentProps<typeof Thumb> {}\n\nexport function ScrollAreaThumb({ className, ...props }: ScrollAreaThumbProps) {\n  return <Thumb {...props} className={ScrollAreaStyles.Thumb({ className })} />;\n}\n",
+      "path": "src/registry/ui/scroll-area/scroll-area.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const ScrollAreaStyles = {\n  Root: cva({\n    base: [\"relative overflow-hidden\"],\n  }),\n  Scrollbar: cva({\n    base: [\"flex touch-none select-none transition-colors\"],\n    variants: {\n      orientation: {\n        horizontal: [\"h-2.5 flex-col border-t border-t-transparent p-px\"],\n        vertical: [\"h-full w-2.5 border-l border-l-transparent p-px\"],\n      },\n    },\n  }),\n  Thumb: cva({\n    base: [\"relative flex-1 rounded-full bg-border\"],\n  }),\n  Viewport: cva({\n    base: [\"size-full rounded-[inherit]\"],\n  }),\n};\n",
+      "path": "src/registry/ui/scroll-area/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  ScrollAreaRoot as Root,\n  ScrollAreaScrollbar as Scrollbar,\n  ScrollAreaThumb as Thumb,\n  ScrollAreaViewport as Viewport,\n} from \"./scroll-area\";\n",
+      "path": "src/registry/ui/scroll-area/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "scroll-area",
   "registryDependencies": [
     "@kanpeki/cva"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/scroll-area/index.ts",
-      "content": "export * as ScrollArea from \"./namespace\";\nexport * from \"./scroll-area\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/scroll-area/scroll-area.tsx",
-      "content": "\"use client\";\n\nimport { Root, Scrollbar, Thumb, Viewport } from \"@radix-ui/react-scroll-area\";\nimport { ScrollAreaStyles } from \"./styles\";\n\nexport interface ScrollAreaRootProps\n  extends React.ComponentProps<typeof Root> {}\n\nexport function ScrollAreaRoot({ className, ...props }: ScrollAreaRootProps) {\n  return <Root {...props} className={ScrollAreaStyles.Root({ className })} />;\n}\n\nexport interface ScrollAreaViewportProps\n  extends React.ComponentProps<typeof Viewport> {}\n\nexport function ScrollAreaViewport({\n  className,\n  ...props\n}: ScrollAreaViewportProps) {\n  return (\n    <Viewport {...props} className={ScrollAreaStyles.Viewport({ className })} />\n  );\n}\n\nexport interface ScrollAreaScrollbarProps\n  extends React.ComponentProps<typeof Scrollbar> {\n  orientation: \"vertical\" | \"horizontal\";\n}\n\nexport function ScrollAreaScrollbar({\n  className,\n  orientation,\n  ...props\n}: ScrollAreaScrollbarProps) {\n  return (\n    <Scrollbar\n      {...props}\n      className={ScrollAreaStyles.Scrollbar({ className, orientation })}\n      orientation={orientation}\n    />\n  );\n}\n\nexport interface ScrollAreaThumbProps\n  extends React.ComponentProps<typeof Thumb> {}\n\nexport function ScrollAreaThumb({ className, ...props }: ScrollAreaThumbProps) {\n  return <Thumb {...props} className={ScrollAreaStyles.Thumb({ className })} />;\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/scroll-area/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const ScrollAreaStyles = {\n  Root: cva({\n    base: [\"relative overflow-hidden\"],\n  }),\n  Scrollbar: cva({\n    base: [\"flex touch-none select-none transition-colors\"],\n    variants: {\n      orientation: {\n        horizontal: [\"h-2.5 flex-col border-t border-t-transparent p-px\"],\n        vertical: [\"h-full w-2.5 border-l border-l-transparent p-px\"],\n      },\n    },\n  }),\n  Thumb: cva({\n    base: [\"relative flex-1 rounded-full bg-border\"],\n  }),\n  Viewport: cva({\n    base: [\"size-full rounded-[inherit]\"],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/scroll-area/namespace.ts",
-      "content": "export {\n  ScrollAreaRoot as Root,\n  ScrollAreaScrollbar as Scrollbar,\n  ScrollAreaThumb as Thumb,\n  ScrollAreaViewport as Viewport,\n} from \"./scroll-area\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

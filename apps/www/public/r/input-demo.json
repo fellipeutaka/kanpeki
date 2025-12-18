@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Input } from \"~/registry/ui/input\";\n\nexport function InputDemo() {\n  return (\n    <div className=\"flex flex-col flex-wrap gap-4 md:flex-row\">\n      <Input placeholder=\"Email\" type=\"email\" />\n      <Input aria-invalid=\"true\" placeholder=\"Error\" type=\"text\" />\n      <Input placeholder=\"Password\" type=\"password\" />\n      <Input placeholder=\"Number\" type=\"number\" />\n      <Input placeholder=\"File\" type=\"file\" />\n      <Input placeholder=\"Tel\" type=\"tel\" />\n      <Input placeholder=\"Text\" type=\"text\" />\n      <Input placeholder=\"URL\" type=\"url\" />\n      <Input placeholder=\"Search\" type=\"search\" />\n      <Input placeholder=\"Date\" type=\"date\" />\n      <Input placeholder=\"Datetime Local\" type=\"datetime-local\" />\n      <Input placeholder=\"Month\" type=\"month\" />\n      <Input placeholder=\"Time\" type=\"time\" />\n      <Input placeholder=\"Week\" type=\"week\" />\n      <Input disabled placeholder=\"Disabled\" />\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/input/input-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-demo",
+  "registryDependencies": [
+    "@kanpeki/input"
+  ],
+  "type": "registry:example"
+}

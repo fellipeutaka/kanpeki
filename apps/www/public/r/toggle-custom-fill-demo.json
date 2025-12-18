@@ -1,18 +1,18 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "toggle-custom-fill-demo",
-  "type": "registry:example",
   "dependencies": [
     "lucide-react"
   ],
+  "files": [
+    {
+      "content": "import { ThumbsUpIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleCustomFillDemo() {\n  return (\n    <Toggle\n      aria-label=\"Toggle book\"\n      className=\"selected:[&_svg]:fill-accent-foreground\"\n    >\n      <ThumbsUpIcon className=\"fill-transparent transition duration-300\" />\n    </Toggle>\n  );\n}\n",
+      "path": "src/registry/examples/toggle/toggle-custom-fill-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "toggle-custom-fill-demo",
   "registryDependencies": [
     "@kanpeki/toggle"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/toggle-custom-fill-demo.tsx",
-      "content": "import { ThumbsUpIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleCustomFillDemo() {\n  return (\n    <Toggle\n      aria-label=\"Toggle book\"\n      className=\"selected:[&_svg]:fill-accent-foreground\"\n    >\n      <ThumbsUpIcon className=\"fill-transparent transition duration-300\" />\n    </Toggle>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

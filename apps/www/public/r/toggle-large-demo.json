@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleLargeDemo() {\n  return (\n    <Toggle size=\"lg\" variant=\"outline\">\n      Large\n    </Toggle>\n  );\n}\n",
+      "path": "src/registry/examples/toggle/toggle-large-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "toggle-large-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/toggle"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/toggle-large-demo.tsx",
-      "content": "import { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleLargeDemo() {\n  return (\n    <Toggle size=\"lg\" variant=\"outline\">\n      Large\n    </Toggle>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

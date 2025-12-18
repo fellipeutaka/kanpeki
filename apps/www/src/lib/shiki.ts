@@ -1,7 +1,29 @@
 import type { Element, Text } from "hast";
-import type { ShikiTransformer } from "shiki";
+import {
+  getSingletonHighlighter,
+  type Highlighter,
+  type ShikiTransformer,
+} from "shiki";
 
 import { convertNpmCommands } from "~/utils/convert-npm-commands";
+
+const highlighterCache = new Map<string, Promise<Highlighter>>();
+
+export async function getHighlighter(
+  options?: Parameters<typeof getSingletonHighlighter>[0]
+) {
+  const { themes, langs } = options || {};
+  const key = [themes, langs].join("-");
+  const highlighter = highlighterCache.get(key);
+  if (highlighter) {
+    return await highlighter;
+  }
+
+  const highlighterPromise = getSingletonHighlighter(options);
+
+  highlighterCache.set(key, highlighterPromise);
+  return await highlighterPromise;
+}
 
 function extractTextFromHast(node: Element): string {
   let text = "";

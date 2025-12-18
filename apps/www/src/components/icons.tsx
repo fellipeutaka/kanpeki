@@ -580,6 +580,17 @@ export const Icons = {
       <path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z" />
     </svg>
   ),
+  ReactHookForm: (props) => (
+    <svg
+      aria-label="react-hook-form"
+      role="img"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M10.775 17.348H5.806a.281.281 0 100 .563h4.97a.281.281 0 100-.563zm7.32 0h-4.969a.281.281 0 100 .563h4.969a.281.281 0 000-.563zm-7.334-6.475H5.807a.281.281 0 100 .563h4.954a.281.281 0 100-.563zm7.32 0h-4.955a.281.281 0 100 .563h4.955a.281.281 0 000-.563zm.552-9.2h-4.341a2.404 2.404 0 00-4.58 0H5.366a3.097 3.097 0 00-3.096 3.096v16.134A3.097 3.097 0 005.367 24h13.266a3.097 3.097 0 003.096-3.097V4.77a3.097 3.097 0 00-3.096-3.096zm-8.705.563a.281.281 0 00.281-.223 1.841 1.841 0 013.598 0 .281.281 0 00.282.223h1.514V4.08a.845.845 0 01-.844.844H9.255a.845.845 0 01-.844-.844V2.236zm11.238 18.667c0 1.4-1.134 2.534-2.533 2.534H5.367a2.534 2.534 0 01-2.533-2.534V4.77c0-1.399 1.134-2.533 2.533-2.533h2.48V4.08c0 .777.63 1.407 1.408 1.407h5.49c.777 0 1.407-.63 1.407-1.407V2.236h2.48c1.4 0 2.534 1.134 2.534 2.533z" />
+    </svg>
+  ),
   Shadcn: (props: IconProps) => (
     <svg
       aria-label="shadcn/ui"
@@ -663,6 +674,613 @@ export const Icons = {
         d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738M32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64m0 0"
         fill="#38bdf8"
       />
+    </svg>
+  ),
+  Tanstack: (props) => (
+    <svg
+      height="633px"
+      version="1.1"
+      viewBox="0 0 634 633"
+      width="634px"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <title>TanStack Logo</title>
+      <defs>
+        <linearGradient
+          id="linearGradient-1"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="71.6497581%"
+        >
+          <stop offset="0%" stopColor="#6BDAFF" />
+          <stop offset="31.9219843%" stopColor="#F9FFB5" />
+          <stop offset="70.626639%" stopColor="#FFA770" />
+          <stop offset="100%" stopColor="#FF7373" />
+        </linearGradient>
+        <circle cx="316.5" cy="316.5" id="path-2" r="316.5" />
+        <linearGradient
+          id="linearGradient-4"
+          x1="92.8996089%"
+          x2="8.64082518%"
+          y1="45.820525%"
+          y2="54.8323242%"
+        >
+          <stop offset="0%" stopColor="#EE2700" />
+          <stop offset="100%" stopColor="#FF008E" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-5"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#A17500" />
+          <stop offset="100%" stopColor="#5D2100" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-6"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#2F8A00" />
+          <stop offset="100%" stopColor="#90FF57" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-7"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#2F8A00" />
+          <stop offset="100%" stopColor="#90FF57" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-8"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#2F8A00" />
+          <stop offset="100%" stopColor="#90FF57" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-9"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#2F8A00" />
+          <stop offset="100%" stopColor="#90FF57" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-10"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#2F8A00" />
+          <stop offset="100%" stopColor="#90FF57" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-11"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#2F8A00" />
+          <stop offset="100%" stopColor="#90FF57" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-12"
+          x1="61.1087051%"
+          x2="43.7167019%"
+          y1="3.63287421%"
+          y2="43.072423%"
+        >
+          <stop offset="0%" stopColor="#FFF400" />
+          <stop offset="100%" stopColor="#3C8700" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-13"
+          x1="50%"
+          x2="50%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#FFDF00" />
+          <stop offset="100%" stopColor="#FF9D00" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-14"
+          x1="127.278646%"
+          x2="2.08166817e-15%"
+          y1="49.7777778%"
+          y2="50.2222222%"
+        >
+          <stop offset="0%" stopColor="#FFA400" />
+          <stop offset="100%" stopColor="#FF5E00" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-15"
+          x1="127.278646%"
+          x2="2.08166817e-15%"
+          y1="47.5308642%"
+          y2="52.4691358%"
+        >
+          <stop offset="0%" stopColor="#FFA400" />
+          <stop offset="100%" stopColor="#FF5E00" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-16"
+          x1="127.278646%"
+          x2="2.08166817e-15%"
+          y1="46.1950059%"
+          y2="53.8049941%"
+        >
+          <stop offset="0%" stopColor="#FFA400" />
+          <stop offset="100%" stopColor="#FF5E00" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-17"
+          x1="127.278646%"
+          x2="2.08166817e-15%"
+          y1="35.3298611%"
+          y2="64.6701389%"
+        >
+          <stop offset="0%" stopColor="#FFA400" />
+          <stop offset="100%" stopColor="#FF5E00" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-18"
+          x1="127.278646%"
+          x2="2.08166817e-15%"
+          y1="4.875%"
+          y2="95.125%"
+        >
+          <stop offset="0%" stopColor="#FFA400" />
+          <stop offset="100%" stopColor="#FF5E00" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-19"
+          x1="78.3339993%"
+          x2="31.6676399%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#FFA400" />
+          <stop offset="100%" stopColor="#FF5E00" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-20"
+          x1="57.9133333%"
+          x2="44.88%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#FFA400" />
+          <stop offset="100%" stopColor="#FF5E00" />
+        </linearGradient>
+        <linearGradient
+          id="linearGradient-21"
+          x1="50.4945833%"
+          x2="49.68%"
+          y1="0%"
+          y2="100%"
+        >
+          <stop offset="0%" stopColor="#FFA400" />
+          <stop offset="100%" stopColor="#FF5E00" />
+        </linearGradient>
+        <circle cx="315.5" cy="316.5" id="path-22" r="316.5" />
+      </defs>
+      <g fill="none" fillRule="evenodd" id="Icon" stroke="none" strokeWidth="1">
+        <g id="Group-3-Copy" transform="translate(1, 0)">
+          <mask fill="white" id="mask-3">
+            <use xlinkHref="#path-2" />
+          </mask>
+          <use fill="url(#linearGradient-1)" id="Mask" xlinkHref="#path-2" />
+          <ellipse
+            cx="89.5"
+            cy="610.5"
+            fill="#015064"
+            id="Oval-Copy-2"
+            mask="url(#mask-3)"
+            rx="214.5"
+            ry="185.968232"
+            stroke="#00CFE2"
+            strokeWidth="25"
+          />
+          <ellipse
+            cx="543.5"
+            cy="610.5"
+            fill="#015064"
+            id="Oval-Copy-3"
+            mask="url(#mask-3)"
+            rx="214.5"
+            ry="185.968232"
+            stroke="#00CFE2"
+            strokeWidth="25"
+          />
+          <ellipse
+            cx="89.5"
+            cy="648.5"
+            fill="#015064"
+            id="Oval-Copy-5"
+            mask="url(#mask-3)"
+            rx="214.5"
+            ry="185.968232"
+            stroke="#00A8B8"
+            strokeWidth="25"
+          />
+          <ellipse
+            cx="543.5"
+            cy="648.5"
+            fill="#015064"
+            id="Oval-Copy-4"
+            mask="url(#mask-3)"
+            rx="214.5"
+            ry="185.968232"
+            stroke="#00A8B8"
+            strokeWidth="25"
+          />
+          <ellipse
+            cx="89.5"
+            cy="684.5"
+            fill="#015064"
+            id="Oval-Copy-7"
+            mask="url(#mask-3)"
+            rx="214.5"
+            ry="185.968232"
+            stroke="#007782"
+            strokeWidth="25"
+          />
+          <ellipse
+            cx="543.5"
+            cy="684.5"
+            fill="#015064"
+            id="Oval-Copy-6"
+            mask="url(#mask-3)"
+            rx="214.5"
+            ry="185.968232"
+            stroke="#007782"
+            strokeWidth="25"
+          />
+          <g id="Group-2" mask="url(#mask-3)">
+            <g transform="translate(358.1965, 370.0152) scale(-1, 1) rotate(-10) translate(-358.1965, -370.0152)translate(258.1965, 321.8281)">
+              <line
+                id="Path-9"
+                stroke="#000000"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="11"
+                x1="17.5949044"
+                x2="17.5949044"
+                y1="67.3741676"
+                y2="96.3741676"
+              />
+              <line
+                id="Path-10"
+                stroke="#000000"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="11"
+                x1="171.16062"
+                x2="171.16062"
+                y1="31.757749"
+                y2="94.757749"
+              />
+              <line
+                id="Path-10-Copy"
+                stroke="#000000"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="11"
+                x1="122.423839"
+                x2="121.990263"
+                y1="66.4693546"
+                y2="93.8898074"
+              />
+              <g
+                fillRule="evenodd"
+                id="Group-6"
+                stroke="none"
+                strokeWidth="1"
+                transform="translate(6.8389, -0)"
+              >
+                <path
+                  d="M108.270728,43.7239853 L9.09999609,43.7239853 C3.03333203,44.814287 -1.22318642e-14,48.3689204 -1.22318642e-14,54.3878854 C-1.22318642e-14,60.4068504 3.03333203,64.2775553 9.09999609,66 L116.706018,66 L183.591126,17.6698344 C187.576181,13.4562912 188.067268,9.20728196 185.064387,4.92280671 C182.061507,0.638331454 177.695127,-0.849457484 171.965247,0.45943989 L108.270728,43.7239853 Z"
+                  fill="url(#linearGradient-4)"
+                  id="Path-8"
+                />
+                <line
+                  fill="#D8D8D8"
+                  id="Path-12"
+                  stroke="#FFFFFF"
+                  strokeLinecap="round"
+                  strokeLinejoin="bevel"
+                  strokeWidth="7"
+                  x1="21.660646"
+                  x2="21.9389922"
+                  y1="50.2479744"
+                  y2="43.7025053"
+                />
+                <line
+                  fill="#D8D8D8"
+                  id="Path-13"
+                  stroke="#FFFFFF"
+                  strokeLinecap="round"
+                  strokeLinejoin="bevel"
+                  strokeWidth="7"
+                  x1="55.0275427"
+                  x2="55.3058889"
+                  y1="51.0543255"
+                  y2="44.5088564"
+                />
+                <line
+                  fill="#D8D8D8"
+                  id="Path-14"
+                  stroke="#FFFFFF"
+                  strokeLinecap="round"
+                  strokeLinejoin="bevel"
+                  strokeWidth="7"
+                  x1="88.5632217"
+                  x2="88.7591718"
+                  y1="50.9367571"
+                  y2="44.7685661"
+                />
+                <line
+                  fill="#D8D8D8"
+                  id="Path-15"
+                  stroke="#FFFFFF"
+                  strokeLinecap="round"
+                  strokeLinejoin="bevel"
+                  strokeWidth="7"
+                  x1="129.85648"
+                  x2="126.430932"
+                  y1="35.6391401"
+                  y2="31.0744195"
+                />
+                <line
+                  fill="#D8D8D8"
+                  id="Path-16"
+                  stroke="#FFFFFF"
+                  strokeLinecap="round"
+                  strokeLinejoin="bevel"
+                  strokeWidth="7"
+                  x1="154.010406"
+                  x2="150.584859"
+                  y1="19.5895967"
+                  y2="15.0248762"
+                />
+              </g>
+            </g>
+          </g>
+          <g id="Group" mask="url(#mask-3)">
+            <g transform="translate(211.2377, 279.787) rotate(3) translate(-211.2377, -279.787)translate(79.8271, 117.9649)">
+              <path
+                d="M104.589605,87.1397576 C113.678147,124.181718 124.286871,159.453927 136.415777,192.956384 C148.544683,226.458842 166.840907,261.73105 191.304449,298.773011 L128.964605,310.638245 C117.123459,250.719121 108.661871,211.61821 103.579839,193.335511 C98.4978081,175.052812 90.5876518,141.988359 79.8493706,94.1421515 L104.589605,87.1397576"
+                fill="url(#linearGradient-5)"
+                id="Path-7"
+                transform="translate(135.5769, 198.889) scale(-1, 1) rotate(29) translate(-135.5769, -198.889)"
+              />
+              <g
+                fill="none"
+                id="Group-5"
+                strokeWidth="1"
+                transform="translate(-0, 0)"
+              >
+                <path
+                  d="M110.145578,66.9163305 C110.145578,66.9163305 96.4053436,45.4902344 72.176828,38.9726563 C56.0244843,34.6276042 37.7425832,39.2848832 17.3311249,52.9444934 C33.957427,66.3499874 47.9359426,73.9375 59.2666718,75.7070313 C76.2627655,78.3613281 110.145578,66.9163305 110.145578,66.9163305 Z"
+                  fill="url(#linearGradient-6)"
+                  id="Path-3"
+                  stroke="#2F8A00"
+                  strokeWidth="13"
+                />
+                <path
+                  d="M110.145578,67.5195313 C110.145578,67.5195313 62.2627655,61.4882813 27.8721405,87.5683594 C4.94505719,104.955078 -3.83749489,138.576823 1.52448427,188.433594 C30.3632332,159.046875 51.0019051,137.308594 63.4404999,123.21875 C82.0983921,102.083984 110.145578,67.5195313 110.145578,67.5195313 Z"
+                  fill="url(#linearGradient-7)"
+                  id="Path-2"
+                  stroke="#2F8A00"
+                  strokeWidth="13"
+                />
+                <path
+                  d="M110.145578,66.9163305 C108.155995,45.0879956 114.183338,28.6816406 128.227609,17.6972656 C142.27188,6.71289062 157.135161,0.813802083 172.817453,-6.62434122e-15 C167.879953,21.6489797 160.260812,36.5200734 149.960031,44.6132812 C139.65925,52.7064891 126.387766,60.1408388 110.145578,66.9163305 Z"
+                  fill="url(#linearGradient-8)"
+                  id="Path-4"
+                  stroke="#2F8A00"
+                  strokeWidth="13"
+                />
+                <path
+                  d="M110.145578,67.5195313 C140.424224,35.8543766 172.107818,24.5005879 205.196359,33.4581652 C238.284901,42.4157426 257.493234,61.1302083 262.821359,89.6015625 C227.408599,85.9244792 201.962635,83.2233073 186.483469,81.4980469 C171.004302,79.7727865 145.558338,75.1132813 110.145578,67.5195313 Z"
+                  fill="url(#linearGradient-9)"
+                  id="Path-5"
+                  stroke="#2F8A00"
+                  strokeWidth="13"
+                />
+                <path
+                  d="M110.145578,67.5195313 C145.528391,58.0846354 175.600656,63.8404948 200.362375,84.7871094 C225.124094,105.733724 240.60326,131.73763 246.799875,162.798828 C206.588937,155.181641 177.39037,142.56901 159.204172,124.960938 C141.017974,107.352865 124.665109,88.2057292 110.145578,67.5195313 Z"
+                  fill="url(#linearGradient-10)"
+                  id="Path-6"
+                  stroke="#2F8A00"
+                  strokeWidth="13"
+                />
+                <path
+                  d="M110.145578,67.5195313 C77.3304739,83.0690104 58.458078,105.964193 53.5283905,136.205078 C48.598703,166.445964 53.2321666,199.453125 67.4287811,235.226563 C92.6683645,193.572917 106.907297,163.453125 110.145578,144.867188 C113.383859,126.28125 113.383859,100.498698 110.145578,67.5195313 Z"
+                  fill="url(#linearGradient-11)"
+                  id="Path"
+                  stroke="#2F8A00"
+                  strokeWidth="13"
+                />
+                <path
+                  d="M111.547396,65.2435124 C97.8844958,87.5989394 88.6614926,107.90621 83.8783865,126.165325 C79.0952803,144.424439 76.1711848,159.635107 75.1060999,171.797326"
+                  id="Path-17"
+                  stroke="#2F8A00"
+                  strokeLinecap="round"
+                  strokeWidth="8"
+                />
+                <path
+                  d="M110.117177,68.6949816 C85.8302849,71.694603 66.8856755,79.9730794 53.2833489,93.5304109 C39.6810223,107.087742 29.9206735,120.223332 24.0023024,132.937181"
+                  id="Path-18"
+                  stroke="#2F8A00"
+                  strokeLinecap="round"
+                  strokeWidth="8"
+                />
+                <path
+                  d="M119.312523,58.8946477 C148.627912,50.6195284 170.848749,47.7702925 185.975033,50.3469399 C201.101318,52.9235874 213.309014,57.5770861 222.598122,64.3074361"
+                  id="Path-19"
+                  stroke="#2F8A00"
+                  strokeLinecap="round"
+                  strokeWidth="8"
+                />
+                <path
+                  d="M111.559466,64.3783677 C132.30744,73.1793341 150.809156,82.8632404 167.064615,93.4300867 C183.320074,103.996933 195.555604,114.050308 203.771206,123.590212"
+                  id="Path-20"
+                  stroke="#2F8A00"
+                  strokeLinecap="round"
+                  strokeWidth="8"
+                />
+              </g>
+            </g>
+          </g>
+          <ellipse
+            cx="316.5"
+            cy="715.5"
+            fill="url(#linearGradient-12)"
+            id="Oval-Copy"
+            mask="url(#mask-3)"
+            rx="266"
+            ry="316.5"
+          />
+          <g id="Group-4" mask="url(#mask-3)">
+            <g transform="translate(397, -24)">
+              <circle
+                cx="168.5"
+                cy="113.5"
+                fill="url(#linearGradient-13)"
+                fillRule="evenodd"
+                id="Oval"
+                r="113.5"
+                stroke="none"
+              />
+              <line
+                fill="none"
+                id="Line"
+                stroke="url(#linearGradient-14)"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="12"
+                x1="30"
+                x2="6.24500451e-16"
+                y1="113"
+                y2="113"
+              />
+              <line
+                fill="none"
+                id="Line-Copy-4"
+                stroke="url(#linearGradient-15)"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="12"
+                x1="33.5"
+                x2="7"
+                y1="79.5"
+                y2="74"
+              />
+              <line
+                fill="none"
+                id="Line-Copy"
+                stroke="url(#linearGradient-16)"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="12"
+                x1="34"
+                x2="5"
+                y1="146"
+                y2="154"
+              />
+              <line
+                fill="none"
+                id="Line-Copy-2"
+                stroke="url(#linearGradient-17)"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="12"
+                x1="45"
+                x2="21"
+                y1="177"
+                y2="190"
+              />
+              <line
+                fill="none"
+                id="Line-Copy-3"
+                stroke="url(#linearGradient-18)"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="12"
+                x1="67"
+                x2="47"
+                y1="204"
+                y2="223"
+              />
+              <line
+                fill="none"
+                id="Line-Copy-6"
+                stroke="url(#linearGradient-19)"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="12"
+                x1="94.3730469"
+                x2="80.5390625"
+                y1="227"
+                y2="249.84668"
+              />
+              <line
+                fill="none"
+                id="Line-Copy-7"
+                stroke="url(#linearGradient-20)"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="12"
+                x1="127.5"
+                x2="120"
+                y1="243.5"
+                y2="268"
+              />
+              <line
+                fill="none"
+                id="Line-Copy-5"
+                stroke="url(#linearGradient-21)"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+                strokeWidth="12"
+                x1="167.5"
+                x2="168"
+                y1="252.5"
+                y2="277"
+              />
+            </g>
+          </g>
+          <mask fill="white" id="mask-23">
+            <use xlinkHref="#path-22" />
+          </mask>
+          <circle
+            cx="315.5"
+            cy="316.5"
+            r="304"
+            stroke="#000000"
+            strokeWidth="25"
+          />
+        </g>
+      </g>
     </svg>
   ),
   ThemeFolder: (props) => (

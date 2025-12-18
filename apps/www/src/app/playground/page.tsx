@@ -1,4 +1,5 @@
 import { lazy } from "react";
+
 import { ComponentWrapper } from "./_components/component-wrapper";
 
 const SINK_COMPONENTS: [
@@ -174,14 +175,14 @@ const SINK_COMPONENTS: [
       }))
     ),
   ],
-  [
-    "form",
-    lazy(() =>
-      import("./_components/demos/form-demo").then((mod) => ({
-        default: mod.FormDemo,
-      }))
-    ),
-  ],
+  // [
+  //   "form",
+  //   lazy(() =>
+  //     import("./_components/demos/form-demo").then((mod) => ({
+  //       default: mod.FormDemo,
+  //     }))
+  //   ),
+  // ],
   [
     "hover-card",
     lazy(() =>
@@ -195,6 +196,14 @@ const SINK_COMPONENTS: [
     lazy(() =>
       import("./_components/demos/input-demo").then((mod) => ({
         default: mod.InputDemo,
+      }))
+    ),
+  ],
+  [
+    "input-group",
+    lazy(() =>
+      import("./_components/demos/input-group-demo").then((mod) => ({
+        default: mod.InputGroupDemo,
       }))
     ),
   ],

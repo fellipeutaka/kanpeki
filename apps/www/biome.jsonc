@@ -59,7 +59,10 @@
       }
     },
     {
-      "includes": ["src/registry/ui/**/*.tsx", "src/registry/examples/*.tsx"],
+      "includes": [
+        "src/registry/ui/**/*.tsx",
+        "src/registry/examples/**/*.tsx"
+      ],
       "linter": {
         "rules": {
           "performance": {
@@ -76,6 +79,25 @@
           },
           "correctness": {
             "useExhaustiveDependencies": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "public/r/*.json",
+        "registry.json",
+        "src/content/docs/**/*.json"
+      ],
+      "assist": {
+        "actions": {
+          "source": {
+            "useSortedKeys": {
+              "level": "on",
+              "options": {
+                "sortOrder": "natural"
+              }
+            }
           }
         }
       }

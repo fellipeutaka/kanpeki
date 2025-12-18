@@ -1,35 +1,35 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "select",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components",
     "lucide-react"
   ],
+  "files": [
+    {
+      "content": "export * as Select from \"./namespace\";\nexport * from \"./select\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/select/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { ChevronDownIcon } from \"lucide-react\";\nimport {\n  Button,\n  composeRenderProps,\n  SelectValue as RACSelectValue,\n  Select,\n} from \"react-aria-components\";\n\nimport { cn } from \"~/registry/lib/cva\";\nimport { SelectStyles } from \"./styles\";\n\nexport interface SelectRootProps extends React.ComponentProps<typeof Select> {}\n\nexport function SelectRoot({ className, ...props }: SelectRootProps) {\n  return (\n    <Select\n      className={composeRenderProps(className, (className) =>\n        cn(\"group grid gap-3\", className)\n      )}\n      data-slot=\"select\"\n      {...props}\n    />\n  );\n}\n\nexport interface SelectTriggerProps\n  extends React.ComponentProps<typeof Button>,\n    VariantProps<typeof SelectStyles.Trigger> {}\n\nexport function SelectTrigger({\n  className,\n  size = \"default\",\n  children,\n  ...props\n}: SelectTriggerProps) {\n  return (\n    <Button\n      className={composeRenderProps(className, (className) =>\n        SelectStyles.Trigger({ className })\n      )}\n      data-slot=\"select-trigger\"\n      {...props}\n    >\n      {composeRenderProps(children, (children) => (\n        <>\n          {children}\n          <span aria-hidden=\"true\" data-slot=\"select-icon\">\n            <ChevronDownIcon className=\"size-4 transition group-pressed:rotate-180\" />\n          </span>\n        </>\n      ))}\n    </Button>\n  );\n}\n\n// export interface SelectGroupProps\n//   extends React.ComponentProps<typeof SelectPrimitive.Group> {}\n\n// export function SelectGroup({ ...props }: SelectGroupProps) {\n//   return <SelectPrimitive.Group data-slot=\"select-group\" {...props} />;\n// }\n\nexport interface SelectValueProps\n  extends React.ComponentProps<typeof RACSelectValue> {}\n\nexport function SelectValue({ className, ...props }: SelectValueProps) {\n  return (\n    <RACSelectValue\n      className={composeRenderProps(className, (className) =>\n        SelectStyles.Value({ className })\n      )}\n      data-slot=\"select-value\"\n      {...props}\n    />\n  );\n}\n\n// export interface SelectLabelProps\n//   extends React.ComponentProps<typeof SelectPrimitive.Label> {}\n\n// export function SelectLabel({ className, ...props }: SelectLabelProps) {\n//   return (\n//     <SelectPrimitive.Label\n//       data-slot=\"select-label\"\n//       className={cn(\"px-2 py-1.5 text-muted-foreground text-xs\", className)}\n//       {...props}\n//     />\n//   );\n// }\n\n// export interface SelectSeparatorProps\n//   extends React.ComponentProps<typeof SelectPrimitive.Separator> {}\n\n// export function SelectSeparator({ className, ...props }: SelectSeparatorProps) {\n//   return (\n//     <SelectPrimitive.Separator\n//       data-slot=\"select-separator\"\n//       className={cn(\"-mx-1 pointer-events-none my-1 h-px bg-border\", className)}\n//       {...props}\n//     />\n//   );\n// }\n",
+      "path": "src/registry/ui/select/select.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SelectStyles = {\n  Trigger: cva({\n    base: [\n      \"group flex w-fit items-center justify-between gap-2 whitespace-nowrap rounded-md border border-input bg-transparent\",\n      \"px-3 py-2 text-sm shadow-xs outline-none transition-[color,box-shadow]\",\n      \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n      \"disabled:cursor-not-allowed disabled:opacity-50\",\n      \"group-invalid:border-destructive group-invalid:ring-destructive/20\",\n      \"dark:bg-input/30 dark:group-invalid:ring-destructive/40 dark:hover:bg-input/50\",\n      \"[&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    ],\n    defaultVariants: {\n      size: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"min-h-9\",\n        sm: \"min-h-8\",\n      },\n    },\n  }),\n  Value: cva({\n    base: [\n      \"line-clamp-1 flex items-center gap-2 data-placeholder:text-muted-foreground\",\n    ],\n  }),\n};\n",
+      "path": "src/registry/ui/select/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  SelectRoot as Root,\n  SelectTrigger as Trigger,\n  SelectValue as Value,\n} from \"./select\";\n",
+      "path": "src/registry/ui/select/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "select",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/select/index.ts",
-      "content": "export * as Select from \"./namespace\";\nexport * from \"./select\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/select/select.tsx",
-      "content": "\"use client\";\n\nimport type { VariantProps } from \"cva\";\nimport { ChevronDownIcon } from \"lucide-react\";\nimport {\n  Button,\n  composeRenderProps,\n  SelectValue as RACSelectValue,\n  Select,\n} from \"react-aria-components\";\n\nimport { cn } from \"~/registry/lib/cva\";\nimport { SelectStyles } from \"./styles\";\n\nexport interface SelectRootProps extends React.ComponentProps<typeof Select> {}\n\nexport function SelectRoot({ className, ...props }: SelectRootProps) {\n  return (\n    <Select\n      className={composeRenderProps(className, (className) =>\n        cn(\"group grid gap-3\", className)\n      )}\n      data-slot=\"select\"\n      {...props}\n    />\n  );\n}\n\nexport interface SelectTriggerProps\n  extends React.ComponentProps<typeof Button>,\n    VariantProps<typeof SelectStyles.Trigger> {}\n\nexport function SelectTrigger({\n  className,\n  size = \"default\",\n  children,\n  ...props\n}: SelectTriggerProps) {\n  return (\n    <Button\n      className={composeRenderProps(className, (className) =>\n        SelectStyles.Trigger({ className })\n      )}\n      data-slot=\"select-trigger\"\n      {...props}\n    >\n      {composeRenderProps(children, (children) => (\n        <>\n          {children}\n          <span aria-hidden=\"true\" data-slot=\"select-icon\">\n            <ChevronDownIcon className=\"size-4 transition group-pressed:rotate-180\" />\n          </span>\n        </>\n      ))}\n    </Button>\n  );\n}\n\n// export interface SelectGroupProps\n//   extends React.ComponentProps<typeof SelectPrimitive.Group> {}\n\n// export function SelectGroup({ ...props }: SelectGroupProps) {\n//   return <SelectPrimitive.Group data-slot=\"select-group\" {...props} />;\n// }\n\nexport interface SelectValueProps\n  extends React.ComponentProps<typeof RACSelectValue> {}\n\nexport function SelectValue({ className, ...props }: SelectValueProps) {\n  return (\n    <RACSelectValue\n      className={composeRenderProps(className, (className) =>\n        SelectStyles.Value({ className })\n      )}\n      data-slot=\"select-value\"\n      {...props}\n    />\n  );\n}\n\n// export interface SelectLabelProps\n//   extends React.ComponentProps<typeof SelectPrimitive.Label> {}\n\n// export function SelectLabel({ className, ...props }: SelectLabelProps) {\n//   return (\n//     <SelectPrimitive.Label\n//       data-slot=\"select-label\"\n//       className={cn(\"px-2 py-1.5 text-muted-foreground text-xs\", className)}\n//       {...props}\n//     />\n//   );\n// }\n\n// export interface SelectSeparatorProps\n//   extends React.ComponentProps<typeof SelectPrimitive.Separator> {}\n\n// export function SelectSeparator({ className, ...props }: SelectSeparatorProps) {\n//   return (\n//     <SelectPrimitive.Separator\n//       data-slot=\"select-separator\"\n//       className={cn(\"-mx-1 pointer-events-none my-1 h-px bg-border\", className)}\n//       {...props}\n//     />\n//   );\n// }\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/select/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const SelectStyles = {\n  Trigger: cva({\n    base: [\n      \"group flex w-fit items-center justify-between gap-2 whitespace-nowrap rounded-md border border-input bg-transparent\",\n      \"px-3 py-2 text-sm shadow-xs outline-none transition-[color,box-shadow]\",\n      \"focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50\",\n      \"disabled:cursor-not-allowed disabled:opacity-50\",\n      \"group-invalid:border-destructive group-invalid:ring-destructive/20\",\n      \"dark:bg-input/30 dark:group-invalid:ring-destructive/40 dark:hover:bg-input/50\",\n      \"[&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    ],\n    defaultVariants: {\n      size: \"default\",\n    },\n    variants: {\n      size: {\n        default: \"min-h-9\",\n        sm: \"min-h-8\",\n      },\n    },\n  }),\n  Value: cva({\n    base: [\n      \"line-clamp-1 flex items-center gap-2 data-placeholder:text-muted-foreground\",\n    ],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/select/namespace.ts",
-      "content": "export {\n  SelectRoot as Root,\n  SelectTrigger as Trigger,\n  SelectValue as Value,\n} from \"./select\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

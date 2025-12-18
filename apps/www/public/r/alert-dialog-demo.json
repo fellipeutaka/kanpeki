@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Button } from \"~/registry/ui/button/button\";\nimport { Dialog } from \"~/registry/ui/dialog\";\n\nexport function AlertDialogDemo() {\n  return (\n    <Dialog.Root>\n      <Button variant=\"outline\">Show Dialog</Button>\n\n      <Dialog.Overlay isDismissable={false}>\n        <Dialog.Modal>\n          <Dialog.Content role=\"alertdialog\">\n            <Dialog.Header>\n              <Dialog.Title>Are you absolutely sure?</Dialog.Title>\n              <Dialog.Description>\n                This action cannot be undone. This will permanently delete your\n                account and remove your data from our servers.\n              </Dialog.Description>\n            </Dialog.Header>\n            <Dialog.Footer>\n              <Button slot=\"close\" variant=\"outline\">\n                Cancel\n              </Button>\n              <Button>Continue</Button>\n            </Dialog.Footer>\n          </Dialog.Content>\n        </Dialog.Modal>\n      </Dialog.Overlay>\n    </Dialog.Root>\n  );\n}\n",
+      "path": "src/registry/examples/dialog/alert-dialog-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "alert-dialog-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/dialog"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/alert-dialog-demo.tsx",
-      "content": "import { Button } from \"~/registry/ui/button/button\";\nimport { Dialog } from \"~/registry/ui/dialog\";\n\nexport function AlertDialogDemo() {\n  return (\n    <Dialog.Root>\n      <Button variant=\"outline\">Show Dialog</Button>\n\n      <Dialog.Overlay isDismissable={false}>\n        <Dialog.Modal>\n          <Dialog.Content role=\"alertdialog\">\n            <Dialog.Header>\n              <Dialog.Title>Are you absolutely sure?</Dialog.Title>\n              <Dialog.Description>\n                This action cannot be undone. This will permanently delete your\n                account and remove your data from our servers.\n              </Dialog.Description>\n            </Dialog.Header>\n            <Dialog.Footer>\n              <Button slot=\"close\" variant=\"outline\">\n                Cancel\n              </Button>\n              <Button>Continue</Button>\n            </Dialog.Footer>\n          </Dialog.Content>\n        </Dialog.Modal>\n      </Dialog.Overlay>\n    </Dialog.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

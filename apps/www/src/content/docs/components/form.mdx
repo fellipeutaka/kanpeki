@@ -1,11 +1,23 @@
 ---
 title: Form
-description: A group of inputs that allows users to submit data to a server, with support for providing field validation errors.
+description: A form component that coordinates submission and validation.
 links:
   docs: https://react-spectrum.adobe.com/react-aria/Form.html
 ---
 
-<ComponentPreview name="textfield-form" />
+<Alert.Root>
+  <AlertIcon className="size-4" />
+  <Alert.Description>
+    Form is a **client-only adapter** around React Aria Components. It exists
+    to: - Explicitly define a client boundary (`"use client"`) - Isolate React
+    Aria as an implementation detail - Provide a stable public API and
+    consistent developer experience **Form is a minimal, non-visual coordination
+    layer.** It handles submission and validation but does not manage field
+    state or control layout. For field composition, use
+    [Field](/docs/components/field). See the [Forms architecture
+    overview](/docs/forms) to understand the complete system.
+  </Alert.Description>
+</Alert.Root>
 
 ## Installation
 
@@ -31,38 +43,124 @@ npx shadcn@latest add @kanpeki/form
 
 <ComponentSource name="form" />
 
-<Step>Update the import paths to match your project setup.</Step>
-
 </Steps>
 
 </Tabs.Content>
 
 </Tabs.Root>
 
-## Usage
+## Overview
 
-### Default (React Aria)
+Form is a **minimal, non-visual** component that coordinates:
 
-<ComponentPreview name="textfield-form" />
+- Form submission via `onSubmit`
+- Server-side validation errors via `validationErrors`
+- Reset handling via `onReset`
 
-### React Hook Form
+Form does **not**:
 
-<ComponentPreview name="react-hook-form" />
+- Manage field state
+- Control layout
+- Replace the [Field](/docs/components/field) component
+- Render visual elements or field containers
 
-### Tanstack Form
+For layout and field composition, use the [Field](/docs/components/field) component.
 
-<ComponentPreview name="tanstack-form" />
+### Understanding the architecture
+
+Form is **only** responsible for submission and validation coordination. It does not handle:
+
+- Individual field layout → Use [Field](/docs/components/field)
+- Input behavior and accessibility → Use [TextField](/docs/components/textfield) or similar
+- Complex form state → See [Forms overview](/docs/forms) for library integrations
+
+**Recommended reading:**
+
+- [Forms architecture overview](/docs/forms) – Complete explanation of the three-layer system
+- [Field documentation](/docs/components/field) – The composition root for all form fields
+
+## Anatomy
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { Field } from "~/components/ui/field";
+import { Form } from "~/components/ui/form";
+import { Input } from "~/components/ui/input";
+import { TextField } from "~/components/ui/text-field";
+
+<Form>
+  <Field.Root render={<TextField name="email" isRequired />}>
+    <Field.Label>Email</Field.Label>
+    <Input />
+    <Field.Error />
+  </Field.Root>
+  <Button type="submit">Submit</Button>
+</Form>;
+```
+
+## Form Libraries
+
+For complex forms with client-side validation and state management, see the [Forms](/docs/forms) guide:
+
+- [TanStack Form](/docs/forms/tanstack-form) - Headless form state management
+- [React Hook Form](/docs/forms/react-hook-form) - Performance-focused forms
+- [React Aria](/docs/forms/react-aria) - Native HTML validation
 
 ## Examples
 
-See the following links for more examples on how to use the `<Form />` component with other components:
+### Basic
 
-- [Checkbox](/docs/components/checkbox#form)
-- [Date Field](/docs/components/date-field#form)
-  {/* - [Date Picker](/docs/components/date-picker#form) */}
-- [Radio Group](/docs/components/radio-group#form)
-- [Select](/docs/components/select#form)
-- [Switch](/docs/components/switch#form)
-- [Textarea](/docs/components/textarea#form)
-- [Textfield](/docs/components/textfield#form)
-  {/* - [Combobox](/docs/components/combobox#form) */}
+<ComponentPreview name="textfield-form" />
+
+### Server Validation
+
+Use the `validationErrors` prop to display server-side validation errors.
+
+```tsx
+<Form validationErrors={{ email: "This email is already registered." }}>
+  <Field.Root render={<TextField name="email" />}>
+    <Field.Label>Email</Field.Label>
+    <Input />
+    <Field.Error />
+  </Field.Root>
+</Form>
+```
+
+### Reset
+
+```tsx
+<Form onReset={() => console.log("Form reset")}>
+  <Field.Root render={<TextField name="email" />}>
+    <Field.Label>Email</Field.Label>
+    <Input />
+  </Field.Root>
+  <Button type="submit">Submit</Button>
+  <Button type="reset" variant="outline">
+    Reset
+  </Button>
+</Form>
+```
+
+## Props
+
+Form accepts all props from React Aria's [Form](https://react-spectrum.adobe.com/react-aria/Form.html#props).
+
+| Prop                 | Type                                 | Default    | Description                            |
+| -------------------- | ------------------------------------ | ---------- | -------------------------------------- |
+| `validationErrors`   | `Record<string, string \| string[]>` |            | Server-side validation errors          |
+| `validationBehavior` | `"native" \| "aria"`                 | `"native"` | How validation errors are displayed    |
+| `onSubmit`           | `(e: FormEvent) => void`             |            | Called when form is submitted          |
+| `onReset`            | `(e: FormEvent) => void`             |            | Called when form is reset              |
+| `onInvalid`          | `(e: FormEvent) => void`             |            | Called when form has validation errors |
+
+## Field Examples
+
+See the following components for form integration examples:
+
+- [Checkbox](/docs/components/checkbox)
+- [Date Field](/docs/components/date-field)
+- [Radio Group](/docs/components/radio-group)
+- [Select](/docs/components/select)
+- [Switch](/docs/components/switch)
+- [Textarea](/docs/components/textarea)
+- [TextField](/docs/components/textfield)

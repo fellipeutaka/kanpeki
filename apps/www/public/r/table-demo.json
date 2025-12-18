@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Table } from \"~/registry/ui/table\";\n\nconst invoices = [\n  {\n    invoice: \"INV001\",\n    paymentMethod: \"Credit Card\",\n    paymentStatus: \"Paid\",\n    totalAmount: \"$250.00\",\n  },\n  {\n    invoice: \"INV002\",\n    paymentMethod: \"PayPal\",\n    paymentStatus: \"Pending\",\n    totalAmount: \"$150.00\",\n  },\n  {\n    invoice: \"INV003\",\n    paymentMethod: \"Bank Transfer\",\n    paymentStatus: \"Unpaid\",\n    totalAmount: \"$350.00\",\n  },\n  {\n    invoice: \"INV004\",\n    paymentMethod: \"Credit Card\",\n    paymentStatus: \"Paid\",\n    totalAmount: \"$450.00\",\n  },\n  {\n    invoice: \"INV005\",\n    paymentMethod: \"PayPal\",\n    paymentStatus: \"Paid\",\n    totalAmount: \"$550.00\",\n  },\n  {\n    invoice: \"INV006\",\n    paymentMethod: \"Bank Transfer\",\n    paymentStatus: \"Pending\",\n    totalAmount: \"$200.00\",\n  },\n  {\n    invoice: \"INV007\",\n    paymentMethod: \"Credit Card\",\n    paymentStatus: \"Unpaid\",\n    totalAmount: \"$300.00\",\n  },\n];\n\nexport function TableDemo() {\n  return (\n    <Table.Root>\n      <Table.Caption>A list of your recent invoices.</Table.Caption>\n      <Table.Header>\n        <Table.Row>\n          <Table.Head className=\"w-[100px]\">Invoice</Table.Head>\n          <Table.Head>Status</Table.Head>\n          <Table.Head>Method</Table.Head>\n          <Table.Head className=\"text-right\">Amount</Table.Head>\n        </Table.Row>\n      </Table.Header>\n      <Table.Body>\n        {invoices.map((invoice) => (\n          <Table.Row key={invoice.invoice}>\n            <Table.Cell className=\"font-medium\">{invoice.invoice}</Table.Cell>\n            <Table.Cell>{invoice.paymentStatus}</Table.Cell>\n            <Table.Cell>{invoice.paymentMethod}</Table.Cell>\n            <Table.Cell className=\"text-right\">\n              {invoice.totalAmount}\n            </Table.Cell>\n          </Table.Row>\n        ))}\n      </Table.Body>\n      <Table.Footer>\n        <Table.Row>\n          <Table.Cell colSpan={3}>Total</Table.Cell>\n          <Table.Cell className=\"text-right\">$2,500.00</Table.Cell>\n        </Table.Row>\n      </Table.Footer>\n    </Table.Root>\n  );\n}\n",
+      "path": "src/registry/examples/table/table-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "table-demo",
+  "registryDependencies": [
+    "@kanpeki/table"
+  ],
+  "type": "registry:example"
+}

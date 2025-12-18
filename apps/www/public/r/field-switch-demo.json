@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Switch } from \"~/registry/ui/switch\";\n\nexport function FieldSwitchDemo() {\n  return (\n    <Field.Root orientation=\"horizontal\">\n      <Field.Content>\n        <Field.Label>Marketing emails</Field.Label>\n        <Field.Description>\n          Receive emails about new products and features.\n        </Field.Description>\n      </Field.Content>\n      <Switch.Root>\n        <Switch.Track>\n          <Switch.Thumb />\n        </Switch.Track>\n      </Switch.Root>\n    </Field.Root>\n  );\n}\n",
+      "path": "src/registry/examples/field/field-switch-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "field-switch-demo",
+  "registryDependencies": [
+    "@kanpeki/field"
+  ],
+  "type": "registry:example"
+}

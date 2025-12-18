@@ -35,6 +35,9 @@
         "source.fixAll.biome": true,
         "source.organizeImports.biome": true
       }
+    },
+    "Markdown": {
+      "formatter": "auto"
     }
   },
   "lsp": {

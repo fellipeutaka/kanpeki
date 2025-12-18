@@ -1,34 +1,19 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "form",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { Form as RACForm } from \"react-aria-components\";\n\nexport interface FormProps extends React.ComponentProps<typeof RACForm> {}\nexport function Form(props: FormProps) {\n  return <RACForm {...props} data-slot=\"form\" />;\n}\n",
+      "path": "src/registry/ui/form/index.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "form",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/form/index.ts",
-      "content": "export * from \"./form\";\nexport * as Form from \"./namespace\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/form/form.tsx",
-      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  FieldError,\n  Form,\n  Text,\n} from \"react-aria-components\";\nimport { FormStyles } from \"./styles\";\n\nexport interface FormRootProps extends React.ComponentProps<typeof Form> {}\nexport function FormRoot(props: FormRootProps) {\n  return <Form {...props} data-slot=\"form-root\" />;\n}\n\nexport interface FormDescriptionProps\n  extends Omit<React.ComponentProps<typeof Text>, \"slot\"> {}\n\nexport function FormDescription({ className, ...props }: FormDescriptionProps) {\n  return (\n    <Text\n      {...props}\n      className={FormStyles.Description({\n        className,\n      })}\n      data-slot=\"form-description\"\n      slot=\"description\"\n    />\n  );\n}\n\nexport interface FormMessageProps\n  extends React.ComponentProps<typeof FieldError> {}\n\nexport function FormMessage({ className, ...props }: FormMessageProps) {\n  return (\n    <FieldError\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        FormStyles.Message({\n          className,\n        })\n      )}\n      data-slot=\"form-message\"\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/form/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const FormStyles = {\n  Description: cva({\n    base: [\"text-pretty text-muted-foreground text-sm\"],\n  }),\n  Message: cva({\n    base: [\"text-pretty text-destructive text-sm\"],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/form/namespace.ts",
-      "content": "export {\n  FormDescription as Description,\n  FormMessage as Message,\n  FormRoot as Root,\n} from \"./form\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

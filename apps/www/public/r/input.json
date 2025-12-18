@@ -1,29 +1,29 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "input",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "export * from \"./input\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/input/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport { composeRenderProps, Input as RACInput } from \"react-aria-components\";\nimport { InputStyles } from \"./styles\";\n\nexport interface InputProps extends React.ComponentProps<typeof RACInput> {}\n\nexport function Input({ className, ...props }: InputProps) {\n  return (\n    <RACInput\n      className={composeRenderProps(className, (className) =>\n        InputStyles({ className })\n      )}\n      data-slot=\"input\"\n      {...props}\n    />\n  );\n}\n",
+      "path": "src/registry/ui/input/input.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const InputStyles = cva({\n  base: [\n    \"flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs outline-none\",\n    \"transition-[color,box-shadow]\",\n    \"selection:bg-primary selection:text-primary-foreground\",\n    \"file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground\",\n    \"file:text-sm placeholder:text-muted-foreground\",\n    \"disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n    \"md:text-sm dark:bg-input/30\",\n    \"focus:border-ring focus:ring-[3px] focus:ring-ring/50\",\n    \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n    \"invalid:border-destructive invalid:ring-destructive/20 dark:invalid:ring-destructive/40\",\n\n    // For search field\n    \"[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none\",\n  ],\n});\n",
+      "path": "src/registry/ui/input/styles.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "input",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/input/index.ts",
-      "content": "export * from \"./input\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/input/input.tsx",
-      "content": "\"use client\";\n\nimport { composeRenderProps, Input as RACInput } from \"react-aria-components\";\nimport { InputStyles } from \"./styles\";\n\nexport interface InputProps extends React.ComponentProps<typeof RACInput> {}\n\nexport function Input({ className, ...props }: InputProps) {\n  return (\n    <RACInput\n      className={composeRenderProps(className, (className) =>\n        InputStyles({ className })\n      )}\n      data-slot=\"input\"\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/input/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const InputStyles = cva({\n  base: [\n    \"flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs outline-none\",\n    \"transition-[color,box-shadow]\",\n    \"selection:bg-primary selection:text-primary-foreground\",\n    \"file:inline-flex file:h-7 file:border-0 file:bg-transparent file:font-medium file:text-foreground\",\n    \"file:text-sm placeholder:text-muted-foreground\",\n    \"disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50\",\n    \"md:text-sm dark:bg-input/30\",\n    \"focus:border-ring focus:ring-[3px] focus:ring-ring/50\",\n    \"aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40\",\n\n    // For search field\n    \"[&::-webkit-search-cancel-button]:appearance-none [&::-webkit-search-decoration]:appearance-none\",\n  ],\n});\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }

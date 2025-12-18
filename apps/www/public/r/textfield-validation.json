@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Field } from \"~/registry/ui/field\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nexport function TextfieldValidation() {\n  return (\n    <div className=\"flex flex-col gap-4\">\n      <Field.Root render={<TextField isRequired />}>\n        <Field.Label>Required field</Field.Label>\n        <Input placeholder=\"This field is required\" />\n      </Field.Root>\n      <Field.Root render={<TextField isInvalid />}>\n        <Field.Label>Invalid field</Field.Label>\n        <Input placeholder=\"This field has an error\" />\n        <Field.Error>Please enter a valid value.</Field.Error>\n      </Field.Root>\n      <Field.Root render={<TextField isDisabled />}>\n        <Field.Label>Disabled field</Field.Label>\n        <Input placeholder=\"This field is disabled\" />\n      </Field.Root>\n      <Field.Root\n        render={<TextField defaultValue=\"Read only value\" isReadOnly />}\n      >\n        <Field.Label>Read-only field</Field.Label>\n        <Input />\n      </Field.Root>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/textfield/textfield-validation.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "textfield-validation",
+  "registryDependencies": [
+    "@kanpeki/textfield"
+  ],
+  "type": "registry:example"
+}

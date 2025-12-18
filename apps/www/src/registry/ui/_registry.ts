@@ -156,6 +156,30 @@ export const ui: RegistryItem[] = [
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
   },
   {
+    name: "button-group",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/registry/ui/button-group/index.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/button-group/button-group.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/button-group/namespace.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/button-group/styles.ts",
+        type: "registry:ui",
+      },
+    ],
+    dependencies: ["@base-ui/react", "react-aria-components"],
+    registryDependencies: ["@kanpeki/separator"],
+  },
+  {
     name: "calendar",
     type: "registry:ui",
     files: [
@@ -447,23 +471,35 @@ export const ui: RegistryItem[] = [
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
   },
   {
+    name: "field",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/registry/ui/field/index.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/field/field.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/field/namespace.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/field/styles.ts",
+        type: "registry:ui",
+      },
+    ],
+    dependencies: ["@base-ui/react", "react-aria-components"],
+    registryDependencies: ["@kanpeki/label", "@kanpeki/separator"],
+  },
+  {
     name: "form",
     type: "registry:ui",
     files: [
       {
-        path: "src/registry/ui/form/index.ts",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/form/form.tsx",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/form/styles.ts",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/form/namespace.ts",
+        path: "src/registry/ui/form/index.tsx",
         type: "registry:ui",
       },
     ],
@@ -489,6 +525,34 @@ export const ui: RegistryItem[] = [
     ],
     dependencies: ["react-aria-components"],
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
+  },
+  {
+    name: "input-group",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/registry/ui/input-group/index.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/input-group/input-group.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/input-group/namespace.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/input-group/styles.ts",
+        type: "registry:ui",
+      },
+    ],
+    dependencies: ["@base-ui/react", "react-aria-components"],
+    registryDependencies: [
+      "@kanpeki/button",
+      "@kanpeki/input",
+      "@kanpeki/textarea",
+    ],
   },
   {
     name: "input-otp",
@@ -638,15 +702,7 @@ export const ui: RegistryItem[] = [
     type: "registry:ui",
     files: [
       {
-        path: "src/registry/ui/number-field/index.ts",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/number-field/number-field.tsx",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/number-field/styles.ts",
+        path: "src/registry/ui/number-field/index.tsx",
         type: "registry:ui",
       },
     ],
@@ -1066,19 +1122,11 @@ export const ui: RegistryItem[] = [
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
   },
   {
-    name: "textfield",
+    name: "text-field",
     type: "registry:ui",
     files: [
       {
-        path: "src/registry/ui/textfield/index.ts",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/textfield/textfield.tsx",
-        type: "registry:ui",
-      },
-      {
-        path: "src/registry/ui/textfield/styles.ts",
+        path: "src/registry/ui/text-field/index.tsx",
         type: "registry:ui",
       },
     ],

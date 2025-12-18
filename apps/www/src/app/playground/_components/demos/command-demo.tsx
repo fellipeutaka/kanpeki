@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import { Autocomplete } from "~/registry/ui/autocomplete";
 import { Dialog } from "~/registry/ui/dialog";
+import { InputGroup } from "~/registry/ui/input-group";
 import { Keyboard } from "~/registry/ui/keyboard";
 import { Menu } from "~/registry/ui/menu";
 import { SearchField } from "~/registry/ui/search-field";
@@ -52,11 +53,23 @@ export function CommandDemo() {
         <Dialog.Modal className="bg-popover p-0 text-popover-foreground">
           <Dialog.Content className="gap-0">
             <Autocomplete>
-              <SearchField.Root aria-label="Search" autoFocus className="h-12">
-                <SearchIcon />
-                <SearchField.Input placeholder="Type a command or search..." />
-                <SearchField.Button />
-              </SearchField.Root>
+              <InputGroup.Root
+                render={
+                  <SearchField.Root
+                    aria-label="Search"
+                    autoFocus
+                    className="h-12"
+                  />
+                }
+              >
+                <InputGroup.Addon>
+                  <SearchIcon />
+                </InputGroup.Addon>
+                <InputGroup.Input placeholder="Type a command or search..." />
+                <InputGroup.Addon align="inline-end">
+                  <SearchField.Button />
+                </InputGroup.Addon>
+              </InputGroup.Root>
 
               <Menu.Content
                 renderEmptyState={() => (

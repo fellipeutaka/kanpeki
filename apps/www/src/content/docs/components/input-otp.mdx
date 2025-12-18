@@ -1,0 +1,102 @@
+---
+title: Input OTP
+description: Accessible one-time password component with copy paste functionality.
+links:
+  docs: https://input-otp.rodz.dev
+---
+
+<ComponentPreview name="input-otp-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/input-otp
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="input-otp" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
+
+```tsx
+import { Label } from "~/components/ui/label";
+import { RadioGroup } from "~/components/ui/radio-group";
+
+<RadioGroup.Root>
+  <RadioGroup.Item>
+    <RadioGroup.Indicator />
+    <Label />
+  </RadioGroup.Item>
+</RadioGroup.Root>;
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
+
+```tsx
+import { Label } from "~/components/ui/label";
+import { RadioGroupItem, RadioGroupRoot } from "~/components/ui/radio-group";
+
+<RadioGroupRoot>
+  <RadioGroupItem>
+    <RadioGroupIndicator />
+    <Label />
+  </RadioGroupItem>
+</RadioGroupRoot>;
+```
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Examples
+
+### With Description
+
+<ComponentPreview name="radio-group-with-description-demo" />
+
+### Disabled
+
+<ComponentPreview name="radio-group-disabled-demo" />
+
+### Form
+
+<Alert.Root variant="warning">
+  <AlertIcon variant="warning" className="size-4" />
+  <Alert.Title>Under Construction</Alert.Title>
+  <Alert.Description>
+    This component is currently being built. Check back soon for updates!
+  </Alert.Description>
+</Alert.Root>

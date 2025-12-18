@@ -20,7 +20,7 @@ export const CalendarStyles = {
     variants: {
       isToday: {
         true: [
-          "after:-translate-x-1/2 after:absolute after:start-1/2 after:bottom-1 after:z-10",
+          "after:absolute after:start-1/2 after:bottom-1 after:z-10 after:-translate-x-1/2",
           "after:size-[3px] after:rounded-full after:bg-current",
         ],
       },

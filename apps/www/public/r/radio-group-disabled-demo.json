@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Label } from \"~/registry/ui/label/label\";\nimport { RadioGroup } from \"~/registry/ui/radio-group\";\n\nexport function RadioGroupDisabledDemo() {\n  return (\n    <RadioGroup.Root aria-label=\"Favorite pet\">\n      <RadioGroup.Item value=\"dog\">\n        <RadioGroup.Indicator />\n        <Label>Dog</Label>\n      </RadioGroup.Item>\n\n      <RadioGroup.Item value=\"cat\">\n        <RadioGroup.Indicator />\n        <Label>Cat</Label>\n      </RadioGroup.Item>\n\n      <RadioGroup.Item isDisabled value=\"dragon\">\n        <RadioGroup.Indicator />\n        <Label>Dragon</Label>\n      </RadioGroup.Item>\n    </RadioGroup.Root>\n  );\n}\n",
+      "path": "src/registry/examples/radio-group/radio-group-disabled-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "radio-group-disabled-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/radio-group"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/radio-group-disabled-demo.tsx",
-      "content": "import { Label } from \"~/registry/ui/label/label\";\nimport { RadioGroup } from \"~/registry/ui/radio-group\";\n\nexport function RadioGroupDisabledDemo() {\n  return (\n    <RadioGroup.Root aria-label=\"Favorite pet\">\n      <RadioGroup.Item value=\"dog\">\n        <RadioGroup.Indicator />\n        <Label>Dog</Label>\n      </RadioGroup.Item>\n\n      <RadioGroup.Item value=\"cat\">\n        <RadioGroup.Indicator />\n        <Label>Cat</Label>\n      </RadioGroup.Item>\n\n      <RadioGroup.Item isDisabled value=\"dragon\">\n        <RadioGroup.Indicator />\n        <Label>Dragon</Label>\n      </RadioGroup.Item>\n    </RadioGroup.Root>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

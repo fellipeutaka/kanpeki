@@ -40,6 +40,10 @@ export const docsConfig: DocsConfig = {
           title: "Dark Mode",
         },
         {
+          href: "/docs/forms",
+          title: "Forms",
+        },
+        {
           disabled: true,
           href: "/docs/changelog",
           title: "Changelog",
@@ -136,12 +140,23 @@ export const docsConfig: DocsConfig = {
           title: "Dialog",
         },
         {
-          href: "/docs/components/form",
-          title: "Form",
+          href: "/docs/components/field",
+          title: "Field",
+          label: "New",
         },
         {
-          href: "/docs/components/tooltip#hover-card",
-          title: "Hover Card",
+          href: "/docs/components/form",
+          title: "Form",
+          label: "Updated",
+        },
+        {
+          href: "/docs/components/input",
+          title: "Input",
+          label: "New",
+        },
+        {
+          href: "/docs/components/input-otp",
+          title: "Input OTP",
         },
         {
           href: "/docs/components/label",
@@ -221,6 +236,7 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/textfield",
           title: "TextField",
+          label: "Updated",
         },
         {
           href: "/docs/components/toast",

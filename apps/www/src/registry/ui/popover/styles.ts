@@ -4,7 +4,7 @@ export const PopoverStyles = {
   Arrow: cva({
     base: [
       "[&_svg]:fill-popover [&_svg]:stroke-border",
-      "placement-left:-rotate-90 placement-bottom:rotate-180 placement-right:rotate-90",
+      "placement-bottom:rotate-180 placement-left:-rotate-90 placement-right:rotate-90",
     ],
   }),
   Content: cva({

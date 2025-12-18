@@ -27,7 +27,7 @@ export const DialogStyles = {
       "fixed z-50 w-full bg-background p-4 shadow-lg outline-none",
       "entering:motion-opacity-in motion-duration-200 exiting:motion-opacity-out motion-ease",
       "sm:rounded-lg",
-      "-translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 max-w-lg border p-6",
+      "top-1/2 left-1/2 max-w-lg -translate-x-1/2 -translate-y-1/2 border p-6",
       "entering:motion-scale-in-95",
       "exiting:motion-scale-out-95",
     ],

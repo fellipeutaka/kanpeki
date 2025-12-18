@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "export function TypographyH4() {\n  return <h4 className=\"heading-4\">People stopped telling jokes</h4>;\n}\n",
+      "path": "src/registry/examples/typography/typography-h4-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "typography-h4-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/typography"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/typography-h4-demo.tsx",
-      "content": "export function TypographyH4() {\n  return <h4 className=\"heading-4\">People stopped telling jokes</h4>;\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

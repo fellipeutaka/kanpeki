@@ -1,15 +1,15 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Checkbox } from \"~/registry/ui/checkbox\";\n\nexport function CheckboxGroupDemo() {\n  return (\n    <Checkbox.Provider className=\"items-start rounded-lg border selected:border-blue-600 selected:bg-blue-50 p-3 hover:bg-accent/50 dark:selected:border-blue-900 dark:selected:bg-blue-950\">\n      <Checkbox.Root className=\"group-selected:border-blue-600 group-selected:bg-blue-600 group-selected:text-white dark:group-selected:border-blue-700 dark:group-selected:bg-blue-700\">\n        <Checkbox.Indicator />\n      </Checkbox.Root>\n      <div className=\"grid gap-1.5 font-normal\">\n        <p className=\"font-medium text-sm leading-none\">Enable notifications</p>\n        <p className=\"text-muted-foreground text-sm\">\n          You can enable or disable notifications at any time.\n        </p>\n      </div>\n    </Checkbox.Provider>\n  );\n}\n",
+      "path": "src/registry/examples/checkbox/checkbox-group-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
   "name": "checkbox-group-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "@kanpeki/checkbox"
   ],
-  "files": [
-    {
-      "path": "src/registry/examples/checkbox-group-demo.tsx",
-      "content": "import { Checkbox } from \"~/registry/ui/checkbox\";\n\nexport function CheckboxGroupDemo() {\n  return (\n    <Checkbox.Provider className=\"items-start rounded-lg border selected:border-blue-600 selected:bg-blue-50 p-3 hover:bg-accent/50 dark:selected:border-blue-900 dark:selected:bg-blue-950\">\n      <Checkbox.Root className=\"group-selected:border-blue-600 group-selected:bg-blue-600 group-selected:text-white dark:group-selected:border-blue-700 dark:group-selected:bg-blue-700\">\n        <Checkbox.Indicator />\n      </Checkbox.Root>\n      <div className=\"grid gap-1.5 font-normal\">\n        <p className=\"font-medium text-sm leading-none\">Enable notifications</p>\n        <p className=\"text-muted-foreground text-sm\">\n          You can enable or disable notifications at any time.\n        </p>\n      </div>\n    </Checkbox.Provider>\n  );\n}\n",
-      "type": "registry:example"
-    }
-  ]
+  "type": "registry:example"
 }

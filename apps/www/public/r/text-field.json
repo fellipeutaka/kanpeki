@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": [
+    "react-aria-components"
+  ],
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { TextField as RACTextField } from \"react-aria-components\";\n\nexport interface TextFieldProps\n  extends React.ComponentProps<typeof RACTextField> {}\n\nexport function TextField(props: TextFieldProps) {\n  return <RACTextField data-slot=\"TextField\" {...props} />;\n}\n",
+      "path": "src/registry/ui/text-field/index.tsx",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "text-field",
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "type": "registry:ui"
+}

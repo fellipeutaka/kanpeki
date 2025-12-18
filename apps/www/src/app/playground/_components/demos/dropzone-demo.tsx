@@ -81,8 +81,7 @@ function WithFileTrigger() {
       <Dropzone.Root className="min-h-52 w-96 text-center">
         {previewUrl ? (
           <div className="absolute inset-0 flex items-center justify-center p-4">
-            {/** biome-ignore lint/correctness/useImageSize: This is fine. */}
-            {/** biome-ignore lint/performance/noImgElement: This is fine. */}
+            {/** biome-ignore lint/performance/noImgElement: It's fine for this example */}
             <img
               alt={file?.name || "Uploaded image"}
               className="mx-auto max-h-full rounded object-contain"
@@ -197,7 +196,6 @@ function Clickable() {
           <Dropzone.Root className="min-h-52 w-96 text-center">
             {previewUrl ? (
               <div className="absolute inset-0 flex items-center justify-center p-4">
-                {/** biome-ignore lint/correctness/useImageSize: This is fine. */}
                 {/** biome-ignore lint/performance/noImgElement: This is fine. */}
                 <img
                   alt={file?.name || "Uploaded image"}

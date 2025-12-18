@@ -1,34 +1,34 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "date-field",
-  "type": "registry:ui",
   "dependencies": [
     "react-aria-components"
   ],
+  "files": [
+    {
+      "content": "export * from \"./date-field\";\nexport * as DateField from \"./namespace\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/date-field/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  DateInput,\n  DateSegment,\n  type DateValue,\n  DateField as RACDateField,\n} from \"react-aria-components\";\nimport { cn } from \"~/registry/lib/cva\";\nimport { DateFieldStyles } from \"./styles\";\n\nexport interface DateFieldRootProps<T extends DateValue>\n  extends React.ComponentProps<typeof RACDateField<T>> {}\n\nexport function DateFieldRoot<T extends DateValue>({\n  className,\n  ...props\n}: DateFieldRootProps<T>) {\n  return (\n    <RACDateField\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        cn(\"group grid gap-3\", className)\n      )}\n      data-slot=\"date-field-root\"\n    />\n  );\n}\n\nexport interface DateFieldInputProps\n  extends React.ComponentProps<typeof DateInput> {}\n\nexport function DateFieldInput(props: DateFieldInputProps) {\n  return <DateInput data-slot=\"date-field-input\" {...props} />;\n}\n\nexport interface DateFieldSegmentProps\n  extends React.ComponentProps<typeof DateSegment> {}\n\nexport function DateFieldSegment({\n  className,\n  ...props\n}: DateFieldSegmentProps) {\n  return (\n    <DateSegment\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        DateFieldStyles.Segment({ className })\n      )}\n      data-slot=\"date-field-segment\"\n    />\n  );\n}\n",
+      "path": "src/registry/ui/date-field/date-field.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const DateFieldStyles = {\n  Segment: cva({\n    base: [\n      \"rounded-sm p-0.5 outline-none transition\",\n      \"data-placeholder:text-muted-foreground\",\n      \"type-literal:px-0 type-literal:text-muted-foreground\",\n      \"focus:bg-ring/50\",\n    ],\n  }),\n};\n",
+      "path": "src/registry/ui/date-field/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  DateFieldInput as Input,\n  DateFieldRoot as Root,\n  DateFieldSegment as Segment,\n} from \"./date-field\";\n",
+      "path": "src/registry/ui/date-field/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "date-field",
   "registryDependencies": [
     "@kanpeki/cva",
     "@kanpeki/custom-plugin"
   ],
-  "files": [
-    {
-      "path": "src/registry/ui/date-field/index.ts",
-      "content": "export * from \"./date-field\";\nexport * as DateField from \"./namespace\";\nexport * from \"./styles\";\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/date-field/date-field.tsx",
-      "content": "\"use client\";\n\nimport {\n  composeRenderProps,\n  DateInput,\n  DateSegment,\n  type DateValue,\n  DateField as RACDateField,\n} from \"react-aria-components\";\nimport { DateFieldStyles } from \"./styles\";\n\nexport interface DateFieldRootProps<T extends DateValue>\n  extends React.ComponentProps<typeof RACDateField<T>> {}\n\nexport function DateFieldRoot<T extends DateValue>(\n  props: DateFieldRootProps<T>\n) {\n  return <RACDateField {...props} data-slot=\"date-field-root\" />;\n}\n\nexport interface DateFieldInputProps\n  extends React.ComponentProps<typeof DateInput> {}\n\nexport function DateFieldInput(props: DateFieldInputProps) {\n  return <DateInput data-slot=\"date-field-input\" {...props} />;\n}\n\nexport interface DateFieldSegmentProps\n  extends React.ComponentProps<typeof DateSegment> {}\n\nexport function DateFieldSegment({\n  className,\n  ...props\n}: DateFieldSegmentProps) {\n  return (\n    <DateSegment\n      {...props}\n      className={composeRenderProps(className, (className) =>\n        DateFieldStyles.Segment({ className })\n      )}\n      data-slot=\"date-field-segment\"\n    />\n  );\n}\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/date-field/styles.ts",
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const DateFieldStyles = {\n  Segment: cva({\n    base: [\n      \"rounded p-0.5 outline-none transition\",\n      \"data-placeholder:text-muted-foreground\",\n      \"type-literal:px-0 type-literal:text-muted-foreground\",\n      \"focus:bg-ring/50\",\n    ],\n  }),\n};\n",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/registry/ui/date-field/namespace.ts",
-      "content": "export {\n  DateFieldInput as Input,\n  DateFieldRoot as Root,\n  DateFieldSegment as Segment,\n} from \"./date-field\";\n",
-      "type": "registry:ui"
-    }
-  ]
+  "type": "registry:ui"
 }
