@@ -15,7 +15,7 @@ export const siteConfig = {
     "Tailwind CSS",
     "Server Components",
     "React Aria",
-    "Radix UI",
+    "Base UI",
     "TypeScript",
     "Component Library",
     "Open Source",

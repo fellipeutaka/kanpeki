@@ -548,24 +548,17 @@ export const Icons = {
       />
     </svg>
   ),
-  RadixUI: (props) => (
+  BaseUI: (props) => (
     <svg
-      aria-label="Radix UI"
-      height={32}
+      aria-label="Base UI"
+      fill="currentcolor"
+      height={24}
       role="img"
-      viewBox="0 0 24 24"
-      width={32}
-      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 17 24"
+      width={17}
       {...props}
     >
-      <path
-        d="M14 5.5a2.5 2.5 0 105 0 2.5 2.5 0 10-5 0M6 3h5v5H6zm5 8v10a5 5 0 01-.217-9.995z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-      />
+      <path d="M9.5 7.015A.477.477 0 009 7.5V23a8 8 0 00.5-15.985zM8 9.8V23c-4.418 0-8-3.94-8-8.8V1c4.418 0 8 3.94 8 8.8z" />
     </svg>
   ),
   React: (props) => (

@@ -830,7 +830,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": ["@radix-ui/react-scroll-area"],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "src/registry/ui/scroll-area/index.ts",

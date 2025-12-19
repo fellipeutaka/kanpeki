@@ -1009,7 +1009,7 @@
     },
     {
       "dependencies": [
-        "@radix-ui/react-scroll-area"
+        "@base-ui/react"
       ],
       "files": [
         {

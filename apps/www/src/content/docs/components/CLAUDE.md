@@ -41,7 +41,6 @@ links:
 When adding the `links.docs` field, verify the URL exists before including it. Common documentation sources:
 
 - **React Aria Components**: `https://react-aria.adobe.com/ComponentName`
-- **Radix UI**: `https://www.radix-ui.com/primitives/docs/components/component-name`
 - **Base UI**: `https://base-ui.com/react/components/component-name`
 
 You can link to any relevant documentation - these are just common options.
@@ -59,12 +58,9 @@ Before adding documentation links, verify they exist using these tools:
 **Base UI**
 
 - Use WebFetch with their llms.txt: `https://base-ui.com/llms.txt`
-- Or search the docs directly
-
-**Radix UI**
-
-- Use the Context7 MCP server to search Radix UI documentation
+- Use the Context7 MCP server to search Base UI documentation
 - Example: `mcp__context7__resolve-library-id` then `mcp__context7__get-library-docs`
+- Or search the docs directly
 
 **Any documentation**
 
