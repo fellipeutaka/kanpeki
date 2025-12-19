@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { SearchIcon } from \"lucide-react\";\nimport { InputGroup } from \"~/registry/ui/input-group\";\n\nexport function InputGroupDemo() {\n  return (\n    <InputGroup.Root>\n      <InputGroup.Input placeholder=\"Search...\" />\n      <InputGroup.Addon>\n        <SearchIcon />\n      </InputGroup.Addon>\n      <InputGroup.Addon align=\"inline-end\">\n        <InputGroup.Button>Search</InputGroup.Button>\n      </InputGroup.Addon>\n    </InputGroup.Root>\n  );\n}\n",
+      "path": "src/registry/examples/input-group/input-group-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-group-demo",
+  "registryDependencies": [
+    "@kanpeki/input-group"
+  ],
+  "type": "registry:example"
+}

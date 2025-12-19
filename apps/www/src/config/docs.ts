@@ -155,6 +155,11 @@ export const docsConfig: DocsConfig = {
           label: "New",
         },
         {
+          href: "/docs/components/input-group",
+          title: "Input Group",
+          label: "New",
+        },
+        {
           href: "/docs/components/input-otp",
           title: "Input OTP",
         },

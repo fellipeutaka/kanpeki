@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import {\n  CheckIcon,\n  CreditCardIcon,\n  InfoIcon,\n  MailIcon,\n  SearchIcon,\n  StarIcon,\n} from \"lucide-react\"\nimport { InputGroup } from \"~/registry/ui/input-group\"\n\nexport function InputGroupIcon() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <InputGroup.Root>\n        <InputGroup.Input placeholder=\"Search...\" />\n        <InputGroup.Addon>\n          <SearchIcon />\n        </InputGroup.Addon>\n      </InputGroup.Root>\n      <InputGroup.Root>\n        <InputGroup.Input type=\"email\" placeholder=\"Enter your email\" />\n        <InputGroup.Addon>\n          <MailIcon />\n        </InputGroup.Addon>\n      </InputGroup.Root>\n      <InputGroup.Root>\n        <InputGroup.Input placeholder=\"Card number\" />\n        <InputGroup.Addon>\n          <CreditCardIcon />\n        </InputGroup.Addon>\n        <InputGroup.Addon align=\"inline-end\">\n          <CheckIcon />\n        </InputGroup.Addon>\n      </InputGroup.Root>\n      <InputGroup.Root>\n        <InputGroup.Input placeholder=\"Card number\" />\n        <InputGroup.Addon align=\"inline-end\">\n          <StarIcon />\n          <InfoIcon />\n        </InputGroup.Addon>\n      </InputGroup.Root>\n    </div>\n  )\n}\n",
+      "path": "src/registry/examples/input-group/input-group-icon-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-group-icon",
+  "registryDependencies": [
+    "@kanpeki/input-group"
+  ],
+  "type": "registry:example"
+}

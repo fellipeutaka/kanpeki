@@ -9,21 +9,21 @@ import {
   Select,
 } from "react-aria-components";
 
-import { cn } from "~/registry/lib/cva";
 import { SelectStyles } from "./styles";
 
-export interface SelectRootProps extends React.ComponentProps<typeof Select> {}
+type SelectProps = React.ComponentProps<typeof Select>;
+type SelectionMode = NonNullable<SelectProps["selectionMode"]>;
 
-export function SelectRoot({ className, ...props }: SelectRootProps) {
-  return (
-    <Select
-      className={composeRenderProps(className, (className) =>
-        cn("group grid gap-3", className)
-      )}
-      data-slot="select"
-      {...props}
-    />
-  );
+export interface SelectRootProps<
+  T extends object = NonNullable<unknown>,
+  M extends SelectionMode = "single",
+> extends React.ComponentProps<typeof Select<T, M>> {}
+
+export function SelectRoot<
+  T extends object = NonNullable<unknown>,
+  M extends SelectionMode = "single",
+>(props: SelectRootProps<T, M>) {
+  return <Select data-slot="select-root" {...props} />;
 }
 
 export interface SelectTriggerProps
@@ -47,9 +47,11 @@ export function SelectTrigger({
       {composeRenderProps(children, (children) => (
         <>
           {children}
-          <span aria-hidden="true" data-slot="select-icon">
-            <ChevronDownIcon className="size-4 transition group-pressed:rotate-180" />
-          </span>
+          <ChevronDownIcon
+            aria-hidden="true"
+            className="size-4 transition group-pressed:rotate-180"
+            data-slot="select-icon"
+          />
         </>
       ))}
     </Button>

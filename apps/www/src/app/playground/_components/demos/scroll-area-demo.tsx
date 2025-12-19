@@ -19,22 +19,22 @@ const tags = Array.from({ length: 50 }).map(
 
 function ScrollAreaVertical() {
   return (
-    <div className="flex flex-col gap-6">
-      <ScrollArea.Root className="h-72 w-48 rounded-md border">
-        <ScrollArea.Viewport>
-          <div className="p-4">
-            <h4 className="mb-4 font-medium text-sm leading-none">Tags</h4>
-            {tags.map((tag) => (
-              <Fragment key={tag}>
-                <div className="text-sm">{tag}</div>
-                <Separator className="my-2" />
-              </Fragment>
-            ))}
-          </div>
-        </ScrollArea.Viewport>
-        <ScrollArea.Scrollbar orientation="vertical" />
-      </ScrollArea.Root>
-    </div>
+    <ScrollArea.Root className="h-72 w-48 rounded-md border">
+      <ScrollArea.Viewport>
+        <div className="p-4">
+          <h4 className="mb-4 font-medium text-sm leading-none">Tags</h4>
+          {tags.map((tag) => (
+            <Fragment key={tag}>
+              <div className="text-sm">{tag}</div>
+              <Separator className="my-2" />
+            </Fragment>
+          ))}
+        </div>
+      </ScrollArea.Viewport>
+      <ScrollArea.Scrollbar orientation="vertical">
+        <ScrollArea.Thumb />
+      </ScrollArea.Scrollbar>
+    </ScrollArea.Root>
   );
 }
 
@@ -79,7 +79,9 @@ function ScrollAreaHorizontalDemo() {
           ))}
         </div>
       </ScrollArea.Viewport>
-      <ScrollArea.Scrollbar orientation="horizontal" />
+      <ScrollArea.Scrollbar orientation="horizontal">
+        <ScrollArea.Thumb />
+      </ScrollArea.Scrollbar>
     </ScrollArea.Root>
   );
 }

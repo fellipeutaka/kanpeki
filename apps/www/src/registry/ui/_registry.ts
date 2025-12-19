@@ -850,7 +850,7 @@ export const ui: RegistryItem[] = [
         type: "registry:ui",
       },
     ],
-    dependencies: ["@radix-ui/react-scroll-area"],
+    dependencies: ["@base-ui/react"],
     registryDependencies: ["@kanpeki/cva"],
   },
   {

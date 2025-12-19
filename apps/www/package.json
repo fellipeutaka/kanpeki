@@ -29,7 +29,6 @@
     "@fumadocs/mdx-remote": "^1.4.3",
     "@hookform/resolvers": "catalog:",
     "@internationalized/date": "catalog:",
-    "@radix-ui/react-scroll-area": "catalog:",
     "@react-stately/data": "catalog:",
     "@tanstack/react-form": "catalog:",
     "@tanstack/react-query": "catalog:",

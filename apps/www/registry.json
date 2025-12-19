@@ -830,7 +830,7 @@
       "type": "registry:ui"
     },
     {
-      "dependencies": ["@radix-ui/react-scroll-area"],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "src/registry/ui/scroll-area/index.ts",
@@ -1903,6 +1903,120 @@
       ],
       "name": "input-otp-demo",
       "registryDependencies": ["@kanpeki/input"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-demo",
+      "registryDependencies": ["@kanpeki/input-group"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-icon-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-icon-demo",
+      "registryDependencies": ["@kanpeki/input-group"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-text-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-text-demo",
+      "registryDependencies": ["@kanpeki/input-group"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-button-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-button-demo",
+      "registryDependencies": ["@kanpeki/input-group"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-tooltip-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-tooltip-demo",
+      "registryDependencies": ["@kanpeki/input-group", "@kanpeki/tooltip"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-textarea-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-textarea-demo",
+      "registryDependencies": ["@kanpeki/input-group"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-spinner-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-spinner-demo",
+      "registryDependencies": ["@kanpeki/input-group", "@kanpeki/spinner"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-label-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-label-demo",
+      "registryDependencies": ["@kanpeki/input-group", "@kanpeki/label"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-dropdown-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-dropdown-demo",
+      "registryDependencies": ["@kanpeki/input-group", "@kanpeki/menu"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-group/input-group-button-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-group-button-group-demo",
+      "registryDependencies": [
+        "@kanpeki/input-group",
+        "@kanpeki/button-group",
+        "@kanpeki/button"
+      ],
       "type": "registry:example"
     },
     {

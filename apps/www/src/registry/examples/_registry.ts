@@ -23,6 +23,7 @@ import { fieldExamples } from "./field/_registry";
 import { formExamples } from "./form/_registry";
 import { hoverCardExamples } from "./hover-card/_registry";
 import { inputExamples } from "./input/_registry";
+import { inputGroupExamples } from "./input-group/_registry";
 import { labelExamples } from "./label/_registry";
 import { linkExamples } from "./link/_registry";
 import { listBoxExamples } from "./list-box/_registry";
@@ -75,6 +76,7 @@ export const examples: RegistryItem[] = [
   ...formExamples,
   ...hoverCardExamples,
   ...inputExamples,
+  ...inputGroupExamples,
   ...labelExamples,
   ...linkExamples,
   ...listBoxExamples,

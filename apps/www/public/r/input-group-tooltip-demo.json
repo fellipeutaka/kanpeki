@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { HelpCircleIcon, InfoIcon } from \"lucide-react\";\nimport { InputGroup } from \"~/registry/ui/input-group\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function InputGroupTooltip() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-4\">\n      <InputGroup.Root>\n        <InputGroup.Input placeholder=\"Enter password\" type=\"password\" />\n        <InputGroup.Addon align=\"inline-end\">\n          <Tooltip.Root>\n            <InputGroup.Button aria-label=\"Info\" size=\"icon-xs\" variant=\"ghost\">\n              <InfoIcon />\n            </InputGroup.Button>\n            <Tooltip.Content>\n              <p>Password must be at least 8 characters</p>\n\n              <Tooltip.Arrow />\n            </Tooltip.Content>\n          </Tooltip.Root>\n        </InputGroup.Addon>\n      </InputGroup.Root>\n      <InputGroup.Root>\n        <InputGroup.Input placeholder=\"Your email address\" />\n        <InputGroup.Addon align=\"inline-end\">\n          <Tooltip.Root>\n            <InputGroup.Button aria-label=\"Help\" size=\"icon-xs\" variant=\"ghost\">\n              <HelpCircleIcon />\n            </InputGroup.Button>\n            <Tooltip.Content>\n              <p>We&apos;ll use this to send you notifications</p>\n\n              <Tooltip.Arrow />\n            </Tooltip.Content>\n          </Tooltip.Root>\n        </InputGroup.Addon>\n      </InputGroup.Root>\n      <InputGroup.Root>\n        <InputGroup.Input placeholder=\"Enter API key\" />\n        <Tooltip.Root>\n          <InputGroup.Addon>\n            <InputGroup.Button aria-label=\"Help\" size=\"icon-xs\" variant=\"ghost\">\n              <HelpCircleIcon />\n            </InputGroup.Button>\n          </InputGroup.Addon>\n          <Tooltip.Content placement=\"left\">\n            <p>Click for help with API keys</p>\n\n            <Tooltip.Arrow />\n          </Tooltip.Content>\n        </Tooltip.Root>\n      </InputGroup.Root>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/input-group/input-group-tooltip-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-group-tooltip-demo",
+  "registryDependencies": [
+    "@kanpeki/input-group",
+    "@kanpeki/tooltip"
+  ],
+  "type": "registry:example"
+}

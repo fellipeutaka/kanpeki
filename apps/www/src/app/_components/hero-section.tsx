@@ -86,8 +86,8 @@ export function HeroSection() {
             target="_blank"
           >
             <Badge className="px-4 py-2" variant="outline">
-              <Icons.RadixUI className="size-5" />
-              Radix UI
+              <Icons.BaseUI className="size-5" />
+              Base UI
             </Badge>
           </a>
           <a

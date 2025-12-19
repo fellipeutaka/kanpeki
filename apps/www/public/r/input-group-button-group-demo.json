@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { Link2Icon } from \"lucide-react\";\nimport { ButtonGroup } from \"~/registry/ui/button-group\";\nimport { InputGroup } from \"~/registry/ui/input-group\";\nimport { Label } from \"~/registry/ui/label\";\n\nexport function InputGroupButtonGroup() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <ButtonGroup.Root>\n        <ButtonGroup.Text render={<Label htmlFor=\"url\" />}>\n          https://\n        </ButtonGroup.Text>\n        <InputGroup.Root>\n          <InputGroup.Input id=\"url\" />\n          <InputGroup.Addon align=\"inline-end\">\n            <Link2Icon />\n          </InputGroup.Addon>\n        </InputGroup.Root>\n        <ButtonGroup.Text>.com</ButtonGroup.Text>\n      </ButtonGroup.Root>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/input-group/input-group-button-group-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-group-button-group-demo",
+  "registryDependencies": [
+    "@kanpeki/input-group",
+    "@kanpeki/button-group",
+    "@kanpeki/button"
+  ],
+  "type": "registry:example"
+}

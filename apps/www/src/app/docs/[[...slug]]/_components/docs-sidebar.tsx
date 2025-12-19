@@ -12,8 +12,8 @@ export function DocsSidebar() {
 
   return (
     <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100dvh-3.5rem)] w-full shrink-0 md:sticky md:block">
-      <ScrollArea.Root className="h-full py-6 pr-6 [mask-image:linear-gradient(black_80%,transparent)] lg:py-8">
-        <ScrollArea.Viewport>
+      <ScrollArea.Root className="py-6 pr-6 lg:py-8">
+        <ScrollArea.Viewport scrollFade>
           {docsConfig.sidebarNav.map(({ title, items }) => (
             <div className="mb-4" key={title}>
               <h4 className="mb-1 rounded-md px-2 py-1 font-semibold text-sm">

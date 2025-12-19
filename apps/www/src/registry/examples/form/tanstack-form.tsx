@@ -6,6 +6,7 @@ import { z } from "zod";
 import { Button } from "~/registry/ui/button";
 import { Field } from "~/registry/ui/field";
 import { Input } from "~/registry/ui/input";
+import { TextField } from "~/registry/ui/text-field";
 import { Textarea } from "~/registry/ui/textarea";
 
 const formSchema = z.object({
@@ -26,7 +27,7 @@ export function TanstackForm() {
       description: "",
     },
     validators: {
-      onSubmit: formSchema,
+      onChange: formSchema,
     },
     onSubmit: ({ value }) => {
       toast(JSON.stringify(value, null, 2));
@@ -38,6 +39,7 @@ export function TanstackForm() {
       className="flex w-full max-w-md flex-col gap-4"
       onSubmit={(e) => {
         e.preventDefault();
+        e.stopPropagation();
         form.handleSubmit();
       }}
     >
@@ -46,21 +48,24 @@ export function TanstackForm() {
           const isInvalid =
             field.state.meta.isTouched && !field.state.meta.isValid;
           return (
-            <Field.Root data-invalid={isInvalid || undefined}>
-              <Field.Label htmlFor={field.name}>Title</Field.Label>
-              <Input
-                aria-invalid={isInvalid || undefined}
-                id={field.name}
-                name={field.name}
-                onBlur={field.handleBlur}
-                onChange={(e) => field.handleChange(e.target.value)}
-                placeholder="Bug report title"
-                value={field.state.value}
-              />
+            <Field.Root
+              render={
+                <TextField
+                  id={field.name}
+                  isInvalid={isInvalid}
+                  name={field.name}
+                  onBlur={field.handleBlur}
+                  onChange={field.handleChange}
+                  value={field.state.value}
+                />
+              }
+            >
+              <Field.Label>Title</Field.Label>
+              <Input placeholder="Bug report title" />
               <Field.Description>
                 Provide a concise title for your report.
               </Field.Description>
-              {isInvalid && <Field.Error errors={field.state.meta.errors} />}
+              <Field.Error errors={field.state.meta.errors} />
             </Field.Root>
           );
         }}
@@ -71,22 +76,27 @@ export function TanstackForm() {
           const isInvalid =
             field.state.meta.isTouched && !field.state.meta.isValid;
           return (
-            <Field.Root data-invalid={isInvalid || undefined}>
-              <Field.Label htmlFor={field.name}>Description</Field.Label>
+            <Field.Root
+              render={
+                <TextField
+                  id={field.name}
+                  isInvalid={isInvalid}
+                  name={field.name}
+                  onBlur={field.handleBlur}
+                  onChange={field.handleChange}
+                  value={field.state.value}
+                />
+              }
+            >
+              <Field.Label>Description</Field.Label>
               <Textarea
-                aria-invalid={isInvalid || undefined}
-                className="min-h-[100px]"
-                id={field.name}
-                name={field.name}
-                onBlur={field.handleBlur}
-                onChange={(e) => field.handleChange(e.target.value)}
+                className="min-h-15"
                 placeholder="Describe the issue in detail..."
-                value={field.state.value}
               />
               <Field.Description>
                 Include steps to reproduce the issue.
               </Field.Description>
-              {isInvalid && <Field.Error errors={field.state.meta.errors} />}
+              <Field.Error errors={field.state.meta.errors} />
             </Field.Root>
           );
         }}
@@ -94,7 +104,7 @@ export function TanstackForm() {
       />
       <div className="flex gap-2">
         <Button type="submit">Submit</Button>
-        <Button onClick={() => form.reset()} type="button" variant="outline">
+        <Button onPress={() => form.reset()} type="reset" variant="outline">
           Reset
         </Button>
       </div>

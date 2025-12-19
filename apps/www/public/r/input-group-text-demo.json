@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { InputGroup } from \"~/registry/ui/input-group\";\n\nexport function InputGroupTextExample() {\n  return (\n    <div className=\"grid w-full max-w-sm gap-6\">\n      <InputGroup.Root>\n        <InputGroup.Addon>\n          <InputGroup.Text>$</InputGroup.Text>\n        </InputGroup.Addon>\n        <InputGroup.Input placeholder=\"0.00\" />\n        <InputGroup.Addon align=\"inline-end\">\n          <InputGroup.Text>USD</InputGroup.Text>\n        </InputGroup.Addon>\n      </InputGroup.Root>\n      <InputGroup.Root>\n        <InputGroup.Addon>\n          <InputGroup.Text>https://</InputGroup.Text>\n        </InputGroup.Addon>\n        <InputGroup.Input className=\"pl-0.5!\" placeholder=\"example.com\" />\n        <InputGroup.Addon align=\"inline-end\">\n          <InputGroup.Text>.com</InputGroup.Text>\n        </InputGroup.Addon>\n      </InputGroup.Root>\n      <InputGroup.Root>\n        <InputGroup.Input placeholder=\"Enter your username\" />\n        <InputGroup.Addon align=\"inline-end\">\n          <InputGroup.Text>@company.com</InputGroup.Text>\n        </InputGroup.Addon>\n      </InputGroup.Root>\n      <InputGroup.Root>\n        <InputGroup.Textarea placeholder=\"Enter your message\" />\n        <InputGroup.Addon align=\"block-end\">\n          <InputGroup.Text className=\"text-muted-foreground text-xs\">\n            120 characters left\n          </InputGroup.Text>\n        </InputGroup.Addon>\n      </InputGroup.Root>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/input-group/input-group-text-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-group-text-demo",
+  "registryDependencies": [
+    "@kanpeki/input-group"
+  ],
+  "type": "registry:example"
+}

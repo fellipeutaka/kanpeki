@@ -97,9 +97,9 @@ import {
 
 ### Structure
 
-- `Field.Root` is the core wrapper for a single field.
-- `Field.Content` is a flex column that groups label and description. Not required if you have no description.
-- Wrap related fields with `Field.Group`, and use `Field.Set` with `Field.Legend` for semantic grouping.
+- `<Field.Root>{:tsx}` is the core wrapper for a single field.
+- `<Field.Content>{:tsx}` is a flex column that groups label and description. Not required if you have no description.
+- Wrap related fields with `<Field.Group>{:tsx}`, and use `<Field.Set>{:tsx}` with `<Field.Legend>{:tsx}` for semantic grouping.
 
 ## Form
 
@@ -109,13 +109,13 @@ See the [Forms](/docs/forms) documentation for building forms with the Field com
 
 ### Input
 
-Use `Field.Root` with the `render` prop to compose with `TextField` for automatic accessibility wiring.
+Use `<Field.Root>{:tsx}` with the `render{:tsx}` prop to compose with `<TextField>{:tsx}` for automatic accessibility wiring.
 
 <ComponentPreview name="field-input-demo" />
 
 ### Without TextField
 
-You can use `Field.Root` with `Input` directly, but you must provide `htmlFor` on the label and `id` on the input manually.
+You can use `<Field.Root>{:tsx}` with `<Input>{:tsx}` directly, but you must provide `htmlFor{:tsx}` on the label and `id{:tsx}` on the input manually.
 
 ```tsx
 <Field.Root>
@@ -129,7 +129,7 @@ You can use `Field.Root` with `Input` directly, but you must provide `htmlFor` o
   <Alert.Title>Manual ID wiring</Alert.Title>
   <Alert.Description>
     Without TextField, you lose React Aria's automatic ID association for label,
-    description, and error elements. Use TextField when accessibility is
+    description, and error elements. Use `<TextField>{:tsx}` when accessibility is
     critical.
   </Alert.Description>
 </Alert.Root>
@@ -156,29 +156,41 @@ You can use `Field.Root` with `Input` directly, but you must provide `htmlFor` o
 
 ### Fieldset
 
-Use `Field.Set` and `Field.Legend` for semantic grouping of related fields.
+Use `<Field.Set>{:tsx}` and `<Field.Legend>{:tsx}` for semantic grouping of related fields.
 
 <ComponentPreview name="field-fieldset-demo" />
 
 ### Field Group
 
-Stack `Field.Root` components with `Field.Group`. Add `Field.Separator` to divide them.
+Stack `<Field.Root>{:tsx}` components with `<Field.Group>{:tsx}`. Add `<Field.Separator>{:tsx}` to divide them.
 
 <ComponentPreview name="field-group-demo" />
 
 ## Responsive Layout
 
 - **Vertical fields:** Default orientation stacks label, control, and helper text—ideal for mobile-first layouts.
-- **Horizontal fields:** Set `orientation="horizontal"` on `Field.Root` to align the label and control side-by-side. Pair with `Field.Content` to keep descriptions aligned.
-- **Responsive fields:** Set `orientation="responsive"` for automatic column layouts inside container-aware parents.
+- **Horizontal fields:** Set `orientation="horizontal"{:tsx}` on `<Field.Root>{:tsx}` to align the label and control side-by-side. Pair with `<Field.Content>{:tsx}` to keep descriptions aligned.
+- **Responsive fields:** Set `orientation="responsive"{:tsx}` for automatic column layouts inside container-aware parents.
 
 <ComponentPreview name="field-responsive-demo" />
 
 ## Validation and Errors
 
-- Add `data-invalid` to `Field.Root` to switch the entire block into an error state.
-- Add `aria-invalid` on the input itself for assistive technologies.
-- Render `Field.Error` immediately after the control or inside `Field.Content` to keep error messages aligned with the field.
+When using `<Field.Root>{:tsx}` with React Aria field components like `<TextField>{:tsx}`, `<NumberField>{:tsx}`, `<DateField>{:tsx}`, `<ColorField>{:tsx}`, or `<Select>{:tsx}`, pass `isInvalid{:tsx}` to the field component—it handles the invalid state automatically:
+
+```tsx
+<Field.Root render={<TextField isInvalid />}>
+  <Field.Label>Email</Field.Label>
+  <Input />
+  <Field.Error>Enter a valid email address.</Field.Error>
+</Field.Root>
+```
+
+If you're not using React Aria field components, you must handle validation state manually:
+
+- Add `data-invalid{:tsx}` to `<Field.Root>{:tsx}` to switch the entire block into an error state.
+- Add `aria-invalid{:tsx}` on the input itself for assistive technologies.
+- Render `<Field.Error>{:tsx}` immediately after the control or inside `<Field.Content>{:tsx}` to keep error messages aligned with the field.
 
 ```tsx
 <Field.Root data-invalid>
@@ -190,9 +202,9 @@ Stack `Field.Root` components with `Field.Group`. Add `Field.Separator` to divid
 
 ## Accessibility
 
-- `Field.Set` and `Field.Legend` keep related controls grouped for keyboard and assistive tech users.
-- `Field.Root` outputs `role="group"` so nested controls inherit labeling from `Field.Label` and `Field.Legend` when combined.
-- When using `Field.Root` with `render={<TextField />}`, React Aria automatically associates label, description, and error elements via `aria-labelledby` and `aria-describedby`.
+- `<Field.Set>{:tsx}` and `<Field.Legend>{:tsx}` keep related controls grouped for keyboard and assistive tech users.
+- `<Field.Root>{:tsx}` outputs `role="group"{:tsx}` so nested controls inherit labeling from `<Field.Label>{:tsx}` and `<Field.Legend>{:tsx}` when combined.
+- When using `<Field.Root>{:tsx}` with `render={<TextField />}{:tsx}`, React Aria automatically associates label, description, and error elements via `aria-labelledby{:tsx}` and `aria-describedby{:tsx}`.
 
 ## API Reference
 
@@ -206,7 +218,7 @@ Container that renders a semantic `fieldset` with spacing presets.
 
 ### Field.Legend
 
-Legend element for a `Field.Set`. Switch to the `label` variant to align with label sizing.
+Legend element for a `<Field.Set>{:tsx}`. Switch to the `label{:tsx}` variant to align with label sizing.
 
 | Prop        | Type                  | Default    |
 | ----------- | --------------------- | ---------- |
@@ -215,7 +227,7 @@ Legend element for a `Field.Set`. Switch to the `label` variant to align with la
 
 ### Field.Group
 
-Layout wrapper that stacks `Field.Root` components and enables container queries for responsive orientations.
+Layout wrapper that stacks `<Field.Root>{:tsx}` components and enables container queries for responsive orientations.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -232,7 +244,7 @@ The core wrapper for a single field. Provides orientation control, invalid state
 | `className`    | `string`                                     |              |
 | `data-invalid` | `boolean`                                    |              |
 
-Use the `render` prop to compose with React Aria components like `TextField`:
+Use the `render{:tsx}` prop to compose with React Aria components like `<TextField>{:tsx}`:
 
 ```tsx
 <Field.Root render={<TextField type="email" isRequired />}>
@@ -260,7 +272,7 @@ Label styled for both direct inputs and nested `Field.Root` children.
 
 ### Field.Title
 
-Renders a title with label styling inside `Field.Content`.
+Renders a title with label styling inside `<Field.Content>{:tsx}`.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -268,7 +280,7 @@ Renders a title with label styling inside `Field.Content`.
 
 ### Field.Description
 
-Helper text slot. Uses React Aria's `Text` component with `slot="description"`.
+Helper text slot. Uses React Aria's `<Text>{:tsx}` component with `slot="description"{:tsx}`.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -276,7 +288,7 @@ Helper text slot. Uses React Aria's `Text` component with `slot="description"`.
 
 ### Field.Separator
 
-Visual divider to separate sections inside a `Field.Group`. Accepts optional inline content.
+Visual divider to separate sections inside a `<Field.Group>{:tsx}`. Accepts optional inline content.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -288,14 +300,14 @@ Visual divider to separate sections inside a `Field.Group`. Accepts optional inl
 
 ### Field.Error
 
-Accessible error container that accepts children or an `errors` array.
+Accessible error container that accepts children or an `errors{:tsx}` array.
 
 | Prop        | Type                                       | Default |
 | ----------- | ------------------------------------------ | ------- |
 | `errors`    | `Array<{ message?: string } \| undefined>` |         |
 | `className` | `string`                                   |         |
 
-When the `errors` array contains multiple messages, the component renders a list automatically.
+When the `errors{:tsx}` array contains multiple messages, the component renders a list automatically.
 
 ```tsx
 <Field.Error

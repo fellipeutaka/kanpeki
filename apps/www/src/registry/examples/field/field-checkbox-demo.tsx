@@ -3,12 +3,11 @@ import { Field } from "~/registry/ui/field";
 
 export function FieldCheckboxDemo() {
   return (
-    <Field.Root orientation="horizontal">
-      <Checkbox.Provider>
-        <Checkbox.Root>
-          <Checkbox.Indicator />
-        </Checkbox.Root>
-      </Checkbox.Provider>
+    <Field.Root orientation="horizontal" render={<Checkbox.Provider />}>
+      <Checkbox.Root>
+        <Checkbox.Indicator />
+      </Checkbox.Root>
+
       <Field.Content>
         <Field.Label>Accept terms and conditions</Field.Label>
         <Field.Description>

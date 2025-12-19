@@ -108,7 +108,7 @@
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
 
-    @apply bg-background text-foreground antialiased font-sans relative;
+    @apply bg-background text-foreground antialiased font-sans;
   }
 
   input:-webkit-autofill {
