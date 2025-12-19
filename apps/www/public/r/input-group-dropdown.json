@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { InputGroup } from \"~/registry/ui/input-group\";\nimport { Menu } from \"~/registry/ui/menu\";\nimport { Popover } from \"~/registry/ui/popover\";\n\nexport function InputGroupDropdown() {\n  const [selectedDomain, setSelectedDomain] = useState(\".com\");\n\n  return (\n    <InputGroup.Root>\n      <InputGroup.Input placeholder=\"example\" />\n      <InputGroup.Addon align=\"inline-end\">\n        <Menu.Root>\n          <InputGroup.Button>\n            {selectedDomain}\n            <ChevronDownIcon />\n          </InputGroup.Button>\n          <Popover.Content>\n            <Menu.Content>\n              <Menu.Item onAction={() => setSelectedDomain(\".com\")}>\n                .com\n              </Menu.Item>\n              <Menu.Item onAction={() => setSelectedDomain(\".org\")}>\n                .org\n              </Menu.Item>\n              <Menu.Item onAction={() => setSelectedDomain(\".net\")}>\n                .net\n              </Menu.Item>\n              <Menu.Item onAction={() => setSelectedDomain(\".io\")}>\n                .io\n              </Menu.Item>\n            </Menu.Content>\n          </Popover.Content>\n        </Menu.Root>\n      </InputGroup.Addon>\n    </InputGroup.Root>\n  );\n}\n",
+      "path": "src/registry/examples/input-group/input-group-dropdown-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-group-dropdown",
+  "registryDependencies": [
+    "@kanpeki/input-group",
+    "@kanpeki/menu"
+  ],
+  "type": "registry:example"
+}

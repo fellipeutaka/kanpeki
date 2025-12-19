@@ -2660,6 +2660,186 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "input-group-demo": {
+    name: "input-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-icon-demo": {
+    name: "input-group-icon-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-icon-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-icon-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-icon-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-text-demo": {
+    name: "input-group-text-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-text-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-text-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-text-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-button-demo": {
+    name: "input-group-button-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-button-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-button-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-button-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-tooltip-demo": {
+    name: "input-group-tooltip-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group","@kanpeki/tooltip"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-tooltip-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-tooltip-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-tooltip-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-textarea-demo": {
+    name: "input-group-textarea-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-textarea-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-textarea-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-textarea-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-spinner-demo": {
+    name: "input-group-spinner-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group","@kanpeki/spinner"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-spinner-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-spinner-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-spinner-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-label-demo": {
+    name: "input-group-label-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group","@kanpeki/label"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-label-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-label-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-label-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-dropdown-demo": {
+    name: "input-group-dropdown-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group","@kanpeki/menu"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-dropdown-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-dropdown-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-dropdown-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-group-button-group-demo": {
+    name: "input-group-button-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-group","@kanpeki/button-group","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/input-group/input-group-button-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-group/input-group-button-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-button-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "label-demo": {
     name: "label-demo",
     description: "",
