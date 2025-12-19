@@ -61,7 +61,7 @@ import { Tooltip } from "~/components/ui/tooltip";
 
     <Tooltip.Arrow />
   </Tooltip.Content>
-</Tooltip.Root>
+</Tooltip.Root>;
 ```
 
 </Tabs.Content>
@@ -83,7 +83,7 @@ import {
 
     <TooltipArrow />
   </TooltipContent>
-</TooltipRoot>
+</TooltipRoot>;
 ```
 
 </Tabs.Content>
@@ -103,6 +103,14 @@ import {
 ### Hover Card
 
 <ComponentPreview name="tooltip-hover-card-demo" />
+
+## Troubleshooting
+
+### Tooltip positioning issues
+
+If tooltip content appears misaligned, in wrong position, or rendered but not visible in viewport, check if `body` has `position: relative;{:css}` applied. See this [issue](https://github.com/adobe/react-spectrum/issues/7654) for more details.
+
+Remove `position: relative;{:css}` from `body`:
 
 ## API Reference
 
