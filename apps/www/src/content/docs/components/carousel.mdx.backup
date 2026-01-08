@@ -1,0 +1,287 @@
+---
+title: Carousel
+description: A carousel with motion and swipe built using Embla.
+links:
+  docs: https://www.embla-carousel.com/get-started/react
+  api: https://www.embla-carousel.com/api
+---
+
+<ComponentPreview name="carousel-demo" />
+
+## About
+
+The carousel component is built using the [Embla Carousel](https://www.embla-carousel.com/) library.
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/carousel
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install embla-carousel-react
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="carousel" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+```tsx
+import { Carousel } from "~/components/ui/carousel";
+
+<Carousel.Root>
+  <Carousel.Content>
+    <Carousel.Item>...</Carousel.Item>
+    <Carousel.Item>...</Carousel.Item>
+    <Carousel.Item>...</Carousel.Item>
+  </Carousel.Content>
+  <Carousel.Previous />
+  <Carousel.Next />
+</Carousel.Root>;
+```
+
+## Examples
+
+### Sizes
+
+To set the size of the items, you can use the `basis{:tsx}` utility class on the `<Carousel.Item>{:tsx}`.
+
+<ComponentPreview name="carousel-size-demo" />
+
+```tsx
+// [!code word:basis-1/3]
+// 33% of the carousel width.
+<Carousel.Root>
+  <Carousel.Content>
+    <Carousel.Item className="basis-1/3">...</Carousel.Item>
+    <Carousel.Item className="basis-1/3">...</Carousel.Item>
+    <Carousel.Item className="basis-1/3">...</Carousel.Item>
+  </Carousel.Content>
+</Carousel.Root>
+```
+
+```tsx
+// [!code word:md:basis-1/2]
+// [!code word:lg:basis-1/3]
+// 50% on small screens and 33% on larger screens.
+<Carousel.Root>
+  <Carousel.Content>
+    <Carousel.Item className="md:basis-1/2 lg:basis-1/3">...</Carousel.Item>
+    <Carousel.Item className="md:basis-1/2 lg:basis-1/3">...</Carousel.Item>
+    <Carousel.Item className="md:basis-1/2 lg:basis-1/3">...</Carousel.Item>
+  </Carousel.Content>
+</Carousel.Root>
+```
+
+### Spacing
+
+To set the spacing between the items, we use a `pl-[VALUE]{:tsx}` utility on the `<Carousel.Item>{:tsx}` and a negative `-ml-[VALUE]{:tsx}` on the `<Carousel.Content>{:tsx}`.
+
+<Alert.Root>
+  <AlertIcon variant="info" />
+  <Alert.Description>
+    **Why:** I tried to use the `gap{:tsx}` property or a `grid{:tsx}` layout on the `<Carousel.Content>{:tsx}` but it required a lot of math and mental effort to get the spacing right. I found `pl-[VALUE]{:tsx}` and `-ml-[VALUE]{:tsx}` utilities much easier to use.
+
+    You can always adjust this in your own project if you need to.
+
+  </Alert.Description>
+</Alert.Root>
+
+<ComponentPreview name="carousel-spacing-demo" />
+
+```tsx
+// [!code word:-ml-4]
+// [!code word:pl-4]
+<Carousel.Root>
+  <Carousel.Content className="-ml-4">
+    <Carousel.Item className="pl-4">...</Carousel.Item>
+    <Carousel.Item className="pl-4">...</Carousel.Item>
+    <Carousel.Item className="pl-4">...</Carousel.Item>
+  </Carousel.Content>
+</Carousel.Root>
+```
+
+```tsx
+// [!code word:-ml-2]
+// [!code word:md:-ml-4]
+// [!code word:pl-2]
+// [!code word:md:pl-4]
+<Carousel.Root>
+  <Carousel.Content className="-ml-2 md:-ml-4">
+    <Carousel.Item className="pl-2 md:pl-4">...</Carousel.Item>
+    <Carousel.Item className="pl-2 md:pl-4">...</Carousel.Item>
+    <Carousel.Item className="pl-2 md:pl-4">...</Carousel.Item>
+  </Carousel.Content>
+</Carousel.Root>
+```
+
+### Orientation
+
+Use the `orientation{:tsx}` prop to set the orientation of the carousel.
+
+<ComponentPreview name="carousel-orientation-demo" />
+
+```tsx
+// [!code word:orientation]
+<Carousel.Root orientation="vertical | horizontal">
+  <Carousel.Content>
+    <Carousel.Item>...</Carousel.Item>
+    <Carousel.Item>...</Carousel.Item>
+    <Carousel.Item>...</Carousel.Item>
+  </Carousel.Content>
+</Carousel.Root>
+```
+
+## Options
+
+You can pass options to the carousel using the `opts{:tsx}` prop. See the [Embla Carousel docs](https://www.embla-carousel.com/api/options/) for more information.
+
+```tsx
+<Carousel.Root
+  opts={{
+    // [!code highlight]
+    align: "start", // [!code highlight]
+    loop: true, // [!code highlight]
+  }} // [!code highlight]
+>
+  <Carousel.Content>
+    <Carousel.Item>...</Carousel.Item>
+    <Carousel.Item>...</Carousel.Item>
+    <Carousel.Item>...</Carousel.Item>
+  </Carousel.Content>
+</Carousel.Root>
+```
+
+## API
+
+Use a state and the `setApi{:tsx}` prop to get an instance of the carousel API.
+
+<ComponentPreview name="carousel-api-demo" />
+
+```tsx
+import { type CarouselApi } from "~/components/ui/carousel/carousel"; // [!code highlight]
+
+export function Example() {
+  const [api, setApi] = React.useState<CarouselApi>(); // [!code highlight]
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  return (
+    <Carousel.Root setApi={setApi}>
+      {" "}
+      // [!code highlight]
+      <Carousel.Content>
+        <Carousel.Item>...</Carousel.Item>
+        <Carousel.Item>...</Carousel.Item>
+        <Carousel.Item>...</Carousel.Item>
+      </Carousel.Content>
+    </Carousel.Root>
+  );
+}
+```
+
+## Events
+
+You can listen to events using the api instance from `setApi{:tsx}`.
+
+```tsx
+import { type CarouselApi } from "~/components/ui/carousel/carousel"; // [!code highlight]
+
+export function Example() {
+  const [api, setApi] = React.useState<CarouselApi>(); // [!code highlight]
+
+  React.useEffect(() => {
+    // [!code highlight]
+    if (!api) {
+      // [!code highlight]
+      return; // [!code highlight]
+    } // [!code highlight]
+
+    api.on("select", () => {
+      // [!code highlight]
+      // Do something on select. // [!code highlight]
+    }); // [!code highlight]
+  }, [api]); // [!code highlight]
+
+  return (
+    <Carousel.Root setApi={setApi}>
+      {" "}
+      // [!code highlight]
+      <Carousel.Content>
+        <Carousel.Item>...</Carousel.Item>
+        <Carousel.Item>...</Carousel.Item>
+        <Carousel.Item>...</Carousel.Item>
+      </Carousel.Content>
+    </Carousel.Root>
+  );
+}
+```
+
+See the [Embla Carousel docs](https://www.embla-carousel.com/api/events/) for more information on using events.
+
+## Plugins
+
+You can use the `plugins{:tsx}` prop to add plugins to the carousel.
+
+```tsx
+import Autoplay from "embla-carousel-autoplay"; // [!code highlight]
+
+export function Example() {
+  return (
+    <Carousel.Root
+      plugins={[
+        // [!code highlight]
+        Autoplay({
+          // [!code highlight]
+          delay: 2000, // [!code highlight]
+        }), // [!code highlight]
+      ]} // [!code highlight]
+    >
+      // ...
+    </Carousel.Root>
+  );
+}
+```
+
+<ComponentPreview name="carousel-plugin-demo" />
+
+See the [Embla Carousel docs](https://www.embla-carousel.com/api/plugins/) for more information on using plugins.

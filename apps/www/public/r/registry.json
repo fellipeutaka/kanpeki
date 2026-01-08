@@ -1816,6 +1816,76 @@
     {
       "files": [
         {
+          "path": "src/registry/examples/carousel/carousel-size-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "carousel-size-demo",
+      "registryDependencies": [
+        "@kanpeki/carousel",
+        "@kanpeki/card"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/carousel/carousel-spacing-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "carousel-spacing-demo",
+      "registryDependencies": [
+        "@kanpeki/carousel",
+        "@kanpeki/card"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/carousel/carousel-orientation-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "carousel-orientation-demo",
+      "registryDependencies": [
+        "@kanpeki/carousel",
+        "@kanpeki/card"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/carousel/carousel-api-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "carousel-api-demo",
+      "registryDependencies": [
+        "@kanpeki/carousel",
+        "@kanpeki/card"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/carousel/carousel-plugin-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "carousel-plugin-demo",
+      "registryDependencies": [
+        "@kanpeki/carousel",
+        "@kanpeki/card"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
           "path": "src/registry/examples/chart/chart-area-demo.tsx",
           "type": "registry:example"
         }

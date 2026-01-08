@@ -194,3 +194,146 @@ Shared TypeScript config in `config/tsconfig/` workspace package. Note that buil
 ## Dependencies Management
 
 The monorepo uses **workspace catalog** for dependency versioning. Common dependencies like React, Zod, TanStack libraries are defined in the root `package.json` catalog and referenced with `catalog:` in workspace package.json files. This ensures version consistency across the monorepo.
+
+## Code Highlighting in Documentation
+
+This project uses **Shiki 3** with transformers for syntax highlighting in MDX files. The highlighting is configured via `apps/www/src/lib/rehype.ts` using:
+
+- `transformerNotationHighlight()` - Line and block highlighting
+- `transformerNotationWordHighlight()` - Word highlighting
+- `transformerNotationDiff()` - Diff highlighting
+
+### Available Highlighting Patterns
+
+#### Line Highlighting
+
+Use `// [!code highlight]` to highlight individual lines:
+
+````mdx
+```tsx
+console.log("Not highlighted");
+console.log("Highlighted"); // [!code highlight]
+console.log("Not highlighted");
+```
+````
+
+#### Block Highlighting
+
+Use `// [!code highlight:n]` to highlight multiple consecutive lines:
+
+````mdx
+```tsx
+// [!code highlight:3]
+console.log("Highlighted");
+console.log("Highlighted");
+console.log("Not highlighted");
+```
+````
+
+#### Word Highlighting
+
+Use `// [!code word:Word]` to highlight specific words in subsequent code:
+
+````mdx
+```tsx
+// [!code word:Hello]
+const message = "Hello World";
+console.log(message); // prints Hello World
+```
+````
+
+Limit word highlighting to specific lines with `// [!code word:Word:n]`:
+
+````mdx
+```tsx
+// [!code word:Hello:1]
+const message = "Hello World";
+console.log(message); // prints Hello World (only "Hello" in first line highlighted)
+```
+````
+
+**Escaping Special Characters**: When highlighting words that contain colons (like CSS classes with responsive prefixes), escape the colons with backslashes:
+
+````mdx
+```tsx
+// [!code word:md\:basis-1/2]
+// [!code word:lg\:basis-1/3]
+<Component className="md:basis-1/2 lg:basis-1/3">Content</Component>
+```
+````
+
+#### Diff Highlighting
+
+Use `// [!code ++]` and `// [!code --]` for additions and removals:
+
+````mdx
+```tsx
+console.log("hewwo"); // [!code --]
+console.log("hello"); // [!code ++]
+console.log("goodbye");
+```
+````
+
+### Component Documentation Guidelines
+
+When documenting components:
+
+1. **Replace `showLineNumbers {line-numbers}`** with `// [!code highlight]` notation
+2. **Highlight specific props/classes** that are being demonstrated
+3. **Use word highlighting** for important concepts or patterns
+4. **Use diff highlighting** when showing code changes or alternatives
+
+#### Examples in Component Docs
+
+**Highlighting component props:**
+
+````mdx
+```tsx
+<Carousel.Root
+  orientation="vertical" // [!code highlight]
+  opts={{
+    // [!code highlight]
+    align: "start", // [!code highlight]
+    loop: true, // [!code highlight]
+  }} // [!code highlight]
+>
+  <Carousel.Content>
+    <Carousel.Item>...</Carousel.Item>
+  </Carousel.Content>
+</Carousel.Root>
+```
+````
+
+**Highlighting class patterns:**
+
+````mdx
+```tsx
+// [!code word:basis-1/3]
+<Carousel.Root>
+  <Carousel.Content>
+    <Carousel.Item className="basis-1/3">...</Carousel.Item>
+    <Carousel.Item className="basis-1/3">...</Carousel.Item>
+    <Carousel.Item className="basis-1/3">...</Carousel.Item>
+  </Carousel.Content>
+</Carousel.Root>
+```
+````
+
+**Highlighting responsive classes with escaped colons:**
+
+````mdx
+```tsx
+// [!code word:md\:basis-1/2]
+// [!code word:lg\:basis-1/3]
+<Component className="md:basis-1/2 lg:basis-1/3">Content</Component>
+```
+````
+
+### Important Notes
+
+- **Always use the comment-based syntax** (`// [!code ...]`) instead of meta string syntax (`{1,3-4}`)
+- **Place comments at the end of lines** you want to highlight
+- **Escape special characters** in word highlighting (e.g., `md\:basis-1/2` for CSS classes with colons)
+- **Escape the syntax in documentation** using `[\!code ...]` to prevent rendering
+- **The transformers generate CSS classes** that are styled via the project's CSS
+- **Multiple highlight types can be combined** in the same code block

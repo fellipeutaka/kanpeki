@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { useEffect, useState } from \"react\";\nimport { Card } from \"~/registry/ui/card\";\nimport { Carousel } from \"~/registry/ui/carousel\";\nimport type { CarouselApi as EmblaCarouselApi } from \"~/registry/ui/carousel/carousel\";\n\nexport function CarouselApiDemo() {\n  const [api, setApi] = useState<EmblaCarouselApi>();\n  const [current, setCurrent] = useState(0);\n  const [count, setCount] = useState(0);\n\n  useEffect(() => {\n    if (!api) {\n      return;\n    }\n\n    setCount(api.scrollSnapList().length);\n    setCurrent(api.selectedScrollSnap() + 1);\n\n    api.on(\"select\", () => {\n      setCurrent(api.selectedScrollSnap() + 1);\n    });\n  }, [api]);\n\n  return (\n    <div className=\"space-y-2\">\n      <Carousel.Root className=\"w-full max-w-sm\" setApi={setApi}>\n        <Carousel.Content>\n          {Array.from({ length: 5 }).map((_, index) => (\n            // biome-ignore lint/suspicious/noArrayIndexKey: This is fine\n            <Carousel.Item key={index}>\n              <div className=\"p-1\">\n                <Card.Root>\n                  <Card.Content className=\"flex aspect-square items-center justify-center p-6\">\n                    <span className=\"font-semibold text-3xl\">{index + 1}</span>\n                  </Card.Content>\n                </Card.Root>\n              </div>\n            </Carousel.Item>\n          ))}\n        </Carousel.Content>\n        <Carousel.Previous />\n        <Carousel.Next />\n      </Carousel.Root>\n      <div className=\"py-2 text-center text-muted-foreground text-sm\">\n        Slide {current} of {count}\n      </div>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/carousel/carousel-api-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "carousel-api",
+  "registryDependencies": [
+    "@kanpeki/carousel",
+    "@kanpeki/card"
+  ],
+  "type": "registry:example"
+}
