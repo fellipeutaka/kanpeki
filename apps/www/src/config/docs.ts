@@ -94,9 +94,9 @@ export const docsConfig: DocsConfig = {
           title: "Card",
         },
         {
-          disabled: true,
           href: "/docs/components/carousel",
           title: "Carousel",
+          label: "New",
         },
         {
           disabled: true,
@@ -142,17 +142,14 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/field",
           title: "Field",
-          label: "New",
         },
         {
           href: "/docs/components/form",
           title: "Form",
-          label: "Updated",
         },
         {
           href: "/docs/components/input",
           title: "Input",
-          label: "New",
         },
         {
           href: "/docs/components/input-group",
@@ -241,7 +238,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/textfield",
           title: "TextField",
-          label: "Updated",
         },
         {
           href: "/docs/components/toast",

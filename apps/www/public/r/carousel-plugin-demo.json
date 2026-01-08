@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport Autoplay from \"embla-carousel-autoplay\";\nimport { useRef } from \"react\";\nimport { Card } from \"~/registry/ui/card\";\nimport { Carousel } from \"~/registry/ui/carousel\";\n\nexport function CarouselPluginDemo() {\n  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));\n\n  return (\n    <Carousel.Root\n      className=\"w-full max-w-xs\"\n      onMouseEnter={plugin.current.stop}\n      onMouseLeave={plugin.current.reset}\n      plugins={[plugin.current]}\n    >\n      <Carousel.Content>\n        {Array.from({ length: 5 }).map((_, index) => (\n          // biome-ignore lint/suspicious/noArrayIndexKey: This is fine\n          <Carousel.Item key={index}>\n            <div className=\"p-1\">\n              <Card.Root>\n                <Card.Content className=\"flex aspect-square items-center justify-center p-6\">\n                  <span className=\"font-semibold text-4xl\">{index + 1}</span>\n                </Card.Content>\n              </Card.Root>\n            </div>\n          </Carousel.Item>\n        ))}\n      </Carousel.Content>\n      <Carousel.Previous />\n      <Carousel.Next />\n    </Carousel.Root>\n  );\n}\n",
+      "path": "src/registry/examples/carousel/carousel-plugin-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "carousel-plugin-demo",
+  "registryDependencies": [
+    "@kanpeki/carousel",
+    "@kanpeki/card"
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Card } from \"~/registry/ui/card\";\nimport { Carousel } from \"~/registry/ui/carousel\";\n\nexport function CarouselOrientationDemo() {\n  return (\n    <Carousel.Root\n      className=\"w-full max-w-xs\"\n      opts={{\n        align: \"start\",\n      }}\n      orientation=\"vertical\"\n    >\n      <Carousel.Content className=\"-mt-1 h-50\">\n        {Array.from({ length: 5 }).map((_, index) => (\n          // biome-ignore lint/suspicious/noArrayIndexKey: This is fine\n          <Carousel.Item className=\"pt-1 md:basis-1/2\" key={index}>\n            <div className=\"p-1\">\n              <Card.Root>\n                <Card.Content className=\"flex items-center justify-center p-6\">\n                  <span className=\"font-semibold text-3xl\">{index + 1}</span>\n                </Card.Content>\n              </Card.Root>\n            </div>\n          </Carousel.Item>\n        ))}\n      </Carousel.Content>\n      <Carousel.Previous />\n      <Carousel.Next />\n    </Carousel.Root>\n  );\n}\n",
+      "path": "src/registry/examples/carousel/carousel-orientation-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "carousel-orientation-demo",
+  "registryDependencies": [
+    "@kanpeki/carousel",
+    "@kanpeki/card"
+  ],
+  "type": "registry:example"
+}

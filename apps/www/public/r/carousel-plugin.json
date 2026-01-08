@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport Autoplay from \"embla-carousel-autoplay\";\nimport { Card } from \"~/registry/ui/card\";\nimport { Carousel } from \"~/registry/ui/carousel\";\n\nexport function CarouselPluginDemo() {\n  return (\n    <Carousel.Root\n      className=\"w-full max-w-sm\"\n      plugins={[\n        Autoplay({\n          delay: 2000,\n        }),\n      ]}\n    >\n      <Carousel.Content>\n        {Array.from({ length: 5 }).map((_, index) => (\n          // biome-ignore lint/suspicious/noArrayIndexKey: This is fine\n          <Carousel.Item key={index}>\n            <div className=\"p-1\">\n              <Card.Root>\n                <Card.Content className=\"flex aspect-square items-center justify-center p-6\">\n                  <span className=\"font-semibold text-3xl\">{index + 1}</span>\n                </Card.Content>\n              </Card.Root>\n            </div>\n          </Carousel.Item>\n        ))}\n      </Carousel.Content>\n      <Carousel.Previous />\n      <Carousel.Next />\n    </Carousel.Root>\n  );\n}\n",
+      "path": "src/registry/examples/carousel/carousel-plugin-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "carousel-plugin",
+  "registryDependencies": [
+    "@kanpeki/carousel",
+    "@kanpeki/card"
+  ],
+  "type": "registry:example"
+}

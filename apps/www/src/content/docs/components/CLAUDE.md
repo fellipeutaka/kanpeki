@@ -374,3 +374,7 @@ If needed, add API documentation using `<PropsTable>`:
 - [ ] Named exports for all example functions
 - [ ] Alert components use `<Alert.Root>` with `<AlertIcon />`
 - [ ] Component and prop references use `{:tsx}` syntax in prose
+
+```
+
+```

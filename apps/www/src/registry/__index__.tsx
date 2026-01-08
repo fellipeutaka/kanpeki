@@ -2012,6 +2012,96 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "carousel-size-demo": {
+    name: "carousel-size-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/carousel","@kanpeki/card"],
+    files: [{
+      path: "src/registry/examples/carousel/carousel-size-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/carousel/carousel-size-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "carousel-size-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "carousel-spacing-demo": {
+    name: "carousel-spacing-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/carousel","@kanpeki/card"],
+    files: [{
+      path: "src/registry/examples/carousel/carousel-spacing-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/carousel/carousel-spacing-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "carousel-spacing-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "carousel-orientation-demo": {
+    name: "carousel-orientation-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/carousel","@kanpeki/card"],
+    files: [{
+      path: "src/registry/examples/carousel/carousel-orientation-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/carousel/carousel-orientation-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "carousel-orientation-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "carousel-api-demo": {
+    name: "carousel-api-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/carousel","@kanpeki/card"],
+    files: [{
+      path: "src/registry/examples/carousel/carousel-api-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/carousel/carousel-api-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "carousel-api-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "carousel-plugin-demo": {
+    name: "carousel-plugin-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/carousel","@kanpeki/card"],
+    files: [{
+      path: "src/registry/examples/carousel/carousel-plugin-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/carousel/carousel-plugin-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "carousel-plugin-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "chart-area-demo": {
     name: "chart-area-demo",
     description: "",
