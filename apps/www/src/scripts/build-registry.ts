@@ -57,8 +57,6 @@ export const Index: Record<string, any> = {`;
   index += `
   }`;
 
-  console.log(`#️⃣  ${Object.keys(parsedRegistry.items).length} items found`);
-
   // Write style index.
   rimraf.sync(path.join(process.cwd(), "src/registry/__index__.tsx"));
   await fs.writeFile(
@@ -98,13 +96,8 @@ function buildRegistry() {
 }
 
 try {
-  console.log("📁 Building src/registry/__index__.tsx...");
   await buildRegistryIndex();
-
-  console.log("💅 Building registry.json...");
   await buildRegistryJsonFile();
-
-  console.log("🧱 Building registry");
   await buildRegistry();
 } catch (error) {
   console.error(error);
