@@ -31,6 +31,14 @@ const config: NextConfig = {
       source: "/storybook",
     },
   ],
+  rewrites: async () => {
+    return [
+      {
+        source: "/docs/:path*.mdx",
+        destination: "/llms.mdx/docs/:path*",
+      },
+    ];
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
