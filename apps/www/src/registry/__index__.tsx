@@ -2732,24 +2732,6 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "input-otp-demo": {
-    name: "input-otp-demo",
-    description: "",
-    type: "registry:example",
-    registryDependencies: ["@kanpeki/input"],
-    files: [{
-      path: "src/registry/examples/input/input-otp-demo.tsx",
-      type: "registry:example",
-      target: ""
-    }],
-    component: lazy(async () => {
-      const mod = await import("~/registry/examples/input/input-otp-demo.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-otp-demo"
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
   "input-group-demo": {
     name: "input-group-demo",
     description: "",
@@ -2925,6 +2907,78 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/examples/input-group/input-group-button-group-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-group-button-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-otp-controlled-demo": {
+    name: "input-otp-controlled-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-otp"],
+    files: [{
+      path: "src/registry/examples/input-otp/input-otp-controlled-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-otp/input-otp-controlled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-otp-controlled-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-otp-demo": {
+    name: "input-otp-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-otp"],
+    files: [{
+      path: "src/registry/examples/input-otp/input-otp-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-otp/input-otp-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-otp-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-otp-pattern-demo": {
+    name: "input-otp-pattern-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-otp"],
+    files: [{
+      path: "src/registry/examples/input-otp/input-otp-pattern-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-otp/input-otp-pattern-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-otp-pattern-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-otp-separator-demo": {
+    name: "input-otp-separator-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/input-otp"],
+    files: [{
+      path: "src/registry/examples/input-otp/input-otp-separator-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/input-otp/input-otp-separator-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-otp-separator-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

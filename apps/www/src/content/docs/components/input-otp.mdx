@@ -27,6 +27,12 @@ npx shadcn@latest add @kanpeki/input-otp
 
 <Steps>
 
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install input-otp
+```
+
 <Step>Copy and paste the following code into your project.</Step>
 
 <ComponentSource name="input-otp" />
@@ -50,15 +56,21 @@ npx shadcn@latest add @kanpeki/input-otp
 <Tabs.Content id="single">
 
 ```tsx
-import { Label } from "~/components/ui/label";
-import { RadioGroup } from "~/components/ui/radio-group";
+import { InputOTP } from "~/components/ui/input-otp";
 
-<RadioGroup.Root>
-  <RadioGroup.Item>
-    <RadioGroup.Indicator />
-    <Label />
-  </RadioGroup.Item>
-</RadioGroup.Root>;
+<InputOTP.Root maxLength={6}>
+  <InputOTP.Group>
+    <InputOTP.Slot index={0} />
+    <InputOTP.Slot index={1} />
+    <InputOTP.Slot index={2} />
+  </InputOTP.Group>
+  <InputOTP.Separator />
+  <InputOTP.Group>
+    <InputOTP.Slot index={3} />
+    <InputOTP.Slot index={4} />
+    <InputOTP.Slot index={5} />
+  </InputOTP.Group>
+</InputOTP.Root>;
 ```
 
 </Tabs.Content>
@@ -66,15 +78,26 @@ import { RadioGroup } from "~/components/ui/radio-group";
 <Tabs.Content id="multiple">
 
 ```tsx
-import { Label } from "~/components/ui/label";
-import { RadioGroupItem, RadioGroupRoot } from "~/components/ui/radio-group";
+import {
+  InputOTPGroup,
+  InputOTPRoot,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "~/registry/ui/input-otp";
 
-<RadioGroupRoot>
-  <RadioGroupItem>
-    <RadioGroupIndicator />
-    <Label />
-  </RadioGroupItem>
-</RadioGroupRoot>;
+<InputOTPRoot maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTPRoot>;
 ```
 
 </Tabs.Content>
@@ -83,20 +106,67 @@ import { RadioGroupItem, RadioGroupRoot } from "~/components/ui/radio-group";
 
 ## Examples
 
-### With Description
+### Pattern
 
-<ComponentPreview name="radio-group-with-description-demo" />
+Use the `pattern` prop to define a custom pattern for the OTP input.
 
-### Disabled
+<ComponentPreview name="input-otp-pattern-demo" />
 
-<ComponentPreview name="radio-group-disabled-demo" />
+```tsx
+// [!code highlight]
+import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
+
+...
+
+<InputOTP
+  maxLength={6}
+  // [!code highlight]
+  pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
+>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    {/* ... */}
+  </InputOTPGroup>
+</InputOTP>
+```
+
+### Separator
+
+You can use the `<InputOTPSeparator />{:tsx}` component to add a separator between the input groups.
+
+<ComponentPreview name="input-otp-separator-demo" />
+
+```tsx showLineNumbers {4,15}
+import {
+  InputOTP,
+  InputOTPGroup,
+  // [!code highlight]
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
+
+...
+
+<InputOTP maxLength={4}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+  </InputOTPGroup>
+  // [!code highlight]
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={2} />
+    <InputOTPSlot index={3} />
+  </InputOTPGroup>
+</InputOTP>
+```
+
+### Controlled
+
+You can use the `value` and `onChange` props to control the input value.
+
+<ComponentPreview name="input-otp-controlled-demo" />
 
 ### Form
 
-<Alert.Root variant="warning">
-  <AlertIcon variant="warning" className="size-4" />
-  <Alert.Title>Under Construction</Alert.Title>
-  <Alert.Description>
-    This component is currently being built. Check back soon for updates!
-  </Alert.Description>
-</Alert.Root>
+<ComponentPreview name="input-otp-form-demo" />

@@ -70,7 +70,7 @@ export function InputOTPSlot({
 
 export interface InputOTPSeparatorProps extends React.ComponentProps<"div"> {}
 
-export function InputOTPSeparator({ ...props }: InputOTPSeparatorProps) {
+export function InputOTPSeparator(props: InputOTPSeparatorProps) {
   return (
     <div
       data-slot="input-otp-separator"

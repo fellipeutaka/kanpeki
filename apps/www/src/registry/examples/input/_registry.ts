@@ -56,15 +56,4 @@ export const inputExamples: RegistryItem[] = [
       },
     ],
   },
-  {
-    name: "input-otp-demo",
-    type: "registry:example",
-    registryDependencies: ["@kanpeki/input"],
-    files: [
-      {
-        path: "src/registry/examples/input/input-otp-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
 ];

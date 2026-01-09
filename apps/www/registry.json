@@ -1952,17 +1952,6 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-otp-demo.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "name": "input-otp-demo",
-      "registryDependencies": ["@kanpeki/input"],
-      "type": "registry:example"
-    },
-    {
-      "files": [
-        {
           "path": "src/registry/examples/input-group/input-group-demo.tsx",
           "type": "registry:example"
         }
@@ -2072,6 +2061,50 @@
         "@kanpeki/button-group",
         "@kanpeki/button"
       ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-otp/input-otp-controlled-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-otp-controlled-demo",
+      "registryDependencies": ["@kanpeki/input-otp"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-otp/input-otp-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-otp-demo",
+      "registryDependencies": ["@kanpeki/input-otp"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-otp/input-otp-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-otp-pattern-demo",
+      "registryDependencies": ["@kanpeki/input-otp"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-otp/input-otp-separator-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-otp-separator-demo",
+      "registryDependencies": ["@kanpeki/input-otp"],
       "type": "registry:example"
     },
     {

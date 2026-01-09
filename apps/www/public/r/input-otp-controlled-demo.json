@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { useState } from \"react\";\nimport { InputOTP } from \"~/registry/ui/input-otp\";\n\nexport function InputOTPControlledDemo() {\n  const [value, setValue] = useState(\"\");\n\n  return (\n    <div className=\"space-y-2\">\n      <InputOTP.Root\n        maxLength={6}\n        onChange={(value) => setValue(value)}\n        value={value}\n      >\n        <InputOTP.Group>\n          <InputOTP.Slot index={0} />\n          <InputOTP.Slot index={1} />\n          <InputOTP.Slot index={2} />\n          <InputOTP.Slot index={3} />\n          <InputOTP.Slot index={4} />\n          <InputOTP.Slot index={5} />\n        </InputOTP.Group>\n      </InputOTP.Root>\n      <div className=\"text-center text-sm\">\n        {value === \"\" ? (\n          <>Enter your one-time password.</>\n        ) : (\n          <>You entered: {value}</>\n        )}\n      </div>\n    </div>\n  );\n}\n",
+      "path": "src/registry/examples/input-otp/input-otp-controlled-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-otp-controlled-demo",
+  "registryDependencies": [
+    "@kanpeki/input-otp"
+  ],
+  "type": "registry:example"
+}
