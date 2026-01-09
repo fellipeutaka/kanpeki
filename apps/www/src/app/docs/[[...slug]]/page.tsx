@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { mdxComponents } from "~/components/mdx/mdx-components";
 import { source } from "~/lib/source";
+import { getLLMText } from "~/utils/get-llm-text";
 import { Contribute } from "./_components/contribute";
 import { DocsHeader } from "./_components/docs-header";
 import { DocsPager } from "./_components/docs-pager";
@@ -42,12 +43,15 @@ export default async function Page({ params }: PageProps<"/docs/[[...slug]]">) {
     notFound();
   }
 
-  const { body: MDXContent, toc } = await page.data.load();
+  const [llmText, { body: MDXContent, toc }] = await Promise.all([
+    getLLMText(page, { includeSources: true }),
+    page.data.load(),
+  ]);
 
   return (
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <div className="mx-auto w-full min-w-0">
-        <DocsHeader page={page} />
+        <DocsHeader llmText={llmText} page={page} />
         <div className="mdx flex w-full max-w-full flex-col pt-8 pb-12">
           <MDXContent components={mdxComponents} />
         </div>

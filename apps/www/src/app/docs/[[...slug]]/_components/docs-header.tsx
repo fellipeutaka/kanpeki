@@ -4,22 +4,25 @@ import type { source } from "~/lib/source";
 import { BadgeStyles } from "~/registry/ui/badge/styles";
 import { LinkButton } from "~/registry/ui/link-button";
 import { DocsBreadcrumb } from "./docs-breadcrumb";
+import { DocsCopyPage } from "./docs-copy-page";
 
 interface DocsHeaderProps {
   page: NonNullable<ReturnType<(typeof source)["getPage"]>>;
+  llmText: string;
 }
 
-export function DocsHeader({ page }: DocsHeaderProps) {
+export function DocsHeader({ page, llmText }: DocsHeaderProps) {
   const { data, url } = page;
 
   return (
     <>
       <DocsBreadcrumb url={url} />
-      <div className="space-y-2">
-        <h1 className="wrap-break-word scroll-m-20 font-bold text-3xl tracking-tight">
+      <div className="grid grid-cols-2 gap-2">
+        <h1 className="wrap-break-word scroll-m-20 font-bold text-3xl tracking-tight max-sm:col-span-full">
           {data.title}
         </h1>
-        <p className="text-balance text-base text-muted-foreground">
+        <DocsCopyPage page={llmText} url={url} />
+        <p className="col-span-full text-balance text-base text-muted-foreground">
           {data.description}
         </p>
       </div>
@@ -65,7 +68,12 @@ interface DocsLinkIconProps {
 }
 
 function DocsLinkIcon({ link }: DocsLinkIconProps) {
+  // TODO: Remove this old RAC link later
   if (link.startsWith("https://react-spectrum.adobe.com")) {
+    return <Icons.Adobe className="size-3" />;
+  }
+
+  if (link.startsWith("https://react-aria.adobe.com")) {
     return <Icons.Adobe className="size-3" />;
   }
 
