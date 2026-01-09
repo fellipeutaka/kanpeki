@@ -44,7 +44,7 @@ export default async function Page({ params }: PageProps<"/docs/[[...slug]]">) {
   }
 
   const [llmText, { body: MDXContent, toc }] = await Promise.all([
-    getLLMText(page),
+    getLLMText(page, { includeSources: true }),
     page.data.load(),
   ]);
 
