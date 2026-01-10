@@ -22,7 +22,7 @@
     "lint:fix": "biome check --write",
     "lint:doctor": "ultracite doctor",
     "type-check": "fumadocs-mdx && next typegen && tsc --noEmit",
-    "registry:build": "bun run src/scripts/build-registry.ts",
+    "registry:build": "bun run src/scripts/build-registry.ts && shadcn build",
     "registry:validate": "bun run src/scripts/validate-registry.ts"
   },
   "dependencies": {

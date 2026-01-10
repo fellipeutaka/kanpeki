@@ -7,7 +7,7 @@ import { Form } from "~/registry/ui/form";
 import { Input } from "~/registry/ui/input";
 import { TextField } from "~/registry/ui/text-field";
 
-export function TextfieldForm() {
+export function TextfieldFormDemo() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);

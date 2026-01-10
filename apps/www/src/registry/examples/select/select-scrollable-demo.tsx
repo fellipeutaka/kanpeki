@@ -3,10 +3,10 @@ import { Popover } from "~/registry/ui/popover";
 
 import { Select } from "~/registry/ui/select";
 
-export function SelectDemo() {
+export function SelectScrollableDemo() {
   return (
     <Select.Root aria-label="Timezone" placeholder="Select a timezone">
-      <Select.Trigger className="w-[280px]">
+      <Select.Trigger className="w-70">
         <Select.Value />
       </Select.Trigger>
       <Popover.Content>

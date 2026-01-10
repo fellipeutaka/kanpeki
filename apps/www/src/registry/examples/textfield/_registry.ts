@@ -13,56 +13,56 @@ export const textfieldExamples: RegistryItem[] = [
     ],
   },
   {
-    name: "textfield-form",
+    name: "textfield-form-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [
       {
-        path: "src/registry/examples/textfield/textfield-form.tsx",
+        path: "src/registry/examples/textfield/textfield-form-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "textfield-password",
+    name: "textfield-password-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [
       {
-        path: "src/registry/examples/textfield/textfield-password.tsx",
+        path: "src/registry/examples/textfield/textfield-password-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "textfield-validation",
+    name: "textfield-validation-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [
       {
-        path: "src/registry/examples/textfield/textfield-validation.tsx",
+        path: "src/registry/examples/textfield/textfield-validation-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "textfield-with-description",
+    name: "textfield-with-description-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [
       {
-        path: "src/registry/examples/textfield/textfield-with-description.tsx",
+        path: "src/registry/examples/textfield/textfield-with-description-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "textfield-with-icon",
+    name: "textfield-with-icon-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [
       {
-        path: "src/registry/examples/textfield/textfield-with-icon.tsx",
+        path: "src/registry/examples/textfield/textfield-with-icon-demo.tsx",
         type: "registry:example",
       },
     ],

@@ -1,11 +1,11 @@
 import { Input } from "~/registry/ui/input";
 import { Label } from "~/registry/ui/label";
 
-export function InputWithLabel() {
+export function InputFileDemo() {
   return (
     <div className="grid w-full max-w-sm items-center gap-3">
-      <Label htmlFor="email">Email</Label>
-      <Input id="email" placeholder="Email" type="email" />
+      <Label htmlFor="picture">Picture</Label>
+      <Input id="picture" type="file" />
     </div>
   );
 }

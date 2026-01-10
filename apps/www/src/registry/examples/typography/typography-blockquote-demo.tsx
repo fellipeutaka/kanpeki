@@ -1,4 +1,4 @@
-export function TypographyBlockquote() {
+export function TypographyBlockquoteDemo() {
   return (
     <blockquote className="blockquote">
       "After all," he said, "everyone enjoys a good joke, so it's only fair that

@@ -2,7 +2,7 @@ import { Field } from "~/registry/ui/field";
 import { Input } from "~/registry/ui/input";
 import { TextField } from "~/registry/ui/text-field";
 
-export function TextfieldValidation() {
+export function TextfieldValidationDemo() {
   return (
     <div className="flex flex-col gap-4">
       <Field.Root render={<TextField isRequired />}>

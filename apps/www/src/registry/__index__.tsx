@@ -2588,37 +2588,19 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "login-form": {
-    name: "login-form",
+  "tanstack-form-demo": {
+    name: "tanstack-form-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/login-form.tsx",
+      path: "src/registry/examples/form/tanstack-form-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/login-form.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "login-form"
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
-  "tanstack-form": {
-    name: "tanstack-form",
-    description: "",
-    type: "registry:example",
-    registryDependencies: ["@kanpeki/form"],
-    files: [{
-      path: "src/registry/examples/form/tanstack-form.tsx",
-      type: "registry:example",
-      target: ""
-    }],
-    component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form"
+      const mod = await import("~/registry/examples/form/tanstack-form-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
@@ -2660,73 +2642,73 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "input-file": {
-    name: "input-file",
+  "input-file-demo": {
+    name: "input-file-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/input","@kanpeki/label"],
     files: [{
-      path: "src/registry/examples/input/input-file.tsx",
+      path: "src/registry/examples/input/input-file-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/input/input-file.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-file"
+      const mod = await import("~/registry/examples/input/input-file-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-file-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
     meta: undefined,
   },
-  "input-disabled": {
-    name: "input-disabled",
+  "input-disabled-demo": {
+    name: "input-disabled-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/input"],
     files: [{
-      path: "src/registry/examples/input/input-disabled.tsx",
+      path: "src/registry/examples/input/input-disabled-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/input/input-disabled.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-disabled"
+      const mod = await import("~/registry/examples/input/input-disabled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-disabled-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
     meta: undefined,
   },
-  "input-with-label": {
-    name: "input-with-label",
+  "input-with-label-demo": {
+    name: "input-with-label-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/input","@kanpeki/label"],
     files: [{
-      path: "src/registry/examples/input/input-with-label.tsx",
+      path: "src/registry/examples/input/input-with-label-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/input/input-with-label.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-with-label"
+      const mod = await import("~/registry/examples/input/input-with-label-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-with-label-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
     meta: undefined,
   },
-  "input-with-button": {
-    name: "input-with-button",
+  "input-with-button-demo": {
+    name: "input-with-button-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/input","@kanpeki/button"],
     files: [{
-      path: "src/registry/examples/input/input-with-button.tsx",
+      path: "src/registry/examples/input/input-with-button-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/input/input-with-button.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-with-button"
+      const mod = await import("~/registry/examples/input/input-with-button-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "input-with-button-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
@@ -3812,91 +3794,91 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "textfield-form": {
-    name: "textfield-form",
+  "textfield-form-demo": {
+    name: "textfield-form-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [{
-      path: "src/registry/examples/textfield/textfield-form.tsx",
+      path: "src/registry/examples/textfield/textfield-form-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/textfield/textfield-form.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-form"
+      const mod = await import("~/registry/examples/textfield/textfield-form-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-form-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
     meta: undefined,
   },
-  "textfield-password": {
-    name: "textfield-password",
+  "textfield-password-demo": {
+    name: "textfield-password-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [{
-      path: "src/registry/examples/textfield/textfield-password.tsx",
+      path: "src/registry/examples/textfield/textfield-password-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/textfield/textfield-password.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-password"
+      const mod = await import("~/registry/examples/textfield/textfield-password-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-password-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
     meta: undefined,
   },
-  "textfield-validation": {
-    name: "textfield-validation",
+  "textfield-validation-demo": {
+    name: "textfield-validation-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [{
-      path: "src/registry/examples/textfield/textfield-validation.tsx",
+      path: "src/registry/examples/textfield/textfield-validation-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/textfield/textfield-validation.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-validation"
+      const mod = await import("~/registry/examples/textfield/textfield-validation-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-validation-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
     meta: undefined,
   },
-  "textfield-with-description": {
-    name: "textfield-with-description",
+  "textfield-with-description-demo": {
+    name: "textfield-with-description-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [{
-      path: "src/registry/examples/textfield/textfield-with-description.tsx",
+      path: "src/registry/examples/textfield/textfield-with-description-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/textfield/textfield-with-description.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-with-description"
+      const mod = await import("~/registry/examples/textfield/textfield-with-description-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-with-description-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
     meta: undefined,
   },
-  "textfield-with-icon": {
-    name: "textfield-with-icon",
+  "textfield-with-icon-demo": {
+    name: "textfield-with-icon-demo",
     description: "",
     type: "registry:example",
     registryDependencies: ["@kanpeki/textfield"],
     files: [{
-      path: "src/registry/examples/textfield/textfield-with-icon.tsx",
+      path: "src/registry/examples/textfield/textfield-with-icon-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/textfield/textfield-with-icon.tsx")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-with-icon"
+      const mod = await import("~/registry/examples/textfield/textfield-with-icon-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "textfield-with-icon-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

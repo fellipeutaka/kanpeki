@@ -5,7 +5,7 @@ import { ButtonGroup } from "~/registry/ui/button-group";
 import { InputGroup } from "~/registry/ui/input-group";
 import { Label } from "~/registry/ui/label";
 
-export function InputGroupButtonGroup() {
+export function InputGroupButtonGroupDemo() {
   return (
     <div className="grid w-full max-w-sm gap-6">
       <ButtonGroup.Root>

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "files": [
     {
-      "content": "export function TypographyP() {\n  return (\n    <p className=\"p\">\n      The king, seeing how much happier his subjects were, realized the error of\n      his ways and repealed the joke tax.\n    </p>\n  );\n}\n",
+      "content": "export function TypographyPDemo() {\n  return (\n    <p className=\"p\">\n      The king, seeing how much happier his subjects were, realized the error of\n      his ways and repealed the joke tax.\n    </p>\n  );\n}\n",
       "path": "src/registry/examples/typography/typography-p-demo.tsx",
       "type": "registry:example"
     }

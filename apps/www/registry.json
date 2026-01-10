@@ -1864,22 +1864,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/login-form.tsx",
+          "path": "src/registry/examples/form/tanstack-form-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "login-form",
-      "registryDependencies": ["@kanpeki/form"],
-      "type": "registry:example"
-    },
-    {
-      "files": [
-        {
-          "path": "src/registry/examples/form/tanstack-form.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "name": "tanstack-form",
+      "name": "tanstack-form-demo",
       "registryDependencies": ["@kanpeki/form"],
       "type": "registry:example"
     },
@@ -1908,44 +1897,44 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-file.tsx",
+          "path": "src/registry/examples/input/input-file-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "input-file",
+      "name": "input-file-demo",
       "registryDependencies": ["@kanpeki/input", "@kanpeki/label"],
       "type": "registry:example"
     },
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-disabled.tsx",
+          "path": "src/registry/examples/input/input-disabled-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "input-disabled",
+      "name": "input-disabled-demo",
       "registryDependencies": ["@kanpeki/input"],
       "type": "registry:example"
     },
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-with-label.tsx",
+          "path": "src/registry/examples/input/input-with-label-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "input-with-label",
+      "name": "input-with-label-demo",
       "registryDependencies": ["@kanpeki/input", "@kanpeki/label"],
       "type": "registry:example"
     },
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-with-button.tsx",
+          "path": "src/registry/examples/input/input-with-button-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "input-with-button",
+      "name": "input-with-button-demo",
       "registryDependencies": ["@kanpeki/input", "@kanpeki/button"],
       "type": "registry:example"
     },
@@ -2630,55 +2619,55 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-form.tsx",
+          "path": "src/registry/examples/textfield/textfield-form-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-form",
+      "name": "textfield-form-demo",
       "registryDependencies": ["@kanpeki/textfield"],
       "type": "registry:example"
     },
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-password.tsx",
+          "path": "src/registry/examples/textfield/textfield-password-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-password",
+      "name": "textfield-password-demo",
       "registryDependencies": ["@kanpeki/textfield"],
       "type": "registry:example"
     },
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-validation.tsx",
+          "path": "src/registry/examples/textfield/textfield-validation-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-validation",
+      "name": "textfield-validation-demo",
       "registryDependencies": ["@kanpeki/textfield"],
       "type": "registry:example"
     },
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-with-description.tsx",
+          "path": "src/registry/examples/textfield/textfield-with-description-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-with-description",
+      "name": "textfield-with-description-demo",
       "registryDependencies": ["@kanpeki/textfield"],
       "type": "registry:example"
     },
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-with-icon.tsx",
+          "path": "src/registry/examples/textfield/textfield-with-icon-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-with-icon",
+      "name": "textfield-with-icon-demo",
       "registryDependencies": ["@kanpeki/textfield"],
       "type": "registry:example"
     },

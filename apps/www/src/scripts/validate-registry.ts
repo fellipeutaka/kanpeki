@@ -51,7 +51,7 @@ function kebabToPascalCase(kebab: string): string {
     .map((part) => {
       // Preserve known acronyms
       const uppercased = part.toUpperCase();
-      if (["OTP", "API", "URL", "HTML", "CSS", "ID"].includes(uppercased)) {
+      if (["OTP"].includes(uppercased)) {
         return uppercased;
       }
       return part.charAt(0).toUpperCase() + part.slice(1);

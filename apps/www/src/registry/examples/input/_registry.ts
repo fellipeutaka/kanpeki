@@ -13,45 +13,45 @@ export const inputExamples: RegistryItem[] = [
     ],
   },
   {
-    name: "input-file",
+    name: "input-file-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/input", "@kanpeki/label"],
     files: [
       {
-        path: "src/registry/examples/input/input-file.tsx",
+        path: "src/registry/examples/input/input-file-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "input-disabled",
+    name: "input-disabled-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/input"],
     files: [
       {
-        path: "src/registry/examples/input/input-disabled.tsx",
+        path: "src/registry/examples/input/input-disabled-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "input-with-label",
+    name: "input-with-label-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/input", "@kanpeki/label"],
     files: [
       {
-        path: "src/registry/examples/input/input-with-label.tsx",
+        path: "src/registry/examples/input/input-with-label-demo.tsx",
         type: "registry:example",
       },
     ],
   },
   {
-    name: "input-with-button",
+    name: "input-with-button-demo",
     type: "registry:example",
     registryDependencies: ["@kanpeki/input", "@kanpeki/button"],
     files: [
       {
-        path: "src/registry/examples/input/input-with-button.tsx",
+        path: "src/registry/examples/input/input-with-button-demo.tsx",
         type: "registry:example",
       },
     ],

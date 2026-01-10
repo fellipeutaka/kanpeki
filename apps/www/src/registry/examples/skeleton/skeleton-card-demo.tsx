@@ -1,7 +1,7 @@
 import { Card } from "~/registry/ui/card";
 import { Skeleton } from "~/registry/ui/skeleton";
 
-export function SkeletonCard() {
+export function SkeletonCardDemo() {
   return (
     <Card.Root className="@md:w-auto w-full @md:min-w-sm">
       <Card.Header>

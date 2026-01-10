@@ -20,7 +20,7 @@ const formSchema = z.object({
     .max(200, "Description must be at most 200 characters."),
 });
 
-export function TanstackForm() {
+export function TanstackFormDemo() {
   const form = useForm({
     defaultValues: {
       title: "",

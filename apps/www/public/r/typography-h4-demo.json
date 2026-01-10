@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "files": [
     {
-      "content": "export function TypographyH4() {\n  return <h4 className=\"heading-4\">People stopped telling jokes</h4>;\n}\n",
+      "content": "export function TypographyH4Demo() {\n  return <h4 className=\"heading-4\">People stopped telling jokes</h4>;\n}\n",
       "path": "src/registry/examples/typography/typography-h4-demo.tsx",
       "type": "registry:example"
     }

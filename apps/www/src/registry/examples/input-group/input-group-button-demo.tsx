@@ -6,7 +6,7 @@ import { useCopyToClipboard } from "~/hooks/use-copy-to-clipboard";
 import { InputGroup } from "~/registry/ui/input-group";
 import { Popover } from "~/registry/ui/popover";
 
-export function InputGroupButtonExample() {
+export function InputGroupButtonDemo() {
   const [copy, isCopied] = useCopyToClipboard();
   const [isFavorite, setIsFavorite] = useState(false);
 

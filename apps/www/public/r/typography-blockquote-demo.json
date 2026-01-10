@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "files": [
     {
-      "content": "export function TypographyBlockquote() {\n  return (\n    <blockquote className=\"blockquote\">\n      \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair that\n      they should pay for the privilege.\"\n    </blockquote>\n  );\n}\n",
+      "content": "export function TypographyBlockquoteDemo() {\n  return (\n    <blockquote className=\"blockquote\">\n      \"After all,\" he said, \"everyone enjoys a good joke, so it's only fair that\n      they should pay for the privilege.\"\n    </blockquote>\n  );\n}\n",
       "path": "src/registry/examples/typography/typography-blockquote-demo.tsx",
       "type": "registry:example"
     }

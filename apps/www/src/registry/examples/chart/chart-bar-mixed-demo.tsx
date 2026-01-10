@@ -42,7 +42,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function ChartBarMixed() {
+export function ChartBarMixedDemo() {
   return (
     <Card.Root>
       <Card.Header>
