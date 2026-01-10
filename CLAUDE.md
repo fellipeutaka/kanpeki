@@ -31,6 +31,7 @@ bun run build            # Build the Next.js site
 bun run type-check       # Type check the www app
 bun run postinstall      # Process MDX files (runs automatically after install)
 bun run registry:build   # Build component registry (runs shadcn build)
+bun run registry:validate # Validate registry structure and naming conventions
 ```
 
 ## Code Quality Tools
@@ -158,7 +159,76 @@ When creating or modifying components:
 5. Ensure accessibility with React Aria Components
 6. Use kebab-case for file names
 7. Export named exports (no default exports)
-8. Run `bun run registry:build` to rebuild registry after changes
+8. Run `bun run registry:validate` to validate your changes
+9. Run `bun run registry:build` to rebuild registry after validation passes
+
+### Registry Validation
+
+The `registry:validate` script ensures all component examples follow the project's naming conventions and structure requirements. Run it before committing changes to the registry.
+
+**Validation Rules:**
+
+1. **Directory Structure:**
+   - Each component folder must have a `_registry.ts` file
+   - Each component folder must contain at least one `.tsx` file
+
+2. **File Naming:**
+   - All example files must have the `-demo.tsx` suffix
+   - Examples: `button-demo.tsx`, `input-disabled-demo.tsx`
+   - Use kebab-case for all file names
+
+3. **Export Functions:**
+   - Each `.tsx` file must export exactly one function
+   - Function names must end with `Demo` suffix
+   - Function names must match the filename in PascalCase
+   - Examples:
+     - `button-demo.tsx` → `export function ButtonDemo()`
+     - `input-disabled-demo.tsx` → `export function InputDisabledDemo()`
+     - `input-otp-demo.tsx` → `export function InputOTPDemo()` (preserves acronyms)
+
+**Usage:**
+
+```bash
+cd apps/www
+bun run registry:validate
+```
+
+**Example Output:**
+
+```bash
+# Success
+✅ Registry validation passed!
+
+📊 Statistics:
+   • 52 components validated
+   • 153 example files checked
+   • 0 errors found
+
+# Failure
+❌ Registry validation failed!
+
+📦 input:
+   • File "input-disabled.tsx" must have -demo.tsx suffix (e.g., "input-disabled-demo.tsx")
+   • File "input-disabled.tsx" exports function "InputDisabled" which must end with "Demo" suffix. Expected: "InputDisabledDemo"
+
+📊 Statistics:
+   • 1 components with errors
+   • 52 total components
+   • 2 total errors
+```
+
+**Performance:**
+
+- Validates ~150 files in ~3-5ms
+- Uses optimized sequential file reading
+- Zero overhead for development workflow
+
+**When to Run:**
+
+- Before committing registry changes
+- After adding new component examples
+- As part of CI/CD validation
+- When refactoring component names
 
 ### Form Component Patterns
 
