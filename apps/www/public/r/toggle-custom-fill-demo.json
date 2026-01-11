@@ -5,7 +5,7 @@
   ],
   "files": [
     {
-      "content": "import { ThumbsUpIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleCustomFillDemo() {\n  return (\n    <Toggle\n      aria-label=\"Toggle book\"\n      className=\"selected:[&_svg]:fill-accent-foreground\"\n    >\n      <ThumbsUpIcon className=\"fill-transparent transition duration-300\" />\n    </Toggle>\n  );\n}\n",
+      "content": "import { ThumbsUpIcon } from \"lucide-react\";\n\nimport { Toggle } from \"~/registry/ui/toggle/toggle\";\n\nexport function ToggleCustomFillDemo() {\n  return (\n    <Toggle\n      aria-label=\"Toggle book\"\n      className=\"selected:[&_svg]:fill-accent-foreground\"\n    >\n      <ThumbsUpIcon className=\"fill-transparent transition-colors duration-300\" />\n    </Toggle>\n  );\n}\n",
       "path": "src/registry/examples/toggle/toggle-custom-fill-demo.tsx",
       "type": "registry:example"
     }
