@@ -1,4 +1,3 @@
-import { exec } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { rimraf } from "rimraf";
@@ -57,6 +56,8 @@ export const Index: Record<string, any> = {`;
   index += `
   }`;
 
+  console.info(`#️⃣  ${Object.keys(parsedRegistry.items).length} items found`);
+
   // Write style index.
   rimraf.sync(path.join(process.cwd(), "src/registry/__index__.tsx"));
   await fs.writeFile(
@@ -81,24 +82,12 @@ async function buildRegistryJsonFile() {
   );
 }
 
-function buildRegistry() {
-  return new Promise<void>((resolve, reject) => {
-    const process = exec("bun shadcn build");
-
-    process.on("exit", (code) => {
-      if (code === 0) {
-        resolve();
-      } else {
-        reject(new Error(`Process exited with code ${code}`));
-      }
-    });
-  });
-}
-
 try {
+  console.info("📁 Building src/registry/__index__.tsx...");
   await buildRegistryIndex();
+
+  console.info("💅 Building registry.json...");
   await buildRegistryJsonFile();
-  await buildRegistry();
 } catch (error) {
   console.error(error);
   process.exit(1);

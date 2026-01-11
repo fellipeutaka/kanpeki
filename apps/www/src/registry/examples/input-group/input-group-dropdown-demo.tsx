@@ -6,7 +6,7 @@ import { InputGroup } from "~/registry/ui/input-group";
 import { Menu } from "~/registry/ui/menu";
 import { Popover } from "~/registry/ui/popover";
 
-export function InputGroupDropdown() {
+export function InputGroupDropdownDemo() {
   const [selectedDomain, setSelectedDomain] = useState(".com");
 
   return (

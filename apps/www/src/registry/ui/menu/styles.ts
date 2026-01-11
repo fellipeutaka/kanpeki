@@ -8,7 +8,7 @@ export const MenuStyles = {
     variants: {
       variant: {
         command: [
-          "max-h-[300px] border-none",
+          "max-h-75 border-none",
           "**:data-[slot=menu-item]:py-3",
           "**:data-[slot=menu-label]:text-muted-foreground **:data-[slot=menu-label]:text-xs",
         ],

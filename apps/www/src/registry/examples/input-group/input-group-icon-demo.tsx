@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { InputGroup } from "~/registry/ui/input-group";
 
-export function InputGroupIcon() {
+export function InputGroupIconDemo() {
   return (
     <div className="grid w-full max-w-sm gap-6">
       <InputGroup.Root>

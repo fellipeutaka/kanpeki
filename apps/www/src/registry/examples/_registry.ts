@@ -24,6 +24,7 @@ import { formExamples } from "./form/_registry";
 import { hoverCardExamples } from "./hover-card/_registry";
 import { inputExamples } from "./input/_registry";
 import { inputGroupExamples } from "./input-group/_registry";
+import { inputOtpExamples } from "./input-otp/_registry";
 import { labelExamples } from "./label/_registry";
 import { linkExamples } from "./link/_registry";
 import { listBoxExamples } from "./list-box/_registry";
@@ -48,6 +49,7 @@ import { textareaExamples } from "./textarea/_registry";
 import { textfieldExamples } from "./textfield/_registry";
 import { toastExamples } from "./toast/_registry";
 import { toggleExamples } from "./toggle/_registry";
+import { toggleGroupExamples } from "./toggle-group/_registry";
 import { tooltipExamples } from "./tooltip/_registry";
 import { typographyExamples } from "./typography/_registry";
 
@@ -77,6 +79,7 @@ export const examples: RegistryItem[] = [
   ...hoverCardExamples,
   ...inputExamples,
   ...inputGroupExamples,
+  ...inputOtpExamples,
   ...labelExamples,
   ...linkExamples,
   ...listBoxExamples,
@@ -101,6 +104,7 @@ export const examples: RegistryItem[] = [
   ...textfieldExamples,
   ...toastExamples,
   ...toggleExamples,
+  ...toggleGroupExamples,
   ...tooltipExamples,
   ...typographyExamples,
 ];

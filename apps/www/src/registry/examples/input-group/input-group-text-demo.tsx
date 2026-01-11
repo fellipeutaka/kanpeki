@@ -1,6 +1,6 @@
 import { InputGroup } from "~/registry/ui/input-group";
 
-export function InputGroupTextExample() {
+export function InputGroupTextDemo() {
   return (
     <div className="grid w-full max-w-sm gap-6">
       <InputGroup.Root>

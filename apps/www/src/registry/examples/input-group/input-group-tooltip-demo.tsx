@@ -2,7 +2,7 @@ import { HelpCircleIcon, InfoIcon } from "lucide-react";
 import { InputGroup } from "~/registry/ui/input-group";
 import { Tooltip } from "~/registry/ui/tooltip";
 
-export function InputGroupTooltip() {
+export function InputGroupTooltipDemo() {
   return (
     <div className="grid w-full max-w-sm gap-4">
       <InputGroup.Root>

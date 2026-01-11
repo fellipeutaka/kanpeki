@@ -2,7 +2,7 @@ import { LoaderIcon } from "lucide-react";
 import { InputGroup } from "~/registry/ui/input-group";
 import { Spinner } from "~/registry/ui/spinner";
 
-export function InputGroupSpinner() {
+export function InputGroupSpinnerDemo() {
   return (
     <div className="grid w-full max-w-sm gap-4">
       <InputGroup.Root data-disabled>

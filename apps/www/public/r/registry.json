@@ -2239,24 +2239,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/login-form.tsx",
+          "path": "src/registry/examples/form/tanstack-form-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "login-form",
-      "registryDependencies": [
-        "@kanpeki/form"
-      ],
-      "type": "registry:example"
-    },
-    {
-      "files": [
-        {
-          "path": "src/registry/examples/form/tanstack-form.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "name": "tanstack-form",
+      "name": "tanstack-form-demo",
       "registryDependencies": [
         "@kanpeki/form"
       ],
@@ -2291,11 +2278,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-file.tsx",
+          "path": "src/registry/examples/input/input-file-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "input-file",
+      "name": "input-file-demo",
       "registryDependencies": [
         "@kanpeki/input",
         "@kanpeki/label"
@@ -2305,11 +2292,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-disabled.tsx",
+          "path": "src/registry/examples/input/input-disabled-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "input-disabled",
+      "name": "input-disabled-demo",
       "registryDependencies": [
         "@kanpeki/input"
       ],
@@ -2318,11 +2305,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-with-label.tsx",
+          "path": "src/registry/examples/input/input-with-label-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "input-with-label",
+      "name": "input-with-label-demo",
       "registryDependencies": [
         "@kanpeki/input",
         "@kanpeki/label"
@@ -2332,27 +2319,14 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/input/input-with-button.tsx",
+          "path": "src/registry/examples/input/input-with-button-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "input-with-button",
+      "name": "input-with-button-demo",
       "registryDependencies": [
         "@kanpeki/input",
         "@kanpeki/button"
-      ],
-      "type": "registry:example"
-    },
-    {
-      "files": [
-        {
-          "path": "src/registry/examples/input/input-otp-demo.tsx",
-          "type": "registry:example"
-        }
-      ],
-      "name": "input-otp-demo",
-      "registryDependencies": [
-        "@kanpeki/input"
       ],
       "type": "registry:example"
     },
@@ -2489,6 +2463,58 @@
         "@kanpeki/input-group",
         "@kanpeki/button-group",
         "@kanpeki/button"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-otp/input-otp-controlled-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-otp-controlled-demo",
+      "registryDependencies": [
+        "@kanpeki/input-otp"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-otp/input-otp-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-otp-demo",
+      "registryDependencies": [
+        "@kanpeki/input-otp"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-otp/input-otp-pattern-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-otp-pattern-demo",
+      "registryDependencies": [
+        "@kanpeki/input-otp"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/input-otp/input-otp-separator-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "input-otp-separator-demo",
+      "registryDependencies": [
+        "@kanpeki/input-otp"
       ],
       "type": "registry:example"
     },
@@ -3110,11 +3136,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-form.tsx",
+          "path": "src/registry/examples/textfield/textfield-form-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-form",
+      "name": "textfield-form-demo",
       "registryDependencies": [
         "@kanpeki/textfield"
       ],
@@ -3123,11 +3149,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-password.tsx",
+          "path": "src/registry/examples/textfield/textfield-password-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-password",
+      "name": "textfield-password-demo",
       "registryDependencies": [
         "@kanpeki/textfield"
       ],
@@ -3136,11 +3162,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-validation.tsx",
+          "path": "src/registry/examples/textfield/textfield-validation-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-validation",
+      "name": "textfield-validation-demo",
       "registryDependencies": [
         "@kanpeki/textfield"
       ],
@@ -3149,11 +3175,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-with-description.tsx",
+          "path": "src/registry/examples/textfield/textfield-with-description-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-with-description",
+      "name": "textfield-with-description-demo",
       "registryDependencies": [
         "@kanpeki/textfield"
       ],
@@ -3162,11 +3188,11 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/textfield/textfield-with-icon.tsx",
+          "path": "src/registry/examples/textfield/textfield-with-icon-demo.tsx",
           "type": "registry:example"
         }
       ],
-      "name": "textfield-with-icon",
+      "name": "textfield-with-icon-demo",
       "registryDependencies": [
         "@kanpeki/textfield"
       ],
@@ -3334,6 +3360,97 @@
       "name": "toggle-small-demo",
       "registryDependencies": [
         "@kanpeki/toggle"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-outline-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-outline-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-single-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-single-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-sm-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-sm-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-lg-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-lg-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-disabled-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-disabled-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-spacing-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-spacing-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
       ],
       "type": "registry:example"
     },

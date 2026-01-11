@@ -2,7 +2,7 @@ import { CopyIcon, CornerDownLeftIcon, RefreshCwIcon } from "lucide-react";
 import { Icons } from "~/components/icons";
 import { InputGroup } from "~/registry/ui/input-group";
 
-export function InputGroupTextareaExample() {
+export function InputGroupTextareaDemo() {
   return (
     <div className="grid w-full max-w-md gap-4">
       <InputGroup.Root>

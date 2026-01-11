@@ -1,4 +1,4 @@
-export function TypographyP() {
+export function TypographyPDemo() {
   return (
     <p className="p">
       The king, seeing how much happier his subjects were, realized the error of

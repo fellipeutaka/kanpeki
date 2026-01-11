@@ -3,7 +3,7 @@ import { Field } from "~/registry/ui/field";
 import { InputGroup } from "~/registry/ui/input-group";
 import { TextField } from "~/registry/ui/text-field";
 
-export function TextfieldWithIcon() {
+export function TextfieldWithIconDemo() {
   return (
     <Field.Root render={<TextField type="email" />}>
       <Field.Label>Email</Field.Label>

@@ -10,13 +10,20 @@ Component documentation files are located in `src/content/docs/components/` and 
 - Example components in `src/registry/examples/<component-name>/`
 - Registry entries in `src/registry/examples/<component-name>/_registry.ts`
 
-**Important**: After creating, updating, or deleting any component or file inside `src/registry/`, run:
+**Important**: After creating, updating, or deleting any component or file inside `src/registry/`:
 
-```bash
-bun run registry:build
-```
+1. Validate your changes:
 
-This rebuilds the component registry to reflect your changes.
+   ```bash
+   bun run registry:validate
+   ```
+
+2. If validation passes, rebuild the registry:
+   ```bash
+   bun run registry:build
+   ```
+
+This ensures your changes follow naming conventions before rebuilding the registry.
 
 ## MDX Frontmatter
 
@@ -254,8 +261,13 @@ Example files in `src/registry/examples/<component-name>/`:
 
 ### File Naming
 
-- Use kebab-case: `component-name-variant.tsx`
-- Export as named function: `export function ComponentNameVariant() {}`
+- **Files must end with `-demo.tsx` suffix**: `component-name-demo.tsx`, `component-name-variant-demo.tsx`
+- Use kebab-case for all parts: `button-demo.tsx`, `input-disabled-demo.tsx`
+- Export as named function with `Demo` suffix: `export function ComponentNameVariantDemo() {}`
+- Function name must match filename in PascalCase:
+  - `button-demo.tsx` → `export function ButtonDemo()`
+  - `input-disabled-demo.tsx` → `export function InputDisabledDemo()`
+  - `input-otp-demo.tsx` → `export function InputOTPDemo()` (preserves acronyms like OTP, API, URL)
 
 ### Import Paths
 
@@ -275,6 +287,36 @@ export function InputDemo() {
   return <Input type="email" placeholder="Email" />;
 }
 ```
+
+### Registry Validation
+
+Before committing, validate that your examples follow the required structure:
+
+```bash
+bun run registry:validate
+```
+
+**What it validates:**
+
+1. ✅ Each component folder has `_registry.ts`
+2. ✅ Each folder contains at least one `.tsx` file
+3. ✅ All `.tsx` files end with `-demo.tsx`
+4. ✅ Each file exports exactly one function
+5. ✅ Function names end with `Demo` suffix
+6. ✅ Function names match filenames (PascalCase)
+
+**Example errors:**
+
+```bash
+📦 button:
+   • File "button-icon.tsx" must have -demo.tsx suffix (e.g., "button-icon-demo.tsx")
+   • File "button-icon-demo.tsx" exports function "ButtonIcon" which must end with "Demo" suffix. Expected: "ButtonIconDemo"
+```
+
+**Fix the errors, then run:**
+
+- `bun run registry:validate` - Ensure all errors are fixed
+- `bun run registry:build` - Rebuild the registry
 
 ## Registry Entry
 
@@ -369,11 +411,16 @@ If needed, add API documentation using `<PropsTable>`:
 - [ ] Anatomy section (not Usage)
 - [ ] Examples section (without repeating demo)
 - [ ] Example components created in `src/registry/examples/`
+- [ ] **All example files end with `-demo.tsx` suffix**
+- [ ] **All exported functions end with `Demo` suffix**
+- [ ] **Function names match filenames in PascalCase**
 - [ ] Registry entries updated in `_registry.ts`
 - [ ] All imports use `~/registry/` or `~/components/` prefix
 - [ ] Named exports for all example functions
 - [ ] Alert components use `<Alert.Root>` with `<AlertIcon />`
 - [ ] Component and prop references use `{:tsx}` syntax in prose
+- [ ] **Run `bun run registry:validate` - all checks pass**
+- [ ] **Run `bun run registry:build` - registry rebuilt**
 
 ```
 

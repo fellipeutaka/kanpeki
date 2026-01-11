@@ -1,5 +1,5 @@
 import { Input } from "~/registry/ui/input";
 
-export function InputDisabled() {
+export function InputDisabledDemo() {
   return <Input disabled placeholder="Email" type="email" />;
 }

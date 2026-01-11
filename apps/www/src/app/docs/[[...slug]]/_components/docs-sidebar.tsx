@@ -56,32 +56,43 @@ interface DocsSidebarLinkProps {
   pathname: string;
 }
 
+/**
+ * Determines if a sidebar link should be active based on the current pathname
+ *
+ * For component routes (/docs/components/*):
+ * - Only exact matches are considered active to avoid false positives
+ *   (e.g., /docs/components/input shouldn't match /docs/components/input-group)
+ *
+ * For non-component routes (e.g., /docs/dark-mode):
+ * - Matches if pathname starts with href, allowing sub-routes
+ *   (e.g., /docs/dark-mode/next matches /docs/dark-mode)
+ */
+function isLinkActive(pathname: string, href: string): boolean {
+  // Check if this is a component route
+  const isComponentRoute = href.startsWith("/docs/components/");
+
+  if (isComponentRoute) {
+    // For components, require exact match
+    return pathname === href;
+  }
+
+  // For non-component routes, match if pathname starts with href
+  // This allows sub-routes like /docs/dark-mode/next to match /docs/dark-mode
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 function DocsSidebarLink({ item, pathname }: DocsSidebarLinkProps) {
   if (item.label === "Planned") {
     return null;
   }
 
-  if (item.disabled) {
-    return (
-      <span aria-disabled className={SidebarLinkStyles()}>
-        {item.title}
-
-        {item.label && (
-          <Badge
-            className="ml-2 border-none px-1.5 py-0.5 text-muted-foreground leading-none"
-            variant="secondary"
-          >
-            {item.label}
-          </Badge>
-        )}
-      </span>
-    );
-  }
+  const isActive = isLinkActive(pathname, item.href);
 
   return (
     <Link
-      className={SidebarLinkStyles({ active: pathname.includes(item.href) })}
+      className={SidebarLinkStyles({ active: isActive })}
       href={item.href}
+      isDisabled={item.disabled}
     >
       <span className="underline decoration-transparent transition group-hover:decoration-current">
         {item.title}

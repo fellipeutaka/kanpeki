@@ -3,7 +3,7 @@ import { InputGroup } from "~/registry/ui/input-group";
 import { Label } from "~/registry/ui/label";
 import { Tooltip } from "~/registry/ui/tooltip";
 
-export function InputGroupLabel() {
+export function InputGroupLabelDemo() {
   return (
     <div className="grid w-full max-w-sm gap-4">
       <InputGroup.Root>

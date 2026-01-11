@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "files": [
     {
-      "content": "import { Skeleton } from \"~/registry/ui/skeleton\";\n\nexport function SkeletonDemo() {\n  return (\n    <div className=\"flex items-center space-x-4\">\n      <Skeleton className=\"h-12 w-12 rounded-full\" />\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-[250px]\" />\n        <Skeleton className=\"h-4 w-[200px]\" />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { Skeleton } from \"~/registry/ui/skeleton\";\n\nexport function SkeletonDemo() {\n  return (\n    <div className=\"flex items-center space-x-4\">\n      <Skeleton className=\"size-12 rounded-full\" />\n      <div className=\"space-y-2\">\n        <Skeleton className=\"h-4 w-62.5\" />\n        <Skeleton className=\"h-4 w-50\" />\n      </div>\n    </div>\n  );\n}\n",
       "path": "src/registry/examples/skeleton/skeleton-demo.tsx",
       "type": "registry:example"
     }

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { REGEXP_ONLY_DIGITS_AND_CHARS } from \"input-otp\";\nimport { InputOTP } from \"~/registry/ui/input-otp\";\n\nexport function InputOTPPatternDemo() {\n  return (\n    <InputOTP.Root maxLength={6} pattern={REGEXP_ONLY_DIGITS_AND_CHARS}>\n      <InputOTP.Group>\n        <InputOTP.Slot index={0} />\n        <InputOTP.Slot index={1} />\n        <InputOTP.Slot index={2} />\n        <InputOTP.Slot index={3} />\n        <InputOTP.Slot index={4} />\n        <InputOTP.Slot index={5} />\n      </InputOTP.Group>\n    </InputOTP.Root>\n  );\n}\n",
+      "path": "src/registry/examples/input-otp/input-otp-pattern-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "input-otp-pattern-demo",
+  "registryDependencies": [
+    "@kanpeki/input-otp"
+  ],
+  "type": "registry:example"
+}

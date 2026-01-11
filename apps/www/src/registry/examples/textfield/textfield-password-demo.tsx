@@ -6,7 +6,7 @@ import { Field } from "~/registry/ui/field";
 import { InputGroup } from "~/registry/ui/input-group";
 import { TextField } from "~/registry/ui/text-field";
 
-export function TextfieldPassword() {
+export function TextfieldPasswordDemo() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (

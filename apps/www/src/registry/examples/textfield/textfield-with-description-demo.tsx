@@ -2,7 +2,7 @@ import { Field } from "~/registry/ui/field";
 import { Input } from "~/registry/ui/input";
 import { TextField } from "~/registry/ui/text-field";
 
-export function TextfieldWithDescription() {
+export function TextfieldWithDescriptionDemo() {
   return (
     <Field.Root render={<TextField type="email" />}>
       <Field.Label>Email</Field.Label>

@@ -10,8 +10,7 @@ import { Popover } from "~/registry/ui/popover";
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
     `I’m looking at this kanpeki documentation: ${url}.
-Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.
-  `
+Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.`
   )}`;
 }
 
@@ -156,13 +155,18 @@ const menuItems = {
   },
 } satisfies Record<string, MenuItem>;
 
-export function DocsCopyPage({ page, url }: { page: string; url: string }) {
+interface DocsCopyPageProps {
+  page: string;
+  url: string;
+}
+
+export function DocsCopyPage({ page, url }: DocsCopyPageProps) {
   const [copyToClipboard, isCopied] = useCopyToClipboard();
 
   return (
     <ButtonGroup.Root className="h-8 *:h-full max-sm:order-1 max-sm:col-span-full sm:self-center sm:justify-self-end md:h-7 *:md:text-[0.8rem]">
       <Button
-        className="inline-grid *:row-start-1"
+        className="inline-grid pressed:scale-100 pressed:bg-secondary/70 *:row-start-1"
         onPress={() =>
           copyToClipboard({
             text: page,
@@ -185,10 +189,17 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
       <ButtonGroup.Separator />
 
       <Menu.Root>
-        <DocsCopyPageTrigger />
+        <Button
+          className="group size-8 pressed:scale-100 pressed:bg-secondary/70 md:size-7"
+          size="sm"
+          variant="secondary"
+        >
+          <ChevronDownIcon className="transition group-pressed:rotate-180" />
+          <span className="sr-only">Open In</span>
+        </Button>
 
         <Popover.Content placement="bottom end">
-          <Menu.Content className="shadow-none">
+          <Menu.Content>
             {Object.entries(menuItems).map(([id, item]) => (
               <Menu.Item
                 href={item.href(url)}
@@ -204,22 +215,5 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
         </Popover.Content>
       </Menu.Root>
     </ButtonGroup.Root>
-  );
-}
-
-interface DocsCopyPageTriggerProps
-  extends React.ComponentProps<typeof Button> {}
-
-function DocsCopyPageTrigger(props: DocsCopyPageTriggerProps) {
-  return (
-    <Button
-      {...props}
-      className="group size-8 md:size-7"
-      size="sm"
-      variant="secondary"
-    >
-      <ChevronDownIcon className="transition group-pressed:rotate-180" />
-      <span className="sr-only">Open In</span>
-    </Button>
   );
 }
