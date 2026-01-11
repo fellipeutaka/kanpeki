@@ -2,7 +2,7 @@
 title: Collapsible
 description: An interactive component which expands/collapses a panel.
 links:
-  docs: https://react-spectrum.adobe.com/react-aria/Disclosure.html
+  docs: https://react-aria.adobe.com/Disclosure
 ---
 
 <ComponentPreview name="collapsible-demo" />
@@ -102,13 +102,4 @@ or you can use the `<Button />{:tsx}` component as the trigger by passing it a `
 
 ## Animation
 
-<Alert.Root variant="warning">
-  <AlertIcon variant="warning" className="size-4" />
-  <Alert.Description>
-    The collapsible component uses the `interpolate-size: allow-keywords` CSS
-    property to animate the height of the content. This property is not
-    supported in all browsers. See the [browser
-    compatibility](https://caniuse.com/mdn-css_properties_interpolate-size_allow-keywords)
-    Tabs.le for more information.
-  </Alert.Description>
-</Alert.Root>
+The accordion uses the `--disclosure-panel-height{:css}` CSS variable to animate the height of the content area.

@@ -1,11 +1,13 @@
-import { cva } from "~/registry/lib/cva";
+import { compose, cva } from "~/registry/lib/cva";
+import { CollapsibleStyles } from "~/registry/ui/collapsible";
 
 export const AccordionStyles = {
-  Content: cva({
-    base: [
-      "overflow-hidden pb-4 text-sm transition-[height,content_visibility] transition-discrete duration-300 [interpolate-size:allow-keywords] aria-hidden:h-0 aria-hidden:pb-0",
-    ],
-  }),
+  Content: compose(
+    CollapsibleStyles.Content,
+    cva({
+      base: ["*:pb-4"],
+    })
+  ),
   Icon: cva({
     base: [
       "pointer-events-none size-4 shrink-0 translate-y-0.5 text-muted-foreground transition-transform duration-200 group-expanded:rotate-180",

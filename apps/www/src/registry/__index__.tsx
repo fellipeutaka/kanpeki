@@ -8,7 +8,7 @@ export const Index: Record<string, any> = {
     name: "accordion",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["@kanpeki/cva","@kanpeki/custom-plugin"],
+    registryDependencies: ["@kanpeki/collapsible"],
     files: [{
       path: "src/registry/ui/accordion/index.ts",
       type: "registry:ui",

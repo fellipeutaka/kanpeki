@@ -2,7 +2,7 @@
 title: Accordion
 description: A vertically stacked set of interactive headings that each reveal a section of content.
 links:
-  docs: https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html
+  docs: https://react-aria.adobe.com/DisclosureGroup
 ---
 
 <ComponentPreview name="accordion-demo" />
@@ -90,13 +90,14 @@ import {
 
 ## Animation
 
-<Alert.Root variant="warning">
-  <AlertIcon variant="warning" />
-  <Alert.Description>
-    The Accordion component uses the `interpolate-size: allow-keywords` CSS
-    property to animate the height of the content. This property is not
-    supported in all browsers. See the [browser
-    compatibility](https://caniuse.com/mdn-css_properties_interpolate-size_allow-keywords)
-    Tabs.le for more information.
-  </Alert.Description>
-</Alert.Root>
+The accordion uses the `--disclosure-panel-height{:css}` CSS variable to animate the height of the content area.
+
+## Customization
+
+If you need to customize the internal padding of the accordion content, you can use the `*:` Tailwind variant to target the content area directly.
+
+```tsx
+<Accordion.Content className="*:pb-12">
+  Customized padding for the content area.
+</Accordion.Content>
+```

@@ -72,6 +72,7 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/accordion",
           title: "Accordion",
+          label: LABEL_OPTIONS.UPDATED,
         },
         {
           href: "/docs/components/alert",
@@ -122,6 +123,7 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/collapsible",
           title: "Collapsible",
+          label: LABEL_OPTIONS.UPDATED,
         },
         {
           disabled: true,
