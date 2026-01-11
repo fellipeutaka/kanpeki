@@ -3366,6 +3366,97 @@
     {
       "files": [
         {
+          "path": "src/registry/examples/toggle-group/toggle-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-outline-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-outline-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-single-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-single-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-sm-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-sm-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-lg-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-lg-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-disabled-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-disabled-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/toggle-group/toggle-group-spacing-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "toggle-group-spacing-demo",
+      "registryDependencies": [
+        "@kanpeki/toggle-group"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
           "path": "src/registry/examples/tooltip/tooltip-demo.tsx",
           "type": "registry:example"
         }

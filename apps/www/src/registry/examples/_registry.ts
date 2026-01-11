@@ -49,6 +49,7 @@ import { textareaExamples } from "./textarea/_registry";
 import { textfieldExamples } from "./textfield/_registry";
 import { toastExamples } from "./toast/_registry";
 import { toggleExamples } from "./toggle/_registry";
+import { toggleGroupExamples } from "./toggle-group/_registry";
 import { tooltipExamples } from "./tooltip/_registry";
 import { typographyExamples } from "./typography/_registry";
 
@@ -103,6 +104,7 @@ export const examples: RegistryItem[] = [
   ...textfieldExamples,
   ...toastExamples,
   ...toggleExamples,
+  ...toggleGroupExamples,
   ...tooltipExamples,
   ...typographyExamples,
 ];

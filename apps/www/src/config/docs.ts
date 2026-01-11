@@ -248,9 +248,9 @@ export const docsConfig: DocsConfig = {
           title: "Toggle",
         },
         {
-          disabled: true,
           href: "/docs/components/toggle-group",
           title: "Toggle Group",
+          label: "New",
         },
         {
           href: "/docs/components/tooltip",

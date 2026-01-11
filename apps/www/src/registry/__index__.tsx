@@ -4100,6 +4100,132 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "toggle-group-demo": {
+    name: "toggle-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle-group"],
+    files: [{
+      path: "src/registry/examples/toggle-group/toggle-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-group/toggle-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-group-outline-demo": {
+    name: "toggle-group-outline-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle-group"],
+    files: [{
+      path: "src/registry/examples/toggle-group/toggle-group-outline-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-group/toggle-group-outline-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-group-outline-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-group-single-demo": {
+    name: "toggle-group-single-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle-group"],
+    files: [{
+      path: "src/registry/examples/toggle-group/toggle-group-single-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-group/toggle-group-single-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-group-single-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-group-sm-demo": {
+    name: "toggle-group-sm-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle-group"],
+    files: [{
+      path: "src/registry/examples/toggle-group/toggle-group-sm-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-group/toggle-group-sm-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-group-sm-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-group-lg-demo": {
+    name: "toggle-group-lg-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle-group"],
+    files: [{
+      path: "src/registry/examples/toggle-group/toggle-group-lg-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-group/toggle-group-lg-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-group-lg-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-group-disabled-demo": {
+    name: "toggle-group-disabled-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle-group"],
+    files: [{
+      path: "src/registry/examples/toggle-group/toggle-group-disabled-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-group/toggle-group-disabled-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-group-disabled-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "toggle-group-spacing-demo": {
+    name: "toggle-group-spacing-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/toggle-group"],
+    files: [{
+      path: "src/registry/examples/toggle-group/toggle-group-spacing-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/toggle-group/toggle-group-spacing-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "toggle-group-spacing-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "tooltip-demo": {
     name: "tooltip-demo",
     description: "",

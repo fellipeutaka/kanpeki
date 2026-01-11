@@ -8,7 +8,7 @@ export function ToggleCustomFillDemo() {
       aria-label="Toggle book"
       className="selected:[&_svg]:fill-accent-foreground"
     >
-      <ThumbsUpIcon className="fill-transparent transition duration-300" />
+      <ThumbsUpIcon className="fill-transparent transition-colors duration-300" />
     </Toggle>
   );
 }

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "files": [
     {
-      "content": "import { ChartAreaDemo } from \"~/registry/examples/chart/chart-area-demo\";\nimport { ChartBarDemo } from \"~/registry/examples/chart/chart-bar-demo\";\nimport { ChartBarMixed } from \"~/registry/examples/chart/chart-bar-mixed-demo\";\nimport { ChartLineDemo } from \"~/registry/examples/chart/chart-line-demo\";\n\nexport function ChartDemo() {\n  return (\n    <div className=\"grid w-full max-w-screen-2xl @2xl:grid-cols-2 @6xl:grid-cols-3 gap-4 *:data-[slot=card]:flex-1\">\n      <ChartAreaDemo />\n      <ChartBarDemo />\n      <ChartBarMixed />\n      <div className=\"@6xl:hidden\">\n        <ChartLineDemo />\n      </div>\n    </div>\n  );\n}\n",
+      "content": "import { ChartAreaDemo } from \"~/registry/examples/chart/chart-area-demo\";\nimport { ChartBarDemo } from \"~/registry/examples/chart/chart-bar-demo\";\nimport { ChartBarMixedDemo } from \"~/registry/examples/chart/chart-bar-mixed-demo\";\nimport { ChartLineDemo } from \"~/registry/examples/chart/chart-line-demo\";\n\nexport function ChartDemo() {\n  return (\n    <div className=\"grid w-full max-w-screen-2xl @2xl:grid-cols-2 @6xl:grid-cols-3 gap-4 *:data-[slot=card]:flex-1\">\n      <ChartAreaDemo />\n      <ChartBarDemo />\n      <ChartBarMixedDemo />\n      <div className=\"@6xl:hidden\">\n        <ChartLineDemo />\n      </div>\n    </div>\n  );\n}\n",
       "path": "src/registry/examples/chart/chart-demo.tsx",
       "type": "registry:example"
     }

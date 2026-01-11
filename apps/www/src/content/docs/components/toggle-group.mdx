@@ -1,0 +1,81 @@
+---
+title: Toggle Group
+description: A set of two-state buttons that can be toggled on or off.
+links:
+  docs: https://react-aria.adobe.com/ToggleButtonGroup
+  api: https://react-spectrum.adobe.com/react-aria/ToggleButtonGroup#api
+---
+
+<ComponentPreview name="toggle-group-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/toggle-group
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="toggle-group" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+```tsx
+import { ToggleGroup } from "~/components/ui/toggle-group";
+
+<ToggleGroup.Root selectionMode="single">
+  <ToggleGroup.Item id="a">A</ToggleGroup.Item>
+  <ToggleGroup.Item id="b">B</ToggleGroup.Item>
+  <ToggleGroup.Item id="c">C</ToggleGroup.Item>
+</ToggleGroup.Root>;
+```
+
+## Examples
+
+### Outline
+
+<ComponentPreview name="toggle-group-outline-demo" />
+
+### Single
+
+<ComponentPreview name="toggle-group-single-demo" />
+
+### Small
+
+<ComponentPreview name="toggle-group-sm-demo" />
+
+### Large
+
+<ComponentPreview name="toggle-group-lg-demo" />
+
+### Disabled
+
+<ComponentPreview name="toggle-group-disabled-demo" />
+
+### Spacing
+
+Use `spacing={2}{:tsx}` to add spacing between toggle group items.
+
+<ComponentPreview name="toggle-group-spacing-demo" />
