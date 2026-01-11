@@ -1,5 +1,13 @@
 import type { Icons } from "~/components/icons";
 
+const LABEL_OPTIONS = {
+  NEW: "New",
+  PLANNED: "Planned",
+  UPDATED: "Updated",
+} as const satisfies Record<string, string>;
+
+type LabelOptions = (typeof LABEL_OPTIONS)[keyof typeof LABEL_OPTIONS];
+
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
@@ -96,7 +104,7 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/carousel",
           title: "Carousel",
-          label: "New",
+          label: LABEL_OPTIONS.NEW,
         },
         {
           disabled: true,
@@ -154,7 +162,7 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/input-group",
           title: "Input Group",
-          label: "New",
+          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/input-otp",
@@ -250,7 +258,7 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/toggle-group",
           title: "Toggle Group",
-          label: "New",
+          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/tooltip",
@@ -295,5 +303,5 @@ export interface NavLink {
   title: string;
   href: string;
   disabled?: boolean;
-  label?: string;
+  label?: LabelOptions;
 }
