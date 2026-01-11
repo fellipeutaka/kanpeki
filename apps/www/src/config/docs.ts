@@ -60,6 +60,10 @@ export const docsConfig: DocsConfig = {
           href: "/docs/typography",
           title: "Typography",
         },
+        {
+          href: "/llms-full.txt",
+          title: "llms-full.txt",
+        },
       ],
       title: "Getting Started",
     },
