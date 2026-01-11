@@ -3,7 +3,7 @@ import { cva } from "~/registry/lib/cva";
 export const CollapsibleStyles = {
   Content: cva({
     base: [
-      "overflow-hidden text-sm transition-[height,content_visibility] transition-discrete [interpolate-size:allow-keywords] aria-hidden:h-0",
+      "h-(--disclosure-panel-height) transform-gpu overflow-clip text-sm duration-300 motion-safe:transition-[height]",
     ],
   }),
 };

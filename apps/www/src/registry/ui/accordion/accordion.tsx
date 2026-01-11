@@ -64,15 +64,18 @@ export interface AccordionContentProps
 
 export function AccordionContent({
   className,
+  children,
   ...props
 }: AccordionContentProps) {
   return (
     <DisclosurePanel
-      className={AccordionStyles.Content({
-        className,
-      })}
+      className={composeRenderProps(className, (className) =>
+        AccordionStyles.Content({ className })
+      )}
       data-slot="accordion-content"
       {...props}
-    />
+    >
+      <div>{children}</div>
+    </DisclosurePanel>
   );
 }

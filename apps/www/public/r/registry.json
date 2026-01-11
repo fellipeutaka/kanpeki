@@ -3,7 +3,6 @@
   "items": [
     {
       "dependencies": [
-        "react-aria-components",
         "lucide-react"
       ],
       "files": [
@@ -26,8 +25,7 @@
       ],
       "name": "accordion",
       "registryDependencies": [
-        "@kanpeki/cva",
-        "@kanpeki/custom-plugin"
+        "@kanpeki/collapsible"
       ],
       "type": "registry:ui"
     },

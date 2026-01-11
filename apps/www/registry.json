@@ -2,7 +2,7 @@
   "homepage": "https://kanpeki.vercel.app",
   "items": [
     {
-      "dependencies": ["react-aria-components", "lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "src/registry/ui/accordion/index.ts",
@@ -22,7 +22,7 @@
         }
       ],
       "name": "accordion",
-      "registryDependencies": ["@kanpeki/cva", "@kanpeki/custom-plugin"],
+      "registryDependencies": ["@kanpeki/collapsible"],
       "type": "registry:ui"
     },
     {

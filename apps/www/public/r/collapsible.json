@@ -15,7 +15,7 @@
       "type": "registry:ui"
     },
     {
-      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const CollapsibleStyles = {\n  Content: cva({\n    base: [\n      \"overflow-hidden text-sm transition-[height,content_visibility] transition-discrete [interpolate-size:allow-keywords] aria-hidden:h-0\",\n    ],\n  }),\n};\n",
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const CollapsibleStyles = {\n  Content: cva({\n    base: [\n      \"h-(--disclosure-panel-height) transform-gpu overflow-clip text-sm duration-300 motion-safe:transition-[height]\",\n    ],\n  }),\n};\n",
       "path": "src/registry/ui/collapsible/styles.ts",
       "type": "registry:ui"
     },

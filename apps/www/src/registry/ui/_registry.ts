@@ -22,8 +22,8 @@ export const ui: RegistryItem[] = [
         type: "registry:ui",
       },
     ],
-    dependencies: ["react-aria-components", "lucide-react"],
-    registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
+    dependencies: ["lucide-react"],
+    registryDependencies: ["@kanpeki/collapsible"],
   },
   {
     name: "alert",
