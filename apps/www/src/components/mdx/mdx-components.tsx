@@ -67,6 +67,8 @@ export const mdxComponents = {
     <RACLink
       className={cn("font-medium underline underline-offset-4", className)}
       href={href}
+      rel={href?.startsWith("http") ? "noreferrer noopener" : undefined}
+      target={href?.startsWith("http") ? "_blank" : undefined}
       {...props}
     />
   ),

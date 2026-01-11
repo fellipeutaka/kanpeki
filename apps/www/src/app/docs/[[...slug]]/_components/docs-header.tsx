@@ -68,11 +68,6 @@ interface DocsLinkIconProps {
 }
 
 function DocsLinkIcon({ link }: DocsLinkIconProps) {
-  // TODO: Remove this old RAC link later
-  if (link.startsWith("https://react-spectrum.adobe.com")) {
-    return <Icons.Adobe className="size-3" />;
-  }
-
   if (link.startsWith("https://react-aria.adobe.com")) {
     return <Icons.Adobe className="size-3" />;
   }
