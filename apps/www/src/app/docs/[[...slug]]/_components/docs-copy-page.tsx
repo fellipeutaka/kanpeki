@@ -1,6 +1,11 @@
 "use client";
 
-import { CheckIcon, ChevronDownIcon, CopyIcon } from "lucide-react";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  CopyIcon,
+  MessageCircleIcon,
+} from "lucide-react";
 import { Icons } from "~/components/icons";
 import { siteConfig } from "~/config/site";
 import { useCopyToClipboard } from "~/hooks/use-copy-to-clipboard";
@@ -88,12 +93,28 @@ export function DocsCopyPage({ page, url }: DocsCopyPageProps) {
                 Open in Claude
               </Menu.Item>
               <Menu.Item
-                href={getPromptUrl("https://scira.ai/", fullUrl)}
+                href={getPromptUrl("https://scira.ai", fullUrl)}
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <Icons.Scira />
                 Open in Scira
+              </Menu.Item>
+              <Menu.Item
+                href={getPromptUrl("https://grok.com", fullUrl)}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Icons.Grok />
+                Open in Grok
+              </Menu.Item>
+              <Menu.Item
+                href={getPromptUrl("https://t3.chat/new", fullUrl)}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <MessageCircleIcon className="fill-current" />
+                Open in T3 chat
               </Menu.Item>
             </Menu.Group>
             <Menu.Separator />
