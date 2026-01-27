@@ -1280,6 +1280,28 @@
     {
       "files": [
         {
+          "path": "src/registry/examples/aspect-ratio/aspect-ratio-square-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "aspect-ratio-square",
+      "registryDependencies": ["@kanpeki/aspect"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/aspect-ratio/aspect-ratio-portrait-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "aspect-ratio-portrait",
+      "registryDependencies": ["@kanpeki/aspect"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
           "path": "src/registry/examples/autocomplete/autocomplete-demo.tsx",
           "type": "registry:example"
         }

@@ -72,11 +72,15 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/accordion",
           title: "Accordion",
-          label: LABEL_OPTIONS.UPDATED,
         },
         {
           href: "/docs/components/alert",
           title: "Alert",
+        },
+        {
+          href: "/docs/components/aspect-ratio",
+          title: "Aspect Ratio",
+          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/autocomplete",
@@ -109,7 +113,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/carousel",
           title: "Carousel",
-          label: LABEL_OPTIONS.NEW,
         },
         {
           disabled: true,
@@ -123,7 +126,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/collapsible",
           title: "Collapsible",
-          label: LABEL_OPTIONS.UPDATED,
         },
         {
           disabled: true,
@@ -168,7 +170,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/input-group",
           title: "Input Group",
-          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/input-otp",
@@ -264,7 +265,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/toggle-group",
           title: "Toggle Group",
-          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/tooltip",

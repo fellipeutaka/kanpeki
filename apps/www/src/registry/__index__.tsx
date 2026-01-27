@@ -1652,6 +1652,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "aspect-ratio-square": {
+    name: "aspect-ratio-square",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/aspect"],
+    files: [{
+      path: "src/registry/examples/aspect-ratio/aspect-ratio-square-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/aspect-ratio/aspect-ratio-square-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "aspect-ratio-square"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "aspect-ratio-portrait": {
+    name: "aspect-ratio-portrait",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/aspect"],
+    files: [{
+      path: "src/registry/examples/aspect-ratio/aspect-ratio-portrait-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/aspect-ratio/aspect-ratio-portrait-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "aspect-ratio-portrait"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "autocomplete-demo": {
     name: "autocomplete-demo",
     description: "",
