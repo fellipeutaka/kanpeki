@@ -82,7 +82,7 @@ function DrawerBottom() {
               <Button
                 className="h-8 w-8 shrink-0 rounded-full"
                 isDisabled={goal <= 200}
-                onClick={() => onClick(-10)}
+                onPress={() => onClick(-10)}
                 size="icon"
                 variant="outline"
               >
@@ -100,7 +100,7 @@ function DrawerBottom() {
               <Button
                 className="h-8 w-8 shrink-0 rounded-full"
                 isDisabled={goal >= 400}
-                onClick={() => onClick(10)}
+                onPress={() => onClick(10)}
                 size="icon"
                 variant="outline"
               >
