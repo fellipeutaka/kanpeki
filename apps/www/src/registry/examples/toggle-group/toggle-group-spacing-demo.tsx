@@ -1,7 +1,7 @@
 import { BookmarkIcon, HeartIcon, StarIcon } from "lucide-react";
 import { ToggleGroup } from "~/registry/ui/toggle-group";
 
-export function ToggleGroupSpacing() {
+export function ToggleGroupSpacingDemo() {
   return (
     <ToggleGroup.Root
       selectionMode="multiple"
