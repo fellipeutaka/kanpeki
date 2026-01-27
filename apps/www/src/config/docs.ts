@@ -103,6 +103,11 @@ export const docsConfig: DocsConfig = {
           title: "Button",
         },
         {
+          href: "/docs/components/button-group",
+          title: "Button Group",
+          label: LABEL_OPTIONS.NEW,
+        },
+        {
           href: "/docs/components/calendar",
           title: "Calendar",
         },

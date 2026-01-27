@@ -1,0 +1,268 @@
+---
+title: Button Group
+description: A container that groups related buttons together with consistent styling.
+links:
+  docs: https://react-aria.adobe.com/Group
+---
+
+<ComponentPreview name="button-group-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/button-group
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install radix-ui
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="button-group" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { ButtonGroup } from "~/components/ui/button-group";
+
+<ButtonGroup.Root>
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+</ButtonGroup.Root>;
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { ButtonGroupRoot } from "~/components/ui/button-group";
+
+<ButtonGroupRoot>
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+</ButtonGroupRoot>;
+```
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Accessibility
+
+- The `ButtonGroup.Root` component has the `role` attribute set to `group`.
+- Use <Keyboard>Tab</Keyboard> to navigate between the buttons in the group.
+- Use `aria-label` or `aria-labelledby` to label the button group.
+
+```tsx
+<ButtonGroup.Root aria-label="Button group">
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+</ButtonGroup.Root>
+```
+
+## ButtonGroup vs ToggleGroup
+
+- Use the `ButtonGroup` component when you want to group buttons that perform an action.
+- Use the `ToggleGroup` component when you want to group buttons that toggle a state.
+
+## Examples
+
+### Orientation
+
+Set the `orientation` prop to change the button group layout.
+
+<ComponentPreview name="button-group-orientation-demo" />
+
+### Size
+
+Control the size of buttons using the `size` prop on individual buttons.
+
+<ComponentPreview name="button-group-size-demo" />
+
+### Nested
+
+Nest `<ButtonGroup>` components to create button groups with spacing.
+
+<ComponentPreview name="button-group-nested-demo" />
+
+### Separator
+
+The `ButtonGroupSeparator` component visually divides buttons within a group.
+
+Buttons with variant `outline` do not need a separator since they have a border. For other variants, a separator is recommended to improve the visual hierarchy.
+
+<ComponentPreview name="button-group-separator-demo" />
+
+### Split
+
+Create a split button group by adding two buttons separated by a `ButtonGroupSeparator`.
+
+<ComponentPreview name="button-group-split-demo" />
+
+### Input
+
+Wrap an `Input` component with buttons.
+
+<ComponentPreview name="button-group-input-demo" />
+
+### Input Group
+
+Wrap an `InputGroup` component to create complex input layouts.
+
+<ComponentPreview name="button-group-input-group-demo" />
+
+### Dropdown Menu
+
+Create a split button group with a `DropdownMenu` component.
+
+<ComponentPreview name="button-group-dropdown-demo" />
+
+### Select
+
+Pair with a `Select` component.
+
+<ComponentPreview name="button-group-select-demo" />
+
+### Popover
+
+Use with a `Popover` component.
+
+<ComponentPreview name="button-group-popover-demo" />
+
+## API Reference
+
+### ButtonGroup
+
+The `ButtonGroup` component is a container that groups related buttons together with consistent styling.
+
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      typeSimple: "enum",
+      default: '"horizontal"',
+      required: false,
+      description: "The orientation of the button group.",
+    },
+  ]}
+/>
+
+```tsx
+<ButtonGroup>
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+</ButtonGroup>
+```
+
+Nest multiple button groups to create complex layouts with spacing. See the [nested](#nested) example for more details.
+
+```tsx
+<ButtonGroup>
+  <ButtonGroup />
+  <ButtonGroup />
+</ButtonGroup>
+```
+
+### ButtonGroupSeparator
+
+The `ButtonGroupSeparator` component visually divides buttons within a group.
+
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      typeSimple: "enum",
+      default: '"vertical"',
+      required: false,
+      description: "The orientation of the separator.",
+    },
+  ]}
+/>
+
+```tsx
+<ButtonGroup>
+  <Button>Button 1</Button>
+  <ButtonGroupSeparator />
+  <Button>Button 2</Button>
+</ButtonGroup>
+```
+
+### ButtonGroupText
+
+Use this component to display text within a button group.
+
+<PropsTable
+  data={[
+    {
+      name: "asChild",
+      type: "boolean",
+      typeSimple: "boolean",
+      default: "false",
+      required: false,
+      description: "Render as a custom component.",
+    },
+  ]}
+/>
+
+```tsx
+<ButtonGroup>
+  <ButtonGroupText>Text</ButtonGroupText>
+  <Button>Button</Button>
+</ButtonGroup>
+```
+
+Use the `asChild` prop to render a custom component as the text, for example a label.
+
+```tsx
+import { ButtonGroupText } from "~/components/ui/button-group";
+import { Label } from "~/components/ui/label";
+
+export function ButtonGroupTextDemo() {
+  return (
+    <ButtonGroup>
+      <ButtonGroupText asChild>
+        <Label htmlFor="name">Text</Label>
+      </ButtonGroupText>
+      <Input placeholder="Type something here..." id="name" />
+    </ButtonGroup>
+  );
+}
+```

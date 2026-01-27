@@ -9,7 +9,7 @@
   ],
   "name": "aspect-ratio-demo",
   "registryDependencies": [
-    "@kanpeki/aspect"
+    "@kanpeki/aspect-ratio"
   ],
   "type": "registry:example"
 }

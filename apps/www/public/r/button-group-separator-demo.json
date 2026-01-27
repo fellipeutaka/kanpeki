@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Button } from \"~/registry/ui/button\";\nimport { ButtonGroup } from \"~/registry/ui/button-group\";\n\nexport function ButtonGroupSeparatorDemo() {\n  return (\n    <ButtonGroup.Root>\n      <Button size=\"sm\" variant=\"secondary\">\n        Copy\n      </Button>\n      <ButtonGroup.Separator />\n      <Button size=\"sm\" variant=\"secondary\">\n        Paste\n      </Button>\n    </ButtonGroup.Root>\n  );\n}\n",
+      "path": "src/registry/examples/button-group/button-group-separator-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "button-group-separator-demo",
+  "registryDependencies": [
+    "@kanpeki/button-group",
+    "@kanpeki/button"
+  ],
+  "type": "registry:example"
+}
