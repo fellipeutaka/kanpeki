@@ -1,0 +1,77 @@
+---
+title: Aspect Ratio
+description: Displays content within a desired ratio.
+---
+
+<ComponentPreview name="aspect-ratio-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/aspect
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="aspect-ratio" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+```tsx
+import { AspectRatio } from "~/components/ui/aspect-ratio";
+
+<AspectRatio ratio={16 / 9}>
+  <Image src="..." alt="Image" className="rounded-md object-cover" />
+</AspectRatio>;
+```
+
+## Examples
+
+### Square
+
+A square aspect ratio component using the `ratio={1 / 1}{:tsx}` prop. This is useful for displaying images in a square format.
+
+<ComponentPreview name="aspect-ratio-square" />
+
+### Portrait
+
+A portrait aspect ratio component using the `ratio={9 / 16}{:tsx}` prop. This is useful for displaying images in a portrait format.
+
+<ComponentPreview name="aspect-ratio-portrait" />
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      name: "ratio",
+      type: "number",
+      typeSimple: "number",
+      default: "1 / 1",
+      required: false,
+      description: "The desired aspect ratio.",
+    },
+  ]}
+/>

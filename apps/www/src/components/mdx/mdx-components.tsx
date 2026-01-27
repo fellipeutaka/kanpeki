@@ -6,6 +6,7 @@ import { Icons } from "~/components/icons";
 import { cn } from "~/registry/lib/cva";
 import { Alert } from "~/registry/ui/alert";
 import { Card } from "~/registry/ui/card";
+import { Keyboard } from "~/registry/ui/keyboard";
 import { Link, RACLink } from "~/registry/ui/link/link";
 import { LinkButton } from "~/registry/ui/link-button";
 import { ScrollArea } from "~/registry/ui/scroll-area";
@@ -178,4 +179,6 @@ export const mdxComponents = {
 
   ComponentPreview,
   ComponentSource,
+
+  Keyboard,
 } as unknown as MDXComponents;

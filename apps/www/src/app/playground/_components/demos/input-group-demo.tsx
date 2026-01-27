@@ -79,7 +79,7 @@ function InputGroupButtonExample() {
         <InputGroup.Button
           aria-label="Copy"
           className="inline-grid place-items-center *:col-start-1 *:row-start-1"
-          onClick={() => {
+          onPress={() => {
             copy({
               text: "https://x.com/fellipeutaka",
             });

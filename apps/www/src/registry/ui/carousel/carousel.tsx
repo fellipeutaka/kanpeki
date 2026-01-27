@@ -202,7 +202,7 @@ export function CarouselPrevious({
       )}
       data-slot="carousel-previous"
       isDisabled={!canScrollPrev}
-      onClick={scrollPrev}
+      onPress={scrollPrev}
       size={size}
       variant={variant}
       {...props}
@@ -234,7 +234,7 @@ export function CarouselNext({
       )}
       data-slot="carousel-next"
       isDisabled={!canScrollNext}
-      onClick={scrollNext}
+      onPress={scrollNext}
       size={size}
       variant={variant}
       {...props}

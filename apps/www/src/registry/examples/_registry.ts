@@ -7,6 +7,7 @@ import { avatarExamples } from "./avatar/_registry";
 import { badgeExamples } from "./badge/_registry";
 import { breadcrumbExamples } from "./breadcrumb/_registry";
 import { buttonExamples } from "./button/_registry";
+import { buttonGroupExamples } from "./button-group/_registry";
 import { calendarExamples } from "./calendar/_registry";
 import { cardExamples } from "./card/_registry";
 import { carouselExamples } from "./carousel/_registry";
@@ -62,6 +63,7 @@ export const examples: RegistryItem[] = [
   ...badgeExamples,
   ...breadcrumbExamples,
   ...buttonExamples,
+  ...buttonGroupExamples,
   ...calendarExamples,
   ...cardExamples,
   ...carouselExamples,

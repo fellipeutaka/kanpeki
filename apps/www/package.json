@@ -22,7 +22,7 @@
     "lint:fix": "biome check --write",
     "lint:doctor": "ultracite doctor",
     "type-check": "next typegen && fumadocs-mdx && tsc --noEmit",
-    "registry:build": "bun run src/scripts/build-registry.ts && shadcn build",
+    "registry:build": "bun run src/scripts/build-registry.ts && shadcn build && biome check --write ./public/r/*.json",
     "registry:validate": "bun run src/scripts/validate-registry.ts"
   },
   "dependencies": {
@@ -41,7 +41,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.562.0",
     "motion": "catalog:",
-    "next": "^16.1.5",
+    "next": "^16.1.6",
     "next-themes": "catalog:",
     "react": "catalog:",
     "react-aria-components": "catalog:",

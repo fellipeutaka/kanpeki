@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { PlusIcon } from \"lucide-react\";\nimport { Button } from \"~/registry/ui/button\";\nimport { ButtonGroup } from \"~/registry/ui/button-group\";\n\nexport function ButtonGroupSplitDemo() {\n  return (\n    <ButtonGroup.Root>\n      <Button variant=\"secondary\">Button</Button>\n      <ButtonGroup.Separator />\n      <Button size=\"icon\" variant=\"secondary\">\n        <PlusIcon />\n      </Button>\n    </ButtonGroup.Root>\n  );\n}\n",
+      "path": "src/registry/examples/button-group/button-group-split-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "button-group-split-demo",
+  "registryDependencies": [
+    "@kanpeki/button-group",
+    "@kanpeki/button",
+    "lucide-react"
+  ],
+  "type": "registry:example"
+}

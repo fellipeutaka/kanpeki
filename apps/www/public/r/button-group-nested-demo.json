@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { AudioLinesIcon, PlusIcon } from \"lucide-react\";\nimport { Button } from \"~/registry/ui/button\";\nimport { ButtonGroup } from \"~/registry/ui/button-group\";\nimport { InputGroup } from \"~/registry/ui/input-group\";\nimport { Tooltip } from \"~/registry/ui/tooltip\";\n\nexport function ButtonGroupNestedDemo() {\n  return (\n    <ButtonGroup.Root>\n      <ButtonGroup.Root>\n        <Button size=\"icon\" variant=\"outline\">\n          <PlusIcon />\n        </Button>\n      </ButtonGroup.Root>\n      <ButtonGroup.Root>\n        <InputGroup.Root>\n          <InputGroup.Input placeholder=\"Send a message...\" />\n          <Tooltip.Root>\n            <InputGroup.Addon align=\"inline-end\">\n              <AudioLinesIcon />\n            </InputGroup.Addon>\n            <Tooltip.Content>Voice Mode</Tooltip.Content>\n          </Tooltip.Root>\n        </InputGroup.Root>\n      </ButtonGroup.Root>\n    </ButtonGroup.Root>\n  );\n}\n",
+      "path": "src/registry/examples/button-group/button-group-nested-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "button-group-nested-demo",
+  "registryDependencies": [
+    "@kanpeki/button-group",
+    "@kanpeki/button",
+    "@kanpeki/input",
+    "@kanpeki/input-group",
+    "@kanpeki/tooltip",
+    "lucide-react"
+  ],
+  "type": "registry:example"
+}

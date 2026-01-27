@@ -130,7 +130,7 @@ function WithFileTrigger() {
             <Button
               aria-label="Remove image"
               className="size-8 rounded-full"
-              onClick={() => setFile(null)}
+              onPress={() => setFile(null)}
               size="icon"
               variant="ghost"
             >
@@ -226,7 +226,7 @@ function Clickable() {
           <Button
             aria-label="Remove image"
             className="size-8 rounded-full"
-            onClick={() => setFile(null)}
+            onPress={() => setFile(null)}
             size="icon"
             variant="ghost"
           >

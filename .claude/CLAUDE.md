@@ -1,7 +1,3 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
 ## Project Overview
 
 Kanpeki is a component library featuring accessible and customizable React components. The project is a monorepo that provides a documentation website where users can copy and paste components into their own projects. Built with Next.js, React Aria Components, and Tailwind CSS.
@@ -10,7 +6,7 @@ Kanpeki is a component library featuring accessible and customizable React compo
 
 ### Package Manager
 
-This project uses **Bun** as the package manager (version 1.3.1). Always use `bun` commands instead of npm/yarn/pnpm.
+This project uses **Bun** as the package manager. Always use `bun` commands instead of npm/yarn/pnpm.
 
 ### Common Commands
 

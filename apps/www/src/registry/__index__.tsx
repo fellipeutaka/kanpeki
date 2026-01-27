@@ -1638,7 +1638,7 @@ export const Index: Record<string, any> = {
     name: "aspect-ratio-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["@kanpeki/aspect"],
+    registryDependencies: ["@kanpeki/aspect-ratio"],
     files: [{
       path: "src/registry/examples/aspect-ratio/aspect-ratio-demo.tsx",
       type: "registry:example",
@@ -1647,6 +1647,42 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/examples/aspect-ratio/aspect-ratio-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "aspect-ratio-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "aspect-ratio-square": {
+    name: "aspect-ratio-square",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/aspect-ratio"],
+    files: [{
+      path: "src/registry/examples/aspect-ratio/aspect-ratio-square-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/aspect-ratio/aspect-ratio-square-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "aspect-ratio-square"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "aspect-ratio-portrait": {
+    name: "aspect-ratio-portrait",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/aspect-ratio"],
+    files: [{
+      path: "src/registry/examples/aspect-ratio/aspect-ratio-portrait-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/aspect-ratio/aspect-ratio-portrait-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "aspect-ratio-portrait"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,
@@ -1935,6 +1971,204 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/examples/button/button-variants-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-variants-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-demo": {
+    name: "button-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","@kanpeki/menu"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-orientation-demo": {
+    name: "button-group-orientation-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-orientation-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-orientation-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-orientation-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-size-demo": {
+    name: "button-group-size-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-size-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-size-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-size-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-nested-demo": {
+    name: "button-group-nested-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","@kanpeki/input","@kanpeki/input-group","@kanpeki/tooltip","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-nested-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-nested-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-nested-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-separator-demo": {
+    name: "button-group-separator-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-separator-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-separator-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-separator-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-split-demo": {
+    name: "button-group-split-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-split-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-split-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-split-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-input-demo": {
+    name: "button-group-input-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","@kanpeki/input","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-input-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-input-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-input-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-input-group-demo": {
+    name: "button-group-input-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","@kanpeki/input-group","@kanpeki/tooltip","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-input-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-input-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-input-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-dropdown-demo": {
+    name: "button-group-dropdown-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","@kanpeki/menu","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-dropdown-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-dropdown-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-dropdown-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-select-demo": {
+    name: "button-group-select-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","@kanpeki/input","@kanpeki/select","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-select-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-select-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-select-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "button-group-popover-demo": {
+    name: "button-group-popover-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/button-group","@kanpeki/button","@kanpeki/field","@kanpeki/popover","@kanpeki/textarea","lucide-react"],
+    files: [{
+      path: "src/registry/examples/button-group/button-group-popover-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/button-group/button-group-popover-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "button-group-popover-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

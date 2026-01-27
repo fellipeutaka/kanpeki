@@ -50,7 +50,7 @@ export function InputGroupButtonDemo() {
         <InputGroup.Input id="input-secure-19" />
         <InputGroup.Addon align="inline-end">
           <InputGroup.Button
-            onClick={() => setIsFavorite((s) => !s)}
+            onPress={() => setIsFavorite((s) => !s)}
             size="icon-xs"
           >
             <StarIcon

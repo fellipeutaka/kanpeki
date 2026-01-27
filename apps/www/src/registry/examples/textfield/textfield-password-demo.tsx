@@ -20,7 +20,7 @@ export function TextfieldPasswordDemo() {
         <InputGroup.Addon align="inline-end">
           <InputGroup.Button
             aria-label={showPassword ? "Hide password" : "Show password"}
-            onClick={() => setShowPassword(!showPassword)}
+            onPress={() => setShowPassword(!showPassword)}
             size="icon-xs"
             variant="ghost"
           >
