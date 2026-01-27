@@ -19,13 +19,15 @@ export function InputGroupRoot({
   const defaultProps: useRender.ElementProps<"div"> = {
     className: InputGroupStyles.Root({ className }),
     role: "group",
-    ["data-slot" as string]: "input-group-root",
   };
 
   return useRender({
     defaultTagName: "div",
     render,
     props: mergeProps<"div">(defaultProps, props),
+    state: {
+      slot: "input-group-root",
+    },
   });
 }
 

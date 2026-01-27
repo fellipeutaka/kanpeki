@@ -35,13 +35,15 @@ export function ButtonGroupText({
 }: ButtonGroupTextProps) {
   const defaultProps: useRender.ElementProps<"div"> = {
     className: ButtonGroupStyles.Text({ className }),
-    ["data-slot" as string]: "button-group-text",
   };
 
   return useRender({
     defaultTagName: "div",
     render,
     props: mergeProps<"div">(defaultProps, props),
+    state: {
+      slot: "button-group-text",
+    },
   });
 }
 
