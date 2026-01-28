@@ -68,8 +68,6 @@ export function FieldRoot({
 }: FieldRootProps) {
   const defaultProps: useRender.ElementProps<"div"> = {
     className: FieldStyles.Root({ orientation, className }),
-    ["data-orientation" as string]: orientation,
-    ["data-slot" as string]: "field-root",
     role: "group",
   };
 
@@ -77,6 +75,10 @@ export function FieldRoot({
     defaultTagName: "div",
     render,
     props: mergeProps<"div">(defaultProps, props),
+    state: {
+      orientation,
+      slot: "field-root",
+    },
   });
 }
 

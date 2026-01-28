@@ -9,6 +9,11 @@ import { siteConfig } from "~/config/site";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
+  alternates: {
+    types: {
+      "application/rss+xml": `${siteConfig.url}/rss.xml`,
+    },
+  },
   authors: [
     {
       name: "Fellipe Utaka",

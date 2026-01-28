@@ -19,7 +19,7 @@ export function MainNav({ mainNav }: MainNavProps) {
       <Link className="mr-4 flex items-center gap-2 lg:mr-6" href="/">
         <Icons.Logo className="size-6" />
         <span className="hidden font-bold lg:block">{siteConfig.name}</span>
-        <Badge variant="secondary">Alpha</Badge>
+        <Badge variant="secondary">Beta</Badge>
       </Link>
       <nav className="flex items-center gap-4 text-sm lg:gap-6">
         {mainNav.map((item) => (
