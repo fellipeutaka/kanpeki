@@ -8,6 +8,7 @@ export const docs = defineDocs({
   docs: {
     async: true,
     schema: z.object({
+      date: z.coerce.date().optional(),
       description: z.string().max(256),
       links: z
         .object({

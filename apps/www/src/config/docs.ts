@@ -52,7 +52,6 @@ export const docsConfig: DocsConfig = {
           title: "Forms",
         },
         {
-          disabled: true,
           href: "/docs/changelog",
           title: "Changelog",
         },
