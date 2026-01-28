@@ -1,9 +1,10 @@
-import { CalendarDaysIcon } from "lucide-react";
+import { CalendarDaysIcon, RssIcon } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { mdxComponents } from "~/components/mdx/mdx-components";
 import { siteConfig } from "~/config/site";
 import { type ChangelogPage, getChangelogPages } from "~/lib/changelog";
+import { LinkButton } from "~/registry/ui/link-button";
 
 export const dynamic = "force-static";
 
@@ -37,9 +38,21 @@ export default async function Page() {
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <div className="mx-auto w-full min-w-0">
         <div className="space-y-2">
-          <h1 className="scroll-m-20 font-bold text-4xl tracking-tight">
-            Changelog
-          </h1>
+          <div className="flex items-center justify-between">
+            <h1 className="scroll-m-20 font-bold text-4xl tracking-tight">
+              Changelog
+            </h1>
+            <LinkButton
+              href="/rss.xml"
+              rel="noopener noreferrer"
+              size="sm"
+              target="_blank"
+              variant="secondary"
+            >
+              <RssIcon className="size-4" />
+              RSS
+            </LinkButton>
+          </div>
           <p className="text-lg text-muted-foreground">
             Latest updates and announcements.
           </p>
