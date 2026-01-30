@@ -1,3 +1,5 @@
+"use client";
+
 import { MailIcon } from "lucide-react";
 import { Field } from "~/registry/ui/field";
 import { InputGroup } from "~/registry/ui/input-group";

@@ -81,3 +81,79 @@ import { Input } from "~/components/ui/input";
 ### With Button
 
 <ComponentPreview name="input-with-button-demo" />
+
+## API Reference
+
+### Input
+
+<PropsTable
+  data={[
+    {
+      name: "type",
+      required: false,
+      typeSimple: "string",
+      default: '"text"',
+      description: "The input type (text, email, password, number, etc.).",
+    },
+    {
+      name: "placeholder",
+      required: false,
+      typeSimple: "string",
+      description: "Temporary text that occupies the input when it is empty.",
+    },
+    {
+      name: "disabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the input is disabled.",
+    },
+    {
+      name: "readOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the input is read only.",
+    },
+    {
+      name: "required",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the input is required.",
+    },
+    {
+      name: "minLength",
+      required: false,
+      typeSimple: "number",
+      description: "The minimum number of characters supported by the input.",
+    },
+    {
+      name: "maxLength",
+      required: false,
+      typeSimple: "number",
+      description: "The maximum number of characters supported by the input.",
+    },
+    {
+      name: "pattern",
+      required: false,
+      typeSimple: "string",
+      description: "A regular expression the input's value must match.",
+    },
+    {
+      name: "autoComplete",
+      required: false,
+      typeSimple: "string",
+      description: "Describes the type of autocomplete functionality the input should provide.",
+    },
+    {
+      name: "name",
+      required: false,
+      typeSimple: "string",
+      description: "The name of the input, used when submitting an HTML form.",
+    },
+    {
+      name: "autoFocus",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the input should receive focus on render.",
+    },
+  ]}
+/>

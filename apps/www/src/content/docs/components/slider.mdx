@@ -113,3 +113,171 @@ import {
     This component is currently being built. Check back soon for updates!
   </Alert.Description>
 </Alert.Root>
+
+## API Reference
+
+### Slider.Root
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      required: false,
+      typeSimple: "number | number[]",
+      description: "The current value (controlled).",
+    },
+    {
+      name: "defaultValue",
+      required: false,
+      typeSimple: "number | number[]",
+      description: "The default value (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: number[]) => void",
+      description: "Handler called when the value changes.",
+    },
+    {
+      name: "onChangeEnd",
+      required: false,
+      typeSimple: "function",
+      type: "(value: number[]) => void",
+      description: "Handler called when the user stops dragging.",
+    },
+    {
+      name: "minValue",
+      required: false,
+      typeSimple: "number",
+      default: "0",
+      description: "The minimum value of the slider.",
+    },
+    {
+      name: "maxValue",
+      required: false,
+      typeSimple: "number",
+      default: "100",
+      description: "The maximum value of the slider.",
+    },
+    {
+      name: "step",
+      required: false,
+      typeSimple: "number",
+      default: "1",
+      description: "The step increment value.",
+    },
+    {
+      name: "orientation",
+      required: false,
+      typeSimple: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "The orientation of the slider.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the slider is disabled.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: SliderRenderProps) => ReactNode",
+      description: "The children of the slider.",
+    },
+  ]}
+/>
+
+### Slider.Track
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the track.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: SliderTrackRenderProps) => ReactNode",
+      description: "The children of the track.",
+    },
+  ]}
+/>
+
+### Slider.Range
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the filled range.",
+    },
+  ]}
+/>
+
+### Slider.Thumb
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the thumb.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: SliderThumbRenderProps) => ReactNode",
+      description: "The children of the thumb.",
+    },
+  ]}
+/>
+
+### Slider.Output
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the output.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: SliderRenderProps) => ReactNode",
+      description: "The children of the output.",
+    },
+  ]}
+/>
+
+### Slider.Header
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the header.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The children of the header.",
+    },
+  ]}
+/>

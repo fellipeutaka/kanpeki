@@ -232,12 +232,11 @@ Use this component to display text within a button group.
 <PropsTable
   data={[
     {
-      name: "asChild",
-      type: "boolean",
-      typeSimple: "boolean",
-      default: "false",
+      name: "render",
+      type: "React.ReactElement | ((props: React.HTMLAttributes<any>) => React.ReactElement)",
+      typeSimple: "ReactElement | function",
       required: false,
-      description: "Render as a custom component.",
+      description: "Render as a custom element.",
     },
   ]}
 />
@@ -249,7 +248,7 @@ Use this component to display text within a button group.
 </ButtonGroup>
 ```
 
-Use the `asChild` prop to render a custom component as the text, for example a label.
+Use the `render` prop to render a custom element, for example a label.
 
 ```tsx
 import { ButtonGroupText } from "~/components/ui/button-group";
@@ -258,9 +257,7 @@ import { Label } from "~/components/ui/label";
 export function ButtonGroupTextDemo() {
   return (
     <ButtonGroup>
-      <ButtonGroupText asChild>
-        <Label htmlFor="name">Text</Label>
-      </ButtonGroupText>
+      <ButtonGroupText render={<Label htmlFor="name" />}>Text</ButtonGroupText>
       <Input placeholder="Type something here..." id="name" />
     </ButtonGroup>
   );

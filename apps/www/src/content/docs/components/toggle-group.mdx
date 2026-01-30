@@ -79,3 +79,122 @@ import { ToggleGroup } from "~/components/ui/toggle-group";
 Use `spacing={2}{:tsx}` to add spacing between toggle group items.
 
 <ComponentPreview name="toggle-group-spacing-demo" />
+
+## API Reference
+
+### ToggleGroup.Root
+
+<PropsTable
+  data={[
+    {
+      name: "selectionMode",
+      required: false,
+      typeSimple: "enum",
+      type: '"single" | "multiple"',
+      default: '"multiple"',
+      description: "Whether single or multiple selection is enabled.",
+    },
+    {
+      name: "selectedKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description: "The currently selected keys (controlled).",
+    },
+    {
+      name: "defaultSelectedKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description: "The initial selected keys (uncontrolled).",
+    },
+    {
+      name: "onSelectionChange",
+      required: false,
+      typeSimple: "function",
+      type: "(keys: Set<Key>) => void",
+      description: "Handler called when the selection changes.",
+    },
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "outline"',
+      default: '"default"',
+      description: "The visual style of the toggle group items.",
+    },
+    {
+      name: "size",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "sm" | "lg"',
+      default: '"default"',
+      description: "The size of the toggle group items.",
+    },
+    {
+      name: "spacing",
+      required: false,
+      typeSimple: "number",
+      default: "0",
+      description: "The spacing between toggle group items.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the toggle group is disabled.",
+    },
+    {
+      name: "orientation",
+      required: false,
+      typeSimple: "enum",
+      type: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "The orientation of the toggle group.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The toggle group items.",
+    },
+  ]}
+/>
+
+### ToggleGroup.Item
+
+<PropsTable
+  data={[
+    {
+      name: "id",
+      required: true,
+      typeSimple: "Key",
+      description: "The unique key for the toggle item.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the toggle item is disabled.",
+    },
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "outline"',
+      description: "Overrides the parent variant for this item.",
+    },
+    {
+      name: "size",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "sm" | "lg"',
+      description: "Overrides the parent size for this item.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: ToggleButtonRenderProps) => ReactNode",
+      description: "The content of the toggle item.",
+    },
+  ]}
+/>

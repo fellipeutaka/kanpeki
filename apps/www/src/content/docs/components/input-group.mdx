@@ -152,16 +152,22 @@ Wrap input groups with button groups to create prefixes and suffixes.
 
 The main component that wraps inputs and addons.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
-
-```tsx
-<InputGroup.Root>
-  <InputGroup.Input />
-  <InputGroup.Addon />
-</InputGroup.Root>
-```
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: true,
+      typeSimple: "ReactNode",
+      description: "The input and addon elements.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the root container.",
+    },
+  ]}
+/>
 
 ### InputGroup.Addon
 
@@ -175,79 +181,121 @@ Displays icons, text, buttons, or other content alongside inputs.
   </Alert.Description>
 </Alert.Root>
 
-| Prop        | Type                                                             | Default          |
-| ----------- | ---------------------------------------------------------------- | ---------------- |
-| `align`     | `"inline-start" \| "inline-end" \| "block-start" \| "block-end"` | `"inline-start"` |
-| `className` | `string`                                                         |                  |
-
-```tsx
-<InputGroup.Addon align="inline-end">
-  <SearchIcon />
-</InputGroup.Addon>
-```
+<PropsTable
+  data={[
+    {
+      name: "align",
+      required: false,
+      typeSimple: "enum",
+      type: '"inline-start" | "inline-end" | "block-start" | "block-end"',
+      default: '"inline-start"',
+      description: "The position of the addon relative to the input.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content of the addon (icons, text, buttons).",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the addon.",
+    },
+  ]}
+/>
 
 For `InputGroup.Input`, use the `inline-start` or `inline-end` alignment. For `InputGroup.Textarea`, use the `block-start` or `block-end` alignment.
-
-The `InputGroup.Addon` component can have multiple `InputGroup.Button` components and icons.
-
-```tsx
-<InputGroup.Addon>
-  <InputGroup.Button>Button</InputGroup.Button>
-  <InputGroup.Button>Button</InputGroup.Button>
-</InputGroup.Addon>
-```
 
 ### InputGroup.Button
 
 Displays buttons within input groups.
 
-| Prop        | Type                                                                          | Default   |
-| ----------- | ----------------------------------------------------------------------------- | --------- |
-| `size`      | `"xs" \| "icon-xs" \| "sm" \| "icon-sm"`                                      | `"xs"`    |
-| `variant`   | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"ghost"` |
-| `className` | `string`                                                                      |           |
+<PropsTable
+  data={[
+    {
+      name: "size",
+      required: false,
+      typeSimple: "enum",
+      type: '"xs" | "icon-xs" | "sm" | "icon-sm"',
+      default: '"xs"',
+      description: "The size of the button.",
+    },
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
+      default: '"ghost"',
+      description: "The visual style of the button.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content of the button.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the button.",
+    },
+  ]}
+/>
 
-```tsx
-<InputGroup.Button>Button</InputGroup.Button>
-<InputGroup.Button size="icon-xs" aria-label="Copy">
-  <CopyIcon />
-</InputGroup.Button>
-```
+### InputGroup.Text
+
+Displays text content within input groups.
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The text content to display.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the text.",
+    },
+  ]}
+/>
 
 ### InputGroup.Input
 
-Replacement for `Input` when building input groups. This component has the input group styles pre-applied and uses the unified `data-slot="input-group-control"` for focus state handling.
+Replacement for `Input` when building input groups. Has input group styles pre-applied.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the input.",
+    },
+  ]}
+/>
 
 All other props are passed through to the underlying `Input` component.
 
-```tsx
-<InputGroup.Root>
-  <InputGroup.Input placeholder="Enter text..." />
-  <InputGroup.Addon>
-    <SearchIcon />
-  </InputGroup.Addon>
-</InputGroup.Root>
-```
-
 ### InputGroup.Textarea
 
-Replacement for `Textarea` when building input groups. This component has the textarea group styles pre-applied and uses the unified `data-slot="input-group-control"` for focus state handling.
+Replacement for `Textarea` when building input groups. Has textarea group styles pre-applied.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the textarea.",
+    },
+  ]}
+/>
 
 All other props are passed through to the underlying `Textarea` component.
-
-```tsx
-<InputGroup.Root>
-  <InputGroup.Textarea placeholder="Enter message..." />
-  <InputGroup.Addon align="block-end">
-    <InputGroup.Button>Send</InputGroup.Button>
-  </InputGroup.Addon>
-</InputGroup.Root>
-```

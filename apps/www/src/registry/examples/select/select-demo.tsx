@@ -6,7 +6,7 @@ import { Select } from "~/registry/ui/select";
 export function SelectDemo() {
   return (
     <Select.Root aria-label="Fruits" placeholder="Select a fruit">
-      <Select.Trigger className="w-[180px]">
+      <Select.Trigger className="w-45">
         <Select.Value />
       </Select.Trigger>
       <Popover.Content>

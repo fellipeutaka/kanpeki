@@ -103,3 +103,84 @@ or you can use the `<Button />{:tsx}` component as the trigger by passing it a `
 ## Animation
 
 The accordion uses the `--disclosure-panel-height{:css}` CSS variable to animate the height of the content area.
+
+## API Reference
+
+### Collapsible.Root
+
+<PropsTable
+  data={[
+    {
+      name: "isExpanded",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the disclosure is expanded (controlled).",
+    },
+    {
+      name: "defaultExpanded",
+      required: false,
+      typeSimple: "boolean",
+      description:
+        "Whether the disclosure is expanded by default (uncontrolled).",
+    },
+    {
+      name: "onExpandedChange",
+      required: false,
+      typeSimple: "function",
+      type: "(isExpanded: boolean) => void",
+      description: "Handler called when the disclosure expanded state changes.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the disclosure is disabled.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: DisclosureRenderProps) => ReactNode",
+      description: "The children of the disclosure.",
+    },
+  ]}
+/>
+
+### Collapsible.Trigger
+
+<PropsTable
+  data={[
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the button is disabled.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: ButtonRenderProps) => ReactNode",
+      description: "The children of the button.",
+    },
+  ]}
+/>
+
+### Collapsible.Content
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the content panel.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The children of the disclosure panel.",
+    },
+  ]}
+/>
