@@ -1634,6 +1634,24 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "alert-warning-demo": {
+    name: "alert-warning-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/alert"],
+    files: [{
+      path: "src/registry/examples/alert/alert-warning-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/alert/alert-warning-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "alert-warning-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "aspect-ratio-demo": {
     name: "aspect-ratio-demo",
     description: "",
