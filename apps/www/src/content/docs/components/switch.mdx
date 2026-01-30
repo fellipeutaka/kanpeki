@@ -89,31 +89,85 @@ import { SwitchRoot, SwitchTrack, SwitchThumb } from "~/components/ui/switch";
 
 ## API Reference
 
-### Root
+### Switch.Root
 
 <PropsTable
   data={[
     {
-      name: "defaultSelected",
-      required: false,
-      typeSimple: "boolean",
-      default: "false",
-      description: "Whether the Switch should be selected (uncontrolled).",
-    },
-    {
       name: "isSelected",
       required: false,
       typeSimple: "boolean",
-      default: "false",
-      description: "Whether the Switch should be selected (controlled).",
+      description: "Whether the switch is selected (controlled).",
+    },
+    {
+      name: "defaultSelected",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the switch is selected by default (uncontrolled).",
     },
     {
       name: "onChange",
       required: false,
       typeSimple: "function",
-      type: "((isSelected: boolean) => void)",
-      description:
-        "Handler that is called when the Switch's selection state changes.",
+      type: "(isSelected: boolean) => void",
+      description: "Handler called when the switch selection state changes.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the switch is disabled.",
+    },
+    {
+      name: "isReadOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the switch is read only.",
+    },
+    {
+      name: "name",
+      required: false,
+      typeSimple: "string",
+      description: "The name of the switch, used when submitting an HTML form.",
+    },
+    {
+      name: "value",
+      required: false,
+      typeSimple: "string",
+      description: "The value of the switch, used when submitting an HTML form.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: SwitchRenderProps) => ReactNode",
+      description: "The children of the switch.",
+    },
+  ]}
+/>
+
+### Switch.Track
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the switch track.",
+    },
+  ]}
+/>
+
+### Switch.Thumb
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the switch thumb.",
     },
   ]}
 />

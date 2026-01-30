@@ -77,3 +77,95 @@ import { Textarea } from "~/components/ui/textarea";
 ### Form
 
 <ComponentPreview name="textarea-form" />
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      required: false,
+      typeSimple: "string",
+      description: "The current value (controlled).",
+    },
+    {
+      name: "defaultValue",
+      required: false,
+      typeSimple: "string",
+      description: "The default value (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: string) => void",
+      description: "Handler called when the value changes.",
+    },
+    {
+      name: "placeholder",
+      required: false,
+      typeSimple: "string",
+      description: "Temporary text that occupies the textarea when it is empty.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the textarea is disabled.",
+    },
+    {
+      name: "isReadOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the textarea is read only.",
+    },
+    {
+      name: "isRequired",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the textarea is required.",
+    },
+    {
+      name: "isInvalid",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the textarea value is invalid.",
+    },
+    {
+      name: "minLength",
+      required: false,
+      typeSimple: "number",
+      description: "The minimum number of characters supported by the textarea.",
+    },
+    {
+      name: "maxLength",
+      required: false,
+      typeSimple: "number",
+      description: "The maximum number of characters supported by the textarea.",
+    },
+    {
+      name: "rows",
+      required: false,
+      typeSimple: "number",
+      description: "The number of visible text lines.",
+    },
+    {
+      name: "autoComplete",
+      required: false,
+      typeSimple: "string",
+      description: "Describes the type of autocomplete functionality the textarea should provide.",
+    },
+    {
+      name: "name",
+      required: false,
+      typeSimple: "string",
+      description: "The name of the textarea, used when submitting an HTML form.",
+    },
+    {
+      name: "autoFocus",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the textarea should receive focus on render.",
+    },
+  ]}
+/>

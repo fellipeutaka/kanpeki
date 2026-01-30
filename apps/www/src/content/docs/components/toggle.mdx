@@ -68,3 +68,60 @@ import { Toggle } from "~/components/ui/toggle";
 ### Custom Fill
 
 <ComponentPreview name="toggle-custom-fill-demo" />
+
+## API Reference
+
+### Toggle
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "outline"',
+      default: '"default"',
+      description: "The visual style of the toggle.",
+    },
+    {
+      name: "size",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "sm" | "lg"',
+      default: '"default"',
+      description: "The size of the toggle.",
+    },
+    {
+      name: "isSelected",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the toggle is selected (controlled).",
+    },
+    {
+      name: "defaultSelected",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the toggle is selected by default (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(isSelected: boolean) => void",
+      description: "Handler called when the toggle selection state changes.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the toggle is disabled.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: ToggleButtonRenderProps) => ReactNode",
+      description: "The content of the toggle.",
+    },
+  ]}
+/>

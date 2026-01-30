@@ -114,7 +114,7 @@ Remove `position: relative;{:css}` from `body`:
 
 ## API Reference
 
-### Root
+### Tooltip.Root
 
 <PropsTable
   data={[
@@ -122,6 +122,7 @@ Remove `position: relative;{:css}` from `body`:
       name: "children",
       required: true,
       typeSimple: "ReactNode",
+      description: "The trigger element and tooltip content.",
     },
     {
       name: "isDisabled",
@@ -134,20 +135,20 @@ Remove `position: relative;{:css}` from `body`:
       name: "delay",
       required: false,
       typeSimple: "number",
-      default: "1500",
+      default: "0",
       description: "The delay time for the tooltip to show up.",
     },
     {
       name: "closeDelay",
       required: false,
       typeSimple: "number",
-      default: "500",
+      default: "300",
       description: "The delay time for the tooltip to close.",
     },
     {
       name: "trigger",
       required: false,
-      typeSimple: "'focus'",
+      typeSimple: '"focus"',
       description:
         "By default, opens for both focus and hover. Can be made to open only for focus.",
     },
@@ -167,9 +168,87 @@ Remove `position: relative;{:css}` from `body`:
       name: "onOpenChange",
       required: false,
       typeSimple: "function",
-      type: "((isOpen: boolean) => void)",
+      type: "(isOpen: boolean) => void",
       description:
         "Handler that is called when the overlay's open state changes.",
+    },
+  ]}
+/>
+
+### Tooltip.Content
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: TooltipRenderProps) => ReactNode",
+      description: "The content to display within the tooltip.",
+    },
+    {
+      name: "placement",
+      required: false,
+      typeSimple: "Placement",
+      type: `'bottom' | 'bottom left' | 'bottom right' | 'bottom start' | 'bottom end' |
+    'top' | 'top left' | 'top right' | 'top start' | 'top end' |
+    'left' | 'left top' | 'left bottom' | 'start' | 'start top' | 'start bottom' |
+    'right' | 'right top' | 'right bottom' | 'end' | 'end top' | 'end bottom'`,
+      default: '"top"',
+      description: "The placement of the tooltip relative to the trigger.",
+    },
+    {
+      name: "offset",
+      required: false,
+      typeSimple: "number",
+      default: "8",
+      description: "The additional offset applied along the main axis between the tooltip and its trigger.",
+    },
+    {
+      name: "crossOffset",
+      required: false,
+      typeSimple: "number",
+      default: "0",
+      description: "The additional offset applied along the cross axis between the tooltip and its trigger.",
+    },
+    {
+      name: "containerPadding",
+      required: false,
+      typeSimple: "number",
+      default: "12",
+      description: "The placement padding that should be applied between the tooltip and its surrounding container.",
+    },
+    {
+      name: "shouldFlip",
+      required: false,
+      typeSimple: "boolean",
+      default: "true",
+      description: "Whether the tooltip should flip when it doesn't fit in the viewport.",
+    },
+    {
+      name: "isEntering",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the tooltip is currently performing an entry animation.",
+    },
+    {
+      name: "isExiting",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the tooltip is currently performing an exit animation.",
+    },
+  ]}
+/>
+
+### Tooltip.Arrow
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the arrow.",
     },
   ]}
 />

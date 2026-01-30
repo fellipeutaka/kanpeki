@@ -124,25 +124,100 @@ TextField works with the [Form](/docs/components/form) component for submission 
 
 <ComponentPreview name="textfield-form-demo" />
 
-## Props
+## API Reference
 
-TextField accepts all props from React Aria's [TextField](https://react-aria.adobe.com/TextField#api).
+### TextField
 
-| Prop           | Type                      | Default  | Description                         |
-| -------------- | ------------------------- | -------- | ----------------------------------- |
-| `type`         | `string`                  | `"text"` | Input type (email, password, etc.)  |
-| `isRequired`   | `boolean`                 | `false`  | Whether the field is required       |
-| `isInvalid`    | `boolean`                 | `false`  | Whether the field is in error state |
-| `isDisabled`   | `boolean`                 | `false`  | Whether the field is disabled       |
-| `isReadOnly`   | `boolean`                 | `false`  | Whether the field is read-only      |
-| `value`        | `string`                  |          | Controlled value                    |
-| `defaultValue` | `string`                  |          | Default value (uncontrolled)        |
-| `onChange`     | `(value: string) => void` |          | Called when value changes           |
-| `name`         | `string`                  |          | Form field name                     |
-| `autoComplete` | `string`                  |          | Autocomplete hint                   |
-| `maxLength`    | `number`                  |          | Maximum character length            |
-| `minLength`    | `number`                  |          | Minimum character length            |
-| `pattern`      | `string`                  |          | Validation pattern                  |
+<PropsTable
+  data={[
+    {
+      name: "type",
+      required: false,
+      typeSimple: "string",
+      default: '"text"',
+      description: "The input type (email, password, etc.).",
+    },
+    {
+      name: "value",
+      required: false,
+      typeSimple: "string",
+      description: "The current value (controlled).",
+    },
+    {
+      name: "defaultValue",
+      required: false,
+      typeSimple: "string",
+      description: "The default value (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: string) => void",
+      description: "Handler called when the value changes.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the text field is disabled.",
+    },
+    {
+      name: "isReadOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the text field is read only.",
+    },
+    {
+      name: "isRequired",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the text field is required.",
+    },
+    {
+      name: "isInvalid",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the text field value is invalid.",
+    },
+    {
+      name: "minLength",
+      required: false,
+      typeSimple: "number",
+      description: "The minimum number of characters supported by the input.",
+    },
+    {
+      name: "maxLength",
+      required: false,
+      typeSimple: "number",
+      description: "The maximum number of characters supported by the input.",
+    },
+    {
+      name: "pattern",
+      required: false,
+      typeSimple: "string",
+      description: "A regular expression the input's value must match.",
+    },
+    {
+      name: "autoComplete",
+      required: false,
+      typeSimple: "string",
+      description: "Describes the type of autocomplete functionality the input should provide.",
+    },
+    {
+      name: "name",
+      required: false,
+      typeSimple: "string",
+      description: "The name of the input, used when submitting an HTML form.",
+    },
+    {
+      name: "autoFocus",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the input should receive focus on render.",
+    },
+  ]}
+/>
 
 ## Accessibility
 

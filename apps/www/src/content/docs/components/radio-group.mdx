@@ -100,3 +100,115 @@ import { RadioGroupItem, RadioGroupRoot } from "~/components/ui/radio-group";
     This component is currently being built. Check back soon for updates!
   </Alert.Description>
 </Alert.Root>
+
+## API Reference
+
+### RadioGroup.Root
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      required: false,
+      typeSimple: "string",
+      description: "The current value (controlled).",
+    },
+    {
+      name: "defaultValue",
+      required: false,
+      typeSimple: "string",
+      description: "The default value (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: string) => void",
+      description: "Handler called when the value changes.",
+    },
+    {
+      name: "name",
+      required: false,
+      typeSimple: "string",
+      description: "The name of the radio group, used when submitting an HTML form.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the radio group is disabled.",
+    },
+    {
+      name: "isReadOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the radio group is read only.",
+    },
+    {
+      name: "isRequired",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the radio group is required.",
+    },
+    {
+      name: "isInvalid",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the radio group is invalid.",
+    },
+    {
+      name: "orientation",
+      required: false,
+      typeSimple: "enum",
+      type: '"horizontal" | "vertical"',
+      default: '"vertical"',
+      description: "The axis the radio group items should align with.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: RadioGroupRenderProps) => ReactNode",
+      description: "The children of the radio group.",
+    },
+  ]}
+/>
+
+### RadioGroup.Item
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      required: true,
+      typeSimple: "string",
+      description: "The value of the radio item.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the radio item is disabled.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: RadioRenderProps) => ReactNode",
+      description: "The children of the radio item.",
+    },
+  ]}
+/>
+
+### RadioGroup.Indicator
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the indicator.",
+    },
+  ]}
+/>
