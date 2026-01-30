@@ -1,3 +1,5 @@
+"use client";
+
 import { Field } from "~/registry/ui/field";
 import { Input } from "~/registry/ui/input";
 import { TextField } from "~/registry/ui/text-field";
