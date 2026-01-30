@@ -9,15 +9,18 @@ import { Input } from "~/registry/ui/input";
 import { Textarea } from "~/registry/ui/textarea";
 import { InputGroupStyles } from "./styles";
 
-export interface InputGroupRootProps extends useRender.ComponentProps<"div"> {}
+export interface InputGroupRootProps
+  extends useRender.ComponentProps<"div">,
+    VariantProps<typeof InputGroupStyles.Root> {}
 
 export function InputGroupRoot({
   render,
   className,
+  showFocusRing,
   ...props
 }: InputGroupRootProps) {
   const defaultProps: useRender.ElementProps<"div"> = {
-    className: InputGroupStyles.Root({ className }),
+    className: InputGroupStyles.Root({ className, showFocusRing }),
     role: "group",
   };
 
