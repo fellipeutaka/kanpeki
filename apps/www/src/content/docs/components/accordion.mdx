@@ -101,3 +101,116 @@ If you need to customize the internal padding of the accordion content, you can 
   Customized padding for the content area.
 </Accordion.Content>
 ```
+
+## API Reference
+
+### Accordion.Root
+
+<PropsTable
+  data={[
+    {
+      name: "allowsMultipleExpanded",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether multiple items can be expanded at the same time.",
+    },
+    {
+      name: "defaultExpandedKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description:
+        "The initial expanded keys in the collection (uncontrolled).",
+    },
+    {
+      name: "expandedKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description: "The expanded keys in the collection (controlled).",
+    },
+    {
+      name: "onExpandedChange",
+      required: false,
+      typeSimple: "function",
+      type: "(keys: Set<Key>) => void",
+      description: "Handler called when the expanded keys change.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether all items are disabled.",
+    },
+  ]}
+/>
+
+### Accordion.Item
+
+<PropsTable
+  data={[
+    {
+      name: "id",
+      required: true,
+      typeSimple: "Key",
+      description: "The unique key for the accordion item.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the accordion item is disabled.",
+    },
+    {
+      name: "isExpanded",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the accordion item is expanded (controlled).",
+    },
+    {
+      name: "defaultExpanded",
+      required: false,
+      typeSimple: "boolean",
+      description:
+        "Whether the accordion item is expanded by default (uncontrolled).",
+    },
+    {
+      name: "onExpandedChange",
+      required: false,
+      typeSimple: "function",
+      type: "(isExpanded: boolean) => void",
+      description: "Handler called when the expanded state changes.",
+    },
+  ]}
+/>
+
+### Accordion.Trigger
+
+<PropsTable
+  data={[
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the trigger is disabled.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: ButtonRenderProps) => ReactNode",
+      description: "The content to display in the trigger.",
+    },
+  ]}
+/>
+
+### Accordion.Content
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content to display in the accordion panel.",
+    },
+  ]}
+/>
