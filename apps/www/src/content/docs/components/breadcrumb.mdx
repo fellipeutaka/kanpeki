@@ -176,3 +176,83 @@ import { Breadcrumb } from "~/components/ui/breadcrumb"; // [!code highlight]
   {/* ... */}
 </Breadcrumb.Root>;
 ```
+
+## API Reference
+
+### Breadcrumb.Root
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The breadcrumb items.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the breadcrumbs are disabled.",
+    },
+    {
+      name: "onAction",
+      required: false,
+      typeSimple: "function",
+      type: "(key: Key) => void",
+      description: "Handler called when a breadcrumb item is pressed.",
+    },
+  ]}
+/>
+
+### Breadcrumb.Item
+
+<PropsTable
+  data={[
+    {
+      name: "id",
+      required: false,
+      typeSimple: "Key",
+      description: (
+        <>
+          A unique id for the breadcrumb, which will be passed to{" "}
+          <Code>onAction</Code> when the breadcrumb is pressed.
+        </>
+      ),
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: BreadcrumbRenderProps) => ReactNode",
+      description: "The content of the breadcrumb item.",
+    },
+  ]}
+/>
+
+### Breadcrumb.Separator
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "Custom separator content. Defaults to a chevron icon.",
+    },
+  ]}
+/>
+
+### Breadcrumb.Ellipsis
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description:
+        "Custom ellipsis content. Defaults to a horizontal dots icon.",
+    },
+  ]}
+/>

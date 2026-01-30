@@ -100,7 +100,6 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
           <Dialog.Content className="gap-0">
             <Autocomplete
               defaultInputValue={query}
-              disableVirtualFocus
               onInputChange={setDebouncedQuery}
             >
               <InputGroup.Root
@@ -110,6 +109,7 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
                     className="h-12 items-center gap-2 border-transparent dark:bg-transparent"
                   />
                 }
+                showFocusRing={false}
               >
                 <InputGroup.Addon>
                   {searchQuery.isLoading ? (

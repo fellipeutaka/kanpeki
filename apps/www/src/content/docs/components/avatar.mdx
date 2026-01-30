@@ -57,7 +57,7 @@ import { Avatar } from "~/components/ui/avatar";
   <Avatar.Placeholder>
     <UserIcon className="size-6" />
   </Avatar.Placeholder>
-</Avatar.Root>
+</Avatar.Root>;
 ```
 
 </Tabs.Content>
@@ -79,7 +79,7 @@ import {
   <AvatarPlaceholder>
     <UserIcon className="size-6" />
   </AvatarPlaceholder>
-</AvatarRoot>
+</AvatarRoot>;
 ```
 
 </Tabs.Content>
@@ -94,18 +94,62 @@ import {
 
 ## API Reference
 
-### Root
+### Avatar.Root
 
-Contains all the parts of an avatar.
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The avatar image, fallback, and placeholder elements.",
+    },
+  ]}
+/>
 
-### Image
+### Avatar.Image
 
-The image to render. By default it will only render when it has loaded.
+<PropsTable
+  data={[
+    {
+      name: "src",
+      required: false,
+      typeSimple: "string",
+      description: "The image source URL.",
+    },
+    {
+      name: "alt",
+      required: false,
+      typeSimple: "string",
+      description: "Alternative text for the image.",
+    },
+  ]}
+/>
 
-### Fallback
+### Avatar.Fallback
 
-An element that renders when the image hasn't loaded. This means whilst it's loading, or if there was an error.
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description:
+        "The content to display when the image fails to load (e.g., initials).",
+    },
+  ]}
+/>
 
-### Placeholder
+### Avatar.Placeholder
 
-An element that renders when the image is loading.
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description:
+        "The content to display while the image is loading (e.g., a spinner or icon).",
+    },
+  ]}
+/>

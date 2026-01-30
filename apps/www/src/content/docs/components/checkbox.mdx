@@ -102,3 +102,109 @@ import {
     This component is currently being built. Check back soon for updates!
   </Alert.Description>
 </Alert.Root>
+
+## API Reference
+
+### Checkbox.Provider
+
+<PropsTable
+  data={[
+    {
+      name: "isSelected",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the checkbox is selected (controlled).",
+    },
+    {
+      name: "defaultSelected",
+      required: false,
+      typeSimple: "boolean",
+      description:
+        "Whether the checkbox is selected by default (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(isSelected: boolean) => void",
+      description: "Handler called when the checkbox selection state changes.",
+    },
+    {
+      name: "isIndeterminate",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the checkbox is in an indeterminate state.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the checkbox is disabled.",
+    },
+    {
+      name: "isReadOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the checkbox is read only.",
+    },
+    {
+      name: "isRequired",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the checkbox is required.",
+    },
+    {
+      name: "isInvalid",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the checkbox is invalid.",
+    },
+    {
+      name: "name",
+      required: false,
+      typeSimple: "string",
+      description:
+        "The name of the checkbox, used when submitting an HTML form.",
+    },
+    {
+      name: "value",
+      required: false,
+      typeSimple: "string",
+      description:
+        "The value of the checkbox, used when submitting an HTML form.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: CheckboxRenderProps) => ReactNode",
+      description: "The children of the checkbox.",
+    },
+  ]}
+/>
+
+### Checkbox.Root
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The checkbox indicator element.",
+    },
+  ]}
+/>
+
+### Checkbox.Indicator
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the indicator icon.",
+    },
+  ]}
+/>
