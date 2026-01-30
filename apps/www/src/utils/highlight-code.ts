@@ -1,7 +1,12 @@
+import type { RehypeCodeOptions } from "fumadocs-core/mdx-plugins";
 import { rehypeCodeOptions } from "~/lib/rehype";
 import { getHighlighter } from "~/lib/shiki";
 
-export async function highlightCode(code: string, language = "tsx") {
+export async function highlightCode(
+  code: string,
+  language = "tsx",
+  options?: RehypeCodeOptions
+) {
   const highlighter = await getHighlighter({
     langs: ["typescript", "tsx"],
   });
@@ -10,6 +15,7 @@ export async function highlightCode(code: string, language = "tsx") {
     ...rehypeCodeOptions,
     lang: language,
     transformers: [
+      ...(rehypeCodeOptions.transformers ?? []),
       {
         pre(node) {
           node.properties.class = "py-4 shiki shiki-themes";
@@ -18,6 +24,7 @@ export async function highlightCode(code: string, language = "tsx") {
         },
       },
     ],
+    ...options,
   });
 
   return html;
