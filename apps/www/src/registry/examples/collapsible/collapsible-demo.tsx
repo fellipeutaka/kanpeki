@@ -4,7 +4,7 @@ import { Collapsible } from "~/registry/ui/collapsible";
 
 export function CollapsibleDemo() {
   return (
-    <Collapsible.Root className="flex w-full flex-col gap-2 md:w-[350px]">
+    <Collapsible.Root className="flex w-full flex-col gap-2 md:w-87.5">
       <div className="flex items-center justify-between gap-4 px-4">
         <h4 className="line-clamp-1 font-semibold text-sm">
           @peduarte starred 3 repositories

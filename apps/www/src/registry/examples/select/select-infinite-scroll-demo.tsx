@@ -60,7 +60,7 @@ export function SelectInfiniteScrollDemo() {
     <Select.Root aria-label="Pokémons" placeholder="Select a Pokémon">
       <Label>Choose a Pokémon</Label>
 
-      <Select.Trigger className="w-[180px]">
+      <Select.Trigger className="w-45">
         <Select.Value className="capitalize" />
       </Select.Trigger>
       <Popover.Content>

@@ -9,7 +9,7 @@ export function SelectWithLabelDemo() {
     <Select.Root aria-label="Fruits" placeholder="Select a fruit">
       <Label>Choose a fruit</Label>
 
-      <Select.Trigger className="w-[180px]">
+      <Select.Trigger className="w-45">
         <Select.Value />
       </Select.Trigger>
       <Popover.Content>
