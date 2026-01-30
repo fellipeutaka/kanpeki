@@ -46,3 +46,31 @@ import { Label } from "~/components/ui/label";
 
 <Label>Label</Label>;
 ```
+
+## API Reference
+
+### Label
+
+<PropsTable
+  data={[
+    {
+      name: "elementType",
+      required: false,
+      typeSimple: "string",
+      default: '"label"',
+      description: "The HTML element type to render.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the label.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content of the label.",
+    },
+  ]}
+/>
