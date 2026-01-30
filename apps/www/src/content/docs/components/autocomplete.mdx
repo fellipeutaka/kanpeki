@@ -57,3 +57,66 @@ import { SearchField } from "~/components/ui/search-field";
 ### Dialog
 
 <ComponentPreview name="autocomplete-dialog-demo" />
+
+## API Reference
+
+<PropsTable
+  data={[
+    {
+      name: "filter",
+      required: false,
+      typeSimple: "function",
+      type: "(textValue: string, inputValue: string, node: Node<T>) => boolean",
+      description:
+        "Custom filter function to determine which items match the input. Defaults to case-insensitive contains matching.",
+    },
+    {
+      name: "options",
+      required: false,
+      typeSimple: "Intl.CollatorOptions",
+      description: "Options for the default filter's Intl.Collator.",
+    },
+    {
+      name: "disableVirtualFocus",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description:
+        "Whether the autocomplete should disable virtual focus, instead making the wrapped collection directly tabbable.",
+    },
+    {
+      name: "disableAutoFocusFirst",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description:
+        "Whether or not to focus the first item in the collection after a filter is performed. Note this is only applicable if virtual focus behavior is not turned off via disableVirtualFocus.",
+    },
+    {
+      name: "defaultInputValue",
+      required: false,
+      typeSimple: "string",
+      description: "The default value of the input (uncontrolled).",
+    },
+    {
+      name: "inputValue",
+      required: false,
+      typeSimple: "string",
+      description: "The current value of the input (controlled).",
+    },
+    {
+      name: "onInputChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: string) => void",
+      description: "Handler called when the input value changes.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description:
+        "The children of the autocomplete, typically a text field and a menu or listbox.",
+    },
+  ]}
+/>
