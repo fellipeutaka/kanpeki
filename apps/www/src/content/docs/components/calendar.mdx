@@ -126,3 +126,255 @@ import {
 ### Range
 
 <ComponentPreview name="calendar-range-demo" />
+
+## API Reference
+
+### Calendar.Root
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The current value (controlled).",
+    },
+    {
+      name: "defaultValue",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The default value (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: DateValue) => void",
+      description: "Handler called when the value changes.",
+    },
+    {
+      name: "minValue",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The minimum allowed date.",
+    },
+    {
+      name: "maxValue",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The maximum allowed date.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the calendar is disabled.",
+    },
+    {
+      name: "isReadOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the calendar is read only.",
+    },
+    {
+      name: "isDateUnavailable",
+      required: false,
+      typeSimple: "function",
+      type: "(date: DateValue) => boolean",
+      description: "Callback to determine if a date is unavailable.",
+    },
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"outline"',
+      description: "The visual style of the calendar.",
+    },
+  ]}
+/>
+
+### Calendar.Header
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the header.",
+    },
+  ]}
+/>
+
+### Calendar.Nav
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the navigation container.",
+    },
+  ]}
+/>
+
+### Calendar.Month
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the month heading.",
+    },
+  ]}
+/>
+
+### Calendar.Grid
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the grid.",
+    },
+  ]}
+/>
+
+### Calendar.GridHeader
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "function",
+      type: "(weekDay: string) => ReactNode",
+      description: "Render function for week day headers.",
+    },
+  ]}
+/>
+
+### Calendar.HeaderCell
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the header cell.",
+    },
+  ]}
+/>
+
+### Calendar.GridBody
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "function",
+      type: "(date: CalendarDate) => ReactNode",
+      description: "Render function for date cells.",
+    },
+  ]}
+/>
+
+### Calendar.Cell
+
+<PropsTable
+  data={[
+    {
+      name: "date",
+      required: true,
+      typeSimple: "CalendarDate",
+      description: "The date for this cell.",
+    },
+    {
+      name: "shape",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "rounded"',
+      default: '"default"',
+      description: "The shape of the cell.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the cell.",
+    },
+  ]}
+/>
+
+### RangeCalendar.Root
+
+Used for selecting date ranges. Accepts the same props as `Calendar.Root` but with range values.
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      required: false,
+      typeSimple: "RangeValue<DateValue>",
+      description: "The current range value (controlled).",
+    },
+    {
+      name: "defaultValue",
+      required: false,
+      typeSimple: "RangeValue<DateValue>",
+      description: "The default range value (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: RangeValue<DateValue>) => void",
+      description: "Handler called when the range value changes.",
+    },
+    {
+      name: "minValue",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The minimum allowed date.",
+    },
+    {
+      name: "maxValue",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The maximum allowed date.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the calendar is disabled.",
+    },
+    {
+      name: "isReadOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the calendar is read only.",
+    },
+    {
+      name: "isDateUnavailable",
+      required: false,
+      typeSimple: "function",
+      type: "(date: DateValue) => boolean",
+      description: "Callback to determine if a date is unavailable.",
+    },
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"outline"',
+      description: "The visual style of the calendar.",
+    },
+  ]}
+/>

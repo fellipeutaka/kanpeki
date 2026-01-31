@@ -93,3 +93,116 @@ import {
 ### With Arrow
 
 <ComponentPreview name="popover-with-arrow-demo" />
+
+## API Reference
+
+### Popover.Root
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: true,
+      typeSimple: "ReactNode",
+      description: "The trigger and popover content.",
+    },
+    {
+      name: "isOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the popover is open (controlled).",
+    },
+    {
+      name: "defaultOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the popover is open by default (uncontrolled).",
+    },
+    {
+      name: "onOpenChange",
+      required: false,
+      typeSimple: "function",
+      type: "(isOpen: boolean) => void",
+      description: "Handler called when the open state changes.",
+    },
+  ]}
+/>
+
+### Popover.Content
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content to display within the popover.",
+    },
+    {
+      name: "placement",
+      required: false,
+      typeSimple: "Placement",
+      default: '"bottom start"',
+      description: "The placement of the popover relative to the trigger.",
+    },
+    {
+      name: "offset",
+      required: false,
+      typeSimple: "number",
+      default: "4",
+      description: "The additional offset applied along the main axis between the popover and its trigger.",
+    },
+    {
+      name: "crossOffset",
+      required: false,
+      typeSimple: "number",
+      default: "0",
+      description: "The additional offset applied along the cross axis between the popover and its trigger.",
+    },
+    {
+      name: "containerPadding",
+      required: false,
+      typeSimple: "number",
+      default: "12",
+      description: "The placement padding that should be applied between the popover and its surrounding container.",
+    },
+    {
+      name: "shouldFlip",
+      required: false,
+      typeSimple: "boolean",
+      default: "true",
+      description: "Whether the popover should flip when it doesn't fit in the viewport.",
+    },
+    {
+      name: "isNonModal",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the popover is non-modal (does not block interaction with the rest of the page).",
+    },
+    {
+      name: "isKeyboardDismissDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether pressing the escape key to close the popover is disabled.",
+    },
+  ]}
+/>
+
+### Popover.Arrow
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "Custom arrow element. Defaults to a triangle SVG.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the arrow.",
+    },
+  ]}
+/>

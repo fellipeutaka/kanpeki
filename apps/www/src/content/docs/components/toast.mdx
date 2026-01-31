@@ -112,3 +112,174 @@ toast("Hello, World!", {
 ### Custom
 
 <ComponentPreview name="toast-custom-demo" />
+
+## API Reference
+
+### Toaster
+
+The `Toaster` component should be placed once in your app's root layout or providers.
+
+<PropsTable
+  data={[
+    {
+      name: "position",
+      required: false,
+      typeSimple: "enum",
+      type: '"top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right"',
+      default: '"bottom-right"',
+      description: "The position of the toasts.",
+    },
+    {
+      name: "expand",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether toasts are expanded by default.",
+    },
+    {
+      name: "duration",
+      required: false,
+      typeSimple: "number",
+      default: "4000",
+      description: "The default duration (in ms) before toasts auto-dismiss.",
+    },
+    {
+      name: "visibleToasts",
+      required: false,
+      typeSimple: "number",
+      default: "3",
+      description: "The maximum number of visible toasts.",
+    },
+    {
+      name: "closeButton",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether to show a close button on each toast.",
+    },
+    {
+      name: "richColors",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether to use rich colors for different toast types.",
+    },
+    {
+      name: "theme",
+      required: false,
+      typeSimple: "enum",
+      type: '"light" | "dark" | "system"',
+      default: '"system"',
+      description: "The color theme of the toasts.",
+    },
+    {
+      name: "offset",
+      required: false,
+      typeSimple: "string | number",
+      description: "The offset from the edges of the screen.",
+    },
+    {
+      name: "dir",
+      required: false,
+      typeSimple: "enum",
+      type: '"ltr" | "rtl" | "auto"',
+      default: '"ltr"',
+      description: "The text direction.",
+    },
+  ]}
+/>
+
+### toast()
+
+The `toast()` function is used to create toasts programmatically.
+
+<PropsTable
+  data={[
+    {
+      name: "message",
+      required: true,
+      typeSimple: "string | ReactNode",
+      description: "The main message of the toast.",
+    },
+    {
+      name: "description",
+      required: false,
+      typeSimple: "string | ReactNode",
+      description: "Additional description text.",
+    },
+    {
+      name: "duration",
+      required: false,
+      typeSimple: "number",
+      description: "Override the default duration (in ms).",
+    },
+    {
+      name: "icon",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "Custom icon to display.",
+    },
+    {
+      name: "action",
+      required: false,
+      typeSimple: "object",
+      type: "{ label: string; onClick: () => void }",
+      description: "An action button for the toast.",
+    },
+    {
+      name: "cancel",
+      required: false,
+      typeSimple: "object",
+      type: "{ label: string; onClick?: () => void }",
+      description: "A cancel button for the toast.",
+    },
+    {
+      name: "onDismiss",
+      required: false,
+      typeSimple: "function",
+      type: "(toast: Toast) => void",
+      description: "Handler called when the toast is dismissed.",
+    },
+    {
+      name: "onAutoClose",
+      required: false,
+      typeSimple: "function",
+      type: "(toast: Toast) => void",
+      description: "Handler called when the toast auto-closes.",
+    },
+  ]}
+/>
+
+### Toast Types
+
+```tsx
+import { toast } from "sonner";
+
+// Default
+toast("Default toast");
+
+// Success
+toast.success("Success toast");
+
+// Error
+toast.error("Error toast");
+
+// Warning
+toast.warning("Warning toast");
+
+// Info
+toast.info("Info toast");
+
+// Loading
+toast.loading("Loading...");
+
+// Promise
+toast.promise(promise, {
+  loading: "Loading...",
+  success: "Success!",
+  error: "Error!",
+});
+
+// Custom
+toast.custom((t) => <CustomToast id={t} />);
+```

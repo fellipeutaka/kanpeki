@@ -141,46 +141,118 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
 
 ## API Reference
 
-### Root
+### Dialog.Root
 
 <PropsTable
   data={[
     {
-      name: "defaultOpen",
-      required: false,
-      typeSimple: "boolean",
-      default: "false",
-      description: "Whether the overlay is open by default (uncontrolled).",
+      name: "children",
+      required: true,
+      typeSimple: "ReactNode",
+      description: "The trigger and dialog content.",
     },
     {
       name: "isOpen",
       required: false,
       typeSimple: "boolean",
-      default: "false",
-      description: "Whether the overlay is open by default (controlled).",
+      description: "Whether the dialog is open (controlled).",
+    },
+    {
+      name: "defaultOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the dialog is open by default (uncontrolled).",
     },
     {
       name: "onOpenChange",
       required: false,
       typeSimple: "function",
-      type: "((isOpen: boolean) => void)",
-      description:
-        "Handler that is called when the overlay's open state changes.",
+      type: "(isOpen: boolean) => void",
+      description: "Handler called when the open state changes.",
     },
   ]}
 />
 
-### Content
+### Dialog.Overlay
 
 <PropsTable
   data={[
     {
-      name: "side",
+      name: "children",
       required: false,
-      typeSimple: "enum",
-      type: '"center" | "top" | "bottom" | "left" | "right"',
-      default: '"center"',
-      description: "The side of the screen the dialog should appear from.",
+      typeSimple: "ReactNode",
+      description: "The modal content.",
+    },
+    {
+      name: "isBlurred",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether the content behind the overlay should be blurred.",
+    },
+    {
+      name: "isDismissable",
+      required: false,
+      typeSimple: "boolean",
+      default: "true",
+      description: "Whether the dialog can be dismissed by clicking the overlay.",
+    },
+    {
+      name: "isKeyboardDismissDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether pressing the escape key to close the dialog is disabled.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the overlay.",
+    },
+  ]}
+/>
+
+### Dialog.Modal
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The dialog content.",
+    },
+    {
+      name: "isDismissable",
+      required: false,
+      typeSimple: "boolean",
+      default: "true",
+      description: "Whether the dialog can be dismissed by clicking outside.",
+    },
+    {
+      name: "isKeyboardDismissDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether pressing the escape key to close the dialog is disabled.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the modal.",
+    },
+  ]}
+/>
+
+### Dialog.Content
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content of the dialog.",
     },
     {
       name: "role",
@@ -191,27 +263,99 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
       description: "The role of the dialog.",
     },
     {
-      name: "isBlurred",
+      name: "className",
       required: false,
-      typeSimple: "boolean",
-      default: "false",
-      description: "Whether the content behind the dialog should be blurred.",
+      typeSimple: "string",
+      description: "Additional CSS classes for the content.",
+    },
+  ]}
+/>
+
+### Dialog.Header
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The header content (title, description).",
     },
     {
-      name: "isDismissable",
+      name: "className",
       required: false,
-      typeSimple: "boolean",
-      default: "true",
-      description:
-        "Whether the dialog can be dismissed by clicking outside of it.",
+      typeSimple: "string",
+      description: "Additional CSS classes for the header.",
+    },
+  ]}
+/>
+
+### Dialog.Title
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The title text.",
     },
     {
-      name: "isKeyboardDismissDisabled",
+      name: "className",
       required: false,
-      typeSimple: "boolean",
-      default: "false",
-      description:
-        "Whether pressing the escape key to close the modal should be disabled.",
+      typeSimple: "string",
+      description: "Additional CSS classes for the title.",
+    },
+  ]}
+/>
+
+### Dialog.Description
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The description text.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the description.",
+    },
+  ]}
+/>
+
+### Dialog.Footer
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The footer content (actions, buttons).",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the footer.",
+    },
+  ]}
+/>
+
+### Dialog.Close
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the close button.",
     },
   ]}
 />

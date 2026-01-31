@@ -118,3 +118,120 @@ import {
     This component is currently being built. Check back soon for updates!
   </Alert.Description>
 </Alert.Root>
+
+## API Reference
+
+### DateField.Root
+
+<PropsTable
+  data={[
+    {
+      name: "value",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The current value (controlled).",
+    },
+    {
+      name: "defaultValue",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The default value (uncontrolled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: DateValue) => void",
+      description: "Handler called when the value changes.",
+    },
+    {
+      name: "minValue",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The minimum allowed date.",
+    },
+    {
+      name: "maxValue",
+      required: false,
+      typeSimple: "DateValue",
+      description: "The maximum allowed date.",
+    },
+    {
+      name: "granularity",
+      required: false,
+      typeSimple: "enum",
+      type: '"day" | "hour" | "minute" | "second"',
+      description: "The granularity of the date field segments.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the date field is disabled.",
+    },
+    {
+      name: "isReadOnly",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the date field is read only.",
+    },
+    {
+      name: "isRequired",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the date field is required.",
+    },
+    {
+      name: "isInvalid",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the date field is invalid.",
+    },
+    {
+      name: "hideTimeZone",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether to hide the time zone segment.",
+    },
+    {
+      name: "hourCycle",
+      required: false,
+      typeSimple: "enum",
+      type: "12 | 24",
+      description: "Whether to use 12 or 24 hour time.",
+    },
+  ]}
+/>
+
+### DateField.Input
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: true,
+      typeSimple: "function",
+      type: "(segment: DateSegment) => ReactNode",
+      description: "Render function for date segments.",
+    },
+  ]}
+/>
+
+### DateField.Segment
+
+<PropsTable
+  data={[
+    {
+      name: "segment",
+      required: true,
+      typeSimple: "DateSegment",
+      description: "The date segment to render.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the segment.",
+    },
+  ]}
+/>

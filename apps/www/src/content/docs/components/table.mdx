@@ -138,55 +138,160 @@ import {
 
 ## API Reference
 
-### Root
+### Table.Root
 
 <PropsTable
   data={[
     {
-      name: "allowResize",
+      name: "children",
       required: false,
-      typeSimple: "boolean",
-      default: "false",
-      description: (
-        <>
-          Makes the Table resizable by wrapping the Table within a{" "}
-          <Code>{"<ResizableTableContainer />"}</Code>.
-        </>
-      ),
+      typeSimple: "ReactNode",
+      description: "The table content (header, body, footer, caption).",
     },
     {
-      name: "selectionBehavior",
+      name: "className",
       required: false,
-      typeSimple: "enum",
-      type: '"toggle" | "replace"',
-      default: '"toggle"',
-      description: "How multiple selection should behave in the collection.",
+      typeSimple: "string",
+      description: "Additional CSS classes for the table.",
+    },
+  ]}
+/>
+
+### Table.Header
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The header rows.",
     },
     {
-      name: "disabledBehavior",
+      name: "className",
       required: false,
-      typeSimple: "enum",
-      type: '"selection" | "all"',
-      default: '"selection"',
-      description: (
-        <>
-          Whether <Code>disabledKeys</Code> applies to all interactions, or only
-          selection.
-        </>
-      ),
+      typeSimple: "string",
+      description: "Additional CSS classes for the header.",
+    },
+  ]}
+/>
+
+### Table.Body
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The body rows.",
     },
     {
-      name: "selectionMode",
+      name: "className",
       required: false,
-      typeSimple: "enum",
-      type: '"none" | "single" | "multiple',
-      description: "The type of selection that is allowed in the collection.",
+      typeSimple: "string",
+      description: "Additional CSS classes for the body.",
+    },
+  ]}
+/>
+
+### Table.Footer
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The footer rows.",
     },
     {
-      name: "disallowEmptySelection",
+      name: "className",
       required: false,
-      typeSimple: "boolean",
-      description: "Whether the collection allows empty selection.",
+      typeSimple: "string",
+      description: "Additional CSS classes for the footer.",
+    },
+  ]}
+/>
+
+### Table.Row
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The row cells.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the row.",
+    },
+  ]}
+/>
+
+### Table.Head
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The header cell content.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the header cell.",
+    },
+  ]}
+/>
+
+### Table.Cell
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The cell content.",
+    },
+    {
+      name: "colSpan",
+      required: false,
+      typeSimple: "number",
+      description: "The number of columns the cell should span.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the cell.",
+    },
+  ]}
+/>
+
+### Table.Caption
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The caption text.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the caption.",
     },
   ]}
 />

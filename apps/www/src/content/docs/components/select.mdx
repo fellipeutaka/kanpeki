@@ -128,3 +128,125 @@ import { SelectRoot, SelectTrigger, SelectValue } from "~/components/ui/select";
     This component is currently being built. Check back soon for updates!
   </Alert.Description>
 </Alert.Root>
+
+## API Reference
+
+### Select.Root
+
+<PropsTable
+  data={[
+    {
+      name: "selectedKey",
+      required: false,
+      typeSimple: "Key",
+      description: "The currently selected key (controlled).",
+    },
+    {
+      name: "defaultSelectedKey",
+      required: false,
+      typeSimple: "Key",
+      description: "The default selected key (uncontrolled).",
+    },
+    {
+      name: "onSelectionChange",
+      required: false,
+      typeSimple: "function",
+      type: "(key: Key) => void",
+      description: "Handler called when the selection changes.",
+    },
+    {
+      name: "isOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the select is open (controlled).",
+    },
+    {
+      name: "defaultOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the select is open by default (uncontrolled).",
+    },
+    {
+      name: "onOpenChange",
+      required: false,
+      typeSimple: "function",
+      type: "(isOpen: boolean) => void",
+      description: "Handler called when the open state changes.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the select is disabled.",
+    },
+    {
+      name: "isRequired",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the select is required.",
+    },
+    {
+      name: "isInvalid",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the select is invalid.",
+    },
+    {
+      name: "name",
+      required: false,
+      typeSimple: "string",
+      description: "The name of the select, used when submitting an HTML form.",
+    },
+    {
+      name: "placeholder",
+      required: false,
+      typeSimple: "string",
+      description: "Placeholder text when no item is selected.",
+    },
+  ]}
+/>
+
+### Select.Trigger
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The trigger content (typically Select.Value).",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the trigger.",
+    },
+  ]}
+/>
+
+### Select.Value
+
+<PropsTable
+  data={[
+    {
+      name: "placeholder",
+      required: false,
+      typeSimple: "string",
+      description: "Placeholder text when no item is selected.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: SelectValueRenderProps) => ReactNode",
+      description: "Custom render for the selected value.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the value.",
+    },
+  ]}
+/>

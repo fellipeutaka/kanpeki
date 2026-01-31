@@ -281,3 +281,141 @@ export function Example() {
 <ComponentPreview name="carousel-plugin-demo" />
 
 See the [Embla Carousel docs](https://www.embla-carousel.com/api/plugins/) for more information on using plugins.
+
+## API Reference
+
+### Carousel.Root
+
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      required: false,
+      typeSimple: "enum",
+      type: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "The orientation of the carousel.",
+    },
+    {
+      name: "opts",
+      required: false,
+      typeSimple: "CarouselOptions",
+      description: "Options passed to Embla Carousel. See Embla docs for all available options.",
+    },
+    {
+      name: "plugins",
+      required: false,
+      typeSimple: "CarouselPlugin[]",
+      description: "Plugins to enhance the carousel functionality.",
+    },
+    {
+      name: "setApi",
+      required: false,
+      typeSimple: "function",
+      type: "(api: CarouselApi) => void",
+      description: "Callback to receive the carousel API instance.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the carousel container.",
+    },
+  ]}
+/>
+
+### Carousel.Content
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The carousel items.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the content container.",
+    },
+  ]}
+/>
+
+### Carousel.Item
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The item content.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the item. Use basis-* for sizing.",
+    },
+  ]}
+/>
+
+### Carousel.Previous
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
+      default: '"outline"',
+      description: "The visual style of the button.",
+    },
+    {
+      name: "size",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "sm" | "lg" | "icon"',
+      default: '"icon"',
+      description: "The size of the button.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the button.",
+    },
+  ]}
+/>
+
+### Carousel.Next
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
+      default: '"outline"',
+      description: "The visual style of the button.",
+    },
+    {
+      name: "size",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "sm" | "lg" | "icon"',
+      default: '"icon"',
+      description: "The size of the button.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the button.",
+    },
+  ]}
+/>

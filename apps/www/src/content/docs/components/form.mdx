@@ -141,17 +141,50 @@ Use the `validationErrors` prop to display server-side validation errors.
 </Form>
 ```
 
-## Props
+## API Reference
 
 Form accepts all props from React Aria's [Form](https://react-aria.adobe.com/Form#api).
 
-| Prop                 | Type                                 | Default    | Description                            |
-| -------------------- | ------------------------------------ | ---------- | -------------------------------------- |
-| `validationErrors`   | `Record<string, string \| string[]>` |            | Server-side validation errors          |
-| `validationBehavior` | `"native" \| "aria"`                 | `"native"` | How validation errors are displayed    |
-| `onSubmit`           | `(e: FormEvent) => void`             |            | Called when form is submitted          |
-| `onReset`            | `(e: FormEvent) => void`             |            | Called when form is reset              |
-| `onInvalid`          | `(e: FormEvent) => void`             |            | Called when form has validation errors |
+<PropsTable
+  data={[
+    {
+      name: "validationErrors",
+      required: false,
+      typeSimple: "object",
+      type: "Record<string, string | string[]>",
+      description: "Server-side validation errors.",
+    },
+    {
+      name: "validationBehavior",
+      required: false,
+      typeSimple: "enum",
+      type: '"native" | "aria"',
+      default: '"native"',
+      description: "How validation errors are displayed.",
+    },
+    {
+      name: "onSubmit",
+      required: false,
+      typeSimple: "function",
+      type: "(e: FormEvent) => void",
+      description: "Called when form is submitted.",
+    },
+    {
+      name: "onReset",
+      required: false,
+      typeSimple: "function",
+      type: "(e: FormEvent) => void",
+      description: "Called when form is reset.",
+    },
+    {
+      name: "onInvalid",
+      required: false,
+      typeSimple: "function",
+      type: "(e: FormEvent) => void",
+      description: "Called when form has validation errors.",
+    },
+  ]}
+/>
 
 ## Field Examples
 
