@@ -227,16 +227,21 @@ export const docsConfig: DocsConfig = {
           title: "Separator",
         },
         {
+          href: "/docs/components/sheet",
+          title: "Sheet",
+          label: LABEL_OPTIONS.NEW,
+        },
+        {
           href: "/docs/components/skeleton",
           title: "Skeleton",
         },
         {
-          href: "/docs/components/spinner",
-          title: "Spinner",
-        },
-        {
           href: "/docs/components/slider",
           title: "Slider",
+        },
+        {
+          href: "/docs/components/spinner",
+          title: "Spinner",
         },
         {
           href: "/docs/components/switch",

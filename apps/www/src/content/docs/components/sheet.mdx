@@ -1,0 +1,344 @@
+---
+title: Sheet
+description: Extends the Dialog component to display content that complements the main content of the screen.
+links:
+  docs: https://react-aria.adobe.com/Modal
+---
+
+<ComponentPreview name="sheet-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/sheet
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sheet" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { Sheet } from "~/components/ui/sheet";
+
+<Sheet.Root>
+  <Button>Trigger</Button>
+
+  <Sheet.Overlay>
+    <Sheet.Modal>
+      <Sheet.Content>
+        <Sheet.Header>
+          <Sheet.Title />
+          <Sheet.Description />
+        </Sheet.Header>
+
+        <Sheet.Footer>
+          <Button slot="close" />
+        </Sheet.Footer>
+
+        <Sheet.Close />
+      </Sheet.Content>
+    </Sheet.Modal>
+  </Sheet.Overlay>
+</Sheet.Root>;
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
+
+```tsx
+import { Button } from "~/components/ui/button";
+import {
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetModal,
+  SheetOverlay,
+  SheetRoot,
+  SheetTitle,
+} from "~/components/ui/sheet";
+
+<SheetRoot>
+  <Button>Trigger</Button>
+
+  <SheetOverlay>
+    <SheetModal>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle />
+          <SheetDescription />
+        </SheetHeader>
+
+        <SheetFooter>
+          <Button slot="close" />
+        </SheetFooter>
+
+        <SheetClose />
+      </SheetContent>
+    </SheetModal>
+  </SheetOverlay>
+</SheetRoot>;
+```
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Examples
+
+### Side
+
+Use the `side{:tsx}` prop on `<Sheet.Modal>{:tsx}` to indicate the edge of the screen where the component will appear. The values can be `top{:tsx}`, `right{:tsx}`, `bottom{:tsx}`, or `left{:tsx}`.
+
+<ComponentPreview name="sheet-side-demo" />
+
+## API Reference
+
+### Sheet.Root
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: true,
+      typeSimple: "ReactNode",
+      description: "The trigger and sheet content.",
+    },
+    {
+      name: "isOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the sheet is open (controlled).",
+    },
+    {
+      name: "defaultOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the sheet is open by default (uncontrolled).",
+    },
+    {
+      name: "onOpenChange",
+      required: false,
+      typeSimple: "function",
+      type: "(isOpen: boolean) => void",
+      description: "Handler called when the open state changes.",
+    },
+  ]}
+/>
+
+### Sheet.Overlay
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The modal content.",
+    },
+    {
+      name: "isBlurred",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description: "Whether the content behind the overlay should be blurred.",
+    },
+    {
+      name: "isDismissable",
+      required: false,
+      typeSimple: "boolean",
+      default: "true",
+      description: "Whether the sheet can be dismissed by clicking the overlay.",
+    },
+    {
+      name: "isKeyboardDismissDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether pressing the escape key to close the sheet is disabled.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the overlay.",
+    },
+  ]}
+/>
+
+### Sheet.Modal
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The sheet content.",
+    },
+    {
+      name: "side",
+      required: false,
+      typeSimple: "enum",
+      type: '"top" | "right" | "bottom" | "left"',
+      default: '"right"',
+      description: "The side of the screen where the sheet will appear.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the modal.",
+    },
+  ]}
+/>
+
+### Sheet.Content
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content of the sheet.",
+    },
+    {
+      name: "role",
+      required: false,
+      typeSimple: "enum",
+      type: '"dialog" | "alertdialog"',
+      default: '"dialog"',
+      description: "The role of the sheet.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the content.",
+    },
+  ]}
+/>
+
+### Sheet.Header
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The header content (title, description).",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the header.",
+    },
+  ]}
+/>
+
+### Sheet.Title
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The title text.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the title.",
+    },
+  ]}
+/>
+
+### Sheet.Description
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The description text.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the description.",
+    },
+  ]}
+/>
+
+### Sheet.Footer
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The footer content (actions, buttons).",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the footer.",
+    },
+  ]}
+/>
+
+### Sheet.Close
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the close button.",
+    },
+  ]}
+/>
