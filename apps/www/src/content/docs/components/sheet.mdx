@@ -1,11 +1,11 @@
 ---
-title: Dialog
-description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+title: Sheet
+description: Extends the Dialog component to display content that complements the main content of the screen.
 links:
   docs: https://react-aria.adobe.com/Modal
 ---
 
-<ComponentPreview name="dialog-demo" />
+<ComponentPreview name="sheet-demo" />
 
 ## Installation
 
@@ -18,7 +18,7 @@ links:
 <Tabs.Content id="cli">
 
 ```bash
-npx shadcn@latest add @kanpeki/dialog
+npx shadcn@latest add @kanpeki/sheet
 ```
 
 </Tabs.Content>
@@ -29,7 +29,7 @@ npx shadcn@latest add @kanpeki/dialog
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="dialog" />
+<ComponentSource name="sheet" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -51,28 +51,28 @@ npx shadcn@latest add @kanpeki/dialog
 
 ```tsx
 import { Button } from "~/components/ui/button";
-import { Dialog } from "~/components/ui/dialog";
+import { Sheet } from "~/components/ui/sheet";
 
-<Dialog.Root>
+<Sheet.Root>
   <Button>Trigger</Button>
 
-  <Dialog.Overlay>
-    <Dialog.Modal>
-      <Dialog.Content>
-        <Dialog.Header>
-          <Dialog.Title />
-          <Dialog.Description />
-        </Dialog.Header>
+  <Sheet.Overlay>
+    <Sheet.Modal>
+      <Sheet.Content>
+        <Sheet.Header>
+          <Sheet.Title />
+          <Sheet.Description />
+        </Sheet.Header>
 
-        <Dialog.Footer>
+        <Sheet.Footer>
           <Button slot="close" />
-        </Dialog.Footer>
+        </Sheet.Footer>
 
-        <Dialog.Close />
-      </Dialog.Content>
-    </Dialog.Modal>
-  </Dialog.Overlay>
-</Dialog.Root>;
+        <Sheet.Close />
+      </Sheet.Content>
+    </Sheet.Modal>
+  </Sheet.Overlay>
+</Sheet.Root>;
 ```
 
 </Tabs.Content>
@@ -82,37 +82,37 @@ import { Dialog } from "~/components/ui/dialog";
 ```tsx
 import { Button } from "~/components/ui/button";
 import {
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogModal,
-  DialogOverlay,
-  DialogRoot,
-  DialogTitle,
-} from "~/components/ui/dialog";
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetModal,
+  SheetOverlay,
+  SheetRoot,
+  SheetTitle,
+} from "~/components/ui/sheet";
 
-<DialogRoot>
+<SheetRoot>
   <Button>Trigger</Button>
 
-  <DialogOverlay>
-    <DialogModal>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle />
-          <DialogDescription />
-        </DialogHeader>
+  <SheetOverlay>
+    <SheetModal>
+      <SheetContent>
+        <SheetHeader>
+          <SheetTitle />
+          <SheetDescription />
+        </SheetHeader>
 
-        <DialogFooter>
+        <SheetFooter>
           <Button slot="close" />
-        </DialogFooter>
+        </SheetFooter>
 
-        <DialogClose />
-      </DialogContent>
-    </DialogModal>
-  </DialogOverlay>
-</DialogRoot>;
+        <SheetClose />
+      </SheetContent>
+    </SheetModal>
+  </SheetOverlay>
+</SheetRoot>;
 ```
 
 </Tabs.Content>
@@ -121,27 +121,15 @@ import {
 
 ## Examples
 
-### Scrollable
+### Side
 
-<ComponentPreview name="dialog-scrollable-demo" />
+Use the `side{:tsx}` prop on `<Sheet.Modal>{:tsx}` to indicate the edge of the screen where the component will appear. The values can be `top{:tsx}`, `right{:tsx}`, `bottom{:tsx}`, or `left{:tsx}`.
 
-### Alert Dialog
-
-Use the `role="alertdialog"{:tsx}` prop on the `<Dialog.Content>{:tsx}` element to make an alert dialog.
-Also, make sure to set the `isDismissable` prop to `false{:ts}` on the `<Dialog.Overlay>{:tsx}` or `<Dialog.Modal>{:tsx}`
-to prevent the dialog from being dismissed by clicking outside of it.
-
-<ComponentPreview name="alert-dialog-demo" />
-
-### Sheet
-
-Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet dialog.
-
-<ComponentPreview name="dialog-sheet-demo" />
+<ComponentPreview name="sheet-side-demo" />
 
 ## API Reference
 
-### Dialog.Root
+### Sheet.Root
 
 <PropsTable
   data={[
@@ -149,19 +137,19 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
       name: "children",
       required: true,
       typeSimple: "ReactNode",
-      description: "The trigger and dialog content.",
+      description: "The trigger and sheet content.",
     },
     {
       name: "isOpen",
       required: false,
       typeSimple: "boolean",
-      description: "Whether the dialog is open (controlled).",
+      description: "Whether the sheet is open (controlled).",
     },
     {
       name: "defaultOpen",
       required: false,
       typeSimple: "boolean",
-      description: "Whether the dialog is open by default (uncontrolled).",
+      description: "Whether the sheet is open by default (uncontrolled).",
     },
     {
       name: "onOpenChange",
@@ -173,7 +161,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
   ]}
 />
 
-### Dialog.Overlay
+### Sheet.Overlay
 
 <PropsTable
   data={[
@@ -195,13 +183,13 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
       required: false,
       typeSimple: "boolean",
       default: "true",
-      description: "Whether the dialog can be dismissed by clicking the overlay.",
+      description: "Whether the sheet can be dismissed by clicking the overlay.",
     },
     {
       name: "isKeyboardDismissDisabled",
       required: false,
       typeSimple: "boolean",
-      description: "Whether pressing the escape key to close the dialog is disabled.",
+      description: "Whether pressing the escape key to close the sheet is disabled.",
     },
     {
       name: "className",
@@ -212,7 +200,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
   ]}
 />
 
-### Dialog.Modal
+### Sheet.Modal
 
 <PropsTable
   data={[
@@ -220,20 +208,15 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
       name: "children",
       required: false,
       typeSimple: "ReactNode",
-      description: "The dialog content.",
+      description: "The sheet content.",
     },
     {
-      name: "isDismissable",
+      name: "side",
       required: false,
-      typeSimple: "boolean",
-      default: "true",
-      description: "Whether the dialog can be dismissed by clicking outside.",
-    },
-    {
-      name: "isKeyboardDismissDisabled",
-      required: false,
-      typeSimple: "boolean",
-      description: "Whether pressing the escape key to close the dialog is disabled.",
+      typeSimple: "enum",
+      type: '"top" | "right" | "bottom" | "left"',
+      default: '"right"',
+      description: "The side of the screen where the sheet will appear.",
     },
     {
       name: "className",
@@ -244,7 +227,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
   ]}
 />
 
-### Dialog.Content
+### Sheet.Content
 
 <PropsTable
   data={[
@@ -252,7 +235,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
       name: "children",
       required: false,
       typeSimple: "ReactNode",
-      description: "The content of the dialog.",
+      description: "The content of the sheet.",
     },
     {
       name: "role",
@@ -260,7 +243,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
       typeSimple: "enum",
       type: '"dialog" | "alertdialog"',
       default: '"dialog"',
-      description: "The role of the dialog.",
+      description: "The role of the sheet.",
     },
     {
       name: "className",
@@ -271,7 +254,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
   ]}
 />
 
-### Dialog.Header
+### Sheet.Header
 
 <PropsTable
   data={[
@@ -290,7 +273,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
   ]}
 />
 
-### Dialog.Title
+### Sheet.Title
 
 <PropsTable
   data={[
@@ -309,7 +292,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
   ]}
 />
 
-### Dialog.Description
+### Sheet.Description
 
 <PropsTable
   data={[
@@ -328,7 +311,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
   ]}
 />
 
-### Dialog.Footer
+### Sheet.Footer
 
 <PropsTable
   data={[
@@ -347,7 +330,7 @@ Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet 
   ]}
 />
 
-### Dialog.Close
+### Sheet.Close
 
 <PropsTable
   data={[

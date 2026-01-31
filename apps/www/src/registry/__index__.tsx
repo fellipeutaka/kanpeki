@@ -1634,6 +1634,24 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "alert-warning-demo": {
+    name: "alert-warning-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/alert"],
+    files: [{
+      path: "src/registry/examples/alert/alert-warning-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/alert/alert-warning-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "alert-warning-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "aspect-ratio-demo": {
     name: "aspect-ratio-demo",
     description: "",
@@ -3618,7 +3636,7 @@ export const Index: Record<string, any> = {
     name: "sheet-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["@kanpeki/sheet"],
+    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/label","@kanpeki/input"],
     files: [{
       path: "src/registry/examples/sheet/sheet-demo.tsx",
       type: "registry:example",
@@ -3627,6 +3645,24 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/examples/sheet/sheet-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "sheet-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "sheet-side-demo": {
+    name: "sheet-side-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/label","@kanpeki/input"],
+    files: [{
+      path: "src/registry/examples/sheet/sheet-side-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/sheet/sheet-side-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "sheet-side-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

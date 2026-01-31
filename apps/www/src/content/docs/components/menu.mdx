@@ -66,3 +66,232 @@ import { Menu } from "~/components/ui/menu";
 ### Radio Group
 
 <ComponentPreview name="menu-radio-group-demo" />
+
+## API Reference
+
+### Menu.Root
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: true,
+      typeSimple: "ReactNode",
+      description: "The trigger and menu content.",
+    },
+    {
+      name: "isOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the menu is open (controlled).",
+    },
+    {
+      name: "defaultOpen",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the menu is open by default (uncontrolled).",
+    },
+    {
+      name: "onOpenChange",
+      required: false,
+      typeSimple: "function",
+      type: "(isOpen: boolean) => void",
+      description: "Handler called when the open state changes.",
+    },
+  ]}
+/>
+
+### Menu.Content
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode | function",
+      type: "ReactNode | ((item: T) => ReactNode)",
+      description: "The menu items or a render function for dynamic collections.",
+    },
+    {
+      name: "items",
+      required: false,
+      typeSimple: "Iterable<T>",
+      description: "The list of items to display.",
+    },
+    {
+      name: "selectionMode",
+      required: false,
+      typeSimple: "enum",
+      type: '"none" | "single" | "multiple"',
+      description: "The type of selection that is allowed.",
+    },
+    {
+      name: "selectedKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description: "The currently selected keys (controlled).",
+    },
+    {
+      name: "defaultSelectedKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description: "The initial selected keys (uncontrolled).",
+    },
+    {
+      name: "onSelectionChange",
+      required: false,
+      typeSimple: "function",
+      type: "(keys: Selection) => void",
+      description: "Handler called when the selection changes.",
+    },
+    {
+      name: "onAction",
+      required: false,
+      typeSimple: "function",
+      type: "(key: Key) => void",
+      description: "Handler called when an item is activated.",
+    },
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"command"',
+      description: "The visual style of the menu content.",
+    },
+  ]}
+/>
+
+### Menu.Item
+
+<PropsTable
+  data={[
+    {
+      name: "id",
+      required: false,
+      typeSimple: "Key",
+      description: "The unique key for the item.",
+    },
+    {
+      name: "textValue",
+      required: false,
+      typeSimple: "string",
+      description: "A string representation of the item's contents for accessibility.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the item is disabled.",
+    },
+    {
+      name: "onAction",
+      required: false,
+      typeSimple: "function",
+      type: "() => void",
+      description: "Handler called when the item is activated.",
+    },
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"destructive"',
+      description: "The visual style of the item.",
+    },
+    {
+      name: "inset",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether to add left padding to align with items that have icons.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: MenuItemRenderProps) => ReactNode",
+      description: "The content of the item.",
+    },
+  ]}
+/>
+
+### Menu.Group
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The items within the section.",
+    },
+  ]}
+/>
+
+### Menu.Label
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The label text for the section.",
+    },
+    {
+      name: "inset",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether to add left padding to align with items that have icons.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the label.",
+    },
+  ]}
+/>
+
+### Menu.Separator
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the separator.",
+    },
+  ]}
+/>
+
+### Menu.Sub
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: true,
+      typeSimple: "ReactNode",
+      description: "The submenu trigger item and submenu content.",
+    },
+  ]}
+/>
+
+### Menu.Empty
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content to display when the menu is empty.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the empty state.",
+    },
+  ]}
+/>

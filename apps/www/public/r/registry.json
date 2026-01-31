@@ -1532,6 +1532,19 @@
     {
       "files": [
         {
+          "path": "src/registry/examples/alert/alert-warning-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "alert-warning-demo",
+      "registryDependencies": [
+        "@kanpeki/alert"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
           "path": "src/registry/examples/aspect-ratio/aspect-ratio-demo.tsx",
           "type": "registry:example"
         }
@@ -3032,7 +3045,28 @@
       ],
       "name": "sheet-demo",
       "registryDependencies": [
-        "@kanpeki/sheet"
+        "@kanpeki/sheet",
+        "@kanpeki/button",
+        "@kanpeki/text-field",
+        "@kanpeki/label",
+        "@kanpeki/input"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/sheet/sheet-side-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "sheet-side-demo",
+      "registryDependencies": [
+        "@kanpeki/sheet",
+        "@kanpeki/button",
+        "@kanpeki/text-field",
+        "@kanpeki/label",
+        "@kanpeki/input"
       ],
       "type": "registry:example"
     },

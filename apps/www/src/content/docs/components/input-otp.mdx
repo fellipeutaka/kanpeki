@@ -170,3 +170,106 @@ You can use the `value` and `onChange` props to control the input value.
 ### Form
 
 <ComponentPreview name="input-otp-form-demo" />
+
+## API Reference
+
+### InputOTP.Root
+
+<PropsTable
+  data={[
+    {
+      name: "maxLength",
+      required: true,
+      typeSimple: "number",
+      description: "The maximum number of characters.",
+    },
+    {
+      name: "value",
+      required: false,
+      typeSimple: "string",
+      description: "The current value (controlled).",
+    },
+    {
+      name: "onChange",
+      required: false,
+      typeSimple: "function",
+      type: "(value: string) => void",
+      description: "Handler called when the value changes.",
+    },
+    {
+      name: "pattern",
+      required: false,
+      typeSimple: "RegExp",
+      description: "A regex pattern to validate input characters.",
+    },
+    {
+      name: "disabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the input is disabled.",
+    },
+    {
+      name: "autoFocus",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the input should receive focus on render.",
+    },
+    {
+      name: "containerClassName",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the container.",
+    },
+  ]}
+/>
+
+### InputOTP.Group
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The slot elements.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the group.",
+    },
+  ]}
+/>
+
+### InputOTP.Slot
+
+<PropsTable
+  data={[
+    {
+      name: "index",
+      required: true,
+      typeSimple: "number",
+      description: "The index of this slot in the OTP input.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the slot.",
+    },
+  ]}
+/>
+
+### InputOTP.Separator
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the separator.",
+    },
+  ]}
+/>

@@ -23,4 +23,15 @@ export const alertExamples: RegistryItem[] = [
       },
     ],
   },
+  {
+    name: "alert-warning-demo",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/alert"],
+    files: [
+      {
+        path: "src/registry/examples/alert/alert-warning-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

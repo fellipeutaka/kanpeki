@@ -212,37 +212,89 @@ If you're not using React Aria field components, you must handle validation stat
 
 Container that renders a semantic `fieldset` with spacing presets.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 ### Field.Legend
 
 Legend element for a `<Field.Set>{:tsx}`. Switch to the `label{:tsx}` variant to align with label sizing.
 
-| Prop        | Type                  | Default    |
-| ----------- | --------------------- | ---------- |
-| `variant`   | `"legend" \| "label"` | `"legend"` |
-| `className` | `string`              |            |
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"legend" | "label"',
+      default: '"legend"',
+      description: "Visual style variant for the legend.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 ### Field.Group
 
 Layout wrapper that stacks `<Field.Root>{:tsx}` components and enables container queries for responsive orientations.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 ### Field.Root
 
 The core wrapper for a single field. Provides orientation control, invalid state styling, and spacing.
 
-| Prop           | Type                                         | Default      |
-| -------------- | -------------------------------------------- | ------------ |
-| `orientation`  | `"vertical" \| "horizontal" \| "responsive"` | `"vertical"` |
-| `render`       | `React.ReactElement`                         |              |
-| `className`    | `string`                                     |              |
-| `data-invalid` | `boolean`                                    |              |
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      required: false,
+      typeSimple: "enum",
+      type: '"vertical" | "horizontal" | "responsive"',
+      default: '"vertical"',
+      description: "Layout orientation for the field.",
+    },
+    {
+      name: "render",
+      required: false,
+      typeSimple: "ReactElement",
+      description: "React Aria component to compose with (e.g., TextField).",
+    },
+    {
+      name: "data-invalid",
+      required: false,
+      typeSimple: "boolean",
+      description: "Marks the field as invalid for manual validation.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 Use the `render{:tsx}` prop to compose with React Aria components like `<TextField>{:tsx}`:
 
@@ -257,42 +309,88 @@ Use the `render{:tsx}` prop to compose with React Aria components like `<TextFie
 
 Flex column that groups control and descriptions when the label sits beside the control.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 ### Field.Label
 
 Label styled for both direct inputs and nested `Field.Root` children.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
-| `htmlFor`   | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "htmlFor",
+      required: false,
+      typeSimple: "string",
+      description: "ID of the form element to associate with.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 ### Field.Title
 
 Renders a title with label styling inside `<Field.Content>{:tsx}`.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 ### Field.Description
 
 Helper text slot. Uses React Aria's `<Text>{:tsx}` component with `slot="description"{:tsx}`.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 ### Field.Separator
 
 Visual divider to separate sections inside a `<Field.Group>{:tsx}`. Accepts optional inline content.
 
-| Prop        | Type     | Default |
-| ----------- | -------- | ------- |
-| `className` | `string` |         |
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "Optional inline content to display within the separator.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 ```tsx
 <Field.Separator>Or continue with</Field.Separator>
@@ -302,10 +400,29 @@ Visual divider to separate sections inside a `<Field.Group>{:tsx}`. Accepts opti
 
 Accessible error container that accepts children or an `errors{:tsx}` array.
 
-| Prop        | Type                                       | Default |
-| ----------- | ------------------------------------------ | ------- |
-| `errors`    | `Array<{ message?: string } \| undefined>` |         |
-| `className` | `string`                                   |         |
+<PropsTable
+  data={[
+    {
+      name: "errors",
+      required: false,
+      typeSimple: "array",
+      type: "Array<{ message?: string } | undefined>",
+      description: "Array of error objects to display.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "Custom error content to display.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes to apply.",
+    },
+  ]}
+/>
 
 When the `errors{:tsx}` array contains multiple messages, the component renders a list automatically.
 

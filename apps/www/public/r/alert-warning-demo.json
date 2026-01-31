@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Icons } from \"~/components/icons\";\nimport { Alert } from \"~/registry/ui/alert\";\n\nexport function AlertWarningDemo() {\n  return (\n    <Alert.Root variant=\"warning\">\n      <Icons.TriangleAlert />\n      <Alert.Title>Warning!</Alert.Title>\n      <Alert.Description>\n        Please be cautious while proceeding.\n      </Alert.Description>\n    </Alert.Root>\n  );\n}\n",
+      "path": "src/registry/examples/alert/alert-warning-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "alert-warning-demo",
+  "registryDependencies": [
+    "@kanpeki/alert"
+  ],
+  "type": "registry:example"
+}

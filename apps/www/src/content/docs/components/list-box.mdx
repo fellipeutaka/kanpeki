@@ -86,3 +86,185 @@ import { ListBoxItem, ListBoxRoot } from "~/components/ui/list-box";
 ### Section
 
 <ComponentPreview name="list-box-section" />
+
+## API Reference
+
+### ListBox.Root
+
+<PropsTable
+  data={[
+    {
+      name: "items",
+      required: false,
+      typeSimple: "Iterable<T>",
+      description: "The list of items to display.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode | function",
+      type: "ReactNode | ((item: T) => ReactNode)",
+      description: "The list items or a render function for dynamic collections.",
+    },
+    {
+      name: "selectionMode",
+      required: false,
+      typeSimple: "enum",
+      type: '"none" | "single" | "multiple"',
+      description: "The type of selection that is allowed.",
+    },
+    {
+      name: "selectedKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description: "The currently selected keys (controlled).",
+    },
+    {
+      name: "defaultSelectedKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description: "The initial selected keys (uncontrolled).",
+    },
+    {
+      name: "onSelectionChange",
+      required: false,
+      typeSimple: "function",
+      type: "(keys: Selection) => void",
+      description: "Handler called when the selection changes.",
+    },
+    {
+      name: "disabledKeys",
+      required: false,
+      typeSimple: "Iterable<Key>",
+      description: "The keys of the items that are disabled.",
+    },
+    {
+      name: "isLoading",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the list is currently loading.",
+    },
+    {
+      name: "renderEmptyState",
+      required: false,
+      typeSimple: "function",
+      type: "() => ReactNode",
+      description: "A function to render the empty state.",
+    },
+  ]}
+/>
+
+### ListBox.Item
+
+<PropsTable
+  data={[
+    {
+      name: "id",
+      required: false,
+      typeSimple: "Key",
+      description: "The unique key for the item.",
+    },
+    {
+      name: "textValue",
+      required: false,
+      typeSimple: "string",
+      description: "A string representation of the item's contents for accessibility.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the item is disabled.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: ListBoxItemRenderProps) => ReactNode",
+      description: "The content of the item.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the item.",
+    },
+  ]}
+/>
+
+### ListBox.Group
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The items within the section.",
+    },
+  ]}
+/>
+
+### ListBox.Label
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The label text for the section.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the label.",
+    },
+  ]}
+/>
+
+### ListBox.Empty
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content to display when the list is empty.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the empty state.",
+    },
+  ]}
+/>
+
+### ListBox.LoadMoreItem
+
+<PropsTable
+  data={[
+    {
+      name: "onLoadMore",
+      required: false,
+      typeSimple: "function",
+      type: "() => void",
+      description: "Handler called when more items should be loaded.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content to display (typically a loading spinner).",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the load more item.",
+    },
+  ]}
+/>
