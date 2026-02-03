@@ -61,5 +61,8 @@
       "tailwindcss-motion": "^1.1.1",
       "tailwindcss-react-aria-components": "^2.0.1"
     }
+  },
+  "dependencies": {
+    "react-resizable-panels": "^4.5.9"
   }
 }

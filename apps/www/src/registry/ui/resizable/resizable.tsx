@@ -2,15 +2,15 @@
 
 import { GripVerticalIcon } from "lucide-react";
 
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
+import { Group, Panel, Separator } from "react-resizable-panels";
 import { ResizableStyles } from "./styles";
 
 export interface ResizableRootProps
-  extends React.ComponentProps<typeof PanelGroup> {}
+  extends React.ComponentProps<typeof Group> {}
 
 export function ResizableRoot({ className, ...props }: ResizableRootProps) {
   return (
-    <PanelGroup
+    <Group
       className={ResizableStyles.Root({ className })}
       data-slot="resizable-root"
       {...props}
@@ -25,27 +25,36 @@ export function ResizablePanel(props: ResizablePanelProps) {
   return <Panel data-slot="resizable-panel" {...props} />;
 }
 
-export interface ResizableHandleProps
-  extends React.ComponentProps<typeof PanelResizeHandle> {
-  withHandle?: boolean;
+export interface ResizableSeparatorProps
+  extends React.ComponentProps<typeof Separator> {}
+
+export function ResizableSeparator({
+  className,
+  ...props
+}: ResizableSeparatorProps) {
+  return (
+    <Separator
+      className={ResizableStyles.Separator({ className })}
+      data-slot="resizable-separator"
+      {...props}
+    />
+  );
 }
 
+export interface ResizableHandleProps extends React.ComponentProps<"div"> {}
+
 export function ResizableHandle({
-  withHandle,
   className,
+  children,
   ...props
 }: ResizableHandleProps) {
   return (
-    <PanelResizeHandle
+    <div
       className={ResizableStyles.Handle({ className })}
       data-slot="resizable-handle"
       {...props}
     >
-      {withHandle && (
-        <div className="z-10 flex h-4 w-3 items-center justify-center rounded-xs border bg-border">
-          <GripVerticalIcon className="size-2.5" />
-        </div>
-      )}
-    </PanelResizeHandle>
+      {children ?? <GripVerticalIcon className="size-2.5" />}
+    </div>
   );
 }
