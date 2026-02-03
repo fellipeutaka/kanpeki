@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Resizable } from \"~/registry/ui/resizable\";\n\nexport function ResizableVerticalDemo() {\n  return (\n    <Resizable.Root\n      className=\"min-h-50 max-w-md rounded-lg border md:min-w-112.5\"\n      orientation=\"vertical\"\n    >\n      <Resizable.Panel defaultSize=\"25%\">\n        <div className=\"flex h-full items-center justify-center p-6\">\n          <span className=\"font-semibold\">Header</span>\n        </div>\n      </Resizable.Panel>\n      <Resizable.Separator />\n      <Resizable.Panel defaultSize=\"75%\">\n        <div className=\"flex h-full items-center justify-center p-6\">\n          <span className=\"font-semibold\">Content</span>\n        </div>\n      </Resizable.Panel>\n    </Resizable.Root>\n  );\n}\n",
+      "path": "src/registry/examples/resizable/resizable-vertical-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "resizable-vertical-demo",
+  "registryDependencies": [
+    "@kanpeki/resizable"
+  ],
+  "type": "registry:example"
+}

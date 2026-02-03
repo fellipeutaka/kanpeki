@@ -17,7 +17,7 @@ export const docs = defineDocs({
         })
         .partial()
         .optional(),
-      title: z.string().max(32),
+      title: z.string().max(64),
     }),
     files: ["**/*.mdx", "!CLAUDE.md"],
   },

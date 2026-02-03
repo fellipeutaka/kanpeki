@@ -3488,6 +3488,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "resizable-vertical-demo": {
+    name: "resizable-vertical-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/resizable"],
+    files: [{
+      path: "src/registry/examples/resizable/resizable-vertical-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/resizable/resizable-vertical-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "resizable-vertical-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "resizable-handle-demo": {
+    name: "resizable-handle-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/resizable"],
+    files: [{
+      path: "src/registry/examples/resizable/resizable-handle-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/resizable/resizable-handle-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "resizable-handle-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "scroll-area-demo": {
     name: "scroll-area-demo",
     description: "",
@@ -3636,7 +3672,7 @@ export const Index: Record<string, any> = {
     name: "sheet-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/label","@kanpeki/input"],
+    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/field","@kanpeki/input"],
     files: [{
       path: "src/registry/examples/sheet/sheet-demo.tsx",
       type: "registry:example",
@@ -3654,7 +3690,7 @@ export const Index: Record<string, any> = {
     name: "sheet-side-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/label","@kanpeki/input"],
+    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/field","@kanpeki/input"],
     files: [{
       path: "src/registry/examples/sheet/sheet-side-demo.tsx",
       type: "registry:example",

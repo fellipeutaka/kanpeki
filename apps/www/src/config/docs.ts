@@ -210,9 +210,9 @@ export const docsConfig: DocsConfig = {
           title: "Radio Group",
         },
         {
-          disabled: true,
           href: "/docs/components/resizable",
           title: "Resizable",
+          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/scroll-area",

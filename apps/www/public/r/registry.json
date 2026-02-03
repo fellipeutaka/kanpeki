@@ -2929,6 +2929,32 @@
     {
       "files": [
         {
+          "path": "src/registry/examples/resizable/resizable-vertical-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "resizable-vertical-demo",
+      "registryDependencies": [
+        "@kanpeki/resizable"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/resizable/resizable-handle-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "resizable-handle-demo",
+      "registryDependencies": [
+        "@kanpeki/resizable"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
           "path": "src/registry/examples/scroll-area/scroll-area-demo.tsx",
           "type": "registry:example"
         }
@@ -3048,7 +3074,7 @@
         "@kanpeki/sheet",
         "@kanpeki/button",
         "@kanpeki/text-field",
-        "@kanpeki/label",
+        "@kanpeki/field",
         "@kanpeki/input"
       ],
       "type": "registry:example"
@@ -3065,7 +3091,7 @@
         "@kanpeki/sheet",
         "@kanpeki/button",
         "@kanpeki/text-field",
-        "@kanpeki/label",
+        "@kanpeki/field",
         "@kanpeki/input"
       ],
       "type": "registry:example"
