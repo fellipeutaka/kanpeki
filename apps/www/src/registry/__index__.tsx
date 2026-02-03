@@ -3636,7 +3636,7 @@ export const Index: Record<string, any> = {
     name: "sheet-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/label","@kanpeki/input"],
+    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/field","@kanpeki/input"],
     files: [{
       path: "src/registry/examples/sheet/sheet-demo.tsx",
       type: "registry:example",
@@ -3654,7 +3654,7 @@ export const Index: Record<string, any> = {
     name: "sheet-side-demo",
     description: "",
     type: "registry:example",
-    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/label","@kanpeki/input"],
+    registryDependencies: ["@kanpeki/sheet","@kanpeki/button","@kanpeki/text-field","@kanpeki/field","@kanpeki/input"],
     files: [{
       path: "src/registry/examples/sheet/sheet-side-demo.tsx",
       type: "registry:example",

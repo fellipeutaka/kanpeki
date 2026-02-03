@@ -1,7 +1,7 @@
 import { Button } from "~/registry/ui/button";
 import { Dialog } from "~/registry/ui/dialog";
+import { Field } from "~/registry/ui/field";
 import { Input } from "~/registry/ui/input";
-import { Label } from "~/registry/ui/label";
 import { TextField } from "~/registry/ui/text-field";
 
 export function DialogDemo() {
@@ -10,7 +10,7 @@ export function DialogDemo() {
       <Button variant="outline">Edit Profile</Button>
 
       <Dialog.Overlay>
-        <Dialog.Modal className="sm:max-w-[425px]">
+        <Dialog.Modal className="sm:max-w-106.25">
           <Dialog.Content>
             <Dialog.Header>
               <Dialog.Title>Edit profile</Dialog.Title>
@@ -20,14 +20,15 @@ export function DialogDemo() {
               </Dialog.Description>
             </Dialog.Header>
             <div className="grid gap-4">
-              <TextField autoFocus defaultValue="Pedro Duarte" name="name">
-                <Label>Name</Label>
+              <Field.Root render={<TextField defaultValue="Pedro Duarte" />}>
+                <Field.Label>Name</Field.Label>
                 <Input />
-              </TextField>
-              <TextField defaultValue="@peduarte" name="username">
-                <Label>Username</Label>
+              </Field.Root>
+
+              <Field.Root render={<TextField defaultValue="@peduarte" />}>
+                <Field.Label>Username</Field.Label>
                 <Input />
-              </TextField>
+              </Field.Root>
             </div>
             <Dialog.Footer>
               <Button slot="close" variant="outline">

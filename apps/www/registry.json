@@ -2574,7 +2574,7 @@
         "@kanpeki/sheet",
         "@kanpeki/button",
         "@kanpeki/text-field",
-        "@kanpeki/label",
+        "@kanpeki/field",
         "@kanpeki/input"
       ],
       "type": "registry:example"
@@ -2591,7 +2591,7 @@
         "@kanpeki/sheet",
         "@kanpeki/button",
         "@kanpeki/text-field",
-        "@kanpeki/label",
+        "@kanpeki/field",
         "@kanpeki/input"
       ],
       "type": "registry:example"

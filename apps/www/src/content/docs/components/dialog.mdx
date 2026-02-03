@@ -133,11 +133,25 @@ to prevent the dialog from being dismissed by clicking outside of it.
 
 <ComponentPreview name="alert-dialog-demo" />
 
+```tsx
+// [!code word:isDismissable={false}]
+// [!code word:role="alertdialog"]
+<Dialog.Root>
+  <Button>Trigger</Button>
+
+  <Dialog.Overlay isDismissable={false}>
+    <Dialog.Modal>
+      <Dialog.Content role="alertdialog">
+        ...
+      </Dialog.Content>
+    </Dialog.Modal>
+  </Dialog.Overlay>
+</Dialog.Root>
+```
+
 ### Sheet
 
-Use the `side{:tsx}` prop on the `<Dialog.Modal>{:tsx}` element to make a sheet dialog.
-
-<ComponentPreview name="dialog-sheet-demo" />
+If you need a dialog that slides in from the edge of the screen, check out the [Sheet](/docs/components/sheet) component.
 
 ## API Reference
 
