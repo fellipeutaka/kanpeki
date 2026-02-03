@@ -1,0 +1,201 @@
+---
+title: Resizable
+description: Accessible resizable panel groups and layouts with keyboard support.
+links:
+  docs: https://github.com/bvaughn/react-resizable-panels
+---
+
+<ComponentPreview name="resizable-demo" />
+
+## About
+
+The Resizable component is built using the [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) library.
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/resizable
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install react-resizable-panels
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="resizable" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+```tsx
+import { Resizable } from "~/components/ui/resizable";
+
+<Resizable.Root orientation="horizontal">
+  <Resizable.Panel />
+  <Resizable.Separator />
+  <Resizable.Panel />
+</Resizable.Root>;
+```
+
+## Examples
+
+### Vertical
+
+Use the `orientation{:tsx}` prop to set the orientation of the resizable panels.
+
+<ComponentPreview name="resizable-vertical-demo" />
+
+```tsx
+// [!code word:orientation]
+<Resizable.Root orientation="vertical">
+  <Resizable.Panel />
+  <Resizable.Separator />
+  <Resizable.Panel />
+</Resizable.Root>
+```
+
+### Handle
+
+Add `<Resizable.Handle>{:tsx}` inside `<Resizable.Separator>{:tsx}` to show a visible drag handle.
+
+<ComponentPreview name="resizable-handle-demo" />
+
+```tsx
+// [!code word:Resizable.Handle]
+<Resizable.Root>
+  <Resizable.Panel />
+  <Resizable.Separator>
+    <Resizable.Handle />
+  </Resizable.Separator>
+  <Resizable.Panel />
+</Resizable.Root>
+```
+
+## API Reference
+
+### Resizable.Root
+
+<PropsTable
+  data={[
+    {
+      name: "orientation",
+      required: false,
+      typeSimple: "enum",
+      type: '"horizontal" | "vertical"',
+      default: '"horizontal"',
+      description: "The orientation of the resizable panels.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the panel group.",
+    },
+  ]}
+/>
+
+### Resizable.Panel
+
+<PropsTable
+  data={[
+    {
+      name: "defaultSize",
+      required: false,
+      typeSimple: "number | string",
+      description: "The initial size of the panel. Numbers are pixels, strings are percentages (e.g. \"50%\") or pixels (e.g. \"100px\").",
+    },
+    {
+      name: "minSize",
+      required: false,
+      typeSimple: "number | string",
+      description: "The minimum size of the panel. Numbers are pixels, strings are percentages or pixels.",
+    },
+    {
+      name: "maxSize",
+      required: false,
+      typeSimple: "number | string",
+      description: "The maximum size of the panel. Numbers are pixels, strings are percentages or pixels.",
+    },
+    {
+      name: "collapsible",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the panel can be collapsed.",
+    },
+    {
+      name: "collapsedSize",
+      required: false,
+      typeSimple: "number | string",
+      description: "The size of the panel when collapsed.",
+    },
+    {
+      name: "onResize",
+      required: false,
+      typeSimple: "function",
+      type: "(size: number) => void",
+      description: "Callback when the panel is resized.",
+    },
+  ]}
+/>
+
+### Resizable.Separator
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "Optional content, typically a Resizable.Handle for a visible grip.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the separator.",
+    },
+  ]}
+/>
+
+### Resizable.Handle
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "Custom content for the handle. Defaults to a grip icon.",
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes for the handle.",
+    },
+  ]}
+/>
