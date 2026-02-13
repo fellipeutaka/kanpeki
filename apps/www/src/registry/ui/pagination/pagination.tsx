@@ -83,10 +83,12 @@ export function PaginationPrevious({
   return (
     <PaginationLink
       aria-label="Go to previous page"
-      className={PaginationStyles.Navigation({
-        className,
-        variant: "previous",
-      })}
+      className={composeRenderProps(className, (className) =>
+        PaginationStyles.Navigation({
+          className,
+          variant: "previous",
+        })
+      )}
       size="default"
       {...props}
     >
@@ -103,10 +105,12 @@ export function PaginationNext({ className, ...props }: PaginationNextProps) {
   return (
     <PaginationLink
       aria-label="Go to next page"
-      className={PaginationStyles.Navigation({
-        className,
-        variant: "next",
-      })}
+      className={composeRenderProps(className, (className) =>
+        PaginationStyles.Navigation({
+          className,
+          variant: "next",
+        })
+      )}
       size="default"
       {...props}
     >

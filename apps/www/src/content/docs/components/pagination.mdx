@@ -1,0 +1,230 @@
+---
+title: Pagination
+description: Pagination with page navigation, next and previous links.
+---
+
+<ComponentPreview name="pagination-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/pagination
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="pagination" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
+
+```tsx
+import { Pagination } from "~/components/ui/pagination";
+
+<Pagination.Root>
+  <Pagination.Content>
+    <Pagination.Item>
+      <Pagination.Previous href="#" />
+    </Pagination.Item>
+    <Pagination.Item>
+      <Pagination.Link href="#">1</Pagination.Link>
+    </Pagination.Item>
+    <Pagination.Item>
+      <Pagination.Ellipsis />
+    </Pagination.Item>
+    <Pagination.Item>
+      <Pagination.Next href="#" />
+    </Pagination.Item>
+  </Pagination.Content>
+</Pagination.Root>;
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
+
+```tsx
+import {
+  PaginationRoot,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from "~/components/ui/pagination";
+
+<PaginationRoot>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="#" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#">1</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="#" />
+    </PaginationItem>
+  </PaginationContent>
+</PaginationRoot>;
+```
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Examples
+
+### Simple
+
+Only page number links without previous and next navigation.
+
+<ComponentPreview name="pagination-simple-demo" />
+
+### Icons Only
+
+Use `<Pagination.Link>{:tsx}` with icon children and `size="icon"{:tsx}` for compact navigation controls.
+
+<ComponentPreview name="pagination-icons-only-demo" />
+
+## API Reference
+
+### Pagination.Root
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The pagination content.",
+    },
+  ]}
+/>
+
+### Pagination.Content
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The pagination items.",
+    },
+  ]}
+/>
+
+### Pagination.Item
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The pagination item content.",
+    },
+  ]}
+/>
+
+### Pagination.Link
+
+<PropsTable
+  data={[
+    {
+      name: "href",
+      required: true,
+      typeSimple: "string",
+      description: "The URL that the link points to.",
+    },
+    {
+      name: "isActive",
+      required: false,
+      typeSimple: "boolean",
+      default: "false",
+      description:
+        "Whether the link represents the current page. Sets aria-current=\"page\" and applies the outline variant.",
+    },
+    {
+      name: "size",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "sm" | "lg" | "icon" | "icon-sm" | "icon-lg"',
+      default: '"icon"',
+      description: "The size of the link button.",
+    },
+  ]}
+/>
+
+### Pagination.Previous
+
+<PropsTable
+  data={[
+    {
+      name: "href",
+      required: true,
+      typeSimple: "string",
+      description: "The URL that the link points to.",
+    },
+  ]}
+/>
+
+### Pagination.Next
+
+<PropsTable
+  data={[
+    {
+      name: "href",
+      required: true,
+      typeSimple: "string",
+      description: "The URL that the link points to.",
+    },
+  ]}
+/>
+
+### Pagination.Ellipsis
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description:
+        "Custom ellipsis content. Defaults to a horizontal dots icon.",
+    },
+  ]}
+/>
