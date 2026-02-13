@@ -5,7 +5,12 @@ import {
   ChevronRightIcon,
   MoreHorizontalIcon,
 } from "lucide-react";
-import { composeRenderProps, Link } from "react-aria-components";
+import {
+  composeRenderProps,
+  Link,
+  Toolbar,
+  type ToolbarProps,
+} from "react-aria-components";
 
 import { type Button, ButtonStyles } from "~/registry/ui/button";
 import { PaginationStyles } from "./styles";
@@ -23,16 +28,19 @@ export function PaginationRoot({ className, ...props }: PaginationRootProps) {
   );
 }
 
-export interface PaginationContentProps extends React.ComponentProps<"ul"> {}
+export interface PaginationContentProps extends ToolbarProps {}
 
 export function PaginationContent({
   className,
   ...props
 }: PaginationContentProps) {
   return (
-    <ul
-      className={PaginationStyles.Content({ className })}
+    <Toolbar
+      className={composeRenderProps(className, (className) =>
+        PaginationStyles.Content({ className })
+      )}
       data-slot="pagination-content"
+      render={(props) => <ul {...(props as React.ComponentProps<"ul">)} />}
       {...props}
     />
   );

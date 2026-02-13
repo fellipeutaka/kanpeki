@@ -1,6 +1,8 @@
 ---
 title: Pagination
 description: Pagination with page navigation, next and previous links.
+links:
+  docs: https://react-aria.adobe.com/Toolbar
 ---
 
 <ComponentPreview name="pagination-demo" />
@@ -228,3 +230,10 @@ Use `<Pagination.Link>{:tsx}` with icon children and `size="icon"{:tsx}` for com
     },
   ]}
 />
+
+## Changelog
+
+### 2025-02-13
+
+- Wrapped `Pagination.Content` with React Aria [`Toolbar`](https://react-aria.adobe.com/Toolbar) for arrow key navigation between pagination items (single tab stop).
+- `Pagination.Content` now accepts `ToolbarProps` from `react-aria-components` instead of `React.ComponentProps<"ul">`.
