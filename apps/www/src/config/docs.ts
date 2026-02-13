@@ -79,7 +79,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/aspect-ratio",
           title: "Aspect Ratio",
-          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/autocomplete",
@@ -104,7 +103,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/button-group",
           title: "Button Group",
-          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/calendar",
@@ -192,9 +190,9 @@ export const docsConfig: DocsConfig = {
           title: "Menu",
         },
         {
-          disabled: true,
           href: "/docs/components/pagination",
           title: "Pagination",
+          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/popover",
@@ -212,7 +210,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/resizable",
           title: "Resizable",
-          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/scroll-area",
@@ -229,7 +226,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/sheet",
           title: "Sheet",
-          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/skeleton",
