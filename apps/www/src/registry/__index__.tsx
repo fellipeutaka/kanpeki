@@ -3362,6 +3362,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "pagination-simple-demo": {
+    name: "pagination-simple-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/pagination"],
+    files: [{
+      path: "src/registry/examples/pagination/pagination-simple-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/pagination/pagination-simple-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pagination-simple-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "pagination-icons-only-demo": {
+    name: "pagination-icons-only-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/pagination"],
+    files: [{
+      path: "src/registry/examples/pagination/pagination-icons-only-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/pagination/pagination-icons-only-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "pagination-icons-only-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "popover-demo": {
     name: "popover-demo",
     description: "",

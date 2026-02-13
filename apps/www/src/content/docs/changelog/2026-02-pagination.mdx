@@ -1,0 +1,32 @@
+---
+title: February 2026 - Pagination Component
+description: Pagination component documentation with page navigation, next and previous links.
+date: 2026-02-13
+---
+
+## Pagination Component
+
+Added documentation for the [Pagination](/docs/components/pagination) component, which provides page navigation with numbered links, previous/next controls, and ellipsis indicators.
+
+<ComponentPreview name="pagination-demo" />
+
+### Features
+
+- Numbered page links with active state
+- Previous and next navigation controls
+- Ellipsis indicator for collapsed page ranges
+- Accessible markup with `aria-label{:tsx}` and `aria-current="page"{:tsx}`
+- Built on React Aria `<Link>{:tsx}` component
+- Responsive — text labels hidden on small screens
+
+### Simple
+
+Page number links only, without previous and next navigation.
+
+<ComponentPreview name="pagination-simple-demo" />
+
+### Icons Only
+
+Compact navigation using icon-only previous and next controls.
+
+<ComponentPreview name="pagination-icons-only-demo" />

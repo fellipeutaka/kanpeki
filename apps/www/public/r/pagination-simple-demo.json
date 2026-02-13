@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Pagination } from \"~/registry/ui/pagination\";\n\nexport function PaginationSimpleDemo() {\n  return (\n    <Pagination.Root>\n      <Pagination.Content>\n        <Pagination.Item>\n          <Pagination.Link href=\"#\">1</Pagination.Link>\n        </Pagination.Item>\n        <Pagination.Item>\n          <Pagination.Link href=\"#\" isActive>\n            2\n          </Pagination.Link>\n        </Pagination.Item>\n        <Pagination.Item>\n          <Pagination.Link href=\"#\">3</Pagination.Link>\n        </Pagination.Item>\n        <Pagination.Item>\n          <Pagination.Link href=\"#\">4</Pagination.Link>\n        </Pagination.Item>\n        <Pagination.Item>\n          <Pagination.Link href=\"#\">5</Pagination.Link>\n        </Pagination.Item>\n      </Pagination.Content>\n    </Pagination.Root>\n  );\n}\n",
+      "path": "src/registry/examples/pagination/pagination-simple-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "pagination-simple-demo",
+  "registryDependencies": [
+    "@kanpeki/pagination"
+  ],
+  "type": "registry:example"
+}
