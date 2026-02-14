@@ -158,6 +158,11 @@ export const docsConfig: DocsConfig = {
           title: "Dialog",
         },
         {
+          href: "/docs/components/dropzone",
+          title: "Dropzone",
+          label: LABEL_OPTIONS.NEW,
+        },
+        {
           href: "/docs/components/field",
           title: "Field",
         },

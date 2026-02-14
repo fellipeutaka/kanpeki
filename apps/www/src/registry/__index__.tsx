@@ -2660,6 +2660,42 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "dropzone-clickable-demo": {
+    name: "dropzone-clickable-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/dropzone","@kanpeki/button","@kanpeki/toast"],
+    files: [{
+      path: "src/registry/examples/dropzone/dropzone-clickable-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/dropzone/dropzone-clickable-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "dropzone-clickable-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "dropzone-with-file-trigger-demo": {
+    name: "dropzone-with-file-trigger-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/dropzone","@kanpeki/button","@kanpeki/toast"],
+    files: [{
+      path: "src/registry/examples/dropzone/dropzone-with-file-trigger-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/dropzone/dropzone-with-file-trigger-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "dropzone-with-file-trigger-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "field-checkbox-demo": {
     name: "field-checkbox-demo",
     description: "",

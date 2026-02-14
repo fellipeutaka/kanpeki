@@ -1958,6 +1958,38 @@
       "type": "registry:example"
     },
     {
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/registry/examples/dropzone/dropzone-clickable-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "dropzone-clickable-demo",
+      "registryDependencies": [
+        "@kanpeki/dropzone",
+        "@kanpeki/button",
+        "@kanpeki/toast"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/registry/examples/dropzone/dropzone-with-file-trigger-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "dropzone-with-file-trigger-demo",
+      "registryDependencies": [
+        "@kanpeki/dropzone",
+        "@kanpeki/button",
+        "@kanpeki/toast"
+      ],
+      "type": "registry:example"
+    },
+    {
       "files": [
         {
           "path": "src/registry/examples/field/field-checkbox-demo.tsx",

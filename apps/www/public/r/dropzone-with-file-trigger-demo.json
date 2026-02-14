@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { ImageIcon, UploadIcon, XIcon } from \"lucide-react\";\nimport { useState } from \"react\";\nimport { FileTrigger } from \"react-aria-components\";\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Dropzone, type DropzoneProviderProps } from \"~/registry/ui/dropzone\";\n\nconst MAX_SIZE_IN_MB = 5;\nconst ACCEPTED_FILE_TYPES = [\n  \"image/svg+xml\",\n  \"image/png\",\n  \"image/jpeg\",\n  \"image/gif\",\n];\nexport function DropzoneWithFileTriggerDemo() {\n  const [file, setFile] = useState<File | null>();\n  const previewUrl = file ? URL.createObjectURL(file) : null;\n\n  const onDrop: DropzoneProviderProps[\"onDrop\"] = async (e) => {\n    const file = await e.items.find((item) => item.kind === \"file\")?.getFile();\n\n    if (!file) {\n      setFile(null);\n      return;\n    }\n\n    if (file.size > MAX_SIZE_IN_MB * 1024 * 1024) {\n      toast.error(\n        `File size exceeds ${MAX_SIZE_IN_MB}MB. Please select a smaller file.`\n      );\n      return;\n    }\n\n    if (!ACCEPTED_FILE_TYPES.includes(file.type)) {\n      toast.error(\n        \"Unsupported file type. Please upload an image (SVG, PNG, JPG, GIF).\"\n      );\n      return;\n    }\n\n    setFile(file);\n  };\n\n  const onFileSelect = (e: FileList | null) => {\n    const file = e?.item(0);\n\n    if (file && file.size > MAX_SIZE_IN_MB * 1024 * 1024) {\n      toast.error(\n        `File size exceeds ${MAX_SIZE_IN_MB}MB. Please select a smaller file.`\n      );\n      return;\n    }\n\n    setFile(file);\n  };\n\n  return (\n    <Dropzone.Provider onDrop={onDrop}>\n      <Dropzone.Root className=\"min-h-52 w-96 text-center\">\n        {previewUrl ? (\n          <div className=\"absolute inset-0 flex items-center justify-center p-4\">\n            <img\n              alt={file?.name || \"Uploaded image\"}\n              className=\"mx-auto max-h-full rounded object-contain\"\n              src={previewUrl}\n            />\n          </div>\n        ) : (\n          <div className=\"space-y-2\">\n            <div\n              aria-hidden=\"true\"\n              className=\"flex size-11 shrink-0 items-center justify-center justify-self-center rounded-full border bg-background\"\n            >\n              <ImageIcon className=\"size-4 opacity-60\" />\n            </div>\n            <Dropzone.Label>Drop your image here</Dropzone.Label>\n            <p className=\"text-muted-foreground text-xs\">\n              SVG, PNG, JPG or GIF (max. {MAX_SIZE_IN_MB}MB)\n            </p>\n            <FileTrigger\n              acceptedFileTypes={ACCEPTED_FILE_TYPES}\n              onSelect={onFileSelect}\n            >\n              <Button className=\"mt-2\" variant=\"outline\">\n                <UploadIcon\n                  aria-hidden=\"true\"\n                  className=\"-ms-1 size-4 opacity-60\"\n                />\n                Select image\n              </Button>\n            </FileTrigger>\n          </div>\n        )}\n\n        {previewUrl && (\n          <div className=\"absolute top-4 right-4\">\n            <Button\n              aria-label=\"Remove image\"\n              className=\"size-8 rounded-full\"\n              onPress={() => setFile(null)}\n              size=\"icon\"\n              variant=\"ghost\"\n            >\n              <XIcon aria-hidden=\"true\" />\n            </Button>\n          </div>\n        )}\n      </Dropzone.Root>\n    </Dropzone.Provider>\n  );\n}\n",
+      "path": "src/registry/examples/dropzone/dropzone-with-file-trigger-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "dropzone-with-file-trigger-demo",
+  "registryDependencies": [
+    "@kanpeki/dropzone",
+    "@kanpeki/button",
+    "@kanpeki/toast"
+  ],
+  "type": "registry:example"
+}
