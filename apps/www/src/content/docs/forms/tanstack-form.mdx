@@ -318,7 +318,7 @@ For checkbox arrays, use `mode="array"`:
 Use `form.reset()` to reset to default values:
 
 ```tsx
-<Button type="button" variant="outline" onClick={() => form.reset()}>
+<Button type="button" variant="outline" onPress={() => form.reset()}>
   Reset
 </Button>
 ```
@@ -370,7 +370,7 @@ const formSchema = z.object({
         type="button"
         variant="outline"
         size="sm"
-        onClick={() => field.pushValue({ address: "" })}
+        onPress={() => field.pushValue({ address: "" })}
       >
         Add Email
       </Button>
