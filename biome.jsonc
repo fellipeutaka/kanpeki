@@ -87,6 +87,18 @@
   },
   "overrides": [
     {
+      "includes": ["{.agent,.agents,.claude,.cursor}/skills/**/*"],
+      "linter": {
+        "enabled": false
+      },
+      "assist": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
+    },
+    {
       "includes": ["**/*.config.{js,ts}"],
       "linter": {
         "rules": {
