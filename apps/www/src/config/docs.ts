@@ -292,9 +292,9 @@ export interface DocsConfig {
 }
 
 export interface NavItem {
-  title: string;
-  href: string;
   disabled?: boolean;
+  href: string;
+  title: string;
 }
 
 export type MainNavItem = NavItem;
@@ -316,8 +316,8 @@ export type SidebarNavItem = {
 );
 
 export interface NavLink {
-  title: string;
-  href: string;
   disabled?: boolean;
+  href: string;
   label?: LabelOptions;
+  title: string;
 }

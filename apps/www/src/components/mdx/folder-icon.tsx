@@ -14,8 +14,8 @@ const folderNameMap = new Map([
 ]);
 
 interface FolderIconProps extends IconProps {
-  title: string;
   isOpen: boolean;
+  title: string;
 }
 
 export function FolderIcon({

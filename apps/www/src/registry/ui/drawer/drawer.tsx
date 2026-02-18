@@ -114,6 +114,7 @@ export function DrawerRoot(props: DrawerRootProps) {
 export interface DrawerOverlayProps
   extends Omit<React.ComponentProps<typeof MotionModalOverlay>, "children">,
     VariantProps<typeof DrawerStyles.Modal> {
+  children: React.ComponentProps<typeof Dialog>["children"];
   /**
    * Whether to close the modal when the user interacts outside it.
    * @default true
@@ -129,7 +130,6 @@ export interface DrawerOverlayProps
    * @default true
    */
   notch?: boolean;
-  children: React.ComponentProps<typeof Dialog>["children"];
 }
 
 export function DrawerOverlay({

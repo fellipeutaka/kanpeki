@@ -34,8 +34,8 @@ interface ValidationError {
 }
 
 interface ValidationResult {
-  isValid: boolean;
   errors: ValidationError[];
+  isValid: boolean;
 }
 
 const EXAMPLES_DIR = join(process.cwd(), "src", "registry", "examples");

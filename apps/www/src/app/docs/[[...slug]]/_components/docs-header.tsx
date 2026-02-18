@@ -7,8 +7,8 @@ import { DocsBreadcrumb } from "./docs-breadcrumb";
 import { DocsCopyPage } from "./docs-copy-page";
 
 interface DocsHeaderProps {
-  page: NonNullable<ReturnType<(typeof source)["getPage"]>>;
   llmText: string;
+  page: NonNullable<ReturnType<(typeof source)["getPage"]>>;
 }
 
 export function DocsHeader({ page, llmText }: DocsHeaderProps) {

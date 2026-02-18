@@ -1,10 +1,10 @@
 import { getRegistryItem } from "~/lib/registry";
 
 export interface ComponentCode {
-  preview?: string;
-  source?: string;
   error?: string;
   files?: Array<{ path: string; content: string }>;
+  preview?: string;
+  source?: string;
 }
 
 /**

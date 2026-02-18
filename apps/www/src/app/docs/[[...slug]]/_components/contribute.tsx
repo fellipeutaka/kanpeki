@@ -3,8 +3,8 @@ import { Link } from "~/registry/ui/link/link";
 import { getGitHubIssueUrl, getGithubFileUrl } from "~/utils/github";
 
 interface ContributeProps {
-  url: string;
   path: string;
+  url: string;
 }
 
 export function Contribute({ url, path }: ContributeProps) {

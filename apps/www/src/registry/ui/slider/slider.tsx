@@ -82,8 +82,8 @@ export function SliderOutput({ className, ...props }: SliderOutputProps) {
 }
 
 interface GetSliderRangeStyleProps {
-  orientation: "horizontal" | "vertical";
   getThumbPercent: (index: number) => number;
+  orientation: "horizontal" | "vertical";
   values: number[];
 }
 

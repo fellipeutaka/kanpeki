@@ -1,15 +1,15 @@
 import { siteConfig } from "~/config/site";
 
 interface GitHubIssueUrlParams {
-  owner: string;
-  repo: string;
-  title?: string;
+  assignees?: string[];
   body?: string;
   labels?: string[];
-  template?: string;
-  projects?: string[];
-  assignees?: string[];
   milestone?: string;
+  owner: string;
+  projects?: string[];
+  repo: string;
+  template?: string;
+  title?: string;
 }
 
 /**
