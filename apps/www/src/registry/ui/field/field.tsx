@@ -195,7 +195,7 @@ export function FieldError({
     ];
 
     if (uniqueErrors.length === 1) {
-      return uniqueErrors.at(0)?.message;
+      return <span>{uniqueErrors.at(0)?.message}</span>;
     }
 
     return (
@@ -211,15 +211,33 @@ export function FieldError({
     return null;
   }
 
-  return (
+  const errorEl = (
     <AriaFieldError
       className={FieldStyles.Error({ className })}
       data-slot="field-error"
-      // https://github.com/adobe/react-spectrum/issues/7525
-      // elementType="div"
+      render={(props) => <div {...props} />}
       {...props}
     >
       {content}
     </AriaFieldError>
   );
+
+  // When errors are passed explicitly and there's no React Aria field context,
+  // AriaFieldError returns null because validation?.isInvalid is falsy.
+  // Wrap with FieldErrorContext to provide the required isInvalid signal.
+  if (!fieldErrorCtx && _errors?.length) {
+    return (
+      <FieldErrorContext
+        value={{
+          isInvalid: true,
+          validationErrors: [],
+          validationDetails: {} as ValidityState,
+        }}
+      >
+        {errorEl}
+      </FieldErrorContext>
+    );
+  }
+
+  return errorEl;
 }
