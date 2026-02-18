@@ -136,7 +136,7 @@ const form = useForm({
 
 ### Displaying Errors
 
-Use `Field.Error{:tsx}` with the `errors{:tsx}` prop. It renders nothing when the array is empty, so no conditional render is needed:
+Use `<Field.Error />{:tsx}` with the `errors{:tsx}` prop. It renders nothing when the array is empty, so no conditional render is needed:
 
 ```tsx
 <form.Field
@@ -178,114 +178,21 @@ Use `Field.Error{:tsx}` with the `errors{:tsx}` prop. It renders nothing when th
 
 <ComponentPreview name="tanstack-form-input-demo" />
 
-```tsx
-<form.Field
-  name="username"
-  children={(field) => {
-    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
-    return (
-      <Field.Root
-        render={
-          <TextField
-            id={field.name}
-            isInvalid={isInvalid}
-            name={field.name}
-            onBlur={field.handleBlur}
-            onChange={field.handleChange}
-            value={field.state.value}
-          />
-        }
-      >
-        <Field.Label>Username</Field.Label>
-        <Input placeholder="johndoe" />
-        <Field.Description>Your public display name.</Field.Description>
-        <Field.Error errors={field.state.meta.errors} />
-      </Field.Root>
-    );
-  }}
-/>
-```
-
 ### Textarea
 
 <ComponentPreview name="tanstack-form-textarea-demo" />
-
-`TextField{:tsx}` works as the behavior layer for `Textarea{:tsx}` too — use it as the `render{:tsx}` prop on `Field.Root{:tsx}`.
-
-```tsx
-<form.Field
-  name="bio"
-  children={(field) => {
-    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
-    return (
-      <Field.Root
-        render={
-          <TextField
-            id={field.name}
-            isInvalid={isInvalid}
-            name={field.name}
-            onBlur={field.handleBlur}
-            onChange={field.handleChange}
-            value={field.state.value}
-          />
-        }
-      >
-        <Field.Label>Bio</Field.Label>
-        <Textarea placeholder="Tell us about yourself..." />
-        <Field.Description>Between 20 and 200 characters.</Field.Description>
-        <Field.Error errors={field.state.meta.errors} />
-      </Field.Root>
-    );
-  }}
-/>
-```
 
 ### Select
 
 <ComponentPreview name="tanstack-form-select-demo" />
 
-Pass `Select.Root{:tsx}` as the `render{:tsx}` prop on `Field.Root{:tsx}`. Use `selectedKey{:tsx}` and `onSelectionChange{:tsx}` for TanStack Form wiring.
-
-```tsx
-<form.Field
-  name="country"
-  children={(field) => {
-    const isInvalid = field.state.meta.isTouched && !field.state.meta.isValid;
-    return (
-      <Field.Root
-        render={
-          <Select.Root
-            isInvalid={isInvalid}
-            name={field.name}
-            onSelectionChange={(key) => field.handleChange(key as string)}
-            placeholder="Select a country"
-            selectedKey={field.state.value || null}
-          />
-        }
-      >
-        <Field.Label>Country</Field.Label>
-        <Select.Trigger>
-          <Select.Value />
-        </Select.Trigger>
-        <Popover.Content>
-          <Listbox.Root>
-            <Listbox.Item id="us">United States</Listbox.Item>
-            <Listbox.Item id="uk">United Kingdom</Listbox.Item>
-            <Listbox.Item id="ca">Canada</Listbox.Item>
-          </Listbox.Root>
-        </Popover.Content>
-        <Field.Error errors={field.state.meta.errors} />
-      </Field.Root>
-    );
-  }}
-/>
-```
+Pass `<Select.Root />{:tsx}` as the `render{:tsx}` prop on `<Field.Root />{:tsx}`. Use `value{:tsx}` and `onChange{:tsx}` for TanStack Form wiring.
 
 ### Checkbox
 
 <ComponentPreview name="tanstack-form-checkbox-demo" />
 
-For checkbox groups, use `mode="array"{:tsx}` and pass `Checkbox.Provider{:tsx}` as the `render{:tsx}` prop on each `Field.Root{:tsx}`:
+For checkbox groups, use `mode="array"{:tsx}` and pass `<Checkbox.Provider />{:tsx}` as the `render{:tsx}` prop on each `<Field.Root />{:tsx}`:
 
 ```tsx
 <form.Field
@@ -362,12 +269,12 @@ For checkbox groups, use `mode="array"{:tsx}` and pass `Checkbox.Provider{:tsx}`
 
 ## Submit Button State
 
-Use `form.Subscribe{:tsx}` to disable the submit button while submitting or when the form is invalid:
+Use `<form.Subscribe />{:tsx}` to disable the submit button while submitting or when the form is invalid:
 
 <Alert.Root variant="warning">
   <AlertIcon variant="warning" className="size-4" />
   <Alert.Description>
-    Always pass `selector` before `children` on `form.Subscribe`. Swapping the order causes TypeScript to lose inference on the selector's return type, resulting in type errors throughout the render function.
+    Always pass `selector` before `children` on `<form.Subscribe />{:tsx}`. Swapping the order causes TypeScript to lose inference on the selector's return type, resulting in type errors throughout the render function.
   </Alert.Description>
 </Alert.Root>
 
@@ -386,10 +293,10 @@ Use `form.Subscribe{:tsx}` to disable the submit button while submitting or when
 
 ## Resetting the Form
 
-Use `form.reset()` to reset to default values:
+Use `form.reset(){:ts}` to reset to default values:
 
 ```tsx
-<Button type="button" variant="outline" onPress={() => form.reset()}>
+<Button onPress={() => form.reset()} type="reset">
   Reset
 </Button>
 ```

@@ -19,11 +19,13 @@ const formSchema = z.object({
     .min(1, "Select at least one notification type."),
 });
 
+const defaultValues: z.infer<typeof formSchema> = {
+  notifications: [],
+};
+
 export function TanstackFormCheckboxDemo() {
   const form = useForm({
-    defaultValues: {
-      notifications: [] as string[],
-    },
+    defaultValues,
     validators: {
       onChange: formSchema,
     },
@@ -45,6 +47,7 @@ export function TanstackFormCheckboxDemo() {
         children={(field) => {
           const isInvalid =
             field.state.meta.isTouched && !field.state.meta.isValid;
+
           return (
             <Field.Set>
               <Field.Legend variant="label">Notifications</Field.Legend>
@@ -55,15 +58,17 @@ export function TanstackFormCheckboxDemo() {
                     orientation="horizontal"
                     render={
                       <Checkbox.Provider
+                        isInvalid={isInvalid}
                         isSelected={field.state.value.includes(option.id)}
                         onChange={(checked) => {
                           if (checked) {
                             field.pushValue(option.id);
-                          } else {
-                            const index = field.state.value.indexOf(option.id);
-                            if (index > -1) {
-                              field.removeValue(index);
-                            }
+                            return;
+                          }
+
+                          const index = field.state.value.indexOf(option.id);
+                          if (index > -1) {
+                            field.removeValue(index);
                           }
                         }}
                       />
@@ -76,12 +81,12 @@ export function TanstackFormCheckboxDemo() {
                   </Field.Root>
                 ))}
               </Field.Group>
-              <Field.Error errors={isInvalid ? field.state.meta.errors : []} />
+              <Field.Error errors={field.state.meta.errors} />
             </Field.Set>
           );
         }}
-        mode="array"
         name="notifications"
+        mode="array"
       />
       <form.Subscribe
         selector={(state) => [state.canSubmit, state.isSubmitting]}

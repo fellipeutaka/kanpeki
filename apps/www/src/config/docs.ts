@@ -19,18 +19,22 @@ export const docsConfig: DocsConfig = {
       title: "Components",
     },
     {
-      href: "/storybook",
-      title: "Storybook",
-    },
-    {
-      href: "/playground",
-      title: "Playground",
-    },
-    {
       disabled: true,
-      href: "/icons",
-      title: "Icons",
+      href: "/blocks",
+      title: "Blocks",
     },
+    // {
+    //   href: "/storybook",
+    //   title: "Storybook",
+    // },
+    // {
+    //   href: "/playground",
+    //   title: "Playground",
+    // },
+    // {
+    //   href: "/icons",
+    //   title: "Icons",
+    // },
   ],
   sidebarNav: [
     {
