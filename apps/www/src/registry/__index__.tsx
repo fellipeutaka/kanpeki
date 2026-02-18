@@ -2894,6 +2894,132 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "tanstack-form-input-demo": {
+    name: "tanstack-form-input-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/tanstack-form-input-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/tanstack-form-input-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-input-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "tanstack-form-textarea-demo": {
+    name: "tanstack-form-textarea-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/tanstack-form-textarea-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/tanstack-form-textarea-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-textarea-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "tanstack-form-select-demo": {
+    name: "tanstack-form-select-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/tanstack-form-select-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/tanstack-form-select-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-select-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "tanstack-form-checkbox-demo": {
+    name: "tanstack-form-checkbox-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/tanstack-form-checkbox-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/tanstack-form-checkbox-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-checkbox-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "tanstack-form-switch-demo": {
+    name: "tanstack-form-switch-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/tanstack-form-switch-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/tanstack-form-switch-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-switch-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "tanstack-form-array-demo": {
+    name: "tanstack-form-array-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/tanstack-form-array-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/tanstack-form-array-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-array-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "tanstack-form-linked-fields-demo": {
+    name: "tanstack-form-linked-fields-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/tanstack-form-linked-fields-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/tanstack-form-linked-fields-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-linked-fields-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "hover-card-demo": {
     name: "hover-card-demo",
     description: "",
