@@ -2113,6 +2113,83 @@
     {
       "files": [
         {
+          "path": "src/registry/examples/form/tanstack-form-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "tanstack-form-input-demo",
+      "registryDependencies": ["@kanpeki/form"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/tanstack-form-textarea-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "tanstack-form-textarea-demo",
+      "registryDependencies": ["@kanpeki/form"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/tanstack-form-select-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "tanstack-form-select-demo",
+      "registryDependencies": ["@kanpeki/form"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/tanstack-form-checkbox-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "tanstack-form-checkbox-demo",
+      "registryDependencies": ["@kanpeki/form"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/tanstack-form-switch-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "tanstack-form-switch-demo",
+      "registryDependencies": ["@kanpeki/form"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/tanstack-form-array-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "tanstack-form-array-demo",
+      "registryDependencies": ["@kanpeki/form"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/tanstack-form-linked-fields-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "tanstack-form-linked-fields-demo",
+      "registryDependencies": ["@kanpeki/form"],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
           "path": "src/registry/examples/hover-card/hover-card-demo.tsx",
           "type": "registry:example"
         }
