@@ -8,6 +8,8 @@ export const SelectStyles = {
       "focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50",
       "disabled:cursor-not-allowed disabled:opacity-50",
       "group-invalid:border-destructive group-invalid:ring-destructive/20",
+      "group-invalid/field:border-destructive group-invalid/field:ring-destructive/20",
+      "invalid:border-destructive invalid:ring-destructive/20",
       "dark:bg-input/30 dark:group-invalid:ring-destructive/40 dark:hover:bg-input/50",
       "[&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0",
     ],
