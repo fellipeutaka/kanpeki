@@ -2488,7 +2488,7 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/tanstack-form-demo.tsx",
+          "path": "src/registry/examples/form/tanstack-form/tanstack-form-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -2501,7 +2501,7 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/tanstack-form-input-demo.tsx",
+          "path": "src/registry/examples/form/tanstack-form/tanstack-form-input-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -2514,7 +2514,7 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/tanstack-form-textarea-demo.tsx",
+          "path": "src/registry/examples/form/tanstack-form/tanstack-form-textarea-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -2527,7 +2527,7 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/tanstack-form-select-demo.tsx",
+          "path": "src/registry/examples/form/tanstack-form/tanstack-form-select-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -2540,7 +2540,7 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/tanstack-form-checkbox-demo.tsx",
+          "path": "src/registry/examples/form/tanstack-form/tanstack-form-checkbox-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -2553,7 +2553,7 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/tanstack-form-switch-demo.tsx",
+          "path": "src/registry/examples/form/tanstack-form/tanstack-form-switch-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -2566,7 +2566,7 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/tanstack-form-array-demo.tsx",
+          "path": "src/registry/examples/form/tanstack-form/tanstack-form-array-demo.tsx",
           "type": "registry:example"
         }
       ],
@@ -2579,7 +2579,7 @@
     {
       "files": [
         {
-          "path": "src/registry/examples/form/tanstack-form-linked-fields-demo.tsx",
+          "path": "src/registry/examples/form/tanstack-form/tanstack-form-linked-fields-demo.tsx",
           "type": "registry:example"
         }
       ],

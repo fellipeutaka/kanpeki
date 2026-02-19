@@ -85,8 +85,8 @@ export function TanstackFormCheckboxDemo() {
             </Field.Set>
           );
         }}
-        name="notifications"
         mode="array"
+        name="notifications"
       />
       <form.Subscribe
         selector={(state) => [state.canSubmit, state.isSubmitting]}

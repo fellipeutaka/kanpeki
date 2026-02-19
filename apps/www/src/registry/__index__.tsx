@@ -2882,12 +2882,12 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/tanstack-form-demo.tsx",
+      path: "src/registry/examples/form/tanstack-form/tanstack-form-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form-demo.tsx")
+      const mod = await import("~/registry/examples/form/tanstack-form/tanstack-form-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-demo"
       return { default: mod.default || mod[exportName] }
     }),
@@ -2900,12 +2900,12 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/tanstack-form-input-demo.tsx",
+      path: "src/registry/examples/form/tanstack-form/tanstack-form-input-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form-input-demo.tsx")
+      const mod = await import("~/registry/examples/form/tanstack-form/tanstack-form-input-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-input-demo"
       return { default: mod.default || mod[exportName] }
     }),
@@ -2918,12 +2918,12 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/tanstack-form-textarea-demo.tsx",
+      path: "src/registry/examples/form/tanstack-form/tanstack-form-textarea-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form-textarea-demo.tsx")
+      const mod = await import("~/registry/examples/form/tanstack-form/tanstack-form-textarea-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-textarea-demo"
       return { default: mod.default || mod[exportName] }
     }),
@@ -2936,12 +2936,12 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/tanstack-form-select-demo.tsx",
+      path: "src/registry/examples/form/tanstack-form/tanstack-form-select-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form-select-demo.tsx")
+      const mod = await import("~/registry/examples/form/tanstack-form/tanstack-form-select-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-select-demo"
       return { default: mod.default || mod[exportName] }
     }),
@@ -2954,12 +2954,12 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/tanstack-form-checkbox-demo.tsx",
+      path: "src/registry/examples/form/tanstack-form/tanstack-form-checkbox-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form-checkbox-demo.tsx")
+      const mod = await import("~/registry/examples/form/tanstack-form/tanstack-form-checkbox-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-checkbox-demo"
       return { default: mod.default || mod[exportName] }
     }),
@@ -2972,12 +2972,12 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/tanstack-form-switch-demo.tsx",
+      path: "src/registry/examples/form/tanstack-form/tanstack-form-switch-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form-switch-demo.tsx")
+      const mod = await import("~/registry/examples/form/tanstack-form/tanstack-form-switch-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-switch-demo"
       return { default: mod.default || mod[exportName] }
     }),
@@ -2990,12 +2990,12 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/tanstack-form-array-demo.tsx",
+      path: "src/registry/examples/form/tanstack-form/tanstack-form-array-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form-array-demo.tsx")
+      const mod = await import("~/registry/examples/form/tanstack-form/tanstack-form-array-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-array-demo"
       return { default: mod.default || mod[exportName] }
     }),
@@ -3008,12 +3008,12 @@ export const Index: Record<string, any> = {
     type: "registry:example",
     registryDependencies: ["@kanpeki/form"],
     files: [{
-      path: "src/registry/examples/form/tanstack-form-linked-fields-demo.tsx",
+      path: "src/registry/examples/form/tanstack-form/tanstack-form-linked-fields-demo.tsx",
       type: "registry:example",
       target: ""
     }],
     component: lazy(async () => {
-      const mod = await import("~/registry/examples/form/tanstack-form-linked-fields-demo.tsx")
+      const mod = await import("~/registry/examples/form/tanstack-form/tanstack-form-linked-fields-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "tanstack-form-linked-fields-demo"
       return { default: mod.default || mod[exportName] }
     }),

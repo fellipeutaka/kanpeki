@@ -103,7 +103,7 @@
       }
     },
     {
-      "includes": ["src/registry/examples/form/*.tsx"],
+      "includes": ["src/registry/examples/form/**/*.tsx"],
       "assist": {
         "actions": {
           "source": {

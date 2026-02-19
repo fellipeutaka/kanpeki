@@ -197,6 +197,19 @@ function validateComponent(
     return errors; // Skip other checks if _registry.ts is missing
   }
 
+  // Check if folder contains subdirectories — if so, validate those instead
+  const entries = readdirSync(componentPath, { withFileTypes: true });
+  const subDirs = entries.filter((e) => e.isDirectory());
+
+  if (subDirs.length > 0) {
+    for (const subDir of subDirs) {
+      const subName = `${componentName}/${subDir.name}`;
+      const subPath = join(componentPath, subDir.name);
+      errors.push(...validateComponent(subName, subPath));
+    }
+    return errors;
+  }
+
   // Check 2: Must have at least one .tsx file
   const tsxFiles = getTsxFiles(componentPath);
   if (tsxFiles.length === 0) {
