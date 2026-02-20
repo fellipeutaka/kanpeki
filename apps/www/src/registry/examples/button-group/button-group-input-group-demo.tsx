@@ -31,7 +31,7 @@ export function ButtonGroupInputGroupDemo() {
                 aria-pressed={voiceEnabled}
                 className="data-[active=true]:bg-orange-100 data-[active=true]:text-orange-700 dark:data-[active=true]:bg-orange-800 dark:data-[active=true]:text-orange-100"
                 data-active={voiceEnabled}
-                onClick={() => setVoiceEnabled(!voiceEnabled)}
+                onPress={() => setVoiceEnabled(!voiceEnabled)}
                 size="icon-xs"
               >
                 <AudioLinesIcon />

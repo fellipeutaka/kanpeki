@@ -77,8 +77,12 @@ You can use Field with Input directly, but you lose React Aria's automatic ID wi
 
 ```tsx
 <Field.Root>
+  {/*[!code word:htmlFor="email"]*/}
   <Field.Label htmlFor="email">Email</Field.Label>
+  {/*[!code word:id="email"]*/}
+  {/*[!code word:aria-describedby="email-desc"]*/}
   <Input id="email" aria-describedby="email-desc" />
+  {/*[!code word:id="email-desc"]*/}
   <Field.Description id="email-desc">Helper text</Field.Description>
 </Field.Root>
 ```

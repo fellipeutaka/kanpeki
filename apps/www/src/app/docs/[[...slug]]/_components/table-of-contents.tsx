@@ -3,8 +3,8 @@ import { AnchorProvider } from "fumadocs-core/toc";
 import { DocsTocTree } from "./docs-toc-tree";
 
 interface TableOfContentsProps {
-  toc: Toc;
   children: React.ReactNode;
+  toc: Toc;
 }
 
 export function TableOfContents({ toc, children }: TableOfContentsProps) {

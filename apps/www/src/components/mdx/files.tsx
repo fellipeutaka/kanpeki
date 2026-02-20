@@ -20,8 +20,8 @@ export const FileStyles = cva({
 });
 
 interface FileProps extends React.ComponentProps<"div"> {
-  name: string;
   icon?: React.ReactNode;
+  name: string;
 }
 
 export function File({ name, className, ...props }: FileProps) {

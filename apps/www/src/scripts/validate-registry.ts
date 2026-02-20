@@ -34,8 +34,8 @@ interface ValidationError {
 }
 
 interface ValidationResult {
-  isValid: boolean;
   errors: ValidationError[];
+  isValid: boolean;
 }
 
 const EXAMPLES_DIR = join(process.cwd(), "src", "registry", "examples");
@@ -195,6 +195,19 @@ function validateComponent(
       error: "Missing _registry.ts file",
     });
     return errors; // Skip other checks if _registry.ts is missing
+  }
+
+  // Check if folder contains subdirectories — if so, validate those instead
+  const entries = readdirSync(componentPath, { withFileTypes: true });
+  const subDirs = entries.filter((e) => e.isDirectory());
+
+  if (subDirs.length > 0) {
+    for (const subDir of subDirs) {
+      const subName = `${componentName}/${subDir.name}`;
+      const subPath = join(componentPath, subDir.name);
+      errors.push(...validateComponent(subName, subPath));
+    }
+    return errors;
   }
 
   // Check 2: Must have at least one .tsx file

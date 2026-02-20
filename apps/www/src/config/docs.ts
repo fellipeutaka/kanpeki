@@ -19,18 +19,22 @@ export const docsConfig: DocsConfig = {
       title: "Components",
     },
     {
-      href: "/storybook",
-      title: "Storybook",
-    },
-    {
-      href: "/playground",
-      title: "Playground",
-    },
-    {
       disabled: true,
-      href: "/icons",
-      title: "Icons",
+      href: "/blocks",
+      title: "Blocks",
     },
+    // {
+    //   href: "/storybook",
+    //   title: "Storybook",
+    // },
+    // {
+    //   href: "/playground",
+    //   title: "Playground",
+    // },
+    // {
+    //   href: "/icons",
+    //   title: "Icons",
+    // },
   ],
   sidebarNav: [
     {
@@ -156,6 +160,11 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/dialog",
           title: "Dialog",
+        },
+        {
+          href: "/docs/components/dropzone",
+          title: "Dropzone",
+          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/field",
@@ -287,9 +296,9 @@ export interface DocsConfig {
 }
 
 export interface NavItem {
-  title: string;
-  href: string;
   disabled?: boolean;
+  href: string;
+  title: string;
 }
 
 export type MainNavItem = NavItem;
@@ -311,8 +320,8 @@ export type SidebarNavItem = {
 );
 
 export interface NavLink {
-  title: string;
-  href: string;
   disabled?: boolean;
+  href: string;
   label?: LabelOptions;
+  title: string;
 }

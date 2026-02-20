@@ -1,7 +1,7 @@
 export interface ComponentReference {
-  type: "preview" | "source";
-  name: string;
   match: string;
+  name: string;
+  type: "preview" | "source";
 }
 
 /**

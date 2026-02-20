@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Checkbox } from \"~/registry/ui/checkbox\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Form } from \"~/registry/ui/form\";\n\nconst options = [\n  { id: \"email\", label: \"Email notifications\" },\n  { id: \"sms\", label: \"SMS notifications\" },\n  { id: \"push\", label: \"Push notifications\" },\n] as const;\n\nexport function ReactAriaFormCheckboxDemo() {\n  return (\n    <Form\n      className=\"flex w-full max-w-sm flex-col gap-4\"\n      onSubmit={(e) => {\n        e.preventDefault();\n        const data = new FormData(e.currentTarget);\n        toast(JSON.stringify(data.getAll(\"notifications\"), null, 2));\n        (e.currentTarget as HTMLFormElement).reset();\n      }}\n    >\n      <Field.Set>\n        <Field.Legend variant=\"label\">Notifications</Field.Legend>\n        <Field.Group data-slot=\"checkbox-group\">\n          {options.map((option) => (\n            <Field.Root\n              key={option.id}\n              orientation=\"horizontal\"\n              render={\n                <Checkbox.Provider\n                  isRequired\n                  name=\"notifications\"\n                  value={option.id}\n                />\n              }\n            >\n              <Checkbox.Root>\n                <Checkbox.Indicator />\n              </Checkbox.Root>\n              <Field.Label>{option.label}</Field.Label>\n            </Field.Root>\n          ))}\n        </Field.Group>\n      </Field.Set>\n      <div className=\"grid grid-cols-2 gap-2\">\n        <Button type=\"reset\" variant=\"outline\">\n          Reset\n        </Button>\n        <Button type=\"submit\">Submit</Button>\n      </div>\n    </Form>\n  );\n}\n",
+      "path": "src/registry/examples/form/react-aria/react-aria-form-checkbox-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "react-aria-form-checkbox-demo",
+  "registryDependencies": [
+    "@kanpeki/form"
+  ],
+  "type": "registry:example"
+}

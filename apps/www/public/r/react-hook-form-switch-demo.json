@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { zodResolver } from \"@hookform/resolvers/zod\";\nimport { Controller, useForm } from \"react-hook-form\";\nimport { toast } from \"sonner\";\nimport { z } from \"zod\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Switch } from \"~/registry/ui/switch\";\n\nconst formSchema = z.object({\n  marketing: z.boolean(),\n});\n\nexport function ReactHookFormSwitchDemo() {\n  const form = useForm({\n    resolver: zodResolver(formSchema),\n    defaultValues: {\n      marketing: false,\n    },\n  });\n\n  const onSubmit = form.handleSubmit((value) => {\n    toast(JSON.stringify(value, null, 2));\n  });\n\n  return (\n    <form className=\"flex w-full max-w-sm flex-col gap-4\" onSubmit={onSubmit}>\n      <Controller\n        control={form.control}\n        name=\"marketing\"\n        render={({ field }) => (\n          <Field.Root orientation=\"horizontal\">\n            <Field.Content>\n              <Field.Title>\n                <Field.Label>Marketing emails</Field.Label>\n              </Field.Title>\n              <Field.Description>\n                Receive emails about new products and features.\n              </Field.Description>\n            </Field.Content>\n            <Switch.Root\n              isSelected={field.value}\n              name={field.name}\n              onChange={field.onChange}\n            >\n              <Switch.Track>\n                <Switch.Thumb />\n              </Switch.Track>\n            </Switch.Root>\n          </Field.Root>\n        )}\n      />\n      <div className=\"flex gap-2\">\n        <Button onPress={() => form.reset()} type=\"reset\" variant=\"outline\">\n          Reset\n        </Button>\n        <Button isDisabled={form.formState.isSubmitting} type=\"submit\">\n          {form.formState.isSubmitting ? \"Saving...\" : \"Save\"} preferences\n        </Button>\n      </div>\n    </form>\n  );\n}\n",
+      "path": "src/registry/examples/form/react-hook-form/react-hook-form-switch-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "react-hook-form-switch-demo",
+  "registryDependencies": [
+    "@kanpeki/form"
+  ],
+  "type": "registry:example"
+}

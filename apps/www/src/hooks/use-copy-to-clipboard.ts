@@ -2,9 +2,9 @@ import { useState } from "react";
 import { type ExternalToast, toast } from "sonner";
 
 interface CopyOptions {
+  errorMessage?: React.ReactNode;
   text: string;
   timeout?: number;
-  errorMessage?: React.ReactNode;
 }
 
 export function useCopyToClipboard() {

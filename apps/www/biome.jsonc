@@ -101,6 +101,16 @@
           }
         }
       }
+    },
+    {
+      "includes": ["src/registry/examples/form/**/*.tsx"],
+      "assist": {
+        "actions": {
+          "source": {
+            "useSortedAttributes": "off"
+          }
+        }
+      }
     }
   ]
 }

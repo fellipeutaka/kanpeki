@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { useForm } from \"@tanstack/react-form\";\nimport { toast } from \"sonner\";\nimport { z } from \"zod\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\nconst formSchema = z.object({\n  username: z\n    .string()\n    .min(3, \"Username must be at least 3 characters.\")\n    .max(20, \"Username must be at most 20 characters.\")\n    .regex(/^[a-z0-9_]+$/, \"Only lowercase letters, numbers, and underscores.\"),\n});\n\nexport function TanstackFormInputDemo() {\n  const form = useForm({\n    defaultValues: {\n      username: \"\",\n    },\n    validators: {\n      onChange: formSchema,\n    },\n    onSubmit: ({ value }) => {\n      toast(JSON.stringify(value, null, 2));\n    },\n  });\n\n  return (\n    <form\n      className=\"flex w-full max-w-sm flex-col gap-4\"\n      onSubmit={(e) => {\n        e.preventDefault();\n        e.stopPropagation();\n        form.handleSubmit();\n      }}\n    >\n      <form.Field\n        children={(field) => {\n          const isInvalid =\n            field.state.meta.isTouched && !field.state.meta.isValid;\n          return (\n            <Field.Root\n              render={\n                <TextField\n                  id={field.name}\n                  isInvalid={isInvalid}\n                  name={field.name}\n                  onBlur={field.handleBlur}\n                  onChange={field.handleChange}\n                  value={field.state.value}\n                />\n              }\n            >\n              <Field.Label>Username</Field.Label>\n              <Input placeholder=\"johndoe\" />\n              <Field.Description>Your public display name.</Field.Description>\n              <Field.Error errors={field.state.meta.errors} />\n            </Field.Root>\n          );\n        }}\n        name=\"username\"\n      />\n      <div className=\"flex gap-2\">\n        <Button onPress={() => form.reset()} type=\"reset\" variant=\"outline\">\n          Reset\n        </Button>\n        <form.Subscribe\n          selector={(state) => [state.canSubmit, state.isSubmitting]}\n          children={([canSubmit, isSubmitting]) => (\n            <Button isDisabled={!canSubmit} type=\"submit\">\n              {isSubmitting ? \"Submitting...\" : \"Submit\"}\n            </Button>\n          )}\n        />\n      </div>\n    </form>\n  );\n}\n",
+      "path": "src/registry/examples/form/tanstack-form/tanstack-form-input-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "tanstack-form-input-demo",
+  "registryDependencies": [
+    "@kanpeki/form"
+  ],
+  "type": "registry:example"
+}

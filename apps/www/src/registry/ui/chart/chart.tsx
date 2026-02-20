@@ -41,8 +41,8 @@ function useChart() {
 }
 
 export interface ChartRootProps extends React.ComponentProps<"div"> {
-  config: ChartConfig;
   children: React.ComponentProps<typeof ResponsiveContainer>["children"];
+  config: ChartConfig;
 }
 
 export function ChartRoot({
@@ -71,8 +71,8 @@ export function ChartRoot({
 }
 
 export interface ChartStyleProps {
-  id: string;
   config: ChartConfig;
+  id: string;
 }
 
 export const ChartStyle = ({ id, config }: ChartStyleProps) => {
@@ -114,11 +114,11 @@ export const ChartTooltip = Tooltip;
 export interface ChartTooltipContentProps
   extends React.ComponentProps<typeof Tooltip>,
     Omit<React.ComponentProps<"div">, "content"> {
-  hideLabel?: boolean;
   hideIndicator?: boolean;
+  hideLabel?: boolean;
   indicator?: "line" | "dot" | "dashed";
-  nameKey?: string;
   labelKey?: string;
+  nameKey?: string;
 }
 
 export function ChartTooltipContent({

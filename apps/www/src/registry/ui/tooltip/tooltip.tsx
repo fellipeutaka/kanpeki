@@ -11,16 +11,15 @@ import { TooltipStyles } from "./styles";
 export interface TooltipRootProps
   extends React.ComponentProps<typeof TooltipTrigger> {
   /**
-   * The delay time for the tooltip to show up. [See guidelines](https://spectrum.adobe.com/page/tooltip/#Immediate-or-delayed-appearance).
-   * @default 0
-   */
-  delay?: number;
-
-  /**
    * The delay time for the tooltip to close. [See guidelines](https://spectrum.adobe.com/page/tooltip/#Warmup-and-cooldown).
    * @default 300
    */
   closeDelay?: number;
+  /**
+   * The delay time for the tooltip to show up. [See guidelines](https://spectrum.adobe.com/page/tooltip/#Immediate-or-delayed-appearance).
+   * @default 0
+   */
+  delay?: number;
 }
 
 export function TooltipRoot({

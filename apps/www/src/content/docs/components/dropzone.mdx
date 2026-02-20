@@ -1,0 +1,156 @@
+---
+title: Dropzone
+description: An area into which files can be dragged and dropped.
+links:
+  docs: https://react-aria.adobe.com/DropZone
+---
+
+<ComponentPreview name="dropzone-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/dropzone
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="dropzone" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
+
+```tsx
+import { Dropzone } from "~/components/ui/dropzone";
+
+<Dropzone.Provider>
+  <Dropzone.Root>
+    <Dropzone.Label>Upload files</Dropzone.Label>
+  </Dropzone.Root>
+</Dropzone.Provider>;
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
+
+```tsx
+import {
+  DropzoneProvider,
+  DropzoneRoot,
+  DropzoneLabel,
+} from "~/components/ui/dropzone";
+
+<DropzoneProvider>
+  <DropzoneRoot>
+    <DropzoneLabel>Upload files</DropzoneLabel>
+  </DropzoneRoot>
+</DropzoneProvider>;
+```
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Examples
+
+### With File Trigger
+
+<ComponentPreview name="dropzone-with-file-trigger-demo" />
+
+### Clickable
+
+<ComponentPreview name="dropzone-clickable-demo" />
+
+## API Reference
+
+### Dropzone.Provider
+
+<PropsTable
+  data={[
+    {
+      name: "onDrop",
+      required: false,
+      typeSimple: "function",
+      type: "(e: DropEvent) => void",
+      description: "Handler called when items are dropped on the drop zone.",
+    },
+    {
+      name: "isDisabled",
+      required: false,
+      typeSimple: "boolean",
+      description: "Whether the drop zone is disabled.",
+    },
+    {
+      name: "getDropOperation",
+      required: false,
+      typeSimple: "function",
+      type: "(types: DragTypes, allowedOperations: DropOperation[]) => DropOperation",
+      description:
+        "A function returning the drop operation to be performed when items matching the given types are dropped on the drop zone.",
+    },
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      type: "ReactNode | (values: DropZoneRenderProps) => ReactNode",
+      description: "The children of the drop zone.",
+    },
+  ]}
+/>
+
+### Dropzone.Root
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description: "The content of the drop zone.",
+    },
+  ]}
+/>
+
+### Dropzone.Label
+
+<PropsTable
+  data={[
+    {
+      name: "children",
+      required: false,
+      typeSimple: "ReactNode",
+      description:
+        "The label text. Rendered as a Text element with the label slot.",
+    },
+  ]}
+/>

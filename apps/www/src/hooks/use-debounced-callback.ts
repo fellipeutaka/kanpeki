@@ -22,13 +22,13 @@ export interface CallOptions {
 
 export interface Options extends CallOptions {
   /**
-   * The maximum time the given function is allowed to be delayed before it's invoked.
-   */
-  maxWait?: number;
-  /**
    * If the setting is set to true, all debouncing and timers will happen on the server side as well
    */
   debounceOnServer?: boolean;
+  /**
+   * The maximum time the given function is allowed to be delayed before it's invoked.
+   */
+  maxWait?: number;
 }
 
 export interface ControlFunctions<ReturnT> {

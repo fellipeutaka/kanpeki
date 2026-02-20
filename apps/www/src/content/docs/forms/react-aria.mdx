@@ -1,0 +1,334 @@
+---
+title: React Aria
+description: Build forms with React Aria's built-in validation — no extra libraries required.
+links:
+  docs: https://react-spectrum.adobe.com/react-aria/forms.html
+---
+
+This guide shows how to build forms using React Aria's native form capabilities with Kanpeki's [Field](/docs/components/field) and [Form](/docs/components/form) components.
+
+## Demo
+
+<ComponentPreview name="react-aria-form-demo" />
+
+## Approach
+
+React Aria provides built-in form support without any additional state management library. We combine it with:
+
+- `Field` components for layout and accessibility
+- `TextField` for automatic ID wiring between label, input, description, and error
+- HTML constraint validation props (`isRequired`, `minLength`, `maxLength`, `pattern`, `type`)
+- The `validate` prop for custom validation logic
+- `validationErrors` on `Form` for server-side validation
+
+## Anatomy
+
+```tsx
+<Form onSubmit={(e) => { e.preventDefault(); /* ... */ }}>
+  <Field.Root
+    render={
+      <TextField
+        name="email"
+        type="email"
+        isRequired
+      />
+    }
+  >
+    <Field.Label>Email</Field.Label>
+    <Input placeholder="name@example.com" />
+    <Field.Description>Helper text</Field.Description>
+    <Field.Error />
+  </Field.Root>
+  <Button type="submit">Submit</Button>
+</Form>
+```
+
+`TextField{:tsx}` is Kanpeki's React Aria behavior adapter. It automatically wires `Field.Label{:tsx}`, `Field.Description{:tsx}`, and `Field.Error{:tsx}` via `aria-labelledby{:tsx}` and `aria-describedby{:tsx}`. Notice that `<Field.Error />{:tsx}` requires no `errors` prop — React Aria populates it automatically from the field's validation state. See the [forms architecture](/docs/forms) for more.
+
+## Setup
+
+### No extra dependencies
+
+React Aria Components is already included in Kanpeki. Just import from the registry:
+
+```tsx
+import { Form } from "~/components/ui/form";
+import { Field } from "~/components/ui/field";
+import { TextField } from "~/components/ui/text-field";
+import { Input } from "~/components/ui/input";
+import { Button } from "~/components/ui/button";
+```
+
+### Create your form
+
+Use `<Form>{:tsx}` and collect values from `FormData` on submit:
+
+```tsx
+<Form
+  onSubmit={(e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.currentTarget));
+    console.log(data);
+    e.currentTarget.reset();
+  }}
+>
+  <Field.Root render={<TextField name="title" isRequired minLength={5} />}>
+    <Field.Label>Title</Field.Label>
+    <Input placeholder="Enter title" />
+    <Field.Error />
+  </Field.Root>
+  <Button type="submit">Submit</Button>
+</Form>
+```
+
+## Validation
+
+### Constraint props
+
+React Aria integrates with HTML [constraint validation](https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation). Pass constraints directly on the field component:
+
+| Prop | Description |
+| ---- | ----------- |
+| `isRequired` | Field must have a value before submitting |
+| `minLength` / `maxLength` | Minimum and maximum text length |
+| `pattern` | Custom regular expression |
+| `type="email"{:tsx}` / `type="url"{:tsx}` | Built-in format validation |
+| `minValue` / `maxValue` | Min and max for number or date fields |
+
+```tsx
+<Field.Root
+  render={
+    <TextField
+      name="email"
+      type="email"
+      isRequired // [!code highlight]
+    />
+  }
+>
+  <Field.Label>Email</Field.Label>
+  <Input placeholder="name@example.com" />
+  <Field.Error />
+</Field.Root>
+```
+
+### Custom validation
+
+Use the `validate` prop for rules that go beyond built-in constraints. Return an error string to mark the field invalid, or `null` to indicate it's valid:
+
+```tsx
+<Field.Root
+  render={
+    <TextField
+      name="username"
+      isRequired
+      // [!code highlight:3]
+      validate={(value) =>
+        value === "admin" ? "That username is reserved." : null
+      }
+    />
+  }
+>
+  <Field.Label>Username</Field.Label>
+  <Input placeholder="Choose a username" />
+  <Field.Error />
+</Field.Root>
+```
+
+### Displaying errors
+
+`<Field.Error />{:tsx}` requires no props when used inside a `<Field.Root />{:tsx}` with a React Aria field as the `render{:tsx}` prop. Errors are sourced automatically from the field's validation state and cleared as the user corrects input:
+
+```tsx
+<Field.Root render={<TextField name="email" type="email" isRequired />}>
+  <Field.Label>Email</Field.Label>
+  <Input type="email" />
+  <Field.Error /> {/* No errors prop needed */}
+</Field.Root>
+```
+
+### Validation behavior
+
+By default (`validationBehavior="native"{:ts}`), invalid fields prevent form submission. Use `validationBehavior="aria"{:ts}` to report errors to assistive technologies without blocking submission:
+
+```tsx
+<TextField
+  name="email"
+  type="email"
+  isRequired
+  validationBehavior="aria" // [!code highlight]
+/>
+```
+
+## Server Validation
+
+Pass server-returned errors to the `validationErrors` prop on `<Form>{:tsx}`. React Aria clears each field's error as the user modifies its value:
+
+<ComponentPreview name="react-aria-form-server-validation-demo" />
+
+```tsx
+const [{ errors }, formAction, isPending] = useActionState(serverAction, {});
+
+<Form // [!code highlight]
+  action={formAction} // [!code highlight]
+  validationErrors={errors} // [!code highlight]
+>
+  <Field.Root render={<TextField isRequired name="username" />}>
+    <Field.Label>Username</Field.Label>
+    <Input placeholder="Enter your username" />
+    <Field.Error />
+  </Field.Root>
+  <Button isDisabled={isPending} type="submit">
+    {isPending ? "Signing in..." : "Sign in"}
+  </Button>
+</Form>
+```
+
+`validationErrors{:tsx}` accepts an object mapping each field's `name` to one or more error messages:
+
+```tsx
+// From your server action:
+return {
+  errors: {
+    username: "Sorry, this username is taken.",
+    email: ["Invalid format.", "Must be a company email."],
+  },
+};
+```
+
+<Alert.Root variant="warning">
+  <AlertIcon variant="warning" className="size-4" />
+  <Alert.Description>
+    Always validate on the server regardless of client-side constraints. Client validation is for UX; server validation is for security.
+  </Alert.Description>
+</Alert.Root>
+
+## Field Types
+
+### Input
+
+<ComponentPreview name="react-aria-form-input-demo" />
+
+### Textarea
+
+<ComponentPreview name="react-aria-form-textarea-demo" />
+
+### Select
+
+<ComponentPreview name="react-aria-form-select-demo" />
+
+Pass `<Select.Root />{:tsx}` as the `render{:tsx}` prop on `<Field.Root />{:tsx}`. Use `isRequired{:tsx}` for constraint validation:
+
+```tsx
+<Field.Root
+  // [!code highlight:7]
+  render={
+    <Select.Root
+      name="country"
+      isRequired
+      placeholder="Select a country"
+    />
+  }
+>
+  <Field.Label>Country</Field.Label>
+  <Select.Trigger>
+    <Select.Value />
+  </Select.Trigger>
+  <Popover.Content>
+    <Listbox.Root>{/* items */}</Listbox.Root>
+  </Popover.Content>
+  <Field.Error />
+</Field.Root>
+```
+
+### Checkbox
+
+<ComponentPreview name="react-aria-form-checkbox-demo" />
+
+For individual checkboxes, pass `<Checkbox.Provider />{:tsx}` as the `render{:tsx}` prop. Use the `name` and `value` props so checkbox values are included in `FormData`:
+
+```tsx
+<Field.Root
+  orientation="horizontal"
+  // [!code highlight:6]
+  render={
+    <Checkbox.Provider
+      name="notifications"
+      value="email"
+    />
+  }
+>
+  <Checkbox.Root>
+    <Checkbox.Indicator />
+  </Checkbox.Root>
+  <Field.Label>Email notifications</Field.Label>
+</Field.Root>
+```
+
+### Switch
+
+<ComponentPreview name="react-aria-form-switch-demo" />
+
+For switches, use [`useId(){:ts}`](https://react.dev/reference/react/useId) to manually wire the label via `htmlFor{:tsx}`, and provide `name` and `value` for form submission:
+
+```tsx
+// [!code highlight]
+const id = useId();
+
+<Field.Root orientation="horizontal">
+  <Field.Content>
+    <Field.Title>
+      {/*[!code word:htmlFor={id}]*/}
+      <Field.Label htmlFor={id}>Marketing emails</Field.Label>
+    </Field.Title>
+    <Field.Description>
+      Receive emails about new products and features.
+    </Field.Description>
+  </Field.Content>
+  {/*[!code word:id={id}]*/}
+  <Switch.Root id={id} name="marketing" value="on">
+    <Switch.Track>
+      <Switch.Thumb />
+    </Switch.Track>
+  </Switch.Root>
+</Field.Root>
+```
+
+## Submit Button State
+
+Use [`useActionState{:ts}`](https://react.dev/reference/react/useActionState) (React 19) to track submission state. The third return value `isPending{:ts}` is `true` while the action is running:
+
+```tsx
+// [!code highlight]
+const [state, formAction, isPending] = useActionState(serverAction, {});
+
+// [!code word:action={formAction}]
+<Form action={formAction}>
+  {/* fields */}
+  {/*[!code word:isPending={isPending}]*/}
+  <Button isPending={isPending} type="submit">
+    {isPending ? "Submitting..." : "Submit"}
+  </Button>
+</Form>
+```
+
+For uncontrolled forms using `onSubmit`, use [`useTransition{:ts}`](https://react.dev/reference/react/useTransition) to track pending state:
+
+```tsx
+const [isPending, startTransition] = useTransition(); // [!code highlight]
+
+<Form
+  onSubmit={(e) => {
+    e.preventDefault();
+    // [!code highlight:3]
+    startTransition(async () => {
+      await submitData(new FormData(e.currentTarget));
+    })
+  }}
+>
+  {/* fields */}
+  {/*[!code word:isPending={isPending}]*/}
+  <Button isPending={isPending} type="submit">
+    {isPending ? "Submitting..." : "Submit"}
+  </Button>
+</Form>
+```

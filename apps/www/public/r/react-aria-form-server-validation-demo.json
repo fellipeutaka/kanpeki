@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { useActionState } from \"react\";\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Form } from \"~/registry/ui/form\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\n\ninterface ActionState {\n  errors?: Record<string, string | string[]>;\n}\n\nasync function loginAction(\n  _prev: ActionState,\n  formData: FormData\n): Promise<ActionState> {\n  await new Promise((resolve) => setTimeout(resolve, 300));\n  const username = formData.get(\"username\") as string;\n\n  if (username === \"admin\") {\n    return { errors: { username: \"Sorry, this username is taken.\" } };\n  }\n\n  toast(`Welcome, ${username}!`);\n  return { errors: {} };\n}\n\nexport function ReactAriaFormServerValidationDemo() {\n  const [{ errors }, formAction, isPending] = useActionState(loginAction, {});\n\n  return (\n    <Form\n      action={formAction}\n      className=\"flex w-full max-w-sm flex-col gap-4\"\n      validationErrors={errors}\n    >\n      <Field.Root render={<TextField isRequired name=\"username\" />}>\n        <Field.Label>Username</Field.Label>\n        <Input placeholder=\"Enter your username\" />\n        <Field.Error />\n      </Field.Root>\n      <Field.Root\n        render={<TextField isRequired name=\"password\" type=\"password\" />}\n      >\n        <Field.Label>Password</Field.Label>\n        <Input placeholder=\"Enter your password\" />\n        <Field.Error />\n      </Field.Root>\n      <div className=\"flex gap-2\">\n        <Button type=\"reset\" variant=\"outline\">\n          Reset\n        </Button>\n        <Button isDisabled={isPending} type=\"submit\">\n          {isPending ? \"Signing in...\" : \"Sign in\"}\n        </Button>\n      </div>\n    </Form>\n  );\n}\n",
+      "path": "src/registry/examples/form/react-aria/react-aria-form-server-validation-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "react-aria-form-server-validation-demo",
+  "registryDependencies": [
+    "@kanpeki/form"
+  ],
+  "type": "registry:example"
+}

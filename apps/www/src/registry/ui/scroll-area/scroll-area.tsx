@@ -21,8 +21,8 @@ export function ScrollAreaRoot({ className, ...props }: ScrollAreaRootProps) {
 
 export interface ScrollAreaViewportProps
   extends React.ComponentProps<typeof ScrollArea.Viewport> {
-  scrollFade?: boolean;
   scrollbarGutter?: boolean;
+  scrollFade?: boolean;
 }
 
 export function ScrollAreaViewport({

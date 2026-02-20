@@ -7,8 +7,8 @@ import { DocsBreadcrumb } from "./docs-breadcrumb";
 import { DocsCopyPage } from "./docs-copy-page";
 
 interface DocsHeaderProps {
-  page: NonNullable<ReturnType<(typeof source)["getPage"]>>;
   llmText: string;
+  page: NonNullable<ReturnType<(typeof source)["getPage"]>>;
 }
 
 export function DocsHeader({ page, llmText }: DocsHeaderProps) {
@@ -17,7 +17,7 @@ export function DocsHeader({ page, llmText }: DocsHeaderProps) {
   return (
     <>
       <DocsBreadcrumb url={url} />
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-[1fr_auto] gap-2">
         <h1 className="wrap-break-word scroll-m-20 font-bold text-3xl tracking-tight max-sm:col-span-full">
           {data.title}
         </h1>

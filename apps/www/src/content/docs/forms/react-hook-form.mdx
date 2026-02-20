@@ -1,0 +1,404 @@
+---
+title: React Hook Form
+description: Build forms with React Hook Form and Zod validation.
+links:
+  docs: https://react-hook-form.com
+---
+
+This guide shows how to build forms using React Hook Form with Kanpeki's [Field](/docs/components/field) component and Zod validation.
+
+## Demo
+
+<ComponentPreview name="react-hook-form-demo" />
+
+## Approach
+
+React Hook Form provides performant, uncontrolled form state management. We combine it with:
+
+- `Field` components for layout and accessibility
+- `TextField` for automatic ID wiring between label, input, description, and error
+- `Controller` for wiring controlled Kanpeki inputs
+- `zodResolver` from `@hookform/resolvers` for schema validation
+
+## Anatomy
+
+```tsx
+const form = useForm({
+  resolver: zodResolver(formSchema),
+  defaultValues: {
+    // ...
+  },
+});
+
+const onSubmit = form.handleSubmit((value) => {
+  // ...
+});
+
+// [!code word:onSubmit={onSubmit}]
+<form onSubmit={onSubmit}>
+  <Controller
+    // [!code highlight]
+    control={form.control}
+    name="email"
+    // [!code highlight]
+    render={({ field: { ref, disabled, ...field }, fieldState }) => (
+      <Field.Root
+        render={
+          <TextField
+            // [!code highlight:3]
+            isInvalid={fieldState.invalid}
+            isDisabled={disabled}
+            {...field}
+          />
+        }
+      >
+        <Field.Label>Email</Field.Label>
+        {/*[!code word:ref={ref}]*/}
+        <Input ref={ref} placeholder="name@example.com" />
+        <Field.Description>Helper text</Field.Description>
+        {/*[!code highlight]*/}
+        <Field.Error errors={[fieldState.error]} />
+      </Field.Root>
+    )}
+  />
+  <Button type="submit">Submit</Button>
+</form>
+```
+
+`TextField{:tsx}` is Kanpeki's React Aria behavior adapter. It automatically wires `Field.Label{:tsx}`, `Field.Description{:tsx}`, and `Field.Error{:tsx}` via `aria-labelledby{:tsx}` and `aria-describedby{:tsx}` using unique generated IDs. See the [forms architecture](/docs/forms) for more.
+
+`isInvalid{:tsx}` drives error styling. Destructuring `ref` and `disabled` from the field lets you pass `ref` to `<Input />{:tsx}` and forward `isDisabled{:tsx}` to `<TextField />{:tsx}`, while spreading the rest wires `name{:tsx}`, `value{:tsx}`, `onChange{:tsx}`, and `onBlur{:tsx}` automatically.
+
+## Setup
+
+### Install dependencies
+
+```bash
+npm install react-hook-form @hookform/resolvers zod
+```
+
+### Create a schema
+
+```tsx
+import { z } from "zod";
+
+const formSchema = z.object({
+  title: z
+    .string()
+    .min(5, "Title must be at least 5 characters.")
+    .max(32, "Title must be at most 32 characters."),
+  description: z
+    .string()
+    .min(20, "Description must be at least 20 characters."),
+});
+```
+
+### Setup the form
+
+Use `useForm` with `zodResolver`:
+
+```tsx
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
+const form = useForm({
+  resolver: zodResolver(formSchema),
+  defaultValues: {
+    title: "",
+    description: "",
+  },
+});
+
+const onSubmit = form.handleSubmit((value) => {
+  toast(JSON.stringify(value, null, 2));
+});
+```
+
+<Alert.Root variant="warning">
+  <AlertIcon variant="warning" className="size-4" />
+  <Alert.Description>
+    Always provide `defaultValues` for every field used with `<Controller />{:tsx}`. Without it, a field starts as `undefined` (uncontrolled) and becomes a string on first change (controlled), triggering: *"A component is changing an uncontrolled input to be controlled."*
+  </Alert.Description>
+</Alert.Root>
+
+## Validation
+
+### Validation Modes
+
+React Hook Form validates on submit by default. Configure with the `mode` option:
+
+| Mode           | Description                              |
+| -------------- | ---------------------------------------- |
+| `onSubmit`     | Validate on form submission (default)    |
+| `onBlur`       | Validate when field loses focus          |
+| `onChange`     | Validate on every change                 |
+| `onTouched`    | Validate on first blur, then on change   |
+| `all`          | Validate on both blur and change         |
+
+```tsx
+const form = useForm({
+  resolver: zodResolver(formSchema),
+  mode: "onBlur",
+});
+```
+
+### Displaying Errors
+
+Use `<Field.Error />{:tsx}` with the `errors{:tsx}` prop. Pass `[fieldState.error]{:tsx}` directly — `Field.Error` ignores `undefined` entries so it renders nothing when the field is valid:
+
+```tsx
+<Controller
+  control={form.control}
+  name="email"
+  render={({ field: { ref, disabled, ...field }, fieldState }) => (
+    <Field.Root
+      render={
+        <TextField
+          isInvalid={fieldState.invalid}
+          isDisabled={disabled}
+          {...field}
+        />
+      }
+    >
+      <Field.Label>Email</Field.Label>
+      <Input ref={ref} type="email" />
+      <Field.Error errors={[fieldState.error]} /> // [!code highlight]
+    </Field.Root>
+  )}
+/>
+```
+
+## Field Types
+
+### Input
+
+<ComponentPreview name="react-hook-form-input-demo" />
+
+### Textarea
+
+<ComponentPreview name="react-hook-form-textarea-demo" />
+
+### Select
+
+<ComponentPreview name="react-hook-form-select-demo" />
+
+Pass `<Select.Root />{:tsx}` as the `render{:tsx}` prop on `<Field.Root />{:tsx}`. Use `value{:tsx}` and `onChange{:tsx}` for RHF wiring:
+
+```tsx
+<Controller
+  control={form.control}
+  name="country"
+  render={({ field, fieldState }) => (
+    <Field.Root
+      render={
+        <Select.Root
+          isInvalid={fieldState.invalid}
+          name={field.name}
+          onChange={(key) => field.onChange(key as string)}
+          placeholder="Select a country"
+          value={field.value || null}
+        />
+      }
+    >
+      <Field.Label>Country</Field.Label>
+      <Select.Trigger className="w-full">
+        <Select.Value />
+      </Select.Trigger>
+      <Popover.Content>
+        <Listbox.Root>
+          <Listbox.Item id="us">United States</Listbox.Item>
+        </Listbox.Root>
+      </Popover.Content>
+      <Field.Error errors={[fieldState.error]} />
+    </Field.Root>
+  )}
+/>
+```
+
+### Checkbox
+
+<ComponentPreview name="react-hook-form-checkbox-demo" />
+
+For checkbox groups, pass `<Checkbox.Provider />{:tsx}` as the `render{:tsx}` prop on each `<Field.Root />{:tsx}` and toggle array items on change:
+
+```tsx
+<Controller
+  control={form.control}
+  name="notifications"
+  render={({ field, fieldState }) => (
+    <Field.Set>
+      <Field.Legend variant="label">Notifications</Field.Legend>
+      <Field.Group data-slot="checkbox-group">
+        {options.map((option) => (
+          <Field.Root
+            key={option.id}
+            orientation="horizontal"
+            render={
+              <Checkbox.Provider
+                isInvalid={fieldState.invalid}
+                isSelected={field.value.includes(option.id)}
+                onChange={(checked) => {
+                  if (checked) {
+                    field.onChange([...field.value, option.id]);
+                  } else {
+                    field.onChange(field.value.filter((v) => v !== option.id));
+                  }
+                }}
+              />
+            }
+          >
+            <Checkbox.Root>
+              <Checkbox.Indicator />
+            </Checkbox.Root>
+            <Field.Label>{option.label}</Field.Label>
+          </Field.Root>
+        ))}
+      </Field.Group>
+      <Field.Error errors={[fieldState.error]} />
+    </Field.Set>
+  )}
+/>
+```
+
+### Switch
+
+<ComponentPreview name="react-hook-form-switch-demo" />
+
+`Switch.Root{:tsx}` is a standalone RAC component — pass `name{:tsx}`, `isSelected{:tsx}`, and `onChange{:tsx}` directly. No `TextField` wrapper is needed since a switch has no text input:
+
+```tsx
+<Controller
+  control={form.control}
+  name="marketing"
+  render={({ field }) => (
+    <Field.Root orientation="horizontal">
+      <Field.Content>
+        <Field.Title>
+          <Field.Label>Marketing emails</Field.Label>
+        </Field.Title>
+        <Field.Description>
+          Receive emails about new products and features.
+        </Field.Description>
+      </Field.Content>
+      <Switch.Root
+        isSelected={field.value}
+        name={field.name}
+        onChange={field.onChange}
+      >
+        <Switch.Track>
+          <Switch.Thumb />
+        </Switch.Track>
+      </Switch.Root>
+    </Field.Root>
+  )}
+/>
+```
+
+## Submit Button State
+
+Disable the submit button while submitting using `isSubmitting` from `formState`:
+
+```tsx
+const form = useForm({ ... });
+
+<Button isDisabled={form.formState.isSubmitting} type="submit">
+  {form.formState.isSubmitting ? "Submitting..." : "Submit"}
+</Button>
+```
+
+## Resetting the Form
+
+Use `form.reset(){:ts}` to restore default values:
+
+```tsx
+const form = useForm({ ... });
+
+<Button onPress={() => form.reset()} type="reset" variant="outline">
+  Reset
+</Button>
+```
+
+## Array Fields
+
+React Hook Form supports dynamic array fields with `useFieldArray`:
+
+<ComponentPreview name="react-hook-form-array-demo" />
+
+```tsx
+const { fields, append, remove } = useFieldArray({
+  control: form.control,
+  name: "emails",
+});
+
+<Field.Set>
+  <Field.Legend variant="label">Email Addresses</Field.Legend>
+  <Field.Group>
+    {fields.map((item, index) => (
+      <Controller
+        key={item.id}
+        control={form.control}
+        name={`emails.${index}.address`}
+        render={({ field: { ref, disabled, ...field }, fieldState }) => (
+          <Field.Root
+            render={
+              <TextField
+                isInvalid={fieldState.invalid}
+                isDisabled={disabled}
+                type="email"
+                {...field}
+              />
+            }
+          >
+            <div className="flex items-center gap-2">
+              <Input ref={ref} className="flex-1" placeholder="name@example.com" />
+              {fields.length > 1 && (
+                <Button onPress={() => remove(index)} size="icon" type="button" variant="ghost">
+                  <XIcon />
+                </Button>
+              )}
+            </div>
+            <Field.Error errors={[fieldState.error]} />
+          </Field.Root>
+        )}
+      />
+    ))}
+  </Field.Group>
+  <Button onPress={() => append({ address: "" })} size="sm" type="button" variant="outline">
+    Add email
+  </Button>
+</Field.Set>
+```
+
+### Array Helpers
+
+| Method                    | Description              |
+| ------------------------- | ------------------------ |
+| `append(item){:ts}`       | Add item to end of array |
+| `prepend(item){:ts}`      | Add item to start        |
+| `remove(i){:ts}`          | Remove item at index     |
+| `insert(i, item){:ts}`    | Insert item at index     |
+| `swap(a, b){:ts}`         | Swap items at indices    |
+| `move(from, to){:ts}`     | Move item to new index   |
+| `update(i, item){:ts}`    | Replace item at index    |
+| `replace(items){:ts}`     | Replace entire array     |
+
+## Linked Fields
+
+When one field's validation depends on another (e.g. confirm password), use Zod's `.refine()` at the schema level to cross-validate:
+
+<ComponentPreview name="react-hook-form-linked-fields-demo" />
+
+```tsx
+const formSchema = z
+  .object({
+    password: z.string().min(8, "Password must be at least 8 characters."),
+    confirmPassword: z.string(),
+  })
+  // [!code highlight:4]
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match.",
+    path: ["confirmPassword"],
+  });
+```
+
+The `path{:tsx}` option routes the error to the correct field. React Hook Form surfaces it via `fieldState.error` on the `confirmPassword{:tsx}` controller.

@@ -6,8 +6,8 @@ import { FileStyles } from "./files";
 import { FolderIcon } from "./folder-icon";
 
 interface FolderProps extends React.ComponentProps<"div"> {
-  name: string;
   defaultOpen?: boolean;
+  name: string;
 }
 
 export function Folder({
