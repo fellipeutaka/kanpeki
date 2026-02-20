@@ -52,7 +52,12 @@ export function TanstackFormSwitchDemo() {
         )}
         name="marketing"
       />
-      <Button type="submit">Save preferences</Button>
+      <div className="flex gap-2">
+        <Button onPress={() => form.reset()} type="reset" variant="outline">
+          Reset
+        </Button>
+        <Button type="submit">Save preferences</Button>
+      </div>
     </form>
   );
 }

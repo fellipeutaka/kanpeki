@@ -99,14 +99,19 @@ export function TanstackFormLinkedFieldsDemo() {
           },
         }}
       />
-      <form.Subscribe
-        selector={(state) => [state.canSubmit, state.isSubmitting]}
-        children={([canSubmit, isSubmitting]) => (
-          <Button isDisabled={!canSubmit} type="submit">
-            {isSubmitting ? "Submitting..." : "Submit"}
-          </Button>
-        )}
-      />
+      <div className="flex gap-2">
+        <Button onPress={() => form.reset()} type="reset" variant="outline">
+          Reset
+        </Button>
+        <form.Subscribe
+          selector={(state) => [state.canSubmit, state.isSubmitting]}
+          children={([canSubmit, isSubmitting]) => (
+            <Button isDisabled={!canSubmit} type="submit">
+              {isSubmitting ? "Submitting..." : "Submit"}
+            </Button>
+          )}
+        />
+      </div>
     </form>
   );
 }

@@ -3020,6 +3020,276 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "react-aria-form-demo": {
+    name: "react-aria-form-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-aria/react-aria-form-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-aria/react-aria-form-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-aria-form-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-aria-form-input-demo": {
+    name: "react-aria-form-input-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-aria/react-aria-form-input-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-aria/react-aria-form-input-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-aria-form-input-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-aria-form-textarea-demo": {
+    name: "react-aria-form-textarea-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-aria/react-aria-form-textarea-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-aria/react-aria-form-textarea-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-aria-form-textarea-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-aria-form-select-demo": {
+    name: "react-aria-form-select-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-aria/react-aria-form-select-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-aria/react-aria-form-select-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-aria-form-select-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-aria-form-checkbox-demo": {
+    name: "react-aria-form-checkbox-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-aria/react-aria-form-checkbox-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-aria/react-aria-form-checkbox-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-aria-form-checkbox-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-aria-form-switch-demo": {
+    name: "react-aria-form-switch-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-aria/react-aria-form-switch-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-aria/react-aria-form-switch-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-aria-form-switch-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-aria-form-server-validation-demo": {
+    name: "react-aria-form-server-validation-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-aria/react-aria-form-server-validation-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-aria/react-aria-form-server-validation-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-aria-form-server-validation-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-hook-form-demo": {
+    name: "react-hook-form-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-hook-form/react-hook-form-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-hook-form/react-hook-form-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-hook-form-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-hook-form-input-demo": {
+    name: "react-hook-form-input-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-hook-form/react-hook-form-input-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-hook-form/react-hook-form-input-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-hook-form-input-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-hook-form-textarea-demo": {
+    name: "react-hook-form-textarea-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-hook-form/react-hook-form-textarea-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-hook-form/react-hook-form-textarea-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-hook-form-textarea-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-hook-form-select-demo": {
+    name: "react-hook-form-select-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-hook-form/react-hook-form-select-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-hook-form/react-hook-form-select-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-hook-form-select-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-hook-form-checkbox-demo": {
+    name: "react-hook-form-checkbox-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-hook-form/react-hook-form-checkbox-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-hook-form/react-hook-form-checkbox-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-hook-form-checkbox-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-hook-form-switch-demo": {
+    name: "react-hook-form-switch-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-hook-form/react-hook-form-switch-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-hook-form/react-hook-form-switch-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-hook-form-switch-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-hook-form-array-demo": {
+    name: "react-hook-form-array-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-hook-form/react-hook-form-array-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-hook-form/react-hook-form-array-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-hook-form-array-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "react-hook-form-linked-fields-demo": {
+    name: "react-hook-form-linked-fields-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/form"],
+    files: [{
+      path: "src/registry/examples/form/react-hook-form/react-hook-form-linked-fields-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/form/react-hook-form/react-hook-form-linked-fields-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "react-hook-form-linked-fields-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "hover-card-demo": {
     name: "hover-card-demo",
     description: "",

@@ -103,10 +103,10 @@ export function TanstackFormDemo() {
         name="description"
       />
       <div className="flex gap-2">
-        <Button type="submit">Submit</Button>
         <Button onPress={() => form.reset()} type="reset" variant="outline">
           Reset
         </Button>
+        <Button type="submit">Submit</Button>
       </div>
     </form>
   );

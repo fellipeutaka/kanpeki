@@ -88,14 +88,19 @@ export function TanstackFormCheckboxDemo() {
         mode="array"
         name="notifications"
       />
-      <form.Subscribe
-        selector={(state) => [state.canSubmit, state.isSubmitting]}
-        children={([canSubmit, isSubmitting]) => (
-          <Button isDisabled={!canSubmit} type="submit">
-            {isSubmitting ? "Submitting..." : "Submit"}
-          </Button>
-        )}
-      />
+      <div className="grid grid-cols-2 gap-2">
+        <Button onPress={() => form.reset()} type="reset" variant="outline">
+          Reset
+        </Button>
+        <form.Subscribe
+          selector={(state) => [state.canSubmit, state.isSubmitting]}
+          children={([canSubmit, isSubmitting]) => (
+            <Button isDisabled={!canSubmit} type="submit">
+              {isSubmitting ? "Submitting..." : "Submit"}
+            </Button>
+          )}
+        />
+      </div>
     </form>
   );
 }
