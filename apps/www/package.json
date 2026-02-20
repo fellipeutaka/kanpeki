@@ -37,7 +37,7 @@
     "@vercel/speed-insights": "^1.3.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
-    "fumadocs-core": "^16.6.3",
+    "fumadocs-core": "^16.6.4",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.564.0",
     "motion": "catalog:",
@@ -57,7 +57,7 @@
   "devDependencies": {
     "@kanpeki/tsconfig": "workspace:*",
     "@shikijs/transformers": "^3.22.0",
-    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/postcss": "^4.2.0",
     "@types/hast": "^3.0.4",
     "@types/mdx": "^2.0.13",
     "@types/react": "catalog:",
