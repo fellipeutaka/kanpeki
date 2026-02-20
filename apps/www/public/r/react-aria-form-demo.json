@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Form } from \"~/registry/ui/form\";\nimport { Input } from \"~/registry/ui/input\";\nimport { TextField } from \"~/registry/ui/text-field\";\nimport { Textarea } from \"~/registry/ui/textarea\";\n\nexport function ReactAriaFormDemo() {\n  return (\n    <Form\n      className=\"flex w-full max-w-md flex-col gap-4\"\n      onSubmit={(e) => {\n        e.preventDefault();\n        const data = Object.fromEntries(new FormData(e.currentTarget));\n        toast(JSON.stringify(data, null, 2));\n        (e.currentTarget as HTMLFormElement).reset();\n      }}\n    >\n      <Field.Root\n        render={\n          <TextField isRequired maxLength={32} minLength={5} name=\"title\" />\n        }\n      >\n        <Field.Label>Title</Field.Label>\n        <Input placeholder=\"Bug report title\" />\n        <Field.Description>\n          Provide a concise title for your report.\n        </Field.Description>\n        <Field.Error />\n      </Field.Root>\n      <Field.Root\n        render={\n          <TextField\n            isRequired\n            maxLength={200}\n            minLength={20}\n            name=\"description\"\n          />\n        }\n      >\n        <Field.Label>Description</Field.Label>\n        <Textarea\n          className=\"min-h-15\"\n          placeholder=\"Describe the issue in detail...\"\n        />\n        <Field.Description>\n          Include steps to reproduce the issue.\n        </Field.Description>\n        <Field.Error />\n      </Field.Root>\n      <div className=\"flex gap-2\">\n        <Button type=\"reset\" variant=\"outline\">\n          Reset\n        </Button>\n        <Button type=\"submit\">Submit</Button>\n      </div>\n    </Form>\n  );\n}\n",
+      "path": "src/registry/examples/form/react-aria/react-aria-form-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "react-aria-form-demo",
+  "registryDependencies": [
+    "@kanpeki/form"
+  ],
+  "type": "registry:example"
+}

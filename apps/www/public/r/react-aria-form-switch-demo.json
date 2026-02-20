@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { useId } from \"react\";\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Form } from \"~/registry/ui/form\";\nimport { Switch } from \"~/registry/ui/switch\";\n\nexport function ReactAriaFormSwitchDemo() {\n  const id = useId();\n\n  return (\n    <Form\n      className=\"flex w-full max-w-sm flex-col gap-4\"\n      onSubmit={(e) => {\n        e.preventDefault();\n        const data = Object.fromEntries(new FormData(e.currentTarget));\n        toast(JSON.stringify(data, null, 2));\n      }}\n    >\n      <Field.Root orientation=\"horizontal\">\n        <Field.Content>\n          <Field.Title>\n            <Field.Label htmlFor={id}>Marketing emails</Field.Label>\n          </Field.Title>\n          <Field.Description>\n            Receive emails about new products and features.\n          </Field.Description>\n        </Field.Content>\n        <Switch.Root id={id} name=\"marketing\" value=\"on\">\n          <Switch.Track>\n            <Switch.Thumb />\n          </Switch.Track>\n        </Switch.Root>\n      </Field.Root>\n      <div className=\"flex gap-2\">\n        <Button type=\"reset\" variant=\"outline\">\n          Reset\n        </Button>\n        <Button type=\"submit\">Save preferences</Button>\n      </div>\n    </Form>\n  );\n}\n",
+      "path": "src/registry/examples/form/react-aria/react-aria-form-switch-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "react-aria-form-switch-demo",
+  "registryDependencies": [
+    "@kanpeki/form"
+  ],
+  "type": "registry:example"
+}

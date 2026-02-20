@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { toast } from \"sonner\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Form } from \"~/registry/ui/form\";\nimport { Listbox } from \"~/registry/ui/list-box\";\nimport { Popover } from \"~/registry/ui/popover\";\nimport { Select } from \"~/registry/ui/select\";\n\nexport function ReactAriaFormSelectDemo() {\n  return (\n    <Form\n      className=\"flex w-full max-w-sm flex-col gap-4\"\n      onSubmit={(e) => {\n        e.preventDefault();\n        const data = Object.fromEntries(new FormData(e.currentTarget));\n        toast(JSON.stringify(data, null, 2));\n        (e.currentTarget as HTMLFormElement).reset();\n      }}\n    >\n      <Field.Root\n        render={\n          <Select.Root\n            isRequired\n            name=\"country\"\n            placeholder=\"Select a country\"\n          />\n        }\n      >\n        <Field.Label>Country</Field.Label>\n        <Select.Trigger className=\"w-full\">\n          <Select.Value />\n        </Select.Trigger>\n        <Popover.Content>\n          <Listbox.Root>\n            <Listbox.Item id=\"us\">United States</Listbox.Item>\n            <Listbox.Item id=\"uk\">United Kingdom</Listbox.Item>\n            <Listbox.Item id=\"ca\">Canada</Listbox.Item>\n            <Listbox.Item id=\"au\">Australia</Listbox.Item>\n            <Listbox.Item id=\"de\">Germany</Listbox.Item>\n            <Listbox.Item id=\"fr\">France</Listbox.Item>\n            <Listbox.Item id=\"br\">Brazil</Listbox.Item>\n          </Listbox.Root>\n        </Popover.Content>\n        <Field.Description>\n          Select the country where you are based.\n        </Field.Description>\n        <Field.Error />\n      </Field.Root>\n      <div className=\"flex gap-2\">\n        <Button type=\"reset\" variant=\"outline\">\n          Reset\n        </Button>\n        <Button type=\"submit\">Submit</Button>\n      </div>\n    </Form>\n  );\n}\n",
+      "path": "src/registry/examples/form/react-aria/react-aria-form-select-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "react-aria-form-select-demo",
+  "registryDependencies": [
+    "@kanpeki/form"
+  ],
+  "type": "registry:example"
+}
