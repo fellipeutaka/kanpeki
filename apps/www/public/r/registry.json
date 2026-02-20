@@ -2592,6 +2592,201 @@
     {
       "files": [
         {
+          "path": "src/registry/examples/form/react-aria/react-aria-form-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-aria-form-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-aria/react-aria-form-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-aria-form-input-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-aria/react-aria-form-textarea-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-aria-form-textarea-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-aria/react-aria-form-select-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-aria-form-select-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-aria/react-aria-form-checkbox-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-aria-form-checkbox-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-aria/react-aria-form-switch-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-aria-form-switch-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-aria/react-aria-form-server-validation-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-aria-form-server-validation-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-hook-form/react-hook-form-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-hook-form-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-hook-form/react-hook-form-input-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-hook-form-input-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-hook-form/react-hook-form-textarea-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-hook-form-textarea-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-hook-form/react-hook-form-select-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-hook-form-select-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-hook-form/react-hook-form-checkbox-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-hook-form-checkbox-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-hook-form/react-hook-form-switch-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-hook-form-switch-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-hook-form/react-hook-form-array-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-hook-form-array-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/form/react-hook-form/react-hook-form-linked-fields-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "react-hook-form-linked-fields-demo",
+      "registryDependencies": [
+        "@kanpeki/form"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
           "path": "src/registry/examples/hover-card/hover-card-demo.tsx",
           "type": "registry:example"
         }

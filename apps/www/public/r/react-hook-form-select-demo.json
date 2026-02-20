@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "\"use client\";\n\nimport { zodResolver } from \"@hookform/resolvers/zod\";\nimport { Controller, useForm } from \"react-hook-form\";\nimport { toast } from \"sonner\";\nimport { z } from \"zod\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Field } from \"~/registry/ui/field\";\nimport { Listbox } from \"~/registry/ui/list-box\";\nimport { Popover } from \"~/registry/ui/popover\";\nimport { Select } from \"~/registry/ui/select\";\n\nconst formSchema = z.object({\n  country: z.string().min(1, \"Please select a country.\"),\n});\n\nexport function ReactHookFormSelectDemo() {\n  const form = useForm({\n    resolver: zodResolver(formSchema),\n    defaultValues: {\n      country: \"\",\n    },\n  });\n\n  const onSubmit = form.handleSubmit((value) => {\n    toast(JSON.stringify(value, null, 2));\n  });\n\n  return (\n    <form className=\"flex w-full max-w-sm flex-col gap-4\" onSubmit={onSubmit}>\n      <Controller\n        control={form.control}\n        name=\"country\"\n        render={({ field: { ref, disabled, ...field }, fieldState }) => (\n          <Field.Root\n            render={\n              <Select.Root\n                {...field}\n                isInvalid={fieldState.invalid}\n                isDisabled={disabled}\n                placeholder=\"Select a country\"\n              />\n            }\n          >\n            <Field.Label>Country</Field.Label>\n            <Select.Trigger ref={ref} className=\"w-full\">\n              <Select.Value />\n            </Select.Trigger>\n            <Popover.Content>\n              <Listbox.Root>\n                <Listbox.Item id=\"us\">United States</Listbox.Item>\n                <Listbox.Item id=\"uk\">United Kingdom</Listbox.Item>\n                <Listbox.Item id=\"ca\">Canada</Listbox.Item>\n                <Listbox.Item id=\"au\">Australia</Listbox.Item>\n                <Listbox.Item id=\"de\">Germany</Listbox.Item>\n                <Listbox.Item id=\"fr\">France</Listbox.Item>\n                <Listbox.Item id=\"br\">Brazil</Listbox.Item>\n              </Listbox.Root>\n            </Popover.Content>\n            <Field.Description>\n              Select the country where you are based.\n            </Field.Description>\n            <Field.Error errors={[fieldState.error]} />\n          </Field.Root>\n        )}\n      />\n      <div className=\"flex gap-2\">\n        <Button onPress={() => form.reset()} type=\"reset\" variant=\"outline\">\n          Reset\n        </Button>\n        <Button isDisabled={form.formState.isSubmitting} type=\"submit\">\n          {form.formState.isSubmitting ? \"Submitting...\" : \"Submit\"}\n        </Button>\n      </div>\n    </form>\n  );\n}\n",
+      "path": "src/registry/examples/form/react-hook-form/react-hook-form-select-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "react-hook-form-select-demo",
+  "registryDependencies": [
+    "@kanpeki/form"
+  ],
+  "type": "registry:example"
+}
