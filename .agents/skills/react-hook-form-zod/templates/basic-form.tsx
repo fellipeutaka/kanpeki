@@ -26,17 +26,12 @@ const loginSchema = z.object({
   rememberMe: z.boolean().optional(),
 })
 
-// 2. Infer TypeScript type from schema
+// 2. Infer TypeScript type from schema (for use in function signatures, props, etc.)
 type LoginFormData = z.infer<typeof loginSchema>
 
 export function BasicLoginForm() {
-  // 3. Initialize form with zodResolver
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting, isValid },
-    reset,
-  } = useForm<LoginFormData>({
+  // 3. Initialize form with zodResolver — no generic needed, zodResolver infers types
+  const form = useForm({
     resolver: zodResolver(loginSchema),
     mode: 'onBlur', // Validate on blur for better UX
     defaultValues: {
@@ -46,8 +41,8 @@ export function BasicLoginForm() {
     },
   })
 
-  // 4. Handle form submission
-  const onSubmit = async (data: LoginFormData) => {
+  // 4. Extract handleSubmit as a variable
+  const onSubmit = form.handleSubmit(async (data) => {
     try {
       console.log('Form data:', data)
 
@@ -66,14 +61,14 @@ export function BasicLoginForm() {
       console.log('Login successful:', result)
 
       // Reset form after successful submission
-      reset()
+      form.reset()
     } catch (error) {
       console.error('Login error:', error)
     }
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md mx-auto">
+    <form onSubmit={onSubmit} className="space-y-4 max-w-md mx-auto">
       <h2 className="text-2xl font-bold">Login</h2>
 
       {/* Email Field */}
@@ -84,21 +79,21 @@ export function BasicLoginForm() {
         <input
           id="email"
           type="email"
-          {...register('email')}
-          aria-invalid={errors.email ? 'true' : 'false'}
-          aria-describedby={errors.email ? 'email-error' : undefined}
+          {...form.register('email')}
+          aria-invalid={form.formState.errors.email ? 'true' : 'false'}
+          aria-describedby={form.formState.errors.email ? 'email-error' : undefined}
           className={`w-full px-3 py-2 border rounded-md ${
-            errors.email ? 'border-red-500' : 'border-gray-300'
+            form.formState.errors.email ? 'border-red-500' : 'border-gray-300'
           }`}
           placeholder="you@example.com"
         />
-        {errors.email && (
+        {form.formState.errors.email && (
           <span
             id="email-error"
             role="alert"
             className="text-sm text-red-600 mt-1 block"
           >
-            {errors.email.message}
+            {form.formState.errors.email.message}
           </span>
         )}
       </div>
@@ -111,21 +106,21 @@ export function BasicLoginForm() {
         <input
           id="password"
           type="password"
-          {...register('password')}
-          aria-invalid={errors.password ? 'true' : 'false'}
-          aria-describedby={errors.password ? 'password-error' : undefined}
+          {...form.register('password')}
+          aria-invalid={form.formState.errors.password ? 'true' : 'false'}
+          aria-describedby={form.formState.errors.password ? 'password-error' : undefined}
           className={`w-full px-3 py-2 border rounded-md ${
-            errors.password ? 'border-red-500' : 'border-gray-300'
+            form.formState.errors.password ? 'border-red-500' : 'border-gray-300'
           }`}
           placeholder="••••••••"
         />
-        {errors.password && (
+        {form.formState.errors.password && (
           <span
             id="password-error"
             role="alert"
             className="text-sm text-red-600 mt-1 block"
           >
-            {errors.password.message}
+            {form.formState.errors.password.message}
           </span>
         )}
       </div>
@@ -135,7 +130,7 @@ export function BasicLoginForm() {
         <input
           id="rememberMe"
           type="checkbox"
-          {...register('rememberMe')}
+          {...form.register('rememberMe')}
           className="h-4 w-4 rounded"
         />
         <label htmlFor="rememberMe" className="ml-2 text-sm">
@@ -146,16 +141,16 @@ export function BasicLoginForm() {
       {/* Submit Button */}
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={form.formState.isSubmitting}
         className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
       >
-        {isSubmitting ? 'Logging in...' : 'Login'}
+        {form.formState.isSubmitting ? 'Logging in...' : 'Login'}
       </button>
 
       {/* Form Status */}
       <div className="text-sm text-gray-600">
-        {isValid && !isSubmitting && (
-          <span className="text-green-600">Form is valid ✓</span>
+        {form.formState.isValid && !form.formState.isSubmitting && (
+          <span className="text-green-600">Form is valid</span>
         )}
       </div>
     </form>
@@ -176,11 +171,7 @@ const signupSchema = loginSchema.extend({
 type SignupFormData = z.infer<typeof signupSchema>
 
 export function BasicSignupForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<SignupFormData>({
+  const form = useForm({
     resolver: zodResolver(signupSchema),
     defaultValues: {
       name: '',
@@ -191,13 +182,13 @@ export function BasicSignupForm() {
     },
   })
 
-  const onSubmit = async (data: SignupFormData) => {
+  const onSubmit = form.handleSubmit(async (data) => {
     console.log('Signup data:', data)
     // API call
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md mx-auto">
+    <form onSubmit={onSubmit} className="space-y-4 max-w-md mx-auto">
       <h2 className="text-2xl font-bold">Sign Up</h2>
 
       {/* Name Field */}
@@ -207,13 +198,13 @@ export function BasicSignupForm() {
         </label>
         <input
           id="name"
-          {...register('name')}
+          {...form.register('name')}
           className="w-full px-3 py-2 border rounded-md"
           placeholder="John Doe"
         />
-        {errors.name && (
+        {form.formState.errors.name && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.name.message}
+            {form.formState.errors.name.message}
           </span>
         )}
       </div>
@@ -226,13 +217,13 @@ export function BasicSignupForm() {
         <input
           id="email"
           type="email"
-          {...register('email')}
+          {...form.register('email')}
           className="w-full px-3 py-2 border rounded-md"
           placeholder="you@example.com"
         />
-        {errors.email && (
+        {form.formState.errors.email && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.email.message}
+            {form.formState.errors.email.message}
           </span>
         )}
       </div>
@@ -245,12 +236,12 @@ export function BasicSignupForm() {
         <input
           id="password"
           type="password"
-          {...register('password')}
+          {...form.register('password')}
           className="w-full px-3 py-2 border rounded-md"
         />
-        {errors.password && (
+        {form.formState.errors.password && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.password.message}
+            {form.formState.errors.password.message}
           </span>
         )}
       </div>
@@ -263,22 +254,22 @@ export function BasicSignupForm() {
         <input
           id="confirmPassword"
           type="password"
-          {...register('confirmPassword')}
+          {...form.register('confirmPassword')}
           className="w-full px-3 py-2 border rounded-md"
         />
-        {errors.confirmPassword && (
+        {form.formState.errors.confirmPassword && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.confirmPassword.message}
+            {form.formState.errors.confirmPassword.message}
           </span>
         )}
       </div>
 
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={form.formState.isSubmitting}
         className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
       >
-        {isSubmitting ? 'Creating account...' : 'Sign Up'}
+        {form.formState.isSubmitting ? 'Creating account...' : 'Sign Up'}
       </button>
     </form>
   )

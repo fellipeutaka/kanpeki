@@ -62,7 +62,7 @@ const form = useForm({
 
 ```typescript
 // Best performance - no React state
-<input {...register('email')} />
+<input {...form.register('email')} />
 ```
 
 ### Controlled (More Control)
@@ -70,13 +70,13 @@ const form = useForm({
 ```typescript
 // More React state = more re-renders
 <Controller
-  control={control}
+  control={form.control}
   name="email"
   render={({ field }) => <Input {...field} />}
 />
 ```
 
-**Rule**: Use `register` by default, `Controller` only when necessary.
+**Rule**: Use `form.register` by default, `Controller` only when necessary.
 
 ---
 
@@ -86,11 +86,11 @@ const form = useForm({
 
 ```typescript
 // BAD - Watches all fields, re-renders on any change
-const values = watch()
+const values = form.watch()
 
 // GOOD - Watch only what you need
-const email = watch('email')
-const [email, password] = watch(['email', 'password'])
+const email = form.watch('email')
+const [email, password] = form.watch(['email', 'password'])
 ```
 
 ### useWatch for Isolation
@@ -100,7 +100,7 @@ import { useWatch } from 'react-hook-form'
 
 // Isolated component - only re-renders when email changes
 function EmailDisplay() {
-  const email = useWatch({ control, name: 'email' })
+  const email = useWatch({ control: form.control, name: 'email' })
   return <div>{email}</div>
 }
 ```
@@ -115,14 +115,14 @@ function EmailDisplay() {
 import { useDebouncedCallback } from 'use-debounce'
 
 const debouncedValidation = useDebouncedCallback(
-  () => trigger('username'),
+  () => form.trigger('username'),
   500 // Wait 500ms
 )
 
 <input
-  {...register('username')}
+  {...form.register('username')}
   onChange={(e) => {
-    register('username').onChange(e)
+    form.register('username').onChange(e)
     debouncedValidation()
   }}
 />
@@ -177,9 +177,9 @@ const form = useForm({
 
 ```typescript
 // Extract field components
-const FieldItem = React.memo(({ field, index, register, remove }) => (
+const FieldItem = React.memo(({ field, index, form, remove }) => (
   <div>
-    <input {...register(`items.${index}.name`)} />
+    <input {...form.register(`items.${index}.name`)} />
     <button onClick={() => remove(index)}>Remove</button>
   </div>
 ))
@@ -190,7 +190,7 @@ const FieldItem = React.memo(({ field, index, register, remove }) => (
     key={field.id}
     field={field}
     index={index}
-    register={register}
+    form={form}
     remove={remove}
   />
 ))}
@@ -204,14 +204,14 @@ const FieldItem = React.memo(({ field, index, register, remove }) => (
 
 ```typescript
 // BAD - Subscribes to all formState changes
-const { formState } = useForm()
+const { formState } = form
 
 // GOOD - Subscribe only to what you need
-const { isDirty, isValid } = useForm().formState
+const { isDirty, isValid } = form.formState
 
 // BETTER - Use useFormState for isolation
 import { useFormState } from 'react-hook-form'
-const { isDirty } = useFormState({ control })
+const { isDirty } = useFormState({ control: form.control })
 ```
 
 ---
@@ -244,30 +244,30 @@ function Form() {
 
 ```typescript
 function PersonalInfoSection() {
-  const { register } = useFormContext()
+  const form = useFormContext()
   return (
     <div>
-      <input {...register('firstName')} />
-      <input {...register('lastName')} />
+      <input {...form.register('firstName')} />
+      <input {...form.register('lastName')} />
     </div>
   )
 }
 
 function ContactInfoSection() {
-  const { register } = useFormContext()
+  const form = useFormContext()
   return (
     <div>
-      <input {...register('email')} />
-      <input {...register('phone')} />
+      <input {...form.register('email')} />
+      <input {...form.register('phone')} />
     </div>
   )
 }
 
 function LargeForm() {
-  const methods = useForm()
+  const form = useForm()
 
   return (
-    <FormProvider {...methods}>
+    <FormProvider {...form}>
       <form>
         <PersonalInfoSection />
         <ContactInfoSection />
@@ -283,7 +283,7 @@ function LargeForm() {
 import { useVirtualizer } from '@tanstack/react-virtual'
 
 function VirtualizedFieldArray() {
-  const { fields } = useFieldArray({ control, name: 'items' })
+  const { fields } = useFieldArray({ control: form.control, name: 'items' })
 
   const parentRef = React.useRef(null)
 
@@ -300,7 +300,7 @@ function VirtualizedFieldArray() {
           const field = fields[virtualRow.index]
           return (
             <div key={field.id}>
-              <input {...register(`items.${virtualRow.index}.name`)} />
+              <input {...form.register(`items.${virtualRow.index}.name`)} />
             </div>
           )
         })}
@@ -337,7 +337,7 @@ function VirtualizedFieldArray() {
 ### Performance.mark API
 
 ```typescript
-const onSubmit = (data) => {
+const onSubmit = form.handleSubmit((data) => {
   performance.mark('form-submit-start')
 
   // Submit logic
@@ -347,7 +347,7 @@ const onSubmit = (data) => {
 
   const measures = performance.getEntriesByName('form-submit')
   console.log('Submit time:', measures[0].duration, 'ms')
-}
+})
 ```
 
 ---

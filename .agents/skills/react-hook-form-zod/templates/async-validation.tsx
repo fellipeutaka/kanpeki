@@ -39,11 +39,7 @@ const signupSchemaWithAsync = z.object({
 type SignupFormData = z.infer<typeof signupSchemaWithAsync>
 
 export function AsyncValidationForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting, isValidating },
-  } = useForm<SignupFormData>({
+  const form = useForm({
     resolver: zodResolver(signupSchemaWithAsync),
     mode: 'onBlur', // Validate on blur to avoid validating on every keystroke
     defaultValues: {
@@ -53,12 +49,12 @@ export function AsyncValidationForm() {
     },
   })
 
-  const onSubmit = async (data: SignupFormData) => {
+  const onSubmit = form.handleSubmit(async (data) => {
     console.log('Form data:', data)
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md mx-auto">
+    <form onSubmit={onSubmit} className="space-y-4 max-w-md mx-auto">
       <h2 className="text-2xl font-bold">Sign Up</h2>
 
       <div>
@@ -67,17 +63,17 @@ export function AsyncValidationForm() {
         </label>
         <input
           id="username"
-          {...register('username')}
+          {...form.register('username')}
           className="w-full px-3 py-2 border rounded-md"
         />
-        {isValidating && (
+        {form.formState.isValidating && (
           <span className="text-sm text-blue-600 mt-1 block">
             Checking availability...
           </span>
         )}
-        {errors.username && (
+        {form.formState.errors.username && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.username.message}
+            {form.formState.errors.username.message}
           </span>
         )}
       </div>
@@ -89,12 +85,12 @@ export function AsyncValidationForm() {
         <input
           id="email"
           type="email"
-          {...register('email')}
+          {...form.register('email')}
           className="w-full px-3 py-2 border rounded-md"
         />
-        {errors.email && (
+        {form.formState.errors.email && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.email.message}
+            {form.formState.errors.email.message}
           </span>
         )}
       </div>
@@ -106,22 +102,22 @@ export function AsyncValidationForm() {
         <input
           id="password"
           type="password"
-          {...register('password')}
+          {...form.register('password')}
           className="w-full px-3 py-2 border rounded-md"
         />
-        {errors.password && (
+        {form.formState.errors.password && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.password.message}
+            {form.formState.errors.password.message}
           </span>
         )}
       </div>
 
       <button
         type="submit"
-        disabled={isSubmitting || isValidating}
+        disabled={form.formState.isSubmitting || form.formState.isValidating}
         className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
       >
-        {isSubmitting ? 'Signing up...' : 'Sign Up'}
+        {form.formState.isSubmitting ? 'Signing up...' : 'Sign Up'}
       </button>
     </form>
   )
@@ -142,14 +138,7 @@ const manualValidationSchema = z.object({
 type ManualValidationData = z.infer<typeof manualValidationSchema>
 
 export function DebouncedAsyncValidationForm() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setError,
-    clearErrors,
-    formState: { errors, isSubmitting },
-  } = useForm<ManualValidationData>({
+  const form = useForm({
     resolver: zodResolver(manualValidationSchema),
     defaultValues: {
       username: '',
@@ -162,8 +151,8 @@ export function DebouncedAsyncValidationForm() {
   const abortControllerRef = useRef<AbortController | null>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  const username = watch('username')
-  const email = watch('email')
+  const username = form.watch('username')
+  const email = form.watch('email')
 
   // Debounced username validation
   useEffect(() => {
@@ -189,7 +178,7 @@ export function DebouncedAsyncValidationForm() {
       abortControllerRef.current = new AbortController()
 
       setIsCheckingUsername(true)
-      clearErrors('username')
+      form.clearErrors('username')
 
       try {
         const response = await fetch(
@@ -200,7 +189,7 @@ export function DebouncedAsyncValidationForm() {
         const { available } = await response.json()
 
         if (!available) {
-          setError('username', {
+          form.setError('username', {
             type: 'async',
             message: 'Username is already taken',
           })
@@ -219,7 +208,7 @@ export function DebouncedAsyncValidationForm() {
         clearTimeout(timeoutRef.current)
       }
     }
-  }, [username, setError, clearErrors])
+  }, [username, form.setError, form.clearErrors])
 
   // Debounced email validation
   useEffect(() => {
@@ -235,7 +224,7 @@ export function DebouncedAsyncValidationForm() {
 
     timeoutRef.current = setTimeout(async () => {
       setIsCheckingEmail(true)
-      clearErrors('email')
+      form.clearErrors('email')
 
       try {
         const response = await fetch(
@@ -245,7 +234,7 @@ export function DebouncedAsyncValidationForm() {
         const { available } = await response.json()
 
         if (!available) {
-          setError('email', {
+          form.setError('email', {
             type: 'async',
             message: 'Email is already registered',
           })
@@ -262,19 +251,19 @@ export function DebouncedAsyncValidationForm() {
         clearTimeout(timeoutRef.current)
       }
     }
-  }, [email, setError, clearErrors])
+  }, [email, form.setError, form.clearErrors])
 
-  const onSubmit = async (data: ManualValidationData) => {
+  const onSubmit = form.handleSubmit(async (data) => {
     // Final check before submission
     if (isCheckingUsername || isCheckingEmail) {
       return
     }
 
     console.log('Form data:', data)
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 max-w-md mx-auto">
+    <form onSubmit={onSubmit} className="space-y-4 max-w-md mx-auto">
       <h2 className="text-2xl font-bold">Create Account</h2>
 
       <div>
@@ -284,7 +273,7 @@ export function DebouncedAsyncValidationForm() {
         <div className="relative">
           <input
             id="username"
-            {...register('username')}
+            {...form.register('username')}
             className="w-full px-3 py-2 border rounded-md"
           />
           {isCheckingUsername && (
@@ -312,14 +301,14 @@ export function DebouncedAsyncValidationForm() {
             </div>
           )}
         </div>
-        {errors.username && (
+        {form.formState.errors.username && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.username.message}
+            {form.formState.errors.username.message}
           </span>
         )}
-        {!errors.username && username.length >= 3 && !isCheckingUsername && (
+        {!form.formState.errors.username && username.length >= 3 && !isCheckingUsername && (
           <span className="text-sm text-green-600 mt-1 block">
-            Username is available ✓
+            Username is available
           </span>
         )}
       </div>
@@ -332,7 +321,7 @@ export function DebouncedAsyncValidationForm() {
           <input
             id="email"
             type="email"
-            {...register('email')}
+            {...form.register('email')}
             className="w-full px-3 py-2 border rounded-md"
           />
           {isCheckingEmail && (
@@ -360,24 +349,24 @@ export function DebouncedAsyncValidationForm() {
             </div>
           )}
         </div>
-        {errors.email && (
+        {form.formState.errors.email && (
           <span role="alert" className="text-sm text-red-600 mt-1 block">
-            {errors.email.message}
+            {form.formState.errors.email.message}
           </span>
         )}
-        {!errors.email && email && !isCheckingEmail && (
+        {!form.formState.errors.email && email && !isCheckingEmail && (
           <span className="text-sm text-green-600 mt-1 block">
-            Email is available ✓
+            Email is available
           </span>
         )}
       </div>
 
       <button
         type="submit"
-        disabled={isSubmitting || isCheckingUsername || isCheckingEmail}
+        disabled={form.formState.isSubmitting || isCheckingUsername || isCheckingEmail}
         className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
       >
-        {isSubmitting ? 'Creating account...' : 'Create Account'}
+        {form.formState.isSubmitting ? 'Creating account...' : 'Create Account'}
       </button>
     </form>
   )

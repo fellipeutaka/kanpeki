@@ -28,16 +28,19 @@ const schema = z.object({
   password: z.string().min(8),
 })
 
-type FormData = z.infer<typeof schema>
-
-const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+// zodResolver infers types — no need for z.infer<typeof schema> on useForm
+const form = useForm({
   resolver: zodResolver(schema),
   defaultValues: { email: '', password: '' }, // REQUIRED to prevent uncontrolled warnings
 })
 
-<form onSubmit={handleSubmit(onSubmit)}>
-  <input {...register('email')} />
-  {errors.email && <span role="alert">{errors.email.message}</span>}
+const onSubmit = form.handleSubmit((value) => {
+  console.log(value)
+})
+
+<form onSubmit={onSubmit}>
+  <input {...form.register('email')} />
+  {form.formState.errors.email && <span role="alert">{form.formState.errors.email.message}</span>}
 </form>
 ```
 
@@ -92,14 +95,14 @@ z.fromJSONSchema({ type: "object", properties: { name: { type: "string" } } })
 
 **register** (for standard HTML inputs):
 ```typescript
-<input {...register('email')} /> // Uncontrolled, best performance
+<input {...form.register('email')} /> // Uncontrolled, best performance
 ```
 
 **Controller** (for third-party components):
 ```typescript
 <Controller
   name="category"
-  control={control}
+  control={form.control}
   render={({ field }) => <CustomSelect {...field} />} // MUST spread {...field}
 />
 ```
@@ -112,19 +115,19 @@ z.fromJSONSchema({ type: "object", properties: { name: { type: "string" } } })
 
 **Display errors**:
 ```typescript
-{errors.email && <span role="alert">{errors.email.message}</span>}
-{errors.address?.street?.message} // Nested errors (use optional chaining)
+{form.formState.errors.email && <span role="alert">{form.formState.errors.email.message}</span>}
+{form.formState.errors.address?.street?.message} // Nested errors (use optional chaining)
 ```
 
 **Server errors**:
 ```typescript
-const onSubmit = async (data) => {
+const onSubmit = form.handleSubmit(async (data) => {
   const res = await fetch('/api/submit', { method: 'POST', body: JSON.stringify(data) })
   if (!res.ok) {
     const { errors: serverErrors } = await res.json()
-    Object.entries(serverErrors).forEach(([field, msg]) => setError(field, { message: msg }))
+    Object.entries(serverErrors).forEach(([field, msg]) => form.setError(field, { message: msg }))
   }
-}
+})
 ```
 
 ---
@@ -133,12 +136,12 @@ const onSubmit = async (data) => {
 
 **useFieldArray** (dynamic lists):
 ```typescript
-const { fields, append, remove } = useFieldArray({ control, name: 'contacts' })
+const { fields, append, remove } = useFieldArray({ control: form.control, name: 'contacts' })
 
 {fields.map((field, index) => (
   <div key={field.id}> {/* CRITICAL: Use field.id, NOT index */}
-    <input {...register(`contacts.${index}.name` as const)} />
-    {errors.contacts?.[index]?.name && <span>{errors.contacts[index].name.message}</span>}
+    <input {...form.register(`contacts.${index}.name` as const)} />
+    {form.formState.errors.contacts?.[index]?.name && <span>{form.formState.errors.contacts[index].name.message}</span>}
     <button onClick={() => remove(index)}>Remove</button>
   </div>
 ))}
@@ -147,7 +150,7 @@ const { fields, append, remove } = useFieldArray({ control, name: 'contacts' })
 
 **Async Validation** (debounce):
 ```typescript
-const debouncedValidation = useDebouncedCallback(() => trigger('username'), 500)
+const debouncedValidation = useDebouncedCallback(() => form.trigger('username'), 500)
 ```
 
 **Multi-Step Forms**:
@@ -157,7 +160,7 @@ const step2 = z.object({ address: z.string() })
 const fullSchema = step1.merge(step2)
 
 const nextStep = async () => {
-  const isValid = await trigger(['name', 'email']) // Validate specific fields
+  const isValid = await form.trigger(['name', 'email']) // Validate specific fields
   if (isValid) setStep(2)
 }
 ```
@@ -281,13 +284,15 @@ const form2 = useForm({ resolver: zodResolver(schema2) }); // Fields 51-100
 
 ✅ **Use `field.id` as key** in useFieldArray (not index)
 
-✅ **Spread `{...field}`** in Controller render
+✅ **Use `const form = useForm(...)`** — access via `form.control`, `form.handleSubmit`, `form.formState`, `form.reset()`, etc. Do not destructure.
 
-✅ **Use `z.infer<typeof schema>`** for type inference
+✅ **`const onSubmit = form.handleSubmit((value) => {...})`** — extract the submit handler, don't inline it in `onSubmit={}`
+
+⚪ **`z.infer<typeof schema>`** is optional — `zodResolver` infers types automatically. Only use it when you need the type explicitly elsewhere (e.g. function signatures, props).
 
 ❌ **Never skip server validation** (security vulnerability)
 
-❌ **Never mutate values directly** (use `setValue()`)
+❌ **Never mutate values directly** (use `form.setValue()`)
 
 ❌ **Never mix controlled + uncontrolled** patterns
 

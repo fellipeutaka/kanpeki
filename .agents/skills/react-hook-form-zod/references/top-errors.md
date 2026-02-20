@@ -23,12 +23,15 @@ type FormData = z.infer<typeof schema> // Type issues
 ```typescript
 // Use correct Zod v4 patterns
 const schema = z.object({ name: z.string() })
-type FormData = z.infer<typeof schema>
 
-// Explicitly type useForm if needed
-const form = useForm<z.infer<typeof schema>>({
+// zodResolver infers types automatically — no z.infer generic needed
+const form = useForm({
   resolver: zodResolver(schema),
 })
+
+// Only use z.infer when the type is needed explicitly elsewhere
+type FormData = z.infer<typeof schema>
+function handleData(data: FormData) { ... }
 ```
 
 ---
@@ -68,20 +71,20 @@ const form = useForm({
 
 **Symptoms**:
 ```typescript
-// errors.address.street is undefined even though validation failed
-<span>{errors.address.street?.message}</span> // Shows nothing
+// form.formState.errors.address.street is undefined even though validation failed
+<span>{form.formState.errors.address.street?.message}</span> // Shows nothing
 ```
 
 **Solution**:
 ```typescript
 // Use optional chaining for nested errors
-{errors.address?.street && (
-  <span>{errors.address.street.message}</span>
+{form.formState.errors.address?.street && (
+  <span>{form.formState.errors.address.street.message}</span>
 )}
 
 // OR check if errors.address exists first
-{errors.address && errors.address.street && (
-  <span>{errors.address.street.message}</span>
+{form.formState.errors.address && form.formState.errors.address.street && (
+  <span>{form.formState.errors.address.street.message}</span>
 )}
 ```
 
@@ -124,7 +127,7 @@ const form = useForm({
 import { useDebouncedCallback } from 'use-debounce'
 
 const debouncedValidation = useDebouncedCallback(
-  () => trigger('username'),
+  () => form.trigger('username'),
   500 // Wait 500ms after user stops typing
 )
 
@@ -151,7 +154,7 @@ useEffect(() => {
 
 **Solution**:
 ```typescript
-const onSubmit = async (data) => {
+const onSubmit = form.handleSubmit(async (data) => {
   try {
     const response = await fetch('/api/submit', {
       method: 'POST',
@@ -163,7 +166,7 @@ const onSubmit = async (data) => {
 
       // Map server errors to form fields
       Object.entries(errors).forEach(([field, message]) => {
-        setError(field, {
+        form.setError(field, {
           type: 'server',
           message: Array.isArray(message) ? message[0] : message,
         })
@@ -172,12 +175,12 @@ const onSubmit = async (data) => {
       return
     }
   } catch (error) {
-    setError('root', {
+    form.setError('root', {
       type: 'server',
       message: 'Network error',
     })
   }
-}
+})
 ```
 
 ---
@@ -208,10 +211,10 @@ const form = useForm({
 useEffect(() => {
   async function loadData() {
     const data = await fetchData()
-    reset(data)
+    form.reset(data)
   }
   loadData()
-}, [reset])
+}, [form.reset])
 ```
 
 ---
@@ -226,6 +229,7 @@ useEffect(() => {
 ```typescript
 // BAD
 <Controller
+  control={form.control}
   render={({ field }) => (
     <CustomInput value={field.value} onChange={field.onChange} />
   )}
@@ -233,6 +237,7 @@ useEffect(() => {
 
 // GOOD - Spread all field props
 <Controller
+  control={form.control}
   render={({ field }) => (
     <CustomInput {...field} />
   )}
@@ -352,17 +357,17 @@ npm install @hookform/devtools
 ```typescript
 import { DevTool } from '@hookform/devtools'
 
-<DevTool control={control} />
+<DevTool control={form.control} />
 ```
 
 ### Log Form State
 
 ```typescript
 useEffect(() => {
-  console.log('Form State:', formState)
-  console.log('Errors:', errors)
-  console.log('Values:', getValues())
-}, [formState, errors, getValues])
+  console.log('Form State:', form.formState)
+  console.log('Errors:', form.formState.errors)
+  console.log('Values:', form.getValues())
+}, [form.formState, form.formState.errors, form.getValues])
 ```
 
 ### Validate on Change During Development

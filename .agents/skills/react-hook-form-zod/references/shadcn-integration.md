@@ -36,14 +36,18 @@ const schema = z.object({
 })
 
 function ProfileForm() {
-  const form = useForm<z.infer<typeof schema>>({
+  const form = useForm({
     resolver: zodResolver(schema),
     defaultValues: { username: '' },
   })
 
+  const onSubmit = form.handleSubmit((data) => {
+    // handle submission
+  })
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={onSubmit}>
         <FormField
           control={form.control}
           name="username"
@@ -355,9 +359,9 @@ const { fields, append, remove } = useFieldArray({
         <Input {...field} />
       </FormControl>
       {/* Custom error styling */}
-      {errors.username && (
+      {form.formState.errors.username && (
         <div className="text-sm font-medium text-destructive">
-          {errors.username.message}
+          {form.formState.errors.username.message}
         </div>
       )}
     </FormItem>

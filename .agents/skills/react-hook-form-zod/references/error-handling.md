@@ -9,10 +9,10 @@ Complete guide for handling and displaying form errors.
 ### 1. Inline Errors (Recommended)
 
 ```typescript
-<input {...register('email')} />
-{errors.email && (
+<input {...form.register('email')} />
+{form.formState.errors.email && (
   <span role="alert" className="text-red-600">
-    {errors.email.message}
+    {form.formState.errors.email.message}
   </span>
 )}
 ```
@@ -20,11 +20,11 @@ Complete guide for handling and displaying form errors.
 ### 2. Error Summary (Accessibility Best Practice)
 
 ```typescript
-{Object.keys(errors).length > 0 && (
+{Object.keys(form.formState.errors).length > 0 && (
   <div role="alert" aria-live="assertive" className="error-summary">
     <h3>Please fix the following errors:</h3>
     <ul>
-      {Object.entries(errors).map(([field, error]) => (
+      {Object.entries(form.formState.errors).map(([field, error]) => (
         <li key={field}>
           <strong>{field}:</strong> {error.message}
         </li>
@@ -37,11 +37,16 @@ Complete guide for handling and displaying form errors.
 ### 3. Toast Notifications
 
 ```typescript
-const onError = (errors) => {
-  toast.error(`Please fix ${Object.keys(errors).length} errors`)
-}
+const onSubmit = form.handleSubmit(
+  (data) => {
+    // success
+  },
+  (errors) => {
+    toast.error(`Please fix ${Object.keys(errors).length} errors`)
+  }
+)
 
-<form onSubmit={handleSubmit(onSubmit, onError)}>
+<form onSubmit={onSubmit}>
 ```
 
 ---
@@ -52,14 +57,14 @@ const onError = (errors) => {
 
 ```typescript
 <input
-  {...register('email')}
-  aria-invalid={errors.email ? 'true' : 'false'}
-  aria-describedby={errors.email ? 'email-error' : undefined}
+  {...form.register('email')}
+  aria-invalid={form.formState.errors.email ? 'true' : 'false'}
+  aria-describedby={form.formState.errors.email ? 'email-error' : undefined}
   aria-required="true"
 />
-{errors.email && (
+{form.formState.errors.email && (
   <span id="email-error" role="alert">
-    {errors.email.message}
+    {form.formState.errors.email.message}
   </span>
 )}
 ```
@@ -139,7 +144,7 @@ const formatError = (error: FieldError): string => {
 ## Server Error Integration
 
 ```typescript
-const onSubmit = async (data) => {
+const onSubmit = form.handleSubmit(async (data) => {
   try {
     const response = await fetch('/api/submit', {
       method: 'POST',
@@ -151,7 +156,7 @@ const onSubmit = async (data) => {
     if (!result.success && result.errors) {
       // Map server errors to form fields
       Object.entries(result.errors).forEach(([field, message]) => {
-        setError(field, {
+        form.setError(field, {
           type: 'server',
           message: Array.isArray(message) ? message[0] : message,
         })
@@ -159,12 +164,12 @@ const onSubmit = async (data) => {
     }
   } catch (error) {
     // Network error
-    setError('root', {
+    form.setError('root', {
       type: 'server',
       message: 'Unable to connect. Please try again.',
     })
   }
-}
+})
 ```
 
 ---
@@ -175,10 +180,10 @@ const onSubmit = async (data) => {
 
 ```typescript
 <input
-  {...register('email')}
+  {...form.register('email')}
   onChange={(e) => {
-    register('email').onChange(e)
-    clearErrors('email') // Clear error when user starts typing
+    form.register('email').onChange(e)
+    form.clearErrors('email') // Clear error when user starts typing
   }}
 />
 ```
@@ -186,12 +191,12 @@ const onSubmit = async (data) => {
 ### Clear All Errors on Submit Success
 
 ```typescript
-const onSubmit = async (data) => {
+const onSubmit = form.handleSubmit(async (data) => {
   const success = await submitData(data)
   if (success) {
-    reset() // Clears form and errors
+    form.reset() // Clears form and errors
   }
-}
+})
 ```
 
 ---
@@ -228,23 +233,23 @@ function FormError({ error }: { error?: FieldError }) {
 }
 
 // Usage
-<FormError error={errors.email} />
+<FormError error={form.formState.errors.email} />
 ```
 
 ### Field Group with Error
 
 ```typescript
-function FieldGroup({ name, label, type = 'text', register, errors }) {
+function FieldGroup({ name, label, type = 'text', form }) {
   return (
     <div className="field-group">
       <label htmlFor={name}>{label}</label>
       <input
         id={name}
         type={type}
-        {...register(name)}
-        aria-invalid={errors[name] ? 'true' : 'false'}
+        {...form.register(name)}
+        aria-invalid={form.formState.errors[name] ? 'true' : 'false'}
       />
-      {errors[name] && <FormError error={errors[name]} />}
+      {form.formState.errors[name] && <FormError error={form.formState.errors[name]} />}
     </div>
   )
 }
