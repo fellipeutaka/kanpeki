@@ -1,5 +1,13 @@
 # Component Patterns
 
+## Contents
+
+- File Structure
+- Simple Component Pattern (Button)
+- Multi-Part Component Pattern (Dialog)
+- Key Patterns (composeRenderProps, data-slot, VariantProps)
+- Customizing Components
+
 ## File Structure
 
 Every Kanpeki component follows this structure:

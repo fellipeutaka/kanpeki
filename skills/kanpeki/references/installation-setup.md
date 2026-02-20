@@ -1,5 +1,15 @@
 # Installation & Setup
 
+## Contents
+
+- Prerequisites
+- Install Core Dependencies
+- Configure CVA Utility
+- Configure Global Styles (full CSS)
+- Dark Mode Setup
+- Add Your First Component
+- Path Alias
+
 ## Prerequisites
 
 - Next.js 16+ with App Router
