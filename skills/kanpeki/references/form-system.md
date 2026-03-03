@@ -1,5 +1,13 @@
 # Form System
 
+## Contents
+
+- Field Component API
+- InputGroup Component API
+- ButtonGroup Component API
+- Native HTML Validation
+- Form Library Integration (links to RHF / TanStack Form guides)
+
 Kanpeki forms follow a 3-layer architecture:
 
 1. **Form** — submission coordinator (React Aria `<Form>` or plain `<form>`)
@@ -42,13 +50,17 @@ The `render` prop on `Field.Root` connects the Field to a React Aria form primit
 
 ### Field.Error with External Errors
 
-`Field.Error` accepts an `errors` prop for libraries like TanStack Form:
+`Field.Error` accepts an `errors` prop for form libraries:
 
 ```tsx
+{/* React Hook Form */}
+<Field.Error errors={[fieldState.error]} />
+
+{/* TanStack Form */}
 <Field.Error errors={field.state.meta.errors} />
 ```
 
-Each error object should have a `message` property. Multiple errors render as a list.
+Each error object should have a `message` property. Multiple errors render as a list. `undefined` entries are silently ignored — no conditional needed.
 
 ## InputGroup Component API
 
@@ -96,128 +108,6 @@ import { Button } from "~/components/ui/button";
 </ButtonGroup.Root>
 ```
 
-## TanStack Form Integration
-
-Full example with Zod validation:
-
-```tsx
-"use client";
-
-import { useForm } from "@tanstack/react-form";
-import { toast } from "sonner";
-import { z } from "zod";
-import { Button } from "~/components/ui/button";
-import { Field } from "~/components/ui/field";
-import { Input } from "~/components/ui/input";
-import { TextField } from "~/components/ui/text-field";
-import { Textarea } from "~/components/ui/textarea";
-
-const formSchema = z.object({
-  title: z
-    .string()
-    .min(5, "Title must be at least 5 characters.")
-    .max(32, "Title must be at most 32 characters."),
-  description: z
-    .string()
-    .min(20, "Description must be at least 20 characters.")
-    .max(200, "Description must be at most 200 characters."),
-});
-
-export function BugReportForm() {
-  const form = useForm({
-    defaultValues: { title: "", description: "" },
-    validators: { onChange: formSchema },
-    onSubmit: ({ value }) => {
-      toast(JSON.stringify(value, null, 2));
-    },
-  });
-
-  return (
-    <form
-      className="flex w-full max-w-md flex-col gap-4"
-      onSubmit={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        form.handleSubmit();
-      }}
-    >
-      <form.Field name="title">
-        {(field) => {
-          const isInvalid =
-            field.state.meta.isTouched && !field.state.meta.isValid;
-          return (
-            <Field.Root
-              render={
-                <TextField
-                  id={field.name}
-                  isInvalid={isInvalid}
-                  name={field.name}
-                  onBlur={field.handleBlur}
-                  onChange={field.handleChange}
-                  value={field.state.value}
-                />
-              }
-            >
-              <Field.Label>Title</Field.Label>
-              <Input placeholder="Bug report title" />
-              <Field.Description>
-                Provide a concise title for your report.
-              </Field.Description>
-              <Field.Error errors={field.state.meta.errors} />
-            </Field.Root>
-          );
-        }}
-      </form.Field>
-
-      <form.Field name="description">
-        {(field) => {
-          const isInvalid =
-            field.state.meta.isTouched && !field.state.meta.isValid;
-          return (
-            <Field.Root
-              render={
-                <TextField
-                  id={field.name}
-                  isInvalid={isInvalid}
-                  name={field.name}
-                  onBlur={field.handleBlur}
-                  onChange={field.handleChange}
-                  value={field.state.value}
-                />
-              }
-            >
-              <Field.Label>Description</Field.Label>
-              <Textarea
-                className="min-h-15"
-                placeholder="Describe the issue in detail..."
-              />
-              <Field.Description>
-                Include steps to reproduce the issue.
-              </Field.Description>
-              <Field.Error errors={field.state.meta.errors} />
-            </Field.Root>
-          );
-        }}
-      </form.Field>
-
-      <div className="flex gap-2">
-        <Button type="submit">Submit</Button>
-        <Button onPress={() => form.reset()} type="reset" variant="outline">
-          Reset
-        </Button>
-      </div>
-    </form>
-  );
-}
-```
-
-### Key Pattern: TanStack Form + Field.Root
-
-1. `form.Field` provides the field state and handlers
-2. `Field.Root render={<TextField ...>}` connects the React Aria primitive
-3. Pass `isInvalid`, `onChange`, `onBlur`, `value` from the field state to `TextField`
-4. `Field.Error errors={field.state.meta.errors}` renders validation messages
-
 ## Native HTML Validation
 
 ```tsx
@@ -238,3 +128,10 @@ import { Button } from "~/components/ui/button";
 ```
 
 React Aria's `<Form>` component handles native validation and displays `Field.Error` messages automatically.
+
+## Form Library Integration
+
+For integrating with form libraries, see the library-specific guides:
+
+- **React Hook Form** → [form-react-hook-form.md](form-react-hook-form.md)
+- **TanStack Form** → [form-tanstack-form.md](form-tanstack-form.md)

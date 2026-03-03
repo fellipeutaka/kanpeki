@@ -108,7 +108,7 @@ function ErrorToast({ message, onClose }: { message: string; onClose: () => void
         className="text-white hover:text-gray-200"
         aria-label="Close notification"
       >
-        ✕
+        x
       </button>
     </div>
   )
@@ -118,11 +118,7 @@ function ErrorToast({ message, onClose }: { message: string; onClose: () => void
  * Form with Custom Error Display
  */
 export function CustomErrorDisplayForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: '',
@@ -134,24 +130,25 @@ export function CustomErrorDisplayForm() {
 
   const [toastMessage, setToastMessage] = useState<string | null>(null)
 
-  const onSubmit = async (data: FormData) => {
-    console.log('Form data:', data)
-    setToastMessage('Form submitted successfully!')
-  }
-
-  const onError = (errors: any) => {
-    // Show toast on validation error
-    const errorCount = Object.keys(errors).length
-    setToastMessage(`Please fix ${errorCount} error${errorCount > 1 ? 's' : ''} before submitting`)
-  }
+  const onSubmit = form.handleSubmit(
+    async (data) => {
+      console.log('Form data:', data)
+      setToastMessage('Form submitted successfully!')
+    },
+    (errors) => {
+      // Show toast on validation error
+      const errorCount = Object.keys(errors).length
+      setToastMessage(`Please fix ${errorCount} error${errorCount > 1 ? 's' : ''} before submitting`)
+    },
+  )
 
   return (
     <div className="max-w-2xl mx-auto">
-      <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-6">
+      <form onSubmit={onSubmit} className="space-y-6">
         <h2 className="text-2xl font-bold">Registration Form</h2>
 
         {/* Error Summary */}
-        <ErrorSummary errors={errors} />
+        <ErrorSummary errors={form.formState.errors} />
 
         {/* Username */}
         <div>
@@ -160,15 +157,15 @@ export function CustomErrorDisplayForm() {
           </label>
           <input
             id="username"
-            {...register('username')}
-            aria-invalid={errors.username ? 'true' : 'false'}
-            aria-describedby={errors.username ? 'username-error' : undefined}
+            {...form.register('username')}
+            aria-invalid={form.formState.errors.username ? 'true' : 'false'}
+            aria-describedby={form.formState.errors.username ? 'username-error' : undefined}
             className={`w-full px-3 py-2 border rounded-md ${
-              errors.username ? 'border-red-500 focus:ring-red-500' : 'border-gray-300'
+              form.formState.errors.username ? 'border-red-500 focus:ring-red-500' : 'border-gray-300'
             }`}
           />
-          {errors.username && (
-            <FormError message={errors.username.message!} />
+          {form.formState.errors.username && (
+            <FormError message={form.formState.errors.username.message!} />
           )}
         </div>
 
@@ -180,14 +177,14 @@ export function CustomErrorDisplayForm() {
           <input
             id="email"
             type="email"
-            {...register('email')}
-            aria-invalid={errors.email ? 'true' : 'false'}
+            {...form.register('email')}
+            aria-invalid={form.formState.errors.email ? 'true' : 'false'}
             className={`w-full px-3 py-2 border rounded-md ${
-              errors.email ? 'border-red-500' : 'border-gray-300'
+              form.formState.errors.email ? 'border-red-500' : 'border-gray-300'
             }`}
           />
-          {errors.email && (
-            <FormError message={errors.email.message!} />
+          {form.formState.errors.email && (
+            <FormError message={form.formState.errors.email.message!} />
           )}
         </div>
 
@@ -199,14 +196,14 @@ export function CustomErrorDisplayForm() {
           <input
             id="password"
             type="password"
-            {...register('password')}
-            aria-invalid={errors.password ? 'true' : 'false'}
+            {...form.register('password')}
+            aria-invalid={form.formState.errors.password ? 'true' : 'false'}
             className={`w-full px-3 py-2 border rounded-md ${
-              errors.password ? 'border-red-500' : 'border-gray-300'
+              form.formState.errors.password ? 'border-red-500' : 'border-gray-300'
             }`}
           />
-          {errors.password && (
-            <FormError message={errors.password.message!} />
+          {form.formState.errors.password && (
+            <FormError message={form.formState.errors.password.message!} />
           )}
         </div>
 
@@ -218,23 +215,23 @@ export function CustomErrorDisplayForm() {
           <input
             id="age"
             type="number"
-            {...register('age', { valueAsNumber: true })}
-            aria-invalid={errors.age ? 'true' : 'false'}
+            {...form.register('age', { valueAsNumber: true })}
+            aria-invalid={form.formState.errors.age ? 'true' : 'false'}
             className={`w-full px-3 py-2 border rounded-md ${
-              errors.age ? 'border-red-500' : 'border-gray-300'
+              form.formState.errors.age ? 'border-red-500' : 'border-gray-300'
             }`}
           />
-          {errors.age && (
-            <FormError message={errors.age.message!} />
+          {form.formState.errors.age && (
+            <FormError message={form.formState.errors.age.message!} />
           )}
         </div>
 
         <button
           type="submit"
-          disabled={isSubmitting}
+          disabled={form.formState.isSubmitting}
           className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
         >
-          {isSubmitting ? 'Submitting...' : 'Submit'}
+          {form.formState.isSubmitting ? 'Submitting...' : 'Submit'}
         </button>
       </form>
 
@@ -266,20 +263,22 @@ export function CustomErrorDisplayForm() {
  * Alternative: Grouped Error Display
  */
 export function GroupedErrorDisplayForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
   })
 
+  const onSubmit = form.handleSubmit((data) => console.log(data))
+
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data))} className="max-w-2xl mx-auto space-y-6">
+    <form onSubmit={onSubmit} className="max-w-2xl mx-auto space-y-6">
       <h2 className="text-2xl font-bold">Grouped Error Display</h2>
 
       {/* All errors in single container */}
-      {Object.keys(errors).length > 0 && (
+      {Object.keys(form.formState.errors).length > 0 && (
         <div className="bg-red-50 border-l-4 border-red-600 p-4">
           <h3 className="font-medium text-red-900 mb-2">Please correct the following:</h3>
           <div className="space-y-2">
-            {Object.entries(errors).map(([field, error]) => (
+            {Object.entries(form.formState.errors).map(([field, error]) => (
               <div key={field} className="flex items-start gap-2 text-sm text-red-700">
                 <span className="font-medium capitalize">{field}:</span>
                 <span>{error.message}</span>
@@ -290,10 +289,10 @@ export function GroupedErrorDisplayForm() {
       )}
 
       {/* Form fields without individual error messages */}
-      <input {...register('username')} placeholder="Username" className="w-full px-3 py-2 border rounded" />
-      <input {...register('email')} placeholder="Email" className="w-full px-3 py-2 border rounded" />
-      <input {...register('password')} type="password" placeholder="Password" className="w-full px-3 py-2 border rounded" />
-      <input {...register('age', { valueAsNumber: true })} type="number" placeholder="Age" className="w-full px-3 py-2 border rounded" />
+      <input {...form.register('username')} placeholder="Username" className="w-full px-3 py-2 border rounded" />
+      <input {...form.register('email')} placeholder="Email" className="w-full px-3 py-2 border rounded" />
+      <input {...form.register('password')} type="password" placeholder="Password" className="w-full px-3 py-2 border rounded" />
+      <input {...form.register('age', { valueAsNumber: true })} type="number" placeholder="Age" className="w-full px-3 py-2 border rounded" />
 
       <button type="submit" className="w-full px-4 py-2 bg-blue-600 text-white rounded">
         Submit

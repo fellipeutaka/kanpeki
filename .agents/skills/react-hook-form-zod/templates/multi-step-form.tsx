@@ -59,13 +59,7 @@ const TOTAL_STEPS = 3
 export function MultiStepRegistrationForm() {
   const [currentStep, setCurrentStep] = useState(1)
 
-  const {
-    register,
-    handleSubmit,
-    trigger,
-    getValues,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>({
+  const form = useForm({
     resolver: zodResolver(fullFormSchema),
     mode: 'onChange', // Validate as user types
     defaultValues: {
@@ -94,7 +88,7 @@ export function MultiStepRegistrationForm() {
     }
 
     // Trigger validation for current step fields
-    const isValid = await trigger(fieldsToValidate)
+    const isValid = await form.trigger(fieldsToValidate)
 
     if (isValid) {
       setCurrentStep((prev) => Math.min(prev + 1, TOTAL_STEPS))
@@ -107,11 +101,11 @@ export function MultiStepRegistrationForm() {
   }
 
   // Final form submission
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = form.handleSubmit(async (data) => {
     console.log('Complete form data:', data)
     // Make API call
     alert('Form submitted successfully!')
-  }
+  })
 
   // Calculate progress percentage
   const progressPercentage = (currentStep / TOTAL_STEPS) * 100
@@ -153,7 +147,7 @@ export function MultiStepRegistrationForm() {
                     : 'bg-gray-300 text-gray-600'
                 }`}
               >
-                {step < currentStep ? '✓' : step}
+                {step < currentStep ? 'v' : step}
               </div>
               {step < TOTAL_STEPS && (
                 <div
@@ -167,7 +161,7 @@ export function MultiStepRegistrationForm() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={onSubmit} className="space-y-6">
         {/* Step 1: Personal Information */}
         {currentStep === 1 && (
           <div className="space-y-4">
@@ -177,22 +171,22 @@ export function MultiStepRegistrationForm() {
               <div>
                 <label className="block text-sm font-medium mb-1">First Name *</label>
                 <input
-                  {...register('firstName')}
+                  {...form.register('firstName')}
                   className="w-full px-3 py-2 border rounded-md"
                 />
-                {errors.firstName && (
-                  <span className="text-sm text-red-600">{errors.firstName.message}</span>
+                {form.formState.errors.firstName && (
+                  <span className="text-sm text-red-600">{form.formState.errors.firstName.message}</span>
                 )}
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-1">Last Name *</label>
                 <input
-                  {...register('lastName')}
+                  {...form.register('lastName')}
                   className="w-full px-3 py-2 border rounded-md"
                 />
-                {errors.lastName && (
-                  <span className="text-sm text-red-600">{errors.lastName.message}</span>
+                {form.formState.errors.lastName && (
+                  <span className="text-sm text-red-600">{form.formState.errors.lastName.message}</span>
                 )}
               </div>
             </div>
@@ -201,11 +195,11 @@ export function MultiStepRegistrationForm() {
               <label className="block text-sm font-medium mb-1">Email *</label>
               <input
                 type="email"
-                {...register('email')}
+                {...form.register('email')}
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.email && (
-                <span className="text-sm text-red-600">{errors.email.message}</span>
+              {form.formState.errors.email && (
+                <span className="text-sm text-red-600">{form.formState.errors.email.message}</span>
               )}
             </div>
 
@@ -213,12 +207,12 @@ export function MultiStepRegistrationForm() {
               <label className="block text-sm font-medium mb-1">Phone *</label>
               <input
                 type="tel"
-                {...register('phone')}
+                {...form.register('phone')}
                 placeholder="+1234567890"
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.phone && (
-                <span className="text-sm text-red-600">{errors.phone.message}</span>
+              {form.formState.errors.phone && (
+                <span className="text-sm text-red-600">{form.formState.errors.phone.message}</span>
               )}
             </div>
           </div>
@@ -232,11 +226,11 @@ export function MultiStepRegistrationForm() {
             <div>
               <label className="block text-sm font-medium mb-1">Street Address *</label>
               <input
-                {...register('street')}
+                {...form.register('street')}
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.street && (
-                <span className="text-sm text-red-600">{errors.street.message}</span>
+              {form.formState.errors.street && (
+                <span className="text-sm text-red-600">{form.formState.errors.street.message}</span>
               )}
             </div>
 
@@ -244,22 +238,22 @@ export function MultiStepRegistrationForm() {
               <div>
                 <label className="block text-sm font-medium mb-1">City *</label>
                 <input
-                  {...register('city')}
+                  {...form.register('city')}
                   className="w-full px-3 py-2 border rounded-md"
                 />
-                {errors.city && (
-                  <span className="text-sm text-red-600">{errors.city.message}</span>
+                {form.formState.errors.city && (
+                  <span className="text-sm text-red-600">{form.formState.errors.city.message}</span>
                 )}
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-1">State *</label>
                 <input
-                  {...register('state')}
+                  {...form.register('state')}
                   className="w-full px-3 py-2 border rounded-md"
                 />
-                {errors.state && (
-                  <span className="text-sm text-red-600">{errors.state.message}</span>
+                {form.formState.errors.state && (
+                  <span className="text-sm text-red-600">{form.formState.errors.state.message}</span>
                 )}
               </div>
             </div>
@@ -267,12 +261,12 @@ export function MultiStepRegistrationForm() {
             <div>
               <label className="block text-sm font-medium mb-1">ZIP Code *</label>
               <input
-                {...register('zipCode')}
+                {...form.register('zipCode')}
                 placeholder="12345 or 12345-6789"
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.zipCode && (
-                <span className="text-sm text-red-600">{errors.zipCode.message}</span>
+              {form.formState.errors.zipCode && (
+                <span className="text-sm text-red-600">{form.formState.errors.zipCode.message}</span>
               )}
             </div>
           </div>
@@ -286,11 +280,11 @@ export function MultiStepRegistrationForm() {
             <div>
               <label className="block text-sm font-medium mb-1">Username *</label>
               <input
-                {...register('username')}
+                {...form.register('username')}
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.username && (
-                <span className="text-sm text-red-600">{errors.username.message}</span>
+              {form.formState.errors.username && (
+                <span className="text-sm text-red-600">{form.formState.errors.username.message}</span>
               )}
             </div>
 
@@ -298,11 +292,11 @@ export function MultiStepRegistrationForm() {
               <label className="block text-sm font-medium mb-1">Password *</label>
               <input
                 type="password"
-                {...register('password')}
+                {...form.register('password')}
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.password && (
-                <span className="text-sm text-red-600">{errors.password.message}</span>
+              {form.formState.errors.password && (
+                <span className="text-sm text-red-600">{form.formState.errors.password.message}</span>
               )}
             </div>
 
@@ -310,11 +304,11 @@ export function MultiStepRegistrationForm() {
               <label className="block text-sm font-medium mb-1">Confirm Password *</label>
               <input
                 type="password"
-                {...register('confirmPassword')}
+                {...form.register('confirmPassword')}
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.confirmPassword && (
-                <span className="text-sm text-red-600">{errors.confirmPassword.message}</span>
+              {form.formState.errors.confirmPassword && (
+                <span className="text-sm text-red-600">{form.formState.errors.confirmPassword.message}</span>
               )}
             </div>
 
@@ -322,11 +316,11 @@ export function MultiStepRegistrationForm() {
             <div className="mt-6 p-4 bg-gray-50 rounded-md">
               <h3 className="font-medium mb-2">Review Your Information:</h3>
               <div className="text-sm space-y-1">
-                <p><strong>Name:</strong> {getValues('firstName')} {getValues('lastName')}</p>
-                <p><strong>Email:</strong> {getValues('email')}</p>
-                <p><strong>Phone:</strong> {getValues('phone')}</p>
-                <p><strong>Address:</strong> {getValues('street')}, {getValues('city')}, {getValues('state')} {getValues('zipCode')}</p>
-                <p><strong>Username:</strong> {getValues('username')}</p>
+                <p><strong>Name:</strong> {form.getValues('firstName')} {form.getValues('lastName')}</p>
+                <p><strong>Email:</strong> {form.getValues('email')}</p>
+                <p><strong>Phone:</strong> {form.getValues('phone')}</p>
+                <p><strong>Address:</strong> {form.getValues('street')}, {form.getValues('city')}, {form.getValues('state')} {form.getValues('zipCode')}</p>
+                <p><strong>Username:</strong> {form.getValues('username')}</p>
               </div>
             </div>
           </div>
@@ -354,10 +348,10 @@ export function MultiStepRegistrationForm() {
           ) : (
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={form.formState.isSubmitting}
               className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:bg-gray-400"
             >
-              {isSubmitting ? 'Submitting...' : 'Complete Registration'}
+              {form.formState.isSubmitting ? 'Submitting...' : 'Complete Registration'}
             </button>
           )}
         </div>

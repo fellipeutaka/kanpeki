@@ -30,12 +30,7 @@ const contactListSchema = z.object({
 type ContactListData = z.infer<typeof contactListSchema>
 
 export function DynamicContactList() {
-  const {
-    register,
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<ContactListData>({
+  const form = useForm({
     resolver: zodResolver(contactListSchema),
     defaultValues: {
       contacts: [{ name: '', email: '', phone: '', isPrimary: false }],
@@ -43,22 +38,22 @@ export function DynamicContactList() {
   })
 
   const { fields, append, remove, insert, update } = useFieldArray({
-    control,
+    control: form.control,
     name: 'contacts',
   })
 
-  const onSubmit = (data: ContactListData) => {
+  const onSubmit = form.handleSubmit((data) => {
     console.log('Contacts:', data)
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-2xl mx-auto">
+    <form onSubmit={onSubmit} className="space-y-6 max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold">Contact List</h2>
 
       {/* Array error (min/max length) */}
-      {errors.contacts && !Array.isArray(errors.contacts) && (
+      {form.formState.errors.contacts && !Array.isArray(form.formState.errors.contacts) && (
         <div role="alert" className="text-sm text-red-600 bg-red-50 p-3 rounded">
-          {errors.contacts.message}
+          {form.formState.errors.contacts.message}
         </div>
       )}
 
@@ -87,12 +82,12 @@ export function DynamicContactList() {
               </label>
               <input
                 id={`contacts.${index}.name`}
-                {...register(`contacts.${index}.name` as const)}
+                {...form.register(`contacts.${index}.name` as const)}
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.contacts?.[index]?.name && (
+              {form.formState.errors.contacts?.[index]?.name && (
                 <span role="alert" className="text-sm text-red-600 mt-1 block">
-                  {errors.contacts[index]?.name?.message}
+                  {form.formState.errors.contacts[index]?.name?.message}
                 </span>
               )}
             </div>
@@ -105,12 +100,12 @@ export function DynamicContactList() {
               <input
                 id={`contacts.${index}.email`}
                 type="email"
-                {...register(`contacts.${index}.email` as const)}
+                {...form.register(`contacts.${index}.email` as const)}
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.contacts?.[index]?.email && (
+              {form.formState.errors.contacts?.[index]?.email && (
                 <span role="alert" className="text-sm text-red-600 mt-1 block">
-                  {errors.contacts[index]?.email?.message}
+                  {form.formState.errors.contacts[index]?.email?.message}
                 </span>
               )}
             </div>
@@ -123,13 +118,13 @@ export function DynamicContactList() {
               <input
                 id={`contacts.${index}.phone`}
                 type="tel"
-                {...register(`contacts.${index}.phone` as const)}
+                {...form.register(`contacts.${index}.phone` as const)}
                 placeholder="+1234567890"
                 className="w-full px-3 py-2 border rounded-md"
               />
-              {errors.contacts?.[index]?.phone && (
+              {form.formState.errors.contacts?.[index]?.phone && (
                 <span role="alert" className="text-sm text-red-600 mt-1 block">
-                  {errors.contacts[index]?.phone?.message}
+                  {form.formState.errors.contacts[index]?.phone?.message}
                 </span>
               )}
             </div>
@@ -139,7 +134,7 @@ export function DynamicContactList() {
               <input
                 id={`contacts.${index}.isPrimary`}
                 type="checkbox"
-                {...register(`contacts.${index}.isPrimary` as const)}
+                {...form.register(`contacts.${index}.isPrimary` as const)}
                 className="h-4 w-4 rounded"
               />
               <label htmlFor={`contacts.${index}.isPrimary`} className="ml-2 text-sm">
@@ -194,7 +189,7 @@ const skillsFormSchema = z.object({
 type SkillsFormData = z.infer<typeof skillsFormSchema>
 
 export function DynamicSkillsForm() {
-  const { register, control, handleSubmit, formState: { errors } } = useForm<SkillsFormData>({
+  const form = useForm({
     resolver: zodResolver(skillsFormSchema),
     defaultValues: {
       skills: [],
@@ -202,7 +197,7 @@ export function DynamicSkillsForm() {
   })
 
   const { fields, append, remove } = useFieldArray({
-    control,
+    control: form.control,
     name: 'skills',
   })
 
@@ -215,17 +210,17 @@ export function DynamicSkillsForm() {
     })
   }
 
-  const onSubmit = (data: SkillsFormData) => {
+  const onSubmit = form.handleSubmit((data) => {
     console.log('Skills:', data)
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-2xl mx-auto">
+    <form onSubmit={onSubmit} className="space-y-6 max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold">Your Skills</h2>
 
-      {errors.skills && !Array.isArray(errors.skills) && (
+      {form.formState.errors.skills && !Array.isArray(form.formState.errors.skills) && (
         <div role="alert" className="text-sm text-red-600">
-          {errors.skills.message}
+          {form.formState.errors.skills.message}
         </div>
       )}
 
@@ -252,17 +247,17 @@ export function DynamicSkillsForm() {
           <div key={field.id} className="border rounded p-3 flex gap-3 items-start">
             <div className="flex-1 space-y-2">
               <input
-                {...register(`skills.${index}.name` as const)}
+                {...form.register(`skills.${index}.name` as const)}
                 placeholder="Skill name"
                 className="w-full px-2 py-1 border rounded text-sm"
               />
-              {errors.skills?.[index]?.name && (
-                <span className="text-xs text-red-600">{errors.skills[index]?.name?.message}</span>
+              {form.formState.errors.skills?.[index]?.name && (
+                <span className="text-xs text-red-600">{form.formState.errors.skills[index]?.name?.message}</span>
               )}
 
               <div className="grid grid-cols-2 gap-2">
                 <select
-                  {...register(`skills.${index}.level` as const)}
+                  {...form.register(`skills.${index}.level` as const)}
                   className="px-2 py-1 border rounded text-sm"
                 >
                   <option value="beginner">Beginner</option>
@@ -273,7 +268,7 @@ export function DynamicSkillsForm() {
 
                 <input
                   type="number"
-                  {...register(`skills.${index}.yearsOfExperience` as const, { valueAsNumber: true })}
+                  {...form.register(`skills.${index}.yearsOfExperience` as const, { valueAsNumber: true })}
                   placeholder="Years"
                   className="px-2 py-1 border rounded text-sm"
                 />
@@ -285,7 +280,7 @@ export function DynamicSkillsForm() {
               onClick={() => remove(index)}
               className="text-red-600 hover:text-red-800 text-sm px-2"
             >
-              ✕
+              x
             </button>
           </div>
         ))}

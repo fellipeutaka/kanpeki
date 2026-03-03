@@ -86,13 +86,7 @@ const profileSchema = z.object({
 type ProfileFormData = z.infer<typeof profileSchema>
 
 export function AdvancedProfileForm() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors, isSubmitting },
-    setValue,
-  } = useForm<ProfileFormData>({
+  const form = useForm({
     resolver: zodResolver(profileSchema),
     defaultValues: {
       firstName: '',
@@ -109,22 +103,22 @@ export function AdvancedProfileForm() {
       skills: [''], // Start with one empty skill
       isStudent: false,
       school: '',
-      experience: 'junior',
+      experience: 'junior' as const,
       yearsOfExperience: 0,
       agreedToTerms: false,
     },
   })
 
   // Watch isStudent to conditionally show school field
-  const isStudent = watch('isStudent')
+  const isStudent = form.watch('isStudent')
 
-  const onSubmit = async (data: ProfileFormData) => {
+  const onSubmit = form.handleSubmit(async (data) => {
     console.log('Profile data:', data)
     // API call
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-2xl mx-auto">
+    <form onSubmit={onSubmit} className="space-y-6 max-w-2xl mx-auto">
       <h2 className="text-3xl font-bold">User Profile</h2>
 
       {/* Basic Information */}
@@ -138,12 +132,12 @@ export function AdvancedProfileForm() {
             </label>
             <input
               id="firstName"
-              {...register('firstName')}
+              {...form.register('firstName')}
               className="w-full px-3 py-2 border rounded-md"
             />
-            {errors.firstName && (
+            {form.formState.errors.firstName && (
               <span role="alert" className="text-sm text-red-600 mt-1 block">
-                {errors.firstName.message}
+                {form.formState.errors.firstName.message}
               </span>
             )}
           </div>
@@ -154,12 +148,12 @@ export function AdvancedProfileForm() {
             </label>
             <input
               id="lastName"
-              {...register('lastName')}
+              {...form.register('lastName')}
               className="w-full px-3 py-2 border rounded-md"
             />
-            {errors.lastName && (
+            {form.formState.errors.lastName && (
               <span role="alert" className="text-sm text-red-600 mt-1 block">
-                {errors.lastName.message}
+                {form.formState.errors.lastName.message}
               </span>
             )}
           </div>
@@ -172,12 +166,12 @@ export function AdvancedProfileForm() {
           <input
             id="email"
             type="email"
-            {...register('email')}
+            {...form.register('email')}
             className="w-full px-3 py-2 border rounded-md"
           />
-          {errors.email && (
+          {form.formState.errors.email && (
             <span role="alert" className="text-sm text-red-600 mt-1 block">
-              {errors.email.message}
+              {form.formState.errors.email.message}
             </span>
           )}
         </div>
@@ -189,13 +183,13 @@ export function AdvancedProfileForm() {
           <input
             id="phone"
             type="tel"
-            {...register('phone')}
+            {...form.register('phone')}
             placeholder="+1234567890"
             className="w-full px-3 py-2 border rounded-md"
           />
-          {errors.phone && (
+          {form.formState.errors.phone && (
             <span role="alert" className="text-sm text-red-600 mt-1 block">
-              {errors.phone.message}
+              {form.formState.errors.phone.message}
             </span>
           )}
         </div>
@@ -211,12 +205,12 @@ export function AdvancedProfileForm() {
           </label>
           <input
             id="street"
-            {...register('address.street')}
+            {...form.register('address.street')}
             className="w-full px-3 py-2 border rounded-md"
           />
-          {errors.address?.street && (
+          {form.formState.errors.address?.street && (
             <span role="alert" className="text-sm text-red-600 mt-1 block">
-              {errors.address.street.message}
+              {form.formState.errors.address.street.message}
             </span>
           )}
         </div>
@@ -228,12 +222,12 @@ export function AdvancedProfileForm() {
             </label>
             <input
               id="city"
-              {...register('address.city')}
+              {...form.register('address.city')}
               className="w-full px-3 py-2 border rounded-md"
             />
-            {errors.address?.city && (
+            {form.formState.errors.address?.city && (
               <span role="alert" className="text-sm text-red-600 mt-1 block">
-                {errors.address.city.message}
+                {form.formState.errors.address.city.message}
               </span>
             )}
           </div>
@@ -244,12 +238,12 @@ export function AdvancedProfileForm() {
             </label>
             <input
               id="state"
-              {...register('address.state')}
+              {...form.register('address.state')}
               className="w-full px-3 py-2 border rounded-md"
             />
-            {errors.address?.state && (
+            {form.formState.errors.address?.state && (
               <span role="alert" className="text-sm text-red-600 mt-1 block">
-                {errors.address.state.message}
+                {form.formState.errors.address.state.message}
               </span>
             )}
           </div>
@@ -262,13 +256,13 @@ export function AdvancedProfileForm() {
             </label>
             <input
               id="zipCode"
-              {...register('address.zipCode')}
+              {...form.register('address.zipCode')}
               placeholder="12345 or 12345-6789"
               className="w-full px-3 py-2 border rounded-md"
             />
-            {errors.address?.zipCode && (
+            {form.formState.errors.address?.zipCode && (
               <span role="alert" className="text-sm text-red-600 mt-1 block">
-                {errors.address.zipCode.message}
+                {form.formState.errors.address.zipCode.message}
               </span>
             )}
           </div>
@@ -279,12 +273,12 @@ export function AdvancedProfileForm() {
             </label>
             <input
               id="country"
-              {...register('address.country')}
+              {...form.register('address.country')}
               className="w-full px-3 py-2 border rounded-md"
             />
-            {errors.address?.country && (
+            {form.formState.errors.address?.country && (
               <span role="alert" className="text-sm text-red-600 mt-1 block">
-                {errors.address.country.message}
+                {form.formState.errors.address.country.message}
               </span>
             )}
           </div>
@@ -303,13 +297,13 @@ export function AdvancedProfileForm() {
           </label>
           <input
             id="skills"
-            {...register('skills.0')} // Simplified - see dynamic-fields.tsx for proper array handling
+            {...form.register('skills.0')} // Simplified - see dynamic-fields.tsx for proper array handling
             placeholder="React, TypeScript, Node.js"
             className="w-full px-3 py-2 border rounded-md"
           />
-          {errors.skills && (
+          {form.formState.errors.skills && (
             <span role="alert" className="text-sm text-red-600 mt-1 block">
-              {errors.skills.message || errors.skills[0]?.message}
+              {form.formState.errors.skills.message || form.formState.errors.skills[0]?.message}
             </span>
           )}
         </div>
@@ -325,7 +319,7 @@ export function AdvancedProfileForm() {
           </label>
           <select
             id="experience"
-            {...register('experience')}
+            {...form.register('experience')}
             className="w-full px-3 py-2 border rounded-md"
           >
             <option value="junior">Junior</option>
@@ -333,9 +327,9 @@ export function AdvancedProfileForm() {
             <option value="senior">Senior</option>
             <option value="lead">Lead</option>
           </select>
-          {errors.experience && (
+          {form.formState.errors.experience && (
             <span role="alert" className="text-sm text-red-600 mt-1 block">
-              {errors.experience.message}
+              {form.formState.errors.experience.message}
             </span>
           )}
         </div>
@@ -347,12 +341,12 @@ export function AdvancedProfileForm() {
           <input
             id="yearsOfExperience"
             type="number"
-            {...register('yearsOfExperience', { valueAsNumber: true })}
+            {...form.register('yearsOfExperience', { valueAsNumber: true })}
             className="w-full px-3 py-2 border rounded-md"
           />
-          {errors.yearsOfExperience && (
+          {form.formState.errors.yearsOfExperience && (
             <span role="alert" className="text-sm text-red-600 mt-1 block">
-              {errors.yearsOfExperience.message}
+              {form.formState.errors.yearsOfExperience.message}
             </span>
           )}
         </div>
@@ -366,7 +360,7 @@ export function AdvancedProfileForm() {
           <input
             id="isStudent"
             type="checkbox"
-            {...register('isStudent')}
+            {...form.register('isStudent')}
             className="h-4 w-4 rounded"
           />
           <label htmlFor="isStudent" className="ml-2 text-sm">
@@ -382,12 +376,12 @@ export function AdvancedProfileForm() {
             </label>
             <input
               id="school"
-              {...register('school')}
+              {...form.register('school')}
               className="w-full px-3 py-2 border rounded-md"
             />
-            {errors.school && (
+            {form.formState.errors.school && (
               <span role="alert" className="text-sm text-red-600 mt-1 block">
-                {errors.school.message}
+                {form.formState.errors.school.message}
               </span>
             )}
           </div>
@@ -400,16 +394,16 @@ export function AdvancedProfileForm() {
           <input
             id="agreedToTerms"
             type="checkbox"
-            {...register('agreedToTerms')}
+            {...form.register('agreedToTerms')}
             className="h-4 w-4 rounded mt-1"
           />
           <label htmlFor="agreedToTerms" className="ml-2 text-sm">
             I agree to the terms and conditions *
           </label>
         </div>
-        {errors.agreedToTerms && (
+        {form.formState.errors.agreedToTerms && (
           <span role="alert" className="text-sm text-red-600 block">
-            {errors.agreedToTerms.message}
+            {form.formState.errors.agreedToTerms.message}
           </span>
         )}
       </section>
@@ -417,10 +411,10 @@ export function AdvancedProfileForm() {
       {/* Submit Button */}
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={form.formState.isSubmitting}
         className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
       >
-        {isSubmitting ? 'Saving...' : 'Save Profile'}
+        {form.formState.isSubmitting ? 'Saving...' : 'Save Profile'}
       </button>
     </form>
   )

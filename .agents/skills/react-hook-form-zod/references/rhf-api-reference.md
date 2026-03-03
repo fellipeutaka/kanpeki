@@ -7,20 +7,12 @@ Complete API reference for React Hook Form v7.65.0
 ## useForm Hook
 
 ```typescript
-const {
-  register,
-  handleSubmit,
-  watch,
-  formState,
-  setValue,
-  getValues,
-  reset,
-  trigger,
-  control,
-  setError,
-  clearErrors,
-  setFocus,
-} = useForm<FormData>(options)
+const form = useForm(options)
+
+// Access methods/state via form object:
+// form.register, form.handleSubmit, form.watch, form.formState,
+// form.setValue, form.getValues, form.reset, form.trigger,
+// form.control, form.setError, form.clearErrors, form.setFocus
 ```
 
 ### Options
@@ -45,7 +37,7 @@ const {
 Register input and apply validation rules.
 
 ```typescript
-<input {...register('fieldName', options)} />
+<input {...form.register('fieldName', options)} />
 ```
 
 **Options**:
@@ -69,15 +61,16 @@ Register input and apply validation rules.
 Wraps your form submission handler.
 
 ```typescript
-<form onSubmit={handleSubmit(onSubmit, onError)}>
+const onSubmit = form.handleSubmit(
+  (data) => {
+    // Valid data
+  },
+  (errors) => {
+    // Validation errors
+  }
+)
 
-function onSubmit(data: FormData) {
-  // Valid data
-}
-
-function onError(errors: FieldErrors) {
-  // Validation errors
-}
+<form onSubmit={onSubmit}>
 ```
 
 ---
@@ -88,21 +81,21 @@ Watch specified inputs and return their values.
 
 ```typescript
 // Watch all fields
-const values = watch()
+const values = form.watch()
 
 // Watch specific field
-const email = watch('email')
+const email = form.watch('email')
 
 // Watch multiple fields
-const [email, password] = watch(['email', 'password'])
+const [email, password] = form.watch(['email', 'password'])
 
 // Watch with callback
 useEffect(() => {
-  const subscription = watch((value, { name, type }) => {
+  const subscription = form.watch((value, { name, type }) => {
     console.log(value, name, type)
   })
   return () => subscription.unsubscribe()
-}, [watch])
+}, [form.watch])
 ```
 
 ---
@@ -123,7 +116,7 @@ const {
   isValid,        // Form is valid
   errors,         // Validation errors
   submitCount,    // Number of submissions
-} = formState
+} = form.formState
 ```
 
 ---
@@ -133,7 +126,7 @@ const {
 Set field value programmatically.
 
 ```typescript
-setValue('fieldName', value, options)
+form.setValue('fieldName', value, options)
 
 // Options
 {
@@ -151,13 +144,13 @@ Get current form values.
 
 ```typescript
 // Get all values
-const values = getValues()
+const values = form.getValues()
 
 // Get specific field
-const email = getValues('email')
+const email = form.getValues('email')
 
 // Get multiple fields
-const [email, password] = getValues(['email', 'password'])
+const [email, password] = form.getValues(['email', 'password'])
 ```
 
 ---
@@ -167,11 +160,11 @@ const [email, password] = getValues(['email', 'password'])
 Reset form to default values.
 
 ```typescript
-reset() // Reset to defaultValues
+form.reset() // Reset to defaultValues
 
-reset({ email: '', password: '' }) // Reset to specific values
+form.reset({ email: '', password: '' }) // Reset to specific values
 
-reset(undefined, {
+form.reset(undefined, {
   keepErrors: boolean,
   keepDirty: boolean,
   keepIsSubmitted: boolean,
@@ -189,13 +182,13 @@ Manually trigger validation.
 
 ```typescript
 // Trigger all fields
-await trigger()
+await form.trigger()
 
 // Trigger specific field
-await trigger('email')
+await form.trigger('email')
 
 // Trigger multiple fields
-await trigger(['email', 'password'])
+await form.trigger(['email', 'password'])
 ```
 
 ---
@@ -205,13 +198,13 @@ await trigger(['email', 'password'])
 Set field error manually.
 
 ```typescript
-setError('fieldName', {
+form.setError('fieldName', {
   type: 'manual',
   message: 'Error message',
 })
 
 // Root error (not tied to specific field)
-setError('root', {
+form.setError('root', {
   type: 'server',
   message: 'Server error',
 })
@@ -224,11 +217,11 @@ setError('root', {
 Clear field errors.
 
 ```typescript
-clearErrors() // Clear all errors
+form.clearErrors() // Clear all errors
 
-clearErrors('email') // Clear specific field
+form.clearErrors('email') // Clear specific field
 
-clearErrors(['email', 'password']) // Clear multiple fields
+form.clearErrors(['email', 'password']) // Clear multiple fields
 ```
 
 ---
@@ -238,7 +231,7 @@ clearErrors(['email', 'password']) // Clear multiple fields
 Focus on specific field.
 
 ```typescript
-setFocus('fieldName', { shouldSelect: true })
+form.setFocus('fieldName', { shouldSelect: true })
 ```
 
 ---
@@ -252,7 +245,7 @@ import { Controller } from 'react-hook-form'
 
 <Controller
   name="fieldName"
-  control={control}
+  control={form.control}
   defaultValue=""
   rules={{ required: true }}
   render={({ field, fieldState, formState }) => (
@@ -304,7 +297,7 @@ Manage dynamic field arrays.
 import { useFieldArray } from 'react-hook-form'
 
 const { fields, append, prepend, remove, insert, update, replace } = useFieldArray({
-  control,
+  control: form.control,
   name: 'items',
   keyName: 'id', // Default: 'id'
 })
@@ -323,7 +316,7 @@ const { fields, append, prepend, remove, insert, update, replace } = useFieldArr
 ```typescript
 {fields.map((field, index) => (
   <div key={field.id}> {/* Use field.id! */}
-    <input {...register(`items.${index}.name`)} />
+    <input {...form.register(`items.${index}.name`)} />
   </div>
 ))}
 ```
@@ -338,7 +331,7 @@ Subscribe to input changes without re-rendering entire form.
 import { useWatch } from 'react-hook-form'
 
 const email = useWatch({
-  control,
+  control: form.control,
   name: 'email',
   defaultValue: '',
 })
@@ -353,7 +346,7 @@ Subscribe to form state without re-rendering entire form.
 ```typescript
 import { useFormState } from 'react-hook-form'
 
-const { isDirty, isValid } = useFormState({ control })
+const { isDirty, isValid } = useFormState({ control: form.control })
 ```
 
 ---
@@ -366,19 +359,19 @@ Access form context (for deeply nested components).
 import { useFormContext } from 'react-hook-form'
 
 function NestedComponent() {
-  const { register, formState: { errors } } = useFormContext()
+  const form = useFormContext()
 
-  return <input {...register('email')} />
+  return <input {...form.register('email')} />
 }
 
 // Wrap form with FormProvider
 import { FormProvider, useForm } from 'react-hook-form'
 
 function App() {
-  const methods = useForm()
+  const form = useForm()
 
   return (
-    <FormProvider {...methods}>
+    <FormProvider {...form}>
       <form>
         <NestedComponent />
       </form>
@@ -397,7 +390,7 @@ Helper component for displaying errors (from @hookform/error-message).
 import { ErrorMessage } from '@hookform/error-message'
 
 <ErrorMessage
-  errors={errors}
+  errors={form.formState.errors}
   name="email"
   render={({ message }) => <span className="error">{message}</span>}
 />
@@ -412,7 +405,7 @@ Development tool for debugging (from @hookform/devtools).
 ```typescript
 import { DevTool } from '@hookform/devtools'
 
-<DevTool control={control} />
+<DevTool control={form.control} />
 ```
 
 ---

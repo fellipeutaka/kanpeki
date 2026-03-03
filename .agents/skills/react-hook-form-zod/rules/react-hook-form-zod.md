@@ -8,13 +8,13 @@ paths: "**/*.tsx", "**/*form*.ts", "**/*.ts"
 
 ```typescript
 /* ❌ Causes uncontrolled→controlled warning */
-const { register } = useForm<FormData>({
+const form = useForm({
   resolver: zodResolver(schema),
   // No defaultValues!
 })
 
 /* ✅ Always provide defaultValues */
-const { register } = useForm<FormData>({
+const form = useForm({
   resolver: zodResolver(schema),
   defaultValues: {
     name: '',
@@ -29,12 +29,12 @@ const { register } = useForm<FormData>({
 ```typescript
 /* ❌ Using index causes infinite re-renders */
 {fields.map((field, index) => (
-  <input key={index} {...register(`items.${index}.name`)} />
+  <input key={index} {...form.register(`items.${index}.name`)} />
 ))}
 
 /* ✅ Use field.id */
 {fields.map((field, index) => (
-  <input key={field.id} {...register(`items.${index}.name`)} />
+  <input key={field.id} {...form.register(`items.${index}.name`)} />
 ))}
 ```
 
@@ -44,7 +44,7 @@ const { register } = useForm<FormData>({
 /* ❌ Field doesn't update */
 <Controller
   name="status"
-  control={control}
+  control={form.control}
   render={({ field }) => (
     <Select value={field.value} onChange={field.onChange} />
   )}
@@ -53,7 +53,7 @@ const { register } = useForm<FormData>({
 /* ✅ Spread all field props */
 <Controller
   name="status"
-  control={control}
+  control={form.control}
   render={({ field }) => (
     <Select {...field} />
   )}
@@ -64,10 +64,10 @@ const { register } = useForm<FormData>({
 
 ```typescript
 /* ❌ May crash on undefined */
-errors.address.street.message
+form.formState.errors.address.street.message
 
 /* ✅ Use optional chaining */
-errors.address?.street?.message
+form.formState.errors.address?.street?.message
 ```
 
 ## Server Validation Required
@@ -93,16 +93,16 @@ app.post('/users', async (c) => {
 
 ```typescript
 /* ✅ Display server validation errors */
-const onSubmit = async (data) => {
+const onSubmit = form.handleSubmit(async (data) => {
   const response = await api.post('/users', data)
   if (!response.ok) {
     const { errors } = await response.json()
     // Set field-specific errors
     Object.entries(errors).forEach(([field, message]) => {
-      setError(field, { message })
+      form.setError(field, { message })
     })
   }
-}
+})
 ```
 
 ## Zod Refinement: Include path
@@ -133,6 +133,6 @@ const schema = z.object({
 | No `defaultValues` | Always provide `defaultValues: { field: '' }` |
 | `key={index}` in useFieldArray | `key={field.id}` |
 | Partial field props | Spread `{...field}` |
-| `errors.a.b.message` | `errors.a?.b?.message` |
+| `errors.a.b.message` | `form.formState.errors.a?.b?.message` |
 | Client-only validation | Validate on server too |
 | Missing refinement path | Add `path: ['fieldName']` |

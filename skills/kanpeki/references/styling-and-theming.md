@@ -1,5 +1,15 @@
 # Styling & Theming
 
+## Contents
+
+- CVA (Class Variance Authority)
+- `cn()` Utility
+- Color Tokens (OKLCH)
+- React Aria State Selectors
+- `tailwindcss-motion` Plugin
+- Dark Mode
+- Overriding Component Styles
+
 ## CVA (Class Variance Authority)
 
 Kanpeki uses CVA beta (not the stable `class-variance-authority` package).

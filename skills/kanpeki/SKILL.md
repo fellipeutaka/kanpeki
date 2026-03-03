@@ -1,6 +1,6 @@
 ---
 name: kanpeki
-description: "Use Kanpeki component library in React projects. Activate when user wants to add, use, customize, or compose accessible UI components from Kanpeki (@kanpeki/*). Covers installation, component patterns, forms, theming, and dark mode with React Aria Components + Tailwind CSS 4.1 + CVA."
+description: "Use Kanpeki component library in React projects. Activate when user wants to add, use, customize, or compose accessible UI components from Kanpeki (@kanpeki/*). Triggers: shadcn CLI, copy-paste components, Field.Root, composeRenderProps, ~/components/ui/*, React Aria Components + Tailwind CSS 4.1 + CVA. Covers installation, component patterns, forms (React Hook Form, TanStack Form), theming, and dark mode."
 ---
 
 # Kanpeki
@@ -11,161 +11,45 @@ Docs: https://kanpeki.vercel.app
 
 ## Quick Start
 
-### 1. Install Dependencies
-
-```bash
-npm install cva@beta tailwind-merge tailwindcss-motion tailwindcss-react-aria-components react-aria-components -D
-```
-
-Remove shadcn defaults if present:
-```bash
-npm remove class-variance-authority clsx tw-animate-css
-```
-
-### 2. Create CVA Utility
-
-`src/lib/cva.ts`:
-```ts
-import { defineConfig } from "cva";
-import { twMerge } from "tailwind-merge";
-
-export const { cva, cx: cn, compose } = defineConfig({
-  hooks: {
-    onComplete: (className) => twMerge(className),
-  },
-});
-```
-
-### 3. Configure Styles
-
-Add to `globals.css`: Tailwind imports, plugins (`tailwindcss-react-aria-components`, `tailwindcss-motion`), `@custom-variant dark`, and OKLCH color tokens via `@theme inline`.
-
-See [references/installation-setup.md](references/installation-setup.md) for full CSS.
-
-### 4. Add Components
+Install dependencies, create `~/lib/cva.ts`, configure `globals.css`, then add components:
 
 ```bash
 npx shadcn@latest add @kanpeki/button
-npx shadcn@latest add @kanpeki/dialog
-npx shadcn@latest add @kanpeki/field
 ```
 
 Components are copied to `~/components/ui/<name>/`. You own the code.
+
+See [references/installation-setup.md](references/installation-setup.md) for full setup (deps, CVA config, globals.css, dark mode, path alias).
 
 ## Component Architecture
 
 Each component has: `index.ts` (exports), `<name>.tsx` (implementation), `styles.ts` (CVA variants).
 
-### Simple Components
+- **Simple components** — single export: `import { Button } from "~/components/ui/button"`
+- **Multi-part components** — namespace exports: `import { Dialog } from "~/components/ui/dialog"` → `Dialog.Root`, `Dialog.Content`, etc.
 
-Single export. Example:
+Multi-part components: Accordion, Breadcrumb, ButtonGroup, Calendar, Card, Carousel, Chart, Combobox, DateField, DatePicker, Dialog, Drawer, Field, InputGroup, ListBox, Menu, NumberField, Pagination, Popover, RadioGroup, Resizable, ScrollArea, SearchField, Select, Sheet, Sidebar, Slider, Table, Tabs, Toast, ToggleGroup, Tooltip.
 
-```tsx
-import { Button } from "~/components/ui/button";
+**Key rule:** Always use `composeRenderProps` from `react-aria-components` on React Aria primitives — required for state selectors (`pressed:`, `selected:`, etc.). For plain HTML elements, call CVA directly.
 
-<Button variant="outline" size="lg">Click me</Button>
-```
-
-### Multi-Part Components
-
-Namespace exports for compound components:
-
-```tsx
-import { Dialog } from "~/components/ui/dialog";
-
-<Dialog.Root>
-  <Button>Open</Button>
-  <Dialog.Overlay>
-    <Dialog.Modal>
-      <Dialog.Content>
-        <Dialog.Header>
-          <Dialog.Title>Title</Dialog.Title>
-          <Dialog.Description>Description</Dialog.Description>
-        </Dialog.Header>
-        <Dialog.Footer>
-          <Button>Save</Button>
-        </Dialog.Footer>
-        <Dialog.Close />
-      </Dialog.Content>
-    </Dialog.Modal>
-  </Dialog.Overlay>
-</Dialog.Root>
-```
-
-Multi-part components with namespace exports: Accordion, Breadcrumb, ButtonGroup, Calendar, Card, Carousel, Chart, Combobox, DateField, DatePicker, Dialog, Drawer, Field, InputGroup, ListBox, Menu, NumberField, Pagination, Popover, RadioGroup, Resizable, ScrollArea, SearchField, Select, Sheet, Sidebar, Slider, Table, Tabs, Toast, ToggleGroup, Tooltip.
-
-See [references/component-patterns.md](references/component-patterns.md) for full examples.
-
-### Key Pattern: `composeRenderProps`
-
-Always use `composeRenderProps` from `react-aria-components` when wrapping React Aria primitives. This ensures state-based selectors (`pressed:`, `selected:`, etc.) work.
-
-```tsx
-import { composeRenderProps } from "react-aria-components";
-
-className={composeRenderProps(className, (className) =>
-  Styles({ className, variant })
-)}
-```
-
-For plain HTML elements (`div`, `p`), call CVA directly: `className={Styles({ className })}`.
+See [references/component-patterns.md](references/component-patterns.md) for full examples (Button, Dialog, namespace pattern, customization).
 
 ## Form System
 
 3-layer architecture: **Form** > **Field** > **Input component**.
 
-### Field Composition
-
-```tsx
-import { Field } from "~/components/ui/field";
-import { Input } from "~/components/ui/input";
-import { TextField } from "~/components/ui/text-field";
-
-<Field.Root render={<TextField type="email" isRequired />}>
-  <Field.Label>Email</Field.Label>
-  <Input placeholder="john@example.com" />
-  <Field.Description>Help text</Field.Description>
-  <Field.Error />
-</Field.Root>
-```
-
 `Field.Root`'s `render` prop connects to a React Aria form primitive (TextField, Select, NumberField, etc.) for automatic label association and validation.
 
-### InputGroup
+### Form Library Integration
 
-```tsx
-import { InputGroup } from "~/components/ui/input-group";
+1. Determine the form library:
+   - **React Hook Form?** → See [references/form-react-hook-form.md](references/form-react-hook-form.md)
+   - **TanStack Form?** → See [references/form-tanstack-form.md](references/form-tanstack-form.md)
+   - **Native HTML validation only?** → Use React Aria `<Form>` + `isRequired` on primitives
 
-<InputGroup.Root>
-  <InputGroup.Addon><SearchIcon /></InputGroup.Addon>
-  <InputGroup.Input placeholder="Search..." />
-</InputGroup.Root>
-```
+All libraries use the same `Field.Root render={<Primitive>}` pattern. `Field.Error` accepts an `errors` prop — `undefined` entries are silently ignored.
 
-### TanStack Form
-
-```tsx
-<form.Field name="title">
-  {(field) => (
-    <Field.Root
-      render={
-        <TextField
-          isInvalid={field.state.meta.isTouched && !field.state.meta.isValid}
-          onChange={field.handleChange}
-          onBlur={field.handleBlur}
-          value={field.state.value}
-        />
-      }
-    >
-      <Field.Label>Title</Field.Label>
-      <Input />
-      <Field.Error errors={field.state.meta.errors} />
-    </Field.Root>
-  )}
-</form.Field>
-```
-
-See [references/form-system.md](references/form-system.md) for full TanStack Form example with Zod validation.
+See [references/form-system.md](references/form-system.md) for Field/InputGroup/ButtonGroup API details.
 
 ## Styling & Theming
 
@@ -215,5 +99,7 @@ Install any component: `npx shadcn@latest add @kanpeki/<name>`
 
 - [Installation & Setup](references/installation-setup.md) — full CSS, CVA config, dark mode, path alias
 - [Component Patterns](references/component-patterns.md) — Button + Dialog examples, namespace pattern, customization
-- [Form System](references/form-system.md) — Field/InputGroup/ButtonGroup API, TanStack Form + Zod example
+- [Form System](references/form-system.md) — Field/InputGroup/ButtonGroup API, native HTML validation
+- [React Hook Form](references/form-react-hook-form.md) — Controller patterns, all field types (Select, Checkbox, Switch, arrays)
+- [TanStack Form](references/form-tanstack-form.md) — form.Field patterns, Zod validation
 - [Styling & Theming](references/styling-and-theming.md) — CVA deep dive, OKLCH tokens, React Aria selectors, animations

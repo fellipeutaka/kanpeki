@@ -202,12 +202,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 function RegistrationForm() {
-  const {
-    register,
-    handleSubmit,
-    setError,
-    formState: { errors, isSubmitting },
-  } = useForm<UserRegistrationData>({
+  const form = useForm({
     resolver: zodResolver(userRegistrationSchema),
     defaultValues: {
       username: '',
@@ -217,7 +212,7 @@ function RegistrationForm() {
     },
   })
 
-  const onSubmit = async (data: UserRegistrationData) => {
+  const onSubmit = form.handleSubmit(async (data) => {
     try {
       const response = await fetch('/api/register', {
         method: 'POST',
@@ -231,14 +226,14 @@ function RegistrationForm() {
         // Map server errors to form fields
         if (result.errors) {
           Object.entries(result.errors).forEach(([field, message]) => {
-            setError(field as keyof UserRegistrationData, {
+            form.setError(field as keyof UserRegistrationData, {
               type: 'server',
               message: Array.isArray(message) ? message[0] : message as string,
             })
           })
         } else {
           // Generic error
-          setError('root', {
+          form.setError('root', {
             type: 'server',
             message: result.message || 'Registration failed',
           })
@@ -249,36 +244,36 @@ function RegistrationForm() {
       // Success - redirect or show success message
       console.log('Registration successful:', result.user)
     } catch (error) {
-      setError('root', {
+      form.setError('root', {
         type: 'server',
         message: 'Network error. Please try again.',
       })
     }
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      {errors.root && (
+    <form onSubmit={onSubmit}>
+      {form.formState.errors.root && (
         <div role="alert" className="error-banner">
-          {errors.root.message}
+          {form.formState.errors.root.message}
         </div>
       )}
 
       {/* Form fields */}
-      <input {...register('username')} />
-      {errors.username && <span>{errors.username.message}</span>}
+      <input {...form.register('username')} />
+      {form.formState.errors.username && <span>{form.formState.errors.username.message}</span>}
 
-      <input type="email" {...register('email')} />
-      {errors.email && <span>{errors.email.message}</span>}
+      <input type="email" {...form.register('email')} />
+      {form.formState.errors.email && <span>{form.formState.errors.email.message}</span>}
 
-      <input type="password" {...register('password')} />
-      {errors.password && <span>{errors.password.message}</span>}
+      <input type="password" {...form.register('password')} />
+      {form.formState.errors.password && <span>{form.formState.errors.password.message}</span>}
 
-      <input type="number" {...register('age', { valueAsNumber: true })} />
-      {errors.age && <span>{errors.age.message}</span>}
+      <input type="number" {...form.register('age', { valueAsNumber: true })} />
+      {form.formState.errors.age && <span>{form.formState.errors.age.message}</span>}
 
-      <button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? 'Registering...' : 'Register'}
+      <button type="submit" disabled={form.formState.isSubmitting}>
+        {form.formState.isSubmitting ? 'Registering...' : 'Register'}
       </button>
     </form>
   )

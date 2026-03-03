@@ -54,7 +54,7 @@ const profileFormSchema = z.object({
 type ProfileFormValues = z.infer<typeof profileFormSchema>
 
 export function ShadcnProfileForm() {
-  const form = useForm<ProfileFormValues>({
+  const form = useForm({
     resolver: zodResolver(profileFormSchema),
     defaultValues: {
       username: '',
@@ -64,14 +64,14 @@ export function ShadcnProfileForm() {
     },
   })
 
-  function onSubmit(data: ProfileFormValues) {
+  const onSubmit = form.handleSubmit((data) => {
     console.log('Form submitted:', data)
     // Make API call
-  }
+  })
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-2xl mx-auto">
+      <form onSubmit={onSubmit} className="space-y-8 max-w-2xl mx-auto">
         <h2 className="text-3xl font-bold">Profile Settings</h2>
 
         {/* Username Field */}
@@ -208,12 +208,12 @@ const settingsFormSchema = z.object({
 type SettingsFormValues = z.infer<typeof settingsFormSchema>
 
 export function ShadcnSettingsForm() {
-  const form = useForm<SettingsFormValues>({
+  const form = useForm({
     resolver: zodResolver(settingsFormSchema),
     defaultValues: {
       name: '',
       language: 'en',
-      theme: 'system',
+      theme: 'system' as const,
       emailPreferences: {
         marketing: false,
         updates: true,
@@ -222,13 +222,13 @@ export function ShadcnSettingsForm() {
     },
   })
 
-  function onSubmit(data: SettingsFormValues) {
+  const onSubmit = form.handleSubmit((data) => {
     console.log('Settings updated:', data)
-  }
+  })
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-2xl mx-auto">
+      <form onSubmit={onSubmit} className="space-y-8 max-w-2xl mx-auto">
         <h2 className="text-3xl font-bold">Settings</h2>
 
         {/* Name */}
