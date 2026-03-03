@@ -3,6 +3,7 @@
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { MotionConfig } from "motion/react";
 import { useRouter } from "next/navigation";
 import { ThemeProvider } from "next-themes";
 import { RouterProvider } from "react-aria-components";
@@ -34,7 +35,7 @@ export function Providers({ children }: ProvidersProps) {
     >
       <RouterProvider navigate={router.push}>
         <QueryClientProvider client={queryClient}>
-          {children}
+          <MotionConfig reducedMotion="user">{children}</MotionConfig>
         </QueryClientProvider>
         <Toaster />
         <Analytics />

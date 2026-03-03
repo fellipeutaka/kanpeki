@@ -1,64 +1,95 @@
+import { StarIcon } from "lucide-react";
+import * as motion from "motion/react-client";
 import { Suspense } from "react";
 import { Icons } from "~/components/icons";
 import { siteConfig } from "~/config/site";
+import { ButtonGroup } from "~/registry/ui/button-group";
+import { LinkButton } from "~/registry/ui/link-button";
 
 export function OpenSourceSection() {
   return (
-    <section className="space-y-4 text-center">
-      <h2 className="mx-auto max-w-2xl font-bold text-3xl tracking-tighter lg:text-5xl">
-        Proudly{" "}
-        <span className="bg-linear-to-br from-primary to-[hsl(24,93%,58%)] bg-clip-text text-transparent">
-          open-source
-        </span>
-      </h2>
-      <p className="mx-auto max-w-2xl text-balance text-lg text-muted-foreground">
-        Our source code is available on GitHub - feel free to read, review, or
-        contribute to it however you want!
-      </p>
-      <a
-        className="mx-auto flex w-max select-none transition-opacity hover:opacity-80"
-        href={siteConfig.links.github}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <div className="flex items-center gap-2 rounded-md border border-muted bg-muted px-4">
-          <Icons.GitHub className="size-6" />
-          <span className="truncate">Star us on GitHub</span>
-        </div>
+    <motion.section
+      className="relative overflow-hidden rounded-2xl border px-8 py-20"
+      initial={{ opacity: 0, y: 28 }}
+      transition={{
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
+      viewport={{ once: true, margin: "-60px" }}
+      whileInView={{ opacity: 1, y: 0 }}
+    >
+      <SubtleDotGrid />
 
-        <div className="flex items-center">
-          <div className="size-4 border-muted border-y-8 border-y-transparent border-r-8" />
-          <div className="flex h-10 items-center rounded-md border border-muted bg-muted px-4 font-medium">
-            <Suspense fallback={"--"}>
-              <StarsAmount />
-            </Suspense>
-          </div>
+      <div className="relative flex flex-col items-center gap-6 text-center">
+        <h2 className="max-w-xl text-balance font-bold text-3xl tracking-tight sm:text-4xl lg:text-5xl">
+          Open source, and proud of it.
+        </h2>
+        <p className="max-w-md text-balance text-base opacity-70">
+          Every line of Kanpeki lives on GitHub. Read it, fork it, improve it —
+          or just star it to show support.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <ButtonGroup.Root aria-label="Star Kanpeki on GitHub">
+            <LinkButton
+              href={siteConfig.links.github}
+              rel="noopener noreferrer"
+              target="_blank"
+              variant="outline"
+            >
+              <Icons.GitHub aria-hidden="true" className="size-4" />
+              Star on GitHub
+            </LinkButton>
+            <ButtonGroup.Separator />
+            <LinkButton
+              className="group"
+              href={siteConfig.links.github}
+              rel="noopener noreferrer"
+              target="_blank"
+              variant="outline"
+            >
+              <StarIcon
+                aria-hidden="true"
+                className="size-3.5 fill-transparent stroke-primary transition duration-300 group-hover:fill-primary"
+              />
+              <Suspense fallback={<span className="opacity-50">…</span>}>
+                <StarsAmount />
+              </Suspense>
+            </LinkButton>
+          </ButtonGroup.Root>
+
+          <LinkButton
+            className="font-medium invert dark:invert-0"
+            href="/docs"
+            variant="outline"
+          >
+            Browse the Docs
+          </LinkButton>
         </div>
-      </a>
-    </section>
+      </div>
+    </motion.section>
+  );
+}
+
+function SubtleDotGrid() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 bg-[radial-gradient(currentColor_1px,transparent_1px)] bg-size-[24px_24px] opacity-20"
+    />
   );
 }
 
 async function getGitHubStars() {
   try {
     const response = await fetch(
-      `https://api.github.com/repos/${siteConfig.links.github.replace(
-        "https://github.com/",
-        ""
-      )}`,
-      {
-        next: {
-          revalidate: 60,
-        },
-      }
+      `https://api.github.com/repos/${siteConfig.links.github.replace("https://github.com/", "")}`,
+      { next: { revalidate: 60 } }
     );
-
-    if (!response?.ok) {
+    if (!response.ok) {
       return null;
     }
-
     const json = await response.json();
-
     return Number.parseInt(json.stargazers_count, 10).toLocaleString();
   } catch {
     return null;
@@ -66,5 +97,5 @@ async function getGitHubStars() {
 }
 
 async function StarsAmount() {
-  return (await getGitHubStars()) ?? 99_999;
+  return <>{(await getGitHubStars()) ?? "—"}</>;
 }

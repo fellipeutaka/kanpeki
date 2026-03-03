@@ -1,4 +1,5 @@
 import "~/styles/globals.css";
+import "~/styles/mdx.css";
 
 import { cx } from "cva";
 import type { Metadata, Viewport } from "next";

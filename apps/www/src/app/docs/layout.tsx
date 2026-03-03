@@ -1,7 +1,5 @@
 import { DocsSidebar } from "./[[...slug]]/_components/docs-sidebar";
 
-import "~/styles/mdx.css";
-
 export default function Layout({ children }: LayoutProps<"/docs">) {
   return (
     <div className="border-b">

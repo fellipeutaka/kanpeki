@@ -8,7 +8,7 @@ export async function highlightCode(
   options?: RehypeCodeOptions
 ) {
   const highlighter = await getHighlighter({
-    langs: ["typescript", "tsx"],
+    langs: ["typescript", "tsx", "bash"],
   });
 
   const html = highlighter.codeToHtml(code.trimEnd(), {
