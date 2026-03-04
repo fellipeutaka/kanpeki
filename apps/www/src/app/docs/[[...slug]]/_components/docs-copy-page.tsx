@@ -27,18 +27,14 @@ interface DocsCopyPageProps {
 }
 
 export function DocsCopyPage({ page, url }: DocsCopyPageProps) {
-  const [copyToClipboard, isCopied] = useCopyToClipboard();
+  const { isCopied, copyToClipboard } = useCopyToClipboard();
   const fullUrl = `${siteConfig.url}${url}`;
 
   return (
     <ButtonGroup.Root className="h-8 *:h-full max-sm:order-1 max-sm:col-span-full sm:self-center sm:justify-self-end md:h-7 *:md:text-[0.8rem]">
       <Button
         className="inline-grid pressed:scale-100 pressed:bg-secondary/70 *:row-start-1"
-        onPress={() =>
-          copyToClipboard({
-            text: page,
-          })
-        }
+        onPress={() => copyToClipboard(page)}
         size="sm"
         variant="secondary"
       >

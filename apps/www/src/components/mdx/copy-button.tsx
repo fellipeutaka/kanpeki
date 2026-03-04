@@ -15,7 +15,7 @@ export interface CopyButtonProps extends ButtonProps {
 }
 
 export function CopyButton({ text, className, ...props }: CopyButtonProps) {
-  const [copy, isCopied] = useCopyToClipboard();
+  const { isCopied, copyToClipboard } = useCopyToClipboard();
 
   return (
     <Button
@@ -24,7 +24,7 @@ export function CopyButton({ text, className, ...props }: CopyButtonProps) {
         "size-8 opacity-0 backdrop-blur-lg focus-visible:opacity-100 group-hover:opacity-100",
         className
       )}
-      onPress={() => copy({ text })}
+      onPress={() => copyToClipboard(text)}
       size="icon"
       variant="outline"
       {...props}
@@ -50,7 +50,7 @@ export function CopyNpmButton({
   className,
   ...props
 }: CopyNpmButtonProps) {
-  const [copy, isCopied] = useCopyToClipboard();
+  const { isCopied, copyToClipboard } = useCopyToClipboard();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -78,19 +78,19 @@ export function CopyNpmButton({
 
       <Popover.Content className="min-w-32" placement="bottom end">
         <Menu.Content>
-          <Menu.Item onAction={() => copy({ text: commands.npm })}>
+          <Menu.Item onAction={() => copyToClipboard(commands.npm)}>
             <Icons.Npm className="size-4" />
             npm
           </Menu.Item>
-          <Menu.Item onAction={() => copy({ text: commands.yarn })}>
+          <Menu.Item onAction={() => copyToClipboard(commands.yarn)}>
             <Icons.Yarn className="size-4" />
             yarn
           </Menu.Item>
-          <Menu.Item onAction={() => copy({ text: commands.pnpm })}>
+          <Menu.Item onAction={() => copyToClipboard(commands.pnpm)}>
             <Icons.Pnpm className="size-4" />
             pnpm
           </Menu.Item>
-          <Menu.Item onAction={() => copy({ text: commands.bun })}>
+          <Menu.Item onAction={() => copyToClipboard(commands.bun)}>
             <Icons.Bun className="size-4" />
             bun
           </Menu.Item>

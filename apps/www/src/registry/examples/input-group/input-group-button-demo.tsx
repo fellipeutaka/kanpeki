@@ -7,7 +7,7 @@ import { InputGroup } from "~/registry/ui/input-group";
 import { Popover } from "~/registry/ui/popover";
 
 export function InputGroupButtonDemo() {
-  const [copy, isCopied] = useCopyToClipboard();
+  const { isCopied, copyToClipboard } = useCopyToClipboard();
   const [isFavorite, setIsFavorite] = useState(false);
 
   return (
@@ -17,11 +17,8 @@ export function InputGroupButtonDemo() {
         <InputGroup.Addon align="inline-end">
           <InputGroup.Button
             aria-label="Copy"
-            // title="Copy"
             onPress={() => {
-              copy({
-                text: "https://x.com/fellipeutaka",
-              });
+              copyToClipboard("https://x.com/fellipeutaka");
             }}
             size="icon-xs"
           >

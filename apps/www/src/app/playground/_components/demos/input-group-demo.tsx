@@ -70,7 +70,7 @@ function InputGroupTextExample() {
 }
 
 function InputGroupButtonExample() {
-  const [copy, isCopied] = useCopyToClipboard();
+  const { isCopied, copyToClipboard } = useCopyToClipboard();
 
   return (
     <InputGroup.Root>
@@ -80,9 +80,7 @@ function InputGroupButtonExample() {
           aria-label="Copy"
           className="inline-grid place-items-center *:col-start-1 *:row-start-1"
           onPress={() => {
-            copy({
-              text: "https://x.com/fellipeutaka",
-            });
+            copyToClipboard("https://x.com/fellipeutaka");
           }}
           size="icon-xs"
         >
