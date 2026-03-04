@@ -1,5 +1,6 @@
 "use client";
 
+import { useHotkey } from "@tanstack/react-hotkeys";
 import { type UseQueryResult, useQuery } from "@tanstack/react-query";
 import type { SortedResult } from "fumadocs-core/search";
 import {
@@ -14,7 +15,7 @@ import {
   TextIcon,
 } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { Collection } from "react-aria-components";
 import type { NavItem, SidebarNavItem } from "~/config/docs";
 import useDebouncedCallback from "~/hooks/use-debounced-callback";
@@ -33,17 +34,16 @@ interface CommandMenuProps {
   sidebarNav: SidebarNavItem[];
 }
 
+const QUERY_DEBOUNCE_DELAY_IN_MS = 1000; // 1 second
+
 export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const setDebouncedQuery = useDebouncedCallback(
-    (value: string) => {
-      setQuery(value);
-    },
-    1000 // 1 second of delay
-  );
+  const setDebouncedQuery = useDebouncedCallback((value: string) => {
+    setQuery(value);
+  }, QUERY_DEBOUNCE_DELAY_IN_MS);
 
-  const isQueryNonEmpty = query.trim() !== "";
+  const isQueryNonEmpty = useMemo(() => query.trim() !== "", [query]);
 
   const searchQuery = useQuery<SortedResult[]>({
     queryKey: ["search", query],
@@ -56,31 +56,8 @@ export function CommandMenu({ mainNav, sidebarNav }: CommandMenuProps) {
     enabled: isQueryNonEmpty,
   });
 
-  useEffect(() => {
-    const controller = new AbortController();
-
-    document.addEventListener(
-      "keydown",
-      (e) => {
-        if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
-          if (
-            (e.target instanceof HTMLElement && e.target.isContentEditable) ||
-            e.target instanceof HTMLInputElement ||
-            e.target instanceof HTMLTextAreaElement ||
-            e.target instanceof HTMLSelectElement
-          ) {
-            return;
-          }
-
-          e.preventDefault();
-          setIsOpen((open) => !open);
-        }
-      },
-      { signal: controller.signal }
-    );
-
-    return () => controller.abort();
-  }, []);
+  useHotkey("Mod+K", () => setIsOpen((open) => !open));
+  useHotkey("/", () => setIsOpen((open) => !open));
 
   return (
     <Dialog.Root isOpen={isOpen} onOpenChange={setIsOpen}>
