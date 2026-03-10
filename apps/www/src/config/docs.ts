@@ -164,6 +164,10 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/dropzone",
           title: "Dropzone",
+        },
+        {
+          href: "/docs/components/empty",
+          title: "Empty",
           label: LABEL_OPTIONS.NEW,
         },
         {
@@ -201,7 +205,6 @@ export const docsConfig: DocsConfig = {
         {
           href: "/docs/components/pagination",
           title: "Pagination",
-          label: LABEL_OPTIONS.NEW,
         },
         {
           href: "/docs/components/popover",

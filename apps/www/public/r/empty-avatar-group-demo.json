@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "content": "import { PlusIcon } from \"lucide-react\";\nimport { Avatar } from \"~/registry/ui/avatar\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Empty } from \"~/registry/ui/empty\";\n\nconst users = [\n  {\n    id: \"fellipeutaka\",\n    fallback: \"FU\",\n  },\n  {\n    id: \"victormicco\",\n    fallback: \"VM\",\n  },\n  {\n    id: \"yKriguer\",\n    fallback: \"KR\",\n  },\n  {\n    id: \"HenriqueBragaMoreira\",\n    fallback: \"HB\",\n  },\n  {\n    id: \"MatheusLukas\",\n    fallback: \"ML\",\n  },\n] as const satisfies {\n  id: string;\n  fallback: string;\n}[];\n\nexport function EmptyAvatarGroupDemo() {\n  return (\n    <Empty.Root>\n      <Empty.Header>\n        <Empty.Media>\n          <div className=\"flex -space-x-2 *:data-[slot=avatar-root]:size-12 *:data-[slot=avatar-root]:ring-2 *:data-[slot=avatar-root]:ring-background *:data-[slot=avatar-root]:grayscale\">\n            {users.map((user) => (\n              <Avatar.Root key={user.id}>\n                <Avatar.Image\n                  alt={`@${user.id}`}\n                  src={`https://github.com/${user.id}.png`}\n                />\n                <Avatar.Fallback>{user.fallback}</Avatar.Fallback>\n              </Avatar.Root>\n            ))}\n          </div>\n        </Empty.Media>\n        <Empty.Title>No Team Members</Empty.Title>\n        <Empty.Description>\n          Invite your team to collaborate on this project.\n        </Empty.Description>\n      </Empty.Header>\n      <Empty.Content>\n        <Button size=\"sm\">\n          <PlusIcon />\n          Invite Members\n        </Button>\n      </Empty.Content>\n    </Empty.Root>\n  );\n}\n",
+      "path": "src/registry/examples/empty/empty-avatar-group-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "empty-avatar-group-demo",
+  "registryDependencies": [
+    "@kanpeki/empty",
+    "@kanpeki/avatar",
+    "@kanpeki/button"
+  ],
+  "type": "registry:example"
+}

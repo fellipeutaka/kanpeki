@@ -471,6 +471,29 @@ export const ui: RegistryItem[] = [
     registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
   },
   {
+    name: "empty",
+    type: "registry:ui",
+    files: [
+      {
+        path: "src/registry/ui/empty/index.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/empty/empty.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/empty/styles.ts",
+        type: "registry:ui",
+      },
+      {
+        path: "src/registry/ui/empty/namespace.ts",
+        type: "registry:ui",
+      },
+    ],
+    registryDependencies: ["@kanpeki/cva", "@kanpeki/custom-plugin"],
+  },
+  {
     name: "field",
     type: "registry:ui",
     files: [

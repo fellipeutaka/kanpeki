@@ -20,6 +20,7 @@ import { datePickerExamples } from "./date-picker/_registry";
 import { dialogExamples } from "./dialog/_registry";
 import { drawerExamples } from "./drawer/_registry";
 import { dropzoneExamples } from "./dropzone/_registry";
+import { emptyExamples } from "./empty/_registry";
 import { fieldExamples } from "./field/_registry";
 import { formExamples } from "./form/_registry";
 import { hoverCardExamples } from "./hover-card/_registry";
@@ -76,6 +77,7 @@ export const examples: RegistryItem[] = [
   ...dialogExamples,
   ...drawerExamples,
   ...dropzoneExamples,
+  ...emptyExamples,
   ...fieldExamples,
   ...formExamples,
   ...hoverCardExamples,

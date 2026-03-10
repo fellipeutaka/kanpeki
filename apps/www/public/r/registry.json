@@ -562,6 +562,32 @@
       "type": "registry:ui"
     },
     {
+      "files": [
+        {
+          "path": "src/registry/ui/empty/index.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/empty/empty.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/empty/styles.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/registry/ui/empty/namespace.ts",
+          "type": "registry:ui"
+        }
+      ],
+      "name": "empty",
+      "registryDependencies": [
+        "@kanpeki/cva",
+        "@kanpeki/custom-plugin"
+      ],
+      "type": "registry:ui"
+    },
+    {
       "dependencies": [
         "@base-ui/react",
         "react-aria-components"
@@ -2352,6 +2378,105 @@
         "@kanpeki/dropzone",
         "@kanpeki/button",
         "@kanpeki/toast"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/empty/empty-avatar-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "empty-avatar-demo",
+      "registryDependencies": [
+        "@kanpeki/empty",
+        "@kanpeki/avatar",
+        "@kanpeki/button"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/empty/empty-avatar-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "empty-avatar-group-demo",
+      "registryDependencies": [
+        "@kanpeki/empty",
+        "@kanpeki/avatar",
+        "@kanpeki/button"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/empty/empty-background-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "empty-background-demo",
+      "registryDependencies": [
+        "@kanpeki/empty",
+        "@kanpeki/button"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "files": [
+        {
+          "path": "src/registry/examples/empty/empty-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "empty-demo",
+      "registryDependencies": [
+        "@kanpeki/empty",
+        "@kanpeki/button"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/empty/empty-input-group-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "empty-input-group-demo",
+      "registryDependencies": [
+        "@kanpeki/empty",
+        "@kanpeki/input-group",
+        "@kanpeki/keyboard"
+      ],
+      "type": "registry:example"
+    },
+    {
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/examples/empty/empty-outline-demo.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "name": "empty-outline-demo",
+      "registryDependencies": [
+        "@kanpeki/empty",
+        "@kanpeki/button"
       ],
       "type": "registry:example"
     },

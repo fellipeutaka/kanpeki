@@ -3,33 +3,27 @@ import { Avatar } from "~/registry/ui/avatar";
 
 const avatars = [
   {
-    src: "https://github.com/fellipeutaka.png",
-    alt: "@fellipeutaka",
+    id: "fellipeutaka",
     fallback: "FU",
   },
   {
-    src: "https://github.com/shadcn.png",
-    alt: "@shadcn",
+    id: "shadcn",
     fallback: "SN",
   },
   {
-    src: "https://github.com/devongovett.png",
-    alt: "@devongovett",
+    id: "devongovett",
     fallback: "DG",
   },
   {
-    src: "https://github.com/benoitgrelard.png",
-    alt: "@benoitgrelard",
+    id: "benoitgrelard",
     fallback: "BG",
   },
   {
-    src: "https://github.com/adamwathan.png",
-    alt: "@adamwathan",
+    id: "adamwathan",
     fallback: "AW",
   },
 ] as const satisfies {
-  src: string;
-  alt: string;
+  id: string;
   fallback: string;
 }[];
 
@@ -37,8 +31,11 @@ export function AvatarGroupDemo() {
   return (
     <div className="flex -space-x-2">
       {avatars.map((avatar) => (
-        <Avatar.Root className="ring ring-background" key={avatar.alt}>
-          <Avatar.Image alt={avatar.alt} src={avatar.src} />
+        <Avatar.Root className="ring ring-background" key={avatar.id}>
+          <Avatar.Image
+            alt={`@${avatar.id}`}
+            src={`https://github.com/${avatar.id}.png`}
+          />
           <Avatar.Fallback>{avatar.fallback}</Avatar.Fallback>
           <Avatar.Placeholder>
             <UserIcon className="size-6" />

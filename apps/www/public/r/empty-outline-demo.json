@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "content": "import { CloudIcon } from \"lucide-react\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Empty } from \"~/registry/ui/empty\";\n\nexport function EmptyOutlineDemo() {\n  return (\n    <Empty.Root className=\"border border-dashed\">\n      <Empty.Header>\n        <Empty.Media variant=\"icon\">\n          <CloudIcon />\n        </Empty.Media>\n        <Empty.Title>Cloud Storage Empty.</Empty.Title>\n        <Empty.Description>\n          Upload files to your cloud storage to access them anywhere.\n        </Empty.Description>\n      </Empty.Header>\n      <Empty.Content>\n        <Button size=\"sm\" variant=\"outline\">\n          Upload Files\n        </Button>\n      </Empty.Content>\n    </Empty.Root>\n  );\n}\n",
+      "path": "src/registry/examples/empty/empty-outline-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "empty-outline-demo",
+  "registryDependencies": [
+    "@kanpeki/empty",
+    "@kanpeki/button"
+  ],
+  "type": "registry:example"
+}

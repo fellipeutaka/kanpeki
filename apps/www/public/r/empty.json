@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "export * from \"./empty\";\nexport * as Empty from \"./namespace\";\nexport * from \"./styles\";\n",
+      "path": "src/registry/ui/empty/index.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import type { VariantProps } from \"cva\";\nimport { EmptyStyles } from \"./styles\";\n\nexport interface EmptyRootProps extends React.ComponentProps<\"div\"> {}\n\nexport function EmptyRoot({ className, ...props }: EmptyRootProps) {\n  return (\n    <div\n      className={EmptyStyles.Root({ className })}\n      data-slot=\"empty\"\n      {...props}\n    />\n  );\n}\n\nexport interface EmptyHeaderProps extends React.ComponentProps<\"div\"> {}\n\nexport function EmptyHeader({ className, ...props }: EmptyHeaderProps) {\n  return (\n    <div\n      className={EmptyStyles.Header({ className })}\n      data-slot=\"empty-header\"\n      {...props}\n    />\n  );\n}\n\nexport interface EmptyMediaProps\n  extends React.ComponentProps<\"div\">,\n    VariantProps<typeof EmptyStyles.Media> {}\n\nexport function EmptyMedia({\n  className,\n  variant = \"default\",\n  ...props\n}: EmptyMediaProps) {\n  return (\n    <div\n      className={EmptyStyles.Media({ variant, className })}\n      data-slot=\"empty-icon\"\n      data-variant={variant}\n      {...props}\n    />\n  );\n}\n\nexport interface EmptyTitleProps extends React.ComponentProps<\"div\"> {}\n\nexport function EmptyTitle({ className, ...props }: EmptyTitleProps) {\n  return (\n    <div\n      className={EmptyStyles.Title({ className })}\n      data-slot=\"empty-title\"\n      {...props}\n    />\n  );\n}\n\nexport interface EmptyDescriptionProps extends React.ComponentProps<\"p\"> {}\n\nexport function EmptyDescription({\n  className,\n  ...props\n}: EmptyDescriptionProps) {\n  return (\n    <div\n      className={EmptyStyles.Description({ className })}\n      data-slot=\"empty-description\"\n      {...props}\n    />\n  );\n}\n\nexport interface EmptyContentProps extends React.ComponentProps<\"div\"> {}\n\nexport function EmptyContent({ className, ...props }: EmptyContentProps) {\n  return (\n    <div\n      className={EmptyStyles.Content({ className })}\n      data-slot=\"empty-content\"\n      {...props}\n    />\n  );\n}\n",
+      "path": "src/registry/ui/empty/empty.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "content": "import { cva } from \"~/registry/lib/cva\";\n\nexport const EmptyStyles = {\n  Root: cva({\n    base: [\n      \"flex w-full min-w-0 flex-1 flex-col items-center justify-center gap-4\",\n      \"text-balance rounded-xl border-dashed p-6 text-center\",\n    ],\n  }),\n  Header: cva({\n    base: [\"flex max-w-sm flex-col items-center gap-2\"],\n  }),\n  Media: cva({\n    base: [\n      \"mb-2 flex shrink-0 items-center justify-center\",\n      \"[&_svg]:pointer-events-none [&_svg]:shrink-0\",\n    ],\n    variants: {\n      variant: {\n        default: \"bg-transparent\",\n        icon: [\n          \"flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted text-foreground\",\n          \"[&_svg:not([class*='size-'])]:size-4\",\n        ],\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }),\n  Title: cva({\n    base: [\"font-medium text-sm tracking-tight\"],\n  }),\n  Description: cva({\n    base: [\n      \"text-muted-foreground text-sm/relaxed\",\n      \"[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4\",\n    ],\n  }),\n  Content: cva({\n    base: [\n      \"flex w-full min-w-0 max-w-sm flex-col items-center gap-2.5 text-balance text-sm\",\n    ],\n  }),\n};\n",
+      "path": "src/registry/ui/empty/styles.ts",
+      "type": "registry:ui"
+    },
+    {
+      "content": "export {\n  EmptyContent as Content,\n  EmptyDescription as Description,\n  EmptyHeader as Header,\n  EmptyMedia as Media,\n  EmptyRoot as Root,\n  EmptyTitle as Title,\n} from \"./empty\";\n",
+      "path": "src/registry/ui/empty/namespace.ts",
+      "type": "registry:ui"
+    }
+  ],
+  "name": "empty",
+  "registryDependencies": [
+    "@kanpeki/cva",
+    "@kanpeki/custom-plugin"
+  ],
+  "type": "registry:ui"
+}

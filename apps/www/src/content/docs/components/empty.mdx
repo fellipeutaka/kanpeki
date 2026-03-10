@@ -1,0 +1,216 @@
+---
+title: Empty
+description: Use the Empty component to display an empty state.
+links:
+  docs: https://ui.shadcn.com/docs/components/base/empty
+---
+
+<ComponentPreview name="empty-demo" />
+
+## Installation
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="cli">CLI</Tabs.Trigger>
+  <Tabs.Trigger id="manual">Manual</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="cli">
+
+```bash
+npx shadcn@latest add @kanpeki/empty
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="empty" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Anatomy
+
+<Tabs.Root>
+
+<Tabs.List>
+  <Tabs.Trigger id="single">Single import</Tabs.Trigger>
+  <Tabs.Trigger id="multiple">Multiple imports</Tabs.Trigger>
+</Tabs.List>
+<Tabs.Content id="single">
+
+```tsx
+import { Empty } from "~/components/ui/empty";
+
+<Empty.Root>
+  <Empty.Header>
+    <Empty.Media variant="icon">
+      <Icon />
+    </Empty.Media>
+    <Empty.Title>No data</Empty.Title>
+    <Empty.Description>No data found</Empty.Description>
+  </Empty.Header>
+  <Empty.Content>
+    <Button>Add data</Button>
+  </Empty.Content>
+</Empty.Root>;
+```
+
+</Tabs.Content>
+
+<Tabs.Content id="multiple">
+
+```tsx
+import {
+  EmptyRoot,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+  EmptyDescription,
+  EmptyContent,
+} from "~/components/ui/empty";
+
+<EmptyRoot>
+  <EmptyHeader>
+    <EmptyMedia variant="icon">
+      <Icon />
+    </EmptyMedia>
+    <EmptyTitle>No data</EmptyTitle>
+    <EmptyDescription>No data found</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent>
+    <Button>Add data</Button>
+  </EmptyContent>
+</EmptyRoot>;
+```
+
+</Tabs.Content>
+
+</Tabs.Root>
+
+## Examples
+
+### Outline
+
+<ComponentPreview name="empty-outline-demo" />
+
+### Background
+
+<ComponentPreview name="empty-background-demo" />
+
+### Avatar
+
+<ComponentPreview name="empty-avatar-demo" />
+
+### Avatar Group
+
+<ComponentPreview name="empty-avatar-group-demo" />
+
+### Input Group
+
+<ComponentPreview name="empty-input-group-demo" />
+
+## API Reference
+
+### Empty.Root
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes.",
+    },
+  ]}
+/>
+
+### Empty.Header
+
+Wraps the media, title, and description.
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes.",
+    },
+  ]}
+/>
+
+### Empty.Media
+
+Displays media such as an icon, image, or avatar.
+
+<PropsTable
+  data={[
+    {
+      name: "variant",
+      required: false,
+      typeSimple: "enum",
+      type: '"default" | "icon"',
+      default: '"default"',
+      description:
+        'Visual style of the media container. Use "icon" for icon-sized media with a muted background.',
+    },
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes.",
+    },
+  ]}
+/>
+
+### Empty.Title
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes.",
+    },
+  ]}
+/>
+
+### Empty.Description
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes.",
+    },
+  ]}
+/>
+
+### Empty.Content
+
+Displays content such as a button, input, or link.
+
+<PropsTable
+  data={[
+    {
+      name: "className",
+      required: false,
+      typeSimple: "string",
+      description: "Additional CSS classes.",
+    },
+  ]}
+/>

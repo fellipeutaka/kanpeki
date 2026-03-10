@@ -598,6 +598,36 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "empty": {
+    name: "empty",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["@kanpeki/cva","@kanpeki/custom-plugin"],
+    files: [{
+      path: "src/registry/ui/empty/index.ts",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/empty/empty.tsx",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/empty/styles.ts",
+      type: "registry:ui",
+      target: ""
+    },{
+      path: "src/registry/ui/empty/namespace.ts",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/ui/empty/index.ts")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "empty"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "field": {
     name: "field",
     description: "",
@@ -2691,6 +2721,114 @@ export const Index: Record<string, any> = {
     component: lazy(async () => {
       const mod = await import("~/registry/examples/dropzone/dropzone-with-file-trigger-demo.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "dropzone-with-file-trigger-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-avatar-demo": {
+    name: "empty-avatar-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/empty","@kanpeki/avatar","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/empty/empty-avatar-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/empty/empty-avatar-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "empty-avatar-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-avatar-group-demo": {
+    name: "empty-avatar-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/empty","@kanpeki/avatar","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/empty/empty-avatar-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/empty/empty-avatar-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "empty-avatar-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-background-demo": {
+    name: "empty-background-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/empty","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/empty/empty-background-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/empty/empty-background-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "empty-background-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-demo": {
+    name: "empty-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/empty","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/empty/empty-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/empty/empty-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "empty-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-input-group-demo": {
+    name: "empty-input-group-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/empty","@kanpeki/input-group","@kanpeki/keyboard"],
+    files: [{
+      path: "src/registry/examples/empty/empty-input-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/empty/empty-input-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "empty-input-group-demo"
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-outline-demo": {
+    name: "empty-outline-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["@kanpeki/empty","@kanpeki/button"],
+    files: [{
+      path: "src/registry/examples/empty/empty-outline-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: lazy(async () => {
+      const mod = await import("~/registry/examples/empty/empty-outline-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || "empty-outline-demo"
       return { default: mod.default || mod[exportName] }
     }),
     categories: undefined,

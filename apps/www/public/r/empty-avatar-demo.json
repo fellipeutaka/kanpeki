@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { Avatar } from \"~/registry/ui/avatar\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Empty } from \"~/registry/ui/empty\";\n\nexport function EmptyAvatarDemo() {\n  return (\n    <Empty.Root>\n      <Empty.Header>\n        <Empty.Media variant=\"default\">\n          <Avatar.Root className=\"size-12\">\n            <Avatar.Image\n              className=\"grayscale\"\n              src=\"https://github.com/fellipeutaka.png\"\n            />\n            <Avatar.Fallback>FU</Avatar.Fallback>\n          </Avatar.Root>\n        </Empty.Media>\n        <Empty.Title>User Offline</Empty.Title>\n        <Empty.Description>\n          This user is currently offline. You can leave a message to notify them\n          or try again later.\n        </Empty.Description>\n      </Empty.Header>\n      <Empty.Content>\n        <Button size=\"sm\">Leave Message</Button>\n      </Empty.Content>\n    </Empty.Root>\n  );\n}\n",
+      "path": "src/registry/examples/empty/empty-avatar-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "empty-avatar-demo",
+  "registryDependencies": [
+    "@kanpeki/empty",
+    "@kanpeki/avatar",
+    "@kanpeki/button"
+  ],
+  "type": "registry:example"
+}

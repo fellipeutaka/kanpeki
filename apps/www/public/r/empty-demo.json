@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "files": [
+    {
+      "content": "import { ArrowUpRightIcon, FolderCodeIcon } from \"lucide-react\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Empty } from \"~/registry/ui/empty\";\n\nexport function EmptyDemo() {\n  return (\n    <Empty.Root>\n      <Empty.Header>\n        <Empty.Media variant=\"icon\">\n          <FolderCodeIcon />\n        </Empty.Media>\n        <Empty.Title>No Projects Yet</Empty.Title>\n        <Empty.Description>\n          You haven&apos;t created any projects yet. Get started by creating\n          your first project.\n        </Empty.Description>\n      </Empty.Header>\n      <Empty.Content className=\"flex-row justify-center gap-2\">\n        <Button>Create Project</Button>\n        <Button variant=\"outline\">Import Project</Button>\n      </Empty.Content>\n      <Button className=\"text-muted-foreground\" size=\"sm\" variant=\"link\">\n        Learn More <ArrowUpRightIcon />\n      </Button>\n    </Empty.Root>\n  );\n}\n",
+      "path": "src/registry/examples/empty/empty-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "empty-demo",
+  "registryDependencies": [
+    "@kanpeki/empty",
+    "@kanpeki/button"
+  ],
+  "type": "registry:example"
+}

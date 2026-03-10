@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "content": "import { BellIcon, RefreshCcwIcon } from \"lucide-react\";\nimport { Button } from \"~/registry/ui/button\";\nimport { Empty } from \"~/registry/ui/empty\";\n\nexport function EmptyBackgroundDemo() {\n  return (\n    <Empty.Root className=\"h-full bg-muted/30\">\n      <Empty.Header>\n        <Empty.Media variant=\"icon\">\n          <BellIcon />\n        </Empty.Media>\n        <Empty.Title>No Notifications</Empty.Title>\n        <Empty.Description className=\"max-w-xs text-pretty\">\n          You&apos;re all caught up. New notifications will appear here.\n        </Empty.Description>\n      </Empty.Header>\n      <Empty.Content>\n        <Button variant=\"outline\">\n          <RefreshCcwIcon data-icon=\"inline-start\" />\n          Refresh\n        </Button>\n      </Empty.Content>\n    </Empty.Root>\n  );\n}\n",
+      "path": "src/registry/examples/empty/empty-background-demo.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "name": "empty-background-demo",
+  "registryDependencies": [
+    "@kanpeki/empty",
+    "@kanpeki/button"
+  ],
+  "type": "registry:example"
+}
