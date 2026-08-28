@@ -1,0 +1,40 @@
+---
+title: "SearchField"
+description: "The SearchField component provides an accessible, composable search input pattern."
+---
+
+The `SearchField` component groups a search label, input, and action button into a single accessible widget. Use `SearchField`, `SearchFieldLabel`, `SearchFieldInput`, and `SearchFieldButton` to compose the layout while preserving keyboard and screen-reader behavior.
+
+## Basic usage
+
+```tsx
+import {
+  SearchField,
+  SearchFieldButton,
+  SearchFieldInput,
+  SearchFieldLabel,
+} from "react-aria-components";
+
+export function SearchFieldExample() {
+  return (
+    <SearchField>
+      <SearchFieldLabel>Search</SearchFieldLabel>
+      <SearchFieldInput placeholder="Search products" />
+      <SearchFieldButton>Search</SearchFieldButton>
+    </SearchField>
+  );
+}
+```
+
+## Composition
+
+- `SearchField`: root container that manages search state and accessibility semantics.
+- `SearchFieldLabel`: visible label associated with the search input.
+- `SearchFieldInput`: text input for the query.
+- `SearchFieldButton`: optional action button for submitting or clearing the search.
+
+## Notes
+
+- The component is intended for form contexts where users filter or query content.
+- Keep labels visible and meaningful; placeholders are supplementary only.
+- Ensure the button has an accessible name when its visual label is not sufficient.
